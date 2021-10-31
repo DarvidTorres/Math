@@ -1,0 +1,917 @@
+\documentclass[11pt]{article}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{xcolor,graphicx}
+\graphicspath{{images/}}
+\usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
+\usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
+\usepackage{mathtools}
+\usepackage{braket}
+
+
+%Dark mode
+%\pagecolor[rgb]{0,0,0} %black
+%\color[rgb]{1,1,1} %white
+
+%the code below manipulates space around \align environment
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+\setlength{\abovedisplayskip}{10pt}%
+\setlength{\belowdisplayskip}{-10pt}%
+\setlength{\abovedisplayshortskip}{10pt}%
+\setlength{\belowdisplayshortskip}{-10pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+%Conjuntos de números
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\qued}{\mbox{}\hfill $\square$}
+\newcommand{\bft}{\textbf}
+
+%bold all lists$
+\setlist[enumerate]{font=\bfseries}
+
+\setlength{\parindent}{0pt} %no indent for the document
+\setlength{\parskip}{1em} %add space between paragraphs
+\pagestyle{empty}
+
+\begin{document}
+
+\title{\vspace{-2cm}Cálculo I}
+\author{Darvid}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Números reales}
+
+Existe un conjunto llamado conjunto de los números reales, denotado por $\mathbb{R}$. A los elementos de este conjunto los llamaremos números reales. Este conjunto está dotado con dos operaciones binarias:
+
+\begin{center} \begin{tabular}{rl}
+    Suma $+:$ & $ \mathbb{R} \times \mathbb{R} \to \mathbb{R} $ \\
+    & $ (m, n) \mapsto m+n $\\
+    \\
+    Multiplicación $\cdot:$ & $ \mathbb{R} \times \mathbb{R} \to \mathbb{R} $ \\
+    & $ (m, n) \mapsto m\cdot n $
+\end{tabular} \end{center}
+
+Las cuales satisfacen los siguientes axiomas.
+
+\subsection*{Axiomas de campo}
+
+\begin{enumerate}[label=A\arabic*., font=\bfseries]
+    \item La suma es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m+n = n+m $.
+    \item La suma es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m+(n+ l) = (m+ n)+l $.
+    \item Elemento neutro para la suma. Existe un número real llamado elemento neutro para la suma o cero, denotado por $0$, el cual satisface la siguiente condición: $ m+0=m,\forall m \in \mathbb{R} $.
+    \item Inverso aditivo. Para cada número real $m$ existe un número real llamado inverso aditivo de $m$, denotado por $-m$ (menos $m$); la propiedad que caracteriza a este elemento es: $ m + (-m) = 0 $.
+    \item La multiplicación es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m \cdot n = n \cdot m $.
+    \item La multiplicación es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n \cdot l) = (m \cdot n) \cdot l $.
+    \item Elemento identidad para la multiplicación. Existe un número real distinto de cero, llamado elemento identidad para la multiplicación o uno, denotado por $1$, que satisface la siguiente condición: $ m \cdot 1 = m,\forall m \in \mathbb{R} $.
+    \item Inverso multiplicativo. Para cada número real $m$ distinto de cero existe un número real llamado inverso multiplicativo de $m$, denotado por $m^{-1}$, este elemento tiene la siguiente propiedad:$m \cdot m^{-1} = 1$.
+    \item Distribución de la multiplicación sobre la suma. Para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n+l)=m \cdot n+m \cdot l $.
+\end{enumerate}
+
+\subsection*{Lista de ejercicios 1 (LE1)}
+    \begin{enumerate}[label=\alph*),font=\bfseries]
+        \item Demuestre que el elemento neutro para la suma es único.
+        \item Demuestre que el elemento identidad para la multiplicación es único.
+        \item Sea $m$ un número real arbitrario pero fijo, demuestre que el inverso aditivo de $m$ es único.
+        \item Sea $m$ un número real distinto de cero, demuestre que el inverso multiplicativo de $m$ es único.
+        \item Demuestre que $-0 = 0$.
+        \item Sea $m$ un número real arbitrario pero fijo, demuestre que $m \cdot 0 = 0$.
+        \item Si $m$ y $n$ son números reales tales que $ m \cdot n = 0 $, demuestre que $m=0$ o $n=0$.
+        \item Sea $m$ un número real arbitrario pero fijo, demuestre que: $(-1) \cdot m =-m $.
+        \item Sean $m$ y $n$ números reales, demuestre que: $ (-m) \cdot n = -(m \cdot n) $.
+        \item Sea $m$ un número real arbitrario pero fijo, demuestre que: $-(-m)=m$.
+        \item Sean $m$ y $n$ números reales, demuestre que: $ (-m) \cdot (-n) = m \cdot n $.
+        \item Sea $m$ un número real arbitrario pero fijo, demuestre que: $(-1) \cdot (-m)=m$.
+        \item Sea $m$ un número real distinto de cero; demuestre que: $\left( m^{-1} \right )^{-1}=m$.
+        \item Sean $m$ y $n$ números reales distintos de cero, demuestre que: $(m \cdot n)^{-1}=m^{-1} \cdot n^{-1}$.
+    \end{enumerate}
+
+\subsubsection*{Demostración:}
+\begin{enumerate}[label=\alph*), font=\bfseries]
+    \item Supongamos que existen 0 y $\tilde{0}$ números reales tales que $m+0 = m$ y $m+\tilde{0} = m$. Notemos que: \begin{align*}
+        0 &=m+(-m) && \text{Por A4}\\
+        &=\left( m+\tilde{0} \right)+\left(-m\right) && \text{Por hipótesis}\\
+        &=\left( \tilde{0}+m \right)+\left(-m\right) && \text{Por A1}\\
+        &=\tilde{0} + \bigl( m + \left(-m \right)\bigr) && \text{Por A2}\\
+        &=\tilde{0} + 0 && \text{Por A4}\\
+        &=\tilde{0} && \text{Por A3}
+        \end{align*} \mbox{}\hfill $\square$
+
+    \item Supongamos que existen $1$ y $\tilde{1}$ números reales tales que$m\cdot 1=m$ y $m\cdot\tilde{1}=m$. Notemos que:
+        \begin{align*}
+        1 &= m \cdot m^{-1} && \text{Por A8}\\
+        &= \left( m \cdot \tilde{1} \right) \cdot m^{-1} && \text{Por hipótesis}\\
+        &= \left( \tilde{1} \cdot m \right) \cdot m^{-1} && \text{Por A5}\\
+        &= \tilde{1} \cdot \left( m \cdot m^{-1} \right) && \text{Por A6}\\
+        &= \tilde{1} \cdot 1 && \text{Por A8}\\
+        &= \tilde{1} && \text{Por A7}
+        \end{align*} \mbox{}\hfill $\square$
+
+    \item Supongamos que existen $-m$ y $-\tilde{m}$ números reales tales que $m + \left(-m\right) = 0$ y $m + \left(- \tilde{m}\right) = 0$. Notemos que:
+        \begin{align*}
+        -m &= -m+0 && \text{Por A3}\\
+        &= 0+\left(-m\right) && \text{Por A1}\\
+        &= \bigl(m+\left(-\tilde{m} \right)\bigr)+\left(-m\right) && \text{Por (2)}\\
+        &= \bigl(\left(-\tilde{m} \right)+m\bigr)+\left(-m\right) && \text{Por A1}\\
+        &= \left(-\tilde{m} \right)+\bigl(m+\left(-m\right)\bigr) && \text{Por A2}\\
+        &= \left(-\tilde{m} \right)+0 && \text{Por A8}\\
+        &= -\tilde{m} && \text{Por A3}
+        \end{align*} \mbox{}\hfill $\square$
+
+    \item Supongamos que existen $m^{-1}$ y $\tilde{m}^{-1}$ números reales, distintos de cero, tales que $m \cdot m^{-1} = 1$ y $m \cdot \tilde{m}^{-1} = 1$. Notemos que:
+        \begin{align*}
+        m^{-1} &= m^{-1} \cdot 1 && \text{Por A7} \\
+        &= m^{-1} \cdot \left(m \cdot \tilde{m}^{-1} \right) && \text{Por hipótesis} \\
+        &= \left( m^{-1} \cdot m \right) \cdot \tilde{m} ^{-1} && \text{Por A6} \\
+        &= \left(m \cdot m^{-1} \right) \cdot \tilde{m}^{-1} && \text{Por A5} \\
+        &= 1 \cdot \tilde{m}^{-1} && \text{Por hipótesis} \\
+        &= \tilde{m}^{-1} \cdot 1 && \text{Por A5} \\
+        &= \tilde{m}^{-1} && \text{Por A7}
+        \end{align*} \mbox{}\hfill $\square$
+    
+    \item Por A3 se verifica que $0 + 0 = 0$, y por A4 que $0 + (-0) = 0$. Además, por (c) de LE1, tenemos que el inverso aditivo de cada número real es único, entonces debe ser el caso que $-0 = 0$. \mbox{}\hfill  $\square$
+    
+    \item Notemos que:
+    \begin{align*}
+        m\cdot0&=m\cdot0+0 && \text{Por A3}\\
+        &=m\cdot0+\bigl(m+\left(-m\right)\bigr) && \text{Por A4}\\
+        &=m\cdot0+\bigl(m\cdot1+\left(-m\right)\bigr) && \text{Por A7}\\
+        &=\left(m\cdot0+m\cdot1\right)+\left(-m\right) && \text{Por A2}\\
+        &=\bigl(m\cdot\left(0+1\right)\bigr)+\left(-m\right) && \text{Por A9}\\
+        &=m\cdot1+\left(-m\right) && \text{Por A3}\\
+        &=m+\left(-m\right) && \text{Por A7}\\
+        &=0 && \text{Por A4}\\
+    \end{align*} \mbox{}\hfill $\square$
+    
+    \item Supongamos que $m$ es distinto de $0$. Notemos que:
+    \begin{align*}
+        n &= n \cdot 1	&& \text{Por A7} \\
+        &= n \cdot  \left(m \cdot m^{-1}  \right) 	&& \text{Por A8} \\
+        &= \left(n \cdot m \right)  \cdot m^{-1}	&& \text{Por A6} \\
+        &= \left(m \cdot n \right)  \cdot m^{-1}	&& \text{Por A5} \\
+        &= 0 \cdot m^{-1}	&& \text{Por hipótesis}\\
+        &= m^{-1} \cdot 0	&& \text{Por A5}\\
+        &= 0 && \text{Por (f) de LE1}
+    \end{align*} \mbox{}\hfill $\square$
+    
+    \item Notemos que:
+    \begin{align*}
+        -m&=-m+0 && \text{Por A3} \\
+        &=-m+m \cdot 0 && \text{Por (f) de LE1} \\
+        &=-m+m \cdot  \bigl( 1+ \left( -1 \right)  \bigr) && \text{Por A4} \\
+        &=-m+ \bigl( m \cdot 1+m \cdot  \left( -1 \right)  \bigr) && \text{Por A9} \\
+        &=-m+ \bigl( m+m \cdot  \left( -1 \right)  \bigr) && \text{Por A8} \\
+        &= \left( -m+m \right) +m \cdot  \left( -1 \right) && \text{Por A2} \\
+        &=m+ \left( -m \right) +m \cdot  \left( -1 \right) && \text{Por A1} \\
+        &=0+m \cdot  \left( -1 \right) && \text{Por A4} \\
+        &=m \cdot  \left( -1 \right) + 0 && \text{Por A1} \\
+        &=m \cdot  \left( -1 \right) && \text{Por A3} \\
+        &= \left( -1 \right)  \cdot m && \text{Por A5}
+    \end{align*} \mbox{}\hfill $\square$
+    
+    \item Notemos que:
+    \begin{align*}
+        (-m) \cdot n &= \bigl( \left(-1 \right) \cdot m \bigr) \cdot n && \text{Por (h) de LE1}\\
+        &= (-1) \cdot (m \cdot n) && \text{Por A6}\\
+        &= -(m \cdot n) && \text{Por (h) de LE1}\\
+    \end{align*} \mbox{}\hfill $\square$
+
+    \item Sea $m$ un número real arbitrario pero fijo. Por A4 se verifica que $m + (-m) = 0$, y por A1 tenemos que $(-m) + m = 0$, de esta igualdad se sigue que $m$ es inverso aditivo de $(-m)$. Por A4 se verifica que $(-m) + \bigl(-(-m)\bigr) = 0$, y por (c) de LE1, sabemos que el inverso aditivo de cada número real es único. Entonces, debe ser el caso que $-(-m) = m$.
+    \mbox{}\hfill $\square$
+
+    \item Notemos que:
+    \begin{align*}
+        (-m) \cdot (-n) &= (-m) \cdot \bigl( (-1) \cdot n \bigr) && \text{Por (h) de LE1}\\
+        &= \bigl( (-m) \cdot (-1) \bigr) \cdot n && \text{Por A6}\\
+        &= \bigl( (-1) \cdot (-m) \bigr) \cdot n && \text{Por A5}\\
+        &= -(-m) \cdot n && \text{Por (h) de LE1}\\
+        &= m \cdot n && \text{Por (j) de LE1}\\
+    \end{align*}
+    \mbox{}\hfill $\square$
+
+    \item Notemos que:
+    \begin{align*}
+        (-1) \cdot (-m) &= 1 \cdot m && \text{Por (k) de LE1}\\
+        &= m \cdot 1 && \text{Por A5}\\
+        &= m && \text{Por A7}\\
+    \end{align*}
+
+    \item Sea $m$ un número real distinto de cero. Por A8 sabemos que $m \cdot m^{-1}=1$, y por A5 tenemos que $m^{-1} \cdot m=1$, de esta igualdad se sigue que $m$ es inverso multiplicativo de $m^{-1}$. Por A8 se verifica que $ m^{-1} \cdot \left( m^{-1} \right)^{-1} =1$, y por (d) de LE1, sabemos que el inverso multiplicativo de cada número real es único. Entonces, debe ser el caso que $\left( m^{-1} \right )^{-1}=m$.
+    \mbox{}\hfill $\square$
+
+    \item Sean $m$ y $n$ números reales distintos de cero. Notemos que:
+    \begin{align*}
+        \left(m \cdot n \right) \cdot  \left(m^{-1} \cdot n^{-1}  \right)	&=	 \left( \left(m \cdot n \right) \cdot m^{-1}  \right) \cdot n^{-1}  	&& \text{Por A6}\\
+    &=	 \left( \left(n \cdot m \right) \cdot m^{-1}  \right) \cdot n^{-1}  	&& \text{Por A5}\\
+    &=	 \Bigl(n \cdot  \left(m \cdot m^{-1}\right) \Bigr) \cdot n^{-1}	&& \text{Por A6}\\
+    &=	 \left(n \cdot 1 \right) \cdot n^{-1}	&& \text{Por A8}\\
+    &=	n \cdot n^{-1}	&& \text{Por A7}\\
+    &=	1	&& \text{Por A8}
+    \end{align*} \\
+    De la igualdad anterior, sigue que $\left(m^{-1} \cdot n^{-1} \right)$ es inverso multiplicativo de $\left( m \cdot n \right)$. Además, por (d) de LE1, sabemos que el inverso multiplicativo de cada número real es único. Entonces, debe ser el caso que $\left(m^{-1} \cdot n^{-1} \right) = \left( m \cdot n \right)^{-1}$ \mbox{}\hfill $\square$
+\end{enumerate}
+
+\textbf{Notación:}
+
+\begin{itemize}
+    \item Si $m$ y $n$ son números reales, representaremos con el símbolo $m-n$ a la suma: $m+ (-n)$.
+    \item Si $m$ y $n$ son números reales y $n$ es distinto de cero, representaremos con el símbolo $ \frac{m}{n}$ al número $m \cdot n^{-1} $.
+    \item Si $m_1$, $m_2$ y $m_3$ son números reales, representaremos con el símbolo $m_1+m_2+ m_3$ a cualquiera de las sumas $m_1+ \left(m_2+ m_3 \right)$ o $\left(m_1+ m_2 \right)+ m_3$.
+\end{itemize}
+
+%LISTA DE EJERCICIOS 2
+
+\subsection*{Lista de ejercicios 2 (LE2)}
+
+Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+    \item $a \cdot \frac{c}{b} = \frac{ac}{b}$, si $b \neq 0$
+    \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$
+    \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} $, si $b, d \neq 0$
+    \item $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$, si $b, d \neq 0$
+    \item $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}$, si $b, c, d \neq 0$
+\end{enumerate}
+
+\subsubsection*{Demostración}
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+
+%A
+
+\item Notemos que:
+\begin{align*}
+    a \cdot \frac{c}{b} &= a \cdot \left( c \cdot b^{-1} \right) && \text{Por notación}\\
+    &= \left( a \cdot c \right) \cdot b^{-1} && \text{Por A6}\\
+    &= \frac{ac}{b} && \text{Por notación}\\
+\end{align*}
+\mbox{}\hfill $\square$
+
+%B
+
+\item Notemos que:
+\begin{align*}
+    \frac{ac}{bc} &= a \cdot c \cdot \left( bc \right)^{-1} && \text{Por notación}\\
+    &= a \cdot c \cdot b^{-1} \cdot c^{-1} && \text{Por (m) de LE1}\\
+    &= a \cdot b^{-1} \cdot c \cdot c^{-1} && \text{Por A5}\\
+    &= a \cdot b^{-1} \cdot 1 && \text{Por A8}\\
+    &= a \cdot b^{-1} && \text{Por A7}\\
+    &= \frac{a}{b} && \text{Por notación}
+\end{align*}
+\mbox{}\hfill $\square$
+
+%C
+
+\item Notemos que:
+
+\begin{align*}
+\frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Por notación}\\
+&=	\left( a \cdot 1 \right)   \cdot b^{-1} \pm \left( c \cdot 1 \right) \cdot d^{-1} && \text{Por A7}\\
+&=	\Bigl( a \cdot  \left( d \cdot d^{-1} \right) \Bigr) \cdot b^{-1} \pm \Bigl( c \cdot  \left( b \cdot b^{-1}  \right)  \Bigr)  \cdot d^{-1} && \text{Por A8}\\
+&=	\Bigl(  \left( a \cdot d \right) \cdot d^{-1} \Bigr) \cdot b^{-1} \pm \Bigl(  \left( c \cdot b \right) \cdot b^{-1} \Bigr) \cdot d^{-1} && \text{Por A6}\\
+&=	\left( a \cdot d \right)  \cdot  \left( d^{-1} \cdot b^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Por A6}\\
+&=	\left( a \cdot d \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Por A5}\\
+&=	\left( b^{-1} \cdot d^{-1}  \right) \cdot \left( a \cdot d \pm c \cdot b \right) && \text{Por A9}\\
+&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b^{-1} \cdot d^{-1} \right) && \text{Por A5}\\
+&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b \cdot d \right)^{-1} && \text{Por (m) de LE1}\\
+&=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Por A5}\\
+&=	\frac{ad \pm bc}{bd} && \text{Por notación}\\
+\end{align*}
+\mbox{}\hfill $\square$
+
+%D
+
+\item Notemos que
+
+\begin{align*}
+    \frac{a}{b} \cdot \frac{c}{d} &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) && \text{Por notación}\\
+        &= a \cdot \Bigl( b^{-1} \cdot \left( c \cdot d^{-1} \right) \Bigr) && \text{Por A6}\\
+            &= a \cdot \Bigl( c \cdot \left( b^{-1} \cdot d^{-1} \right) \Bigr) && \text{Por A5}\\
+	&= \left( a \cdot c \right) \cdot \left( b^{-1} \cdot d^{-1} \right) && \text{Por A6}\\
+	&= \left( a \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Por (m) de LE1}\\
+	&= \frac{ac}{bd} && \text{Por notación}\\
+\end{align*}
+\mbox{}\hfill $\square$
+
+\pagebreak
+%E
+
+\item Notemos que:
+
+\begin{align*}
+    \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Por notación}\\
+    &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Por notación}\\
+    &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot \left( d^{-1} \right) ^{-1} \right) && \text{Por (m) de LE1}\\
+    &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot d \right) && \text{Por (l) de LE1}\\
+    &= \left( a \cdot b^{-1} \right) \cdot \left( d \cdot c^{-1} \right) && \text{Por A5}\\
+    &= \frac{a}{b} \cdot \frac{d}{c} && \text{Por notación}\\
+    &= \frac{ad}{bc} && \text{Por (d) de LE2}\\
+\end{align*}
+\mbox{}\hfill $\square$
+
+\end{enumerate}
+
+\subsection*{Axiomas de orden del conjunto de los números reales}
+
+Existe un subconjunto del conjunto de los números reales llamado conjunto de los números reales positivos, denotado con el símbolo $\mathbb{R}^+$. A los elementos de este conjunto los llamaremos números reales positivos.\\
+El conjunto $\mathbb{R}^+$ satisface los siguientes axiomas:
+
+\begin{enumerate}[label=O\arabic*), font=\bfseries]
+    \item Si $m, n \in \mathbb{R}^+$, entonces $m + n \in \mathbb{R}^+$.
+    \item Si $m, n \in \mathbb{R}^+$, entonces $m \cdot n \in \mathbb{R}^+$.
+    \item Para cada número real $m$ se cumple una y sólo una de las siguientes condiciones: \label{tricotomía}
+	\begin{enumerate}[label=\roman*), font=\bfseries]
+    \item $m \in \mathbb{R}^+$.
+    \item $m = 0$.
+    \item $-m \in \mathbb{R}^+$.\
+    \end{enumerate}
+\end{enumerate}
+
+\textbf{Definición:} Sean $a$ y $b$ números reales, decimos que:
+    \begin{enumerate}
+        \item $a$ es menor que $b$ o que $b$ es mayor que $a$ y escribimos $a<b$ o $b>a$, si $b-a \in \mathbb{R}^+$.
+    \item $a$ es menor que o igual que $b$ o que $b$ es mayor o igual que $a$, y escribimos $a \leq b$ o $b \geq a$, si $b - a \in \mathbb{R}^+$ o $a = b$.
+    \end{enumerate}
+
+\textbf{Notación:} Sean $a$, $b$ y $c$ números reales, utilizaremos la notación $a<b<c$ para indicar que $a<b$ y $b<c$.
+
+\pagebreak
+
+\subsection*{Lista de Ejercicios 3 (LE3)}
+
+%LISTA DE EJERCICIOS 3
+
+Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+    \item $1 \in \R^+$.
+    \item $a \in \mathbb{R}^+$ si y solo si $a>0$. %A
+    \item $-1<0$. %B
+    \item Si $a<b$ y $c \leq d$, entonces $a+c<b+d$. %C
+    \item Si $a<b$ y $0<c$, entonces $ac<bc$. %D
+    \item Si $a<b$ y $c<0$, entonces $ac>bc$. %E
+    \item $a \in \mathbb{R}^+$ si y solo si $-a<0$. %F
+    \item $a<b$ si y solo si $-a>-b$. %G
+    \item Si $a>0$, entonces $\frac{1}{a}>0$. %H
+    \item Si $a<b$ y $b<c$, entonces $a<c$. %I
+    \item Si $0 \leq a<b$ y $0 \leq c<d$, entonces $ac<bd$. %J
+    \item Si $a<b$ y $ab>0$, entonces $\frac{1}{b}<\frac{1}{a}$. %K
+    \item Si $a<1$ y $0<b$, entonces $ab<b$.
+    \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$.
+    \item $a^2\geq 0$.
+    \item Si $0 \leq a < \varepsilon$ para toda $\varepsilon > 0$, entonces $a=0$.
+    \item Si $a \leq b + \varepsilon$ para toda $\varepsilon > 0$, entonces $a \leq b$.
+\end{enumerate}
+
+\subsubsection*{Demostración}
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+
+    \item Supongamos que $1 \notin \mathbb{R}^+$. Por (A7), (ii) de (O3) no se cumple. Si $-1 \in \mathbb{R}^+$, por (O2) se verifica que $-1 \cdot -1 \in \mathbb{R}^+$, lo cual por (h) de LE1 implica que $-(-1) \in \mathbb{R}^+$, pero esto contradice a (iii) de (O3). Por tanto, $1$ es un número real positivo.
+
+    %A
+
+    \item \begin{enumerate}[label=\roman*),font=\bfseries]
+        \item Supongamos que $a \in \mathbb{R}^+$. Por A3 sabemos que $a=a+0$, y por (e) de LE1 sigue que $a=a-0$, entonces $a-0 \in \mathbb{R}^+$, lo que por definición implica que $a>0$.
+        \item Supongamos que $a>0$. Por definición, $a-0 \in \mathbb{R}^+$, y por (e) de LE1 sigue que $a-0=a+0$, lo que por A3 implica que $a+0=a$. Así $a \in \mathbb{R}^+$.
+        \end{enumerate}
+    \mbox{}\hfill $\square$
+
+    %B
+
+    \item Supongamos que $-1 \geq 0$
+    \begin{enumerate}[label=\roman*),font=\bfseries]
+        \item Si $-1=0$. Notemos que:
+        \begin{align*}
+        0 &= 1 - 1 && \text{Por A4}\\
+        &= 1 + 0 && \text{Por hipótesis}\\
+        &= 1 && \text{Por A3}\\
+        \end{align*}
+        Pero la igualdad anterior contradice a A7.
+        \item Si $-1 > 0$, por (b) de LE3 tenemos que $-1 \in \mathbb{R}^+$, pero esto contradice a O3, ya que por (a) de LE3 sabemos que $1 \in \mathbb{R}^+$.
+    \end{enumerate}
+    Por tanto $-1<0$
+    \mbox{}\hfill $\square$
+
+    %C
+
+    \item Por definición $b-a \in \mathbb{R}^+$.
+        \begin{enumerate}[label=\roman*), font=\bfseries]
+        \item Si $c<d$, entonces $d-c \in \mathbb{R}^+$. Por (O1) se verifica que $(b-a)+(d-c) \in \mathbb{R}^+$. Notemos que:
+        \begin{align*}
+        b-a+d-c &= b+d-a-c && \text{Por A1}\\
+        &= b+d+(-a)+(-c) && \text{Por notación}\\
+        &= b+d+(-1)a+(-1)c && \text{Por (h) de LE1}\\
+        &= b+d+ (-1) (a + c) && \text{Por A9}\\
+        &= b+d + b-(a+c) \big) && \text{Por (h) de LE1}\\
+        &= b+d - (a+c) && \text{Por notación}\\
+        \end{align*}
+        De este modo, $b+d-(a+c)\in \mathbb{R}^+$, es decir, $a+c<b+d$.
+        \item Si $c=d$. Notemos que
+        \begin{align*}
+        b - a &= b -a + 0 && \text{Por A3}\\
+        &= b-a+c-c && \text{Por A4}\\
+        &= b+c-a-c && \text{Por A1}\\
+        &= b+c+(-a)+(-c) && \text{Por notación}\\
+        &= b+c+(-1)a+(-1)c && \text{Por (h) de LE1}\\
+        &= b+c+(-1)(a+c) && \text{Por A9}\\
+        &= b+c-(a+c) && \text{Por(h) de LE1}\\
+        &= b+d-(a+c) && \text{Por hipótesis}\\
+        \end{align*}
+        De este modo, $b+d-(a+c)\in \mathbb{R}^+$, es decir, $a+c<b+d$.
+        \end{enumerate}
+        En cualquier caso, $a+c<b+d$. \mbox{}\hfill $\square$
+
+    %D
+
+    \item Por definición $b-a \in \mathbb{R}^+$, y por (b) de LE3 $c \in \mathbb{R}^+$. Luego, por O2 se verifica que $c(b-a) \in \mathbb{R}^+$. Por A9 sigue que $c(b-a)=cb-ca$ y por A5 tenemos que $cb-ca=bc-ac$. De este modo, $bc-ac \in \mathbb{R}^+$, es decir, $ac<bc$.
+    \mbox{}\hfill $\square$
+
+    %E
+
+    \item Por definición $b-a \in \mathbb{R}^+$ y $0 - c \in \mathbb{R}^+$, por A3 sigue que $ -c \in \mathbb{R}^+$. Luego, por O2 $-c(b-a) \in \mathbb{R}^+$. Notemos que:
+    \begin{align*}
+        -c(b-a) &= -c \Bigl( b + (-a) \Bigr) && \text{Por notación}\\
+        &= (-c) \cdot b + (-c) \cdot (-a) && \text{Por A9}\\
+        &= (-c) \cdot b + c \cdot a && \text{Por (k) de LE1}\\
+        &= -(c \cdot b) + c \cdot a && \text{Por (i) de LE1}\\
+        &= ca -(cb) && \text{Por A1}\\
+        &= ac - (bc) && \text{Por A5}\\
+    \end{align*}
+    Entonces $ac - bc \in \mathbb{R}^+$, es decir, $ac>bc$. \mbox{}\hfill $\square$
+
+    %F
+
+    \item
+    \begin{enumerate}[label=\roman*),font=\bfseries]
+    \item Supongamos que $a \in \mathbb{R}^+$. Notemos que:
+    \begin{align*}
+        a &> 0 && \text{Por (b) de LE3}\\
+        a \cdot (-1) &< 0 \cdot (-1) && \text{Por (c) y (f) de LE3}\\
+        -a &< 0 && \text{Por (h) y (f) de LE1}
+    \end{align*}
+    \item Supongamos que $-a<0$. Notemos que:
+    \begin{align*}
+        -a \cdot (-1) &> 0 \cdot (-1) && \text{Por (b) y (f) de LE3}\\
+        a &> 0 && \text{Por (l) y (f) de LE1}\\
+    \end{align*}
+    Entonces, $a \in \mathbb{R}^+$, por (b) de LE3.
+    \end{enumerate}
+    \mbox{}\hfill $\square$
+
+    %G
+
+    \item Notemos que:
+    \begin{enumerate}[label=\roman*),font=\bfseries]
+        \item Si $a<b$, por (b) y (f) de LE3 tenemos que $a \cdot (-1) > b \cdot (-1)$, y por (h) de LE1 obtenemos que $-a > -b$.
+        \item Si $-a > -b$, por por (b) y (f) de LE3 tenemos que $-a \cdot (-1) < -b \cdot (-1)$, y por (k) de LE1 obtenemos que $a<b$.
+    \end{enumerate}
+    \mbox{}\hfill $\square$
+
+    %H
+
+    \item Sea $a>0$. Supongamos que $\frac{1}{a} \leq 0$. Notemos que:
+    \begin{align*}
+        \frac{1}{a} \cdot a &\leq 0 \cdot a && \text{Por (e) de LE3}\\
+        1 &\leq 0 && \text{Por A8 y (f) de LE1}\\
+    \end{align*}
+    Pero por (a) de LE3 y (b) de LE3 tenemos que $1>0$. Por tanto, $\frac{1}{a} > 0$.
+    \mbox{}\hfill $\square$
+
+    %I
+
+    \item Por definición $b-a \in \mathbb{R}^+$ y $c-b \in \mathbb{R}^+$. Por O1 $(b-a) + (c-b) \in \mathbb{R}^+$. Notemos que:
+    \begin{align*}
+        (b-a) + (c-b) &= b - a + c -b && \text{Por notación}\\
+        &= b-a -b+c && \text{Por A1}\\
+        &= b-b -a+c && \text{Por A1}\\
+        &= 0 - a +c && \text{Por A4}\\
+        &= -a +c && \text{Por A3}\\
+        &= c-a && \text{Por A1}\\
+    \end{align*}
+    Entonces $c-a \in \mathbb{R}^+$, es decir, $a<c$.
+    \mbox{}\hfill $\square$
+
+    %J
+
+    \item 
+    \begin{enumerate}[label=\roman*),font=\bfseries]
+        \item Si $a=0$ o $c=0$, por (g) de LE1 se verifica que $ac=0$. Luego, por (j) de LE3, se verifica que $0<b$ y $0<d$. Así, $ac<bd$.
+        \item Si $a>0$ y $c>0$. Por hipótesis, $a<b$, y por (e) de LE3, sigue que $ac<bc$. También, tenemos que $c<d$, y por (e) de LE3, sigue que $bc<db$. Finalmente, por (j) de LE3, se verifica que $ac<bd$.
+    \end{enumerate}
+    \mbox{}\hfill $\square$
+
+    %K
+
+    \item Notemos que:
+    \begin{align*}
+    a &< b && \text{Por hipótesis} \\
+    a-a &< b-a && \text{Por (d) de LE3} \\
+    0 &< b-a && \text{Por A4} \\
+    0 \cdot \frac{1}{ab} &< (b-a) \cdot \frac{1}{ab} && \text{Por (h) y (e) de LE3}\\
+    0 &< \frac{b-a}{ab} && \text{Por (f) de LE1 y (a) de LE2}\\
+    0 &< \frac{1}{a} - \frac{1}{b} && \text{Por (c) de LE2}\\
+    \frac{1}{b} &< \frac{1}{a} && \text{Por (d) de LE3}\\
+    \end{align*}
+    \mbox{}\hfill $\square$
+
+    %L
+
+    \item Dado que $0<b$, por (b) de LE3 se cumple que $b \in \mathbb{R}^+$, y por definición $1-a \in \mathbb{R}^+$. Por O2 se verifica que $b(1-a) \in \mathbb{R}^+$, es decir, $b-ab \in \mathbb{R}^+$, lo cual implica que $ab<b$. \mbox{}\hfill $\square$
+
+    %M
+
+    \item Por (a) de LE3 sabemos que $1 \in \mathbb{R}^+$, y por O1 se cumple que $1+1 \in \mathbb{R}^+$, es decir $2 \in \mathbb{R}^+$. Por (b) de LE3 se verifica que $0<2$ y por (i) de LE3 tenemos que $0<\frac{1}{2}$. Notemos que: \begin{align*}
+        a &< b && \text{Por hipótesis} \\
+        a + a &< b+a && \text{Por (d) de LE3} \\
+        2a &< b+a && \text{Por definición} \\
+        2a \cdot \frac{1}{2} &< (b+a) \cdot \frac{1}{2} && \text{Por (e) de LE3} \\
+        \frac{2a}{2} &< \frac{b+a}{2} && \text{Por (a) de LE2} \\
+        a &< \frac{b+a}{2} && \text{Por A8}
+    \end{align*} \\ Similarmente,
+    \begin{align*}
+        a &< b && \text{Por hipótesis} \\
+        a + b &< b+b && \text{Por (d) de LE3} \\
+        a +b &< 2b && \text{Por definición} \\
+        (a+b) \cdot \frac{1}{2} &< 2b \cdot \frac{1}{2} && \text{Por (e) de LE3} \\
+        \frac{a+b}{2} &< \frac{2b}{2} && \text{Por (a) de LE2} \\
+        \frac{a+b}{2} &< b && \text{Por A8}
+    \end{align*}\\ Finalmente, por notación, $a < \frac{a+b}{2} < b$. \mbox{}\hfill $\square$
+
+    \item Si $0 \leq a$, $ 0\cdot a \leq a \cdot a$, osea, $0 \leq a^2$. Si $a<0$, $0\cdot a < a \cdot a$, osea, $0 \leq a^2$. En cualquier caso $a\geq0$.
+
+    %P?
+    \item Supongamos que $0<a$, sigue que $0<\frac{a}{2}<a$. Elegimos $\varepsilon=\frac{a}{2}$, entonces $\varepsilon<a$, pero esto contradice nuestra hipótesis de que $a< \varepsilon$ para toda $\varepsilon>0$. Por tanto, $a=0$.\mbox{}\hfill $\square$
+
+    %O
+    \item Sean $a$ y $b$ números reales tales que $a \leq b + \varepsilon$, $\forall \varepsilon > 0$. Supongamos que $a > b$. Luego, $a-b>0$. Notemos que $(a-b) \cdot \frac{1}{2} > 0 \cdot \frac{1}{2}$, es decir $\frac{(a-b)}{2} > 0$. Sea $\varepsilon = \frac{(a-b)}{2}$, sigue que $a=2\varepsilon+b$. Además, $2\varepsilon > \varepsilon$, de donde obtenemos $2 \varepsilon + b > \varepsilon + b$. De este modo, $a > b+\varepsilon$, pero esto contradice nuestra hipótesis. Por tanto, $a \leq b$.\mbox{}\hfill $\square$
+
+\end{enumerate}
+
+\textbf{Definición:} Sea $a$ un número real, definimos el valor absoluto de $a$, denotado por $|a|$ como sigue: 
+    \[
+    |a| = 
+    \left \{
+        \begin{aligned}
+        a &,\ \text{si} \ a \geq 0\\
+        -a &,\ \text{si} \ a < 0 \\
+        \end{aligned}
+    \right .
+    \]
+
+\textbf{Observación.} $|a|\geq 0, \ \forall a\in \R$.
+
+\subsection*{Lista de Ejercicios 4 (LE4)}
+
+Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+    \item $|a| \geq \pm a$. %A
+    \item $|ab|=|a||b|$. %B
+    \item $|a|=|-a|$. %C
+    \item $|a+b|\leq |a|+|b|$. %D
+    \item Si $b\neq 0$, entonces $\left| \frac{a}{b} \right| = \frac{|a|}{|b|}$. %E
+    \item $|a|<b$ si y solo si $-c<b<c$. %F
+    \item $ \big| |a|-|b| \big| \leq |a-b|$ %G
+    \item $|a|^2=a^2$.
+\end{enumerate}
+
+\subsubsection*{Demostración}
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+
+    %A
+
+    \item
+        \begin{enumerate}[label=\roman*),font=\bfseries]
+            \item Si $a \geq 0$, entonces $|a|=a$, así, $|a| \geq a$. Luego, $-a \leq 0$, de donde sigue que $a \geq -a$. Finalmente, $|a| \geq -a$.
+            \item Si $a<0$, entonces $|a|=-a$, así, $|a| \geq -a$. Luego, $-a>0$, de donde sigue que $-a>a$. Finalmente, $|a| \geq a$.
+        \end{enumerate}
+        En cualquier caso, $|a| \geq \pm a$.
+
+    %B
+
+    \item 
+        \begin{enumerate}[label=\roman*),font=\bfseries]
+            \item Si $a>0$ y $b>0$, entonces $|a|=a$ y $|b|=b$. Luego, $ab>0$ por lo que $|ab|=ab$. De este modo, $|ab| =|a||b|$.
+            \item Si $a>0$ y $b<0$, entonces $|a|=a$ y $|b|=-b$. Luego, $ab<0$ por lo que $|ab|=-ab$. De este modo, $|  ab|=|a||b|$.
+            \item Si $a<0$ y $b<0$, entonces $|a|=-a$ y $|b|=-b$. Luego, $ab>0$ por lo que $|ab|=ab$. De este modo, $|  ab|=|a||b|$.
+        \end{enumerate}
+
+    %C
+
+    \item 
+        \begin{enumerate}[label=\roman*),font=\bfseries]
+            \item Si $a \geq 0$, entonces $|a|=a$. Luego, $-a \leq 0$. Si $-a<0$, $|-a|=a$ y si $-a=0$, $|-a|=a$. De este modo, $|a|=|-a|$.
+            \item Si $a<0$, entonces $|a|=-a$. Luego, $-a>0$ por lo que $|-a|=-a$. De este modo, $|a|=|-a|$.
+        \end{enumerate}
+
+    %D
+    
+    \item 
+        \begin{enumerate}[label=\roman*),font=\bfseries]
+            \item Si $0 \leq a+b$, entonces $|a+b|=a+b$. Además, $a \leq |a|$ y $b \leq |b|$. Luego, $a+b \leq |a|+|b|$. Así, $|a+b| \leq |a|+|b|$.
+            \item Si $0 > a+b$, entonces $|a+b|=-a-b$. Además, $-a \leq |a|$ y $-b \leq |b|$. Luego, $-a-b \leq |a|+|b|$. Así, $|a+b| \leq |a|+|b|$.
+        \end{enumerate}
+    
+    %E
+
+    \item 
+        \begin{enumerate}[label=\roman*),font=\bfseries]
+            \item Si $a \geq 0$ y $b>0$, entonces $|a|=a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} \geq 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. De este modo, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+            \item Si $a \geq 0$ y $b<0$, entonces $|a|=a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} \leq 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. De este modo, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+            \item Si $a<0$ y $b>0$, entonces $|a|=-a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} < 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. De este modo, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+            \item Si $a<0$ y $b<0$, entonces $|a|=-a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} > 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. De este modo, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+        \end{enumerate}
+
+    %F
+        
+    \item
+        \begin{enumerate}[label=\roman*),font=\bfseries]
+            \item Supongamos que $|b|<c$. Por (a) de LE4, $ \pm b \leq |b|$, de donde sigue que $-b<c$ y $b<c$. Luego, $-c<b$. De este modo, $-c<b<c$.
+            \item Supongamos que $-c<b<c$. Luego,
+                \begin{enumerate}[label=\arabic*),font=\bfseries]
+                    \item Si $b \geq 0$, entonces $|b|=b$. Por lo que $|b|<c$.
+                    \item Si $b < 0$, entonces $|b|=-b$. Por hipótesis, $-c<b$, por lo que $-b<c$. Así $|b|<c$.
+                \end{enumerate}
+        \end{enumerate}
+    
+    %G
+
+    
+    \item Por la desigualdad del triángulo,
+        \begin{align*}
+            |(a-b)+b| &\leq |a-b|+|b| \\
+            |a| &\leq |a-b|+|b| \\
+            |a|-|b| &\leq |a-b| && \text{(1)}
+        \end{align*} \\
+        Similarmente, 
+        \begin{align*}
+            |(b-a)+a| &\leq |b-a|+|a| \\
+            |b| &\leq |b-a|+|a| \\
+            |b|-|a| &\leq |b-a| \\
+            -|b-a| &\leq |a|-|b| && \text{(2)}
+        \end{align*} \\
+        Luego, aplicando (f) de LE4 en (1) y (2), $\big| |a| - |b| \big| \leq |a-b|$.
+
+    %H
+
+    \item Por (o) de LE3, $a^2\geq 0$, por lo que \begin{align*}
+        a^2 &= |a^2|\\
+        &= |a\cdot a|\\
+        &= |a| \cdot |a| && \text{Por (b) de LE4}\\
+        &= |a|^2
+    \end{align*} \mbox{}\hfill $\square$
+\end{enumerate} 
+
+%\pagebreak
+%VECINDAD
+
+\textbf{Definición.} Sea $a \in \R$ y $\varepsilon>0$. El vecindario-$\varepsilon$ de $a$ es el conjunto $V_\varepsilon(a):=\{ x\in \R: |x-a|<\varepsilon\}$.
+
+\subsection*{Lista de Ejercicios 5 (LE5)}
+
+Sean $a,b \in \R$. Demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+    \item Si $x\in V_\varepsilon(a)$ para toda $\varepsilon>0$, entonces $x=a$.
+    \item Sea $U:=\{x: 0<x<1\}$. Si $a\in U$, sea $\varepsilon$ el menor de los números $a$ y $1-a$. Demuestre que $V_\varepsilon(a) \subseteq U$.
+    \item Demuestre que si $a\neq b$, entonces existen $U_\varepsilon(a)$ y $V_\varepsilon(b)$ tales que $U\cap V =\emptyset$.
+\end{enumerate}
+
+\textbf{Demostración.}
+
+\begin{enumerate}[label=\alph*)]
+    \item Si $x\in V_\varepsilon(a)$ tenemos que $|x-a|<\varepsilon$. Además, $0\leq |x-a|$, por definición. Así, $0\leq |x-a|<\varepsilon$. Como esta desigualdad se cumple para toda $\varepsilon>0$, por (p) de LE3, sigue que $|x-a|=0$. Si $x-a\geq 0$, $|x-a|=x-a$ y $x-a=0$. Si $x-a<0$, $|x-a|=-x+a$ y $-x+a=0$. En cualquier caso, $x=a$.
+    
+    \item \begin{enumerate}[label=\roman*)]
+        \item Si $a>1-a$, tenememos $\varepsilon=1-a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<1-a$. De (f) de LE4 sigue que $a-1<y-a<1-a$ (*). Tomando el lado derecho de (*) obtenemos $y<1$. Luego, de la hipótesis sigue que $2a>1$, osea $2a-1>0$. Del lado izquierdo de la desigualdad (*), tenemos $2-1<y$, por lo que $0<y$.
+        \item Si $1-a>a$, tenemos $\varepsilon=a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<a$. De (f) de LE4 sigue que $-a<y-a<a$ (**). Tomando el lado derecho de (**) tenemos $y<2a$. Luego, de la hipótesis sigue que $1>2a$, por esto $y<1$. Finalmente, tomando el lado izquierdo de (**) obtenemos $0<y$.\end{enumerate}
+        En cualquier caso, $0<y<1$, lo que implica que $V_\varepsilon(a) \subseteq U$.
+
+    \item Supongamos que $U\cap V \neq \emptyset$. 
+    \end{enumerate}
+
+\textbf{Definición:} Sea $A$ un subconjunto del conjunto de los números reales, decimos que $A$ es un conjunto inductivo si se cumplen las siguientes condiciones:
+    \begin{enumerate}
+        \item $1 \in A$.
+        \item Si $n \in A$ entonces se verifica que $n+1 \in A$.
+    \end{enumerate}
+
+\subsection*{Lista de Ejercicios 6 (LE6)}
+
+\begin{enumerate}[label=\arabic*)]
+    \item ¿El conjunto de los números reales es un conjunto inductivo?
+    \item ¿$\R^+$ es un conjunto inductivo?
+    \item Sea $A\coloneqq \{B \subseteq B: \text{B es un conjunto inductivo}\}$. Demuestre que $A\neq \emptyset$ y que $C=\bigcap B$ es un conjunto inductivo.
+\end{enumerate}
+
+\textbf{Respuesta}
+
+\begin{enumerate}[label=\arabic*)]
+    \item Sí, ya que $1 \in \R$, y si $n$ es un número real, $n+1 \in \R$ por la cerradura de la suma en $\R$.
+    \item Sí, pues $1\in \R^+$ y y si $n$ es un número real positivo, $n+1 \in \R^+$ por el aximoa de orden 1.
+    \item Claramente $A \neq \emptyset$, pues $\R, \R^+ \subseteq A$. \\[5pt]Luego, por hipótesis, $\forall B \in A$ tenemos que $B\subseteq \R $ por lo que $C\subseteq \R$. Además, $\forall B\in A$, se verifica que $1\in B$. Consecuentemente, $1\in C$. Por otra parte, si $n\in B$ para todo $B\in A$, tendremos que $n+1\in B$, por lo que $n+1 \in C$. Por tanto, $C$ es un conjunto inductivo.
+\end{enumerate}
+
+\textbf{Definición.} Al conjunto $C$ de (3) de LE6 lo llamaremos conjunto de los números naturales y lo denotaremos con el símbolo $\N$.
+
+\subsection*{Lista de ejercicios 7 (LE7)}
+
+Demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+    \item La suma de números naturales es un número natural.
+    \item La multiplicación de números naturales es un número natural.
+    \item Demuestre que $n\geq 1, \forall n\in \N$.
+    \item Demuestre que $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$.
+    \item Sean $m$ y $n$ números naturales tales que $m>n$, demuestre que $m-n\in\N$.
+    \item Sea $x\in \R^+$. Si $n\in \N$ y $x+n\in \N$, desmuestre que $x\in \N$.
+    \item Sea $x\in \R$, si $n\in \N$ y $n-1<x<n$, demuestre que $x$ no es un número natural.
+\end{enumerate}
+
+\textbf{Demostración.}
+
+\begin{enumerate}[label=\alph*)]
+    \item Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{ n\in \N : m+n \in \N \}$. Por definición, $1\in \N$ y $m+1\in \N$, entonces $1\in A$, es decir, $A\neq \emptyset$. \\[5pt] Por otra parte, si $n\in A$ debe ser el caso que $n\in \N$ y $m+n\in \N$. Como $\N$ es un conjunto inductivo, $n+1 \in \N$ y $(m+n)+1 \in \N$, luego, por la asociatividad de la suma, $m+(n+1)\in \N$. Por la condición de $A$, se cumple que $n+1\in A$, por lo que $A$ es un conjunto inductivo. De esto se concluye que $\N\subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la suma de números naturales es un número natural. \mbox{}\hfill $\square$
+    
+    \item Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{n\in \N: m\cdot n \in \N\}$. Por definición, $1 \in \N$. Adenás, $m\cdot 1 \in \N$, entonces $1 \in A$, es decir $A \neq \emptyset$.\\[5pt] 
+    Luego, si $n \in A$ debe ser el caso que $n\in \N$ y $m \cdot n \in \N$. Por (a) de LE7 se verifica que $(m \cdot n) + m \in \N$. Notemos que $(m \cdot n) + m=m \cdot (n+1)$, osea, $m \cdot (n+1) \in \N$. Como $\N$ es un conjunto inductivo, tenemos que $n+1\in \N$. De este modo, $n+1\in A$. Lo que implica que $A$ es un conjunto inductivo. De esto se concluye que $\N \subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la multiplicación de números naturales es un número natural. \mbox{}\hfill $\square$
+
+    \item Sea $A\coloneqq \{n\in \N: n\geq 1\}$. Como $1\in \N$ y $1\geq 1$, tenemos que $1\in A$.\\[5pt]
+    Si $n\in A$ debe ser el caso que $n\in \N$ y $1\leq n$. Además, por (a) de LE7, $n+1\in \N$. Luego, notemos que $0 \leq 1$ de donde sigue que $n \leq n+1$. Por transitividad, $1\leq n+1$, por lo que $n+1\in A$, lo que implica que $A$ es un conjunto inductivo, es decir, $\N\subseteq A$ y como $A\subseteq \N$, $A=N$. En otras palabras, $n\geq 1, \forall n\in\N$. \mbox{}\hfill $\square$
+
+    \item Sea $A\coloneqq \set{n\in \N | n>1, n-1\in \N}$. Si $n\in A$ debe ser porque $n>1$ y $n-1\in \N$. Como $n\in \N$ y $\N$ es un conjunto inductivo, se verifica $n+1\in\N$. Notemos que \begin{align*}
+        (n+1)-1 &= n+(1-1) \\
+        &= n+ 0\\
+        &= n
+    \end{align*}\\
+    Entonces, $(n+1)-1\in \N$. También, $n>1$ implica que $n>0$ y $n+1>1$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. Por tanto $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$. \mbox{}\hfill $\square$
+
+    \item Sea $A \coloneqq \set{n\in \N| n<m, m-n\in\N \ \text{con} \ m\in\N}$. Por definición, $1\in \N$ y $1+1\in \N$. Por (a) y (b) de LE3, $1>0$, de donde sigue que $1+1>1$. Por (d) de LE7, se verifica que $(1+1)-1\in \N$, por lo que $1\in A$. \\[5pt] Si $n \in A$ debe ser porque $m-n\in \N$ y $m>n$, de donde obtenemos $m+1>n+1$. Como $m,n\in \N$ y $\N$ es un conjunto inductivo, $n+1\in \N$ y $m+1 \in \N$. Notemos que $m+1-(n+1)=m-n$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. \mbox{}\hfill $\square$ 
+    
+    %Para algún $m\in \N$ tal que $m>1$, por (d) de LE7, se verifica que $m-1\in \N$, por lo que $1\in A$. \\[5pt] \textbf{Nota}: Se abusa de la notación y no debe entenderse que $m$ es fija, sino que depende del número natural con que se relaciona.   
+    
+    \item Por (b) de LE3, $x>0$, por lo que $x+n>n$. Por hipótesis, $x+n, n\in \N$, y por (e) de LE7 $(x+n)-n \in \N$, osea, $x\in \N$. \mbox{}\hfill $\square$
+    
+    \item Supongamos que $x\in \N$. Por hipótesis tenemos que $x<n$ y $x>n-1$. Notemos que \begin{align*}
+        x &< n\\
+        x -n &< n-n\\
+        x-n &< 0\\
+        x-n +1 &< 1
+    \end{align*}\\
+    Del mismo modo, \begin{align*}
+        n-1 &< x\\
+        n-1-(n-1) &< x - (n-1)\\
+        0 &< x-n+1\\
+        n &< x+1
+    \end{align*}\\
+    Como $\N$ es un conjunto inductivo, $x+1\in \N$, y como $x+1>n$, con $n\in \N$, por (e) de LE7, $x+1-n \in \N$, y por (c) de LE7, $x+1-n\geq 1$. Pero tenemos que $x-n+1<1$, osea $1\leq x+1-n<1$, lo cual es una contradicción. Por tanto, $x$ no es un número natural. \mbox{}\hfill $\square$
+\end{enumerate}
+
+\subsection*{Principio del buen orden}
+
+Todo subconjunto no vacío del conjunto de los números naturales tiene elemento mínimo. Esto significa que si $A\subseteq \N$ y $A \neq \emptyset$, entonces $\exists c\in A$ tal que $c\leq b, \forall b\in A$.
+
+\subsubsection*{Demostración}
+
+Supongamos que $A\subseteq \N$ con $A\neq \emptyset$ y $A$ no tiene elemento mínimo, es decir, suponemos que $\forall a_0\in A, \exists a\in A$ tal que $a_0>a$.\\[5pt]Definimos el conjunto $S \coloneqq \set{n\in \N: n<a, \forall a \in A}$. Si $1\notin S$, tendríamos que $\exists a_0\in A$ tal que $a_0\leq 1$, y como $a_0\in \N$, sigue que $1 \leq a_0$, osea $1\leq a_0\leq 1$, y así $a_0 = 1$, pero $1\leq n, \forall n\in \N$ y en consecuencia, $1\leq a, \forall a\in A$, lo que contradiría nuestro supuesto inicial. Entonces, debe ser el caso que $1\in S$.\\[5pt] Si $m\in S$, tendríamos que $m<a, \forall a\in A$. Luego, si $m+1\notin S$, entonces $\exists a_0\in A$ tal que $a_0 \leq m+1$, con lo que obtenemos que $m<a_0 \leq m+1$, y por (g) de LE7, no puede ser el caso que $m<a_0<m$, entonces $a_0=m+1$, de lo que se concluye que $m+1\leq a , \forall a \in A$, pero esto contradice nuestro supuesto inicial, por lo que $m+1\in S$. De este modo, $S$ es un conjunto inductivo, y, por definición, $\N\subseteq S$ y  $S\subseteq \N$, lo que implica que $S=\N$. Dado que $A\neq \emptyset$, entonces $\exists a_0\in A$ tal que $a_0 >n, \forall n\in S$, y como $A\subseteq S$, podemos elegir $n=a_0$, pero de esto obtenemos que $a_0<a_0$, lo cual es una contradicción. Por tanto, $\forall A\subseteq \N$ con $A\neq \emptyset$, se cumple que $A$ tiene elemento mínimo. \qed
+
+\textbf{Definción.} \begin{itemize}
+    \item Al conjunto $\N \cup {0} \cup {-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
+    \item Al conjunto ${-n: n\in \N}$ lo llamaremos conjunto de los números enteros negativos y lo representaremos con el símbolo $\Z^-$.
+    \item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo representaremos con el símbolo $\Z^+$.
+\end{itemize}
+
+\textbf{Observación.} Los conjuntos $\N$, ${0}$, ${-n: n\in \N}$ son disjuntos por pares.
+
+\textbf{Definición.} Sea $E$ un subconjunto no vacío de $\R$, decimos que $E$ está acotado: \begin{itemize}
+    \item Superiormente si existe un número real $m$ tal que $b \leq m, \forall b\in E$. En este caso decimos que $E$ es cota superior de $E$.
+    \item Inferiormente si existe un número real $l$ tal que $l \leq b, \forall b\in E$. En este caso, decimos que $l$ es cota inferior de $E$.
+    \item Si existe un número real $m$ tal que $|b|\leq m,\forall b \in E$. En este caso decimos que $m$ es una cota de $E$.
+\end{itemize}
+
+\textbf{Definición.} Sea $A$ un subconjunto no vacío del conjunto de los números reales, acotado superiormente, decimos que un número real $M$ es supremo de $A$ si $M$ satisface las siguientes condiciones: \begin{itemize}
+    \item $M$ es cota superior de $A$.
+    \item Si $K$ es una cota superior de $A$, entonces $M\leq K$, es decir, $M$ es la cota superior más pequeña de $A$.
+\end{itemize}
+
+En este caso escribimos $M=\sup{A}$.
+
+\textbf{Definición}. Sea $A$ un subconjunto no vacío del conjunto de los números reales, acotado inferiormente, decimos que un número real $L$ es ínfimo de $A$ si $L$ satisface las siguientes condiciones: \begin{itemize}
+    \item $L$ es cota inferior de $A$.
+    \item Si $K$ es una cota inferior de $A$, entonces $K\leq L$, es decir, $L$ es la cota inferior más grande de $A$.
+\end{itemize}
+
+En este caso escribimos $M=\inf{A}$.
+
+\pagebreak
+
+\subsection*{Lista de ejercicios 8 (LE8)}
+
+Falso o verdadero: \begin{enumerate}[label=\arabic*.]
+    \item Si $E$ es un subconjunto de $\R$ acotado superiormente, entonces $E$ es un conjunto acotado.
+    \item Si $E$ es un subconjunto acotado de $\R$, entonces $E$ está acotado superiormente e Inferiormente.
+\end{enumerate}
+
+Demuestre lo siguiente:
+
+\begin{enumerate}[label=\arabic*.]\setcounter{enumi}{2}
+    \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene supremo, este es único.
+    \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene ínfimo, este es único.
+    \item Una cota superior $M$ de un conjunto no vacío $S$ de $\R$ es el supremo de $S$ si y solo si para toda $\varepsilon>0$ existe una $s_\varepsilon \in S$ tal que $M-\varepsilon<s_\varepsilon$.
+\end{enumerate}
+
+\subsubsection*{Respuesta}
+
+\begin{enumerate}[label=\arabic*.]
+    \item Falso. Consideremos el conjunto $\R\backslash \R^+$, el cual es un subconjunto de $\R$, y es no vacío, pues $-1\in \R\backslash \R^+$. Además, $b\leq 0, \forall b\in \R\backslash\R^+$, por lo que el conjunto está acotado superiormente. Supongamos que el conjunto propuesto está acotado. Es decir, suponemos que $\exists m$ tal que $|b|\leq m, \forall b\in \R\backslash \R^+$. Por (f) de LE4, $-m \leq b$ y, por transitividad, $-m\leq 0$, de donde sigue que $-m-1\leq -1$, pero $-1<0$, entonces $-m-1<0$, lo que implica que $-m-1\in \R\backslash \R^+$, por lo que $|-m-1|\leq m$. Luego, notemos que $|-m-1|=-(-m-1)$, es decir, tenemos que $m+1\leq m$, pero de esto se concluye que $1\leq 0$, lo cual es una contradicción. Por tanto, aunque $\R\backslash \R^+$ está acotado superiormente, no está acotado.
+    \item Verdadero. Sea $E$ un subconjunto no vacío de $\R$. Si $E$ está acotado, entonces $\exists m$ tal que $|b|\leq m,\forall b \in E$. Por (f) de LE4, $-m\leq b \leq m$, por lo que el conjunto está acotado superiormente e inferiormente.
+\end{enumerate}
+
+\subsubsection*{Demostración}
+
+\begin{enumerate}[label=\arabic*.]\setcounter{enumi}{2}
+    \item Supongamos que $s_1$ y $s_2$ son supremos de $A$. Como $s_1$ es una cota superior de $A$ y $s_2$ es elemento supremo, entonces $s_2\leq s_1$. Similarmente, $s_1\leq s_2$. Por tanto, $s_1=s_2$.
+    \item Supongamos que $m_1$ y $m_2$ son ínfimos de $A$. Como $m_1$ es una cota superior de $A$ y $m_2$ es elemento ínfimo, entonces $m_1\leq m_2$. Similarmente, $m_2\leq m_1$. Por tanto, $m_1=m_2$.
+    \item \begin{enumerate}[label=\roman*)]
+        \item Sea $M$ el supremo de $S$. Si $s_\varepsilon$ es una cota superior del conjunto, tenemos que $M<s_\varepsilon$. Sea $@e=$
+    \end{enumerate}
+\end{enumerate}
+
+
+
+\subsection*{Lista de Ejercicios \# (LE\#)}
+
+Sean $a$ y $b$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+    \item $0 \leq a^{2n} \, \forall n\in \N$.
+    \item Si $0\leq a$, entonces $ 0 \leq a^n, \, \forall n\in \N$.
+    \item Si $0 \leq a <b$, entonces $a^n < b^n, \, \forall n\in \N$.
+    \item Si $0 \leq a <b$, entonces $a^n \leq ab^n < b^n \, \forall n\in \N$.
+    \item Si $0<a<1$, entonces $a^n<a \, \forall n\in \N$.
+    \item Si $1<a$, entonces $a<a^n \, \forall n\in \N$.
+\end{enumerate}
+
+\subsubsection*{Demostración}
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+
+    %A
+    \item Pendiente
+
+    %B
+    \item Por inducción matemática. 
+
+    \begin{enumerate}[label=\roman*)]
+        \item Verificamos que se cumple para $n=1$. \begin{align*}
+        0 &\leq a^1 \\
+        0 &\leq a
+        \end{align*}
+        \item Suponemos que se cumple para $n=k$, para algún $k \in \N$. Es decir,  suponemos que \[0 \leq a^k\]
+        \item Probaremos a partir de (ii) que $0 \leq a^{k+1}$. En efecto, por hipótesis de     inducción \begin{align*}
+        0 &\leq a^k \\
+        0 \cdot a &\leq a^k \cdot a \\
+        0 &\leq a^{k+1}
+        \end{align*}
+    \end{enumerate}
+
+    %C
+    \item Por inducción matemática.
+    \begin{enumerate}[label=\roman*)]
+        \item Verificamos que se cumple para $n=1$. \begin{align*}
+        a^1 &< b^1 \\
+        a &< b
+        \end{align*}
+        \item Suponemos que se cumple para $n=k$, para algún $k\in \N$. Es decir, suponemos que \[a^k < b^k\]
+        \item Probaremos, a partir de (ii) que $a^{k+1} < b^{k+1}$. En efecto, por (c) de LE5, garantizamos que $0 \leq a^k$, lo que nos permite, por (a) de LE5, afirmar que
+        \begin{align*}
+        a^k \cdot a &< b^k \cdot b \\
+        a^{k+1} &< b^{k+1}
+        \end{align*}
+    \end{enumerate}
+
+    %D
+    \item Tenemos que $a<b$, como $0\leq a<b$, sigue que $0<b$, entonces $a\cdot b < b\cdot b$, osea $ab<b^2$. Luego, $a \cdot a \leq ab$. Finalmente, $a^2\leq ab < b^2$.
+    
+    %E
+    \item Pendiente
+    
+    %F
+    \item Pendiente
+
+\end{enumerate}
+
+
+
+\end{document}
