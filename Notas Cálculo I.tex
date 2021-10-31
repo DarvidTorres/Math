@@ -32,7 +32,8 @@
 \newcommand{\R}{\mathbb{R}}
 
 \newcommand{\qued}{\mbox{}\hfill $\square$}
-\newcommand{\bft}{\textbf}
+
+\let\epsilon\varepsilon
 
 %bold all lists$
 \setlist[enumerate]{font=\bfseries}
@@ -719,7 +720,7 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
 
 \begin{enumerate}[label=\arabic*)]
     \item Sí, ya que $1 \in \R$, y si $n$ es un número real, $n+1 \in \R$ por la cerradura de la suma en $\R$.
-    \item Sí, pues $1\in \R^+$ y y si $n$ es un número real positivo, $n+1 \in \R^+$ por el aximoa de orden 1.
+    \item Sí, pues $1\in \R^+$ y y si $n$ es un número real positivo, $n+1 \in \R^+$ por el axioma de orden 1.
     \item Claramente $A \neq \emptyset$, pues $\R, \R^+ \subseteq A$. \\[5pt]Luego, por hipótesis, $\forall B \in A$ tenemos que $B\subseteq \R $ por lo que $C\subseteq \R$. Además, $\forall B\in A$, se verifica que $1\in B$. Consecuentemente, $1\in C$. Por otra parte, si $n\in B$ para todo $B\in A$, tendremos que $n+1\in B$, por lo que $n+1 \in C$. Por tanto, $C$ es un conjunto inductivo.
 \end{enumerate}
 
@@ -780,7 +781,7 @@ Demuestre lo siguiente:
 
 \subsection*{Principio del buen orden}
 
-Todo subconjunto no vacío del conjunto de los números naturales tiene elemento mínimo. Esto significa que si $A\subseteq \N$ y $A \neq \emptyset$, entonces $\exists c\in A$ tal que $c\leq b, \forall b\in A$.
+\textbf{Teorema.} Todo subconjunto no vacío del conjunto de los números naturales tiene elemento mínimo. Esto significa que si $A\subseteq \N$ y $A \neq \emptyset$, entonces $\exists c\in A$ tal que $c\leq b, \forall b\in A$.
 
 \subsubsection*{Demostración}
 
@@ -844,11 +845,22 @@ Demuestre lo siguiente:
     \item Supongamos que $s_1$ y $s_2$ son supremos de $A$. Como $s_1$ es una cota superior de $A$ y $s_2$ es elemento supremo, entonces $s_2\leq s_1$. Similarmente, $s_1\leq s_2$. Por tanto, $s_1=s_2$.
     \item Supongamos que $m_1$ y $m_2$ son ínfimos de $A$. Como $m_1$ es una cota superior de $A$ y $m_2$ es elemento ínfimo, entonces $m_1\leq m_2$. Similarmente, $m_2\leq m_1$. Por tanto, $m_1=m_2$.
     \item \begin{enumerate}[label=\roman*)]
-        \item Sea $M$ el supremo de $S$. Si $s_\varepsilon$ es una cota superior del conjunto, tenemos que $M<s_\varepsilon$. Sea $@e=ejemplo$
+        \item Sea $M$ una cota superior de $S$ tal que $\forall \epsilon>0, \exists s_{\epsilon}$ tal que $M-\epsilon<s_{\epsilon}$. Si $M$ no es el supremo de $S$, tendríamos que $\exists V$ tal que $s_@a \leq V < M$. Elegimos $\epsilon = M-V$, con lo que $V<s_{\epsilon}$, lo que contradice nuestra hipótesis. Por tanto, $M$ es el supremo de $S$.
+        \item Sea $M$ el supremo de $S$ y $\epsilon>0$. Como $M<M+\epsilon$, entonces $M-\epsilon$ no es una cota superior de $S$, por lo que $\exists s_\epsilon$ tal que $s_\epsilon>M-\epsilon$. \qed
     \end{enumerate}
 \end{enumerate}
 
+\subsection*{Axioma del supremo}
 
+Todo subconjunto no vacío del conjunto de los números reales que sea acotado superiormente tiene supremo.
+
+\textbf{Teorema.} El conjunto de los números naturales no está acotado superiormente.
+
+\textbf{Demostración.}
+
+supongamos que el conjunto de los números naturales está acotado superiormente. Entonces existe un número real $M$ tal que $n\leq M, \forall n\in \N$. Como el conjunto de los números naturales es no vacío, entonces, por el axioma del supremo, $N$ tiene supremo.
+
+Sea $L\coloneqq \sup{(\N)}$. Como $L-1$ no es cota superior de $\N$, —ya que de ser así, tendríamos que $L-1$ es cota superior de $\N$ y $L-1<L$ lo cual contradice la minimalidad de $L$— existe un núero natural $n_0$ tal que $n_0>L-1$, lo cual implica que $n_0+1<L$, pero esto contradice la hipótesis	de que $L$ es supremo de $\N$. Por tanto, el conjunto de los números naturales no está acotado superiormente.
 
 \subsection*{Lista de Ejercicios \# (LE\#)}
 
