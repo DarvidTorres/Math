@@ -854,13 +854,21 @@ Demuestre lo siguiente:
 
 Todo subconjunto no vacío del conjunto de los números reales que sea acotado superiormente tiene supremo.
 
-\textbf{Teorema.} El conjunto de los números naturales no está acotado superiormente.
+\textbf{\textit{Teorema.}} El conjunto de los números naturales no está acotado superiormente.
 
-\textbf{Demostración.}
+\textbf{Demostración:}
 
-supongamos que el conjunto de los números naturales está acotado superiormente. Entonces existe un número real $M$ tal que $n\leq M, \forall n\in \N$. Como el conjunto de los números naturales es no vacío, entonces, por el axioma del supremo, $N$ tiene supremo.
+Supongamos que el conjunto de los números naturales está acotado superiormente. Entonces existe un número real $M$ tal que $n\leq M, \forall n\in \N$. Como el conjunto de los números naturales es no vacío, entonces, por el axioma del supremo, $\N$ tiene supremo.
 
-Sea $L\coloneqq \sup{(\N)}$. Como $L-1$ no es cota superior de $\N$, —ya que de ser así, tendríamos que $L-1$ es cota superior de $\N$ y $L-1<L$ lo cual contradice la minimalidad de $L$— existe un núero natural $n_0$ tal que $n_0>L-1$, lo cual implica que $n_0+1<L$, pero esto contradice la hipótesis	de que $L$ es supremo de $\N$. Por tanto, el conjunto de los números naturales no está acotado superiormente.
+Sea $L\coloneqq \sup{(\N)}$. Como $L-1$ no es cota superior de $\N$, ya que $L>L-1$ y $L$ es la cota superior más pequeña, existe un núero natural $n_0$ tal que $n_0>L-1$, lo cual implica que $n_0+1<L$, pero esto contradice la hipótesis	de que $L$ es supremo de $\N$. Por tanto, el conjunto de los números naturales no está acotado superiormente. \qed
+
+La propiedad análoga para el ínfimo puede ser deducida del axioma del supremo como sigue:
+
+\textbf{\textit{Teorema.}} Si $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente, entonces $A$ tiene ínfimo.
+
+\textbf{Demostración:}
+
+Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conjunto $-A\coloneqq \set{-a: a\in A}$ está acotado superiormente y, por el axioma del supremo, $-A$ tiene supremo. Sea $M\coloneqq \sup{(A)}$, entonces $M\geq -a, \forall -a\in -A$. Notemos que $-M\leq -(-a), \forall -a\in -A$, esto es $-M$ es el ínfimo de $A$. \qed
 
 \subsection*{Lista de Ejercicios \# (LE\#)}
 
