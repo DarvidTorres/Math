@@ -7,8 +7,6 @@
 \usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
 \usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
 \usepackage{mathtools}
-\usepackage{braket}
-
 
 %Dark mode
 %\pagecolor[rgb]{0,0,0} %black
@@ -34,6 +32,9 @@
 \newcommand{\qued}{\mbox{}\hfill $\square$}
 
 \let\epsilon\varepsilon
+
+%Macro for set definition
+\def\defined #1{\coloneqq \left\{#1\right\}}
 
 %bold all lists$
 \setlist[enumerate]{font=\bfseries}
@@ -751,14 +752,14 @@ Demuestre lo siguiente:
     \item Sea $A\coloneqq \{n\in \N: n\geq 1\}$. Como $1\in \N$ y $1\geq 1$, tenemos que $1\in A$.\\[5pt]
     Si $n\in A$ debe ser el caso que $n\in \N$ y $1\leq n$. Además, por (a) de LE7, $n+1\in \N$. Luego, notemos que $0 \leq 1$ de donde sigue que $n \leq n+1$. Por transitividad, $1\leq n+1$, por lo que $n+1\in A$, lo que implica que $A$ es un conjunto inductivo, es decir, $\N\subseteq A$ y como $A\subseteq \N$, $A=N$. En otras palabras, $n\geq 1, \forall n\in\N$. \mbox{}\hfill $\square$
 
-    \item Sea $A\coloneqq \set{n\in \N | n>1, n-1\in \N}$. Si $n\in A$ debe ser porque $n>1$ y $n-1\in \N$. Como $n\in \N$ y $\N$ es un conjunto inductivo, se verifica $n+1\in\N$. Notemos que \begin{align*}
+    \item Sea $A \defined{n\in \N | n>1, n-1\in \N}$. Si $n\in A$ debe ser porque $n>1$ y $n-1\in \N$. Como $n\in \N$ y $\N$ es un conjunto inductivo, se verifica $n+1\in\N$. Notemos que \begin{align*}
         (n+1)-1 &= n+(1-1) \\
         &= n+ 0\\
         &= n
     \end{align*}\\
     Entonces, $(n+1)-1\in \N$. También, $n>1$ implica que $n>0$ y $n+1>1$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. Por tanto $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$. \mbox{}\hfill $\square$
 
-    \item Sea $A \coloneqq \set{n\in \N| n<m, m-n\in\N \ \text{con} \ m\in\N}$. Por definición, $1\in \N$ y $1+1\in \N$. Por (a) y (b) de LE3, $1>0$, de donde sigue que $1+1>1$. Por (d) de LE7, se verifica que $(1+1)-1\in \N$, por lo que $1\in A$. \\[5pt] Si $n \in A$ debe ser porque $m-n\in \N$ y $m>n$, de donde obtenemos $m+1>n+1$. Como $m,n\in \N$ y $\N$ es un conjunto inductivo, $n+1\in \N$ y $m+1 \in \N$. Notemos que $m+1-(n+1)=m-n$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. \mbox{}\hfill $\square$ 
+    \item Sea $A \defined{n\in \N| n<m, m-n\in\N \ \text{con} \ m\in\N}$. Por definición, $1\in \N$ y $1+1\in \N$. Por (a) y (b) de LE3, $1>0$, de donde sigue que $1+1>1$. Por (d) de LE7, se verifica que $(1+1)-1\in \N$, por lo que $1\in A$. \\[5pt] Si $n \in A$ debe ser porque $m-n\in \N$ y $m>n$, de donde obtenemos $m+1>n+1$. Como $m,n\in \N$ y $\N$ es un conjunto inductivo, $n+1\in \N$ y $m+1 \in \N$. Notemos que $m+1-(n+1)=m-n$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. \mbox{}\hfill $\square$ 
     
     %Para algún $m\in \N$ tal que $m>1$, por (d) de LE7, se verifica que $m-1\in \N$, por lo que $1\in A$. \\[5pt] \textbf{Nota}: Se abusa de la notación y no debe entenderse que $m$ es fija, sino que depende del número natural con que se relaciona.   
     
@@ -785,7 +786,7 @@ Demuestre lo siguiente:
 
 \subsubsection*{Demostración}
 
-Supongamos que $A\subseteq \N$ con $A\neq \emptyset$ y $A$ no tiene elemento mínimo, es decir, suponemos que $\forall a_0\in A, \exists a\in A$ tal que $a_0>a$.\\[5pt]Definimos el conjunto $S \coloneqq \set{n\in \N: n<a, \forall a \in A}$. Si $1\notin S$, tendríamos que $\exists a_0\in A$ tal que $a_0\leq 1$, y como $a_0\in \N$, sigue que $1 \leq a_0$, osea $1\leq a_0\leq 1$, y así $a_0 = 1$, pero $1\leq n, \forall n\in \N$ y en consecuencia, $1\leq a, \forall a\in A$, lo que contradiría nuestro supuesto inicial. Entonces, debe ser el caso que $1\in S$.\\[5pt] Si $m\in S$, tendríamos que $m<a, \forall a\in A$. Luego, si $m+1\notin S$, entonces $\exists a_0\in A$ tal que $a_0 \leq m+1$, con lo que obtenemos que $m<a_0 \leq m+1$, y por (g) de LE7, no puede ser el caso que $m<a_0<m$, entonces $a_0=m+1$, de lo que se concluye que $m+1\leq a , \forall a \in A$, pero esto contradice nuestro supuesto inicial, por lo que $m+1\in S$. De este modo, $S$ es un conjunto inductivo, y, por definición, $\N\subseteq S$ y  $S\subseteq \N$, lo que implica que $S=\N$. Dado que $A\neq \emptyset$, entonces $\exists a_0\in A$ tal que $a_0 >n, \forall n\in S$, y como $A\subseteq S$, podemos elegir $n=a_0$, pero de esto obtenemos que $a_0<a_0$, lo cual es una contradicción. Por tanto, $\forall A\subseteq \N$ con $A\neq \emptyset$, se cumple que $A$ tiene elemento mínimo. \qed
+Supongamos que $A\subseteq \N$ con $A\neq \emptyset$ y $A$ no tiene elemento mínimo, es decir, suponemos que $\forall a_0\in A, \exists a\in A$ tal que $a_0>a$.\\[5pt]Definimos el conjunto $S \coloneqq \defined{n\in \N: n<a, \forall a \in A}$. Si $1\notin S$, tendríamos que $\exists a_0\in A$ tal que $a_0\leq 1$, y como $a_0\in \N$, sigue que $1 \leq a_0$, osea $1\leq a_0\leq 1$, y así $a_0 = 1$, pero $1\leq n, \forall n\in \N$ y en consecuencia, $1\leq a, \forall a\in A$, lo que contradiría nuestro supuesto inicial. Entonces, debe ser el caso que $1\in S$.\\[5pt] Si $m\in S$, tendríamos que $m<a, \forall a\in A$. Luego, si $m+1\notin S$, entonces $\exists a_0\in A$ tal que $a_0 \leq m+1$, con lo que obtenemos que $m<a_0 \leq m+1$, y por (g) de LE7, no puede ser el caso que $m<a_0<m$, entonces $a_0=m+1$, de lo que se concluye que $m+1\leq a , \forall a \in A$, pero esto contradice nuestro supuesto inicial, por lo que $m+1\in S$. De este modo, $S$ es un conjunto inductivo, y, por definición, $\N\subseteq S$ y  $S\subseteq \N$, lo que implica que $S=\N$. Dado que $A\neq \emptyset$, entonces $\exists a_0\in A$ tal que $a_0 >n, \forall n\in S$, y como $A\subseteq S$, podemos elegir $n=a_0$, pero de esto obtenemos que $a_0<a_0$, lo cual es una contradicción. Por tanto, $\forall A\subseteq \N$ con $A\neq \emptyset$, se cumple que $A$ tiene elemento mínimo. \qed
 
 \textbf{Definción.} \begin{itemize}
     \item Al conjunto $\N \cup {0} \cup {-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
@@ -868,7 +869,23 @@ La propiedad análoga para el ínfimo puede ser deducida del axioma del supremo 
 
 \textbf{Demostración:}
 
-Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conjunto $-A\coloneqq \set{-a: a\in A}$ está acotado superiormente y, por el axioma del supremo, $-A$ tiene supremo. Sea $M\coloneqq \sup{(A)}$, entonces $M\geq -a, \forall -a\in -A$. Notemos que $-M\leq -(-a), \forall -a\in -A$, esto es $-M$ es el ínfimo de $A$. \qed
+Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conjunto $-A \defined{-a: a\in A}$ está acotado superiormente y, por el axioma del supremo, $-A$ tiene supremo. Sea $M\coloneqq \sup{(A)}$, entonces $M\geq -a, \forall -a\in -A$. Notemos que $-M\leq a, \forall a\in A$, esto es $-M$ es el ínfimo de $A$. \qed
+
+\subsection*{Propiedad Arquimediana del conjunto de los números reales}
+
+Para cada número real $x$ existe un número natural $n$ (que depende de $x$) tal que $x<n$.
+
+\textbf{\textit{Toerema.}} Si $x\in \R$, entonces existe $n_x\in \N$ tal que $x<n_x$.
+
+\textbf{Demostración:}
+
+Supongamos que existe $x\in \R$ tal que $n\leq x, \forall n\in \N$. Notemos que $x$ es una cota superior de $\N$, pero esto contradice el teorema que establece que el conjunto de los números naturales no está acotado superiormente. Por tanto, se satisface la propiedad arquimediana del conjunto de los números reales. \qed
+
+\subsection*{Lista de Ejercicios 9 (LE9)}
+
+\begin{enumerate}[label=\alph*)]
+    \item Si $S \defined{\frac{1}{n}: n\in \N}$, entonces $\inf{S=0}$.
+\end{enumerate}
 
 \subsection*{Lista de Ejercicios \# (LE\#)}
 
@@ -931,7 +948,6 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
     \item Pendiente
 
 \end{enumerate}
-
 
 
 \end{document}
