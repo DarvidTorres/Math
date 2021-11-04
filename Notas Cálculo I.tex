@@ -702,9 +702,10 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
     \item \begin{enumerate}[label=\roman*)]
         \item Si $a>1-a$, tenememos $\varepsilon=1-a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<1-a$. De (f) de LE4 sigue que $a-1<y-a<1-a$ (*). Tomando el lado derecho de (*) obtenemos $y<1$. Luego, de la hipótesis sigue que $2a>1$, osea $2a-1>0$. Del lado izquierdo de la desigualdad (*), tenemos $2a-1<y$, por lo que $0<y$.
         \item Si $1-a>a$, tenemos $\varepsilon=a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<a$. De (f) de LE4 sigue que $-a<y-a<a$. Sumando $a$ en esta desigualdad obtenemos $0<y<2a$. Luego, de la hipótesis sigue que $1>2a$, entonces $0<y<1$.\end{enumerate}
-        En cualquier caso, $0<y<1$, lo que implica que $V_\varepsilon(a) \subseteq U$. \qed
+        En cualquier caso, $0<y<1$, lo que implica que $V_\varepsilon(a) \subseteq U$.
+        \qed
 
-    \item Supongamos que para toda $\epsilon>0$ tenemos que $U_\varepsilon(a) \cap V_\varepsilon(b) \neq \emptyset$. Entonces, existe $x$ tal que $x\in U_\varepsilon(a)$ y $x\in V_\varepsilon(b)$. Como en ambas vecindades tenemos $\epsilon>0$ arbitraria, por (a) de LE5, sigue que $x=a$ y $x=b$, pero esto contradice el supuesto de que $a\neq b$. Por tanto, deben existir $U_\varepsilon(a)$ y $V_\varepsilon(b)$ tales que $U\cap V =\emptyset$.
+    \item Supongamos que para toda $U_\varepsilon(a)$ y $V_\varepsilon(b)$ se cumple que $U_\varepsilon(a) \cap V_\varepsilon(b) \neq \emptyset$. Entonces, existe $x$ tal que $x\in U_\varepsilon(a)$ y $x\in V_\varepsilon(b)$. Como en ambas vecindades tenemos $\epsilon>0$ arbitraria, por (a) de LE5, sigue que $x=a$ y $x=b$, pero esto contradice el supuesto de que $a\neq b$. Por tanto, deben existir $U_\varepsilon(a)$ y $V_\varepsilon(b)$ tales que $U\cap V =\emptyset$. \qed
     \end{enumerate}
 
 \textbf{Definición:} Sea $A$ un subconjunto del conjunto de los números reales, decimos que $A$ es un conjunto inductivo si se cumplen las siguientes condiciones:
@@ -793,7 +794,7 @@ Demuestre lo siguiente:
 
 \subsubsection*{Demostración}
 
-Supongamos que $A\subseteq \N$ con $A\neq \emptyset$ y $A$ no tiene elemento mínimo, es decir, suponemos que $\forall a_0\in A, \exists a\in A$ tal que $a_0>a$.\\[5pt]Definimos el conjunto $S \coloneqq \defined{n\in \N: n<a, \forall a \in A}$. Si $1\notin S$, tendríamos que $\exists a_0\in A$ tal que $a_0\leq 1$, y como $a_0\in \N$, sigue que $1 \leq a_0$, osea $1\leq a_0\leq 1$, y así $a_0 = 1$, pero $1\leq n, \forall n\in \N$ y en consecuencia, $1\leq a, \forall a\in A$, lo que contradiría nuestro supuesto inicial. Entonces, debe ser el caso que $1\in S$.\\[5pt] Si $m\in S$, tendríamos que $m<a, \forall a\in A$. Luego, si $m+1\notin S$, entonces $\exists a_0\in A$ tal que $a_0 \leq m+1$, con lo que obtenemos que $m<a_0 \leq m+1$, y por (h) de LE7, no puede ser el caso que $m<a_0<m$, entonces $a_0=m+1$, de lo que se concluye que $m+1\leq a , \forall a \in A$, pero esto contradice nuestro supuesto inicial, por lo que $m+1\in S$. De este modo, $S$ es un conjunto inductivo, y, por definición, $\N\subseteq S$ y  $S\subseteq \N$, lo que implica que $S=\N$. Dado que $A\neq \emptyset$, entonces $\exists a_0\in A$ tal que $a_0 >n, \forall n\in S$, y como $A\subseteq S$, podemos elegir $n=a_0$, pero de esto obtenemos que $a_0<a_0$, lo cual es una contradicción. Por tanto, $\forall A\subseteq \N$ con $A\neq \emptyset$, se cumple que $A$ tiene elemento mínimo. \qed
+Supongamos que $A\subseteq \N$ con $A\neq \emptyset$ y $A$ no tiene elemento mínimo, es decir, suponemos que $\forall a_0\in A, \exists a\in A$ tal que $a_0>a$.\\[5pt]Definimos el conjunto $S \defined{n\in \N: n<a, \forall a \in A}$. Si $1\notin S$, tendríamos que $\exists a_0\in A$ tal que $a_0\leq 1$, y como $a_0\in \N$, sigue que $1 \leq a_0$, osea $1\leq a_0\leq 1$, y así $a_0 = 1$, pero $1\leq n, \forall n\in \N$ y en consecuencia, $1\leq a, \forall a\in A$, lo que contradiría nuestro supuesto inicial. Entonces, debe ser el caso que $1\in S$.\\[5pt] Si $m\in S$, tendríamos que $m<a, \forall a\in A$. Luego, si $m+1\notin S$, entonces $\exists a_0\in A$ tal que $a_0 \leq m+1$, con lo que obtenemos que $m<a_0 \leq m+1$, y por (h) de LE7, no puede ser el caso que $m<a_0<m$, entonces $a_0=m+1$, de lo que se concluye que $m+1\leq a , \forall a \in A$, pero esto contradice nuestro supuesto inicial, por lo que $m+1\in S$. De este modo, $S$ es un conjunto inductivo, y, por definición, $\N\subseteq S$ y  $S\subseteq \N$, lo que implica que $S=\N$. Dado que $A\neq \emptyset$, entonces $\exists a_0\in A$ tal que $a_0 >n, \forall n\in S$, y como $A\subseteq S$, podemos elegir $n=a_0$, pero de esto obtenemos que $a_0<a_0$, lo cual es una contradicción. Por tanto, $\forall A\subseteq \N$ con $A\neq \emptyset$, se cumple que $A$ tiene elemento mínimo. \qed
 
 \textbf{Definción.} \begin{itemize}
     \item Al conjunto $\N \cup {0} \cup {-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
@@ -897,7 +898,7 @@ Supongamos que existe $x\in \R$ tal que $n\leq x, \forall n\in \N$. Notemos que 
 \textbf{Demostración:}
 
 \begin{enumerate}[label=\alph*)]
-    \item Por (d) de LE7, $S$ está acotado inferiormente por $0$; de esto sigue que $S$ tiene ínfimo. Sea $w\coloneqq \inf{S}$. Por definición, $s\geq w\geq 0, \forall s\in S$.
+    \item Por (d) de LE7, $S$ está acotado inferiormente por $0$; de esto sigue que $S$ tiene ínfimo. Sea $w\coloneqq \inf{S}$. Por definición, $\frac{1}{n}\geq w\geq 0, n\in \N$. Supongamos que $w>0$. Por la propiedad arquimediana $\exists n_0$ tal que $\frac{1}{w} < n_0$, de donde sigue que $w<\frac{1}{n_0}$ con $\frac{1}{n_0} \in S$, lo cual es una contradicción. Por tanto, $w=0$. \qed
 \end{enumerate}
 
 \subsection*{Lista de Ejercicios \# (LE\#)}
