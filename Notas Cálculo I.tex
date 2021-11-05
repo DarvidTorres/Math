@@ -893,12 +893,16 @@ Supongamos que existe $x\in \R$ tal que $n\leq x, \forall n\in \N$. Notemos que 
 
 \begin{enumerate}[label=\alph*)]
     \item Si $S \defined{\frac{1}{n}: n\in \N}$, entonces $\inf{S=0}$.
+    \item Si $t>0$, entonces $\exists n\in \N$ tal que $0<\frac{1}{n}<t$.
 \end{enumerate}
 
 \textbf{Demostración:}
 
 \begin{enumerate}[label=\alph*)]
     \item Por (d) de LE7, $S$ está acotado inferiormente por $0$; de esto sigue que $S$ tiene ínfimo. Sea $w\coloneqq \inf{S}$. Por definición, $\frac{1}{n}\geq w\geq 0, n\in \N$. Supongamos que $w>0$. Por la propiedad arquimediana $\exists n_0$ tal que $\frac{1}{w} < n_0$, de donde sigue que $w<\frac{1}{n_0}$ con $\frac{1}{n_0} \in S$, lo cual es una contradicción. Por tanto, $w=0$. \qed
+    
+    \item Por la propiedad arquimediana $\exists n$ tal que $\frac{1}{t}<n$. Como $n$ y $t$ son mayores que $0$, sigue que $0<\frac{1}{n}<t$. \qed
+    % de donde sigue que $\frac{1}{n}<t$. Como $n>0$, tenemos que $0<\frac{1}{n}<t$. \qed
 \end{enumerate}
 
 \subsection*{Lista de Ejercicios \# (LE\#)}
