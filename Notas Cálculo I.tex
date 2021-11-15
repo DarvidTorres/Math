@@ -7,6 +7,7 @@
 \usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
 \usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
 \usepackage{mathtools}
+\usepackage{braket}
 
 %Dark mode
 %\pagecolor[rgb]{0,0,0} %black
@@ -29,17 +30,14 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 
+%Shorter comands
 \newcommand{\qued}{\mbox{}\hfill $\square$}
-
+\newcommand{\defined}{\coloneqq}
 \let\epsilon\varepsilon
 \let\for\forall
-%\let\empty\emptyset
-
-% Macro for set definition
-\def\defined #1{\coloneqq \left\{#1\right\}}
-% e.g. $A \defined{n\in \N | n>1, n-1\in \N}$
-
-%\def\for #1\in #2{, \forall #1 \in #2}
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\let\set\Set
 
 %bold all lists$
 \setlist[enumerate]{font=\bfseries}
@@ -765,14 +763,14 @@ Demuestre lo siguiente:
 
     \item Por (d) de LE7, $n\geq 1, \forall n\in \N$. Si $n=1$, tenemos que $n^{-1}=1>0$. Si $n>1$, tenemos que $n>0$, por lo que $n^{-1}>0$. En cualquier caso, $1\geq n^{-1}>0, \forall n\in \N$.
 
-    \item Sea $A \defined{n\in \N | n>1, n-1\in \N}$. Si $n\in A$ debe ser porque $n>1$ y $n-1\in \N$. Como $n\in \N$ y $\N$ es un conjunto inductivo, se verifica $n+1\in\N$. Notemos que \begin{align*}
+    \item Sea $A \coloneqq \set{n\in \N | n>1, n-1\in \N}$. Si $n\in A$ debe ser porque $n>1$ y $n-1\in \N$. Como $n\in \N$ y $\N$ es un conjunto inductivo, se verifica $n+1\in\N$. Notemos que \begin{align*}
         (n+1)-1 &= n+(1-1) \\
         &= n+ 0\\
         &= n
     \end{align*}\\
     Entonces, $(n+1)-1\in \N$. También, $n>1$ implica que $n>0$ y $n+1>1$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. Por tanto $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$. \mbox{}\hfill $\square$
 
-    \item Sea $A \defined{n\in \N| n<m, m-n\in\N \ \text{con} \ m\in\N}$. Por definición, $1\in \N$ y $1+1\in \N$. Por (a) y (b) de LE3, $1>0$, de donde sigue que $1+1>1$. Por (e) de LE7, se verifica que $(1+1)-1\in \N$, por lo que $1\in A$. \\[5pt] Si $n \in A$ debe ser porque $m-n\in \N$ y $m>n$, de donde obtenemos $m+1>n+1$. Como $m,n\in \N$ y $\N$ es un conjunto inductivo, $n+1\in \N$ y $m+1 \in \N$. Notemos que $m+1-(n+1)=m-n$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. \mbox{}\hfill $\square$ 
+    \item Sea $A \coloneqq \set{n\in \N| n<m, m-n\in\N \ \text{con} \ m\in\N}$. Por definición, $1\in \N$ y $1+1\in \N$. Por (a) y (b) de LE3, $1>0$, de donde sigue que $1+1>1$. Por (e) de LE7, se verifica que $(1+1)-1\in \N$, por lo que $1\in A$. \\[5pt] Si $n \in A$ debe ser porque $m-n\in \N$ y $m>n$, de donde obtenemos $m+1>n+1$. Como $m,n\in \N$ y $\N$ es un conjunto inductivo, $n+1\in \N$ y $m+1 \in \N$. Notemos que $m+1-(n+1)=m-n$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. \mbox{}\hfill $\square$ 
     
     %Para algún $m\in \N$ tal que $m>1$, por (e) de LE7, se verifica que $m-1\in \N$, por lo que $1\in A$. \\[5pt] \textbf{Nota}: Se abusa de la notación y no debe entenderse que $m$ es fija, sino que depende del número natural con que se relaciona.   
     
@@ -865,10 +863,18 @@ Notemos que si suponemos la existencia de un subconjunto no vacío de $\N$ tal q
 
 Sea $A\subseteq \N$ con $A\neq \emptyset$. Supongamos que $A$ no contiene ninguna de sus cotas inferiores, es decir, supongamos que si $c\leq a, \forall a\in A$, entonces $c\notin A$.
 
-Definimos el conjunto $L\defined{n\in \N: n\leq a, \forall a\in A}$. Es claro que $1\in L$. Veamos que si $n\in L$, tendríamos que $n\leq a, \for a\in A$. Luego, si $n+1\notin L$, entonces $\exists a_0\in A$ tal que $n+1>a_0$, por lo que $n\leq a_0<n+1$, y —por (h) de LE7— no puede ser el caso que $n<a_0$, de donde sigue que $n=a_0$, pero esto contradice nuestro supuesto inicial, entonces, debe ser el caso que $n+1\in L$. Consecuentemente, $L$ es un conjunto inductivo, y —por definición— $\N\subseteq L$ y $L\subseteq \N$, lo que implica que $L=\N$.
+Definimos el conjunto $L\coloneqq \set{n\in \N: n\leq a, \forall a\in A}$. Es claro que $1\in L$. Veamos que si $n\in L$, tendríamos que $n\leq a, \for a\in A$. Luego, si $n+1\notin L$, entonces $\exists a_0\in A$ tal que $n+1>a_0$, por lo que $n\leq a_0<n+1$, y —por (h) de LE7— no puede ser el caso que $n<a_0$, de donde sigue que $n=a_0$, pero esto contradice nuestro supuesto inicial, entonces, debe ser el caso que $n+1\in L$. Consecuentemente, $L$ es un conjunto inductivo, y —por definición— $\N\subseteq L$ y $L\subseteq \N$, lo que implica que $L=\N$.
 
 Finalmente, notemos que $A$ y $L$ son disjuntos, y dado que $A\subseteq \N$ y $L=\N$, sigue que $A=\emptyset$, pero esto es una contradicción. Por tanto, si $A\subseteq \N$ con $A\neq \emptyset$, entonces $\exists c\in A$ tal que $c\leq a, \forall a\in A$. \qed
 
+%\textbf{\textit{Teorema.}} Si $A\subseteq \N$ y $A\neq \emptyset$ y $A$ está acotado superiormente, entonces $A$ tiene elemento máximo, esto es existe un elemento $c\in A$ tal que $a\leq c, \for a\in A$.
+%
+%\textbf{Demostración:}
+%
+%Sea $A\subseteq\N$ con $A\neq \emptyset$ y $A$ acotado superiormente. Supongamos que si $c\geq a, \for a\in A$, entonces $c\notin A$.
+%
+%Definimos el conjunto $-A\defined \set{-a: a\in A}$. Como $A$ está acotado superiormente, $\exists c\in \R$ tal que $c\geq a, \forall a\in A$. Notemos que $-a\geq -c, \forall -a\in -A$, lo que implica que $-A$ está acotado inferiormente, y por esto, $A$ tiene elemento mínimo. Sea $m$ el elemento mínimo de $-A$. Veamos que $m\leq -a, \forall -a\in -A$ de donde sigue que $a\leq -m, \forall a\in A$, con $-m\in A$ pero esto contradice nuestro supuesto inicial. Por tanto, $A$ tiene elemento máximo. \qed
+%
 \subsection*{Axioma del supremo}
 
 Todo subconjunto no vacío del conjunto de los números reales que sea acotado superiormente tiene supremo.
@@ -885,7 +891,7 @@ Sea $L\coloneqq \sup{(\N)}$. Como $L-1$ no es cota superior de $\N$, ya que $L>L
 
 \textbf{Demostración:}
 
-Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conjunto $-A \defined{-a: a\in A}$ está acotado superiormente y, por el axioma del supremo, $-A$ tiene supremo. Sea $M\coloneqq \sup{(A)}$, entonces $M\geq -a, \forall -a\in -A$. Notemos que $-M\leq a, \forall a\in A$, esto es $-M$ es el ínfimo de $A$. \qed
+Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conjunto $-A \coloneqq \set{-a: a\in A}$ está acotado superiormente y, por el axioma del supremo, $-A$ tiene supremo. Sea $M\coloneqq \sup{(A)}$, entonces $M\geq -a, \forall -a\in -A$. Notemos que $-M\leq a, \forall a\in A$, esto es $-M$ es el ínfimo de $A$. \qed
 
 \subsection*{Propiedad Arquimediana del conjunto de los números reales}
 
@@ -906,7 +912,7 @@ Supongamos que existe $x\in \R$ tal que $n\leq x, \forall n\in \N$. Notemos que 
 \subsection*{Lista de Ejercicios 9 (LE9)}
 
 \begin{enumerate}[label=\alph*)]
-    \item Si $S \defined{\frac{1}{n}: n\in \N}$, entonces $\inf{S=0}$.
+    \item Si $S \coloneqq \set{\frac{1}{n}: n\in \N}$, entonces $\inf{S=0}$.
     \item Si $t>0$, entonces $\exists n\in \N$ tal que $0<\frac{1}{n}<t$.
     \item Si $y>0$, entonces $\exists n\in \N$ tal que $n-1\leq y< n$.
     \item Sea $x\in \R$, demuestre que $\exists! \, n\in \Z$ tal que $n\leq x<n+1$.
@@ -919,7 +925,23 @@ Supongamos que existe $x\in \R$ tal que $n\leq x, \forall n\in \N$. Notemos que 
     
     \item Por la propiedad arquimediana $\exists n$ tal que $\frac{1}{t}<n$. Como $n$ y $t$ son mayores que $0$, sigue que $0<\frac{1}{n}<t$. \qed
     
-    \item Por la propiedad arquimediana, el conjunto $E\defined{m\in \N: y<m}$ es no vacío. Además, por el principio del buen orden, $\exists n\in E$ tal que $n\leq m, \for m\in E$. Notemos que $n-1<n$, por lo que $n-1\notin E$, lo que implica que $n-1\leq y<n$. \qed
+    \item Por la propiedad arquimediana, el conjunto $E\coloneqq \set{m\in \N: y<m}$ es no vacío. Además, por el principio del buen orden, $\exists n\in E$ tal que $n\leq m, \for m\in E$. Notemos que $n-1<n$, por lo que $n-1\notin E$, lo que implica que $n-1\leq y<n$. \qed
+    
+    \item Definimos el conjunto $A\defined \set{n\in \Z: x<n}$. Por la propiedad arquimediana $\exists n_0 \in \N$ tal que $x<n_0$, así $n_0\in A$, por lo que $A\neq \emptyset$. Sabemos también que $A$ está acotado inferiormente, de manera que $A$ tiene elemento mínimo. Sea $n$ el elemento mínimo de $A$. Notemos que $n-1<n$, de donde sigue que $n-1\leq x<n$. Luego, $n-1\in \Z$, al que definimos como $m=n-1$, por lo que $m\leq x<m+1$.
+    
+    Finalmente, supongamos que $\exists m, n\in \Z$ tales que $m\leq x<m+1$ y $n\leq x<n+1$. Si $m\neq n$, sin pérdida de generalidad, $m>n$. Por ello, \begin{align*}
+        n < m &\leq x<n+1 \\
+        n < m &<n+1 \\
+        0 < m-n &<1
+    \end{align*}\\    
+    Lo que contradice la cerradura de la suma en $\Z$. Por tanto, $m=n$, es decir, el número entero que satisface $n\leq x<n+1$ es único. \qed
+    
+    %\textbf{Demostración alternativa:}
+%
+    %Definimos el conjunto $A\defined \set{n\in \Z: n\leq x}$. Por la propiedad arquimediana $\exists n_0\in \N$ tal que $n_0>x$. Observemos que \begin{enumerate}[label=\roman*)]
+    %\item Si $x\geq 0$, $-x\leq 0$ y $-x<n_0$, de donde sigue que $-n_0<x$, por lo que $-n_0\in A$.
+    %\item Si $x<0$, $x<n_0$, de donde sigue que $-n_0\leq x$, por lo que $-n_0\in A$.
+    %\end{enumerate} Consecuentemente, $A$ es no vacío. También sabemos que $A$ está acotado superiormente, por el axioma del supremo, $A$ tiene supremo. Sea $m\defined \sup{A}$. Por definición, $m\leq x$. Notemos que $m+1>m$. Luego, si $m+1\leq x$ tendríamos que $m+1\in A$ pero como $m$ es el supremo de $A$ seguiría que $m \geq m+1$, lo cual es una contradicción, entonces debe ser el caso que $m\leq x<m+1$.\qed
 \end{enumerate}
 
 \subsection*{Lista de Ejercicios \# (LE\#)}
