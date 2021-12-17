@@ -14,15 +14,15 @@
 %\color[rgb]{1,1,1} %white
 
 %the code below manipulates space around \align environment
-\usepackage{etoolbox}
-\newcommand{\zerodisplayskips}{%
-\setlength{\abovedisplayskip}{10pt}%
-\setlength{\belowdisplayskip}{-10pt}%
-\setlength{\abovedisplayshortskip}{10pt}%
-\setlength{\belowdisplayshortskip}{-10pt}}
-\appto{\normalsize}{\zerodisplayskips}
-\appto{\small}{\zerodisplayskips}
-\appto{\footnotesize}{\zerodisplayskips}
+%\usepackage{etoolbox}
+%\newcommand{\zerodisplayskips}{%
+%\setlength{\abovedisplayskip}{10pt}%
+%\setlength{\belowdisplayskip}{-10pt}%
+%\setlength{\abovedisplayshortskip}{10pt}%
+%\setlength{\belowdisplayshortskip}{-10pt}}
+%\appto{\normalsize}{\zerodisplayskips}
+%\appto{\small}{\zerodisplayskips}
+%\appto{\footnotesize}{\zerodisplayskips}
 
 %Conjuntos de números
 \newcommand{\N}{\mathbb{N}}
@@ -65,7 +65,7 @@ Existe un conjunto llamado conjunto de los números reales, denotado por $\mathb
     & $ (m, n) \mapsto m\cdot n $
 \end{tabular} \end{center}
 
-Las cuales satisfacen los siguientes axiomas.
+Las cuales satisfacen los siguientes:
 
 \subsection*{Axiomas de campo}
 
@@ -108,7 +108,7 @@ Las cuales satisfacen los siguientes axiomas.
         &=\tilde{0} + \bigl( m + \left(-m \right)\bigr) && \text{Por A2}\\
         &=\tilde{0} + 0 && \text{Por A4}\\
         &=\tilde{0} && \text{Por A3}
-        \end{align*} \mbox{}\hfill $\square$
+        \end{align*} \qed
 
     \item Supongamos que existen $1$ y $\tilde{1}$ números reales tales que$m\cdot 1=m$ y $m\cdot\tilde{1}=m$. Notemos que:
         \begin{align*}
@@ -118,7 +118,7 @@ Las cuales satisfacen los siguientes axiomas.
         &= \tilde{1} \cdot \left( m \cdot m^{-1} \right) && \text{Por A6}\\
         &= \tilde{1} \cdot 1 && \text{Por A8}\\
         &= \tilde{1} && \text{Por A7}
-        \end{align*} \mbox{}\hfill $\square$
+        \end{align*} \qed
 
     \item Supongamos que existen $-m$ y $-\tilde{m}$ números reales tales que $m + \left(-m\right) = 0$ y $m + \left(- \tilde{m}\right) = 0$. Notemos que:
         \begin{align*}
@@ -129,7 +129,7 @@ Las cuales satisfacen los siguientes axiomas.
         &= \left(-\tilde{m} \right)+\bigl(m+\left(-m\right)\bigr) && \text{Por A2}\\
         &= \left(-\tilde{m} \right)+0 && \text{Por A8}\\
         &= -\tilde{m} && \text{Por A3}
-        \end{align*} \mbox{}\hfill $\square$
+        \end{align*} \qed
 
     \item Supongamos que existen $m^{-1}$ y $\tilde{m}^{-1}$ números reales, distintos de cero, tales que $m \cdot m^{-1} = 1$ y $m \cdot \tilde{m}^{-1} = 1$. Notemos que:
         \begin{align*}
@@ -140,7 +140,7 @@ Las cuales satisfacen los siguientes axiomas.
         &= 1 \cdot \tilde{m}^{-1} && \text{Por hipótesis} \\
         &= \tilde{m}^{-1} \cdot 1 && \text{Por A5} \\
         &= \tilde{m}^{-1} && \text{Por A7}
-        \end{align*} \mbox{}\hfill $\square$
+        \end{align*} \qed
     
     \item Por A3 se verifica que $0 + 0 = 0$, y por A4 que $0 + (-0) = 0$. Además, por (c) de LE1, tenemos que el inverso aditivo de cada número real es único, entonces debe ser el caso que $-0 = 0$. \mbox{}\hfill  $\square$
     
@@ -154,7 +154,7 @@ Las cuales satisfacen los siguientes axiomas.
         &=m\cdot1+\left(-m\right) && \text{Por A3}\\
         &=m+\left(-m\right) && \text{Por A7}\\
         &=0 && \text{Por A4}\\
-    \end{align*} \mbox{}\hfill $\square$
+    \end{align*} \qed
     
     \item Supongamos que $m$ es distinto de $0$. Notemos que:
     \begin{align*}
@@ -165,7 +165,7 @@ Las cuales satisfacen los siguientes axiomas.
         &= 0 \cdot m^{-1}	&& \text{Por hipótesis}\\
         &= m^{-1} \cdot 0	&& \text{Por A5}\\
         &= 0 && \text{Por (f) de LE1}
-    \end{align*} \mbox{}\hfill $\square$
+    \end{align*} \qed
     
     \item Notemos que:
     \begin{align*}
@@ -180,17 +180,17 @@ Las cuales satisfacen los siguientes axiomas.
         &=m \cdot  \left( -1 \right) + 0 && \text{Por A1} \\
         &=m \cdot  \left( -1 \right) && \text{Por A3} \\
         &= \left( -1 \right)  \cdot m && \text{Por A5}
-    \end{align*} \mbox{}\hfill $\square$
+    \end{align*} \qed
     
     \item Notemos que:
     \begin{align*}
         (-m) \cdot n &= \bigl( \left(-1 \right) \cdot m \bigr) \cdot n && \text{Por (h) de LE1}\\
         &= (-1) \cdot (m \cdot n) && \text{Por A6}\\
         &= -(m \cdot n) && \text{Por (h) de LE1}\\
-    \end{align*} \mbox{}\hfill $\square$
+    \end{align*} \qed
 
     \item Sea $m$ un número real arbitrario pero fijo. Por A4 se verifica que $m + (-m) = 0$, y por A1 tenemos que $(-m) + m = 0$, de esta igualdad se sigue que $m$ es inverso aditivo de $(-m)$. Por A4 se verifica que $(-m) + \bigl(-(-m)\bigr) = 0$, y por (c) de LE1, sabemos que el inverso aditivo de cada número real es único. Entonces, debe ser el caso que $-(-m) = m$.
-    \mbox{}\hfill $\square$
+    \qed
 
     \item Notemos que:
     \begin{align*}
@@ -200,7 +200,7 @@ Las cuales satisfacen los siguientes axiomas.
         &= -(-m) \cdot n && \text{Por (h) de LE1}\\
         &= m \cdot n && \text{Por (j) de LE1}\\
     \end{align*}
-    \mbox{}\hfill $\square$
+    \qed
 
     \item Notemos que:
     \begin{align*}
@@ -210,7 +210,7 @@ Las cuales satisfacen los siguientes axiomas.
     \end{align*}
 
     \item Sea $m$ un número real distinto de cero. Por A8 sabemos que $m \cdot m^{-1}=1$, y por A5 tenemos que $m^{-1} \cdot m=1$, de esta igualdad se sigue que $m$ es inverso multiplicativo de $m^{-1}$. Por A8 se verifica que $ m^{-1} \cdot \left( m^{-1} \right)^{-1} =1$, y por (d) de LE1, sabemos que el inverso multiplicativo de cada número real es único. Entonces, debe ser el caso que $\left( m^{-1} \right )^{-1}=m$.
-    \mbox{}\hfill $\square$
+    \qed
 
     \item Sean $m$ y $n$ números reales distintos de cero. Notemos que:
     \begin{align*}
@@ -221,7 +221,7 @@ Las cuales satisfacen los siguientes axiomas.
     &=	n \cdot n^{-1}	&& \text{Por A7}\\
     &=	1	&& \text{Por A8}
     \end{align*} \\
-    De la igualdad anterior, sigue que $\left(m^{-1} \cdot n^{-1} \right)$ es inverso multiplicativo de $\left( m \cdot n \right)$. Además, por (d) de LE1, sabemos que el inverso multiplicativo de cada número real es único. Entonces, debe ser el caso que $\left(m^{-1} \cdot n^{-1} \right) = \left( m \cdot n \right)^{-1}$ \mbox{}\hfill $\square$
+    De la igualdad anterior, sigue que $\left(m^{-1} \cdot n^{-1} \right)$ es inverso multiplicativo de $\left( m \cdot n \right)$. Además, por (d) de LE1, sabemos que el inverso multiplicativo de cada número real es único. Entonces, debe ser el caso que $\left(m^{-1} \cdot n^{-1} \right) = \left( m \cdot n \right)^{-1}$ \qed
 \end{enumerate}
 
 \textbf{Notación:}
@@ -258,7 +258,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     &= \left( a \cdot c \right) \cdot b^{-1} && \text{Por A6}\\
     &= \frac{ac}{b} && \text{Por notación}\\
 \end{align*}
-\mbox{}\hfill $\square$
+\qed
 
 %B
 
@@ -271,7 +271,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     &= a \cdot b^{-1} && \text{Por A7}\\
     &= \frac{a}{b} && \text{Por notación}
 \end{align*}
-\mbox{}\hfill $\square$
+\qed
 
 %C
 
@@ -290,7 +290,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 &=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Por A5}\\
 &=	\frac{ad \pm bc}{bd} && \text{Por notación}\\
 \end{align*}
-\mbox{}\hfill $\square$
+\qed
 
 %D
 
@@ -304,7 +304,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 	&= \left( a \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Por (m) de LE1}\\
 	&= \frac{ac}{bd} && \text{Por notación}\\
 \end{align*}
-\mbox{}\hfill $\square$
+\qed
 
 \pagebreak
 %E
@@ -320,7 +320,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     &= \frac{a}{b} \cdot \frac{d}{c} && \text{Por notación}\\
     &= \frac{ad}{bc} && \text{Por (d) de LE2}\\
 \end{align*}
-\mbox{}\hfill $\square$
+\qed
 
 \end{enumerate}
 
@@ -390,7 +390,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \item Supongamos que $a \in \mathbb{R}^+$. Por A3 sabemos que $a=a+0$, y por (e) de LE1 sigue que $a=a-0$, entonces $a-0 \in \mathbb{R}^+$, lo que por definición implica que $a>0$.
         \item Supongamos que $a>0$. Por definición, $a-0 \in \mathbb{R}^+$, y por (e) de LE1 sigue que $a-0=a+0$, lo que por A3 implica que $a+0=a$. Así $a \in \mathbb{R}^+$.
         \end{enumerate}
-    \mbox{}\hfill $\square$
+    \qed
 
     %C
 
@@ -406,7 +406,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \item Si $-1 > 0$, por (b) de LE3 tenemos que $-1 \in \mathbb{R}^+$, pero esto contradice a O3, ya que por (a) de LE3 sabemos que $1 \in \mathbb{R}^+$.
     \end{enumerate}
     Por tanto $-1<0$
-    \mbox{}\hfill $\square$
+    \qed
 
     %D
 
@@ -435,12 +435,12 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \end{align*}
         De este modo, $b+d-(a+c)\in \mathbb{R}^+$, es decir, $a+c<b+d$.
         \end{enumerate}
-        En cualquier caso, $a+c<b+d$. \mbox{}\hfill $\square$
+        En cualquier caso, $a+c<b+d$. \qed
 
     %E
 
     \item Por definición $b-a \in \mathbb{R}^+$, y por (b) de LE3 $c \in \mathbb{R}^+$. Luego, por O2 se verifica que $c(b-a) \in \mathbb{R}^+$. Por A9 sigue que $c(b-a)=cb-ca$ y por A5 tenemos que $cb-ca=bc-ac$. De este modo, $bc-ac \in \mathbb{R}^+$, es decir, $ac<bc$.
-    \mbox{}\hfill $\square$
+    \qed
 
     %F
 
@@ -453,7 +453,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         &= ca -(cb) && \text{Por A1}\\
         &= ac - (bc) && \text{Por A5}\\
     \end{align*}
-    Entonces $ac - bc \in \mathbb{R}^+$, es decir, $ac>bc$. \mbox{}\hfill $\square$
+    Entonces $ac - bc \in \mathbb{R}^+$, es decir, $ac>bc$. \qed
 
     %G
 
@@ -472,7 +472,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     \end{align*}
     Entonces, $a \in \mathbb{R}^+$, por (b) de LE3.
     \end{enumerate}
-    \mbox{}\hfill $\square$
+    \qed
 
     %H
 
@@ -481,7 +481,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \item Si $a<b$, por (b) y (f) de LE3 tenemos que $a \cdot (-1) > b \cdot (-1)$, y por (h) de LE1 obtenemos que $-a > -b$.
         \item Si $-a > -b$, por por (b) y (f) de LE3 tenemos que $-a \cdot (-1) < -b \cdot (-1)$, y por (k) de LE1 obtenemos que $a<b$.
     \end{enumerate}
-    \mbox{}\hfill $\square$
+    \qed
 
     %I
 
@@ -491,7 +491,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         1 &\leq 0 && \text{Por A8 y (f) de LE1}\\
     \end{align*}
     Pero por (a) de LE3 y (b) de LE3 tenemos que $1>0$. Por tanto, $\frac{1}{a} > 0$.
-    \mbox{}\hfill $\square$
+    \qed
 
     %J
 
@@ -505,7 +505,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         &= c-a && \text{Por A1}\\
     \end{align*}
     Entonces $c-a \in \mathbb{R}^+$, es decir, $a<c$.
-    \mbox{}\hfill $\square$
+    \qed
 
     %K
 
@@ -514,7 +514,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \item Si $a=0$ o $c=0$, por (g) de LE1 se verifica que $ac=0$. Luego, por (j) de LE3, se verifica que $0<b$ y $0<d$. Así, $ac<bd$.
         \item Si $a>0$ y $c>0$. Por hipótesis, $a<b$, y por (e) de LE3, sigue que $ac<bc$. También, tenemos que $c<d$, y por (e) de LE3, sigue que $bc<db$. Finalmente, por (j) de LE3, se verifica que $ac<bd$.
     \end{enumerate}
-    \mbox{}\hfill $\square$
+    \qed
 
     %L
 
@@ -528,11 +528,11 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     0 &< \frac{1}{a} - \frac{1}{b} && \text{Por (c) de LE2}\\
     \frac{1}{b} &< \frac{1}{a} && \text{Por (d) de LE3}\\
     \end{align*}
-    \mbox{}\hfill $\square$
+    \qed
 
     %M
 
-    \item Dado que $0<b$, por (b) de LE3 se cumple que $b \in \mathbb{R}^+$, y por definición $1-a \in \mathbb{R}^+$. Por O2 se verifica que $b(1-a) \in \mathbb{R}^+$, es decir, $b-ab \in \mathbb{R}^+$, lo cual implica que $ab<b$. \mbox{}\hfill $\square$
+    \item Dado que $0<b$, por (b) de LE3 se cumple que $b \in \mathbb{R}^+$, y por definición $1-a \in \mathbb{R}^+$. Por O2 se verifica que $b(1-a) \in \mathbb{R}^+$, es decir, $b-ab \in \mathbb{R}^+$, lo cual implica que $ab<b$. \qed
 
     %N
 
@@ -551,17 +551,17 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         (a+b) \cdot \frac{1}{2} &< 2b \cdot \frac{1}{2} && \text{Por (e) de LE3} \\
         \frac{a+b}{2} &< \frac{2b}{2} && \text{Por (a) de LE2} \\
         \frac{a+b}{2} &< b && \text{Por A8}
-    \end{align*}\\ Finalmente, por notación, $a < \frac{a+b}{2} < b$. \mbox{}\hfill $\square$
+    \end{align*}\\ Finalmente, por notación, $a < \frac{a+b}{2} < b$. \qed
 
     %O
 
     \item Si $0 \leq a$, $ 0\cdot a \leq a \cdot a$, osea, $0 \leq a^2$. Si $a<0$, $0\cdot a < a \cdot a$, osea, $0 \leq a^2$. En cualquier caso $a\geq0$.
 
     %P
-    \item Supongamos que $0<a$, sigue que $0<\frac{a}{2}<a$. Elegimos $\varepsilon=\frac{a}{2}$, entonces $\varepsilon<a$, pero esto contradice nuestra hipótesis de que $a< \varepsilon$ para toda $\varepsilon>0$. Por tanto, $a=0$.\mbox{}\hfill $\square$
+    \item Supongamos que $0<a$, sigue que $0<\frac{a}{2}<a$. Elegimos $\varepsilon=\frac{a}{2}$, entonces $\varepsilon<a$, pero esto contradice nuestra hipótesis de que $a< \varepsilon$ para toda $\varepsilon>0$. Por tanto, $a=0$.\qed
 
     %Q
-    \item Sean $a$ y $b$ números reales tales que $a \leq b + \varepsilon$, $\forall \varepsilon > 0$. Supongamos que $a > b$. Luego, $a-b>0$. Notemos que $(a-b) \cdot \frac{1}{2} > 0 \cdot \frac{1}{2}$, es decir $\frac{(a-b)}{2} > 0$. Sea $\varepsilon = \frac{(a-b)}{2}$, sigue que $a=2\varepsilon+b$. Además, $2\varepsilon > \varepsilon$, de donde obtenemos $2 \varepsilon + b > \varepsilon + b$. De este modo, $a > b+\varepsilon$, pero esto contradice nuestra hipótesis. Por tanto, $a \leq b$.\mbox{}\hfill $\square$
+    \item Sean $a$ y $b$ números reales tales que $a \leq b + \varepsilon$, $\forall \varepsilon > 0$. Supongamos que $a > b$. Luego, $a-b>0$. Notemos que $(a-b) \cdot \frac{1}{2} > 0 \cdot \frac{1}{2}$, es decir $\frac{(a-b)}{2} > 0$. Sea $\varepsilon = \frac{(a-b)}{2}$, sigue que $a=2\varepsilon+b$. Además, $2\varepsilon > \varepsilon$, de donde obtenemos $2 \varepsilon + b > \varepsilon + b$. De este modo, $a > b+\varepsilon$, pero esto contradice nuestra hipótesis. Por tanto, $a \leq b$.\qed
 
 \end{enumerate}
 
@@ -586,7 +586,7 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
     \item $|a| \geq \pm a$. %A
     \item $|ab|=|a||b|$. %B
     \item $|a|=|-a|$. %C
-    \item $|a+b|\leq |a|+|b|$. %D
+    \item $|a+b|\leq |a|+|b|$. Desigualdad del triángulo. %D
     \item Si $b\neq 0$, entonces $\left| \frac{a}{b} \right| = \frac{|a|}{|b|}$. %E
     \item $|a|<b$ si y solo si $-c<b<c$. %F
     \item $ \big| |a|-|b| \big| \leq |a-b|$ %G
@@ -678,7 +678,7 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
         &= |a\cdot a|\\
         &= |a| \cdot |a| && \text{Por (b) de LE4}\\
         &= |a|^2
-    \end{align*} \mbox{}\hfill $\square$
+    \end{align*} \qed
 \end{enumerate} 
 
 %\pagebreak
@@ -752,13 +752,13 @@ Demuestre lo siguiente:
 \textbf{Demostración.}
 
 \begin{enumerate}[label=\alph*)]
-    \item Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{ n\in \N : m+n \in \N \}$. Por definición, $1\in \N$ y $m+1\in \N$, entonces $1\in A$, es decir, $A\neq \emptyset$. \\[5pt] Por otra parte, si $n\in A$ debe ser el caso que $n\in \N$ y $m+n\in \N$. Como $\N$ es un conjunto inductivo, $n+1 \in \N$ y $(m+n)+1 \in \N$, luego, por la asociatividad de la suma, $m+(n+1)\in \N$. Por la condición de $A$, se cumple que $n+1\in A$, por lo que $A$ es un conjunto inductivo. De esto se concluye que $\N\subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la suma de números naturales es un número natural. \mbox{}\hfill $\square$
+    \item Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{ n\in \N : m+n \in \N \}$. Por definición, $1\in \N$ y $m+1\in \N$, entonces $1\in A$, es decir, $A\neq \emptyset$. \\[5pt] Por otra parte, si $n\in A$ debe ser el caso que $n\in \N$ y $m+n\in \N$. Como $\N$ es un conjunto inductivo, $n+1 \in \N$ y $(m+n)+1 \in \N$, luego, por la asociatividad de la suma, $m+(n+1)\in \N$. Por la condición de $A$, se cumple que $n+1\in A$, por lo que $A$ es un conjunto inductivo. De esto se concluye que $\N\subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la suma de números naturales es un número natural. \qed
     
     \item Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{n\in \N: m\cdot n \in \N\}$. Por definición, $1 \in \N$. Adenás, $m\cdot 1 \in \N$, entonces $1 \in A$, es decir $A \neq \emptyset$.\\[5pt] 
-    Luego, si $n \in A$ debe ser el caso que $n\in \N$ y $m \cdot n \in \N$. Por (a) de LE7 se verifica que $(m \cdot n) + m \in \N$. Notemos que $(m \cdot n) + m=m \cdot (n+1)$, osea, $m \cdot (n+1) \in \N$. Como $\N$ es un conjunto inductivo, tenemos que $n+1\in \N$. De este modo, $n+1\in A$. Lo que implica que $A$ es un conjunto inductivo. De esto se concluye que $\N \subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la multiplicación de números naturales es un número natural. \mbox{}\hfill $\square$
+    Luego, si $n \in A$ debe ser el caso que $n\in \N$ y $m \cdot n \in \N$. Por (a) de LE7 se verifica que $(m \cdot n) + m \in \N$. Notemos que $(m \cdot n) + m=m \cdot (n+1)$, osea, $m \cdot (n+1) \in \N$. Como $\N$ es un conjunto inductivo, tenemos que $n+1\in \N$. De este modo, $n+1\in A$. Lo que implica que $A$ es un conjunto inductivo. De esto se concluye que $\N \subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la multiplicación de números naturales es un número natural. \qed
 
     \item Sea $A\coloneqq \{n\in \N: n\geq 1\}$. Como $1\in \N$ y $1\geq 1$, tenemos que $1\in A$.\\[5pt]
-    Si $n\in A$ debe ser el caso que $n\in \N$ y $1\leq n$. Además, por (a) de LE7, $n+1\in \N$. Luego, notemos que $0 \leq 1$ de donde sigue que $n \leq n+1$. Por transitividad, $1\leq n+1$, por lo que $n+1\in A$, lo que implica que $A$ es un conjunto inductivo, es decir, $\N\subseteq A$ y como $A\subseteq \N$, $A=N$. En otras palabras, $n\geq 1, \forall n\in\N$. \mbox{}\hfill $\square$
+    Si $n\in A$ debe ser el caso que $n\in \N$ y $1\leq n$. Además, por (a) de LE7, $n+1\in \N$. Luego, notemos que $0 \leq 1$ de donde sigue que $n \leq n+1$. Por transitividad, $1\leq n+1$, por lo que $n+1\in A$, lo que implica que $A$ es un conjunto inductivo, es decir, $\N\subseteq A$ y como $A\subseteq \N$, $A=N$. En otras palabras, $n\geq 1, \forall n\in\N$. \qed
 
     \item Por (d) de LE7, $n\geq 1, \forall n\in \N$. Si $n=1$, tenemos que $n^{-1}=1>0$. Si $n>1$, tenemos que $n>0$, por lo que $n^{-1}>0$. En cualquier caso, $1\geq n^{-1}>0, \forall n\in \N$.
 
@@ -767,13 +767,13 @@ Demuestre lo siguiente:
         &= n+ 0\\
         &= n
     \end{align*}\\
-    Entonces, $(n+1)-1\in \N$. También, $n>1$ implica que $n>0$ y $n+1>1$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. Por tanto $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$. \mbox{}\hfill $\square$
+    Entonces, $(n+1)-1\in \N$. También, $n>1$ implica que $n>0$ y $n+1>1$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. Por tanto $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$. \qed
 
-    \item Sea $A \coloneqq \set{n\in \N| n<m, m-n\in\N \ \text{con} \ m\in\N}$. Por definición, $1\in \N$ y $1+1\in \N$. Por (a) y (b) de LE3, $1>0$, de donde sigue que $1+1>1$. Por (e) de LE7, se verifica que $(1+1)-1\in \N$, por lo que $1\in A$. \\[5pt] Si $n \in A$ debe ser porque $m-n\in \N$ y $m>n$, de donde obtenemos $m+1>n+1$. Como $m,n\in \N$ y $\N$ es un conjunto inductivo, $n+1\in \N$ y $m+1 \in \N$. Notemos que $m+1-(n+1)=m-n$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. \mbox{}\hfill $\square$ 
+    \item Sea $A \coloneqq \set{n\in \N| n<m, m-n\in\N \ \text{con} \ m\in\N}$. Por definición, $1\in \N$ y $1+1\in \N$. Por (a) y (b) de LE3, $1>0$, de donde sigue que $1+1>1$. Por (e) de LE7, se verifica que $(1+1)-1\in \N$, por lo que $1\in A$. \\[5pt] Si $n \in A$ debe ser porque $m-n\in \N$ y $m>n$, de donde obtenemos $m+1>n+1$. Como $m,n\in \N$ y $\N$ es un conjunto inductivo, $n+1\in \N$ y $m+1 \in \N$. Notemos que $m+1-(n+1)=m-n$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. \qed 
     
     %Para algún $m\in \N$ tal que $m>1$, por (e) de LE7, se verifica que $m-1\in \N$, por lo que $1\in A$. \\[5pt] \textbf{Nota}: Se abusa de la notación y no debe entenderse que $m$ es fija, sino que depende del número natural con que se relaciona.   
     
-    \item Por (b) de LE3, $x>0$, por lo que $x+n>n$. Por hipótesis, $x+n, n\in \N$, y por (f) de LE7 $(x+n)-n \in \N$, osea, $x\in \N$. \mbox{}\hfill $\square$
+    \item Por (b) de LE3, $x>0$, por lo que $x+n>n$. Por hipótesis, $x+n, n\in \N$, y por (f) de LE7 $(x+n)-n \in \N$, osea, $x\in \N$. \qed
     
     \item Supongamos que $x\in \N$. Por hipótesis tenemos que $x<n$ y $x>n-1$. Notemos que \begin{align*}
         x &< n\\
@@ -787,7 +787,7 @@ Demuestre lo siguiente:
         0 &< x-n+1\\
         n &< x+1
     \end{align*}\\
-    Como $\N$ es un conjunto inductivo, $x+1\in \N$, y como $x+1>n$, con $n\in \N$, por (e) de LE7, $x+1-n \in \N$, y por (c) de LE7, $x+1-n\geq 1$. Pero tenemos que $x-n+1<1$, osea $1\leq x+1-n<1$, lo cual es una contradicción. Por tanto, $x$ no es un número natural. \mbox{}\hfill $\square$
+    Como $\N$ es un conjunto inductivo, $x+1\in \N$, y como $x+1>n$, con $n\in \N$, por (e) de LE7, $x+1-n \in \N$, y por (c) de LE7, $x+1-n\geq 1$. Pero tenemos que $x-n+1<1$, osea $1\leq x+1-n<1$, lo cual es una contradicción. Por tanto, $x$ no es un número natural. \qed
 \end{enumerate}
 
 \pagebreak
@@ -1017,10 +1017,31 @@ Llamamos a $x_n$ el n-ésimo término. Otras etiquetas para la secuencia son $(x
 
 Llamamos a $\ell$ el límite de la secuencia y escribimos $\lim X = \ell$.
 
-Notemos que por LE5(a) se cumple que $x_n=\ell$ con $n\geq n_0$.
-
-Si $\nexists n_0$ que cumpla esta propiedad, decimos que la secuencia es divergente.
+%Notemos que por LE5(a) se cumple que $x_n=\ell$ con $n\geq n_0$. Esto es falso.
+Si la sucesión no es convergente, entonces es divergente.
 
 \textbf{Definición:} Una secuencia $X$ está acotada si $\exists M\in \R^+$ tal que $|x_n|\leq M, \forall n\in \N$.
+
+\subsection*{Lista de Ejercicios 10 (LE10)}
+
+Demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+    \item Toda secuencia convergente está acotada.
+\end{enumerate}
+
+\subsubsection*{Demostración}
+
+\begin{enumerate}[label=\alph*),font=\bfseries]
+    \item Sea $X$ una secuencia convergente. Por definición, $\exists n_0 \in \N$ tal que los términos $x_n$ con $n\geq n_0$ satisfacen que $|x_n-\ell|<\epsilon, \forall \epsilon>0$. Sea $\epsilon_0>0$ arbitrario pero fijo, entonces \begin{align*}
+        |x_n - \ell| &< \epsilon_0 \\
+        |x_n - \ell| + |\ell| &< \epsilon_0 + |\ell|
+    \end{align*}\\
+    Luego, notemos que $|x_n| = |x_n-\ell+\ell|$, y por la desigualdad del triángulo, \[|x_n-\ell+\ell| \leq |x_n-\ell| + |\ell|\]\\ Por transitividad, $|x_n|< \epsilon_0 + |\ell|$, lo que implica que $\{x_n\}$ con $n\geq n_0$ está cotado superiormente.
+    
+    Por otra parte, notemos que el conjunto de índices $n<n_0$ está acotado superiormente, y por esto, $\{x_{n<n_0}\}$ es finito y por tanto, tiene supremo. %proof https://math.stackexchange.com/questions/548806/a-finite-set-always-has-a-maximum-and-a-minimum
+    
+    Finalmente, el conjunto $\{x_{n<n_0}\} \cup \{\epsilon_0 + |\ell|\}$ está acotado superiormente, por lo que $X$ está acotada. \qed
+\end{enumerate}
 
 \end{document}
