@@ -1,28 +1,9 @@
 \documentclass[11pt]{article}
 
-%\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
-\usepackage{xcolor,graphicx}
-\graphicspath{{images/}}
 \usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
 \usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
 \usepackage{mathtools}
 \usepackage{braket}
-
-%Dark mode
-%\pagecolor[rgb]{0,0,0} %black
-%\color[rgb]{1,1,1} %white
-
-%the code below manipulates space around \align environment
-%\usepackage{etoolbox}
-%\newcommand{\zerodisplayskips}{%
-%\setlength{\abovedisplayskip}{10pt}%
-%\setlength{\belowdisplayskip}{-10pt}%
-%\setlength{\abovedisplayshortskip}{10pt}%
-%\setlength{\belowdisplayshortskip}{-10pt}}
-%\appto{\normalsize}{\zerodisplayskips}
-%\appto{\small}{\zerodisplayskips}
-%\appto{\footnotesize}{\zerodisplayskips}
 
 %Conjuntos de números
 \newcommand{\N}{\mathbb{N}}
@@ -153,7 +134,7 @@ Las cuales satisfacen los siguientes:
         &=\bigl(m\cdot\left(0+1\right)\bigr)+\left(-m\right) && \text{Por A9}\\
         &=m\cdot1+\left(-m\right) && \text{Por A3}\\
         &=m+\left(-m\right) && \text{Por A7}\\
-        &=0 && \text{Por A4}\\
+        &=0 && \text{Por A4}
     \end{align*} \qed
     
     \item Supongamos que $m$ es distinto de $0$. Notemos que:
@@ -186,7 +167,7 @@ Las cuales satisfacen los siguientes:
     \begin{align*}
         (-m) \cdot n &= \bigl( \left(-1 \right) \cdot m \bigr) \cdot n && \text{Por (h) de LE1}\\
         &= (-1) \cdot (m \cdot n) && \text{Por A6}\\
-        &= -(m \cdot n) && \text{Por (h) de LE1}\\
+        &= -(m \cdot n) && \text{Por (h) de LE1}
     \end{align*} \qed
 
     \item Sea $m$ un número real arbitrario pero fijo. Por A4 se verifica que $m + (-m) = 0$, y por A1 tenemos que $(-m) + m = 0$, de esta igualdad se sigue que $m$ es inverso aditivo de $(-m)$. Por A4 se verifica que $(-m) + \bigl(-(-m)\bigr) = 0$, y por (c) de LE1, sabemos que el inverso aditivo de cada número real es único. Entonces, debe ser el caso que $-(-m) = m$.
@@ -198,16 +179,15 @@ Las cuales satisfacen los siguientes:
         &= \bigl( (-m) \cdot (-1) \bigr) \cdot n && \text{Por A6}\\
         &= \bigl( (-1) \cdot (-m) \bigr) \cdot n && \text{Por A5}\\
         &= -(-m) \cdot n && \text{Por (h) de LE1}\\
-        &= m \cdot n && \text{Por (j) de LE1}\\
-    \end{align*}
-    \qed
+        &= m \cdot n && \text{Por (j) de LE1}
+    \end{align*} \qed
 
     \item Notemos que:
     \begin{align*}
         (-1) \cdot (-m) &= 1 \cdot m && \text{Por (k) de LE1}\\
         &= m \cdot 1 && \text{Por A5}\\
-        &= m && \text{Por A7}\\
-    \end{align*}
+        &= m && \text{Por A7}
+    \end{align*} \qed
 
     \item Sea $m$ un número real distinto de cero. Por A8 sabemos que $m \cdot m^{-1}=1$, y por A5 tenemos que $m^{-1} \cdot m=1$, de esta igualdad se sigue que $m$ es inverso multiplicativo de $m^{-1}$. Por A8 se verifica que $ m^{-1} \cdot \left( m^{-1} \right)^{-1} =1$, y por (d) de LE1, sabemos que el inverso multiplicativo de cada número real es único. Entonces, debe ser el caso que $\left( m^{-1} \right )^{-1}=m$.
     \qed
