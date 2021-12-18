@@ -12,9 +12,7 @@
 \newcommand{\R}{\mathbb{R}}
 
 %Shorter comands
-\newcommand{\defined}{\coloneqq}
 \let\epsilon\varepsilon
-\let\for\forall
 \let\oldemptyset\emptyset
 \let\emptyset\varnothing
 \let\set\Set
@@ -759,8 +757,7 @@ Demuestre lo siguiente:
     \item \begin{enumerate}[label=\roman*)]
         \item Sea $M$ una cota superior de $S$ tal que $\forall \epsilon>0, \exists s_{\epsilon}$ tal que $M-\epsilon<s_{\epsilon}$. Si $M$ no es el supremo de $S$, tendríamos que $\exists V$ tal que $s_@a \leq V < M$. Elegimos $\epsilon = M-V$, con lo que $V<s_{\epsilon}$, lo que contradice nuestra hipótesis. Por tanto, $M$ es el supremo de $S$.
         \item Sea $M$ el supremo de $S$ y $\epsilon>0$. Como $M<M+\epsilon$, entonces $M-\epsilon$ no es una cota superior de $S$, por lo que $\exists s_\epsilon$ tal que $s_\epsilon>M-\epsilon$.
-        \end{enumerate}
-        \qed
+        \end{enumerate} \qed
 \end{enumerate}
 
 \subsection*{Principio del buen orden}
@@ -779,27 +776,43 @@ Notemos que si suponemos la existencia de un subconjunto no vacío de $\N$ tal q
 
 Sea $A\subseteq \N$ con $A\neq \emptyset$. Supongamos que $A$ no contiene ninguna de sus cotas inferiores, es decir, supongamos que si $c\leq a, \forall a\in A$, entonces $c\notin A$.
 
-Definimos el conjunto $L\coloneqq \set{n\in \N: n\leq a, \forall a\in A}$. Es claro que $1\in L$. Veamos que si $n\in L$, tendríamos que $n\leq a, \for a\in A$. Luego, si $n+1\notin L$, entonces $\exists a_0\in A$ tal que $n+1>a_0$, por lo que $n\leq a_0<n+1$, y —por (h) de LE7— no puede ser el caso que $n<a_0$, de donde sigue que $n=a_0$, pero esto contradice nuestro supuesto inicial, entonces, debe ser el caso que $n+1\in L$. Consecuentemente, $L$ es un conjunto inductivo, y —por definición— $\N\subseteq L$ y $L\subseteq \N$, lo que implica que $L=\N$.
+Definimos el conjunto $L\coloneqq \set{n\in \N: n\leq a, \forall a\in A}$. Es claro que $1\in L$. Veamos que si $n\in L$, tendríamos que $n\leq a, \forall a\in A$. Luego, si $n+1\notin L$, entonces $\exists a_0\in A$ tal que $n+1>a_0$, por lo que $n\leq a_0<n+1$, y —por (h) de LE7— no puede ser el caso que $n<a_0$, de donde sigue que $n=a_0$, pero esto contradice nuestro supuesto inicial, entonces, debe ser el caso que $n+1\in L$. Consecuentemente, $L$ es un conjunto inductivo, y —por definición— $\N\subseteq L$ y $L\subseteq \N$, lo que implica que $L=\N$.
 
 Finalmente, notemos que $A$ y $L$ son disjuntos, y dado que $A\subseteq \N$ y $L=\N$, sigue que $A=\emptyset$, pero esto es una contradicción. Por tanto, si $A\subseteq \N$ con $A\neq \emptyset$, entonces $\exists c\in A$ tal que $c\leq a, \forall a\in A$. \qed
-
-%\textbf{\textit{Teorema.}} Si $A\subseteq \N$ y $A\neq \emptyset$ y $A$ está acotado superiormente, entonces $A$ tiene elemento máximo, esto es existe un elemento $c\in A$ tal que $a\leq c, \for a\in A$.
+%
+%\textbf{\textit{Teorema.}} Si $A\subseteq \N$ y $A\neq \emptyset$ y $A$ está acotado superiormente, entonces $A$ tiene elemento máximo, esto es existe un elemento $c\in A$ tal que $a\leq c, \forall a\in A$.
 %
 %\textbf{Demostración:}
 %
-%Sea $A\subseteq\N$ con $A\neq \emptyset$ y $A$ acotado superiormente. Supongamos que si $c\geq a, \for a\in A$, entonces $c\notin A$.
+%Sea $A\subseteq\N$ con $A\neq \emptyset$ y $A$ acotado superiormente. Supongamos que si $c\geq a, \forall a\in A$, entonces $c\notin A$.
 %
-%Definimos el conjunto $-A\defined \set{-a: a\in A}$. Como $A$ está acotado superiormente, $\exists c\in \R$ tal que $c\geq a, \forall a\in A$. Notemos que $-a\geq -c, \forall -a\in -A$, lo que implica que $-A$ está acotado inferiormente, y por esto, $A$ tiene elemento mínimo. Sea $m$ el elemento mínimo de $-A$. Veamos que $m\leq -a, \forall -a\in -A$ de donde sigue que $a\leq -m, \forall a\in A$, con $-m\in A$ pero esto contradice nuestro supuesto inicial. Por tanto, $A$ tiene elemento máximo. \qed
+%Definimos el conjunto $-A\coloneqq \set{-a: a\in A}$. Como $A$ está acotado superiormente, $\exists c\in \R$ tal que $c\geq a, \forall a\in A$. Notemos que $-a\geq -c, \forall -a\in -A$, lo que implica que $-A$ está acotado inferiormente, y por esto, $A$ tiene elemento mínimo. Sea $m$ el elemento mínimo de $-A$. Veamos que $m\leq -a, \forall -a\in -A$ de donde sigue que $a\leq -m, \forall a\in A$, con $-m\in A$ pero esto contradice nuestro supuesto inicial. Por tanto, $A$ tiene elemento máximo. \qed
 %
+
+\subsection*{Principio de inducción matemática}
+
+Sea $S\subseteq \N$ tal que $S$ es un conjunto inductivo, entonces $S=\N$.
+
+\textbf{Demostración:} Supongamos que $S\neq \N$, entonces el conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$), y —por el principio del buen orden— tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$. Por (c) de LE7, se verifica que $1 \leq m$. Por definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $m\in \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, de donde sigue —por (e) de LE7— que $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, debe ser el caso que $S=\N$. \qed
 
 \textbf{\textit{Teorema.}} Todo conjunto finito tiene elemento mínimo y elemento máximo, es decir, para un conjunto finito $A$ no vacío, $\exists m,n\in A$ tales que $m\leq a\leq n, \forall a\in A$.
 
 \textbf{Demostración:}
 
-Sea $A \coloneqq \{a_1, \dots, a_n\}$ no vacío. Procederemos por inducción sobre $n\in \N$. \begin{enumerate}[label=\roman*)]
-    \item Si $n=1$, tenemos $A\coloneqq\{a_1\}$, de modo que para $m=a_1$ y $n=a_1$ se cumple la condición.
+Sea $n\in \N$ y $A \coloneqq \{a_1, \dots, a_n\}$ no vacío.
+
+Procedemos por inducción sobre el número de elementos de $A$. \begin{enumerate}[label=\roman*)]
+    \item Si $n=1$, tenemos $A\coloneqq\{a_1\}$, por lo que $m=a_1$ y $n=a_1$ cumplen con la condición requerida.
     \item Supongamos que la propiedad se cumple para $n=k$.
-    \item Consideremos el conjunto $A\coloneqq \{a_1, \dots, a_k, a_{k+1}\}$. Por hipótesis de inducción, $A' \coloneqq A \backslash \{a_{k+1}\} = \{a_1, \dots, a_k\}$ tiene elemento mínimo y máximo.
+    \item Definimos al conjunto $A\coloneqq \{a_1, \dots, a_k, a_{k+1}\}$. Por hipótesis de inducción, el conjunto \[A' \coloneqq A \setminus \{a_{k+1}\} = \{a_1, \dots, a_k\}\] tiene elemento mínimo y máximo, es decir, $\exists m',n'\in A'$ tales que $m'\leq a' \leq n', \forall a' \in A'$.
+    
+    Notemos que todo elemento de $A$ es miembro de $A'$ o es igual a $a_{k+1}$. Observemos ahora que $a_{k+1}$ cumple con alguno de los siguientes casos:
+    \begin{enumerate}[label=\alph*)]
+        \item Si $a_{k+1}<m'$, tenemos que $a_{k+1}<m'\leq a' \leq n'$, entonces elegimos $m=a_{k+1}$ y $n=n'$.
+        \item Si $m' \leq a_{k+1}\leq n'$, entonces $a_{k+1}\in A'$ y $m'\leq a_{k+1} \leq n'$, por lo que $m=m'$ y $n=n'$.
+        \item Si $a_{k+1}>n'$, tenemos que $m'\leq a' \leq n'<a_{k+1}$, entonces elegimos $m=m'$ y $n=a_{k+1}$.
+    \end{enumerate}
+    En cualquier caso $A$ tiene elemento mínimo y máximo. \qed
 \end{enumerate}
 
 \subsection*{Axioma del supremo}
@@ -852,9 +865,9 @@ Supongamos que existe $x\in \R$ tal que $n\leq x, \forall n\in \N$. Notemos que 
     
     \item Por la propiedad arquimediana $\exists n$ tal que $\frac{1}{t}<n$. Como $n$ y $t$ son mayores que $0$, sigue que $0<\frac{1}{n}<t$. \qed
     
-    \item Por la propiedad arquimediana, el conjunto $E\coloneqq \set{m\in \N: y<m}$ es no vacío. Además, por el principio del buen orden, $\exists n\in E$ tal que $n\leq m, \for m\in E$. Notemos que $n-1<n$, por lo que $n-1\notin E$, lo que implica que $n-1\leq y<n$. \qed
+    \item Por la propiedad arquimediana, el conjunto $E\coloneqq \set{m\in \N: y<m}$ es no vacío. Además, por el principio del buen orden, $\exists n\in E$ tal que $n\leq m, \forall m\in E$. Notemos que $n-1<n$, por lo que $n-1\notin E$, lo que implica que $n-1\leq y<n$. \qed
     
-    \item Definimos el conjunto $A\defined \set{n\in \Z: x<n}$. Por la propiedad arquimediana $\exists n_0 \in \N$ tal que $x<n_0$, así $n_0\in A$, por lo que $A\neq \emptyset$. Sabemos también que $A$ está acotado inferiormente, de manera que $A$ tiene elemento mínimo. Sea $n$ el elemento mínimo de $A$. Notemos que $n-1<n$, de donde sigue que $n-1\leq x<n$. Luego, $n-1\in \Z$, al que definimos como $m=n-1$, por lo que $m\leq x<m+1$.
+    \item Definimos el conjunto $A\coloneqq \set{n\in \Z: x<n}$. Por la propiedad arquimediana $\exists n_0 \in \N$ tal que $x<n_0$, así $n_0\in A$, por lo que $A\neq \emptyset$. Sabemos también que $A$ está acotado inferiormente, de manera que $A$ tiene elemento mínimo. Sea $n$ el elemento mínimo de $A$. Notemos que $n-1<n$, de donde sigue que $n-1\leq x<n$. Luego, $n-1\in \Z$, al que definimos como $m=n-1$, por lo que $m\leq x<m+1$.
     
     Finalmente, supongamos que $\exists m, n\in \Z$ tales que $m\leq x<m+1$ y $n\leq x<n+1$. Si $m\neq n$, sin pérdida de generalidad, $m>n$. Por ello, \begin{align*}
         n < m &\leq x<n+1 \\
@@ -865,10 +878,10 @@ Supongamos que existe $x\in \R$ tal que $n\leq x, \forall n\in \N$. Notemos que 
 %    
     %\textbf{Demostración alternativa:}
 %
-    %Definimos el conjunto $A\defined \set{n\in \Z: n\leq x}$. Por la propiedad arquimediana $\exists n_0\in \N$ tal que $n_0>x$. Observemos que \begin{enumerate}[label=\roman*)]
+    %Definimos el conjunto $A\coloneqq \set{n\in \Z: n\leq x}$. Por la propiedad arquimediana $\exists n_0\in \N$ tal que $n_0>x$. Observemos que \begin{enumerate}[label=\roman*)]
     %\item Si $x\geq 0$, $-x\leq 0$ y $-x<n_0$, de donde sigue que $-n_0<x$, por lo que $-n_0\in A$.
     %\item Si $x<0$, $x<n_0$, de donde sigue que $-n_0\leq x$, por lo que $-n_0\in A$.
-    %\end{enumerate} Consecuentemente, $A$ es no vacío. También sabemos que $A$ está acotado superiormente, por el axioma del supremo, $A$ tiene supremo. Sea $m\defined \sup{A}$. Por definición, $m\leq x$. Notemos que $m+1>m$. Luego, si $m+1\leq x$ tendríamos que $m+1\in A$ pero como $m$ es el supremo de $A$ seguiría que $m \geq m+1$, lo cual es una contradicción, entonces debe ser el caso que $m\leq x<m+1$.\qed
+    %\end{enumerate} Consecuentemente, $A$ es no vacío. También sabemos que $A$ está acotado superiormente, por el axioma del supremo, $A$ tiene supremo. Sea $m\coloneqq \sup{A}$. Por definición, $m\leq x$. Notemos que $m+1>m$. Luego, si $m+1\leq x$ tendríamos que $m+1\in A$ pero como $m$ es el supremo de $A$ seguiría que $m \geq m+1$, lo cual es una contradicción, entonces debe ser el caso que $m\leq x<m+1$.\qed
 \end{enumerate}
 
 \subsection*{Lista de Ejercicios \# (LE\#)}
