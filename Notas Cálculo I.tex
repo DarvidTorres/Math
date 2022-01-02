@@ -795,24 +795,22 @@ Sea $S\subseteq \N$ tal que $S$ es un conjunto inductivo, entonces $S=\N$.
 
 \textbf{Demostración:} Supongamos que $S\neq \N$, entonces el conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$), y —por el principio del buen orden— tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$. Por (c) de LE7, se verifica que $1 \leq m$. Por definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $m\in \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, de donde sigue —por (e) de LE7— que $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, debe ser el caso que $S=\N$. \qed
 
-\textbf{\textit{Teorema.}} Todo conjunto finito tiene elemento mínimo y elemento máximo, es decir, para un conjunto finito $A$ no vacío, $\exists m,n\in A$ tales que $m\leq a\leq n, \forall a\in A$.
+\textbf{\textit{Teorema.}} Todo conjunto finito no vacío tiene elemento mínimo y elemento máximo, es decir, para todo conjunto finito $A\neq \emptyset$, $\exists m,M\in A$ tales que $m\leq a\leq M, \forall a\in A$.
 
-\textbf{Demostración:}
-
-Sea $n\in \N$ y $A \coloneqq \{a_1, \dots, a_n\}$ no vacío.
+\textbf{Demostración:} Sea $n\in \N$ y $A \coloneqq \{a_1, \dots, a_n\}$ no vacío.
 
 Procedemos por inducción sobre el número de elementos de $A$. \begin{enumerate}[label=\roman*)]
-    \item Si $n=1$, tenemos $A\coloneqq\{a_1\}$, por lo que $m=a_1$ y $n=a_1$ cumplen con la condición requerida.
-    \item Supongamos que la propiedad se cumple para $n=k$.
-    \item Definimos al conjunto $A\coloneqq \{a_1, \dots, a_k, a_{k+1}\}$. Por hipótesis de inducción, el conjunto \[A' \coloneqq A \setminus \{a_{k+1}\} = \{a_1, \dots, a_k\}\] tiene elemento mínimo y máximo, es decir, $\exists m',n'\in A'$ tales que $m'\leq a' \leq n', \forall a' \in A'$.
+    \item Si $n=1$, tenemos $A\coloneqq\{a_1\}$, por lo que $m=a_1$ y $M=a_1$ cumplen la condición requerida.
+    \item Supongamos que la proposición se cumple para $n=k$.
+    \item Si $n=k+1$, tenemos $A\coloneqq \{a_1, \dots, a_k, a_{k+1}\}$. Luego, por hipótesis de inducción, el conjunto \[A' \coloneqq A \setminus \{a_{k+1}\} = \{a_1, \dots, a_k\}\] tiene elemento mínimo y máximo, es decir, $\exists m',M'\in A'$ tales que $\forall a'\in A', m'\leq a' \leq M'$.
     
-    Notemos que todo elemento de $A$ es miembro de $A'$ o es igual a $a_{k+1}$. Observemos ahora que $a_{k+1}$ cumple con alguno de los siguientes casos:
+    Notemos que para cada $a\in A$ tenemos $a=a_{k+1}$ o $a\in A'$. Por tricotomía, $a_{k+1}$ cumple con alguno de los siguientes casos:
     \begin{enumerate}[label=\alph*)]
-        \item Si $a_{k+1}<m'$, tenemos que $a_{k+1}<m'\leq a' \leq n'$, entonces elegimos $m=a_{k+1}$ y $n=n'$.
-        \item Si $m' \leq a_{k+1}\leq n'$, entonces $a_{k+1}\in A'$ y $m'\leq a_{k+1} \leq n'$, por lo que $m=m'$ y $n=n'$.
-        \item Si $a_{k+1}>n'$, tenemos que $m'\leq a' \leq n'<a_{k+1}$, entonces elegimos $m=m'$ y $n=a_{k+1}$.
+        \item Si $a_{k+1}<m'$, tenemos que $m=a_{k+1}<m'\leq a' \leq M'=M$.
+        \item Si $m' \leq a_{k+1}\leq M'$, entonces $m=m'\leq a_{k+1} \leq M'=M$.
+        \item Si $m'<a_{k+1}$, tenemos que $m=m'\leq a' \leq M'<a_{k+1}=M$.
     \end{enumerate}
-    En cualquier caso $A$ tiene elemento mínimo y máximo. \qed
+    En cualquier caso $\exists m,M\in A$ tales que $m\leq a\leq M, \forall a\in A$. \qed
 \end{enumerate}
 
 \subsection*{Axioma del supremo}
@@ -858,7 +856,7 @@ Supongamos que existe $x\in \R$ tal que $n\leq x, \forall n\in \N$. Notemos que 
     \item Sea $x\in \R$, demuestre que $\exists! \, n\in \Z$ tal que $n\leq x<n+1$.
 \end{enumerate}
 
-\textbf{Demostración:}
+\subsubsection*{Demostración}
 
 \begin{enumerate}[label=\alph*)]
     \item Por (d) de LE7, $S$ está acotado inferiormente por $0$; de esto sigue que $S$ tiene ínfimo. Sea $w\coloneqq \inf{S}$. Por definición, $\frac{1}{n}\geq w\geq 0, n\in \N$. Supongamos que $w>0$. Por la propiedad arquimediana $\exists n_0$ tal que $\frac{1}{w} < n_0$, de donde sigue que $w<\frac{1}{n_0}$ con $\frac{1}{n_0} \in S$, lo cual es una contradicción. Por tanto, $w=0$. \qed
@@ -946,43 +944,51 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
 
 \end{enumerate}
 
-\textbf{Definición:} Una secuencia (sucesión) es una función %$X: n\in \N \mapsto x_n \in \R$
+\subsection*{Sucesiones}
+
+\textbf{Definición:} Una sucesión es una función %$X: n\in \N \mapsto x_n \in \R$
 \begin{align*}
     X: \ & \N \to \R \\
     \ &  n \mapsto x_n 
 \end{align*}
 %
-Llamamos a $x_n$ el n-ésimo término. Otras etiquetas para la secuencia son $(x_n)$, $(x_n:n\in \N)$, donde esta última denota orden y se diferencia del rango de la función $\{x_n:n\in \N\}\subseteq \R$.
+Llamamos a $x_n$ el n-ésimo término. Otras etiquetas para la sucesión son $(x_n)$, $(x_n:n\in \N)$, que denotan orden y se diferencian del rango de la función $\{x_n:n\in \N\}\subseteq \R$.
 
-\textbf{Definición:} Decimos que una secuencia $X$ converge a $\ell \in \R$, o que la secuencia es convergente, si $\exists n_0\in \N$ tal que los términos $x_n$ con $n\geq n_0$ satisfacen que $|x_n-\ell|<\epsilon$, $\forall \epsilon>0$.
+\textbf{Definición:} Una sucesión $(x_n)$ es convergente si $\exists \ell \in \R$ tal que para cada $\varepsilon>0$ existe un número natural $n_\varepsilon$ (que depende de $\varepsilon$) de modo que los términos $x_n$ con $n\geq n_\varepsilon$ satisfacen que $|x_n-\ell|<\varepsilon$.
 
-Llamamos a $\ell$ el límite de la secuencia y escribimos $\lim X = \ell$.
+Decimos que $(x_n)$ converge a $\ell \in \R$ y llamamos a $\ell$ el límite de la sucesión y escribimos $\lim (x_n) = \ell$.
 
-%Notemos que por LE5(a) se cumple que $x_n=\ell$ con $n\geq n_0$. Esto es falso.
-Si la sucesión no es convergente, entonces es divergente.
+%Notemos que por LE5(a) se cumple que $x_n=x$ con $n\geq m$. Esto es falso.
+\textbf{Definición:} Una sucesión es divergente si no es convergente.
 
-\textbf{Definición:} Una secuencia $X$ está acotada si $\exists M\in \R^+$ tal que $|x_n|\leq M, \forall n\in \N$.
+\textbf{Definición:} Una sucesión $(x_n)$ está acotada si $\exists M\in \R^+$ tal que $|x_n|\leq M, \forall n\in \N$.
 
 \subsection*{Lista de Ejercicios 10 (LE10)}
 
 Demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
-    \item Toda secuencia convergente está acotada.
+    \item El límite de una sucesión convergente es único.
+    \item Toda sucesión convergente está acotada.
 \end{enumerate}
 
 \subsubsection*{Demostración}
 
 \begin{enumerate}[label=\alph*)]
-    \item Sea $X$ una secuencia convergente. Por definición, $\exists n_0 \in \N$ tal que los términos $x_{n\geq n_0}$ satisfacen que $|x_{n\geq n_0}-\ell|<\epsilon, \forall \epsilon>0$. Sea $\epsilon_0>0$ arbitrario pero fijo, entonces \begin{align*}
-        |x_{n\geq n_0} - \ell| &< \epsilon_0 \\
-        |x_{n\geq n_0} - \ell| + |\ell| &< \epsilon_0 + |\ell|
+    \item Sean $\ell$ y $\ell'$ límites de la sucesión $(x_n)$. Sea $\varepsilon_0>0$ arbitraria pero fija, tenemos que $\exists n', n''$ tales que \begin{align*}
+        |x_{n\geq n'}-\ell|<\varepsilon_0 && \text{(1)}\\
+        |x_{n\geq n''}-\ell'|<\varepsilon_0 && \text{(2)}
     \end{align*}
-    Luego, notemos que $|x_{n\geq n_0}| = |x_{n\geq n_0}-\ell+\ell|$, y por la desigualdad del triángulo, \[|x_{n\geq n_0}-\ell+\ell| \leq |x_{n\geq n_0}-\ell| + |\ell|\] Por transitividad, $|x_{n\geq n_0}|< \epsilon_0 + |\ell|$, lo que implica que $\{x_{n\geq n_0}\}$ está cotado superiormente.
+    Sin pérdida de generalidad, sea $n'<n''$. Entonces, $x_{n''\geq n'}$ satisface —por (1)— que \[|\]
+    \item Sea $(x_n)$ una sucesión convergente. Por definición, $\forall \epsilon>0, \exists n_\varepsilon \in \N$ tal que los términos $x_{n\geq n_\varepsilon}$ satisfacen que $|x_{n\geq n_\varepsilon}-x|<\epsilon$. Sean $\epsilon_0>0$ arbitrario pero fijo, entonces \begin{align*}
+        |x_{n\geq n_0} - x| &< \epsilon_0 \\
+        |x_{n\geq n_0} - x| + |x| &< \epsilon_0 + |x|
+    \end{align*}
+    Luego, notemos que $|x_{n\geq n_0}| = |x_{n\geq n_0}-x+x|$, y por la desigualdad del triángulo, \[|x_{n\geq n_0}-x+x| \leq |x_{n\geq n_0}-x| + |x|\] Por transitividad, $|x_{n\geq n_0}|< \epsilon_0 + |x|$, lo que implica que $\{x_{n\geq n_0}\}$ está cotado superiormente.
     
-    Por otra parte, notemos que el conjunto de índices $n<n_0$ está acotado superiormente, y por esto, $\{x_{n<n_0}\}$ es finito y por tanto, tiene cota superior. %proof https://math.stackexchange.com/questions/548806/a-finite-set-always-has-a-maximum-and-a-minimum
+    Por otra parte, notemos que el conjunto de índices $n<n_0$ está acotado superiormente, y por esto, $\{x_{n<n_\varepsilon}\}$ es finito y por tanto, tiene cota superior. %proof https://math.stackexchange.com/questions/548806/a-finite-set-always-has-a-maximum-and-a-minimum
     
-    Finalmente, el conjunto $\{x_{n<n_0}\} \cup \{\epsilon_0 + |\ell|\}$ está acotado superiormente, por lo que $X$ está acotada. \qed
+    Finalmente, el conjunto $\{x_{n<n_\varepsilon}\} \cup \{\epsilon_0 + |x|\}$ está acotado superiormente, por lo que $X$ está acotada. \qed
 \end{enumerate}
 
 \end{document}
