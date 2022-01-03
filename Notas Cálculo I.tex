@@ -4,6 +4,7 @@
 \usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
 \usepackage{mathtools}
 \usepackage{braket}
+\usepackage{nicefrac} % for Elegant fractions in one line https://tex.stackexchange.com/questions/128496/elegant-fractions-in-one-line/128498
 
 %Conjuntos de números
 \newcommand{\N}{\mathbb{N}}
@@ -975,20 +976,39 @@ Demuestre lo siguiente:
 \subsubsection*{Demostración}
 
 \begin{enumerate}[label=\alph*)]
-    \item Sean $\ell$ y $\ell'$ límites de la sucesión $(x_n)$. Sea $\varepsilon_0>0$ arbitraria pero fija, tenemos que $\exists n', n''$ tales que \begin{align*}
-        |x_{n\geq n'}-\ell|<\varepsilon_0 && \text{(1)}\\
-        |x_{n\geq n''}-\ell'|<\varepsilon_0 && \text{(2)}
+    \item Sean $\ell$ y $\ell'$ límites de la sucesión $(x_n)$. Tenemos que $\forall \varepsilon>0$, existen $n',n'' \in \N$ tales que $|x_{n\geq n'}-\ell|<\varepsilon$ y $|x_{n\geq n''}-\ell'|<\varepsilon$. Sin pérdida de generalidad, si $n'<n''$, los términos $x_n$ con $n\geq n''>n'$ satisfacen que \begin{align*}
+        |x_n-\ell| &<\varepsilon && \text{(1)}\\
+        |x_n-\ell'| &<\varepsilon && \text{(2)}
     \end{align*}
-    Sin pérdida de generalidad, sea $n'<n''$. Entonces, $x_{n''\geq n'}$ satisface —por (1)— que \[|\]
-    \item Sea $(x_n)$ una sucesión convergente. Por definición, $\forall \epsilon>0, \exists n_\varepsilon \in \N$ tal que los términos $x_{n\geq n_\varepsilon}$ satisfacen que $|x_{n\geq n_\varepsilon}-x|<\epsilon$. Sean $\epsilon_0>0$ arbitrario pero fijo, entonces \begin{align*}
-        |x_{n\geq n_0} - x| &< \epsilon_0 \\
-        |x_{n\geq n_0} - x| + |x| &< \epsilon_0 + |x|
+    Por (c) de LE4, se cumple que $|x_n-\ell'|=|\ell'-x_n|$ y por esto, \begin{align*}
+        |\ell'-x_n|<\varepsilon && \text{(3)}
     \end{align*}
-    Luego, notemos que $|x_{n\geq n_0}| = |x_{n\geq n_0}-x+x|$, y por la desigualdad del triángulo, \[|x_{n\geq n_0}-x+x| \leq |x_{n\geq n_0}-x| + |x|\] Por transitividad, $|x_{n\geq n_0}|< \epsilon_0 + |x|$, lo que implica que $\{x_{n\geq n_0}\}$ está cotado superiormente.
+    Tomando (1) y (3), por (d) de LE3, se verifica que \begin{align*}
+        |\ell'-x_n| + |x_n-\ell| &< 2\varepsilon
+    \end{align*}
+    Y, por la desigualdad del triángulo, tenemos que \begin{align*}
+        \big|(\ell'-x_n)+(x_n-\ell)\big| &\leq |\ell'-x_n| + |x_n-\ell|\\
+        |\ell'-\ell| &\leq |\ell'-x_n| + |x_n-\ell|
+    \end{align*}
+    De este modo, $|\ell'-\ell| < 2\varepsilon$. Como esta desigualdad se cumple para todo $\varepsilon>0$, en particular se verifica para $\varepsilon=\nicefrac{\varepsilon_0}{2}$ con $\varepsilon_0>0$ arbitrario pero fijo, así obtenemos que \begin{align*}
+        |\ell'-\ell| &< 2 \left(\frac{\varepsilon_0}{2}\right)\\
+        |\ell'-\ell| &< \varepsilon_0
+    \end{align*}
+    Finalmente, como $\varepsilon_0$ es arbitrario, por (a) de LE5, sigue que $\ell'=\ell$. Por tanto, el límite de cada sucesión convergente es único. \qed
+%
+    \item Sea $(x_n)$ una sucesión convergente. Por definición, $\forall \epsilon>0, \exists n_\varepsilon \in \N$ tal que los términos $x_n$ con $n\geq n_\varepsilon$ satisfacen que \begin{align*}
+        |x_n - \ell| &< \epsilon \\
+        |x_n - \ell| + |\ell| &< \epsilon + |\ell|
+    \end{align*}
+    Luego, por la desigualdad del triángulo, \begin{align*}
+        \big|(x_n-\ell)+\ell\big| &\leq |x_n-\ell| + |\ell|\\
+        |x_n| &\leq |x_n-\ell| + |\ell|
+    \end{align*}
+    Por transitividad, $|x_n|< \epsilon + |\ell|$, lo que implica que $\{x_{n\geq n_\varepsilon}\}$ está cotado superiormente.
     
-    Por otra parte, notemos que el conjunto de índices $n<n_0$ está acotado superiormente, y por esto, $\{x_{n<n_\varepsilon}\}$ es finito y por tanto, tiene cota superior. %proof https://math.stackexchange.com/questions/548806/a-finite-set-always-has-a-maximum-and-a-minimum
+    Por otra parte, el conjunto de índices $n<n_\varepsilon$ está acotado, y por esto, $\{x_{n<n_\varepsilon}\}$ es finito, por lo que tiene cota superior. %proof https://math.stackexchange.com/questions/548806/a-finite-set-always-has-a-maximum-and-a-minimum
     
-    Finalmente, el conjunto $\{x_{n<n_\varepsilon}\} \cup \{\epsilon_0 + |x|\}$ está acotado superiormente, por lo que $X$ está acotada. \qed
+    Finalmente, el conjunto $\{x_{n<n_\varepsilon}\} \cup \{x_{n\geq n_\varepsilon}\}$ está acotado superiormente, y por tanto, $(x_n)$ está acotada. \qed
 \end{enumerate}
 
 \end{document}
