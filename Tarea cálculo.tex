@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+
+\usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
+\usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
+\usepackage{mathtools}
+\usepackage{braket}
+\usepackage{nicefrac} % for Elegant fractions in one line https://tex.stackexchange.com/questions/128496/elegant-fractions-in-one-line/128498
+
+%Conjuntos de números
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+%Shorter comands
+\let\epsilon\varepsilon
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\let\set\Set
+
+%bold all lists$
+\setlist[enumerate]{font=\bfseries}
+
+\setlength{\parindent}{0pt} %no indent for the document
+\setlength{\parskip}{1em} %add space between paragraphs
+\pagestyle{empty}
+
+\begin{document}
+
+\title{\vspace{-2cm}Cálculo diferencial e Integral I \\ Semestre 2023-1 \\ Grupo 4031}
+\author{Problemas de: números reales \\ \text{Torres Brito David Israel}}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+
+\begin{enumerate}
+ \item Pruebe que si $a,b\in \R$, entonces $-(a+b)=(-a)+(-b)$.
+ \item Pruebe que si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$.
+ \item Pruebe que si $a,b\in \R$, entonces $-(a-b)=b-a$.
+ \item Pruebe que si $a,b\in \R$ son tales que $ab=0$, entonces $a=0$ o $b=0$.
+\end{enumerate}
+
+\section*{Demostración}
+
+\begin{enumerate}
+
+ \item \begin{align*}
+  -(a+b) &= -(a\cdot 1 + b \cdot 1) && \text{Identidad multiplicación}\\
+  &= -(1 \cdot (a+b)) && \text{P. Distributiva}\\
+  &= -1(a+b) && \text{Notación}\\
+  &= (-1\cdot a) + (-1\cdot b) && \text{P. Distributiva}\\
+  &= -(1\cdot a) + -(1\cdot b) && \text{Notación}\\
+  &= (-a) + (-b) && \text{Identidad multiplicación}
+ \end{align*} \qed
+
+ \item \begin{align*}
+  a-b &= b- a && \text{Hipótesis} \\
+  (a-b)+b &= (b-a)+b &&\text{Sumando $b$ ambos lados} \\
+  a &= (b+b)-a&&\text{Asociando} \\
+  a + a &= b+b &&\text{Sumando $a$ ambos lados} \\
+  2a &= 2b &&\text{Definición} \\
+  a &= b && \text{Multiplicando $2^{-1}$ ambos lados}
+ \end{align*} \qed
+
+ \item \begin{align*}
+  -(a-b) &= -(a+(-b)) &&\text{Notación} \\
+  &= (-a) + \bigl(-(-b)\bigr) &&\text{Por ejercicio 1} \\
+  &= (-a) + (b) &&\text{Inverso aditivo es único} \\
+  &= b -a &&\text{Conmutatividad} \\
+ \end{align*} \qed
+
+ \item Primero demostraremos que si $a\in \R$, entonces $a\cdot 0=0$.
+ \begin{align*}
+  a\cdot0&=a\cdot0+0 && \text{Neutro aditivo}\\
+  &=a\cdot0+\bigl(a+\left(-a\right)\bigr) && \text{Neutro aditivo}\\
+  &=a\cdot0+\bigl(a\cdot1+\left(-a\right)\bigr) && \text{Identidad de la multiplicación}\\
+  &=\left(a\cdot0+a\cdot1\right)+\left(-a\right) && \text{Asociatividad}\\
+  &=\bigl(a\cdot\left(0+1\right)\bigr)+\left(-a\right) && \text{P. Distributiva}\\
+  &=a\cdot1+\left(-a\right) && \text{Neutro aditivo}\\
+  &=a+\left(-a\right) && \text{Identidad de la multiplicación}\\
+  &=0 && \text{Neutro aditivo}
+\end{align*} \qed
+ 
+ Ahora, supongamos que $a\neq 0$. \begin{align*}
+  b &= b \cdot 1	&& \text{Identidad de la multiplicación} \\
+  &= b \cdot  \left(a \cdot a^{-1}  \right) 	&& \text{Identidad de la multiplicación} \\
+  &= \left(b \cdot a \right)  \cdot a^{-1}	&& \text{Asociatividad} \\
+  &= \left(a \cdot b \right)  \cdot a^{-1}	&& \text{Conmutatividad} \\
+  &= 0 \cdot a^{-1}	&& \text{Por hipótesis}\\
+  &= a^{-1} \cdot 0	&& \text{Conmutatividad}\\
+  &= 0 && \text{Demostración}
+ \end{align*} \qed
+
+ \item \begin{align*}
+  a^2 &= b^2\\
+  a &= \sqrt{b^2}\\
+  a &= \pm b
+ \end{align*} \qed
+\end{enumerate}
+
+\end{document}

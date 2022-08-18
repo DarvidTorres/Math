@@ -69,6 +69,7 @@ Las cuales satisfacen los siguientes:
 
 \subsection*{Lista de ejercicios 1 (LE1)}
     \begin{enumerate}[label=\alph*)]
+        \item Sean $a, b, c \in \R$ arbitrarios pero fijos, demuestre que $(a+c)+b=a+(c+b)$.
         \item Demuestre que el elemento neutro para la suma es único.
         \item Demuestre que el elemento identidad para la multiplicación es único.
         \item Sea $m$ un número real arbitrario pero fijo, demuestre que el inverso aditivo de $m$ es único.
@@ -87,6 +88,11 @@ Las cuales satisfacen los siguientes:
 
 \subsubsection*{Demostración:}
 \begin{enumerate}[label=\alph*)]
+
+    \item Notemos que \begin{align*}
+        (a+c)+b &= a + (c+b) && \text{Por A2}\\
+        &= a + (b+c) && \text{Por A1}\
+    \end{align*} \qed
 % A    
     \item Supongamos que existen 0 y $\tilde{0}$ números reales tales que $m+0 = m$ y $m+\tilde{0} = m$. Notemos que: \begin{align*}
         0 &=m+(-m) && \text{Por A4}\\
