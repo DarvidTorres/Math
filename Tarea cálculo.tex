@@ -34,43 +34,43 @@
 \thispagestyle{empty}
 
 \begin{enumerate}
- \item Pruebe que si $a,b\in \R$, entonces $-(a+b)=(-a)+(-b)$.
- \item Pruebe que si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$.
- \item Pruebe que si $a,b\in \R$, entonces $-(a-b)=b-a$.
- \item Pruebe que si $a,b\in \R$ son tales que $ab=0$, entonces $a=0$ o $b=0$.
-\end{enumerate}
+\item Pruebe que si $a,b\in \R$, entonces $-(a+b)=(-a)+(-b)$.\\
 
-\section*{Demostración}
+\textbf{Demostración:} \begin{align*}
+  0 &= 0 + 0 && \text{Neutro aditivo} \\
+  &= \bigl(a+(-a)\bigr) + \bigl(b + (-b)\bigr) && \text{Neutro aditivo} \\
+  &= (a+b) + \bigl((-a)+ (-b)\bigr) && \text{Asociatividad}
+\end{align*}
+Debido a que el inverso aditivo es único, tenemos que $(-a)+ (-b)=-(a+b)$.
+\qed
 
-\begin{enumerate}
 
- \item \begin{align*}
-  -(a+b) &= -(a\cdot 1 + b \cdot 1) && \text{Identidad multiplicación}\\
-  &= -(1 \cdot (a+b)) && \text{P. Distributiva}\\
-  &= -1(a+b) && \text{Notación}\\
-  &= (-1\cdot a) + (-1\cdot b) && \text{P. Distributiva}\\
-  &= -(1\cdot a) + -(1\cdot b) && \text{Notación}\\
-  &= (-a) + (-b) && \text{Identidad multiplicación}
- \end{align*} \qed
+\item Pruebe que si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$.
 
- \item \begin{align*}
+\textbf{Demostración:} \begin{align*}
   a-b &= b- a && \text{Hipótesis} \\
-  (a-b)+b &= (b-a)+b &&\text{Sumando $b$ ambos lados} \\
+  (a-b)+b &= (b-a)+b &&\text{Ley de la cancelación} \\
   a &= (b+b)-a&&\text{Asociando} \\
-  a + a &= b+b &&\text{Sumando $a$ ambos lados} \\
+  a + a &= b+b &&\text{Ley de la cancelación} \\
   2a &= 2b &&\text{Definición} \\
-  a &= b && \text{Multiplicando $2^{-1}$ ambos lados}
- \end{align*} \qed
+  a &= b && \text{Ley de la cancelación}
+\end{align*} \qed
 
- \item \begin{align*}
+\item Pruebe que si $a,b\in \R$, entonces $-(a-b)=b-a$.
+
+\textbf{Demostración:} \begin{align*}
   -(a-b) &= -(a+(-b)) &&\text{Notación} \\
   &= (-a) + \bigl(-(-b)\bigr) &&\text{Por ejercicio 1} \\
-  &= (-a) + (b) &&\text{Inverso aditivo es único} \\
+  &= (-a) + (b) &&\text{Unicidad del inverso aditivo} \\
   &= b -a &&\text{Conmutatividad} \\
- \end{align*} \qed
+\end{align*} \qed
 
- \item Primero demostraremos que si $a\in \R$, entonces $a\cdot 0=0$.
- \begin{align*}
+\pagebreak
+
+\item Pruebe que si $a,b\in \R$ son tales que $ab=0$, entonces $a=0$ o $b=0$.
+
+\textbf{Demostración:} Primero demostraremos que si $a\in \R$, entonces $a\cdot 0=0$.
+\begin{align*}
   a\cdot0&=a\cdot0+0 && \text{Neutro aditivo}\\
   &=a\cdot0+\bigl(a+\left(-a\right)\bigr) && \text{Neutro aditivo}\\
   &=a\cdot0+\bigl(a\cdot1+\left(-a\right)\bigr) && \text{Identidad de la multiplicación}\\
@@ -80,22 +80,93 @@
   &=a+\left(-a\right) && \text{Identidad de la multiplicación}\\
   &=0 && \text{Neutro aditivo}
 \end{align*} \qed
- 
- Ahora, supongamos que $a\neq 0$. \begin{align*}
+
+Ahora, demostramos el ejercicio 4. Supongamos que $a\neq 0$. \begin{align*}
   b &= b \cdot 1	&& \text{Identidad de la multiplicación} \\
-  &= b \cdot  \left(a \cdot a^{-1}  \right) 	&& \text{Identidad de la multiplicación} \\
+  &= b \cdot  \left(a \cdot a^{-1}  \right) 	&& \text{Inverso multiplicativo} \\
   &= \left(b \cdot a \right)  \cdot a^{-1}	&& \text{Asociatividad} \\
   &= \left(a \cdot b \right)  \cdot a^{-1}	&& \text{Conmutatividad} \\
   &= 0 \cdot a^{-1}	&& \text{Por hipótesis}\\
   &= a^{-1} \cdot 0	&& \text{Conmutatividad}\\
-  &= 0 && \text{Demostración}
- \end{align*} \qed
+  &= 0 && \text{Probado arriba}
+\end{align*} \qed
 
- \item \begin{align*}
-  a^2 &= b^2\\
-  a &= \sqrt{b^2}\\
-  a &= \pm b
- \end{align*} \qed
-\end{enumerate}
+\item Pruebe que si $a,b\in \R$ son tales que $a^2=b^2$, entonces $a=b$ o $a=-b$.
+
+\textbf{Demostración:}
+\begin{align*}
+  0 &= b^2 - b^2 && \text{Inverso aditivo}\\
+  &= a^2 - b^2 && \text{Por hipótesis	}\\
+  &= a \cdot a - b \cdot b && \text{Definición}\\
+  &= (a \cdot a - b \cdot b) + 0&& \text{Neutro aditivo}\\
+  &= (a \cdot a - b \cdot b) + (a\cdot b-a\cdot b)&& \text{Inverso aditivo}\\
+  &= (a \cdot a - b \cdot b + a\cdot b) + (-a\cdot b)&& \text{Asociatividad}\\
+  &= (a \cdot a + a\cdot b - b \cdot b) + (-a\cdot b)&& \text{Conmutatividad}\\
+  &= (a \cdot a + a\cdot b) + (- b \cdot b-a\cdot b)&& \text{Asociatividad}\\
+  &= (a \cdot a + a\cdot b) + (- b \cdot b)+(-a\cdot b)&& \text{Notación}\\
+  &= (a \cdot a + a\cdot b) -(b \cdot b + a\cdot b)&& \text{Por ejercicio 1}\\
+  &= a (a+b) - b(b+a) && \text{P. Distributiva}\\
+  &= (a+b) \cdot (a-b) && \text{P. Distributiva}
+\end{align*} Por el ejercicio 4, de la igualdad anterior tenemos que $a+b=0$ o $a-b=0$. Sumando inverso aditivo de $b$ tenemos $a=-b$ o $a=b$. \qed
+
+\pagebreak
+
+\item Pruebe que si $a,b\in \R$ son distintos de $0$ y tales que $ab^{-1}=ba^{-1}$, entonces $a=b$ o $a=-b$.
+
+\textbf{Demostración:}
+\begin{align*}
+  ab^{-1}&=ba^{-1} && \text{Por hipótesis}\\
+  ab^{-1} \cdot b &=ba^{-1} \cdot b&& \text{Ley de la cancelación}\\
+  a(b^{-1} \cdot b) &=a^{-1}(b\cdot b) && \text{Asociando}\\
+  a &=a^{-1}(b\cdot b) && \text{Identidad de la multiplicación}\\
+  a \cdot a&=a^{-1}(b\cdot b) \cdot a&& \text{Ley de la cancelación}\\
+  a \cdot a&= (b\cdot b) (a^{-1} \cdot a)&& \text{Asociando}\\
+  a \cdot a&= b\cdot b && \text{Identidad de la multiplicación}\\
+  a^2 &= b^2 && \text{Definición}
+\end{align*}
+Por el ejercicio 5, la igualdad anterior implica que $a=b$ o $a=-b$. \qed
+
+\item Determine si las siguientes afirmaciones son falsas o verdaderas. Pruebe su respuesta.
+  \begin{enumerate}[label=(\alph*)]
+    \item Si $a,b\in \R$, entonces $a<a+b$.
+
+    \textbf{Respuesta:} Falso.
+
+    \textbf{Demostración:} Contraejemplo: $b=0$. \qed
+
+    \item Si $a,b\in \R$, entonces $a<a+b$ o $b<a+b$.
+
+    \textbf{Respuesta:} Falso.
+
+    \textbf{Demostración:}  Sea $a=b=0$; tanto $a<a+b$ como $b<a+b$ fallan en cumplirse. \qed
+
+    \item Si $a,b,c,d\in \R$ son tales que $a+c<b+d$, entonces $a<b$ y $c<d$.
+
+    \textbf{Respuesta:} Falso.
+
+    \textbf{Demostración:} Sea $a=0$, $b=2$ y $c=d=1$, tenemos que se cumple la hipótesis $0+1<2+1$, pero la proposición $c<d$ es falsa. \qed
+
+    \item Si $a,b,c,d \in \R$ son tales que $ac<bd$, entonces $a<b$ y $c<d$.
+
+    \textbf{Respuesta:} Falso.
+
+    \textbf{Demostración:} Sea $a=1$, $b=d=-1$ y $c=0$, con lo que se cumple la hipótesis $(1)(0)=0<1=(-1)(-1)$, pero la proposición $a=1<-1=b$ y $c=0<-1=d$ es falsa. \qed
+
+    \item Si $a,b\in \R$ son tales que $ab=a$, entonces $b=1$.
+
+    \textbf{Respuesta:} Falso.
+
+    \textbf{Demostración:} Sea $a=0$ y $b=-1$. En el ejercicio 4 demostramos que $ab=(0)(-1)=0$, con lo que se cumple la hipótesis $0=ab=a=0$, pero $b\neq 1$. \qed
+
+    \item Si $a,b\in \R$ son tales que $a^2\leq b^2$, entonces $a\leq b$.
+
+    \textbf{Respuesta:} Falso.
+
+    \textbf{Demostración:} Sea $a=2$ y $b=-2$, tenemos que la hipótesis se cumple $a^2=4\leq 4=b^2$, pero la proposición $a=2\leq -2$ es falsa. \qed
+
+    \end{enumerate}
+  \end{enumerate}
+
+
 
 \end{document}
