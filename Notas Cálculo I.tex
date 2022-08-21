@@ -4,12 +4,14 @@
 \usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
 \usepackage{mathtools}
 \usepackage{braket}
+\usepackage{adjustbox}
 \usepackage{nicefrac} % for Elegant fractions in one line https://tex.stackexchange.com/questions/128496/elegant-fractions-in-one-line/128498
 
 %Conjuntos de números
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
 \newcommand{\R}{\mathbb{R}}
 
 %Shorter comands
@@ -51,25 +53,82 @@ Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A
 \end{minipage}
 \end{center}
 
-Las cuales satisfacen los siguientes:
+La notación anterior denota la cerradura de estas operaciones, es decir, que para cuales quiera dos números reales $(m,n)$, la suma y multiplicación son números reales, $(m+n)\in \R$ y $(m+n)\in \R$.
 
-\subsection*{Axiomas de campo}
+Las suma y multiplicación de números reales satisfacen los siguientes \textbf{axiomas de campo}:
 
-\begin{enumerate}[label=A\arabic*.]
+\begin{enumerate}[label=S\arabic*.]
     \item La suma es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m+n = n+m $.
-    \item La suma es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m+(n+ l) = (m+ n)+l $.
+    \item La suma es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $(m+ n)+l = m+(n+ l)$.
+\end{enumerate}
+
+El letor observará que el axioma \textbf{S2} no incluye todas las formas en que podríamos sumar tres números reales:
+
+\begin{adjustbox}{minipage=0.5\linewidth,margin=0pt \smallskipamount,center}
+    \noindent\begin{minipage}[c]{.5\linewidth}
+    \begin{enumerate}[label=\roman*.]
+        \item $(m+n)+l$
+        \item $m+(n+l)$
+        \item $m+(l+n)$
+        \item $(m+l)+n$
+        \item $(l+m)+n$
+        \item $l+(m+n)$
+    \end{enumerate}
+    \end{minipage}%
+\begin{minipage}[c]{.5\linewidth}
+    \begin{enumerate}[start=7,label=\roman*.]
+        \item $l+(n+m)$
+        \item $(l+n)+m$
+        \item $(n+l)+m$
+        \item $n+(l+m)$
+        \item $n+(m+l)$
+        \item $(n+m)+l$
+    \end{enumerate}
+\end{minipage}
+\end{adjustbox}
+
+La razón, es que las anteriores pueden obtenerse utilizando los axiomas \textbf{S1} y \textbf{S2}, con lo que garantizamos la igualdad de todas ellas.
+
+Notemos que para sumar tres números $(a,b,c)$, siempre requerimos ejecutar, primero, la suma de dos de ellos $(a+b)$, y tomar este resultado para, entonces, sumarlo al tercero $(a+b)+c$, a esto alude el lado izquierdo de la igualdad de la asociatividad de la suma (\textbf{S2}). También podemos cambiar el orden, realizando la suma de $a$ y $b$, luego tomar el número $c$ y sumarle a este último el resultado que habíamos obtenido con anterioridad: $c+(a+b)$. Estos resultados (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$.
+
+Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y \textbf{(ii)} satisfacen igualdad, por lo que tenemos $(a+b)+c=a+(b+c)$, con lo que tenemos también $a+(b+c)=c+(a+b)$. A partir de este punto, el lector puede inferir cuál es el uso de estos axiomas y cómo demostrar la igualdad de todas las formas de sumar tres números, sin necesidad de enunciarlas todas como axiomas. Por ejemplo, \begin{align*}
+    (a+b)+c &= a+(b+c) && \text{Asociatividad}\\
+    &= a+(c+b) && \text{Conmutatividad}\\
+    &= (a+c)+b && \text{Asociatividad}\\
+    &= (c+a)+b && \text{Conmutatividad}\\
+    &= c+(a+b) && \text{Asociatividad}\\
+    &= c+(b+a) && \text{Conmutatividad}\\
+    &= (c+b)+a && \text{Asociatividad}\\
+    &= (b+c)+a && \text{Conmutatividad}\\
+    &= b+(c+a) && \text{Asociatividad}\\
+    &= b+(a+c) && \text{Conmutatividad}\\
+    &= (b+a)+c && \text{Asociatividad}
+\end{align*}
+
+Continuamos con el listado de axiomas:
+
+\begin{enumerate}[start=3,label=S\arabic*.]
     \item Elemento neutro para la suma. Existe un número real llamado elemento neutro para la suma o cero, denotado por $0$, el cual satisface la siguiente condición: $ m+0=m,\forall m \in \R $.
     \item Inverso aditivo. Para cada número real $m$ existe un número real llamado inverso aditivo de $m$, denotado por $-m$ (menos $m$); la propiedad que caracteriza a este elemento es: $ m + (-m) = 0 $.
+\end{enumerate}
+
+\begin{itemize}
     \item La multiplicación es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m \cdot n = n \cdot m $.
     \item La multiplicación es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n \cdot l) = (m \cdot n) \cdot l $.
     \item Elemento identidad para la multiplicación. Existe un número real distinto de cero, llamado elemento identidad para la multiplicación o uno, denotado por $1$, que satisface la siguiente condición: $ m \cdot 1 = m,\forall m \in \R $.
     \item Inverso multiplicativo. Para cada número real $m$ distinto de cero existe un número real llamado inverso multiplicativo de $m$, denotado por $m^{-1}$, este elemento tiene la siguiente propiedad:$m \cdot m^{-1} = 1$.
     \item Distribución de la multiplicación sobre la suma. Para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n+l)=m \cdot n+m \cdot l $.
-\end{enumerate}
+\end{itemize}
 
-\subsection*{Lista de ejercicios 1 (LE1)}
-    \begin{enumerate}[label=\alph*)]
+\subsection*{Ejercicios (E1)}
+    \begin{enumerate}[label=(\alph*)]
         \item Sean $a, b, c \in \R$ arbitrarios pero fijos, demuestre que $(a+c)+b=a+(c+b)$.
+        
+        Notemos que \begin{align*}
+            (a+c)+b &= a + (c+b) && \text{Por A2}\\
+            &= a + (b+c) && \text{Por A1}\
+        \end{align*} \qed
+
         \item Demuestre que el elemento neutro para la suma es único.
         \item Demuestre que el elemento identidad para la multiplicación es único.
         \item Sea $m$ un número real arbitrario pero fijo, demuestre que el inverso aditivo de $m$ es único.
@@ -89,10 +148,6 @@ Las cuales satisfacen los siguientes:
 \subsubsection*{Demostración:}
 \begin{enumerate}[label=\alph*)]
 
-    \item Notemos que \begin{align*}
-        (a+c)+b &= a + (c+b) && \text{Por A2}\\
-        &= a + (b+c) && \text{Por A1}\
-    \end{align*} \qed
 % A    
     \item Supongamos que existen 0 y $\tilde{0}$ números reales tales que $m+0 = m$ y $m+\tilde{0} = m$. Notemos que: \begin{align*}
         0 &=m+(-m) && \text{Por A4}\\
@@ -749,7 +804,7 @@ En este caso escribimos $M=\sup{A}$.
     \item Si $K$ es una cota inferior de $A$, entonces $K\leq L$, es decir, $L$ es la cota inferior más grande de $A$.
 \end{itemize}
 
-En este caso escribimos $M=\inf{A}$.
+En este caso escribimos $M=\inf{A}$.onsideremos el P
 
 \subsection*{Lista de ejercicios 8 (LE8)}
 

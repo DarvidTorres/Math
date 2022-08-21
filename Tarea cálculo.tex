@@ -34,7 +34,7 @@
 \thispagestyle{empty}
 
 \begin{enumerate}
-\item Pruebe que si $a,b\in \R$, entonces $-(a+b)=(-a)+(-b)$.\\
+\item Pruebe que si $a,b\in \R$, entonces $-(a+b)=(-a)+(-b)$.
 
 \textbf{Demostración:} \begin{align*}
   0 &= 0 + 0 && \text{Neutro aditivo} \\
@@ -165,7 +165,85 @@ Por el ejercicio 5, la igualdad anterior implica que $a=b$ o $a=-b$. \qed
     \textbf{Demostración:} Sea $a=2$ y $b=-2$, tenemos que la hipótesis se cumple $a^2=4\leq 4=b^2$, pero la proposición $a=2\leq -2$ es falsa. \qed
 
     \end{enumerate}
-  \end{enumerate}
+
+\pagebreak
+
+\item Pruebe que si $a,b\in \R$ son tales que $a\leq b$, entonces $a\leq \nicefrac{(a+b)}{2}\leq b$.
+
+\textbf{Demostración:}
+Notemos que: \begin{align*}
+  a &\leq b && \text{Por hipótesis} \\
+  a + a &\leq b+a && \text{Ley de la cancelación} \\
+  2a &\leq b+a && \text{Por definición} \\
+  2a \cdot 2^{-1} &\leq (b+a) \cdot 2^{-1} && \text{Ley de la cancelación} \\
+  \frac{2a}{2} &\leq \frac{b+a}{2} && \text{Notación} \\
+  a &\leq \frac{b+a}{2} && \text{Ley de la cancelación}
+\end{align*} Similarmente,
+\begin{align*}
+  a &\leq b && \text{Por hipótesis} \\
+  a + b &\leq b+b && \text{Ley de la cancelación} \\
+  a +b &\leq 2b && \text{Por definición} \\
+  (a+b) \cdot 2^{-1} &\leq 2b \cdot 2^{-1} && \text{Ley de la cancelación} \\
+  \frac{a+b}{2} &\leq \frac{2b}{2} && \text{Notación} \\
+  \frac{a+b}{2} &\leq b && \text{Ley de la cancelación}
+\end{align*} Por lo anterior, $a \leq \nicefrac{(a+b)}{2} \leq b$. \qed
+
+\item Pruebe que si $a,b\in \R$, entonces $2ab\leq a^2+b^2$.
+
+Primero, demostraremos que $(-1)\cdot a=-a$. \begin{align*}
+    -a&=-a+0 && \text{Neutro aditivo} \\
+    &=-a+a \cdot 0 && \text{Demostrado en el ejercicio 4} \\
+    &=-a+a \cdot  \bigl( 1+ \left( -1 \right)  \bigr) && \text{Inverso aditivo} \\
+    &=-a+ \bigl( a \cdot 1+a \cdot  \left( -1 \right)  \bigr) && \text{P. Distributiva} \\
+    &=-a+ \bigl( a+a \cdot  \left( -1 \right)  \bigr) && \text{Neutro multiplicativo} \\
+    &= \left( -a+a \right) +a \cdot  \left( -1 \right) && \text{Asociatividad} \\
+    &=0+a \cdot  \left( -1 \right) && \text{Inverso aditivo} \\
+    &=a \cdot  \left( -1 \right) && \text{Neutro aditivo} \\
+    &= \left( -1 \right)  \cdot a && \text{Conmutatividad}
+\end{align*}
+Ahora, demostraremos que $(-a)(-b)=ab$. \begin{align*}
+  (-a) \cdot (-b) &= (-a) \cdot \bigl( (-1) \cdot b \bigr) && \text{Demostrado arriba}\\
+  &= \bigl( (-a) \cdot (-1) \bigr) \cdot b && \text{Asociatividad}\\
+  &= \bigl( (-1) \cdot (-a) \bigr) \cdot b && \text{Conmutatividad}\\
+  &= -(-a) \cdot b && \text{Demostrado arriba}\\
+  &= a \cdot b && \text{Unicidad del inverso aditivo}
+\end{align*}
+
+Luego, demostraremos que $\forall a\in \R, a^2\geq0$. Por casos:
+  \begin{enumerate}[label=\alph*)]
+    \item Si $0 \leq a$, tenemos \begin{align*}
+      0 \cdot a &\leq a \cdot a && \text{P. de los positivos}\\
+      0 &\leq a \cdot a && \text{Demostrado en el ejercicio 4}\\
+      0 &\leq a^2 && \text{Definición}
+    \end{align*}
+    \item Si $a<0$, tenemos \begin{align*}
+      0 &< -a && \text{P. de los positivos}\\
+      0 (-a) &< (-a) (-a) && \text{P. de los positivos}\\
+      0 &< (-a) (-a) && \text{Demostrado en el ejercicio 4}\\
+      0 &< a a && \text{Demostrado arriba}\\
+      0 &< a^2 && \text{Definición}
+    \end{align*}
+\end{enumerate} En cualquier caso, $0\leq a^2$.
+
+
+Finalmente, probaremos el ejercicio 9. \begin{align*}
+  0 &\leq (a-b)^2 && \text{Demostrado arriba}\\
+  0 &\leq (a-b)(a-b) && \text{Definición}\\
+  0 &\leq (a-b)\bigl(a + (-b)\bigr) && \text{Notación}\\
+  0 &\leq a(a-b)+(-b)(a-b) && \text{P. Distributiva}\\
+  0 &\leq a\bigl(a+(-b)\bigr)+(-b)\bigl(a+(-b)\bigr) && \text{Notación}\\
+  0 &\leq aa+a(-b)+a(-b)+(-b)(-b) && \text{P. Distributiva}\\
+  0 &\leq aa+a(-b)+a(-b)+bb && \text{Demostrado arriba}\\
+  0 &\leq a^2+2a(-b)+b^2 && \text{Definición}\\
+  0 &\leq a^2+2a(-1)b+b^2 && \text{Demostrado arriba}\\
+  0 &\leq a^2+(-1)2ab+b^2 && \text{Asociatividad}\\
+  0 &\leq a^2+-2ab+b^2 && \text{Demostrado arriba}\\
+  2ab &\leq a^2+-2ab+b^2 + 2ab&& \text{Ley de la cancelación}\\
+  2ab &\leq a^2+b^2&& \text{Inverso aditivo}
+\end{align*}\qed
+  
+\end{enumerate}
+
 
 
 
