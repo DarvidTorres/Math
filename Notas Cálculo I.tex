@@ -58,8 +58,12 @@ La notación anterior denota la cerradura de estas operaciones, es decir, que pa
 Las suma y multiplicación de números reales satisfacen los siguientes \textbf{axiomas de campo}:
 
 \begin{enumerate}[label=S\arabic*.]
-    \item La suma es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m+n = n+m $.
-    \item La suma es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $(m+ n)+l = m+(n+ l)$.
+    \item Conmutatividad (de la suma).
+    
+    La suma es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m+n = n+m $.
+    \item Asociatividad (de la suma).
+    
+    La suma es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $(m+ n)+l = m+(n+ l)$.
 \end{enumerate}
 
 El letor observará que el axioma \textbf{S2} no incluye todas las formas en que podríamos sumar tres números reales:
@@ -108,8 +112,51 @@ Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y 
 Continuamos con el listado de axiomas:
 
 \begin{enumerate}[start=3,label=S\arabic*.]
-    \item Elemento neutro para la suma. Existe un número real llamado elemento neutro para la suma o cero, denotado por $0$, el cual satisface la siguiente condición: $ m+0=m,\forall m \in \R $.
+    \item Neutro aditivo. Existe un número real llamado elemento neutro para la suma o cero, denotado por $0$, el cual satisface la siguiente condición: $ m+0=m,\forall m \in \R $.
     \item Inverso aditivo. Para cada número real $m$ existe un número real llamado inverso aditivo de $m$, denotado por $-m$ (menos $m$); la propiedad que caracteriza a este elemento es: $ m + (-m) = 0 $.
+\end{enumerate}
+
+Utilizando los axiomas enunciados hasta ahora \textbf{S[1-4]}, podemos obtener resultados útiles, por ejemplo, si tenemos números reales $a,b,c$ tales que $a+c=b+c$, encontraremos que $a=b$. El lector acostumbrado a matemáticas de bachillerato, podría intentar demostrar este hecho de la siguiente manera: \begin{align*}
+    a+c &= b+c\\
+    a &= b+c-c\\
+    %a+0 &= b + 0 \\
+    a &= b
+\end{align*}
+No obstante, aunque en principio el resultado anterior no es incorrecto, debemos especificar cada hecho mediante las propiedades conocidas hasta este punto. Por lo anterior, una forma más precisa de demostrar la proposición es la siguiente:
+
+\pagebreak
+
+Sean $a,b$ y $c$ números reales, tales que $a+c=b+c$, entonces $a=b$.
+
+\textbf{Demostración:} \begin{align*}
+    a &= a+0 && \text{Neutro aditivo}\\
+    &= a+ \bigl(c+(-c)\bigr) && \text{Inverso aditivo}\\
+    &= (a+c) + (-c) && \text{Asociatividad}\\
+    &= (b+c) + (-c) && \text{Hipótesis}\\
+    &= b + \bigl(c+(-c)\bigr) && \text{Asociatividad}\\
+    &= b + 0 && \text{Inverso aditivo}\\
+    &= b && \text{Neutro aditivo}
+\end{align*}\qed
+
+A esta proposición la llamaremos Ley de la cancelación (de la suma). Siempre que el contexto sea claro, omitiremos el paréntesis y simplemente enunciaremos "Ley de la cancelación".
+
+Notemos que en el segundo paso de la demostración, teníamos, en virtud del axioma \textbf{S4}, la opción de sustituir $0$ por $b+(-b)$ o $c+(-c)$, sin embargo, no en ambos casos resultaría útil. El lector debería comprobar que ocurre si sustituimos $0$ por $b+(-b)$ en la demostración anterior.
+
+\subsection*{Ejercicios (E1)}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Demuestre la unicidad del elemento neutro para la suma.
+    
+\textbf{Demostración:} 
+Supongamos que existen 0 y $\tilde{0}$ números reales tales que $m+0 = m$ y $m+\tilde{0} = m$. Notemos que: \begin{align*}
+    0 &=m+(-m) && \text{Por A4}\\
+    &=\left( m+\tilde{0} \right)+\left(-m\right) && \text{Por hipótesis}\\
+    &=\left( \tilde{0}+m \right)+\left(-m\right) && \text{Por A1}\\
+    &=\tilde{0} + \bigl( m + \left(-m \right)\bigr) && \text{Por A2}\\
+    &=\tilde{0} + 0 && \text{Por A4}\\
+    &=\tilde{0} && \text{Por A3}
+    \end{align*} \qed
+
 \end{enumerate}
 
 \begin{itemize}
@@ -122,14 +169,6 @@ Continuamos con el listado de axiomas:
 
 \subsection*{Ejercicios (E1)}
     \begin{enumerate}[label=(\alph*)]
-        \item Sean $a, b, c \in \R$ arbitrarios pero fijos, demuestre que $(a+c)+b=a+(c+b)$.
-        
-        Notemos que \begin{align*}
-            (a+c)+b &= a + (c+b) && \text{Por A2}\\
-            &= a + (b+c) && \text{Por A1}\
-        \end{align*} \qed
-
-        \item Demuestre que el elemento neutro para la suma es único.
         \item Demuestre que el elemento identidad para la multiplicación es único.
         \item Sea $m$ un número real arbitrario pero fijo, demuestre que el inverso aditivo de $m$ es único.
         \item Sea $m$ un número real distinto de cero, demuestre que el inverso multiplicativo de $m$ es único.
@@ -148,16 +187,6 @@ Continuamos con el listado de axiomas:
 \subsubsection*{Demostración:}
 \begin{enumerate}[label=\alph*)]
 
-% A    
-    \item Supongamos que existen 0 y $\tilde{0}$ números reales tales que $m+0 = m$ y $m+\tilde{0} = m$. Notemos que: \begin{align*}
-        0 &=m+(-m) && \text{Por A4}\\
-        &=\left( m+\tilde{0} \right)+\left(-m\right) && \text{Por hipótesis}\\
-        &=\left( \tilde{0}+m \right)+\left(-m\right) && \text{Por A1}\\
-        &=\tilde{0} + \bigl( m + \left(-m \right)\bigr) && \text{Por A2}\\
-        &=\tilde{0} + 0 && \text{Por A4}\\
-        &=\tilde{0} && \text{Por A3}
-        \end{align*} \qed
-% B  
     \item Supongamos que existen $1$ y $\tilde{1}$ números reales tales que$m\cdot 1=m$ y $m\cdot\tilde{1}=m$. Notemos que:
         \begin{align*}
         1 &= m \cdot m^{-1} && \text{Por A8}\\
