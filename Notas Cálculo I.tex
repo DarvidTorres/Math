@@ -95,7 +95,7 @@ La razón, es que las anteriores pueden obtenerse utilizando los axiomas \textbf
 
 Notemos que para sumar tres números $(a,b,c)$, siempre requerimos ejecutar, primero, la suma de dos de ellos $(a+b)$, y tomar este resultado para, entonces, sumarlo al tercero $(a+b)+c$, a esto alude el lado izquierdo de la igualdad de la asociatividad de la suma (\textbf{S2}). También podemos cambiar el orden, realizando la suma de $a$ y $b$, luego tomar el número $c$ y sumarle a este último el resultado que habíamos obtenido con anterioridad: $c+(a+b)$. Estos resultados (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$.
 
-Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y \textbf{(ii)} satisfacen igualdad, por lo que tenemos $(a+b)+c=a+(b+c)$, con lo que tenemos también $a+(b+c)=c+(a+b)$. A partir de este punto, el lector puede inferir cuál es el uso de estos axiomas y cómo demostrar la igualdad de todas las formas de sumar tres números, sin necesidad de enunciarlas todas como axiomas. Por ejemplo, \begin{align*}
+Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y \textbf{(ii)} satisfacen igualdad, por lo que tenemos $(a+b)+c=a+(b+c)$. A partir de este punto, el lector puede inferir cuál es el uso de estos axiomas y cómo demostrar la igualdad de todas las formas de sumar tres números, sin necesidad de enunciarlas todas como axiomas. Por ejemplo, \begin{align*}
     (a+b)+c &= a+(b+c) && \text{Asociatividad}\\
     &= a+(c+b) && \text{Conmutatividad}\\
     &= (a+c)+b && \text{Asociatividad}\\
@@ -140,39 +140,86 @@ Sean $a,b$ y $c$ números reales, tales que $a+c=b+c$, entonces $a=b$.
 
 A esta proposición la llamaremos Ley de la cancelación (de la suma). Siempre que el contexto sea claro, omitiremos el paréntesis y simplemente enunciaremos "Ley de la cancelación".
 
-Notemos que en el segundo paso de la demostración, teníamos, en virtud del axioma \textbf{S4}, la opción de sustituir $0$ por $b+(-b)$ o $c+(-c)$, sin embargo, no en ambos casos resultaría útil. El lector debería comprobar que ocurre si sustituimos $0$ por $b+(-b)$ en la demostración anterior.
+Notemos que en el segundo paso de la demostración, teníamos —en virtud del axioma \textbf{S4}, la opción de sustituir $0$ por $b+(-b)$ o por $c+(-c)$, sin embargo, no en ambos casos resultaría útil. El lector debería comprobar que ocurre si sustituimos $0$ por $b+(-b)$ en la demostración anterior.
 
-\subsection*{Ejercicios (E1)}
+\subsection*{Ejercicios}
 
-\begin{enumerate}[label=(\alph*)]
-    \item Demuestre la unicidad del elemento neutro para la suma.
+\begin{enumerate}[label=\alph*)]
+    \item Demuestre que el elemento neutro para la suma es único. (Unicidad del neutro aditivo).
     
 \textbf{Demostración:} 
-Supongamos que existen 0 y $\tilde{0}$ números reales tales que $m+0 = m$ y $m+\tilde{0} = m$. Notemos que: \begin{align*}
-    0 &=m+(-m) && \text{Por A4}\\
-    &=\left( m+\tilde{0} \right)+\left(-m\right) && \text{Por hipótesis}\\
-    &=\left( \tilde{0}+m \right)+\left(-m\right) && \text{Por A1}\\
-    &=\tilde{0} + \bigl( m + \left(-m \right)\bigr) && \text{Por A2}\\
-    &=\tilde{0} + 0 && \text{Por A4}\\
-    &=\tilde{0} && \text{Por A3}
+Supongamos que existen 0 y $\tilde{0}$ números reales tales que $a+0 = a$ y $a+\tilde{0} = a$. Notemos que: \begin{align*}
+    0 &=a+(-a) && \text{Inverso aditivo}\\
+    &=\left( a+\tilde{0} \right)+\left(-a\right) && \text{Hipótesis}\\
+    &=\left( \tilde{0}+a \right)+\left(-a\right) && \text{Conmutatividad}\\
+    &=\tilde{0} + \bigl( a + \left(-a \right)\bigr) && \text{Asociatividad}\\
+    &=\tilde{0} + 0 && \text{Inverso aditivo}\\
+    &=\tilde{0} && \text{Neutro aditivo}
+    \end{align*} \qed
+
+    \item Demuestre que el inverso aditivo de cada número real es único. (Unicidad del inverso aditivo).
+    
+    \textbf{Demostración:}
+    Sea $a\in \R$ arbitrario pero fijo. Supongamos que existen $-a$ y $-\tilde{a}$ números reales tales que $a + \left(-a\right) = 0$ y $a + \left(- \tilde{a}\right) = 0$. Notemos que:
+    \begin{align*}
+    -a &= -a+0 && \text{Neutro aditivo}\\
+    &= 0+\left(-a\right) && \text{Conmutatividad}\\
+    &= \bigl(a+\left(-\tilde{a} \right)\bigr)+\left(-a\right) && \text{Hipótesis}\\
+    &= \bigl(\left(-\tilde{a} \right)+a\bigr)+\left(-a\right) && \text{Conmutatividad}\\
+    &= \left(-\tilde{a} \right)+\bigl(a+\left(-a\right)\bigr) && \text{Asociatividad}\\
+    &= \left(-\tilde{a} \right)+0 && \text{Inverso aditivo}\\
+    &= -\tilde{a} && \text{Neutro aditivo}
+    \end{align*} \qed
+
+    \item Demuestre que $-0 = 0$.
+    
+    \textbf{Demostración:}
+    Por la propiedad del neutro aditivo tenemos que $0+0=0$. Además, el inverso aditivo de $0$ satisface que $0 + (-0) = 0$. Debido a que el inverso aditivo de cada número real es único, de la igualdad anterior sigue que $-0 = 0$. \qed
+
+    \item Pruebe que si $a,b\in \R$, entonces $-(a+b)=(-a)+(-b)$.
+
+    \textbf{Demostración:} \begin{align*}
+    0 &= 0 + 0 && \text{Neutro aditivo} \\
+    &= \bigl(a+(-a)\bigr) + \bigl(b + (-b)\bigr) && \text{Inverso aditivo} \\
+    &= a + \Bigl((-a)+ \bigl(b + (-b)\bigr)\Bigr) && \text{Asociatividad} \\
+    &= a + \Bigl( \bigl((-a)+b\bigr) +(-b)\Bigr) && \text{Asociatividad} \\
+    &= a + \Bigl( \bigl(b+(-a)\bigr) +(-b)\Bigr) && \text{Conmutatividad} \\
+    &= a + \Bigl( b + \bigl( (-a)+(-b) \bigr) \Bigr) && \text{Asociatividad} \\
+    &= (a+b) + \bigl((-a)+ (-b)\bigr) && \text{Asociatividad}
+    \end{align*}
+    Por la unicidad del inverso aditivo, tenemos que $(-a)+ (-b)=-(a+b)$.
+    \qed
+
+    \textbf{Nota:} Cada demostración que realizamos, al ser probada para números reales arbitrarios, esto es, no para elementos de $\R$ en particular, nos permite reutilizar las formas como esquema para otras proposiciones. Por ejemplo, el resultado $-(m+n)=(-m)+(-n)$, nos permite sustituir $m$ y $n$ por cuales quiera números reales, como en el ejemplo que sigue:
+
+    \item Pruebe que si $a,b\in \R$, entonces $-\bigl(a+(-b)\bigr)=b+(-a)$.
+
+    \textbf{Demostración:} \begin{align*}
+    -\bigl(a+(-b)\bigr)&= (-a) + \bigl(-(-b)\bigr) &&\text{Demostrado anteriormente} \\
+    &= (-a) + b &&\text{Unicidad del inverso aditivo} \\
+    &= b +(-a) &&\text{Conmutatividad}
     \end{align*} \qed
 
 \end{enumerate}
 
-\begin{itemize}
-    \item La multiplicación es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m \cdot n = n \cdot m $.
-    \item La multiplicación es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n \cdot l) = (m \cdot n) \cdot l $.
+Continuemos enunciando los axiomas de campo:
+
+\begin{enumerate}[label=M\arabic*.]
+    \item Conmutatividad (de la multiplicación).
+    
+    La multiplicación es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m \cdot n = n \cdot m $.
+    \item Asociatividad (de la multiplicación).
+    
+    La multiplicación es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n \cdot l) = (m \cdot n) \cdot l $.
     \item Elemento identidad para la multiplicación. Existe un número real distinto de cero, llamado elemento identidad para la multiplicación o uno, denotado por $1$, que satisface la siguiente condición: $ m \cdot 1 = m,\forall m \in \R $.
     \item Inverso multiplicativo. Para cada número real $m$ distinto de cero existe un número real llamado inverso multiplicativo de $m$, denotado por $m^{-1}$, este elemento tiene la siguiente propiedad:$m \cdot m^{-1} = 1$.
     \item Distribución de la multiplicación sobre la suma. Para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n+l)=m \cdot n+m \cdot l $.
-\end{itemize}
+\end{enumerate}
 
 \subsection*{Ejercicios (E1)}
     \begin{enumerate}[label=(\alph*)]
         \item Demuestre que el elemento identidad para la multiplicación es único.
-        \item Sea $m$ un número real arbitrario pero fijo, demuestre que el inverso aditivo de $m$ es único.
         \item Sea $m$ un número real distinto de cero, demuestre que el inverso multiplicativo de $m$ es único.
-        \item Demuestre que $-0 = 0$.
         \item Sea $m$ un número real arbitrario pero fijo, demuestre que $m \cdot 0 = 0$.
         \item Si $m$ y $n$ son números reales tales que $ m \cdot n = 0 $, demuestre que $m=0$ o $n=0$.
         \item Sea $m$ un número real arbitrario pero fijo, demuestre que: $(-1) \cdot m =-m $.
@@ -196,17 +243,7 @@ Supongamos que existen 0 y $\tilde{0}$ números reales tales que $m+0 = m$ y $m+
         &= \tilde{1} \cdot 1 && \text{Por A8}\\
         &= \tilde{1} && \text{Por A7}
         \end{align*} \qed
-% C  
-    \item Supongamos que existen $-m$ y $-\tilde{m}$ números reales tales que $m + \left(-m\right) = 0$ y $m + \left(- \tilde{m}\right) = 0$. Notemos que:
-        \begin{align*}
-        -m &= -m+0 && \text{Por A3}\\
-        &= 0+\left(-m\right) && \text{Por A1}\\
-        &= \bigl(m+\left(-\tilde{m} \right)\bigr)+\left(-m\right) && \text{Por (2)}\\
-        &= \bigl(\left(-\tilde{m} \right)+m\bigr)+\left(-m\right) && \text{Por A1}\\
-        &= \left(-\tilde{m} \right)+\bigl(m+\left(-m\right)\bigr) && \text{Por A2}\\
-        &= \left(-\tilde{m} \right)+0 && \text{Por A8}\\
-        &= -\tilde{m} && \text{Por A3}
-        \end{align*} \qed
+
 % D
     \item Supongamos que existen $m^{-1}$ y $\tilde{m}^{-1}$ números reales, distintos de cero, tales que $m \cdot m^{-1} = 1$ y $m \cdot \tilde{m}^{-1} = 1$. Notemos que:
         \begin{align*}
@@ -219,7 +256,6 @@ Supongamos que existen 0 y $\tilde{0}$ números reales tales que $m+0 = m$ y $m+
         &= \tilde{m}^{-1} && \text{Por A7}
         \end{align*} \qed
 % E
-    \item Por A3 se verifica que $0 + 0 = 0$, y por A4 que $0 + (-0) = 0$. Además, por (c) de LE1, tenemos que el inverso aditivo de cada número real es único, entonces debe ser el caso que $-0 = 0$. \qed
 % F
     \item Notemos que:
     \begin{align*}
