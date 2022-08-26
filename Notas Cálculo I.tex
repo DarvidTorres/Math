@@ -42,18 +42,18 @@ Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A
 \noindent\begin{minipage}[r]{5.5cm}
 \begin{align*}
     \text{Suma} \ + : \R \times \R &\to \R\\
-    (m,n) &\mapsto m+n
+    (a,n) &\mapsto m+n
 \end{align*}
 \end{minipage}%
 \begin{minipage}[l]{6.5cm}
 \begin{align*}
     \text{y} \qquad \text{Multiplicación} \ \cdot : \R \times \R &\to \R\\
-    (m,n) &\mapsto m \cdot n
+    (a,n) &\mapsto m \cdot n
 \end{align*}
 \end{minipage}
 \end{center}
 
-La notación anterior denota la cerradura de estas operaciones, es decir, que para cuales quiera dos números reales $(m,n)$, la suma y multiplicación son números reales, $(m+n)\in \R$ y $(m+n)\in \R$.
+La notación anterior denota la cerradura de estas operaciones, es decir, que para cuales quiera dos números reales $(a,n)$, la suma y multiplicación son números reales, $(a+n)\in \R$ y $(a+n)\in \R$.
 
 Las suma y multiplicación de números reales satisfacen los siguientes \textbf{axiomas de campo}:
 
@@ -63,7 +63,7 @@ Las suma y multiplicación de números reales satisfacen los siguientes \textbf{
     La suma es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m+n = n+m $.
     \item Asociatividad (de la suma).
     
-    La suma es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $(m+ n)+l = m+(n+ l)$.
+    La suma es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $(a+ n)+l = m+(n+ l)$.
 \end{enumerate}
 
 El letor observará que el axioma \textbf{S2} no incluye todas las formas en que podríamos sumar tres números reales:
@@ -71,12 +71,12 @@ El letor observará que el axioma \textbf{S2} no incluye todas las formas en que
 \begin{adjustbox}{minipage=0.5\linewidth,margin=0pt \smallskipamount,center}
     \noindent\begin{minipage}[c]{.5\linewidth}
     \begin{enumerate}[label=\roman*.]
-        \item $(m+n)+l$
+        \item $(a+n)+l$
         \item $m+(n+l)$
         \item $m+(l+n)$
-        \item $(m+l)+n$
+        \item $(a+l)+n$
         \item $(l+m)+n$
-        \item $l+(m+n)$
+        \item $l+(a+n)$
     \end{enumerate}
     \end{minipage}%
 \begin{minipage}[c]{.5\linewidth}
@@ -85,7 +85,7 @@ El letor observará que el axioma \textbf{S2} no incluye todas las formas en que
         \item $(l+n)+m$
         \item $(n+l)+m$
         \item $n+(l+m)$
-        \item $n+(m+l)$
+        \item $n+(a+l)$
         \item $(n+m)+l$
     \end{enumerate}
 \end{minipage}
@@ -113,7 +113,7 @@ Continuamos con el listado de axiomas:
 
 \begin{enumerate}[start=3,label=S\arabic*.]
     \item Neutro aditivo. Existe un número real llamado elemento neutro para la suma o cero, denotado por $0$, el cual satisface la siguiente condición: $ m+0=m,\forall m \in \R $.
-    \item Inverso aditivo. Para cada número real $m$ existe un número real llamado inverso aditivo de $m$, denotado por $-m$ (menos $m$); la propiedad que caracteriza a este elemento es: $ m + (-m) = 0 $.
+    \item Inverso aditivo. Para cada número real $m$ existe un número real llamado inverso aditivo de $m$, denotado por $-m$ (aenos $m$); la propiedad que caracteriza a este elemento es: $ m + (-m) = 0 $.
 \end{enumerate}
 
 Utilizando los axiomas enunciados hasta ahora \textbf{S[1-4]}, podemos obtener resultados útiles, por ejemplo, si tenemos números reales $a,b,c$ tales que $a+c=b+c$, encontraremos que $a=b$. El lector acostumbrado a matemáticas de bachillerato, podría intentar demostrar este hecho de la siguiente manera: \begin{align*}
@@ -138,11 +138,11 @@ Sean $a,b$ y $c$ números reales, tales que $a+c=b+c$, entonces $a=b$.
     &= b && \text{Neutro aditivo}
 \end{align*}\qed
 
-A esta proposición la llamaremos Ley de la cancelación (de la suma). Siempre que el contexto sea claro, omitiremos el paréntesis y simplemente enunciaremos "Ley de la cancelación".
+A esta proposición la llamaremos Ley de la cancelación (de la suma). Si el contexto es claro, omitiremos el paréntesis y simplemente la enunciaremos como ley de la cancelación.
 
 Notemos que en el segundo paso de la demostración, teníamos —en virtud del axioma \textbf{S4}, la opción de sustituir $0$ por $b+(-b)$ o por $c+(-c)$, sin embargo, no en ambos casos resultaría útil. El lector debería comprobar que ocurre si sustituimos $0$ por $b+(-b)$ en la demostración anterior.
 
-\subsection*{Ejercicios}
+\subsection*{Lista de Ejercicios 1 (LE1)}
 
 \begin{enumerate}[label=\alph*)]
     \item Demuestre que el elemento neutro para la suma es único. (Unicidad del neutro aditivo).
@@ -176,7 +176,11 @@ Supongamos que existen 0 y $\tilde{0}$ números reales tales que $a+0 = a$ y $a+
     \textbf{Demostración:}
     Por la propiedad del neutro aditivo tenemos que $0+0=0$. Además, el inverso aditivo de $0$ satisface que $0 + (-0) = 0$. Debido a que el inverso aditivo de cada número real es único, de la igualdad anterior sigue que $-0 = 0$. \qed
 
-    \item Pruebe que si $a,b\in \R$, entonces $-(a+b)=(-a)+(-b)$.
+    \item Sea $a$ un número real arbitrario pero fijo, demuestre que: $-(-a)=a$.
+        
+    \textbf{Demostración:} El inverso aditivo de $a$ satisface que $a + (-a) = 0$, y por conmutatividad tenemos que $(-a) + a = 0$, de esta igualdad se sigue que $a$ es inverso aditivo de $(-a)$. Similarmente, el inverso aditivo de $(-a)$ satisface que $(-a) + \bigl(-(-a)\bigr) = 0$, y por la unicidad del inverso aditivo, sigue que $-(-a) = a$. \qed
+
+    \item Pruebe que si $a,b\in \R$, entonces $-(a+b)=(-a)+(-b)$. (Distribución del signo).
 
     \textbf{Demostración:} \begin{align*}
     0 &= 0 + 0 && \text{Neutro aditivo} \\
@@ -187,22 +191,21 @@ Supongamos que existen 0 y $\tilde{0}$ números reales tales que $a+0 = a$ y $a+
     &= a + \Bigl( b + \bigl( (-a)+(-b) \bigr) \Bigr) && \text{Asociatividad} \\
     &= (a+b) + \bigl((-a)+ (-b)\bigr) && \text{Asociatividad}
     \end{align*}
-    Por la unicidad del inverso aditivo, tenemos que $(-a)+ (-b)=-(a+b)$.
-    \qed
+    Por la unicidad del inverso aditivo, tenemos que $(-a)+ (-b)=-(a+b)$.\qed
 
-    \textbf{Nota:} Cada demostración que realizamos, al ser probada para números reales arbitrarios, esto es, no para elementos de $\R$ en particular, nos permite reutilizar las formas como esquema para otras proposiciones. Por ejemplo, el resultado $-(m+n)=(-m)+(-n)$, nos permite sustituir $m$ y $n$ por cuales quiera números reales, como en el ejemplo que sigue:
+    \textbf{Nota:} Cada demostración que realizamos, al ser probada para números reales arbitrarios, esto es, no para elementos de $\R$ en particular, nos permite reutilizar las formas como esquema para otras proposiciones. Por ejemplo, el resultado $-(a+n)=(-m)+(-n)$, nos permite sustituir $m$ y $n$ por cuales quiera números reales, como en el ejemplo que sigue:
 
     \item Pruebe que si $a,b\in \R$, entonces $-\bigl(a+(-b)\bigr)=b+(-a)$.
 
     \textbf{Demostración:} \begin{align*}
-    -\bigl(a+(-b)\bigr)&= (-a) + \bigl(-(-b)\bigr) &&\text{Demostrado anteriormente} \\
+    -\bigl(a+(-b)\bigr)&= (-a) + \bigl(-(-b)\bigr) &&\text{Distribución del signo} \\
     &= (-a) + b &&\text{Unicidad del inverso aditivo} \\
     &= b +(-a) &&\text{Conmutatividad}
     \end{align*} \qed
 
 \end{enumerate}
 
-Continuemos enunciando los axiomas de campo:
+Continuemos enunciando los \textbf{axiomas} de campo:
 
 \begin{enumerate}[label=M\arabic*.]
     \item Conmutatividad (de la multiplicación).
@@ -210,223 +213,295 @@ Continuemos enunciando los axiomas de campo:
     La multiplicación es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m \cdot n = n \cdot m $.
     \item Asociatividad (de la multiplicación).
     
-    La multiplicación es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n \cdot l) = (m \cdot n) \cdot l $.
-    \item Elemento identidad para la multiplicación. Existe un número real distinto de cero, llamado elemento identidad para la multiplicación o uno, denotado por $1$, que satisface la siguiente condición: $ m \cdot 1 = m,\forall m \in \R $.
-    \item Inverso multiplicativo. Para cada número real $m$ distinto de cero existe un número real llamado inverso multiplicativo de $m$, denotado por $m^{-1}$, este elemento tiene la siguiente propiedad:$m \cdot m^{-1} = 1$.
-    \item Distribución de la multiplicación sobre la suma. Para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n+l)=m \cdot n+m \cdot l $.
+    La multiplicación es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n \cdot l) = (a \cdot n) \cdot l $.
+    \item Neutro multiplicativo.
+    
+    Elemento identidad para la multiplicación. Existe un número real distinto de cero, llamado elemento identidad para la multiplicación o uno, denotado por $1$, que satisface la siguiente condición: $ m \cdot 1 = m,\forall m \in \R $.
+    \item Inverso multiplicativo.
+    
+    Para cada número real $m$ distinto de cero existe un número real llamado inverso multiplicativo de $m$, denotado por $m^{-1}$, este elemento tiene la siguiente propiedad:$m \cdot m^{-1} = 1$.
 \end{enumerate}
 
-\subsection*{Ejercicios (E1)}
-    \begin{enumerate}[label=(\alph*)]
-        \item Demuestre que el elemento identidad para la multiplicación es único.
-        \item Sea $m$ un número real distinto de cero, demuestre que el inverso multiplicativo de $m$ es único.
-        \item Sea $m$ un número real arbitrario pero fijo, demuestre que $m \cdot 0 = 0$.
-        \item Si $m$ y $n$ son números reales tales que $ m \cdot n = 0 $, demuestre que $m=0$ o $n=0$.
-        \item Sea $m$ un número real arbitrario pero fijo, demuestre que: $(-1) \cdot m =-m $.
-        \item Sean $m$ y $n$ números reales, demuestre que: $ (-m) \cdot n = -(m \cdot n) $.
-        \item Sea $m$ un número real arbitrario pero fijo, demuestre que: $-(-m)=m$.
-        \item Sean $m$ y $n$ números reales, demuestre que: $ (-m) \cdot (-n) = m \cdot n $.
-        \item Sea $m$ un número real arbitrario pero fijo, demuestre que: $(-1) \cdot (-m)=m$.
-        \item Sea $m$ un número real distinto de cero; demuestre que: $\left( m^{-1} \right)^{-1}=m$.
-        \item Sean $m$ y $n$ números reales distintos de cero, demuestre que: $(m \cdot n)^{-1}=m^{-1} \cdot n^{-1}$.
+\subsection*{Lista de Ejercicios 2 (LE2)}
+    \begin{enumerate}[label=\alph*)]
+        \item Demuestre que el elemento identidad para la multiplicación es único. (Unicidad del neutro multiplicativo).
+        
+        \textbf{Demostración:} Supongamos que existen $1$ y $\tilde{1}$ números reales tales que $a\cdot 1=a$ y $a\cdot\tilde{1}=a$. Notemos que:
+        \begin{align*}
+        1 &= a \cdot a^{-1} && \text{Inverso multiplicativo}\\
+        &= \left( a \cdot \tilde{1} \right) \cdot a^{-1} && \text{Por hipótesis}\\
+        &= \left( \tilde{1} \cdot a \right) \cdot a^{-1} && \text{Conmutatividad}\\
+        &= \tilde{1} \cdot \left( a \cdot a^{-1} \right) && \text{Asociatividad}\\
+        &= \tilde{1} \cdot 1 && \text{Inverso multiplicativo}\\
+        &= \tilde{1} && \text{Neutro multiplicativo}
+        \end{align*} \qed
+
+        \item Demuestre que el inverso multiplicativo de cada número real distinto de cero es único. (Unicidad del inverso multiplicativo).
+        
+        \textbf{Demostración:} Supongamos que existen $a^{-1}$ y $\tilde{a}^{-1}$ números reales, distintos de cero, tales que $a \cdot a^{-1} = 1$ y $a \cdot \tilde{a}^{-1} = 1$. Notemos que:
+        \begin{align*}
+        a^{-1} &= a^{-1} \cdot 1 && \text{Neutro multiplicativo} \\
+        &= a^{-1} \cdot \left(a \cdot \tilde{a}^{-1} \right) && \text{Por hipótesis} \\
+        &= \left( a^{-1} \cdot a \right) \cdot \tilde{a} ^{-1} && \text{Asociatividad} \\
+        &= \left(a \cdot a^{-1} \right) \cdot \tilde{a}^{-1} && \text{Conmutatividad} \\
+        &= 1 \cdot \tilde{a}^{-1} && \text{Inverso multiplicativo} \\
+        &= \tilde{a}^{-1} \cdot 1 && \text{Conmutatividad} \\
+        &= \tilde{a}^{-1} && \text{Neutro multiplicativo}
+        \end{align*} \qed
+
+        \item Demuestre que $1=1^{-1}$.
+        
+        \textbf{Demostración:} Por la propiedad del elemento identidad para la multiplicación tenemos que $1\cdot 1 = 1$. Además, el inverso multiplicativo de $1$ satisface que $1 \cdot 1^{-1}=1$. Debido a que el inverso multiplicativo de cada número real distinto de cero es único, de la igualdad anterior sigue que $1=1^{-1}$.
+
+        \textbf{Nota:} Recordemos que el axioma \textbf{M3} enuncia que $1$ es distinto de cero, por tanto podemos declarar la existencia de su inverso multiplicativo.
+
+        \item Sea $a$ un número real distinto de cero; demuestre que: $\left( a^{-1} \right)^{-1}=a$.
+        
+        \textbf{Demostración:} El inverso multiplicativo de $a$ satisface que $a\cdot a^{-1}=1$, y por conmutatividad, $a^{-1} \cdot a=1$, de esta igualdad se sigue que $a$ es inverso multiplicativo de $a^{-1}$. Similarmente, el inverso multiplicativo de $a^{-1}$ satisface que $ a^{-1} \cdot \left( a^{-1} \right)^{-1} =1$, y por la unicidad del inverso multiplicativo, sigue que $\left( a^{-1} \right)^{-1}=a$. \qed
+
+        \item Sean $a$ y $b$ números reales distintos de cero, demuestre que: $(a \cdot b)^{-1}=a^{-1} \cdot b^{-1}$.
+         
+        \textbf{Demostración:} \begin{align*}
+            \left(a \cdot b \right) \cdot  \left(a^{-1} \cdot b^{-1}  \right)	&=	 \left( \left(a \cdot b\right) \cdot a^{-1}  \right) \cdot b^{-1}  	&& \text{Asociatividad}\\
+        &=	 \left( \left(b\cdot a \right) \cdot a^{-1}  \right) \cdot b^{-1}  	&& \text{Conmutatividad}\\
+        &=	 \Bigl(b\cdot  \left(a \cdot a^{-1}\right) \Bigr) \cdot b^{-1}	&& \text{Asociatividad}\\
+        &=	 \left(b\cdot 1 \right) \cdot b^{-1}	&& \text{Inverso multiplicativo}\\
+        &=	b\cdot b^{-1}	&& \text{Neutro multiplicativo}\\
+        &=	1	&& \text{Inverso multiplicativo}
+        \end{align*}
+        Sigue que $\left(a^{-1} \cdot b^{-1} \right)$ es inverso multiplicativo de $\left( a \cdot b\right)$, y por la unicidad del inverso multiplicativo, sigue que $\left(a^{-1} \cdot b^{-1} \right) = \left( a \cdot b\right)^{-1}$ \qed
+
+        \item Sean $a,b,c\in \R$ con $c\neq 0$. Demuestre que si $a\cdot c=b\cdot c$, entonces $a=b$.
+            
+        \textbf{Demostración:} \begin{align*}
+        a &= a\cdot 1 && \text{Neutro multiplicativo}\\
+        &= a \cdot (c\cdot c^{-1}) && \text{Inverso multiplicativo}\\
+        &= (a \cdot c) \cdot c^{-1} && \text{Asociatividad}\\
+        &= (b \cdot c) \cdot c^{-1} && \text{Hipótesis}\\
+        &= b \cdot (c\cdot c^{-1}) && \text{Asociatividad}\\
+        &= b \cdot 1 && \text{Inverso multiplicativo}\\
+        &= b && \text{Neutro multiplicativo}
+        \end{align*} \qed
+    
+        \textbf{Nota:} Observemos que para esta proposición requerimos que $c\neq 0$, pues como demostramos en el ejercicio anterior, de caber la posibilidad de que $c=0$, no tendríamos garantía de que $a=b$. El lector debería verificar este hecho.% (Hint: $2\cdot 0 = 1 \cdot 0$).
+
+        A esta proposición la llamaremos Ley de la cancelación (de la multiplicación). Si el contexto es claro, omitiremos el paréntesis y simplemente la enunciaremos como ley de la cancelación.
+
     \end{enumerate}
 
-\subsubsection*{Demostración:}
-\begin{enumerate}[label=\alph*)]
+    Ahora, introducimos el \textbf{axioma} que nos permite relacionar las operaciones de suma y multiplicación:
 
-    \item Supongamos que existen $1$ y $\tilde{1}$ números reales tales que$m\cdot 1=m$ y $m\cdot\tilde{1}=m$. Notemos que:
-        \begin{align*}
-        1 &= m \cdot m^{-1} && \text{Por A8}\\
-        &= \left( m \cdot \tilde{1} \right) \cdot m^{-1} && \text{Por hipótesis}\\
-        &= \left( \tilde{1} \cdot m \right) \cdot m^{-1} && \text{Por A5}\\
-        &= \tilde{1} \cdot \left( m \cdot m^{-1} \right) && \text{Por A6}\\
-        &= \tilde{1} \cdot 1 && \text{Por A8}\\
-        &= \tilde{1} && \text{Por A7}
-        \end{align*} \qed
-
-% D
-    \item Supongamos que existen $m^{-1}$ y $\tilde{m}^{-1}$ números reales, distintos de cero, tales que $m \cdot m^{-1} = 1$ y $m \cdot \tilde{m}^{-1} = 1$. Notemos que:
-        \begin{align*}
-        m^{-1} &= m^{-1} \cdot 1 && \text{Por A7} \\
-        &= m^{-1} \cdot \left(m \cdot \tilde{m}^{-1} \right) && \text{Por hipótesis} \\
-        &= \left( m^{-1} \cdot m \right) \cdot \tilde{m} ^{-1} && \text{Por A6} \\
-        &= \left(m \cdot m^{-1} \right) \cdot \tilde{m}^{-1} && \text{Por A5} \\
-        &= 1 \cdot \tilde{m}^{-1} && \text{Por hipótesis} \\
-        &= \tilde{m}^{-1} \cdot 1 && \text{Por A5} \\
-        &= \tilde{m}^{-1} && \text{Por A7}
-        \end{align*} \qed
-% E
-% F
-    \item Notemos que:
-    \begin{align*}
-        m\cdot0&=m\cdot0+0 && \text{Por A3}\\
-        &=m\cdot0+\bigl(m+\left(-m\right)\bigr) && \text{Por A4}\\
-        &=m\cdot0+\bigl(m\cdot1+\left(-m\right)\bigr) && \text{Por A7}\\
-        &=\left(m\cdot0+m\cdot1\right)+\left(-m\right) && \text{Por A2}\\
-        &=\bigl(m\cdot\left(0+1\right)\bigr)+\left(-m\right) && \text{Por A9}\\
-        &=m\cdot1+\left(-m\right) && \text{Por A3}\\
-        &=m+\left(-m\right) && \text{Por A7}\\
-        &=0 && \text{Por A4}
-    \end{align*} \qed
-% G    
-    \item Supongamos que $m$ es distinto de $0$. Notemos que:
-    \begin{align*}
-        n &= n \cdot 1	&& \text{Por A7} \\
-        &= n \cdot  \left(m \cdot m^{-1}  \right) 	&& \text{Por A8} \\
-        &= \left(n \cdot m \right)  \cdot m^{-1}	&& \text{Por A6} \\
-        &= \left(m \cdot n \right)  \cdot m^{-1}	&& \text{Por A5} \\
-        &= 0 \cdot m^{-1}	&& \text{Por hipótesis}\\
-        &= m^{-1} \cdot 0	&& \text{Por A5}\\
-        &= 0 && \text{Por (f) de LE1}
-    \end{align*} \qed
-% H
-    \item Notemos que: \begin{align*}
-        0 &= m \cdot 0 && \text{Por (f) de LE1}\\
-        &= m \cdot \bigl(1+(-1)\bigr) && \text{Por A4}\\
-        &= m \cdot 1 + m \cdot (-1)  && \text{Por A9}\\
-        &= m + m \cdot (-1)  && \text{Por A7}\\
-        &= m + (-1) \cdot m  && \text{Por A5}
-    \end{align*} Sigue que $(-1) \cdot m$ es inverso aditivo de $m$, y por (c) de LE1, es único. Así, $(-1) \cdot m = -m$. \qed
-
-    %Otra demostración:
-    %Notemos que:
-    %\begin{align*}
-    %    -m&=-m+0 && \text{Por A3} \\
-    %    &=-m+m \cdot 0 && \text{Por (f) de LE1} \\
-    %    &=-m+m \cdot  \bigl( 1+ \left( -1 \right)  \bigr) && \text{Por A4} \\
-    %    &=-m+ \bigl( m \cdot 1+m \cdot  \left( -1 \right)  \bigr) && \text{Por A9} \\
-    %    &=-m+ \bigl( m+m \cdot  \left( -1 \right)  \bigr) && \text{Por A8} \\
-    %    &= \left( -m+m \right) +m \cdot  \left( -1 \right) && \text{Por A2} \\
-    %    &=m+ \left( -m \right) +m \cdot  \left( -1 \right) && \text{Por A1} \\
-    %    &=0+m \cdot  \left( -1 \right) && \text{Por A4} \\
-    %    &=m \cdot  \left( -1 \right) + 0 && \text{Por A1} \\
-    %    &=m \cdot  \left( -1 \right) && \text{Por A3} \\
-    %    &= \left( -1 \right)  \cdot m && \text{Por A5}
-    %\end{align*} \qed 
-
-% I    
-    \item Notemos que:
-    \begin{align*}
-        (-m) \cdot n &= \bigl( \left(-1 \right) \cdot m \bigr) \cdot n && \text{Por (h) de LE1}\\
-        &= (-1) \cdot (m \cdot n) && \text{Por A6}\\
-        &= -(m \cdot n) && \text{Por (h) de LE1}
-    \end{align*} \qed
-% J
-    \item Sea $m$ un número real arbitrario pero fijo. Por A4 se verifica que $m + (-m) = 0$, y por A1 tenemos que $(-m) + m = 0$, de esta igualdad se sigue que $m$ es inverso aditivo de $(-m)$. Por A4 se verifica que $(-m) + \bigl(-(-m)\bigr) = 0$, y por (c) de LE1, sabemos que el inverso aditivo de cada número real es único. Entonces, debe ser el caso que $-(-m) = m$. \qed
-%K
-    \item Notemos que:
-    \begin{align*}
-        (-m) \cdot (-n) &= (-m) \cdot \bigl( (-1) \cdot n \bigr) && \text{Por (h) de LE1}\\
-        &= \bigl( (-m) \cdot (-1) \bigr) \cdot n && \text{Por A6}\\
-        &= \bigl( (-1) \cdot (-m) \bigr) \cdot n && \text{Por A5}\\
-        &= -(-m) \cdot n && \text{Por (h) de LE1}\\
-        &= m \cdot n && \text{Por (j) de LE1}
-    \end{align*} \qed
-% L
-    \item Notemos que:
-    \begin{align*}
-        (-1) \cdot (-m) &= 1 \cdot m && \text{Por (k) de LE1}\\
-        &= m \cdot 1 && \text{Por A5}\\
-        &= m && \text{Por A7}
-    \end{align*} \qed
-% M
-    \item Sea $m$ un número real distinto de cero. Por A8 sabemos que $m \cdot m^{-1}=1$, y por A5 tenemos que $m^{-1} \cdot m=1$, de esta igualdad se sigue que $m$ es inverso multiplicativo de $m^{-1}$. Por A8 se verifica que $ m^{-1} \cdot \left( m^{-1} \right)^{-1} =1$, y por (d) de LE1, sabemos que el inverso multiplicativo de cada número real es único. Entonces, debe ser el caso que $\left( m^{-1} \right )^{-1}=m$. \qed
-% N
-    \item Sean $m$ y $n$ números reales distintos de cero. Notemos que:
-    \begin{align*}
-        \left(m \cdot n \right) \cdot  \left(m^{-1} \cdot n^{-1}  \right)	&=	 \left( \left(m \cdot n \right) \cdot m^{-1}  \right) \cdot n^{-1}  	&& \text{Por A6}\\
-    &=	 \left( \left(n \cdot m \right) \cdot m^{-1}  \right) \cdot n^{-1}  	&& \text{Por A5}\\
-    &=	 \Bigl(n \cdot  \left(m \cdot m^{-1}\right) \Bigr) \cdot n^{-1}	&& \text{Por A6}\\
-    &=	 \left(n \cdot 1 \right) \cdot n^{-1}	&& \text{Por A8}\\
-    &=	n \cdot n^{-1}	&& \text{Por A7}\\
-    &=	1	&& \text{Por A8}
-    \end{align*}
-    Sigue que $\left(m^{-1} \cdot n^{-1} \right)$ es inverso multiplicativo de $\left( m \cdot n \right)$. Además, por (d) de LE1, sabemos que el inverso multiplicativo de cada número real es único. Entonces, debe ser el caso que $\left(m^{-1} \cdot n^{-1} \right) = \left( m \cdot n \right)^{-1}$ \qed
+\begin{enumerate}[label=P.D.]
+    \item Propiedad distributiva.
+    
+    Distribución de la multiplicación sobre la suma. Para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n+l)=m \cdot n+m \cdot l $.
 \end{enumerate}
+
+\textbf{Notación:} Al número $a\cdot b$ lo denotaremos como $ab$; al número $a\cdot a$ lo denotaremos con el símbolo $a^2$.
+
+\textbf{Ejemplo de argumento circular}
+
+A partir de los axiomas y \textit{esquemas} que obtuvimos al probar proposiciones, podemos proceder a demostrar un resultado particularmente útil: Si $a$ es un número real, entonces $a\cdot 0 = 0$. Podemos esbozar la demostración de la siguiente manera: \begin{align*}
+    0 &= ab + (-ab) && \text{Inverso aditivo}\\
+    &= b\bigl(a+(-a)\bigr) && \text{P. Distributiva}\\
+    &= b \cdot 0 && \text{Inverso aditivo}
+\end{align*}
+El lector cuidadoso notará que para invocar la propiedad distributiva en el segundo paso, hemos asumido que $(-mn)=(-m)n$, lo cual no ha sido demostrado. Esto es más notorio si el esbozo anterior se lee de \textit{abajo hacia arriba}. Por lo que, para guardar rigurosidad, procedemos a demostrar la veracidad de dicha proposición, de modo que la prueba objetivo pueda ser fundamentada.
+
+Nuestra intención es demostrar que $(-ab)=(-a)b$. Notemos que el número $(-ab)$ es el inverso aditivo de $ab$, por lo que, si demostramos que $(-a)b$ también cumple esta propiedad, es decir, que $ab+(-a)b=0$, la prueba estaría concluída. Por ello procedemos como sigue:
+\begin{align*}
+    0 &= b \cdot 0&& \text{¿?}\\
+    &= b\bigl(a+(-a)\bigr)&& \text{Inverso aditivo}\\
+    &= ab + (-a)b && \text{P. Distributiva}
+\end{align*}
+No obstante, de esta forma, la proposición que debía servirnos para probar la demostración objetivo, pareciera necesitar de la proposición misma. En otras palabras, se ha propuesto un argumento circular, por lo que no podemos verificar la proposición original de este modo. Requerimos pues, depender únicamente de axiomas o proposiciones previamente probadas para continuar.
+
+\subsection*{Lista de Ejercicios 3 (LE3)}
+    \begin{enumerate}[label=\alph*)]
+
+        \item Demuestre que $\forall a\in \R$, $a \cdot 0 = 0$. (Multiplicación por $0$).
+        
+        \textbf{Demostración:} \begin{align*}
+            a\cdot0&=a\cdot0+0 && \text{Neutro aditivo}\\
+            &=a\cdot0+\bigl(a+\left(-a\right)\bigr) && \text{Inverso aditivo}\\
+            &=a\cdot0+\bigl(a\cdot1+\left(-a\right)\bigr) && \text{Neutro multiplicativo}\\
+            &=\left(a\cdot0+a\cdot1\right)+\left(-a\right) && \text{Asociatividad}\\
+            &=\bigl(a\cdot\left(0+1\right)\bigr)+\left(-a\right) && \text{P. Distributiva}\\
+            &=a\cdot1+\left(-a\right) && \text{Neutro aditivo}\\
+            &=a+\left(-a\right) && \text{Neutro multiplicativo}\\
+            &=0 && \text{Inverso aditivo}
+        \end{align*} \qed
+
+\pagebreak
+
+        \item Si $a$ y $b$ son números reales tales que $ a \cdot b = 0 $, demuestre que $a=0$ o $b=0$.
+        
+        \textbf{Demostración:} Supongamos que $a$ es distinto de $0$.
+        \begin{align*}
+            b &= b \cdot 1	&& \text{Neutro multiplicativo} \\
+            &= b \cdot  \left(a \cdot a^{-1}  \right) 	&& \text{Inverso multiplicativo} \\
+            &= \left(b\cdot a\right)  \cdot a^{-1}	&& \text{Asociatividad} \\
+            &= \left(a\cdot b\right)  \cdot a^{-1}	&& \text{Conmutatividad} \\
+            &= 0 \cdot a^{-1}	&& \text{Por hipótesis}\\
+            &= a^{-1} \cdot 0	&& \text{Conmutatividad}\\
+            &= 0 && \text{Multiplicación por $0$}
+        \end{align*} \qed
+
+        \textbf{Nota:} Esta proposición es verdadera si al menos uno de los números $a$ o $b$ resultan ser igual a $0$. Aunque también podríamos negar la igualdad para ambos y llegar a una contradicción; para ello, al procedimiento anterior añadimos el supuesto de que a su vez $b\neq0$, alcanzando la contradicción a partir de este hecho.
+
+        \item Sea $a$ un número real arbitrario pero fijo, demuestre que: $(-1) \cdot a =-a $.
+        
+        \textbf{Demostración:} \begin{align*}
+            0 &= a \cdot 0 && \text{Multiplicación por $0$}\\
+            &= a \cdot \bigl(1+(-1)\bigr) && \text{Inverso aditivo}\\
+            &= a \cdot 1 + a \cdot (-1)  && \text{P. Distributiva}\\
+            &= a + a \cdot (-1)  && \text{Neutro multiplicativo}\\
+            &= a + (-1) \cdot a  && \text{Conmutatividad}
+        \end{align*} Sigue que $(-1) \cdot a$ es inverso aditivo de $a$, el cual es único, por lo que $(-1) \cdot a = -a$. \qed
+        %
+        %Otra forma de demostrar este hecho es la siguiente: \begin{align*}
+        %    -a&=-a+0 && \text{Neutro aditivo} \\
+        %    &=-a+a \cdot 0 && \text{Multiplicación por $0$} \\
+        %    &=-a+a \cdot  \bigl( 1+ \left( -1 \right)  \bigr) && \text{Inverso aditivo} \\
+        %    &=-a+ \bigl( a \cdot 1+a \cdot  \left( -1 \right)  \bigr) && \text{P. Distributiva} \\
+        %    &=-a+ \bigl( a+a \cdot  \left( -1 \right)  \bigr) && \text{Inverso aultiplicativo} \\
+        %    &= \left( -a+a \right) +a \cdot  \left( -1 \right) && \text{Asociatividad} \\
+        %    &=a+ \left( -a \right) +a \cdot  \left( -1 \right) && \text{Conmutatividad} \\
+        %    &=0+a \cdot  \left( -1 \right) && \text{Inverso aditivo} \\
+        %    &=a \cdot  \left( -1 \right) + 0 && \text{Conmutatividad} \\
+        %    &=a \cdot  \left( -1 \right) && \text{Neutro aditivo} \\
+        %    &= \left( -1 \right)  \cdot a && \text{Conmutatividad}
+        %\end{align*} \qed 
+
+        \item Sean $a$ y $b$ números reales, demuestre que: $ (-a) \cdot b = -(a \cdot b) $.
+        
+        \textbf{Demostración:} \begin{align*}
+        (-a) \cdot b &= \bigl( \left(-1 \right) \cdot a \bigr) \cdot b && \text{(c) de LE3}\\
+        &= (-1) \cdot (a \cdot b) && \text{Asociatividad}\\
+        &= -(a \cdot b) && \text{(c) de LE3}
+        \end{align*} \qed
+
+        \item Sean $a$ y $b$ números reales, demuestre que: $ (-a) \cdot (-b) = a \cdot b $. 
+        
+        \textbf{Demostración:} \begin{align*}
+            (-a) \cdot (-b) &= (-a) \cdot \bigl( (-1) \cdot b \bigr) && \text{(c) de LE3}\\
+            &= \bigl( (-a) \cdot (-1) \bigr) \cdot b && \text{Asociatividad}\\
+            &= \bigl( (-1) \cdot (-a) \bigr) \cdot b && \text{Conmutatividad}\\
+            &= -(-a) \cdot b && \text{(c) de LE3}\\
+            &= a \cdot b && \text{(d) de LE1}
+        \end{align*} \qed
+
+        \textbf{Nota:} A las proposiciones $ (-m) \cdot n = -(m \cdot n) $ y $ (-m) \cdot (-n) = m \cdot n $, las llamaremos \textbf{ley de los signos}.
+
+        %\item Sea $a$ un número real arbitrario pero fijo, demuestre que: $(-1) \cdot (-a)=a$.
+        %
+        %\textbf{Demostración:} \begin{align*}
+        %    (-1) \cdot (-a) &= 1 \cdot m && \text{Por (k) de LE1}\\
+        %    &= a\cdot 1 && \text{Conmutatividad}\\
+        %    &= a&& \text{Neutro multiplicativo}
+        %\end{align*} \qed
+            
+    \end{enumerate}
 
 \textbf{Notación:}
 
 \begin{itemize}
-    \item Si $m$ y $n$ son números reales, representaremos con el símbolo $m-n$ a la suma: $m+ (-n)$.
-    \item Si $m$ y $n$ son números reales y $n$ es distinto de cero, representaremos con el símbolo $ \frac{m}{n}$ al número $m \cdot n^{-1} $.
+    \item Si $m$ y $n$ son números reales, representaremos con el símbolo $m-n$ a la suma $m+ (-n)$.
+    \item Si $m$ y $n$ son números reales y $n$ es distinto de cero, representaremos con el símbolo $ \frac{m}{n}$ al número $m \cdot b^{-1} $.
     \item Si $m_1$, $m_2$ y $m_3$ son números reales, representaremos con el símbolo $m_1+m_2+ m_3$ a cualquiera de las sumas $m_1+ \left(m_2+ m_3 \right)$ o $\left(m_1+ m_2 \right)+ m_3$.
 \end{itemize}
 
-%LISTA DE EJERCICIOS 2
-\subsection*{Lista de ejercicios 2 (LE2)}
+\subsection*{Lista de ejercicios 4 (LE4)}
 
 Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
-    \item $a \cdot \frac{c}{b} = \frac{ac}{b}$, si $b \neq 0$
-    \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$
-    \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} $, si $b, d \neq 0$
-    \item $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$, si $b, d \neq 0$
-    \item $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}$, si $b, c, d \neq 0$
-\end{enumerate}
+    \item $a \cdot \frac{c}{b} = \frac{ac}{b}$, si $b \neq 0$.
+    
+    \textbf{Demostración:} \begin{align*}
+        a \cdot \frac{c}{b} &= a \cdot \left( c \cdot b^{-1} \right) && \text{Por notación}\\
+        &= \left( a \cdot c \right) \cdot b^{-1} && \text{Asociatividad}\\
+        &= \frac{ac}{b} && \text{Por notación}
+    \end{align*} \qed
+    
+    \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$.
+    
+    \textbf{Demostración}\begin{align*}
+        \frac{ac}{bc} &= a \cdot c \cdot \left( bc \right)^{-1} && \text{Por notación}\\
+        &= a \cdot c \cdot b^{-1} \cdot c^{-1} && \text{(e) de LE2}\\
+        &= a \cdot b^{-1} \cdot c \cdot c^{-1} && \text{Conmutatividad}\\
+        &= a \cdot b^{-1} \cdot 1 && \text{Inverso multiplicativo}\\
+        &= a \cdot b^{-1} && \text{Neutro multiplicativo}\\
+        &= \frac{a}{b} && \text{Por notación}
+    \end{align*}\qed
 
-\subsubsection*{Demostración}
+    \item $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$, si $b, d \neq 0$.
+    
+    \textbf{Demostración:}\begin{align*}
+        \frac{a}{b} \cdot \frac{c}{d} &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) && \text{Por notación}\\
+            &= a \cdot \Bigl( b^{-1} \cdot \left( c \cdot d^{-1} \right) \Bigr) && \text{Asociatividad}\\
+                &= a \cdot \Bigl( c \cdot \left( b^{-1} \cdot d^{-1} \right) \Bigr) && \text{Conmutatividad}\\
+        &= \left( a \cdot c \right) \cdot \left( b^{-1} \cdot d^{-1} \right) && \text{Asociatividad}\\
+        &= \left( a \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{(e) de LE2}\\
+        &= \frac{ac}{bd} && \text{Por notación}
+    \end{align*}\qed
+    
+    \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} $, si $b, d \neq 0$.
+    
+    \textbf{Demostración:}\begin{align*}
+    \frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Por notación}\\
+    &=	\left( a \cdot 1 \right)   \cdot b^{-1} \pm \left( c \cdot 1 \right) \cdot d^{-1} && \text{Neutro multiplicativo}\\
+    &=	\Bigl( a \cdot  \left( d \cdot d^{-1} \right) \Bigr) \cdot b^{-1} \pm \Bigl( c \cdot  \left( b \cdot b^{-1}  \right)  \Bigr)  \cdot d^{-1} && \text{Inverso multiplicativo}\\
+    &=	\Bigl(  \left( a \cdot d \right) \cdot d^{-1} \Bigr) \cdot b^{-1} \pm \Bigl(  \left( c \cdot b \right) \cdot b^{-1} \Bigr) \cdot d^{-1} && \text{Asociatividad}\\
+    &=	\left( a \cdot d \right)  \cdot  \left( d^{-1} \cdot b^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Asociatividad}\\
+    &=	\left( a \cdot d \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Conmutatividad}\\
+    &=	\left( b^{-1} \cdot d^{-1}  \right) \cdot \left( a \cdot d \pm c \cdot b \right) && \text{P. Distributiva}\\
+    &=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b^{-1} \cdot d^{-1} \right) && \text{Conmutatividad}\\
+    &=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b \cdot d \right)^{-1} && \text{(e) de LE2}\\
+    &=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Conmutatividad}\\
+    &=	\frac{ad \pm bc}{bd} && \text{Por notación}
+    \end{align*}\qed
 
-\begin{enumerate}[label=\alph*)]
+    \item $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}$, si $b, c, d \neq 0$.
+    
+    \textbf{Demostración:}\begin{align*}
+        \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Por notación}\\
+        &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Por notación}\\
+        &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot \left( d^{-1} \right) ^{-1} \right) && \text{(e) de LE2}\\
+        &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot d \right) && \text{Unicidad del inverso multiplicativo}\\
+        &= \left( a \cdot b^{-1} \right) \cdot \left( d \cdot c^{-1} \right) && \text{Conmutatividad}\\
+        &= \frac{a}{b} \cdot \frac{d}{c} && \text{Por notación}\\
+        &= \frac{ad}{bc} && \text{(d) de LE4}
+    \end{align*} \qed
+    \end{enumerate}
 
-%A
-\item Notemos que:%
-\begin{align*}
-    a \cdot \frac{c}{b} &= a \cdot \left( c \cdot b^{-1} \right) && \text{Por notación}\\
-    &= \left( a \cdot c \right) \cdot b^{-1} && \text{Por A6}\\
-    &= \frac{ac}{b} && \text{Por notación}
-\end{align*} \qed
-%B
-\item Notemos que:%
-\begin{align*}
-    \frac{ac}{bc} &= a \cdot c \cdot \left( bc \right)^{-1} && \text{Por notación}\\
-    &= a \cdot c \cdot b^{-1} \cdot c^{-1} && \text{Por (m) de LE1}\\
-    &= a \cdot b^{-1} \cdot c \cdot c^{-1} && \text{Por A5}\\
-    &= a \cdot b^{-1} \cdot 1 && \text{Por A8}\\
-    &= a \cdot b^{-1} && \text{Por A7}\\
-    &= \frac{a}{b} && \text{Por notación}
-\end{align*}\qed
-%C
-\item Notemos que:%
-\begin{align*}
-\frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Por notación}\\
-&=	\left( a \cdot 1 \right)   \cdot b^{-1} \pm \left( c \cdot 1 \right) \cdot d^{-1} && \text{Por A7}\\
-&=	\Bigl( a \cdot  \left( d \cdot d^{-1} \right) \Bigr) \cdot b^{-1} \pm \Bigl( c \cdot  \left( b \cdot b^{-1}  \right)  \Bigr)  \cdot d^{-1} && \text{Por A8}\\
-&=	\Bigl(  \left( a \cdot d \right) \cdot d^{-1} \Bigr) \cdot b^{-1} \pm \Bigl(  \left( c \cdot b \right) \cdot b^{-1} \Bigr) \cdot d^{-1} && \text{Por A6}\\
-&=	\left( a \cdot d \right)  \cdot  \left( d^{-1} \cdot b^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Por A6}\\
-&=	\left( a \cdot d \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Por A5}\\
-&=	\left( b^{-1} \cdot d^{-1}  \right) \cdot \left( a \cdot d \pm c \cdot b \right) && \text{Por A9}\\
-&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b^{-1} \cdot d^{-1} \right) && \text{Por A5}\\
-&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b \cdot d \right)^{-1} && \text{Por (m) de LE1}\\
-&=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Por A5}\\
-&=	\frac{ad \pm bc}{bd} && \text{Por notación}
-\end{align*}\qed
-%D
-\item Notemos que:%
-\begin{align*}
-    \frac{a}{b} \cdot \frac{c}{d} &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) && \text{Por notación}\\
-        &= a \cdot \Bigl( b^{-1} \cdot \left( c \cdot d^{-1} \right) \Bigr) && \text{Por A6}\\
-            &= a \cdot \Bigl( c \cdot \left( b^{-1} \cdot d^{-1} \right) \Bigr) && \text{Por A5}\\
-	&= \left( a \cdot c \right) \cdot \left( b^{-1} \cdot d^{-1} \right) && \text{Por A6}\\
-	&= \left( a \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Por (m) de LE1}\\
-	&= \frac{ac}{bd} && \text{Por notación}
-\end{align*}\qed
-%E
-\item Notemos que:%
-\begin{align*}
-    \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Por notación}\\
-    &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Por notación}\\
-    &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot \left( d^{-1} \right) ^{-1} \right) && \text{Por (m) de LE1}\\
-    &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot d \right) && \text{Por (l) de LE1}\\
-    &= \left( a \cdot b^{-1} \right) \cdot \left( d \cdot c^{-1} \right) && \text{Por A5}\\
-    &= \frac{a}{b} \cdot \frac{d}{c} && \text{Por notación}\\
-    &= \frac{ad}{bc} && \text{Por (d) de LE2}
-\end{align*} \qed
-\end{enumerate}
+\textbf{Notación:} Al número $1+1$ lo denotaremos con el símbolo $2$ y lo llamaremos número dos. Al número $2+1$ lo denotaremos con el símbolo $3$ y lo llamaremos número tres...
 
-Existe un subconjunto del conjunto de los números reales llamado conjunto de los números reales positivos, denotado con el símbolo $\R^+$. A los elementos de este conjunto los llamaremos números reales positivos. El conjunto $\R^+$ satisface los siguientes:
-%
+\pagebreak
+
 \subsection*{Axiomas de orden}
+
+\textbf{Ejercicio:} Pruebe que si $a,b\in \R$ son tales que $a+(-b)=b+(-a)$, entonces $a=b$.
+    
+Un intento por demostrar la proposición anterior puede lucir como sigue: \begin{align*}
+a+(-b)&=b+(-a) && \text{Hipótesis} \\
+\bigl(a+(-b)\bigr)+b&=\bigl(b+(-a)\bigr)+b&&\text{Ley de la cancelación} \\
+a + \bigl((-b)+b\bigr)&= b+\bigl((-a)+b\bigr)&&\text{Asociatividad} \\
+a + \bigl(b+(-b)\bigr)&= b+\bigl(b+(-a)\bigr)&&\text{Conmutatividad} \\
+a + 0&= b+\bigl(b+(-a)\bigr)&&\text{Inverso aditivo} \\
+a + 0&= (b+b)+(-a)&&\text{Asociatividad} \\
+(a + 0) + a&= \bigl((b+b)+(-a)\bigr)+a&&\text{Ley de la cancelación} \\
+(a + 0) + a&= (b+b)+\bigl((-a)+a\bigr)&&\text{Asociatividad} \\
+(a + 0) + a&= (b+b)+\bigl(a+(-a)\bigr)&&\text{Conmutatividad} \\
+(a + 0) + a&= (b+b)+0&&\text{Inverso aditivo} \\
+a+ a&= b+b&&\text{Neutro aditivo} \\
+2a &= 2b &&\text{Notación} \\
+a &= b && \text{¿Ley de la cancelación?}
+\end{align*}
+
+El lector precavido notará que la ley de la cancelación (de la multiplicación) exige que el número a \textit{ser cancelado} requiere de ser diferente de $0$. Sin embargo, hasta este punto no hemos demostrado que $2\neq 0$, por lo que la proposición no puede ser demostrada. Sin embargo, con los axiomas que hemos listado y los resultados que hemos derivado de ellos no es suficiente para probar tal proposición (el lector debería verificar este hecho). Por ello resulta necesario añadir elementos a nuestro conjunto de axiomas y para ello comenzamos asumiento lo siguiente:
+
+Existe un subconjunto del conjunto de los números reales llamado conjunto de los números reales positivos, denotado con el símbolo $\R^+$. A los elementos de este conjunto los llamaremos números reales positivos. El conjunto $\R^+$ satisface los siguientes \textbf{axiomas}:
 %
 \begin{enumerate}[label=O\arabic*)]
 \item Si $m, n \in \R^+$, entonces $m + n \in \R^+$.
@@ -481,7 +556,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:%
 \item Supongamos que $1 \notin \R^+$. Por (A7), (ii) de (O3) no se cumple. Si $-1 \in \R^+$, por (O2) se verifica que $-1 \cdot -1 \in \R^+$, lo cual por (h) de LE1 implica que $-(-1) \in \R^+$, pero esto contradice a (iii) de (O3). Por tanto, $1$ es un número real positivo.
 % B
 \item \begin{enumerate}[label=\roman*)]
-    \item Supongamos que $a \in \R^+$. Por A3 sabemos que $a=a+0$, y por (e) de LE1 sigue que $a=a-0$, entonces $a-0 \in \R^+$, lo que por definición implica que $a>0$.
+    \item Supongamos que $a \in \R^+$. Neutro aditivo sabemos que $a=a+0$, y por (e) de LE1 sigue que $a=a-0$, entonces $a-0 \in \R^+$, lo que por definición implica que $a>0$.
     \item Supongamos que $a>0$. Por definición, $a-0 \in \R^+$, y por (e) de LE1 sigue que $a-0=a+0$, lo que por A3 implica que $a+0=a$. Así $a \in \R^+$.
 \end{enumerate}\qed
 \pagebreak
@@ -490,9 +565,9 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:%
     \begin{enumerate}[label=\roman*)]
     \item Si $-1=0$. Notemos que:
         \begin{align*}
-        0 &= 1 - 1 && \text{Por A4}\\
+        0 &= 1 - 1 && \text{Inverso aditivo}\\
         &= 1 + 0 && \text{Por hipótesis}\\
-        &= 1 && \text{Por A3}
+        &= 1 && \text{Neutro aditivo}
         \end{align*}
     Pero la igualdad anterior contradice a A7.
     \item Si $-1 > 0$, por (b) de LE3 tenemos que $-1 \in \R^+$, pero esto contradice a O3, ya que por (a) de LE3 sabemos que $1 \in \R^+$.
@@ -502,22 +577,22 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:%
     \begin{enumerate}[label=\roman*)]
     \item Si $c<d$, entonces $d-c \in \R^+$. Por (O1) se verifica que $(b-a)+(d-c) \in \R^+$. Notemos que:
         \begin{align*}
-        b-a+d-c &= b+d-a-c && \text{Por A1}\\
+        b-a+d-c &= b+d-a-c && \text{Conmutatividad}\\
         &= b+d+(-a)+(-c) && \text{Por notación}\\
-        &= b+d+(-1)a+(-1)c && \text{Por (h) de LE1}\\
-        &= b+d+ (-1) (a + c) && \text{Por A9}\\
-        &= b+d + b-(a+c) \big) && \text{Por (h) de LE1}\\
+        &= b+d+(-1)a+(-1)c && \text{LE3:3}\\
+        &= b+d+ (-1) (a + c) && \text{P. Distributiva}\\
+        &= b+d + b-(a+c) \big) && \text{LE3:3}\\
         &= b+d - (a+c) && \text{Por notación}
         \end{align*}
     De este modo, $b+d-(a+c)\in \R^+$, es decir, $a+c<b+d$.
     \item Si $c=d$. Notemos que
         \begin{align*}
-        b - a &= b -a + 0 && \text{Por A3}\\
-        &= b-a+c-c && \text{Por A4}\\
-        &= b+c-a-c && \text{Por A1}\\
+        b - a &= b -a + 0 && \text{Neutro aditivo}\\
+        &= b-a+c-c && \text{Inverso aditivo}\\
+        &= b+c-a-c && \text{Conmutatividad}\\
         &= b+c+(-a)+(-c) && \text{Por notación}\\
-        &= b+c+(-1)a+(-1)c && \text{Por (h) de LE1}\\
-        &= b+c+(-1)(a+c) && \text{Por A9}\\
+        &= b+c+(-1)a+(-1)c && \text{LE3:3}\\
+        &= b+c+(-1)(a+c) && \text{P. Distributiva}\\
         &= b+c-(a+c) && \text{Por(h) de LE1}\\
         &= b+d-(a+c) && \text{Por hipótesis}
         \end{align*}
@@ -525,17 +600,17 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:%
     \end{enumerate}
     En cualquier caso, $a+c<b+d$. \qed
 % E
-\item Por definición $b-a \in \R^+$, y por (b) de LE3 $c \in \R^+$. Luego, por O2 se verifica que $c(b-a) \in \R^+$. Por A9 sigue que $c(b-a)=cb-ca$ y por A5 tenemos que $cb-ca=bc-ac$. De este modo, $bc-ac \in \R^+$, es decir, $ac<bc$.\qed
+\item Por definición $b-a \in \R^+$, y por (b) de LE3 $c \in \R^+$. Luego, por O2 se verifica que $c(b-a) \in \R^+$. P. Distributiva sigue que $c(b-a)=cb-ca$ y por conmutatividad tenemos que $cb-ca=bc-ac$. De este modo, $bc-ac \in \R^+$, es decir, $ac<bc$.\qed
 \pagebreak
 % F
 \item Por definición $b-a \in \R^+$ y $0 - c \in \R^+$, por A3 sigue que $ -c \in \R^+$. Luego, por O2 $-c(b-a) \in \R^+$. Notemos que:
     \begin{align*}
     -c(b-a) &= -c \Bigl( b + (-a) \Bigr) && \text{Por notación}\\
-    &= (-c) \cdot b + (-c) \cdot (-a) && \text{Por A9}\\
+    &= (-c) \cdot b + (-c) \cdot (-a) && \text{P. Distributiva}\\
     &= (-c) \cdot b + c \cdot a && \text{Por (k) de LE1}\\
     &= -(c \cdot b) + c \cdot a && \text{Por (i) de LE1}\\
-    &= ca -(cb) && \text{Por A1}\\
-    &= ac - (bc) && \text{Por A5}
+    &= ca -(cb) && \text{Conmutatividad}\\
+    &= ac - (bc) && \text{Conmutatividad}
     \end{align*}
 Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
 %G
@@ -563,18 +638,18 @@ Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
 \item Sea $a>0$. Supongamos que $\frac{1}{a} \leq 0$. Notemos que:
     \begin{align*}
         \frac{1}{a} \cdot a &\leq 0 \cdot a && \text{Por (e) de LE3}\\
-        1 &\leq 0 && \text{Por A8 y (f) de LE1}
+        1 &\leq 0 && \text{Inverso multiplicativo y (f) de LE1}
     \end{align*}
     Pero por (a) de LE3 y (b) de LE3 tenemos que $1>0$. Por tanto, $\frac{1}{a} > 0$. \qed
 %J
 \item Por definición $b-a \in \R^+$ y $c-b \in \R^+$. Por O1 $(b-a) + (c-b) \in \R^+$. Notemos que:
     \begin{align*}
         (b-a) + (c-b) &= b - a + c -b && \text{Por notación}\\
-        &= b-a -b+c && \text{Por A1}\\
-        &= b-b -a+c && \text{Por A1}\\
-        &= 0 - a +c && \text{Por A4}\\
-        &= -a +c && \text{Por A3}\\
-        &= c-a && \text{Por A1}
+        &= b-a -b+c && \text{Conmutatividad}\\
+        &= b-b -a+c && \text{Conmutatividad}\\
+        &= 0 - a +c && \text{Inverso aditivo}\\
+        &= -a +c && \text{Neutro aditivo}\\
+        &= c-a && \text{Conmutatividad}
     \end{align*} Entonces $c-a \in \R^+$, es decir, $a<c$. \qed
 %K
 \item 
@@ -587,9 +662,9 @@ Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
     \begin{align*}
     a &< b && \text{Por hipótesis} \\
     a-a &< b-a && \text{Por (d) de LE3} \\
-    0 &< b-a && \text{Por A4} \\
+    0 &< b-a && \text{Inverso aditivo} \\
     0 \cdot \frac{1}{ab} &< (b-a) \cdot \frac{1}{ab} && \text{Por (h) y (e) de LE3}\\
-    0 &< \frac{b-a}{ab} && \text{Por (f) de LE1 y (a) de LE2}\\
+    0 &< \frac{b-a}{ab} && \text{Multiplicación por $0$ y (a) de LE2}\\
     0 &< \frac{1}{a} - \frac{1}{b} && \text{Por (c) de LE2}\\
     \frac{1}{b} &< \frac{1}{a} && \text{Por (d) de LE3}
     \end{align*} \qed
@@ -602,7 +677,7 @@ Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
         2a &< b+a && \text{Por definición} \\
         2a \cdot \frac{1}{2} &< (b+a) \cdot \frac{1}{2} && \text{Por (e) de LE3} \\
         \frac{2a}{2} &< \frac{b+a}{2} && \text{Por (a) de LE2} \\
-        a &< \frac{b+a}{2} && \text{Por A8}
+        a &< \frac{b+a}{2} && \text{Inverso multiplicativo}
     \end{align*} Similarmente,
     \begin{align*}
         a &< b && \text{Por hipótesis} \\
@@ -800,7 +875,7 @@ Demuestre lo siguiente:
     \item La suma de números naturales es un número natural.
     \item La multiplicación de números naturales es un número natural.
     \item $n\geq 1, \forall n\in \N$.
-    \item $0<n^{-1}\leq 1, \forall n\in \N$.
+    \item $0<b^{-1}\leq 1, \forall n\in \N$.
     \item $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$.
     \item Sean $m$ y $n$ números naturales tales que $m>n$, demuestre que $m-n\in\N$.
     \item Sea $x\in \R^+$. Si $n\in \N$ y $x+n\in \N$, desmuestre que $x\in \N$.
@@ -811,15 +886,15 @@ Demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
 % A    
-    \item Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{ n\in \N : m+n \in \N \}$. Por definición, $1\in \N$ y $m+1\in \N$, entonces $1\in A$, es decir, $A\neq \emptyset$. \\[5pt] Por otra parte, si $n\in A$ debe ser el caso que $n\in \N$ y $m+n\in \N$. Como $\N$ es un conjunto inductivo, $n+1 \in \N$ y $(m+n)+1 \in \N$, luego, por la asociatividad de la suma, $m+(n+1)\in \N$. Por la condición de $A$, se cumple que $n+1\in A$, por lo que $A$ es un conjunto inductivo. De esto se concluye que $\N\subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la suma de números naturales es un número natural. \qed
+    \item Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{ n\in \N : m+n \in \N \}$. Por definición, $1\in \N$ y $m+1\in \N$, entonces $1\in A$, es decir, $A\neq \emptyset$. \\[5pt] Por otra parte, si $n\in A$ debe ser el caso que $n\in \N$ y $m+n\in \N$. Como $\N$ es un conjunto inductivo, $n+1 \in \N$ y $(a+n)+1 \in \N$, luego, por la asociatividad de la suma, $m+(n+1)\in \N$. Por la condición de $A$, se cumple que $n+1\in A$, por lo que $A$ es un conjunto inductivo. De esto se concluye que $\N\subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la suma de números naturales es un número natural. \qed
 % B    
     \item Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{n\in \N: m\cdot n \in \N\}$. Por definición, $1 \in \N$. Adenás, $m\cdot 1 \in \N$, entonces $1 \in A$, es decir $A \neq \emptyset$.\\[5pt] 
-    Luego, si $n \in A$ debe ser el caso que $n\in \N$ y $m \cdot n \in \N$. Por (a) de LE7 se verifica que $(m \cdot n) + m \in \N$. Notemos que $(m \cdot n) + m=m \cdot (n+1)$, osea, $m \cdot (n+1) \in \N$. Como $\N$ es un conjunto inductivo, tenemos que $n+1\in \N$. De este modo, $n+1\in A$. Lo que implica que $A$ es un conjunto inductivo. De esto se concluye que $\N \subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la multiplicación de números naturales es un número natural. \qed
+    Luego, si $n \in A$ debe ser el caso que $n\in \N$ y $m \cdot n \in \N$. Por (a) de LE7 se verifica que $(a \cdot n) + m \in \N$. Notemos que $(a \cdot n) + m=m \cdot (n+1)$, osea, $m \cdot (n+1) \in \N$. Como $\N$ es un conjunto inductivo, tenemos que $n+1\in \N$. De este modo, $n+1\in A$. Lo que implica que $A$ es un conjunto inductivo. De esto se concluye que $\N \subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la multiplicación de números naturales es un número natural. \qed
 % C
     \item Sea $A\coloneqq \{n\in \N: n\geq 1\}$. Como $1\in \N$ y $1\geq 1$, tenemos que $1\in A$.\\[5pt]
     Si $n\in A$ debe ser el caso que $n\in \N$ y $1\leq n$. Además, por (a) de LE7, $n+1\in \N$. Luego, notemos que $0 \leq 1$ de donde sigue que $n \leq n+1$. Por transitividad, $1\leq n+1$, por lo que $n+1\in A$, lo que implica que $A$ es un conjunto inductivo, es decir, $\N\subseteq A$ y como $A\subseteq \N$, $A=N$. En otras palabras, $n\geq 1, \forall n\in\N$. \qed
 % D
-    \item Por (d) de LE7, $n\geq 1, \forall n\in \N$. Si $n=1$, tenemos que $n^{-1}=1>0$. Si $n>1$, tenemos que $n>0$, por lo que $n^{-1}>0$. En cualquier caso, $1\geq n^{-1}>0, \forall n\in \N$.
+    \item Por (d) de LE7, $n\geq 1, \forall n\in \N$. Si $n=1$, tenemos que $b^{-1}=1>0$. Si $n>1$, tenemos que $n>0$, por lo que $b^{-1}>0$. En cualquier caso, $1\geq b^{-1}>0, \forall n\in \N$.
 % E
     \item Sea $A \coloneqq \set{n\in \N | n>1, n-1\in \N}$. Si $n\in A$ debe ser porque $n>1$ y $n-1\in \N$. Como $n\in \N$ y $\N$ es un conjunto inductivo, se verifica $n+1\in\N$. Notemos que \begin{align*}
         (n+1)-1 &= n+(1-1) \\
@@ -937,7 +1012,7 @@ Finalmente, notemos que $A$ y $L$ son disjuntos, y dado que $A\subseteq \N$ y $L
 
 Sea $S\subseteq \N$ tal que $S$ es un conjunto inductivo, entonces $S=\N$.
 
-\textbf{Demostración:} Supongamos que $S\neq \N$, entonces el conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$), y —por el principio del buen orden— tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$. Por (c) de LE7, se verifica que $1 \leq m$. Por definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $m\in \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, de donde sigue —por (e) de LE7— que $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, debe ser el caso que $S=\N$. \qed
+\textbf{Demostración:} Supongamos que $S\neq \N$, entonces el conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$), y —por el principio del buen orden— tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$. Por (c) de LE7, se verifica que $1 \leq m$. Por definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $m\in \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, de donde sigue —por (e) de LE7— que $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(a-1)+1=m\in S$ lo que es una contradicción. Por tanto, debe ser el caso que $S=\N$. \qed
 
 \textbf{\textit{Teorema.}} Todo conjunto finito no vacío tiene elemento mínimo y elemento máximo, es decir, para todo conjunto finito $A\neq \emptyset$, $\exists m,M\in A$ tales que $m\leq a\leq M, \forall a\in A$.
 
