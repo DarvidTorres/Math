@@ -42,18 +42,18 @@ Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A
 \noindent\begin{minipage}[r]{5.5cm}
 \begin{align*}
     \text{Suma} \ + : \R \times \R &\to \R\\
-    (a,n) &\mapsto m+n
+    (m,n) &\mapsto m+n
 \end{align*}
 \end{minipage}%
 \begin{minipage}[l]{6.5cm}
 \begin{align*}
     \text{y} \qquad \text{Multiplicación} \ \cdot : \R \times \R &\to \R\\
-    (a,n) &\mapsto m \cdot n
+    (m,n) &\mapsto m \cdot n
 \end{align*}
 \end{minipage}
 \end{center}
 
-La notación anterior denota la cerradura de estas operaciones, es decir, que para cuales quiera dos números reales $(a,n)$, la suma y multiplicación son números reales, $(a+n)\in \R$ y $(a+n)\in \R$.
+La notación anterior denota la cerradura de estas operaciones, es decir, que para cuales quiera dos números reales $(m,n)$, la suma y multiplicación son números reales, $(m+n)\in \R$ y $(m+n)\in \R$.
 
 Las suma y multiplicación de números reales satisfacen los siguientes \textbf{axiomas de campo}:
 
@@ -479,7 +479,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
 \pagebreak
 
-\subsection*{Axiomas de orden}
+\section*{Axiomas de orden}
 
 \textbf{Ejercicio:} Pruebe que si $a,b\in \R$ son tales que $a+(-b)=b+(-a)$, entonces $a=b$.
     
@@ -531,7 +531,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:%
 %
 \begin{enumerate}[label=\alph*)]
     \item $1 \in \R^+$.
-    \item $a \in \R^+$ si y solo si $a>0$. %A
+    \item $-a \in \R^+$ si y solo si $-a>0$. %A
     \item $-1<0$. %B
     \item Si $a<b$ y $c \leq d$, entonces $a+c<b+d$. %C
     \item Si $a<b$ y $0<c$, entonces $ac<bc$. %D
@@ -556,9 +556,12 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:%
 \item Supongamos que $1 \notin \R^+$. Por (A7), (ii) de (O3) no se cumple. Si $-1 \in \R^+$, por (O2) se verifica que $-1 \cdot -1 \in \R^+$, lo cual por (h) de LE1 implica que $-(-1) \in \R^+$, pero esto contradice a (iii) de (O3). Por tanto, $1$ es un número real positivo.
 % B
 \item \begin{enumerate}[label=\roman*)]
-    \item Supongamos que $a \in \R^+$. Neutro aditivo sabemos que $a=a+0$, y por (e) de LE1 sigue que $a=a-0$, entonces $a-0 \in \R^+$, lo que por definición implica que $a>0$.
-    \item Supongamos que $a>0$. Por definición, $a-0 \in \R^+$, y por (e) de LE1 sigue que $a-0=a+0$, lo que por A3 implica que $a+0=a$. Así $a \in \R^+$.
+    \item Supongamos que $-a \in \R^+$. Neutro aditivo sabemos que $-a=-a+0$, y por (e) de LE1 sigue que $-a=-a-0$, entonces $-a-0 \in \R^+$, lo que por definición implica que $-a>0$.
+    \item Supongamos que $-a>0$. Por definición, $-a-0 \in \R^+$, y por (e) de LE1 sigue que $-a-0=-a+0$, lo que por A3 implica que $-a+0=-a$. Así $-a \in \R^+$.
 \end{enumerate}\qed
+
+\textbf{Nota:} Esta demostración, cuya forma es $m\in \R^+ \iff m>0, \forall m\in \R$, nos permite reparar en el hecho de que la definición de un número real positivo no está asociada a la ausencia del signo negativo.
+
 \pagebreak
 % C
 \item Supongamos que $-1 \geq 0$

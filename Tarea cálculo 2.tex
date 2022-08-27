@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+
+\usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
+\usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
+\usepackage{mathtools}
+\usepackage{braket}
+\usepackage{nicefrac} % for Elegant fractions in one line https://tex.stackexchange.com/questions/128496/elegant-fractions-in-one-line/128498
+
+%Conjuntos de números
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+%Shorter comands
+\let\epsilon\varepsilon
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\let\set\Set
+
+%bold all lists$
+\setlist[enumerate]{font=\bfseries}
+
+\setlength{\parindent}{0pt} %no indent for the document
+\setlength{\parskip}{1em} %add space between paragraphs
+\pagestyle{empty}
+
+\begin{document}
+
+\title{\vspace{-2cm}Cálculo diferencial e Integral I \\ Semestre 2023-1 \\ Grupo 4031}
+\author{Problemas de: números reales \\ \text{Torres Brito David Israel}}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+
+\begin{enumerate}
+ \item Encuentre todos los números reales que satisfagan las siguientes desigualdades: \begin{enumerate}[label=(\alph*)]
+  \item $4-x<3-2x$
+  \begin{align*}
+   (4-x)+2x-4&< (3-2x)+2x-4 && \text{Ley de la cancelación}\\
+   4+(-x+2x)-4 &< 3+(-2x+2x)-4 && \text{Asociatividad}\\
+   (-x+2x)+4-4 &< (-2x+2x)+3-4 && \text{Conmutatividad}\\
+   (-x+2x)+0 &< 0+3-4 && \text{Inverso aditivo}\\
+   -x+2x &< 3-4 && \text{Neutro aditivo}\\
+   x &< -1 && \text{Definición}
+  \end{align*}
+
+ \item $5-x^2<-2$
+ \begin{align*}
+  (5-x^2)+x^2+2 &< (-2)+x^2+2 && \text{Ley de la cancelación}\\
+  5+(-x^2+x^2)+2 &< (-2)+x^2+2 && \text{Asociatividad}\\
+  5+0+2 &< (-2)+x^2+2 && \text{Inverso aditivo}\\
+  5+2 &< (-2)+x^2+2 && \text{Neutro aditivo}\\
+  5+2 &< x^2+(-2)+2 && \text{Conmutatividad}\\
+  5+2 &< x^2 + (-2+2) &&\text{Asociatividad}\\
+  5+2 &< x^2&&\text{Inverso aditivo}\\
+  7 &< x^2 && \text{Definición}
+ \end{align*}
+Sabemos que $0<7$, y por el ejercicio 4, $\sqrt{7}<\sqrt{x^2}$. Luego, \begin{enumerate}[label=\roman*)]
+ \item Si $0\leq x$, entonces $\sqrt{x^2}=x$, por definición.
+ \item Si $x<0$, entonces $\sqrt{x^2}=-x$, por definición.
+\end{enumerate}
+ \end{enumerate}
+
+ \item Pruebe que si $a,b\in \R$ son mayores o iguales a $0$, entonces $a^2\leq b^2$ si y solo si $a\leq b$.
+ \begin{enumerate}[label=\roman*)]
+  \item Si $a^2\leq b^2$, \begin{align*}
+   a^2 + (-a^2)&\leq b^2 +(-a^2)&& \text{Ley de la cancelación}\\
+   0 &\leq b^2-a^2 && \text{Inverso aditivo}\\
+   0 &\leq bb - aa && \text{Definición}\\
+   0 &\leq bb - aa + 0 && \text{Neutro aditivo}\\
+   0 &\leq bb - aa + (ab-ab) && \text{Inverso aditivo}\\
+   0 &\leq (bb + ab) + (- ab - aa) && \text{Asociatividad}\\
+   0 &\leq (bb + ab)-(ab+aa) && \text{Demostrado previamente}\\
+   0 &\leq b(b+a)-a(b+a) && \text{P. Distributiva}\\
+   0 &\leq (b+a)(b-a) && \text{P. Distributiva}
+  \end{align*} Por hipótesis, $a\geq 0$ y $b\geq 0$, y por propiedad de los positivos, $a+b\geq 0$. Sigue que:\begin{align*}
+   0 \cdot (b+a)^{-1}&\leq (b+a)^{-1}\cdot (b+a)(b-a) && \text{Ley de la cancelación}\\
+   0 &\leq (b+a)^{-1}\cdot (b+a)(b-a) && \text{Demostrado anteriormente}\\
+   0 &\leq 1 \cdot (b-a) && \text{Inverso multiplicativo}\\
+   0 &\leq b-a && \text{Neutro multiplicativo}\\
+   0 + a &\leq b-a+a && \text{Ley de la cancelación}\\
+   0+a &\leq b+0 && \text{Inverso aditivo}\\
+   a &\leq b && \text{Neutro aditivo}
+  \end{align*}
+  \item Si $a\leq b$. \begin{align*}
+   a -a &\leq b-a && \text{Ley de la cancelación}\\
+   0 &\leq b-a && \text{Inverso aditivo}
+  \end{align*} Debido a que $b\geq a$, tenemos que $b-a\geq 0$. Sigue que: \begin{align*}
+   0 \cdot (b+a) &\leq (b-a)\cdot (b+a) && \text{Ley de la multiplicación}\\
+   0 &\leq (b-a)\cdot (b+a) && \text{Ley de la multiplicación}\\
+   0 &\leq b(b-a)+a(b-a) && \text{P. Distributiva}\\
+   0 &\leq bb-ab+ab-aa &&\text{P. Distributiva}\\
+   0 &\leq bb + 0 -aa && \text{Inverso aditivo}\\
+   0 &\leq bb -aa && \text{Neutro aditivo}\\
+   0 + aa &\leq bb -aa + aa && \text{Ley de la cancelación}\\
+   aa &\leq bb + 0 && \text{Inverso aditivo}\\
+   aa &\leq bb &&\text{Neutro aditivo}\\
+   a^2 &\leq b^2 && \text{Definición}
+  \end{align*}
+ \end{enumerate} \qed
+\end{enumerate}
+
+\end{document}
