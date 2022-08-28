@@ -535,7 +535,20 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:%
     \item $-1<0$. %B
     \item Si $a<b$ y $c \leq d$, entonces $a+c<b+d$. %C
     \item Si $a<b$ y $0<c$, entonces $ac<bc$. %D
-    \item Si $a<b$ y $c<0$, entonces $ac>bc$. %E
+    \item Si $a<b$ y $c<0$, entonces $ac>bc$.
+    
+    \textbf{Demostración:} Por definición $b-a \in \R^+$ y $0 - c \in \R^+$, por A3 sigue que $ -c \in \R^+$. Luego, por O2 $-c(b-a) \in \R^+$. Notemos que:
+    \begin{align*}
+    -c(b-a) &= -c \Bigl( b + (-a) \Bigr) && \text{Por notación}\\
+    &= (-c) \cdot b + (-c) \cdot (-a) && \text{P. Distributiva}\\
+    &= (-c) \cdot b + c \cdot a && \text{Por (k) de LE1}\\
+    &= -(c \cdot b) + c \cdot a && \text{Por (i) de LE1}\\
+    &= ca -(cb) && \text{Conmutatividad}\\
+    &= ac - (bc) && \text{Conmutatividad}
+    \end{align*}
+Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
+
+\textbf{Nota:} De este resultado sigue que si $0<m$ y $n<0$, entonces $mn<0$.
     \item $a \in \R^+$ si y solo si $-a<0$. %F
     \item $a<b$ si y solo si $-a>-b$. %G
     \item Si $a>0$, entonces $\frac{1}{a}>0$. %H
@@ -605,17 +618,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:%
 % E
 \item Por definición $b-a \in \R^+$, y por (b) de LE3 $c \in \R^+$. Luego, por O2 se verifica que $c(b-a) \in \R^+$. P. Distributiva sigue que $c(b-a)=cb-ca$ y por conmutatividad tenemos que $cb-ca=bc-ac$. De este modo, $bc-ac \in \R^+$, es decir, $ac<bc$.\qed
 \pagebreak
-% F
-\item Por definición $b-a \in \R^+$ y $0 - c \in \R^+$, por A3 sigue que $ -c \in \R^+$. Luego, por O2 $-c(b-a) \in \R^+$. Notemos que:
-    \begin{align*}
-    -c(b-a) &= -c \Bigl( b + (-a) \Bigr) && \text{Por notación}\\
-    &= (-c) \cdot b + (-c) \cdot (-a) && \text{P. Distributiva}\\
-    &= (-c) \cdot b + c \cdot a && \text{Por (k) de LE1}\\
-    &= -(c \cdot b) + c \cdot a && \text{Por (i) de LE1}\\
-    &= ca -(cb) && \text{Conmutatividad}\\
-    &= ac - (bc) && \text{Conmutatividad}
-    \end{align*}
-Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
+
 %G
 \item
     \begin{enumerate}[label=\roman*)]
