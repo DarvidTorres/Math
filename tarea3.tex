@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+
+\usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry} % Margins of the page
+\usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem} % math symbols
+\usepackage{mathtools}
+\usepackage{braket} % symbols for sets
+\usepackage{nicefrac} % one-line fractions with nice format
+
+%Conjuntos de números
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+%Shorter comands
+\let\epsilon\varepsilon
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\let\set\Set
+
+%bold all lists$
+\setlist[enumerate]{font=\bfseries}
+
+\setlength{\parindent}{0pt} %no indent for the document
+\setlength{\parskip}{1em} %add space between paragraphs
+\pagestyle{empty}
+
+\begin{document}
+
+\title{\vspace{-2cm}Cálculo diferencial e Integral I \\ Semestre 2023-1 \\ Grupo 4031}
+\author{Problemas de: inducción \\ \text{Torres Brito David Israel}}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+
+\begin{enumerate}
+ \item Pruebe que \[ \sum_{i=1}^n i(i+1)=1\cdot2 + 2\cdot 3+3\cdot 4+\cdots + i\cdot (i+1) = \frac{n(n+1)(n+2)}{3}
+  \] para toda $n\in \N$.
+ 
+ \textbf{Demostración:} Procederemos por inducción sobre $n$. \begin{enumerate}[label=\roman*)]
+  \item Se verifica para $n=1$: \begin{align*}
+   (1)(1+1) &= \frac{1(1+1)(1+2)}{3}\\
+   (1)(2) &= \frac{1(2)(3)}{3}\\
+   2 &= \frac{6}{3}\\
+   2 &= 2
+  \end{align*}
+  \item Supongamos que la fórmula se cumple para $n=k$, es decir, supongamos que \[ \sum_{i=1}^k i(i+1)=\frac{k(k+1)(k+2)}{3}
+  \]
+  \item Demostraremos, a partir de (ii), que la fórmula se cumple también para $n=k+1$. Es decir, probaremos que \begin{align*}
+   \sum_{i=1}^{k+1} i(i+1) &= \frac{(k+1)\bigl((k+1)+1\bigr)\bigl((k+1)+2\bigr)}{3}\\
+   &= \frac{(k+1)(k+2)(k+3)}{3}
+  \end{align*}
+  En efecto, notemos que \begin{align*}
+   \sum_{i=1}^{k+1} i(i+1) &=\sum_{i=1}^k i(i+1) + (k+1)\bigl((k+1)+1\bigr)\\
+   &=\sum_{i=1}^k i(i+1) + (k+1)(k+2)\\
+   &=\frac{k(k+1)(k+2)}{3} + (k+1)\cdot (k+2) && \text{Por hipótesis	de inducción}\\
+  &= \frac{k(k+1)(k+2)}{3} + \frac{3(k+1)\cdot (k+2)}{3}\\
+  &= k\cdot \frac{(k+1)(k+2)}{3} + 3\cdot \frac{(k+1)\cdot (k+2)}{3}\\
+  &= \frac{(k+1)(k+2)}{3} \cdot (k+3)\\
+  &= \frac{(k+1)(k+2)}{3} \cdot \frac{3(k+3)}{3}\\
+  &= \frac{(k+1)(k+2)\cdot 3(k+3)}{3\cdot 3}\\
+  &= \frac{(k+1)(k+2)(k+3)}{3}
+ \end{align*}
+ \end{enumerate}
+ Por tanto, \[ \sum_{k=1}^n k(k+1)=1\cdot2 + 2\cdot 3+3\cdot 4+\cdots + n\cdot (n+1) = \frac{n(n+1)(n+2)}{3}
+ \] para toda $n\in \N$. \qed
+
+ \item Pruebe que \[ \sum_{i=1}^n \frac{1}{(2i-1)(2i+1)} = \frac{1}{1\cdot 3}+\frac{1}{3\cdot 5}+\frac{1}{5\cdot 7} + \cdots + \frac{1}{(2i-1)(2i+1)} = \frac{n}{2n+1}
+  \] Para toda $n\in \N$.
+
+  \textbf{Demostración:} Procederemos por inducción sobre $n$. \begin{enumerate}[label=\roman*)]
+   \item Se verifica para $n=1$: \begin{align*}
+   \frac{1}{\bigl(2(1)-1\bigr)\bigl(2(1)+1\bigr)} &= \frac{1}{2(1)+1}\\
+   \frac{1}{(2-1)(2+1)} &=  \frac{1}{2+1}\\
+   \frac{1}{(1)(3)} &= \frac{1}{3} \\
+   \frac{1}{3} &= \frac{1}{3}
+   \end{align*}
+   \item Supongamos que la fórmula se cumple para $n=k$, es decir, supongamos que \[
+    \sum_{i=1}^k \frac{1}{(2i-1)(2i+1)} = \frac{k}{2k+1}
+    \]
+   \item Demostraremos, a partir de (ii), que la fórmula se cumple también para $n=k+1$. Es decir, probaremos que \begin{align*}
+    \sum_{i=1}^{k+1}\frac{1}{(2i-1)(2i+1)} &= \frac{k+1}{2(k+1)+1}\\
+    &= \frac{k+1}{2k+2+1}\\
+    &= \frac{k+1}{2k+3}
+   \end{align*}
+   En efecto, notemos que \begin{align*}
+    \sum_{i=1}^{k+1}\frac{1}{(2i-1)(2i+1)} &= \sum_{i=1}^k \frac{1}{(2i-1)(2i+1)} + \frac{1}{\bigl(2(k+1)-1\bigr)\bigl(2(k+1)+1\bigr)}\\
+    &= \sum_{i=1}^k \frac{1}{(2i-1)(2i+1)} + \frac{1}{(2k+2-1)(2k+2+1)} \\
+    &= \sum_{i=1}^k \frac{1}{(2i-1)(2i+1)} + \frac{1}{(2k+1)(2k+3)} \\
+    &= \frac{k}{2k+1} + \frac{1}{(2k+1)(2k+3)} && \text{Hip. Ind.} \\
+    &= \frac{k(2k+3)}{(2k+1)(2k+3)} + \frac{1}{(2k+1)(2k+3)} \\
+    &= \frac{k(2k+3)+1}{(2k+1)(2k+3)} \\
+    &= \frac{(2k^2+3k)+1}{(2k+1)(2k+3)} \\
+    &= \frac{(2k^2+k+2k)+1}{(2k+1)(2k+3)} \\
+    &= \frac{(2k^2+k)+(2k+1)}{(2k+1)(2k+3)} \\
+    &= \frac{k(2k+1)+(2k+1)}{(2k+1)(2k+3)} \\
+    &= \frac{(2k+1)(k+1)}{(2k+1)(2k+3)} \\
+    &= \frac{k+1}{2k+3}
+   \end{align*}
+   Por tanto, \[ \sum_{i=1}^n \frac{1}{(2i-1)(2i+1)} = \frac{1}{1\cdot 3}+\frac{1}{3\cdot 5}+\frac{1}{5\cdot 7} + \cdots + \frac{1}{(2i-1)(2i+1)} = \frac{n}{2n+1}
+  \] Para toda $n\in \N$. \qed
+  \end{enumerate}
+
+  \pagebreak
+
+  \item Pruebe que $4^n-1$ es un múltiplo de $3$ para toda $n\in \N$.
+  
+  \textbf{Demostración:} Procedemos por inducción sobre $n$. \begin{enumerate}[label=\roman*)]
+   \item Se verifica para $n=1$. \begin{align*}
+    4^{(1)}-1 &= 4-1 \\
+    &= 3
+   \end{align*}
+   \item Supongamos que la proposición es válida para $n=k$, es decir, suponemos que $\exists p\in \N$ tal que \[4^k-1=3p\]
+   \item Probaremos que la proposición es válida para $n=k+1$, es decir, probaremos que $\exists q \in \N$ tal que $4^{k+1}-1=3q$.
+   
+   Recordemos que \begin{align*}
+    a^k-b^k &= (a-b)\sum_{i=0}^{k-1} a^{k-1-i}y^{i} && \text{Demostrado en clase}
+   \end{align*}
+   Por lo que,
+   \begin{align*}
+    4^{k+1}-1 &= 4^{k+1}-1^{k+1}\\
+    &= (4-1)\sum_{i=0}^{k} 4^{k-i} \cdot 1^{i}\\
+    &= 3 \sum_{i=0}^{k} 4^{k-i}\\
+    &= 3 q, q \in \N && \text{Por hipótesis	de inducción}
+   \end{align*}
+   Por tanto, $4^n-1$ es un múltiplo de $3$ para toda $n\in \N$. \qed
+  \end{enumerate}
+
+ \item Pruebe que $5^n-3^n$ es un número par para tods $n\in \N$.
+ 
+ \textbf{Demostración:} Procedemos por inducción sobre $n$. \begin{enumerate}[label=\roman*)]
+  \item Se verifica para $n=1$. \begin{align*}
+   5^{(1)}-3^{(1)} &= 5-3 \\
+   &= 2
+  \end{align*}
+  \item Supongamos que la proposición es válida para $n=k$, es decir, suponemos que $\exists p\in \N$ tal que \[5^k-3^k=2p\]
+  \item Probaremos que la proposición es válida para $n=k+1$, es decir, probaremos que $\exists q \in \N$ tal que $5^{k+1}-3^{k+1}=2p$.
+  
+  Recordemos que \begin{align*}
+   a^k-b^k &= (a-b)\sum_{i=0}^{k-1} a^{k-1-i}y^{i} && \text{Demostrado en clase}
+  \end{align*}
+  Por lo que,
+  \begin{align*}
+   5^{k+1}-3^{k+1} &=(5-3)\sum_{i=0}^{k} 4^{k-i} \cdot 3^{i}\\
+   &= 2 \sum_{i=0}^{k} 4^{k-i} \cdot 3^{i}\\
+   &= 2 q, q \in \N
+  \end{align*}
+ \end{enumerate}
+ Por tanto, $5^n-3^n$ es un número par para tods $n\in \N$. \qed
+
+ \item Pruebe que todo número natural $n\geq 7$ es igual a la suma de dos números; uno múltiplo de 3 y el otro múltiplo de 4.
+ 
+ \textbf{Demostración:} Procedemos por inducción sobre $n$. \begin{enumerate}[label=\roman*)]
+  \item Verificamos que se cumple para $n=7$. \begin{align*}
+   7 &= 3 + 4
+  \end{align*}
+
+  \item Supongamos que la proposición es válida para $n=k>7$, es decir, suponemos que $\exists p, q\in\N$ tales que $k=3p+4q$.
+  \item Probaremos que la proposición es válida para $n=k+1>7$, es decir, suponemos que $\exists s,t\in \N$ tales que $k+1=3s+4t$. En efecto, por hipótesis	de inducción, \begin{align*}
+   k + 1 &= 3q+4p + 1 \\
+   &= 3q + 4p + \frac{4p}{4p}\\
+   &= 3q + \frac{4(p^2)}{p} + \frac{4p}{4p}\\
+   &= 3q + 4 \biggl(\frac{p^2}{p} + \frac{p}{4p}\biggr)\\
+   &= 3q + 4 \biggl(p+ \frac{1}{4}\biggr)\\
+   &= 3t + 4s \\
+  \end{align*}
+ \end{enumerate}
+
+ \item Prube que si $a\in \R$ es tal que $a\geq -1$, entonces $(1+a)^n\geq 1+na$ para toda $n\in \N$. (Esta desigualdad es conocida como \textit{desigualdad de Bernoulli}).
+ 
+ \textbf{Demostración:} Por inducción sobre $n$. \begin{enumerate}[label=\roman*)]
+  \item Verificamos que la desigualdad se cumple para $n=1$. \begin{align*}
+   (1+a)^1 &\geq 1+(1)a\\
+   1+a &\geq 1+a
+  \end{align*}
+  \item Supongamos que se cumple para $n=k$. Es decir, supongamos que \begin{align*}
+   (1+a)^k &\geq 1+ ka
+  \end{align*}
+  \item Demostraremos a partir de (ii) que \[(1+a)^{k+1}\geq 1 + (k+1)a\]
+  Notemos que \begin{align*}
+   (1+a)^{k+1} &= (1+a)^k \cdot (1+a)\\
+   &\geq (1+ka) \cdot (1+a) && \text{Hipótesis de inducción}\\
+   &= (1+a)+ka(1+a)\\
+   &= 1+a+ka+ka^2\\
+   &= 1+(1+k)a+ka^2
+  \end{align*} Debido a que $k\in \N$ y $a^2 \geq 0$, sigue que $ka\geq 0$, entonces, de la igualdad anterior sigue que $1+(1+k)a+ka^2 \geq 1+ (k+1)a$, y por transitividad, $(1+a)^{k+1} \geq 1+ (k+1)a$. \qed
+ \end{enumerate}
+
+ \item Pruebe que \[\sum_{i=1}^n \frac{1}{i^2} = \frac{1}{1^2}+\frac{1}{2^2}+\frac{1}{3^2}+\cdots + \frac{1}{i^2} < 2-\frac{1}{2n}\]
+ \textbf{Demostración:} Procederemos por inducción sobre $n$. \begin{enumerate}[label=\roman*)]
+  \item Verificamos que la desigualdad se cumple para $n=1$. \begin{align*}
+   \frac{1}{1^2} &< 2 - \frac{1}{2(1)}\\
+   \frac{1}{1} &< 2-\frac{1}{2}\\
+   %\frac{2}{2}\cdot \frac{1}{1} &< \frac{2}{2}\cdot 2-\frac{1}{2}\\
+   %\frac{2}{2} &< \frac{4}{2}-\frac{1}{2}\\
+   1 &< \frac{3}{2}
+  \end{align*}
+  \item Supongamos que la desigualdad es válida para $n=k$, es decir, suponemos que \begin{align*}
+   \sum_{i=1}^k \frac{1}{i^2} < 2-\frac{1}{2k}
+  \end{align*}
+  \item Demostraremos a partir de (ii) que la desigualdad se cumple para $n=k+1$, osea \begin{align*}
+   \sum_{i=1}^{k+1} \frac{1}{i^2} < 2-\frac{1}{2(k+1)}
+  \end{align*} Notemos que \begin{align*}
+   \sum_{i=1}^{k+1} \frac{1}{i^2} &= \sum_{i=1}^k \frac{1}{i^2} + \frac{1}{(k+1)^2}\\
+   &< 2-\frac{1}{2k} + \frac{1}{(k+1)^2} && \text{Hipótesis	de inducción}\\
+  \end{align*}
+ \end{enumerate}
+
+\end{enumerate}
+
+\end{document}

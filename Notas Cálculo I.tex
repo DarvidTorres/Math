@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
+\usepackage[top=0.6in,bottom=0.6in,right=0.6in,left=0.6in]{geometry}
 \usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
 \usepackage{mathtools}
 \usepackage{braket}
@@ -53,7 +53,7 @@ Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A
 \end{minipage}
 \end{center}
 
-La notación anterior denota la cerradura de estas operaciones, es decir, que para cuales quiera dos números reales $(m,n)$, la suma y multiplicación son números reales, $(m+n)\in \R$ y $(m+n)\in \R$.
+La notación anterior denota la cerradura de estas operaciones, es decir, que para cuales quiera dos números reales $(m,n)$, la suma y multiplicación son números reales, $(m+n)\in \R$ y $(m\cdot n)\in \R$.
 
 Las suma y multiplicación de números reales satisfacen los siguientes \textbf{axiomas de campo}:
 
@@ -63,20 +63,20 @@ Las suma y multiplicación de números reales satisfacen los siguientes \textbf{
     La suma es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m+n = n+m $.
     \item Asociatividad (de la suma).
     
-    La suma es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $(a+ n)+l = m+(n+ l)$.
+    La suma es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $(m+ n)+l = m+(n+ l)$.
 \end{enumerate}
 
-El letor observará que el axioma \textbf{S2} no incluye todas las formas en que podríamos sumar tres números reales:
+El lector observará que el axioma de \textbf{asociatividad} no incluye todas las formas en que podríamos sumar tres números reales:
 
 \begin{adjustbox}{minipage=0.5\linewidth,margin=0pt \smallskipamount,center}
     \noindent\begin{minipage}[c]{.5\linewidth}
     \begin{enumerate}[label=\roman*.]
-        \item $(a+n)+l$
+        \item $(m+n)+l$
         \item $m+(n+l)$
         \item $m+(l+n)$
-        \item $(a+l)+n$
+        \item $(m+l)+n$
         \item $(l+m)+n$
-        \item $l+(a+n)$
+        \item $l+(m+n)$
     \end{enumerate}
     \end{minipage}%
 \begin{minipage}[c]{.5\linewidth}
@@ -85,15 +85,15 @@ El letor observará que el axioma \textbf{S2} no incluye todas las formas en que
         \item $(l+n)+m$
         \item $(n+l)+m$
         \item $n+(l+m)$
-        \item $n+(a+l)$
+        \item $n+(m+l)$
         \item $(n+m)+l$
     \end{enumerate}
 \end{minipage}
 \end{adjustbox}
 
-La razón, es que las anteriores pueden obtenerse utilizando los axiomas \textbf{S1} y \textbf{S2}, con lo que garantizamos la igualdad de todas ellas.
+La razón es que las anteriores pueden obtenerse utilizando los axiomas de \textbf{conmutatividad} y \textbf{asociatividad}, con lo que garantizamos la igualdad de todas ellas, y descartamos la necesidad de enumerarlas todas como axiomas.
 
-Notemos que para sumar tres números $(a,b,c)$, siempre requerimos ejecutar, primero, la suma de dos de ellos $(a+b)$, y tomar este resultado para, entonces, sumarlo al tercero $(a+b)+c$, a esto alude el lado izquierdo de la igualdad de la asociatividad de la suma (\textbf{S2}). También podemos cambiar el orden, realizando la suma de $a$ y $b$, luego tomar el número $c$ y sumarle a este último el resultado que habíamos obtenido con anterioridad: $c+(a+b)$. Estos resultados (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$.
+Notemos que para sumar tres números $(a,b,c)$, siempre requerimos ejecutar, primero, la suma de dos de ellos $(a+b)$, y luego tomar este resultado para sumarlo al tercer número $(a+b)+c$, a esto alude el lado izquierdo de la igualdad de la asociatividad de la suma (\textbf{S2}). También podemos cambiar el orden, realizando la suma de $a$ y $b$, luego tomar el número $c$ y sumarle a este último el resultado que habíamos obtenido con anterioridad: $c+(a+b)$. Estos resultados (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$.
 
 Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y \textbf{(ii)} satisfacen igualdad, por lo que tenemos $(a+b)+c=a+(b+c)$. A partir de este punto, el lector puede inferir cuál es el uso de estos axiomas y cómo demostrar la igualdad de todas las formas de sumar tres números, sin necesidad de enunciarlas todas como axiomas. Por ejemplo, \begin{align*}
     (a+b)+c &= a+(b+c) && \text{Asociatividad}\\
@@ -112,8 +112,12 @@ Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y 
 Continuamos con el listado de axiomas:
 
 \begin{enumerate}[start=3,label=S\arabic*.]
-    \item Neutro aditivo. Existe un número real llamado elemento neutro para la suma o cero, denotado por $0$, el cual satisface la siguiente condición: $ m+0=m,\forall m \in \R $.
-    \item Inverso aditivo. Para cada número real $m$ existe un número real llamado inverso aditivo de $m$, denotado por $-m$ (aenos $m$); la propiedad que caracteriza a este elemento es: $ m + (-m) = 0 $.
+    \item Neutro aditivo.
+    
+    Existe un número real llamado elemento neutro para la suma o cero, denotado por $0$, el cual satisface la siguiente condición: $ m+0=m,\forall m \in \R $.
+    \item Inverso aditivo.
+    
+    Para cada número real $m$ existe un número real llamado inverso aditivo de $m$, denotado por $-m$ (aenos $m$); la propiedad que caracteriza a este elemento es: $ m + (-m) = 0 $.
 \end{enumerate}
 
 Utilizando los axiomas enunciados hasta ahora \textbf{S[1-4]}, podemos obtener resultados útiles, por ejemplo, si tenemos números reales $a,b,c$ tales que $a+c=b+c$, encontraremos que $a=b$. El lector acostumbrado a matemáticas de bachillerato, podría intentar demostrar este hecho de la siguiente manera: \begin{align*}
@@ -122,7 +126,7 @@ Utilizando los axiomas enunciados hasta ahora \textbf{S[1-4]}, podemos obtener r
     %a+0 &= b + 0 \\
     a &= b
 \end{align*}
-No obstante, aunque en principio el resultado anterior no es incorrecto, debemos especificar cada hecho mediante las propiedades conocidas hasta este punto. Por lo anterior, una forma más precisa de demostrar la proposición es la siguiente:
+No obstante, aunque en principio el resultado anterior no es incorrecto, debemos justificar cada \textit{paso} mediante las propiedades conocidas hasta este punto. Por lo anterior, una forma más precisa de demostrar la proposición es la siguiente:
 
 \pagebreak
 
@@ -140,7 +144,7 @@ Sean $a,b$ y $c$ números reales, tales que $a+c=b+c$, entonces $a=b$.
 
 A esta proposición la llamaremos Ley de la cancelación (de la suma). Si el contexto es claro, omitiremos el paréntesis y simplemente la enunciaremos como ley de la cancelación.
 
-Notemos que en el segundo paso de la demostración, teníamos —en virtud del axioma \textbf{S4}, la opción de sustituir $0$ por $b+(-b)$ o por $c+(-c)$, sin embargo, no en ambos casos resultaría útil. El lector debería comprobar que ocurre si sustituimos $0$ por $b+(-b)$ en la demostración anterior.
+Notemos que en el segundo paso de la demostración, podíamos —en virtud del axioma \textbf{S4}, sustituir $0$ por $b+(-b)$ o por $c+(-c)$ (o cualquier otra suma igual a $0$), sin embargo, no en todos los casos resultaría útil. El lector debería comprobar qué ocurre si sustituimos $0$ por $b+(-b)$ en la demostración anterior.
 
 \subsection*{Lista de Ejercicios 1 (LE1)}
 
@@ -193,7 +197,7 @@ Supongamos que existen 0 y $\tilde{0}$ números reales tales que $a+0 = a$ y $a+
     \end{align*}
     Por la unicidad del inverso aditivo, tenemos que $(-a)+ (-b)=-(a+b)$.\qed
 
-    \textbf{Nota:} Cada demostración que realizamos, al ser probada para números reales arbitrarios, esto es, no para elementos de $\R$ en particular, nos permite reutilizar las formas como esquema para otras proposiciones. Por ejemplo, el resultado $-(a+n)=(-m)+(-n)$, nos permite sustituir $m$ y $n$ por cuales quiera números reales, como en el ejemplo que sigue:
+    \textbf{Nota:} Cada demostración que realizamos, al ser probada para números reales arbitrarios, esto es, no para elementos de $\R$ en particular, nos permite reutilizar las formas como esquema para otras proposiciones. Por ejemplo, el resultado $-(m+n)=(-m)+(-n)$, nos permite sustituir $m$ y $n$ por cuales quiera números reales, como en el ejemplo que sigue:
 
     \item Pruebe que si $a,b\in \R$, entonces $-\bigl(a+(-b)\bigr)=b+(-a)$.
 
@@ -297,16 +301,19 @@ Continuemos enunciando los \textbf{axiomas} de campo:
     Distribución de la multiplicación sobre la suma. Para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n+l)=m \cdot n+m \cdot l $.
 \end{enumerate}
 
-\textbf{Notación:} Al número $a\cdot b$ lo denotaremos como $ab$; al número $a\cdot a$ lo denotaremos con el símbolo $a^2$.
+\textbf{Notación:} \begin{itemize}
+    \item Al número $a\cdot b$ lo denotaremos como $ab$.
+    \item Al número $a\cdot a$ lo denotaremos con el símbolo $a^2$.
+\end{itemize}
 
-\textbf{Ejemplo de argumento circular}
+\subsection*{Ejemplo de argumento circular}
 
-A partir de los axiomas y \textit{esquemas} que obtuvimos al probar proposiciones, podemos proceder a demostrar un resultado particularmente útil: Si $a$ es un número real, entonces $a\cdot 0 = 0$. Podemos esbozar la demostración de la siguiente manera: \begin{align*}
+A partir de los axiomas y \textit{esquemas} que obtuvimos a partir de estos, podemos proceder a demostrar un resultado particularmente útil: Si $a$ es un número real, entonces $a\cdot 0 = 0$. Podemos esbozar la demostración de la siguiente manera: \begin{align*}
     0 &= ab + (-ab) && \text{Inverso aditivo}\\
     &= b\bigl(a+(-a)\bigr) && \text{P. Distributiva}\\
     &= b \cdot 0 && \text{Inverso aditivo}
 \end{align*}
-El lector cuidadoso notará que para invocar la propiedad distributiva en el segundo paso, hemos asumido que $(-mn)=(-m)n$, lo cual no ha sido demostrado. Esto es más notorio si el esbozo anterior se lee de \textit{abajo hacia arriba}. Por lo que, para guardar rigurosidad, procedemos a demostrar la veracidad de dicha proposición, de modo que la prueba objetivo pueda ser fundamentada.
+El lector cuidadoso notará que para \textit{invocar} la propiedad distributiva en el segundo paso, hemos asumido que $(-mn)=(-m)n$, lo cual no ha sido demostrado. Esto es más notorio si el esbozo anterior se lee de \textit{abajo hacia arriba}. Por lo que, para guardar rigurosidad, procedemos a demostrar la veracidad de dicha proposición, de modo que la prueba objetivo pueda ser fundamentada.
 
 Nuestra intención es demostrar que $(-ab)=(-a)b$. Notemos que el número $(-ab)$ es el inverso aditivo de $ab$, por lo que, si demostramos que $(-a)b$ también cumple esta propiedad, es decir, que $ab+(-a)b=0$, la prueba estaría concluída. Por ello procedemos como sigue:
 \begin{align*}
@@ -391,8 +398,7 @@ No obstante, de esta forma, la proposición que debía servirnos para probar la 
             &= a \cdot b && \text{(d) de LE1}
         \end{align*} \qed
 
-        \textbf{Nota:} A las proposiciones $ (-m) \cdot n = -(m \cdot n) $ y $ (-m) \cdot (-n) = m \cdot n $, las llamaremos \textbf{ley de los signos}.
-
+        \textbf{Nota:} A las proposiciones $ (-m) \cdot n = -(m \cdot n) $ y $ (-m) \cdot (-n) = m \cdot n $, las enunciaremos como \textbf{leyes de los signos}.
         %\item Sea $a$ un número real arbitrario pero fijo, demuestre que: $(-1) \cdot (-a)=a$.
         %
         %\textbf{Demostración:} \begin{align*}
@@ -400,14 +406,16 @@ No obstante, de esta forma, la proposición que debía servirnos para probar la 
         %    &= a\cdot 1 && \text{Conmutatividad}\\
         %    &= a&& \text{Neutro multiplicativo}
         %\end{align*} \qed
-            
+        \item Sea $a$ un número real, demuestre que $a^{-1}\neq 0$. (El cero no es inverso multiplicativo).
+        
+        \textbf{Demostración:} Supongamos que $a^{-1}=0$. Al multiplicar por $0$ tenemos que $a\cdot a^{-1}=0$. Además, el inverso multiplicativo satisface que $a\cdot a^{-1}=1$, por lo que $1=0$, pero esto contradice el axioma del neutro multiplicativo. Entonces, $a^{-1}\neq 0, \forall a\in \R$. \qed
     \end{enumerate}
 
 \textbf{Notación:}
 
 \begin{itemize}
     \item Si $m$ y $n$ son números reales, representaremos con el símbolo $m-n$ a la suma $m+ (-n)$.
-    \item Si $m$ y $n$ son números reales y $n$ es distinto de cero, representaremos con el símbolo $ \frac{m}{n}$ al número $m \cdot b^{-1} $.
+    \item Si $m$ y $n$ son números reales y $n$ es distinto de cero, representaremos con el símbolo $ \frac{m}{n}$ al número $m \cdot n^{-1} $.
     \item Si $m_1$, $m_2$ y $m_3$ son números reales, representaremos con el símbolo $m_1+m_2+ m_3$ a cualquiera de las sumas $m_1+ \left(m_2+ m_3 \right)$ o $\left(m_1+ m_2 \right)+ m_3$.
 \end{itemize}
 
@@ -419,37 +427,37 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     \item $a \cdot \frac{c}{b} = \frac{ac}{b}$, si $b \neq 0$.
     
     \textbf{Demostración:} \begin{align*}
-        a \cdot \frac{c}{b} &= a \cdot \left( c \cdot b^{-1} \right) && \text{Por notación}\\
+        a \cdot \frac{c}{b} &= a \cdot \left( c \cdot b^{-1} \right) && \text{Notación}\\
         &= \left( a \cdot c \right) \cdot b^{-1} && \text{Asociatividad}\\
-        &= \frac{ac}{b} && \text{Por notación}
+        &= \frac{ac}{b} && \text{Notación}
     \end{align*} \qed
     
     \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$.
     
     \textbf{Demostración}\begin{align*}
-        \frac{ac}{bc} &= a \cdot c \cdot \left( bc \right)^{-1} && \text{Por notación}\\
+        \frac{ac}{bc} &= a \cdot c \cdot \left( bc \right)^{-1} && \text{Notación}\\
         &= a \cdot c \cdot b^{-1} \cdot c^{-1} && \text{(e) de LE2}\\
         &= a \cdot b^{-1} \cdot c \cdot c^{-1} && \text{Conmutatividad}\\
         &= a \cdot b^{-1} \cdot 1 && \text{Inverso multiplicativo}\\
         &= a \cdot b^{-1} && \text{Neutro multiplicativo}\\
-        &= \frac{a}{b} && \text{Por notación}
+        &= \frac{a}{b} && \text{Notación}
     \end{align*}\qed
 
     \item $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$, si $b, d \neq 0$.
     
     \textbf{Demostración:}\begin{align*}
-        \frac{a}{b} \cdot \frac{c}{d} &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) && \text{Por notación}\\
+        \frac{a}{b} \cdot \frac{c}{d} &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) && \text{Notación}\\
             &= a \cdot \Bigl( b^{-1} \cdot \left( c \cdot d^{-1} \right) \Bigr) && \text{Asociatividad}\\
                 &= a \cdot \Bigl( c \cdot \left( b^{-1} \cdot d^{-1} \right) \Bigr) && \text{Conmutatividad}\\
         &= \left( a \cdot c \right) \cdot \left( b^{-1} \cdot d^{-1} \right) && \text{Asociatividad}\\
         &= \left( a \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{(e) de LE2}\\
-        &= \frac{ac}{bd} && \text{Por notación}
+        &= \frac{ac}{bd} && \text{Notación}
     \end{align*}\qed
     
     \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} $, si $b, d \neq 0$.
     
     \textbf{Demostración:}\begin{align*}
-    \frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Por notación}\\
+    \frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Notación}\\
     &=	\left( a \cdot 1 \right)   \cdot b^{-1} \pm \left( c \cdot 1 \right) \cdot d^{-1} && \text{Neutro multiplicativo}\\
     &=	\Bigl( a \cdot  \left( d \cdot d^{-1} \right) \Bigr) \cdot b^{-1} \pm \Bigl( c \cdot  \left( b \cdot b^{-1}  \right)  \Bigr)  \cdot d^{-1} && \text{Inverso multiplicativo}\\
     &=	\Bigl(  \left( a \cdot d \right) \cdot d^{-1} \Bigr) \cdot b^{-1} \pm \Bigl(  \left( c \cdot b \right) \cdot b^{-1} \Bigr) \cdot d^{-1} && \text{Asociatividad}\\
@@ -459,18 +467,18 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     &=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b^{-1} \cdot d^{-1} \right) && \text{Conmutatividad}\\
     &=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b \cdot d \right)^{-1} && \text{(e) de LE2}\\
     &=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Conmutatividad}\\
-    &=	\frac{ad \pm bc}{bd} && \text{Por notación}
+    &=	\frac{ad \pm bc}{bd} && \text{Notación}
     \end{align*}\qed
 
     \item $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}$, si $b, c, d \neq 0$.
     
     \textbf{Demostración:}\begin{align*}
-        \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Por notación}\\
-        &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Por notación}\\
+        \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Notación}\\
+        &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Notación}\\
         &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot \left( d^{-1} \right) ^{-1} \right) && \text{(e) de LE2}\\
         &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot d \right) && \text{Unicidad del inverso multiplicativo}\\
         &= \left( a \cdot b^{-1} \right) \cdot \left( d \cdot c^{-1} \right) && \text{Conmutatividad}\\
-        &= \frac{a}{b} \cdot \frac{d}{c} && \text{Por notación}\\
+        &= \frac{a}{b} \cdot \frac{d}{c} && \text{Notación}\\
         &= \frac{ad}{bc} && \text{(d) de LE4}
     \end{align*} \qed
     \end{enumerate}
@@ -499,14 +507,16 @@ a+ a&= b+b&&\text{Neutro aditivo} \\
 a &= b && \text{¿Ley de la cancelación?}
 \end{align*}
 
-El lector precavido notará que la ley de la cancelación (de la multiplicación) exige que el número a \textit{ser cancelado} requiere de ser diferente de $0$. Sin embargo, hasta este punto no hemos demostrado que $2\neq 0$, por lo que la proposición no puede ser demostrada. Sin embargo, con los axiomas que hemos listado y los resultados que hemos derivado de ellos no es suficiente para probar tal proposición (el lector debería verificar este hecho). Por ello resulta necesario añadir elementos a nuestro conjunto de axiomas y para ello comenzamos asumiento lo siguiente:
+El lector cuidadoso notará que la ley de la cancelación (de la multiplicación) exige que el número a \textit{ser cancelado} sea diferente de $0$. Sin embargo, hasta este punto no hemos demostrado que $2\neq 0$, por lo que la proposición no puede ser demostrada utilizando este hecho. Sin embargo, con los axiomas que hemos listado y los resultados que hemos derivado de ellos no es suficiente para probar tal proposición (el lector debería verificar este hecho).
 
-Existe un subconjunto del conjunto de los números reales llamado conjunto de los números reales positivos, denotado con el símbolo $\R^+$. A los elementos de este conjunto los llamaremos números reales positivos. El conjunto $\R^+$ satisface los siguientes \textbf{axiomas}:
+Por lo anterior, resulta necesario añadir elementos a nuestro conjunto de axiomas y para ello comenzamos asumiento lo siguiente:
+
+Existe un subconjunto del conjunto de los números reales llamado conjunto de los números reales positivos, denotado con el símbolo $\R^+$. A los elementos de este conjunto los llamaremos números reales positivos. El conjunto $\R^+$ satisface los siguientes \textbf{axiomas (de orden)}:
 %
 \begin{enumerate}[label=O\arabic*)]
-\item Si $m, n \in \R^+$, entonces $m + n \in \R^+$.
-\item Si $m, n \in \R^+$, entonces $m \cdot n \in \R^+$.
-\item Para cada número real $m$ se cumple una y sólo una de las siguientes condiciones:
+\item Si $m, n \in \R^+$, entonces $m + n \in \R^+$. (Cerradura de la suma en $\R^+$)
+\item Si $m, n \in \R^+$, entonces $m \cdot n \in \R^+$. (Cerradura de la multiplicación en $\R^+$)
+\item Para cada número real $m$ se cumple una y sólo una de las siguientes condiciones (Tricotomía):
     \begin{enumerate}[label=\roman*)]
     \item $m \in \R^+$.
     \item $m = 0$.
@@ -516,10 +526,10 @@ Existe un subconjunto del conjunto de los números reales llamado conjunto de lo
 %
 \textbf{Definición:} Sean $a$ y $b$ números reales, decimos que:%
 %
-\begin{enumerate}
+\begin{itemize}
     \item $a$ es menor que $b$ o que $b$ es mayor que $a$ y escribimos $a<b$ o $b>a$, si $b-a \in \R^+$.
     \item $a$ es menor que o igual que $b$ o que $b$ es mayor o igual que $a$, y escribimos $a \leq b$ o $b \geq a$, si $b - a \in \R^+$ o $a = b$.
-\end{enumerate}
+\end{itemize}
 
 \textbf{Notación:} Sean $a$, $b$ y $c$ números reales, utilizaremos la notación $a<b<c$ para indicar que $a<b$ y $b<c$.
 
@@ -527,144 +537,135 @@ Existe un subconjunto del conjunto de los números reales llamado conjunto de lo
 
 \subsection*{Lista de Ejercicios 3 (LE3)}
 %LISTA DE EJERCICIOS 3
-Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:%
-%
+Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 \begin{enumerate}[label=\alph*)]
+    \item $a \in \R^+$ si y solo si $a>0$. (Definición de número real positivo).
+    
+    \textbf{Demostración:} \begin{enumerate}[label=\roman*)]
+        \item Supongamos que $a \in \R^+$. El elemento neutro para la suma satisface que $a=a+0$, y por (e) de LE1 sigue que $a=a-0$, entonces $a-0 \in \R^+$, lo que por definición implica que $a>0$.
+        \item Supongamos que $a>0$. Por definición, $a-0 \in \R^+$, y por (e) de LE1 sigue que $a-0=a+0$, y por la propiedad del elemento neutro para la suma $a+0=a$. Así $a \in \R^+$.\qed
+    \end{enumerate}
+    
+    \textbf{Nota:} Esta demostración, cuya forma es $m\in \R^+ \iff m>0, \forall m\in \R$, nos permite reparar en el hecho de que la definición de un número real positivo no está asociada al signo que acompaña al número, es decir, la proposición es válida para $-a>0$ (El lector debería verificar este hecho).
+
+    Por otra parte, a partir de esta demostración podemos afirmar que cualquier número real positivo es mayor a cero, y viceversa, que cualquier número real mayor a cero es un número real positivo.
+
     \item $1 \in \R^+$.
-    \item $-a \in \R^+$ si y solo si $-a>0$. %A
-    \item $-1<0$. %B
-    \item Si $a<b$ y $c \leq d$, entonces $a+c<b+d$. %C
-    \item Si $a<b$ y $0<c$, entonces $ac<bc$. %D
+    
+    \textbf{Demostración:} Supongamos que $1 \notin \R^+$. Por axioma del neutro multiplicativo, sabemos que $1\neq 0$. Luego, por tricotomía tenemos que $-1 \in \R^+$. Por la cerradura de la multiplicación en $\R^+$ se verifica que $(-1) \cdot (-1) \in \R^+$, y por la ley de los signos tenemos que $(-1) \cdot (-1) = 1 \in \R^+$, pero esto contradice el supuesto inicial. Por tanto, $1$ es un número real positivo. \qed
+
+    \item $a<b$ si y solo si $a+c<b+c$. Ley de la cancelación (de la suma en desigualdades).
+    
+    \textbf{Demostración:} \begin{enumerate}[label=\roman*)]
+    \item Si $a<b$, por definición, $b-a \in \R^+$. Luego, \begin{align*}
+        b - a &= b -a + 0 && \text{Neutro aditivo}\\
+        &= b-a+c-c && \text{Inverso aditivo}\\
+        &= b+c-a-c && \text{Conmutatividad}\\
+        &= b+c+(-a)+(-c) && \text{Notación}\\
+        &= b+c+(-1)a+(-1)c && \text{(c) de LE3}\\
+        &= b+c+(-1)(a+c) && \text{P. Distributiva}\\
+        &= b+c+\big(-(a+c)\big) && \text{(c) de LE3}\\
+        &= b+c-(a+c) && \text{Notación}
+        \end{align*} De este modo, $b+c-(a+c)\in \R^+$, es decir, $a+c<b+c$.
+    \item Si $a+c<b+c$, por definición $b+a-(a+c)\in \R^+$. Luego, \begin{align*}
+        b+c-(a+c) &= b+c-a-c && \text{Distribución del signo}\\
+        &= b-a+c-c && \text{Conmutatividad}\\
+        &= b-a+0 && \text{Inverso aditivo}\\
+        &= b-a && \text{Neutro aditivo}
+    \end{align*} De este modo, $b-a\in \R^+$, es decir, $a<b$. \qed
+    \end{enumerate}
+
+    \item Si $a<b$ y $c < d$, entonces $a+c<b+d$.
+    
+    \textbf{Demostración:} Por definición $b-a\in \R^+$ y $d-c\in \R^+$. Por la cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c) \in \R^+$. Luego, \begin{align*}
+        (b-a)+(d-c) &= b-a+d-c && \text{Notación}\\
+        &= b+d-a-c && \text{Conmutatividad}\\
+        &= b+d+(-a)+(-c) && \text{Notación}\\
+        &= b+d+(-1)a+(-1)c && \text{(c) de LE3}\\
+        &= b+d+ (-1) (a + c) && \text{P. Distributiva}\\
+        &= b+d +\big(-(a+c) \big) && \text{(c) de LE3}\\
+        &= b+d - (a+c) && \text{Notación}
+        \end{align*}
+    De este modo, $b+d-(a+c)\in \R^+$, es decir, $a+c<b+d$.
+
+    \textbf{Observación:} La suma de desigualdades preserva el orden.
+
+    \textbf{Nota:} Esta proposición difiere de la ley de la cancelación (de la suma en desigualdades) ya que no se satisface una doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de esta hipótesis únicamente, que $a<b$. El lector debería verificar este hecho.% Por ejemplo: a=4, c=0, b=3, d=4, a+c=4+0=4<7=3+4=b+d, pero a=4<3=b es una contradicción
+
+    \item $a \in \R^+$ si y solo si $-a<0$.
+    
+    \textbf{Demostración:} \begin{enumerate}[label=\roman*)]
+        \item Supongamos que $a \in \R^+$. Notemos que: \begin{align*}
+            0 &< a && \text{(a) de LE3}\\
+            0 + (-a) &< a + (-a) && \text{Ley de la cancelación}\\
+            0 + (-a) &< 0 && \text{Inverso aditivo}\\
+            -a &< 0 && \text{Neutro aditivo}
+        \end{align*}
+        \item Supongamos que $-a<0$. Notemos que:
+        \begin{align*}
+            -a + a &< 0 + a && \text{Ley de la cancelación}\\
+            0 &< 0 + a && \text{Inverso aditivo}\\
+            0 &< a && \text{Neutro aditivo}
+        \end{align*}Entonces, $a \in \R^+$, por (a) de LE3. \qed
+        \end{enumerate}
+        
+    \item Si $a<b$ y $0<c$, entonces $ac<bc$.
+    
+    \textbf{Demostración:} Por definición $b-a \in \R^+$ y $c \in \R^+$. Por la cerradura de la multiplicación en $\R^+$ se verifica que $c(b-a) \in \R^+$. Por la propiedad distributiva sigue que $c(b-a)=cb-ca$ y por conmutatividad tenemos que $cb-ca=bc-ac$. De este modo, $bc-ac \in \R^+$, es decir, $ac<bc$.\qed
+
+    \textbf{Observación:} La multiplicación por números reales positivos preserva el orden de la desigualdad.
+
+    \item Si $a>0$, entonces $a^{-1}>0$.
+    
+    \textbf{Demostración:} Supongamos que $a^{-1}<0$. Como $a>0$, al multiplicar en desigualdades preserva el orden, por lo que $a^{-1} \cdot a<0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1} \cdot a = 1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a=0$, con lo que tenemos que $1<0$, pero sabemos —por (b) de LE3, que $1>0$, por lo que $a^{-1}$ no puede ser menor a cero. Además, sabemos que $0$ no es inverso multiplicativo —por (f) de LE3. Así, por tricotomía, $a^{-1}>0$. \qed
+
     \item Si $a<b$ y $c<0$, entonces $ac>bc$.
     
     \textbf{Demostración:} Por definición $b-a \in \R^+$ y $0 - c \in \R^+$, por A3 sigue que $ -c \in \R^+$. Luego, por O2 $-c(b-a) \in \R^+$. Notemos que:
     \begin{align*}
-    -c(b-a) &= -c \Bigl( b + (-a) \Bigr) && \text{Por notación}\\
+    -c(b-a) &= -c \Bigl( b + (-a) \Bigr) && \text{Notación}\\
     &= (-c) \cdot b + (-c) \cdot (-a) && \text{P. Distributiva}\\
     &= (-c) \cdot b + c \cdot a && \text{Por (k) de LE1}\\
     &= -(c \cdot b) + c \cdot a && \text{Por (i) de LE1}\\
     &= ca -(cb) && \text{Conmutatividad}\\
     &= ac - (bc) && \text{Conmutatividad}
     \end{align*}
-Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
+    Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
 
-\textbf{Nota:} De este resultado sigue que si $0<m$ y $n<0$, entonces $mn<0$.
-    \item $a \in \R^+$ si y solo si $-a<0$. %F
-    \item $a<b$ si y solo si $-a>-b$. %G
-    \item Si $a>0$, entonces $\frac{1}{a}>0$. %H
-    \item Si $a<b$ y $b<c$, entonces $a<c$. %I
-    \item Si $0 \leq a<b$ y $0 \leq c<d$, entonces $ac<bd$. %J
-    \item Si $a<b$ y $ab>0$, entonces $\frac{1}{b}<\frac{1}{a}$. %K
-    \item Si $a<1$ y $0<b$, entonces $ab<b$.
-    \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$.
-    \item $a^2\geq 0$.
-    \item Si $0 \leq a < \varepsilon$ para toda $\varepsilon > 0$, entonces $a=0$.
-    \item Si $a \leq b + \varepsilon$ para toda $\varepsilon > 0$, entonces $a \leq b$.
-\end{enumerate}
+    \textbf{Nota:} De este resultado sigue que si $0<m$ y $n<0$, entonces $mn<0$.
 
-\subsubsection*{Demostración}
-%
-\begin{enumerate}[label=\alph*)]
-% A
-\item Supongamos que $1 \notin \R^+$. Por (A7), (ii) de (O3) no se cumple. Si $-1 \in \R^+$, por (O2) se verifica que $-1 \cdot -1 \in \R^+$, lo cual por (h) de LE1 implica que $-(-1) \in \R^+$, pero esto contradice a (iii) de (O3). Por tanto, $1$ es un número real positivo.
-% B
-\item \begin{enumerate}[label=\roman*)]
-    \item Supongamos que $-a \in \R^+$. Neutro aditivo sabemos que $-a=-a+0$, y por (e) de LE1 sigue que $-a=-a-0$, entonces $-a-0 \in \R^+$, lo que por definición implica que $-a>0$.
-    \item Supongamos que $-a>0$. Por definición, $-a-0 \in \R^+$, y por (e) de LE1 sigue que $-a-0=-a+0$, lo que por A3 implica que $-a+0=-a$. Así $-a \in \R^+$.
-\end{enumerate}\qed
-
-\textbf{Nota:} Esta demostración, cuya forma es $m\in \R^+ \iff m>0, \forall m\in \R$, nos permite reparar en el hecho de que la definición de un número real positivo no está asociada a la ausencia del signo negativo.
-
-\pagebreak
-% C
-\item Supongamos que $-1 \geq 0$
-    \begin{enumerate}[label=\roman*)]
-    \item Si $-1=0$. Notemos que:
-        \begin{align*}
-        0 &= 1 - 1 && \text{Inverso aditivo}\\
-        &= 1 + 0 && \text{Por hipótesis}\\
-        &= 1 && \text{Neutro aditivo}
-        \end{align*}
-    Pero la igualdad anterior contradice a A7.
-    \item Si $-1 > 0$, por (b) de LE3 tenemos que $-1 \in \R^+$, pero esto contradice a O3, ya que por (a) de LE3 sabemos que $1 \in \R^+$.
-    \end{enumerate} Por tanto $-1<0$ \qed
-% D
-\item Por definición $b-a \in \R^+$.
-    \begin{enumerate}[label=\roman*)]
-    \item Si $c<d$, entonces $d-c \in \R^+$. Por (O1) se verifica que $(b-a)+(d-c) \in \R^+$. Notemos que:
-        \begin{align*}
-        b-a+d-c &= b+d-a-c && \text{Conmutatividad}\\
-        &= b+d+(-a)+(-c) && \text{Por notación}\\
-        &= b+d+(-1)a+(-1)c && \text{LE3:3}\\
-        &= b+d+ (-1) (a + c) && \text{P. Distributiva}\\
-        &= b+d + b-(a+c) \big) && \text{LE3:3}\\
-        &= b+d - (a+c) && \text{Por notación}
-        \end{align*}
-    De este modo, $b+d-(a+c)\in \R^+$, es decir, $a+c<b+d$.
-    \item Si $c=d$. Notemos que
-        \begin{align*}
-        b - a &= b -a + 0 && \text{Neutro aditivo}\\
-        &= b-a+c-c && \text{Inverso aditivo}\\
-        &= b+c-a-c && \text{Conmutatividad}\\
-        &= b+c+(-a)+(-c) && \text{Por notación}\\
-        &= b+c+(-1)a+(-1)c && \text{LE3:3}\\
-        &= b+c+(-1)(a+c) && \text{P. Distributiva}\\
-        &= b+c-(a+c) && \text{Por(h) de LE1}\\
-        &= b+d-(a+c) && \text{Por hipótesis}
-        \end{align*}
-    De este modo, $b+d-(a+c)\in \R^+$, es decir, $a+c<b+d$.
-    \end{enumerate}
-    En cualquier caso, $a+c<b+d$. \qed
-% E
-\item Por definición $b-a \in \R^+$, y por (b) de LE3 $c \in \R^+$. Luego, por O2 se verifica que $c(b-a) \in \R^+$. P. Distributiva sigue que $c(b-a)=cb-ca$ y por conmutatividad tenemos que $cb-ca=bc-ac$. De este modo, $bc-ac \in \R^+$, es decir, $ac<bc$.\qed
-\pagebreak
-
-%G
-\item
-    \begin{enumerate}[label=\roman*)]
-    \item Supongamos que $a \in \R^+$. Notemos que:
-    \begin{align*}
-        a &> 0 && \text{Por (b) de LE3}\\
-        a \cdot (-1) &< 0 \cdot (-1) && \text{Por (c) y (f) de LE3}\\
-        -a &< 0 && \text{Por (h) y (f) de LE1}
-    \end{align*}
-    \item Supongamos que $-a<0$. Notemos que:
-    \begin{align*}
-        -a \cdot (-1) &> 0 \cdot (-1) && \text{Por (b) y (f) de LE3}\\
-        a &> 0 && \text{Por (l) y (f) de LE1}
-    \end{align*}
-    \end{enumerate} Entonces, $a \in \R^+$, por (b) de LE3. \qed
-%H
-\item Notemos que:
+    \item $a<b$ si y solo si $-a>-b$.
+    
+    Notemos que:
     \begin{enumerate}[label=\roman*)]
         \item Si $a<b$, por (b) y (f) de LE3 tenemos que $a \cdot (-1) > b \cdot (-1)$, y por (h) de LE1 obtenemos que $-a > -b$.
         \item Si $-a > -b$, por por (b) y (f) de LE3 tenemos que $-a \cdot (-1) < -b \cdot (-1)$, y por (k) de LE1 obtenemos que $a<b$.
     \end{enumerate} \qed
-%I
-\item Sea $a>0$. Supongamos que $\frac{1}{a} \leq 0$. Notemos que:
+
+    \item Si $a<b$ y $b<c$, entonces $a<c$.
+    
+    Por definición $b-a \in \R^+$ y $c-b \in \R^+$. Por O1 $(b-a) + (c-b) \in \R^+$. Notemos que:
     \begin{align*}
-        \frac{1}{a} \cdot a &\leq 0 \cdot a && \text{Por (e) de LE3}\\
-        1 &\leq 0 && \text{Inverso multiplicativo y (f) de LE1}
-    \end{align*}
-    Pero por (a) de LE3 y (b) de LE3 tenemos que $1>0$. Por tanto, $\frac{1}{a} > 0$. \qed
-%J
-\item Por definición $b-a \in \R^+$ y $c-b \in \R^+$. Por O1 $(b-a) + (c-b) \in \R^+$. Notemos que:
-    \begin{align*}
-        (b-a) + (c-b) &= b - a + c -b && \text{Por notación}\\
+        (b-a) + (c-b) &= b - a + c -b && \text{Notación}\\
         &= b-a -b+c && \text{Conmutatividad}\\
         &= b-b -a+c && \text{Conmutatividad}\\
         &= 0 - a +c && \text{Inverso aditivo}\\
         &= -a +c && \text{Neutro aditivo}\\
         &= c-a && \text{Conmutatividad}
     \end{align*} Entonces $c-a \in \R^+$, es decir, $a<c$. \qed
-%K
-\item 
-\begin{enumerate}[label=\roman*)]
-    \item Si $a=0$ o $c=0$, por (g) de LE1 se verifica que $ac=0$. Luego, por (j) de LE3, se verifica que $0<b$ y $0<d$. Así, $ac<bd$.
-    \item Si $a>0$ y $c>0$. Por hipótesis, $a<b$, y por (e) de LE3, sigue que $ac<bc$. También, tenemos que $c<d$, y por (e) de LE3, sigue que $bc<db$. Finalmente, por (j) de LE3, se verifica que $ac<bd$.
-\end{enumerate} \qed
-% L
-    \item Notemos que:
+    
+
+
+    \item Si $0 \leq a<b$ y $0 \leq c<d$, entonces $ac<bd$.
+    
+    \begin{enumerate}[label=\roman*)]
+        \item Si $a=0$ o $c=0$, por (g) de LE1 se verifica que $ac=0$. Luego, por (j) de LE3, se verifica que $0<b$ y $0<d$. Así, $ac<bd$.
+        \item Si $a>0$ y $c>0$. Por hipótesis, $a<b$, y por (e) de LE3, sigue que $ac<bc$. También, tenemos que $c<d$, y por (e) de LE3, sigue que $bc<db$. Finalmente, por (j) de LE3, se verifica que $ac<bd$.
+    \end{enumerate} \qed
+
+    \item Si $a<b$ y $ab>0$, entonces $\frac{1}{b}<\frac{1}{a}$.
+    
+    Notemos que:
     \begin{align*}
     a &< b && \text{Por hipótesis} \\
     a-a &< b-a && \text{Por (d) de LE3} \\
@@ -674,10 +675,14 @@ Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
     0 &< \frac{1}{a} - \frac{1}{b} && \text{Por (c) de LE2}\\
     \frac{1}{b} &< \frac{1}{a} && \text{Por (d) de LE3}
     \end{align*} \qed
-% M
-\item Dado que $0<b$, por (b) de LE3 se cumple que $b \in \R^+$, y por definición $1-a \in \R^+$. Por O2 se verifica que $b(1-a) \in \R^+$, es decir, $b-ab \in \R^+$, lo cual implica que $ab<b$. \qed
-% N
-    \item Por (a) de LE3 sabemos que $1 \in \R^+$, y por O1 se cumple que $1+1 \in \R^+$, es decir $2 \in \R^+$. Por (b) de LE3 se verifica que $0<2$ y por (i) de LE3 tenemos que $0<\frac{1}{2}$. Notemos que: \begin{align*}
+
+    \item Si $a<1$ y $0<b$, entonces $ab<b$.
+    
+    Dado que $0<b$, por (b) de LE3 se cumple que $b \in \R^+$, y por definición $1-a \in \R^+$. Por O2 se verifica que $b(1-a) \in \R^+$, es decir, $b-ab \in \R^+$, lo cual implica que $ab<b$. \qed
+
+    \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$.
+    
+    Por (a) de LE3 sabemos que $1 \in \R^+$, y por O1 se cumple que $1+1 \in \R^+$, es decir $2 \in \R^+$. Por (b) de LE3 se verifica que $0<2$ y por (i) de LE3 tenemos que $0<\frac{1}{2}$. Notemos que: \begin{align*}
         a &< b && \text{Por hipótesis} \\
         a + a &< b+a && \text{Por (d) de LE3} \\
         2a &< b+a && \text{Por definición} \\
@@ -692,14 +697,19 @@ Entonces $ac - bc \in \R^+$, es decir, $ac>bc$. \qed
         (a+b) \cdot \frac{1}{2} &< 2b \cdot \frac{1}{2} && \text{Por (e) de LE3} \\
         \frac{a+b}{2} &< \frac{2b}{2} && \text{Por (a) de LE2} \\
         \frac{a+b}{2} &< b && \text{Por A8}
-    \end{align*} Finalmente, por notación, $a < \frac{a+b}{2} < b$. \qed
+    \end{align*} Finalmente, Notación, $a < \frac{a+b}{2} < b$. \qed
 
-    %O
-    \item Si $0 \leq a$, $ 0\cdot a \leq a \cdot a$, osea, $0 \leq a^2$. Si $a<0$, $0\cdot a < a \cdot a$, osea, $0 \leq a^2$. En cualquier caso $a\geq0$.\qed
-    %P
-    \item Supongamos que $0<a$, sigue que $0<\frac{a}{2}<a$. Elegimos $\varepsilon=\frac{a}{2}$, entonces $\varepsilon<a$, pero esto contradice nuestra hipótesis de que $a< \varepsilon$ para toda $\varepsilon>0$. Por tanto, $a=0$.\qed
-    %Q
-    \item Sean $a$ y $b$ números reales tales que $a \leq b + \varepsilon$, $\forall \varepsilon > 0$. Supongamos que $a > b$. Luego, $a-b>0$. Notemos que $(a-b) \cdot \frac{1}{2} > 0 \cdot \frac{1}{2}$, es decir $\frac{(a-b)}{2} > 0$. Sea $\varepsilon = \frac{(a-b)}{2}$, sigue que $a=2\varepsilon+b$. Además, $2\varepsilon > \varepsilon$, de donde obtenemos $2 \varepsilon + b > \varepsilon + b$. De este modo, $a > b+\varepsilon$, pero esto contradice nuestra hipótesis. Por tanto, $a \leq b$.\qed
+    \item $a^2\geq 0$.
+    
+    Si $0 \leq a$, $ 0\cdot a \leq a \cdot a$, osea, $0 \leq a^2$. Si $a<0$, $0\cdot a < a \cdot a$, osea, $0 \leq a^2$. En cualquier caso $a\geq0$.\qed
+
+    \item Si $0 \leq a < \varepsilon$ para toda $\varepsilon > 0$, entonces $a=0$.
+    
+    Supongamos que $0<a$, sigue que $0<\frac{a}{2}<a$. Elegimos $\varepsilon=\frac{a}{2}$, entonces $\varepsilon<a$, pero esto contradice nuestra hipótesis de que $a< \varepsilon$ para toda $\varepsilon>0$. Por tanto, $a=0$.\qed
+
+    \item Si $a \leq b + \varepsilon$ para toda $\varepsilon > 0$, entonces $a \leq b$.
+    
+    Sean $a$ y $b$ números reales tales que $a \leq b + \varepsilon$, $\forall \varepsilon > 0$. Supongamos que $a > b$. Luego, $a-b>0$. Notemos que $(a-b) \cdot \frac{1}{2} > 0 \cdot \frac{1}{2}$, es decir $\frac{(a-b)}{2} > 0$. Sea $\varepsilon = \frac{(a-b)}{2}$, sigue que $a=2\varepsilon+b$. Además, $2\varepsilon > \varepsilon$, de donde obtenemos $2 \varepsilon + b > \varepsilon + b$. De este modo, $a > b+\varepsilon$, pero esto contradice nuestra hipótesis. Por tanto, $a \leq b$.\qed
 
 \end{enumerate}
 
