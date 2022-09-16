@@ -155,15 +155,14 @@
    7 &= 3 + 4
   \end{align*}
 
-  \item Supongamos que la proposición es válida para $n=k>7$, es decir, suponemos que $\exists p, q\in\N$ tales que $k=3p+4q$.
-  \item Probaremos que la proposición es válida para $n=k+1>7$, es decir, suponemos que $\exists s,t\in \N$ tales que $k+1=3s+4t$. En efecto, por hipótesis	de inducción, \begin{align*}
+  \item Supongamos que la proposición es válida para $n=k>7$, es decir, suponemos que $\exists p, q\in\Z$ tales que $k=3q+4p$.
+  \item Probaremos que la proposición es válida para $n=k+1>7$, es decir, probaremos que $\exists s,t\in \Z$ tales que $k+1=3s+4t$. En efecto, por hipótesis	de inducción, \begin{align*}
    k + 1 &= 3q+4p + 1 \\
-   &= 3q + 4p + \frac{4p}{4p}\\
-   &= 3q + \frac{4(p^2)}{p} + \frac{4p}{4p}\\
-   &= 3q + 4 \biggl(\frac{p^2}{p} + \frac{p}{4p}\biggr)\\
-   &= 3q + 4 \biggl(p+ \frac{1}{4}\biggr)\\
-   &= 3t + 4s \\
-  \end{align*}
+   &= 3q+4p+4-3\\
+   &=3q-3+4p+4\\
+   &=3(q-1)+4(p+1)\\
+   &=3s+4t && \text{$s=q-1$ y $t=p+1$}.
+  \end{align*} \qed
  \end{enumerate}
 
  \item Prube que si $a\in \R$ es tal que $a\geq -1$, entonces $(1+a)^n\geq 1+na$ para toda $n\in \N$. (Esta desigualdad es conocida como \textit{desigualdad de Bernoulli}).
@@ -204,6 +203,14 @@
    \sum_{i=1}^{k+1} \frac{1}{i^2} &= \sum_{i=1}^k \frac{1}{i^2} + \frac{1}{(k+1)^2}\\
    &< 2-\frac{1}{2k} + \frac{1}{(k+1)^2} && \text{Hipótesis	de inducción}\\
   \end{align*}
+ \end{enumerate}
+
+ \item Pruebe que todo conjunto con $n$ elementos tiene $2^n$ subconjuntos (diferentes), para cualquier $n\in \N$.
+
+ \textbf{Demostración:} \begin{enumerate}[label=\roman*)]
+  \item Verificamos que se cumple para $n=1$. En efecto, los únicos subconjuntos que un conjunto de cardinalidad $n=1$ son el vacío y el mismo, esto es $2^{(1)}=2$.
+  \item Supongamos que la proposición es válida para $n=k$.
+  \item Sea $A$ un conjunto, y $n=k+1$ la cardinalidad de $A$. Consideremos el conjunto $A'=A\backslash\{a\}$, donde $a\in A$. Vemos que la cardinalidad de $A'$ es $k$, es decir, $|A'|=k$.
  \end{enumerate}
 
 \end{enumerate}
