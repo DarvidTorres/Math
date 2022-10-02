@@ -53,13 +53,13 @@
 
 \begin{document}
 
-\title{\vspace{-2cm}Cálculo I}
+\title{Cálculo I}
 \author{Darvid \\ \texttt{darvid.torres@gmail.com}}
 \date{\today}
 \maketitle
 \thispagestyle{empty}
 
-\section*{Axiomas de campo}
+\part*{Axiomas de campo}
 
 Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A los elementos de este conjunto los llamaremos números reales. Este conjunto está dotado con dos operaciones binarias: suma: $+$ y multiplicación: $\cdot$ 
 %\begin{enumerate}[label=\roman*)]
@@ -86,7 +86,7 @@ Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A
 %
 %Las suma y multiplicación de números reales satisfacen los siguientes \textbf{axiomas}:
 %
-\subsection*{Axiomas de la suma}
+\section*{Axiomas de la suma}
 La suma $+$ satisface las siguientes propiedades:
 \begin{enumerate}%[label=S\arabic*., start=0]
     \item Cerradura (de la suma): Si $x,y\in \R$, entonces $x+y \in \R$.
@@ -116,7 +116,7 @@ Aunque el resultado anterior no es incorrecto, debemos justificar cada igualdad 
 
 \pagebreak
 
-\subsection*{Lista de Ejercicios 1 (LE1)}
+\subsection*{Lista de Ejercicios 1}
 
 Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
 
@@ -254,7 +254,7 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
 
 \pagebreak
 
-\subsection*{Axiomas de la multiplicación}
+\section*{Axiomas de la multiplicación}
 La multiplicación $\cdot$ satisface las siguientes propiedades:
 
 \begin{enumerate}[start=6]%[label=M\arabic*., start=0]
@@ -274,7 +274,7 @@ La multiplicación $\cdot$ satisface las siguientes propiedades:
     %Para cada número real $m$ distinto de cero existe un número real llamado inverso multiplicativo de $m$, denotado por $m^{-1}$, este elemento tiene la siguiente propiedad: $m \cdot m^{-1} = 1$.
 \end{enumerate}
 
-\subsection*{Lista de Ejercicios 2 (LE2)}
+\subsection*{Lista de Ejercicios 2}
 
 Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
     \begin{enumerate}[label=\alph*)]
@@ -365,9 +365,8 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
 
     \textbf{Nota:} Si el contexto es claro, enunciaremos esta proposición como ley de cancelación.
     \end{enumerate}
-
-\pagebreak
-\subsection*{Propiedad distributiva}
+    
+\section*{Propiedad distributiva}
 
 Introducimos la propiedad que nos permite relacionar las operaciones de suma $+$ y multiplicación $\cdot$
 
@@ -376,32 +375,36 @@ Introducimos la propiedad que nos permite relacionar las operaciones de suma $+$
     %Distribución de la multiplicación sobre la suma. Para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n+l)=m \cdot n+m \cdot l $.
 \end{enumerate}
 
-\subsection*{Una nota sobre rigurosidad}
+\subsection*{Ejemplo de argumento circular}
+%
+%En este apartado utilizaremos un ejemplo para puntualizar la falta de rigor en la que pueden caer los estudiantes; dichas puntualizaciones pueden parecer exageradas y el lector podría considerar que el autor está siendo \textit{pedante} en el uso sintáctico de los axiomas, pero la idea es proveer al estudiante de un uso riguroso de la formalización matemática.
+%
+Sean $a$ y $b$ números reales.
 
-En este apartado utilizaremos un ejemplo para puntualizar la falta de rigor en la que pueden caer los estudiantes; dichas puntualizaciones pueden parecer exageradas y el lector podría considerar que el autor está siendo \textit{pedante} en el uso sintáctico de los axiomas, pero la idea es proveer al estudiante de un uso riguroso de la formalización matemática.
-
-Consideremos la proposición: $b\cdot 0 = 0$. El siguiente es un esbozo de la prueba propuesta por un estudiante: \vspace{1em} \begin{align*}
-    b \cdot 0 &= b\cdot \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
-    &= ab + (-ab) && \text{Distribución}\\
-    &= 0 && \text{Inverso aditivo}
-\end{align*}
-De inmediato podemos señalar la \textbf{ambigüedad} en el uso de la notación en el segundo paso. ¿Qué debemos entender por $-ab$? Por como fue enunciada en el esbozo anterior, se pretendía que $-ab$ fuera el inverso aditivo de $ab$, es decir, se intuye que $-ab=-(ab)$, pero al enunciar la propiedad distributiva en el primer paso, se asumió que $-ab=(-a)\cdot b$, es decir, se supone la igualdad $-(ab)=(-a)\cdot b$, pero esta requiere demostración.
-
-Asimismo, al utilizar la propiedad distributiva se está empleando conmutatividad no enunciada, pues la síntaxis de la distribución indica que el número a la izquierda de la multiplicación debe ser \textit{distribuido} a la izquierda de los componentes de la suma, es decir, $b\cdot \bigl(a+(-a)\bigr)=b\cdot a+ b\cdot (-a)$ por la propiedad distributiva, y luego $b\cdot a+ b\cdot (-a)=a\cdot b+ (-a)\cdot b$, por conmutatividad.
-
-Al considerar el comentario anterior, el estudiante reescribe el esbozo como sigue: \vspace{1em} \begin{align*}
+Consideremos la proposición: $b\cdot 0 = 0$. El siguiente es un esbozo de la prueba propuesta por un estudiante:
+%\vspace{1em} \begin{align*}
+%    b \cdot 0 &= b\cdot \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
+%    &= ab + (-ab) && \text{Distribución}\\
+%    &= 0 && \text{Inverso aditivo}
+%\end{align*}
+%De inmediato podemos señalar la \textbf{ambigüedad} en el uso de la notación en el segundo paso. ¿Qué debemos entender por $-ab$? Por como fue enunciado, se pretendía que $-ab$ fuera el inverso aditivo de $ab$, es decir, se intuye que $-ab=-(ab)$, pero al enunciar la propiedad distributiva se asumió que $-ab=(-a)\cdot b$, es decir, se supone la igualdad $-(ab)=(-a)\cdot b$, pero esta requiere demostración.
+%
+%Asimismo, al utilizar la propiedad distributiva se está empleando conmutatividad no enunciada, pues la síntaxis de la distribución indica que el número a la izquierda de la multiplicación debe ser \textit{distribuido} a la izquierda de los componentes de la suma, es decir, $b\cdot \bigl(a+(-a)\bigr)=b\cdot a+ b\cdot (-a)$ por la propiedad distributiva, y luego $b\cdot a+ b\cdot (-a)=a\cdot b+ (-a)\cdot b$, por conmutatividad.
+%
+%Al considerar el comentario anterior, el estudiante reescribe el esbozo como sigue:
+\vspace{1em} \begin{align*}
     b\cdot 0 &= b\cdot \bigl(a+ (-a)\bigr) && \text{Inverso aditivo}\\
     &= b\cdot a + b\cdot (-a) && \text{Distribución}\\
     &= a\cdot b + (-a) \cdot b && \text{Conmutatividad}\\
     &= 0 && \text{¿?}
 \end{align*}
-Pero aún se requiere probar que $a\cdot b+(-a)\cdot b=0$. Observemos ahora el siguiente esbozo para esta prueba: \vspace{1em} \begin{align*}
+Pero se requiere probar que $a\cdot b+(-a)\cdot b=0$. Observemos ahora el siguiente esbozo para esta prueba: \vspace{1em} \begin{align*}
     a\cdot b+ (-a) \cdot b &= b\cdot a + b\cdot (-a) && \text{Conmutatividad}\\
     &= b\cdot \bigl(a+(-a)\bigr) && \text{Distribución}\\
     &= b\cdot 0 && \text{Inverso aditivo}\\
     &= 0 && \text{¿?}
 \end{align*}
-No obstante, se ha propuesto un argumento circular, por lo que no es posible verificar ninguna de las proposiciones anteriores. Requerimos pues, depender únicamente de axiomas o proposiciones previamente probadas para continuar.
+No obstante, se ha propuesto un \textbf{argumento circular}, por lo que no es posible verificar ninguna de las proposiciones anteriores. Requerimos pues, depender únicamente de axiomas o proposiciones previamente probadas para continuar.
 
 \pagebreak
 
@@ -630,140 +633,207 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
 \end{enumerate}
 
 
-    \subsection*{Una nota sobre notación}
+\subsection*{Una nota sobre notación}
 
-    El lector notará que el axioma de asociatividad de la suma no incluye todas las \textit{formas} en que podríamos sumar tres números reales $a$, $b$ y $c$.
+Las siguientes son todas las \textit{formas} en que podríamos sumar/multiplicar tres números reales $a$, $b$ y $c$.
 \begin{center}
     \begin{minipage}[c]{.2\linewidth}
         \begin{enumerate}[label=\roman*.]
-            \item $(a+b)+c$
-            \item $a+(b+c)$
-            \item $a+(c+b)$
+            \item $(a \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ c$
+            \item $a \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ c)$
+            \item $a \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ b)$
         \end{enumerate}
         \end{minipage}%
         \begin{minipage}[c]{.2\linewidth}
             \begin{enumerate}[start=4,label=\roman*.]
-                \item $(a+b)+c$
-                \item $a+(b+c)$
-                \item $a+(c+b)$
+                \item $(a \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ c$
+                \item $a \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ c)$
+                \item $a \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ b)$
             \end{enumerate}
             \end{minipage}%
         \begin{minipage}[c]{.2\linewidth}
             \begin{enumerate}[start=7,label=\roman*.]
-            \item $c+(b+a)$
-            \item $(c+b)+a$
-            \item $(b+c)+a$
+            \item $c \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ a)$
+            \item $(c \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ a$
+            \item $(b \ \nicefrac{+}{\cdot} \ c) \ \nicefrac{+}{\cdot} \ a$
         \end{enumerate}
         \end{minipage}
         \begin{minipage}[c]{.2\linewidth}
             \begin{enumerate}[start=10,label=\roman*.]
-            \item $b+(c+a)$
-            \item $b+(a+c)$
-            \item $(b+a)+c$
+            \item $b \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ a)$
+            \item $b \ \nicefrac{+}{\cdot} \ (a \ \nicefrac{+}{\cdot} \ c)$
+            \item $(b \ \nicefrac{+}{\cdot} \ a) \ \nicefrac{+}{\cdot} \ c$
         \end{enumerate}
         \end{minipage}
 \end{center}
-Podemos demostrar la igualdad de todas ellas, descartando la necesidad de enumerarlas todas como axiomas.
-%las anteriores pueden obtenerse utilizando los axiomas de conmutatividad y asociatividad de la suma, con lo que garantizamos la igualdad de todas ellas, y descartamos la necesidad de enumerarlas todas como axiomas.
-%Notemos que para sumar tres números diferentes $(a,b,c)$, siempre requerimos ejecutar, primero, la suma de dos de ellos $(a+b)$, y luego tomar este resultado para sumarlo al tercer número $(a+b)+c$, a esto alude el lado izquierdo de la igualdad de la asociatividad de la suma (\textbf{S2}). También podemos cambiar el orden, realizando la suma de $a$ y $b$, luego tomar el número $c$ y sumarle a este último el resultado que habíamos obtenido con anterioridad: $c+(a+b)$. Estos resultados (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$.
-%Notemos que las formas (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$. Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y \textbf{(ii)} satisfacen igualdad, por lo que tenemos $(a+b)+c=a+(b+c)$. De esto el lector puede inferir cuál es el uso de estos axiomas y cómo demostrar la igualdad de todas las formas de sumar tres números reales.
+
+Podemos probar igualdad de todas ellas a partir de las propiedades de la suma/multiplicación:
+\vspace{1em}\begin{align*}
+    (a \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ c &= a \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
+    &= a \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ b) && \text{Conmutatividad} && \text{Forma (iii)}\\
+    &= (a \ \nicefrac{+}{\cdot} \ c) \ \nicefrac{+}{\cdot} \ b && \text{Asociatividad} && \text{Forma (iv)}\\
+    &= (c \ \nicefrac{+}{\cdot} \ a) \ \nicefrac{+}{\cdot} \ b && \text{Conmutatividad}&& \text{Forma (v)}\\
+    &= c \ \nicefrac{+}{\cdot} \ (a \ \nicefrac{+}{\cdot} \ b) && \text{Asociatividad}&& \text{Forma (vi)}\\
+    &= c \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ a) && \text{Conmutatividad}&& \text{Forma (vii)}\\
+    &= (c \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ a && \text{Asociatividad}&& \text{Forma (viii)}\\
+    &= (b \ \nicefrac{+}{\cdot} \ c) \ \nicefrac{+}{\cdot} \ a && \text{Conmutatividad}&& \text{Forma (ix)}\\
+    &= b \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ a) && \text{Asociatividad}&& \text{Forma (x)}\\
+    &= b \ \nicefrac{+}{\cdot} \ (a \ \nicefrac{+}{\cdot} \ c) && \text{Conmutatividad}&& \text{Forma (xi)}\\
+    &= (b \ \nicefrac{+}{\cdot} \ a) \ \nicefrac{+}{\cdot} \ c && \text{Asociatividad}&& \text{Forma (xii)}
+\end{align*}
 %
-\vspace{-1em}\begin{proof} \begin{align*}
-    (a+b)+c &= a+(b+c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
-    &= a+(c+b) && \text{Conmutatividad} && \text{Forma (iii)}\\
-    &= (a+c)+b && \text{Asociatividad} && \text{Forma (iv)}\\
-    &= (c+a)+b && \text{Conmutatividad}&& \text{Forma (v)}\\
-    &= c+(a+b) && \text{Asociatividad}&& \text{Forma (vi)}\\
-    &= c+(b+a) && \text{Conmutatividad}&& \text{Forma (vii)}\\
-    &= (c+b)+a && \text{Asociatividad}&& \text{Forma (viii)}\\
-    &= (b+c)+a && \text{Conmutatividad}&& \text{Forma (ix)}\\
-    &= b+(c+a) && \text{Asociatividad}&& \text{Forma (x)}\\
-    &= b+(a+c) && \text{Conmutatividad}&& \text{Forma (xi)}\\
-    &= (b+a)+c && \text{Asociatividad}&& \text{Forma (xii)} \qedhere
-\end{align*} \end{proof} \vspace{-1em}
+%Las siguientes son todas las \textit{formas} en que podríamos sumar tres números reales $a$, $b$ y $c$.
+%\begin{center}
+%    \begin{minipage}[c]{.2\linewidth}
+%        \begin{enumerate}[label=\roman*.]
+%            \item $(a+b)+c$
+%            \item $a+(b+c)$
+%            \item $a+(c+b)$
+%        \end{enumerate}
+%        \end{minipage}%
+%        \begin{minipage}[c]{.2\linewidth}
+%            \begin{enumerate}[start=4,label=\roman*.]
+%                \item $(a+b)+c$
+%                \item $a+(b+c)$
+%                \item $a+(c+b)$
+%            \end{enumerate}
+%            \end{minipage}%
+%        \begin{minipage}[c]{.2\linewidth}
+%            \begin{enumerate}[start=7,label=\roman*.]
+%            \item $c+(b+a)$
+%            \item $(c+b)+a$
+%            \item $(b+c)+a$
+%        \end{enumerate}
+%        \end{minipage}
+%        \begin{minipage}[c]{.2\linewidth}
+%            \begin{enumerate}[start=10,label=\roman*.]
+%            \item $b+(c+a)$
+%            \item $b+(a+c)$
+%            \item $(b+a)+c$
+%        \end{enumerate}
+%        \end{minipage}
+%\end{center}
+%Podemos probar igualdad de todas ellas a partir de las propiedades de la suma.
+%%las anteriores pueden obtenerse utilizando los axiomas de conmutatividad y asociatividad de la suma, con lo que garantizamos la igualdad de todas ellas, y descartamos la necesidad de enumerarlas todas como axiomas.
+%%Notemos que para sumar tres números diferentes $(a,b,c)$, siempre requerimos ejecutar, primero, la suma de dos de ellos $(a+b)$, y luego tomar este resultado para sumarlo al tercer número $(a+b)+c$, a esto alude el lado izquierdo de la igualdad de la asociatividad de la suma (\textbf{S2}). También podemos cambiar el orden, realizando la suma de $a$ y $b$, luego tomar el número $c$ y sumarle a este último el resultado que habíamos obtenido con anterioridad: $c+(a+b)$. Estos resultados (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$.
+%%Notemos que las formas (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$. Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y \textbf{(ii)} satisfacen igualdad, por lo que tenemos $(a+b)+c=a+(b+c)$. De esto el lector puede inferir cuál es el uso de estos axiomas y cómo demostrar la igualdad de todas las formas de sumar tres números reales.
+%\vspace{1em}\begin{align*}
+%    (a+b)+c &= a+(b+c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
+%    &= a+(c+b) && \text{Conmutatividad} && \text{Forma (iii)}\\
+%    &= (a+c)+b && \text{Asociatividad} && \text{Forma (iv)}\\
+%    &= (c+a)+b && \text{Conmutatividad}&& \text{Forma (v)}\\
+%    &= c+(a+b) && \text{Asociatividad}&& \text{Forma (vi)}\\
+%    &= c+(b+a) && \text{Conmutatividad}&& \text{Forma (vii)}\\
+%    &= (c+b)+a && \text{Asociatividad}&& \text{Forma (viii)}\\
+%    &= (b+c)+a && \text{Conmutatividad}&& \text{Forma (ix)}\\
+%    &= b+(c+a) && \text{Asociatividad}&& \text{Forma (x)}\\
+%    &= b+(a+c) && \text{Conmutatividad}&& \text{Forma (xi)}\\
+%    &= (b+a)+c && \text{Asociatividad}&& \text{Forma (xii)}
+%\end{align*}
+%Similarmente, las siguientes son todas las \textit{formas} en que podríamos multiplicar tres números reales $a$, $b$ y $c$.
+%\begin{center}
+%    \begin{minipage}[c]{.2\linewidth}
+%        \begin{enumerate}[label=\roman*.]
+%            \item $(a\cdot b)\cdot c$
+%            \item $a\cdot (b\cdot c)$
+%            \item $a\cdot (c\cdot b)$
+%        \end{enumerate}
+%        \end{minipage}%
+%        \begin{minipage}[c]{.2\linewidth}
+%            \begin{enumerate}[start=4,label=\roman*.]
+%                \item $(a\cdot b)\cdot c$
+%                \item $a\cdot (b\cdot c)$
+%                \item $a\cdot (c\cdot b)$
+%            \end{enumerate}
+%            \end{minipage}%
+%        \begin{minipage}[c]{.2\linewidth}
+%            \begin{enumerate}[start=7,label=\roman*.]
+%            \item $c\cdot (b\cdot a)$
+%            \item $(c\cdot b)\cdot a$
+%            \item $(b\cdot c)\cdot a$
+%        \end{enumerate}
+%        \end{minipage}
+%        \begin{minipage}[c]{.2\linewidth}
+%            \begin{enumerate}[start=10,label=\roman*.]
+%            \item $b\cdot (c\cdot a)$
+%            \item $b\cdot (a\cdot c)$
+%            \item $(b\cdot a)\cdot c$
+%        \end{enumerate}
+%        \end{minipage}
+%\end{center}
+%
+%Análogamente, podemos probar la igualdad de todas ellas a partir de las propiedades de la multiplicación.
+%\vspace{-1em}\begin{align*}
+%    (a\cdot b)\cdot c &= a\cdot (b\cdot c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
+%    &= a\cdot (c\cdot b) && \text{Conmutatividad} && \text{Forma (iii)}\\
+%    &= (a\cdot c)\cdot b && \text{Asociatividad} && \text{Forma (iv)}\\
+%    &= (c\cdot a)\cdot b && \text{Conmutatividad}&& \text{Forma (v)}\\
+%    &= c\cdot (a\cdot b) && \text{Asociatividad}&& \text{Forma (vi)}\\
+%    &= c\cdot (b\cdot a) && \text{Conmutatividad}&& \text{Forma (vii)}\\
+%    &= (c\cdot b)\cdot a && \text{Asociatividad}&& \text{Forma (viii)}\\
+%    &= (b\cdot c)\cdot a && \text{Conmutatividad}&& \text{Forma (ix)}\\
+%    &= b\cdot (c\cdot a) && \text{Asociatividad}&& \text{Forma (x)}\\
+%    &= b\cdot (a\cdot c) && \text{Conmutatividad}&& \text{Forma (xi)}\\
+%    &= (b\cdot a)\cdot c && \text{Asociatividad}&& \text{Forma (xii)}
+%\end{align*}
 
-Similarmente, notemos que el axioma de asociatividad de la multiplicación no incluye todas las formas en que podríamos multiplicar tres números reales $a$, $b$ y $c$.
+Así como reutilizar \textit{esquemas} de proposiciones probadas nos permite agilizar la escritura de demostraciones; establecer notación tiene el mismo propósito. No obstante, cada vez que acordemos el uso de notación esta debe ser justificada para evitar ambigüedad; en ocasiones la justificación es tan simple como utilizar diferentes \textit{etiquetas} para los mismos \textit{objetos}, pero en otras, la notación requiere de mayor explicación para su uso adecuado.% y evitar \textit{abuso de la notación}.
 
-\begin{center}
-    \begin{minipage}[c]{.2\linewidth}
-        \begin{enumerate}[label=\roman*.]
-            \item $(a\cdot b)\cdot c$
-            \item $a\cdot (b\cdot c)$
-            \item $a\cdot (c\cdot b)$
-        \end{enumerate}
-        \end{minipage}%
-        \begin{minipage}[c]{.2\linewidth}
-            \begin{enumerate}[start=4,label=\roman*.]
-                \item $(a\cdot b)\cdot c$
-                \item $a\cdot (b\cdot c)$
-                \item $a\cdot (c\cdot b)$
-            \end{enumerate}
-            \end{minipage}%
-        \begin{minipage}[c]{.2\linewidth}
-            \begin{enumerate}[start=7,label=\roman*.]
-            \item $c\cdot (b\cdot a)$
-            \item $(c\cdot b)\cdot a$
-            \item $(b\cdot c)\cdot a$
-        \end{enumerate}
-        \end{minipage}
-        \begin{minipage}[c]{.2\linewidth}
-            \begin{enumerate}[start=10,label=\roman*.]
-            \item $b\cdot (c\cdot a)$
-            \item $b\cdot (a\cdot c)$
-            \item $(b\cdot a)\cdot c$
-        \end{enumerate}
-        \end{minipage}
-\end{center}
+\pagebreak
 
-Procedemos análogamente al caso de la suma para probar la equivalencia de estas formas.
+\textbf{Notación:}
+\begin{enumerate}[label=\roman*)]
+\item Si $x$, $y$ y $z$ son números reales, representaremos con el símbolo $x+y+z$ a la suma de estos.
 
-\vspace{-1em}\begin{proof} \begin{align*}
-    (a\cdot b)\cdot c &= a\cdot (b\cdot c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
-    &= a\cdot (c\cdot b) && \text{Conmutatividad} && \text{Forma (iii)}\\
-    &= (a\cdot c)\cdot b && \text{Asociatividad} && \text{Forma (iv)}\\
-    &= (c\cdot a)\cdot b && \text{Conmutatividad}&& \text{Forma (v)}\\
-    &= c\cdot (a\cdot b) && \text{Asociatividad}&& \text{Forma (vi)}\\
-    &= c\cdot (b\cdot a) && \text{Conmutatividad}&& \text{Forma (vii)}\\
-    &= (c\cdot b)\cdot a && \text{Asociatividad}&& \text{Forma (viii)}\\
-    &= (b\cdot c)\cdot a && \text{Conmutatividad}&& \text{Forma (ix)}\\
-    &= b\cdot (c\cdot a) && \text{Asociatividad}&& \text{Forma (x)}\\
-    &= b\cdot (a\cdot c) && \text{Conmutatividad}&& \text{Forma (xi)}\\
-    &= (b\cdot a)\cdot c && \text{Asociatividad}&& \text{Forma (xii)} \qedhere
-\end{align*} \end{proof} \vspace{-1em}
+Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de sumar tres números reales son equivalentes.
+\item Si $x$ y $y$ son números reales, representaremos con cualquiera de los símbolos $xy$ o $yx$ a la multiplicación $x\cdot y$; a esta multiplicación la llamaremos el producto de $x$ y $y$.
 
-    Reutilizar \textit{esquemas} de proposiciones probadas nos permite agilizar la escritura de demostraciones; establecer notación tiene el mismo propósito. No obstante, cada vez que acordemos el uso de notación esta debe ser justificada; en ocasiones la justificación es tan simple como utilizar diferentes \textit{etiquetas} para los mismos \textit{objetos}, pero en otras, la notación requiere de mayor explicación para evitar ambigüedad.
+Podemos usar esta notación sin ambigüedad pues $x\cdot y = y\cdot x$ por la conmutatividad de la multiplicación.
+%
+%Ya que hemos probado que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$, por esta notación podemos reescribir $(-x)y=-(xy)=x(-y)$.
 
-    \textbf{Notación:}
+\item Si $x$, $y$ y $z$ son números reales, representaremos con cualquiera de los símbolos \begin{enumerate}[label=\roman*)]
+    \item $x\cdot y\cdot z$
+    \item $x\cdot z\cdot y$
+    \item $y\cdot x\cdot z$
+    \item $y\cdot z\cdot x$
+    \item $z\cdot x\cdot y$
+    \item $x\cdot y\cdot z$
+\end{enumerate}
+A la multiplicación de $x$, $y$ y $z$. Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de multiplicar tres números reales son equivalentes. Asimismo, de la notación (ii) obtenemos que podemos usar cualquiera de los símbolos \begin{enumerate}[label=\roman*)]
+    \item $xyz$
+    \item $xzy$
+    \item $yxz$
+    \item $yzx$
+    \item $zxy$
+    \item $xyz$
+\end{enumerate}
+Para representar la multiplicación de $x$, $y$ y $z$.
 
-    \begin{enumerate}[label=\roman*)]
-    \item Si $m_1$, $m_2$ y $m_3$ son números reales, representaremos con el símbolo $m_1+m_2+ m_3$ a la suma de estos.
+\item Si $x$ y $y$ son números reales, representaremos con el símbolo $-xy$ a cualquiera de los productos $(-x)\cdot y$, $-(x \cdot y)$ o $x\cdot (-y)$.
+
+Podemos usar esta notación sin ambigüedad ya que hemos probado que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$.
+
+%Esta notación es útil pues
+Observemos que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$ puede reescribirse como $(-x)y=-(xy)=x(-y)$, por la notación (ii), sin embargo, de esta no se obtiene el símbolo $-xy$.
+
+\item Si $x$ es un número real, representaremos con el símbolo $-x^{-1}$ al inverso multiplicativo de $-x$ o al inverso aditivo de $x^{-1}$.
     
-    Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de sumar tres números reales son equivalentes.
+Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(x^{-1})=(-x)^{-1}$.
 
-    \item Si $m$ y $n$ son números reales, representaremos con los símbolos $mn$ o $nm$ a la multiplicación $m\cdot n$; a esta multiplicación la llamaremos el producto de $m$ y $n$.
-    
-    Podemos usar esta notación sin ambigüedad pues $m\cdot n = n\cdot m$ por la conmutatividad de la multiplicación.
-    
-    De esta notación obtenemos que $a\cdot (b\cdot c)= a\cdot bc=abc$. Podemos usar la notación $abc$ sin ambigüedad ya que hemos probado que todas las formas de multiplicar tres números reales son equivalentes.
+\item Si $x$ y $y$ son números reales, representaremos con el símbolo $x-y$ a la suma $x+(-y)$.
+%
+%De esta notación obtenemos que $z-xy$ representa a cualquiera de las sumas $z+(-x)b$, $z+\bigl(-(xy)\bigr)$ y $z+x(-y)$ Podemos usar esta notación sin ambigüedad ya que hemos probado que $(-x)y=-(xy)=x(-y)$.
+%Observemos que sería un error reescribir la multiplicación $x\cdot (-y)$ como $a-b$, pues reservamos esta notación para la suma $a+(-y)$, por lo que $x\cdot (-y)$ debería reescribirse como $x(-y)$.
+%
+\item Si $x$ es un número real, representaremos con el símbolo $x^2$ a la multiplicación $x\cdot m$, y lo llamaremos el cuadrado de $x$.
 
-    Asimismo, de esta notación obtenemos que $(-a)\cdot b = -ab$, $-(a\cdot b)=-(ab)$ y $a\cdot (-b)=a(-b)$. Como hemos probado que $(-a)\cdot b = -(a \cdot b)=a\cdot (-b)$, por esta notación podemos reescribir $(-a)b=-(ab)=a(-b)$.
+\item Si $x$ y $y$ son números reales y $y$ es distinto de cero, representaremos con el símbolo $ \frac{x}{y}$ al número $x \cdot y^{-1} $.
 
-    \item Si $m$ y $n$ son números reales, representaremos con el símbolo $m-n$ a la suma $m+ (-n)$.
-    
-    De esta notación obtenemos que $c-ab$ representa a cualquiera de las sumas $c+(-a)b$, $c+\bigl(-(ab)\bigr)$ y $c+a(-b)$ Podemos usar esta notación sin ambigüedad ya que hemos probado que $(-a)b=-(ab)=a(-b)$.
+\item Al número $1+1$ lo denotaremos con el símbolo $2$ y lo llamaremos número dos. Al número $2+1$ lo denotaremos con el símbolo $3$ y lo llamaremos número tres...
+\end{enumerate}
 
-    %Observemos que sería un error reescribir la multiplicación $a\cdot (-b)$ como $a-b$, pues reservamos esta notación para la suma $a+(-b)$, por lo que $a\cdot (-b)$ debería reescribirse como $a(-b)$.
-    %
-    \item Si $m$ es un número real, representaremos con el símbolo $m^2$ a la multiplicación $m\cdot m$, y lo llamaremos el cuadrado de $m$.
-    
-    \item Si $m$ es un número real, representaremos con el símbolo $-m^{-1}$ al inverso multiplicativo de $-m$ o al inverso aditivo de $m^{-1}$.
-        
-    Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(a^{-1})=(-a)^{-1}$.
-    
-    \item Si $m$ y $n$ son números reales y $n$ es distinto de cero, representaremos con el símbolo $ \frac{m}{n}$ al número $m \cdot n^{-1} $.
-    
-    \item Al número $1+1$ lo denotaremos con el símbolo $2$ y lo llamaremos número dos. Al número $2+1$ lo denotaremos con el símbolo $3$ y lo llamaremos número tres...
-    \end{enumerate}
+%\textbf{Ejercicio:} Reescriba las demostraciones de las listas de ejercicios 1,2 y 3, utilizando esta notación.
 
 \pagebreak
 
@@ -1054,7 +1124,7 @@ Si definimos que bajo $\Omega$, $2=0$, es decir, que $1+1=0$, entonces $1+1$ no 
 
 Por lo anterior, si buscamos expandir el conjunto de los números reales, requerimos establecer propiedades adicionales.
 
-\section*{Axiomas de orden}
+\part*{Axiomas de orden}
 
 \begin{enumerate}[label=O\arabic*)]
     \item Para cada número real $m$ se cumple una y sólo una de las siguientes condiciones (Tricotomía):
