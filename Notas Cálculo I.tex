@@ -4,8 +4,7 @@
 %\usepackage[T1]{fontenc}
 %\usepackage[spanish]{babel}
 \usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
-\renewcommand*{\proofname}{\textbf{Demostración:}}
-\usepackage{mathtools} %coloneqq command
+\usepackage{mathtools} %\coloneqq command
 \usepackage{braket}
 %\usepackage[spanish]{babel}
 \usepackage{adjustbox}
@@ -13,6 +12,8 @@
 \usepackage{physics} % for nice brackets \qty(...) \qty[...] \qty{...} https://www.reddit.com/r/LaTeX/comments/7qkbfv/redefine_left_right/
 
 \usepackage{array,multirow}
+
+\renewcommand*{\proofname}{\textbf{Demostración:}}
 
 %Conjuntos de números
 \newcommand{\N}{\mathbb{N}}
@@ -46,6 +47,8 @@
 
 %bold all lists$
 \setlist[enumerate]{font=\bfseries}
+%\setlist{leftmargin=0em}
+\setlist[itemize]{topsep=0pt}%{noitemsep, topsep=0pt}
 
 \setlength{\parindent}{0pt} %no indent for the document
 \setlength{\parskip}{1em} %add space between paragraphs
@@ -131,7 +134,7 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
             &= a + (-a) && \text{Hipótesis}\\
             &= 0 && \text{Neutro aditivo} \qedhere
         \end{align*}
-    \end{proof} \vspace{-1em}
+    \end{proof}\vspace{-1em}
     %\item Demuestre que el elemento neutro para la suma es único. (Unicidad del neutro aditivo).
     %\vspace{-1em}\begin{proof} 
     %Supongamos que existen 0 y $\tilde{0}$ números reales tales que $a+0 = a$ y $a+\tilde{0} = a$. Luego, \begin{align*}
@@ -196,9 +199,9 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
     \vspace{-1em}
     \begin{proof} 
         Si $-a=0$, se verifica que \vspace{1em} \begin{align*}
-            0 &= a + (-a) && \text{Inverso aditivo}\\
-            &= a + 0 && \text{Hipótesis}\\
-            &= a && \text{Neutro aditivo}
+            a &= a + 0 && \text{Neutro aditivo}\\
+            &= a + (-a) && \text{Hipótesis}\\
+            &= 0 && \text{Inverso aditivo}
         \end{align*} Por contraposición, si $a\neq 0$, entonces $-a\neq 0$.
         %Otra forma:
         %Sea $a$ un número real distinto de cero tal que $-a=0$. El inverso aditivo satisface que $a+(-a)=0$, y de la hipótesis, $a+0=0$. De esta igualdad sigue que $a=0$, lo que contradice nuestro supuesto inicial, por lo que que $-a\neq 0$.
@@ -632,6 +635,260 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
 
 \end{enumerate}
 
+\section*{Notación}
+
+Esta sección tiene el propósito de introducir al lector al uso de notación por cambio de \textit{etiqueta}, esto es, asignar distintos símbolos a \textit{objetos} con los que hemos trabajado, con el fin de agilizar la demostración de teoremas.
+\begin{itemize}
+\item Si $x\in \R$, representaremos con el símbolo $x^2$ a la multiplicación $x\cdot x$.%, y lo llamaremos el cuadrado de $x$.
+\item Si $x$ y $y$ son números reales, representaremos con el símbolo $x-y$ a la suma $x+(-y)$.
+\item Si $x,y\in \R$ y $y\neq 0$, representaremos con el símbolo $ \frac{x}{y}$ al número $x \cdot y^{-1}$.
+\item Si $x$ y $y$ son números reales, representaremos con el símbolo $xy$ a la multiplicación $x\cdot y$.
+\end{itemize}
+
+\subsection*{Lista de ejercicios 4 (LE4)}
+
+Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+    \item $(a+b)(a-b)=a^2-b^2$. (Diferencia de cuadrados).
+\vspace{-1em}\begin{proof} 
+    \begin{align*}
+    (a+b)(a-b) &= (a+b)\bigl(a+(-b)\bigr) && \text{Notación}\\
+    &= (a+b)\cdot a + (a+b)\cdot (-b) && \text{Distribución}\\
+    &= a\cdot (a+b) + (-b)\cdot (a+b) && \text{Conmutatividad}\\
+    &= a\cdot a + a\cdot b + (-b)\cdot a + (-b) \cdot b && \text{Distribución}\\
+    &= a^2+ ab -ba -b^2 && \text{Notación}\\
+    &=a^2-b^2 && \text{Inverso aditivo} \qedhere
+    \end{align*}    
+\end{proof} \vspace{-1em}
+
+    \item $\frac{a}{b}=a\cdot \frac{1}{b}$, si $b\neq 0$.% (Definición de la división).
+    \vspace{-1em}
+    \begin{proof} 
+    \begin{align*}
+        \frac{a}{b} &= a\cdot b^{-1} && \text{Notación}\\
+        &= (a\cdot 1) \cdot b^{-1} && \text{Neutro multiplicativo}\\
+        &= a\cdot \bigl(1\cdot b^{-1}\bigr) && \text{Asociatividad}\\
+        &= a\cdot \frac{1}{b} && \text{Notación} \qedhere
+    \end{align*}
+    \end{proof} \vspace{-1em}
+    %\vspace{-1em}\begin{proof} \begin{align*} \qquad
+    %    a\cdot \frac{1}{b} &= (a\cdot 1) \cdot \frac{1}{b} && \text{Neutro multiplicativo}\\
+    %    &= \bigl(a\cdot 1^{-1}\bigr) \cdot \frac{1}{b} && \text{Uno es inverso multiplicativo}\\
+    %    &= \frac{a}{1} \cdot \frac{1}{b} && \text{Notación}\\
+    %    &= \frac{a\cdot 1}{1\cdot b} && \text{Multiplicación de fracciones}\\
+    %    &= \frac{a}{b} && \text{Neutro multiplicativo} \qedhere
+    %\end{align*}
+    %\end{proof} \vspace{-1em}
+    %\begin{align*}
+    %    \frac{a}{b} &= a\cdot b^{-1} && \text{Notación}\\
+    %    &= a\cdot 1 \cdot 1\cdot b^{-1}&& \text{Neutro multiplicativo}\\
+    %    &= a \cdot 1^{-1} \cdot 1\cdot b^{-1} && \text{Uno es inverso multiplicativo}\\
+    %    &= \frac{a}{1} \cdot \frac{1}{b} && \text{Notación}\\
+    %    &= \frac{a\cdot 1}{1\cdot b} && \text{Multiplicación de fracciones}\\
+    %    &= \frac{a}{b} && \text{Neutro multiplicativo} \qedhere
+    %\end{align*}
+
+    \item $a \cdot \frac{c}{b} = \frac{ac}{b}$, si $b \neq 0$.
+    \vspace{-1em}
+    \begin{proof} 
+    \begin{align*}
+        a\cdot \frac{c}{b} &= a\cdot \bigl(c\cdot b^{-1}\bigr) && \text{Notación}\\
+        &= (ac) \cdot b^{-1} && \text{Asociatividad}\\
+        &= \frac{ac}{b} && \text{Notación} \qedhere
+    \end{align*}
+    \end{proof} \vspace{-1em}
+    %\vspace{-1em}
+    %\begin{proof} 
+    %\begin{align*}
+    %    a\cdot \frac{c}{b} &= a\cdot 1 \cdot \frac{c}{b} && \text{Neutro multiplicativo}\\
+    %    &= a\cdot 1^{-1} \cdot \frac{c}{b} && \text{Uno es inverso multiplicativo}\\
+    %    &= \frac{a}{1} \cdot \frac{c}{b} && \text{Notación}\\
+    %    &= \frac{ac}{1\cdot b} && \text{Multiplicación de fracciones}\\
+    %    &= \frac{a}{b} && \text{Neutro multiplicativo} \qedhere
+    %\end{align*}
+    %\end{proof} \vspace{-1em}
+    %\begin{align*}
+    %    a\cdot \frac{c}{b} &= a\cdot c \cdot \frac{1}{b} && \text{Definición de la división}\\
+    %    &= a\cdot c \cdot 1 \cdot \frac{1}{b} && \text{Neutro multiplicativo}\\
+    %    &= a\cdot c\cdot 1^{-1} \cdot \frac{1}{b} && \text{Uno es inverso multiplicativo}\\
+    %    &= \frac{ac}{1} \cdot \frac{1}{b} && \text{Notación}\\
+    %    &= \frac{ac\cdot 1}{1\cdot b} && \text{Multiplicación de fracciones}\\
+    %    &= \frac{ac}{b} && \text{Neutro multiplicativo}
+    %\end{align*}
+    %De la división por $1$, tenemos que $a\cdot \frac{c}{b}=\frac{a}{1}\cdot \frac{c}{b}$, y por este teorema $\frac{a}{1}\cdot \frac{c}{b}=\frac{ac}{b\cdot 1}$, osea $a \cdot \frac{c}{b} = \frac{ac}{b}$.
+    %Otra forma de demostrar esta proposición es la siguiente:
+    %\begin{align*}
+    %    a \cdot \frac{c}{b} &= a \cdot \left( c \cdot b^{-1} \right) && \text{Notación}\\
+    %    &= \left( a \cdot c \right) \cdot b^{-1} && \text{Asociatividad}\\
+    %    &= \frac{ac}{b} && \text{Notación}
+    %\end{align*}
+
+    \item $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$, si $b, d \neq 0$. (Multiplicación de fracciones).
+    %\vspace{-1em} \begin{proof} \begin{align*}
+    %    \quad \frac{a}{b} \cdot \frac{c}{d} &= ab^{-1} \cdot cd^{-1} && \text{Notación}\\
+    %    &= ac\cdot b^{-1}d^{-1} && \text{Conmutatividad}\\
+    %    &= ac\cdot (bd)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
+    %    &= \frac{ac}{bd} && \text{Notación} \qedhere
+    %\end{align*}
+    %\end{proof} \vspace{-1em}
+    \vspace{-1em}\begin{proof}
+    \begin{align*}\qquad \ \qquad
+    \frac{a}{b} \cdot \frac{c}{d} &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) && \text{Notación}\\
+    &= a \cdot \Bigl( b^{-1} \cdot \left( c \cdot d^{-1} \right) \Bigr) && \text{Asociatividad}\\
+    &= a\cdot \Bigl(\bigl(b^{-1}\cdot c\bigr) \cdot d^{-1}\Bigr) && \text{Asociatividad}\\
+    &= a\cdot \Bigl(\bigl(c\cdot b^{-1}\bigr) \cdot d^{-1}\Bigr) && \text{Conmutatividad}\\
+    &= a\cdot \Bigl(c\cdot \bigl(b^{-1}\cdot d^{-1}\bigr)\Bigr) && \text{Conmutatividad}\\
+    &= a\cdot \Bigl(c\cdot \bigl(b\cdot d\bigr)^{-1}\Bigr) && \text{Multiplicación de inversos multiplicativos}\\
+    &= (a\cdot c) \cdot (b\cdot d)^{-1} && \text{Asociatividad}\\
+    &= \frac{ac}{bd} && \text{Notación} \qedhere
+    \end{align*}    
+    \end{proof} \vspace{-1em}
+    
+    \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$. (Cancelación de factores en común).
+    \vspace{-1em}
+    \begin{proof} 
+    \begin{align*}
+    \frac{a}{b}&=\frac{a}{b}\cdot 1 && \text{Neutro multiplicativo}\\
+    &= \frac{a}{b}\cdot \bigl(c \cdot c^{-1}\bigr) && \text{Inverso multiplicativo}\\
+    &= \frac{a}{b} \cdot \frac{c}{c} && \text{Notación}\\
+    &= \frac{ac}{b\cdot c} && \text{Multiplicación de fracciones} \qedhere
+    \end{align*}
+    \end{proof} \vspace{-1em}
+    %Otra forma de demostrar esta proposición es la siguiente:
+    %\begin{align*}
+    %    \frac{ac}{bc} &= a \cdot c \cdot \left( bc \right)^{-1} && \text{Notación}\\
+    %    &= a \cdot c \cdot b^{-1} \cdot c^{-1} && \text{Multiplicación de inversos multiplicativos}\\
+    %    &= a \cdot b^{-1} \cdot c \cdot c^{-1} && \text{Conmutatividad}\\
+    %    &= a \cdot b^{-1} \cdot 1 && \text{Inverso multiplicativo}\\
+    %    &= a \cdot b^{-1} && \text{Neutro multiplicativo}\\
+    %    &= \frac{a}{b} && \text{Notación}
+    %\end{align*}
+    
+    \item $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}$, si $b, c, d \neq 0$. (Regla del sandwich).
+    \vspace{-1em}\begin{proof} 
+    \begin{align*} \qquad \ \qquad
+    \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Notación}\\
+    &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Notación}\\
+    &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot \left( d^{-1} \right) ^{-1} \right) && \text{Multiplicación de inversos multiplicativos}\\
+    &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot d \right) && \text{Unicidad del inverso multiplicativo}\\
+    &= \left( a \cdot b^{-1} \right) \cdot \left( d \cdot c^{-1} \right) && \text{Conmutatividad}\\
+    &= \frac{a}{b} \cdot \frac{d}{c} && \text{Notación}\\
+    &= \frac{ad}{bc} && \text{Multiplicación de fracciones} \qedhere
+    \end{align*}     
+    \end{proof} \vspace{-1em}
+
+\pagebreak
+
+    \item $\frac{a}{c} \pm  \frac{b}{c}=\frac{a\pm b}{c}$, si $c\neq 0$. (Suma de fracciones con denominador conmún).
+    \vspace{-1em}
+    \begin{proof} 
+    \begin{align*}
+    \frac{a}{c} \pm  \frac{b}{c} &= \bigl(a\cdot c^{-1}\bigr) \pm  \bigl(b\cdot c^{-1}\bigr) && \text{Notación}\\
+    &= \bigl(c^{-1} \cdot a\bigr) \pm  \bigl(c^{-1} \cdot b\bigr) && \text{Conmutatividad}\\
+    &= c^{-1} \cdot (a\pm b) && \text{Distribución}\\
+    &= (a\pm b) \cdot c^{-1} && \text{Conmutatividad}\\
+    &= \frac{a\pm b}{c} && \text{Notación} \qedhere
+    \end{align*}
+    \end{proof} \vspace{-1em}
+
+    \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} $, si $b, d \neq 0$. (Suma de fracciones).
+    \vspace{-1em}
+    \begin{proof} 
+    \begin{align*} \qquad \ \qquad
+    \frac{a}{b} \pm \frac{c}{d} &= \frac{ad}{bd} \pm \frac{cb}{db} && \text{Cancelación de factores en común}\\
+    &= \frac{ad}{bd} \pm \frac{cb}{bd} && \text{Conmutatividad}\\
+    &= \frac{ad \pm cb}{bd} && \text{Suma de fracciones con denominador común} \qedhere
+    \end{align*}
+    \end{proof} \vspace{-1em}
+    %\vspace{-1em}\begin{proof} \begin{align*}
+    %    \frac{a}{b} \pm \frac{c}{d} &= ab^{-1} \pm cd^{-1} && \text{Notación}\\
+    %    &= a\cdot 1 \cdot b^{-1} \pm c\cdot 1 \cdot d^{-1} && \text{Neutro multiplicativo}\\
+    %    &= ad\cdot d^{-1}b^{-1} \pm cb\cdot b^{-1}d^{-1} && \text{Inverso multiplicativo}\\
+    %    &= ad \cdot \bigl(db\bigr)^{-1} \pm cd \cdot \bigl(bd\bigr)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
+    %    &= (bd)^{-1} \bigl(ad\pm cd\bigr) && \text{Distribución}\\
+    %    &= \frac{ad \pm bc}{bd} && \text{Notación} \qedhere
+    %\end{align*}
+    %\end{proof} \vspace{-1em}
+    %\vspace{-1em}\begin{proof} 
+    %\begin{align*}
+    %\frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Notación}\\
+    %&=	\left( a \cdot 1 \right)   \cdot b^{-1} \pm \left( c \cdot 1 \right) \cdot d^{-1} && \text{Neutro multiplicativo}\\
+    %&=	\Bigl( a \cdot  \left( d \cdot d^{-1} \right) \Bigr) \cdot b^{-1} \pm \Bigl( c \cdot  \left( b \cdot b^{-1}  \right)  \Bigr)  \cdot d^{-1} && \text{Inverso multiplicativo}\\
+    %&=	\Bigl(  \left( a \cdot d \right) \cdot d^{-1} \Bigr) \cdot b^{-1} \pm \Bigl(  \left( c \cdot b \right) \cdot b^{-1} \Bigr) \cdot d^{-1} && \text{Asociatividad}\\
+    %&=	\left( a \cdot d \right)  \cdot  \left( d^{-1} \cdot b^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Asociatividad}\\
+    %&=	\left( a \cdot d \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Conmutatividad}\\
+    %&=	\left( b^{-1} \cdot d^{-1}  \right) \cdot \left( a \cdot d \pm c \cdot b \right) && \text{Distribución}\\
+    %&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b^{-1} \cdot d^{-1} \right) && \text{Conmutatividad}\\
+    %&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b \cdot d \right)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
+    %&=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Conmutatividad}\\
+    %&=	\frac{ad \pm bc}{bd} && \text{Notación} \qedhere
+    %\end{align*} 
+    %\end{proof} \vspace{-1em}
+    %\item $\frac{-a}{-b}=\frac{a}{b}$, si $b\neq 0$.
+    %    \begin{align*}
+    %        \frac{-a}{-b} &= (-a)\cdot (-b)^{-1} && \text{Notación}\\
+    %        &= (-a)\cdot (-b^{-1}) && \text{Multiplicación por inverso aditivo}\\
+    %        &= -(a\cdot b^{-1}) && \text{Distribución del signo}\\
+    %        &= - \frac{a}{b} && \text{Notación}
+    %    \end{align*}
+    %    %\begin{align*}
+    %    %    \frac{-a}{-b} &= \frac{(-1)\cdot a}{(-1)\cdot b} && \text{Multiplicación por ($-1$)}\\
+    %    %    &=\frac{-1}{-1} \cdot \frac{a}{b} && \text{Teorema}\\
+    %    %    &= (-1)\cdot (-1)^{-1}\cdot \frac{a}{b} && \text{Notación}\\
+    %    %    &= 1\cdot \frac{a}{b} && \text{Inverso multiplicativo}\\
+    %    %    &= \frac{a}{b} && \text{Neutro multiplicativo}
+    %    %    \end{align*}
+    %    \textbf{Nota:} En esta prueba está implícito que $-b$ tiene inverso multiplicativo, lo cual es válido, pues\begin{align*}
+    %        -b^{-1}&=-\bigl(b^{-1}\bigr) && \text{Notación}\\
+    %        &= -\qty\big(1\cdot b^{-1}) && \text{Neutro multiplicativo}\\
+    %        &= - \qty(\frac{1}{b}) && \text{Notación}
+    %    \end{align*}
+    
+
+    %
+    %$a=\frac{a}{1}$. (División por $1$).
+    %\vspace{-1em}\begin{proof} 
+    %    El neutro multiplicativo satisface que $a=a\cdot 1=a\cdot 1^{-1}$, y por notación $a=\frac{a}{1}$.
+    %\end{proof} \vspace{-1em}
+
+%\item Si $ab^{-1}=ba^{-1}$, entonces $a^2=b^2$.
+%\vspace{-1em}\begin{proof} 
+%\begin{align*}
+%    a^2 &= a\cdot a && \text{Notación}\\
+%    &= (a\cdot a) \cdot 1 && \text{Neutro multiplicativo}\\
+%    &= (a\cdot a)\cdot\bigl( b\cdot b^{-1}\bigr) && \text{Inverso multiplicativo}\\
+%    &= a\cdot \Bigl(a\cdot \bigl( b\cdot b^{-1}\bigr)\Bigr) && \text{Asociatividad}\\
+%    &= a\cdot \Bigl(a\cdot \bigl(  b^{-1}\cdot b\bigr)\Bigr) && \text{Conmutatividad}\\
+%    &= a\cdot \Bigl(\bigl(a\cdot b^{-1}\bigr)\cdot b \Bigr) && \text{Asociatividad}\\
+%    &= a\cdot \Bigl(\bigl(b\cdot a^{-1}\bigr)\cdot b \Bigr) && \text{Hipótesis}\\
+%    &= a\cdot \Bigl(\bigl(a^{-1}\cdot b\bigr)\cdot b \Bigr) && \text{Conmutatividad}\\
+%    &= a\cdot \Bigl(a^{-1}\cdot (b\cdot b) \Bigr) && \text{Asociatividad}\\
+%    &= \bigl(a\cdot a^{-1}\bigr) \cdot (b\cdot b)&& \text{Asociatividad}\\
+%    &= 1 \cdot (b\cdot b)&& \text{Inverso multiplicativo}\\
+%    &= (b\cdot b) \cdot 1 && \text{Conmutatividad}\\
+%    &= b\cdot b && \text{Neutro multiplicativo}\\
+%    &= b^2 && \text{Notación} \qedhere
+%\end{align*}
+%\end{proof} \vspace{-1em}
+%
+%\item Si $a^2=b^2$, entonces $a=b$ o $a=-b$.
+%\vspace{-1em}\begin{proof} 
+%    \begin{align*}
+%        0 &= b^2 - b^2 && \text{Inverso aditivo}\\
+%        &= a^2 - b^2 && \text{Hipótesis}\\
+%        &= a^2 - b^2 + 0&& \text{Neutro aditivo}\\
+%        &= a^2 - b^2 + ab-ab&& \text{Inverso aditivo}\\
+%        &= a^2 + a b - b^2 -ab && \text{Conmutatividad}\\
+%        &= (a^2 + a b) + (- b^2)+(-a b)&& \text{Asociatividad}\\
+%        &= (a a + a b) + (- b b)+(-a b)&& \text{Notación}\\
+%        &= (a a + a b) -(b b + a b)&& \text{Distribución del signo}\\
+%        &= a (a+b) - b(b+a) && \text{Distribución}\\
+%        &= (a+b)  (a-b) && \text{Distribución}
+%        \end{align*} De la multiplicativo por $0$, sigue que $a+b=0$ o $a-b=0$. Sumando inverso aditivo de $b$ en ambas igualdades tenemos que $a=-b$ o $a=b$.
+%\end{proof} \vspace{-1em}
+\end{enumerate}
+
 
 \subsection*{Una nota sobre notación}
 
@@ -777,239 +1034,91 @@ Podemos probar igualdad de todas ellas a partir de las propiedades de la suma/mu
 %    &= (b\cdot a)\cdot c && \text{Asociatividad}&& \text{Forma (xii)}
 %\end{align*}
 
-Así como reutilizar \textit{esquemas} de proposiciones probadas nos permite agilizar la escritura de demostraciones; establecer notación tiene el mismo propósito. No obstante, cada vez que acordemos el uso de notación esta debe ser justificada para evitar ambigüedad; en ocasiones la justificación es tan simple como utilizar diferentes \textit{etiquetas} para los mismos \textit{objetos}, pero en otras, la notación requiere de mayor explicación para su uso adecuado.% y evitar \textit{abuso de la notación}.
+Así como reutilizar las \textit{formas} de proposiciones probadas nos permite agilizar la escritura de demostraciones; establecer notación tiene el mismo propósito. No obstante, cada vez que acordemos el uso de notación esta debe ser justificada para evitar ambigüedad; en ocasiones la justificación es tan simple como utilizar diferentes \textit{etiquetas} para los mismos \textit{objetos}, como ya ha sido empleada, pero en otras, la notación requiere de mayor explicación para su uso adecuado.% y evitar \textit{abuso de la notación}.
+
+%\textbf{Notación:}
 
 \pagebreak
 
-\textbf{Notación:}
 \begin{enumerate}[label=\roman*)]
 \item Si $x$, $y$ y $z$ son números reales, representaremos con el símbolo $x+y+z$ a la suma de estos.
 
 Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de sumar tres números reales son equivalentes.
-\item Si $x$ y $y$ son números reales, representaremos con cualquiera de los símbolos $xy$ o $yx$ a la multiplicación $x\cdot y$; a esta multiplicación la llamaremos el producto de $x$ y $y$.
-
-Podemos usar esta notación sin ambigüedad pues $x\cdot y = y\cdot x$ por la conmutatividad de la multiplicación.
 %
+%\item Si $x$ y $y$ son números reales, representaremos con el símbolo $xy$ a la multiplicación $x\cdot y$; a esta multiplicación la llamaremos el producto de $x$ y $y$.
+%
+%Podemos usar esta notación sin ambigüedad pues $x\cdot y = y\cdot x$ por la conmutatividad de la multiplicación.
+%%
 %Ya que hemos probado que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$, por esta notación podemos reescribir $(-x)y=-(xy)=x(-y)$.
 
-\item Si $x$, $y$ y $z$ son números reales, representaremos con cualquiera de los símbolos \begin{enumerate}[label=\roman*)]
-    \item $x\cdot y\cdot z$
-    \item $x\cdot z\cdot y$
-    \item $y\cdot x\cdot z$
-    \item $y\cdot z\cdot x$
-    \item $z\cdot x\cdot y$
-    \item $x\cdot y\cdot z$
-\end{enumerate}
-A la multiplicación de $x$, $y$ y $z$. Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de multiplicar tres números reales son equivalentes. Asimismo, de la notación (ii) obtenemos que podemos usar cualquiera de los símbolos \begin{enumerate}[label=\roman*)]
-    \item $xyz$
-    \item $xzy$
-    \item $yxz$
-    \item $yzx$
-    \item $zxy$
-    \item $xyz$
-\end{enumerate}
-Para representar la multiplicación de $x$, $y$ y $z$.
+\item Si $x$, $y$ y $z$ son números reales, representaremos con el símbolo $x\cdot y\cdot z$ a la multiplicación de estos.
+%cualquiera de los símbolos \begin{itemize}%[label=\roman*)]
+%    \item $x\cdot y\cdot z$
+%    \item $x\cdot z\cdot y$
+%    \item $y\cdot x\cdot z$
+%    \item $y\cdot z\cdot x$
+%    \item $z\cdot x\cdot y$
+%    \item $x\cdot y\cdot z$
+%\end{itemize}
+%A la multiplicación de $x$, $y$ y $z$.
+Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de multiplicar tres números reales son equivalentes.
+
+Por la notación (ii) podemos usar el símbolo $xyz$ para representar la multiplicación de cualesquiera números reales $x$, $y$ y $z$.
+%Asimismo, de la notación (ii) obtenemos que podemos usar cualquiera de los símbolos \begin{itemize}%[label=\roman*)]
+%    \item $xyz$
+%    \item $xzy$
+%    \item $yxz$
+%    \item $yzx$
+%    \item $zxy$
+%    \item $xyz$
+%\end{itemize}
+%Para representar la multiplicación de $x$, $y$ y $z$.
 
 \item Si $x$ y $y$ son números reales, representaremos con el símbolo $-xy$ a cualquiera de los productos $(-x)\cdot y$, $-(x \cdot y)$ o $x\cdot (-y)$.
 
 Podemos usar esta notación sin ambigüedad ya que hemos probado que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$.
 
-%Esta notación es útil pues
-Observemos que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$ puede reescribirse como $(-x)y=-(xy)=x(-y)$, por la notación (ii), sin embargo, de esta no se obtiene el símbolo $-xy$.
+Por la notación (ii) podemos reescribir esta igualdad como $(-x)y=-(xy)=x(-y)$, sin embargo, de esta no se obtiene el símbolo $-xy$.
 
 \item Si $x$ es un número real, representaremos con el símbolo $-x^{-1}$ al inverso multiplicativo de $-x$ o al inverso aditivo de $x^{-1}$.
     
 Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(x^{-1})=(-x)^{-1}$.
-
-\item Si $x$ y $y$ son números reales, representaremos con el símbolo $x-y$ a la suma $x+(-y)$.
+%
+%\item Si $x$ y $y$ son números reales, representaremos con el símbolo $x-y$ a la suma $x+(-y)$.
 %
 %De esta notación obtenemos que $z-xy$ representa a cualquiera de las sumas $z+(-x)b$, $z+\bigl(-(xy)\bigr)$ y $z+x(-y)$ Podemos usar esta notación sin ambigüedad ya que hemos probado que $(-x)y=-(xy)=x(-y)$.
 %Observemos que sería un error reescribir la multiplicación $x\cdot (-y)$ como $a-b$, pues reservamos esta notación para la suma $a+(-y)$, por lo que $x\cdot (-y)$ debería reescribirse como $x(-y)$.
 %
-\item Si $x$ es un número real, representaremos con el símbolo $x^2$ a la multiplicación $x\cdot m$, y lo llamaremos el cuadrado de $x$.
-
-\item Si $x$ y $y$ son números reales y $y$ es distinto de cero, representaremos con el símbolo $ \frac{x}{y}$ al número $x \cdot y^{-1} $.
 
 \item Al número $1+1$ lo denotaremos con el símbolo $2$ y lo llamaremos número dos. Al número $2+1$ lo denotaremos con el símbolo $3$ y lo llamaremos número tres...
 \end{enumerate}
 
 %\textbf{Ejercicio:} Reescriba las demostraciones de las listas de ejercicios 1,2 y 3, utilizando esta notación.
 
-\pagebreak
+\textbf{Nota:} El uso de notación es opcional y en ocasiones prescindiremos de ella para procurar claridad.% en las demostraciones.
 
-\subsection*{Lista de ejercicios 4 (LE4)}
+El siguiente es un ejemplo del uso de la notación listada arriba:
 
-Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
-
-\begin{enumerate}[label=\alph*)]
-    \item Si $ab^{-1}=ba^{-1}$, entonces $a^2=b^2$.
-    \vspace{-1em}\begin{proof} 
-        \begin{align*}
-            a^2 &= a\cdot a && \text{Notación}\\
-            &= a\cdot a \cdot 1 && \text{Neutro multiplicativo}\\
-            &= a\cdot a\cdot b\cdot b^{-1} && \text{Inverso multiplicativo}\\\
-            &= a\cdot a\cdot b^{-1} \cdot b && \text{Conmutatividad}\\
-            &= a\cdot b\cdot a^{-1} \cdot b && \text{Hipótesis}\\
-            &= a\cdot a^{-1} \cdot b \cdot b&& \text{Conmutatividad}\\
-            &= 1 \cdot b\cdot b && \text{Neutro multiplicativo}\\
-            &= b^2 && \text{Notación} \qedhere
-        \end{align*}
-    \end{proof} \vspace{-1em}
-
-    \item Si $a^2=b^2$, entonces $a=b$ o $a=-b$.
-    \vspace{-1em}\begin{proof} 
-        \begin{align*}
-            0 &= b^2 - b^2 && \text{Inverso aditivo}\\
-            &= a^2 - b^2 && \text{Hipótesis}\\
-            &= a^2 - b^2 + 0&& \text{Neutro aditivo}\\
-            &= a^2 - b^2 + ab-ab&& \text{Inverso aditivo}\\
-            &= a^2 + a b - b^2 -ab && \text{Conmutatividad}\\
-            &= (a^2 + a b) + (- b^2)+(-a b)&& \text{Asociatividad}\\
-            &= (a a + a b) + (- b b)+(-a b)&& \text{Notación}\\
-            &= (a a + a b) -(b b + a b)&& \text{Distribución del signo}\\
-            &= a (a+b) - b(b+a) && \text{Distribución}\\
-            &= (a+b)  (a-b) && \text{Distribución}
-            \end{align*} Por el ejercicio (b) de LE3, de la igualdad anterior tenemos que $a+b=0$ o $a-b=0$. Sumando inverso aditivo de $b$ en ambas igualdades tenemos que $a=-b$ o $a=b$.
-    \end{proof} \vspace{-1em}
-
-    \item $(a+b)(a-b)=a^2-b^2$. (Diferencia de cuadrados).
-    \vspace{-1em}\begin{proof} 
-        \begin{align*}
-        (a+b)(a-b) &= (a+b)\bigl(a+(-b)\bigr) && \text{Notación}\\
-        &= (a+b)\cdot a + (a+b)\cdot (-b) && \text{Distribución}\\
-        &= a(a+b) + (-b)(a+b) && \text{Conmutatividad}\\
-        &= a\cdot a + a\cdot b + (-b)\cdot a + (-b) \cdot b && \text{Distribución}\\
-        &= a^2+ ab -ba -b^2 && \text{Notación}\\
-        &=a^2-b^2 && \text{Inverso aditivo} \qedhere
-        \end{align*}    
-    \end{proof} \vspace{-1em}
-%
-    %\item $a=\frac{a}{1}$. (División por $1$).
-    %\vspace{-1em}\begin{proof} 
-    %    El neutro multiplicativo satisface que $a=a\cdot 1=a\cdot 1^{-1}$, y por notación $a=\frac{a}{1}$.
-    %\end{proof} \vspace{-1em}
-
-\pagebreak
-
-    \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} $, si $b, d \neq 0$. (Suma de fracciones).
-    \vspace{-1em}\begin{proof} 
-    \begin{align*}
-    \frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Notación}\\
-    &=	\left( a \cdot 1 \right)   \cdot b^{-1} \pm \left( c \cdot 1 \right) \cdot d^{-1} && \text{Neutro multiplicativo}\\
-    &=	\Bigl( a \cdot  \left( d \cdot d^{-1} \right) \Bigr) \cdot b^{-1} \pm \Bigl( c \cdot  \left( b \cdot b^{-1}  \right)  \Bigr)  \cdot d^{-1} && \text{Inverso multiplicativo}\\
-    &=	\Bigl(  \left( a \cdot d \right) \cdot d^{-1} \Bigr) \cdot b^{-1} \pm \Bigl(  \left( c \cdot b \right) \cdot b^{-1} \Bigr) \cdot d^{-1} && \text{Asociatividad}\\
-    &=	\left( a \cdot d \right)  \cdot  \left( d^{-1} \cdot b^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Asociatividad}\\
-    &=	\left( a \cdot d \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Conmutatividad}\\
-    &=	\left( b^{-1} \cdot d^{-1}  \right) \cdot \left( a \cdot d \pm c \cdot b \right) && \text{Distribución}\\
-    &=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b^{-1} \cdot d^{-1} \right) && \text{Conmutatividad}\\
-    &=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b \cdot d \right)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
-    &=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Conmutatividad}\\
-    &=	\frac{ad \pm bc}{bd} && \text{Notación} \qedhere
-    \end{align*} 
-    \end{proof} \vspace{-1em}
-
-    \item $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$, si $b, d \neq 0$. (Multiplicación de fracciones).
-    \vspace{-1em}\begin{proof} 
-        \begin{align*}
-            \frac{a}{b} \cdot \frac{c}{d} &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) && \text{Notación}\\
-                &= a \cdot \Bigl( b^{-1} \cdot \left( c \cdot d^{-1} \right) \Bigr) && \text{Asociatividad}\\
-                    &= a \cdot \Bigl( c \cdot \left( b^{-1} \cdot d^{-1} \right) \Bigr) && \text{Conmutatividad}\\
-            &= \left( a \cdot c \right) \cdot \left( b^{-1} \cdot d^{-1} \right) && \text{Asociatividad}\\
-            &= \left( a \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
-            &= \frac{ac}{bd} && \text{Notación} \qedhere
-        \end{align*}    
-    \end{proof} \vspace{-1em}
-
-    \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
-        \item $\frac{a}{b}=a\cdot \frac{1}{b}$, si $b\neq 0$. (Definición de la división).
-        \begin{align*}
-            \frac{a}{b} &= a\cdot b^{-1} && \text{Notación}\\
-            &= a\cdot 1 \cdot 1\cdot b^{-1}&& \text{Neutro multiplicativo}\\
-            &= a \cdot 1^{-1} \cdot 1\cdot b^{-1} && \text{Uno es inverso multiplicativo}\\
-            &= \frac{a}{1} \cdot \frac{1}{b} && \text{Notación}\\
-            &= \frac{a\cdot 1}{1\cdot b} && \text{Multiplicación de fracciones}\\
-            &= \frac{a}{b} && \text{Neutro multiplicativo} \qedhere
-        \end{align*}
-
-        \item $a \cdot \frac{c}{b} = \frac{ac}{b}$, si $b \neq 0$.
-        \begin{align*}
-            a\cdot \frac{c}{b} &= a\cdot c \cdot \frac{1}{b} && \text{Definición de la división}\\
-            &= a\cdot c \cdot 1 \cdot \frac{1}{b} && \text{Neutro multiplicativo}\\
-            &= a\cdot c\cdot 1^{-1} \cdot \frac{1}{b} && \text{Uno es inverso multiplicativo}\\
-            &= \frac{ac}{1} \cdot \frac{1}{b} && \text{Notación}\\
-            &= \frac{ac\cdot 1}{1\cdot b} && \text{Multiplicación de fracciones}\\
-            &= \frac{ac}{b} && \text{Neutro multiplicativo}
-        \end{align*}
-        %De la división por $1$, tenemos que $a\cdot \frac{c}{b}=\frac{a}{1}\cdot \frac{c}{b}$, y por este teorema $\frac{a}{1}\cdot \frac{c}{b}=\frac{ac}{b\cdot 1}$, osea $a \cdot \frac{c}{b} = \frac{ac}{b}$.
-        %Otra forma de demostrar esta proposición es la siguiente:
-        %\begin{align*}
-        %    a \cdot \frac{c}{b} &= a \cdot \left( c \cdot b^{-1} \right) && \text{Notación}\\
-        %    &= \left( a \cdot c \right) \cdot b^{-1} && \text{Asociatividad}\\
-        %    &= \frac{ac}{b} && \text{Notación}
-        %\end{align*}   
-        
-        \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$.\begin{align*}
-            \frac{a}{b}&=\frac{a}{b}\cdot 1 && \text{Neutro multiplicativo}\\
-            &= \frac{a}{b}\cdot \bigl(c \cdot c^{-1}\bigr) && \text{Inverso multiplicativo}\\
-            &= \frac{a}{b} \cdot \frac{c}{c} && \text{Notación}\\
-            &= \frac{ac}{bc} && \text{Multiplicación de fracciones} \qedhere
-        \end{align*}
-        %Otra forma de demostrar esta proposición es la siguiente:
-        %\begin{align*}
-        %    \frac{ac}{bc} &= a \cdot c \cdot \left( bc \right)^{-1} && \text{Notación}\\
-        %    &= a \cdot c \cdot b^{-1} \cdot c^{-1} && \text{Multiplicación de inversos multiplicativos}\\
-        %    &= a \cdot b^{-1} \cdot c \cdot c^{-1} && \text{Conmutatividad}\\
-        %    &= a \cdot b^{-1} \cdot 1 && \text{Inverso multiplicativo}\\
-        %    &= a \cdot b^{-1} && \text{Neutro multiplicativo}\\
-        %    &= \frac{a}{b} && \text{Notación}
-        %\end{align*}    
-    \end{enumerate} %corolario
-
-    %\item $\frac{-a}{-b}=\frac{a}{b}$, si $b\neq 0$.
-    %    \begin{align*}
-    %        \frac{-a}{-b} &= (-a)\cdot (-b)^{-1} && \text{Notación}\\
-    %        &= (-a)\cdot (-b^{-1}) && \text{Multiplicación por inverso aditivo}\\
-    %        &= -(a\cdot b^{-1}) && \text{Distribución del signo}\\
-    %        &= - \frac{a}{b} && \text{Notación}
-    %    \end{align*}
-    %    %\begin{align*}
-    %    %    \frac{-a}{-b} &= \frac{(-1)\cdot a}{(-1)\cdot b} && \text{Multiplicación por ($-1$)}\\
-    %    %    &=\frac{-1}{-1} \cdot \frac{a}{b} && \text{Teorema}\\
-    %    %    &= (-1)\cdot (-1)^{-1}\cdot \frac{a}{b} && \text{Notación}\\
-    %    %    &= 1\cdot \frac{a}{b} && \text{Inverso multiplicativo}\\
-    %    %    &= \frac{a}{b} && \text{Neutro multiplicativo}
-    %    %    \end{align*}
-    %    \textbf{Nota:} En esta prueba está implícito que $-b$ tiene inverso multiplicativo, lo cual es válido, pues\begin{align*}
-    %        -b^{-1}&=-\bigl(b^{-1}\bigr) && \text{Notación}\\
-    %        &= -\qty\big(1\cdot b^{-1}) && \text{Neutro multiplicativo}\\
-    %        &= - \qty(\frac{1}{b}) && \text{Notación}
-    %    \end{align*}
-
-    \item $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$, si $b\neq 0$.
+$\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$, si $b\neq 0$.
     \vspace{-1em}\begin{proof} \leavevmode
         \begin{center}\vspace{-2em}
             \begin{minipage}[t]{.5\linewidth}
                 \begin{align*}
-                    \frac{-a}{b} &= (-a)\cdot b^{-1} && \text{Notación}\\
-                    &= - \bigl(a\cdot b^{-1}\bigr) && \text{Multiplicación por inv. ad.}\\
-                    &= -\frac{a}{b} && \text{Notación} 
+                    \frac{-a}{b} &= (-a)\cdot b^{-1} && \text{Notación (viii)}\\
+                    &= - \bigl(ab^{-1}\bigr) && \text{Notación (iv)}\\
+                    &= -\frac{a}{b} && \text{Notación (viii)}
                 \end{align*}
             \end{minipage}%
             \begin{minipage}[t]{.5\linewidth}
                 \begin{align*}
-                    \frac{a}{-b} &= a(-b)^{-1} && \text{Notación}\\
-            &= a\bigl(-(b^{-1})\bigr) && \text{Notación}\\
-            &= -(a\cdot b^{-1}) && \text{Multiplicación por inv. ad.}\\
-            &= -\frac{a}{b} && \text{Notación} \qedhere
+                    \frac{a}{-b} &= a \cdot (-b)^{-1} && \text{Notación (viii)}\\
+            &= -\bigl(ab^{-1}\bigr) && \text{Notación (iv)}\\
+            &= -\frac{a}{b} && \text{Notación (viii)} \qedhere
                 \end{align*}
             \end{minipage}
             \end{center}    
     \end{proof} \vspace{-1em}
-    \textbf{Nota:} En esta prueba está implícito que $-b$ tiene inverso multiplicativo, lo cual es válido, pues\begin{align*}
-        -b^{-1}&=-\bigl(b^{-1}\bigr) && \text{Notación}\\
-        &= -\qty\big(1\cdot b^{-1}) && \text{Neutro multiplicativo}\\
-        &= - \qty(\frac{1}{b}) && \text{Notación}
-    \end{align*}
+    \textbf{Nota:} En esta prueba está implícito que $\exists (-b)^{-1}\in \R$, lo cual es válido, pues $b\neq 0$, por lo que $-b\neq 0$.
     %
     %\textbf{Demostración:} \begin{align*}
     %    \frac{a}{-b} &= \frac{-(-a)}{-b} && \text{Unicidad del inverso aditivo}\\
@@ -1023,22 +1132,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     %    &= \frac{-a}{b} && \text{Multiplicación por ($-1$)} && \text{(**)}
     %\end{align*} De las igualdades (*) y (**) tenemos que $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$.
 
-    \item $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}$, si $b, c, d \neq 0$. (Regla del sandwich).
-    \vspace{-1em}\begin{proof} 
-        \begin{align*}
-            \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Notación}\\
-            &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Notación}\\
-            &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot \left( d^{-1} \right) ^{-1} \right) && \text{Multiplicación de inversos multiplicativos}\\
-            &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot d \right) && \text{Unicidad del inverso multiplicativo}\\
-            &= \left( a \cdot b^{-1} \right) \cdot \left( d \cdot c^{-1} \right) && \text{Conmutatividad}\\
-            &= \frac{a}{b} \cdot \frac{d}{c} && \text{Notación}\\
-            &= \frac{ad}{bc} && \text{Multiplicación de fracciones} \qedhere
-        \end{align*}     
-    \end{proof} \vspace{-1em}
-\end{enumerate}
-
 \pagebreak
-
 \subsection*{Un campo finito}
 
 Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$. El siguiente es un esbozo de la prueba:
@@ -1124,63 +1218,171 @@ Si definimos que bajo $\Omega$, $2=0$, es decir, que $1+1=0$, entonces $1+1$ no 
 
 Por lo anterior, si buscamos expandir el conjunto de los números reales, requerimos establecer propiedades adicionales.
 
+\textbf{Nota:} Hasta este punto el autor ha procurado enunciar cada propiedad que se utiliza en la demostración de proposiciones, sin embargo, se espera que con el dominio de dichas propiedades y el manejo adecuado de la notación, el lector sea capáz de inferir el uso que de estas propiedades y notación en pruebas de futuras proposiciones. Por ello dejaremos de enunciar cada propiedad que sea empleada excepto en aquellos casos en los que el autor considere que se requiera para preservar claridad. Sin embargo, el dejar de enunciar propiedades empleadas lo realizaremos paulatinamente, de modo que el lector pueda acostumbrarse a esta forma de escritura.
+
+\pagebreak
+
 \part*{Axiomas de orden}
 
-\begin{enumerate}[label=O\arabic*)]
-    \item Para cada número real $m$ se cumple una y sólo una de las siguientes condiciones (Tricotomía):
-        \begin{enumerate}[label=\roman*)]
-        \item $0<m$. En este caso decimos que $m$ es un número real positivo.
-        \item $m=0$.
-        \item $m<0$. En este caso decimos que $m$ es un número real negativo.
-        \end{enumerate}
+\subsection*{Números positivos}
+
+%\begin{enumerate}[label=O\arabic*)]
+%    \item Se cumple una y sólo una de las siguientes condiciones (Tricotomía):
+%        \begin{enumerate}[label=\roman*)]
+%        \item $0<x$.% En este caso decimos que $x$ es un número real positivo.
+%        \item $x=0$.
+%        \item $x<0$.% En este caso decimos que $x$ es un número real negativo.
+%        \end{enumerate}
+%    \item Si $0<x$ y $0<y$, entonces $0<x+y$.
+%    \item Si $0<x$ y $0<y$, entonces $0<x\cdot y$.
+%\end{enumerate}
+Existe un subconjunto del conjunto de los números reales llamado conjunto de los números reales positivos, denotado con el símbolo $\R^+$, el cual satisface las siguientes propiedades:%. Describimos las propiedades de orden de $\R$ en términos de $\R^+$.% El conjunto $\R^+$ satisface los siguientes \textbf{axiomas (de orden)}:
+\vspace{-1em} \begin{enumerate}[start=12]%[label=O\arabic*)]
+\item Si $x, y \in \R^+$, entonces $x + y \in \R^+$. (Cerradura de la suma en $\R^+$).
+\item Si $x, y \in \R^+$, entonces $x \cdot y \in \R^+$. (Cerradura de la multiplicación en $\R^+$).
+\item Para cada $x\in \R$, se verifica una y solo una de las siguientes condiciones (Tricotomía):
+\begin{enumerate}[label=\roman*)]
+\item $x \in \R^+$.
+\item $x = 0$.
+\item $-x \in \R^+$.
 \end{enumerate}
-\bfit{Definición:} \begin{itemize}
-    \item% Si $m$ es un número real tal que $0<m$, decimos que $m$ es un número real positivo.
-    Al conjunto de los números reales positivos lo denotaremos con el símbolo $\R^+$.
-    \item% Si $m$ es un número real tal que $m<0$, decimos que $m$ es un número real negativo.
-    Al conjunto de los números reales negativos lo denotaremos con el símbolo $\R^-$.
+\end{enumerate}\vspace{-1em}
+%
+\bfit{Teorema:} $0\notin \R^+$. (Cero no es positivo).
+\vspace{-1em}
+\begin{proof}
+Si $0\in \R^+$ también $-0\in \R^+$, pues $0=-0$. Además $0=0$, es decir, se verifican las tres condiciones de tricotomía, lo que contradice que solo una debe cumplirse. Por tanto, $0\notin \R^+$.
+\end{proof} \vspace{-1em}
+
+\subsection*{Números negativos}
+
+%Notemos que si $x\in \R$ tal que $x\in \R^+$, se verifica que $\exists (-x)\in \R$ y
+Notemos que si $x\in \R^+$, por tricotomía, $x\neq 0$, y por esto $-x\neq 0$. Asimismo, $-x\notin \R^+$. De esto sigue que $-x\in \R\setminus \R^+\union \set{0}$. Recíprocamente, si $-x\notin \R^+$ y $-x\neq 0$, por tricotomía se verifica que $-(-x)=x\in \R^+$. En otras palabras, $x\in \R^+ \Longleftrightarrow -x\in \R\setminus \R^+\union \set{0}$.
+
+\bfit{Definición:}\begin{itemize}
+    \item Denotaremos al conjunto $\R\setminus \R^+\union \set{0}$ con el símbolo $\R^-$ y lo llamaremos conjunto de los números reales negativos.
+    \item Al conjunto $\R^+\union \set{0}$ lo llamaremos conjunto de los números reales no negativos.
+\end{itemize}
+Usando la definición, tenemos que $x\in \R^+ \Longleftrightarrow -x\in \R^-$, y de forma equivalente, $-y\in \R^+ \Longleftrightarrow y\in \R^-$, pues $-(-y)=y$. Notemos que por definición, si $x\in \R$ con $x\neq 0$, $x$ y $-x$ pertenecen a conjuntos disjuntos, uno es positivo y el otro negativo.% A este hecho lo llamaremos la disjunción de inversos aditivos.
+%\bfit{Definición:}\begin{itemize}
+%    \item Al conjunto $\R^+\defined \set{0<x| x\in \R}$ lo llamaremos conjunto de los números reales positivos.
+%    \item Al conjunto $\R^-\defined \set{x<0| x\in \R}$ lo llamaremos conjunto de los números reales negativos.
+%\end{itemize}
+
+Por lo anterior, si $x\in \R$, por tricotomía tenemos los casos (excluyentes): \vspace{-1em}\begin{enumerate}[label=\roman*)]
+\item $x \in \R^+ \Longleftrightarrow -x\in \R^-$.
+\item $x = 0$.
+\item $-x \in \R^+ \Longleftrightarrow x\in \R^-$.
+\end{enumerate}\vspace{-1em}
+
+Convenientemente, reescribimos la propiedad de tricotomía como sigue:
+
+Para cada $x\in \R$, se verifica una y solo una de las siguientes condiciones\vspace{-1em} \begin{enumerate}[label=\roman*)]
+    \item $x\in \R^+$.
+    \item $x=0$.
+    \item $x\in \R^-$.
+\end{enumerate}\vspace{-1em}
+%\bfit{Teorema:} $0\notin \R^-$.
+%\vspace{-1em}
+%\begin{proof}
+%Si $0\in \R^-$, entonces $-0=0\in \R^+$, pero cero no es positivo. Por tanto, $0\notin \R^-$.
+%\end{proof} \vspace{-1em}
+%
+
+\subsection*{Relación de orden}
+
+Por otra parte, notemos que para cualesquiera números reales $x$ y $y$ tenemos que $x=y$ o $x\neq y$. A su vez, \vspace{-1em}\begin{enumerate}[label=\roman*)]
+\item Si $x=y$, entonces $x-y=0$.
+\item Si $x\neq y$, por tricotomía tenemos dos casos (excluyentes):\begin{itemize}
+    \item $x-y\in \R^+$.
+    \item $x-y\in \R^-$.
+\end{itemize}%  o .%$-(x-y)=y-x\in \R^+$.% (o equivalentemente $x-y\in \R^-$).
+\end{enumerate}\vspace{-1em}
+%\begin{enumerate}[label=\roman*)]
+%\item $x\in \R^+$ y $y\in \R^+$.
+%\item $x=0$ y $y\in \R^+$.
+%\item $x\in \R^+$ y $y=0$.
+%\item $x=0$ y $y=0$.
+%\item $x=0$ y $y\in \R^-$.
+%\item $x\in \R^-$ y $y=0$.
+%\item $x\in \R^-$ y $y\in \R^-$.
+%\item $x\in \R^-$ y $y\in \R^+$.
+%\item $x\in \R^+$ y $y\in \R^-$.
+%\end{enumerate}
+\textbf{Nota:} Sabemos que si $x,y\in \R$, $x-y$ es un número real, pero aún no contamos con las herramientas para verificar la pertenencia de $x-y$ respecto de $\R^+$ y $\R^-$. Sin embargo, cuando dicha pertenencia ocurran, usaremos la siguiente \bfit{definición}:
+
+\pagebreak
+
+\begin{itemize}
+\item Si $x-y\in \R^+$, diremos que $x$ es mayor que $y$ y escribiremos $y<x$ (o $x>y$).% o $x>y$.
+\item Si $x-y\in \R^-$, diremos que $x$ es menor que $y$ y escribiremos $x<y$ (o $y>x$).% o $y>x$.
 \end{itemize}
 
-\begin{enumerate}[label=O\arabic*),resume]
-    \item Si $m, n \in \R^+$, entonces $m + n \in \R^+$. (Cerradura de la suma en $\R^+$).
-    \item Si $m, n \in \R^+$, entonces $m \cdot n \in \R^+$. (Cerradura de la multiplicación en $\R^+$).
-\end{enumerate}
-%Existe un subconjunto del conjunto de los números reales llamado conjunto de los números reales positivos, denotado con el símbolo $\R^+$. A los elementos de este conjunto los llamaremos números reales positivos. El conjunto $\R^+$ satisface los siguientes \textbf{axiomas (de orden)}:
-%%
-%\begin{enumerate}[label=O\arabic*)]
-%\item Si $m, n \in \R^+$, entonces $m + n \in \R^+$. (Cerradura de la suma en $\R^+$)
-%\item Si $m, n \in \R^+$, entonces $m \cdot n \in \R^+$. (Cerradura de la multiplicación en $\R^+$)
-%\item Para cada número real $m$ se cumple una y sólo una de las siguientes condiciones (Tricotomía):
-%    \begin{enumerate}[label=\roman*)]
-%    \item $m \in \R^+$.
-%    \item $m = 0$.
-%    \item $-m \in \R^+$.
-%    \end{enumerate}
-%\end{enumerate}
+%Por tricotomía, para cada $x\in \R$ con $x\neq 0$, tenemos que $x\in \R^+$ o $x\in \R^-$. Como $x=x+0=x-0$, sigue que
+En particular, sabemos que para $x\in \R$ se verifica que $x=x+0=x-0$, por lo que
+\vspace{-1em}\begin{enumerate}[label=\roman*)]
+\item Si $x\in \R^+$, entonces $x-0\in \R^+$, lo que denotamos como $0<x$ o $x>0$. Recíprocamente, si $0<x$ o $x>0$, por definición $x-0=x\in \R^+$.
+\item Si $x\in \R^-$, entonces $x-0\in \R^-$, lo que denotamos como $x<0$ o $0>x$. Recíprocamente, si $x<0$ o $0>x$, por definición $x-0=x\in \R^-$.
+\end{enumerate}\vspace{-1em}
 
-\bfit{Definición:}  Sean $m$ y $n$ números reales.\begin{itemize}
-    \item Si $0<m-n$, decimos que $m$ es menor que $n$ o que $n$ es mayor que $m$ y escribimos $m<n$ o $n>m$.
-    \item Si $n-m<0$, decimos que $m$ es mayor que $n$ o que $n$ es menor que $m$ y escribimos $m>n$ o $n<m$.
+Puesto de otro modo, tenemos que \vspace{-1em}\begin{enumerate}[label=\roman*)]
+    \item $x\in \R^+$ si y solo si $0<x$. (Definición de número real positivo).
+    \item $x\in \R^-$ si y solo si $x<0$. (Definición de número real negativo).
+\end{enumerate}\vspace{-1em}
+
+%Por tricotomía, para cada $x\in \R$ con $x\neq 0$ tenemos que $x\in \R^+$ o $-x\in \R^+$. \vspace{-1em}\begin{enumerate}[label=\roman*)]
+%    \item Sabemos que $x=x+0=x-0$, por lo que si $x\in \R^+$, entonces $x-0\in \R^+$, lo que escribimos como $0<x$.% Por tanto, definimos $\R^+\defined \set{0<x:x\in \R}$.
+%    \item Sabemos que $-x=0-x$, por lo que si $-x\in \R^+$ tenemos $0-x\in \R^+$, lo que escribimos como $x<0$.% Por tanto, definimos $\R^-\defined \set{x<0:x\in \R}$.
+%\end{enumerate}\vspace{-1em}
+%%\bfit{Teorema:} $y\in \R^-$ si y solo si $y<0$. (Definición de número real negativo).
+%\vspace{-1em}
+%\begin{proof} \leavevmode
+%    \begin{itemize}
+%    \item[$\Rightarrow)$] Si $y\in \R^-$, entonces $-y\in \R^+$. Como $-y$ es inverso aditivo positivo, sigue que $y<0$.
+%    \item[$\Leftarrow)$] Si $y<0$, entonces $-y\in \R^+$, ya que es inverso aditivo positivo. Como $-y$ es positivo, sigue que $y\in \R^-$. \qedhere
+%    \end{itemize}
+%\end{proof} \vspace{-1em}
+%
+Por tanto, una forma equivalente de la propiedad de tricotomía es la siguiente: para cada $x\in \R$, se verifica una y solo una de las siguientes condiciones:\vspace{-1em} \begin{enumerate}[label=\roman*)]
+    \item $0<x$.
+    \item $x=0$.
+    \item $x<0$.
+\end{enumerate}\vspace{-1em}
+
+%Es inmediato que si
+Sea $x\in \R$ con $x\neq 0$, como $x$ y $-x$ pertenecen a conjuntos disjuntos,\vspace{-1em}\begin{enumerate}[label=\roman*)]
+\item Si $0<x$, entonces $-x<0$.
+\item Si $x<0$, entonces $0<-x$.
+\end{enumerate}\vspace{-1em}
+
+En otras palabras, $0<x$ si y solo si $-x<0$.
+
+\textbf{Notación:} Sean $x,y,z\in \R$.\begin{itemize}
+    \item Utilizaremos la notación $x<y<z$ para indicar que $x<y$ y $y<z$.
+    \item Escribimos $x\geq y$ o $y\leq x$, si $y<x$ o $x=y$.
 \end{itemize}
 %
-%\bfit{Definición:}  Sean $a$ y $b$ números reales, decimos que: \begin{itemize}
+%\textbf{Definición:} Para cada $x\in \R$ se verifica que $x+0=x-0$, por lo que si $x\in \R^+$ tenemos $x-0\in \R^+$, lo que escribimos como $0<x$. Por tanto, definimos $\R^+\defined \set{0<x:x\in \R}$.
+%
+%\textbf{Definición:} Para cada $x\in \R$ se verifica que $\exists (-x)\in \R$. Notemos que $-x=0-x$, por lo que si $-x\in \R^+$ tenemos $0-x\in \R^+$, lo que escribimos como $x<0$. Definimos al conjunto de los números reales negativos como sigue: $\R^-\defined \set{x<0:x\in \R}$.
+%
+%%\bfit{Definición:}  Sean $a$ y $b$ números reales, decimos que: \begin{itemize}
 %    \item $a$ es menor que $b$ o que $b$ es mayor que $a$ y escribimos $a<b$ o $b>a$, si $b-a \in \R^+$.
 %    \item $a$ es menor o igual que $b$ o que $b$ es mayor o igual que $a$, y escribimos $a \leq b$ o $b \%geq a$, si $b - a \in \R^+$ o $a = b$.
 %\end{itemize}
 %
-\textbf{Notación:} Sean $m$, $n$ y $l$ números reales, utilizaremos la notación $m<n<l$ para indicar que $m<n$ y $n<l$.
+%\textbf{Notación:} Sean $x$, $y$ y $z$ números reales, utilizaremos la notación $m<n<z$ para indicar que $x<y$ y $y<z$.
 \subsection*{Lista de Ejercicios 5 (LE5)}
 Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 \begin{enumerate}[label=\alph*)]
-%    \item $a \in \R^+$ si y solo si $a>0$. (Definición de número real positivo).
-%    \vspace{-1em}\begin{proof} \leavevmode
-%        \begin{itemize}
-%            \item[$\Rightarrow)$] Supongamos que $a \in \R^+$. El cero satisface que $a=a+0=a-0$, y por la hipótesis, $a-0 \in \R^+$, lo que por definición implica que $a>0$.
-%            \item[$\Leftarrow)$] Supongamos que $a>0$. Por definición, $a-0 \in \R^+$, y sabemos que el cero satisface que $a-0=a+0=a$, por lo que $a \in \R^+$. \qedhere
-%        \end{itemize}
-%    \end{proof} \vspace{-1em}
-%
-%    \bfit{Definición:}  Si $x$ es un número real tal que $0<x$ diremos que $x$ es un númeo real positivo.
+%\item $a \in \R^+$ si y solo si $a>0$. (Definición de número real positivo).
+%\vspace{-1em}\begin{proof} \leavevmode
+%    \begin{itemize}
+%        \item[$\Rightarrow)$] El cero satisface que $a=a+0=a-0$. Si $a \in \R^+$, entonces $a-0 \in \R^+$, es decir, $0<a$.
+%        \item[$\Leftarrow)$] Si $0<a$, entonces $a-0 \in \R^+$, y sabemos que el cero satisface que $a-0=a+0=a$, por lo que $a \in \R^+$. \qedhere
+%    \end{itemize}
+%\end{proof} \vspace{-1em}
+%\bfit{Definición:}  Si $x$ es un número real tal que $0<x$ diremos que $x$ es un númeo real positivo.
     %La definición de número real positivo es equivalente a número real mayor a cero.
     %Todo número real positivo es mayor a cero, y todo número real mayor a cero es un número real positivo.
     %
@@ -1232,15 +1434,29 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     %\[
     %    \R^-\coloneqq \set{m\in \R: -a\in \R^+}
     % \]
-
+%
     \item $0\notin \R^+$ y $0\notin \R^-$.
     \vspace{-1em}\begin{proof} 
-    Si suponemos que $0\in \R^+$ o $0\in \R^-$, tenemos que $0<0$, lo que contradice el axioma de tricotomía.
+    Si $0\in \R^+$ o $0\in \R^-$, tenemos que $0<0$, lo que contradice el axioma de tricotomía.
     \end{proof} \vspace{-1em}
-
-    \item $0<1$.% (Uno es positivo).
+%
+    %\item $0<a$ si y solo si $-a<0$.
+    %\vspace{-1em}
+    %\begin{proof}
+    %    \begin{itemize}
+    %        \item[$\Rightarrow)$] Sea $0<a$. Por tricotomía tenemos tres casos \begin{enumerate}[label=\roman*)]
+    %            \item Si $0<-a$, por la cerradura de la suma en $\R^+$, $0<-a+a=0$, lo que es una contradicción.
+    %            \item El inverso aditivo satisface $a-a=0$. Si $-a=0$, sigue que $a-a=a+0=a$, es decir, $a=0$, lo que es una contradicción.
+    %        \end{enumerate} Por tanto si $0<a$, entonces $-a<0$.
+    %        \item[$\Leftarrow)$] Sea $-a<0$. Por tricotomía tenemos tres casos \begin{enumerate}[label=\roman*)]
+    %            \item El inverso aditivo satisface que $a-a=0$. Si $a<0$, por la cerradura de la suma en $\R^+$,
+    %        \end{enumerate}
+    %    \end{itemize}
+    %\end{proof} \vspace{-1em}
+%
+    \item $0<1$. (Uno es positivo).
     \vspace{-1em}\begin{proof} 
-        Supongamos que $1\leq 0$. Por axioma del neutro multiplicativo, $1\neq 0$, por lo que descartamos este caso, entonces tenemos que $1<0$, y por definición, $0-1=-1>0$. Por la cerradura de la multiplicación en $\R^+$ se verifica que $(-1) \cdot (-1) \in \R^+$, de donde sigue que $(-1) \cdot (-1) = 1>0$, lo que contradice el supuesto inicial. Por tanto, $0<1$.
+        Por axioma del neutro multiplicativo, $1\neq 0$. Si $1<0$, por definición, $0-1=-1>0$. Por la cerradura de la multiplicación en $\R^+$ se verifica que $(-1) \cdot (-1) \in \R^+$, de donde sigue que $(-1) \cdot (-1) = 1>0$, es decir, tenemos que $1>0$ y $1<0$, pero esto contradice la propiedad de transitividad. Por tanto, $0<1$.
     \end{proof} \vspace{-1em}
     %\textbf{Nota:} Es inmediato que $1\in \R^+ \iff 0<1 \iff -1<0$.
 
@@ -1279,8 +1495,9 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \end{align*} De este modo, $b-a>0$, es decir, $a<b$. \qedhere
         \end{itemize}    
     \end{proof} \vspace{-1em}
-
     \textbf{Nota:} Si el contexto es claro, enunciaremos esta proposición como ley de cancelación.
+
+\pagebreak
 
     \bfit{Corolario:}
     \begin{enumerate}[label=\roman*)]
@@ -1485,6 +1702,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \item Sin pérdida de generalidad, si $0<a$ y $b<0$, tenemos que $0<-b$, y por la cerradura de la multiplicación en $\R^+$, $0<-ab$, por lo que $ab<0$.
         \item Si $a<0$ y $b<0$, entonces $0<-a$ y $0<-b$, por lo que $0<(-a)(-b)=ab$.
     \end{enumerate}
+
     Conclusión:
     \begin{enumerate}[label=\arabic*)]
         \item Por (i) y (ii) sabemos que para verificar $ab<0$, un componente del producto debe ser positivo y el otro negativo.
@@ -1523,6 +1741,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     %    \end{enumerate}
     %\end{itemize} \qed
 
+\pagebreak
+
     \item $0\leq a^2$.
     \vspace{-1em}\begin{proof} 
         Por tricotomía $a=0$ o $0<a$ o $a<0$. Si $a=0$, entonces $a^2=a\cdot a =0 \cdot 0 =0$. Luego,
@@ -1548,8 +1768,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     
         \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$. (Punto medio).
         \vspace{-1em}\begin{proof} \leavevmode% \vspace{-1em}
-            \begin{center}\vspace{-4em}
-            \begin{minipage}[t]{.3\linewidth}
+            \begin{center}\vspace{-2em}
+            \begin{minipage}[r]{.4\linewidth}
             \begin{align*}
             a &< b \\
             a + a &< a+b \\
@@ -1559,7 +1779,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
             a &< \frac{a+b}{2}
             \end{align*}
             \end{minipage}%
-            \begin{minipage}[t]{.3\linewidth}
+            \begin{minipage}[l]{.4\linewidth}
             \begin{align*}
             a &< b \\
             a + b &< b+b \\
@@ -1573,8 +1793,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \end{proof} \vspace{-1em}
         \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
         %\textbf{Observación:} \[b-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b}{2}-a\]
-
-\pagebreak
 
     \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
     
@@ -1688,6 +1906,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 %        \R^+\cup \set{0}
 %        \]
 
+\pagebreak
+
 \section*{Valor absoluto}
 
 \bfit{Definición:}  Sea $a$ un número real, definimos el valor absoluto de $a$, denotado por $|a|$ como sigue:
@@ -1779,8 +1999,6 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
 
 \textbf{Nota:} Nos referiremos a esta proposición como teorema para eliminar el valor absoluto en algunas desigualdades.
 
-\pagebreak
-
     \item $|a+b|\leq |a|+|b|$. (Desigualdad del triángulo).
 
     \vspace{-1em}\begin{proof} 
@@ -1816,26 +2034,25 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
     \end{align*}
     \end{minipage}
     \end{center}
-    Por el teorema para eliminar el valor absoluto en algunas desigualdades, de las desigualdades (*) y (**) sigue que $\big| |a| - |b| \big| \leq |a-b|$.
+    De las desigualdades (*) y (**) sigue que $\big| |a| - |b| \big| \leq |a-b|$.
     \end{proof} \vspace{-1em}
 
     \bfit{Corolario:} $|a|-|b|\leq |a-b|$ y $|b|-|a|\leq |a-b|$.
-
-    Por la desigualdad del triángulo inversa, $\big| |a|-|b| \big| \leq |a-b|$, y por el teorema para eliminar el valor absoluto en algunas desigualdades, $-|a-b|\leq |a|-|b|\leq |a-b|$. Por lo que,
-    \begin{center}\vspace{-2.5em}
-        \begin{minipage}[t]{.3\linewidth}
-        \begin{align*}
-            |a|-|b| &\leq |a-b| && \qquad \text{y}
-        \end{align*}
-        \end{minipage}%
-        \begin{minipage}[t]{.3\linewidth}
-        \begin{align*}
-            -|a-b| &\leq |a|-|b|\\
-            -\bigl(|a|-|b|\bigr) &\leq |a-b| \\
-            |b|-|a| &\leq |a-b|
-        \end{align*}
-        \end{minipage}
-        \end{center}
+    Por la desigualdad del triángulo inversa, $\big| |a|-|b| \big| \leq |a-b|$, de donde $-|a-b|\leq |a|-|b|\leq |a-b|$. Por lo que,
+    \begin{center}\vspace{-2em}
+    \begin{minipage}[t]{.3\linewidth}
+    \begin{align*}
+        |a|-|b| &\leq |a-b| && \qquad \text{y}
+    \end{align*}
+    \end{minipage}%
+    \begin{minipage}[t]{.3\linewidth}
+    \begin{align*}
+        -|a-b| &\leq |a|-|b|\\
+        -\bigl(|a|-|b|\bigr) &\leq |a-b| \\
+        |b|-|a| &\leq |a-b| && \qedhere
+    \end{align*}
+    \end{minipage}
+    \end{center}
 
 \item Si $b\neq 0$, entonces $\left| \frac{a}{b} \right| = \frac{|a|}{|b|}$.
 
@@ -1852,7 +2069,7 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
 
 \pagebreak
 
-\section*{Inducción matemática}
+\part*{Inducción matemática}
 
 \bfit{Definición:}  Sea $A\subset \R$, decimos que $A$ es un conjunto inductivo si se cumplen las siguientes condiciones:
     \begin{enumerate}[label=\roman*)]
