@@ -1343,15 +1343,13 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     %        \end{enumerate}
     %    \end{itemize}
     %\end{proof} \vspace{-1em}
-    \item Si $a<b$, entonces $\exists! x\in \R^+$ tal que $a+x=b$.
-    \begin{proof}\vspace{-1em} \leavevmode
-    \begin{enumerate}[label=\roman*)]
-    \item Primero probaremos su existencia. Sea $a<b$. Por definición, $b-a\in \R^+$. Tomando $x=b-a$, tenemos que $a+x=a+b-a=b$.
-    \item Ahora probaremos la unicidad. Sean $x,y\in \R^+$ tales que $a+x=b$ y $a+y=b$, notemos que $x=b-a$ y $y=b-a$, es decir, $x=y$. \qedhere
-    \end{enumerate}\vspace{-1em}
-    \end{proof} \vspace{-1em}
-    
-
+%    \item Si $a<b$, entonces $\exists! x\in \R^+$ tal que $a+x=b$.
+%    \begin{proof}\vspace{-1em} \leavevmode
+%    \begin{enumerate}[label=\roman*)]
+%    \item Primero probaremos su existencia. Sea $a<b$. Por definición, $b-a\in \R^+$. Tomando $x=b-a$, tenemos que $a+x=a+b-a=b$.
+%    \item Ahora probaremos la unicidad. Sean $x,y\in \R^+$ tales que $a+x=b$ y $a+y=b$, notemos que $x=b-a$ y $y=b-a$, es decir, $x=y$. \qedhere
+%    \end{enumerate}\vspace{-1em}
+%    \end{proof} \vspace{-1em}
     \item Si $a<b$ y $b<c$, entonces $a<c$. (Transitividad).
     \vspace{-1em}\begin{proof} 
         Por definición $(b-a) , (c-b) \in \R^+$. Por cerradura de la suma en $\R^+$, $(b-a) + (c-b) \in \R^+$. De donde sigue que $(b-a)+(c-b)=b-a+c-b=c-a\in \R^+$, es decir, $a<c$.
@@ -1369,22 +1367,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     
     \vspace{-1em}\begin{proof} \leavevmode
     \begin{itemize}
-        \item[$\Rightarrow)$] Si $a<b$, por definición, $b-a \in \R^+$. Luego, \begin{align*}
-            b - a% &= b -a + 0 && \text{Neutro aditivo}\\
-            &= b-a+c-c && \text{Inverso aditivo}\\
-            &= b+c-a-c && \text{Conmutatividad}\\
-            %&= b+c+(-a)+(-c) && \text{Notación}\\
-            %&= b+c+(-1)a+(-1)c && \text{Multiplicación por ($-1$)}\\
-            %&= b+c+(-1)(a+c) && \text{Distribución}\\
-            %&= b+c+\big(-(a+c)\big) && \text{Multiplicación por ($-1$)}\\
-            &= b+c-(a+c) && \text{Distribución del signo}
-            \end{align*} De este modo, $b+c-(a+c)\in \R^+$, es decir, $a+c<b+c$.
-        \item[$\Leftarrow)$] Si $a+c<b+c$, por definición $b+a-(a+c)\in \R^+$. Luego, \begin{align*}
-            b+c-(a+c) &= b+c-a-c && \text{Distribución del signo}\\
-            %&= b-a+c-c && \text{Conmutatividad}\\
-            %&= b-a+0 && \text{Inverso aditivo}\\
-            &= b-a && \text{Inverso aditivo}
-        \end{align*} De este modo, $b-a\in \R^+$, es decir, $a<b$. \qedhere
+        \item[$\Rightarrow)$] Si $a<b$, por definición, $b-a \in \R^+$. Luego, $b-a=b-a+c-c=b+c-a-c=b+c-(a+c)$. De este modo, $b+c-(a+c)\in \R^+$, es decir, $a+c<b+c$.
+        \item[$\Leftarrow)$] Si $a+c<b+c$, por definición $b+a-(a+c)\in \R^+$. Luego, $b+c-(a+c)=b+c-a-c=b-a$. De este modo, $b-a\in \R^+$, es decir, $a<b$. \qedhere
         \end{itemize}    
     \end{proof} \vspace{-1em}
     \textbf{Nota:} Si el contexto es claro, enunciaremos esta proposición como ley de cancelación.
@@ -1508,11 +1492,16 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
             \end{align*}
         \end{minipage}
         \end{center}
+        \item Si $a<0$ y $0<b$, entonces $a<a+b<b$.
+        
+        Por transitividad $a<b$. Tomando $0<b$, por ley de cancelación, $a<b+a$, y tomando $a<0$, por ley de cancelación, $a+b<b$. Por tanto, $a<a+b<b$.
     \end{enumerate} % Corolario
+
+\pagebreak
 
     \item Si $a<b$ y $c < d$, entonces $a+c<b+d$. (Suma de desigualdades).
     \vspace{-1em}\begin{proof} 
-        Por definición $b-a\in \R^+$ y $d-c\in \R^+$. Por cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c)=b+d-a-c\in \R^+$. Por distribución del signo $b+d-a-c=b+d-(a+c)\in \R^+$, es decir, $a+c<b+d$.
+    Por definición $b-a\in \R^+$ y $d-c\in \R^+$. Por cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c)\in \R^+$. Luego, $(b-a)+(d-c)=b+d-a-c=b+d-(a+c)$. Por lo que $b+d-(a+c)=\in \R^+$, es decir, $a+c<b+d$.
     \end{proof} \vspace{-1em}
     %\textbf{Observación:} La suma de desigualdades preserva el orden.
     %\textbf{Nota:} No hay doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de este hecho únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
@@ -1525,11 +1514,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 %
         \item Si $a<0$ y $b<0$, entonces $a+b<0$.% (Cerradura de la suma en $\R^-$).
         
-        Por este teorema $a+b<0=0+0$.
-
-        \item Si $a<0$ y $0<b$, entonces $a<a+b<b$.
-        
-        Si $a<0$ y $0<b$, por transitividad $a<b$. Tomando $a<0$ por la ley de cancelación, $a+b<b=0+b$. Y tomando, $0<b$, por la ley de cancelación, $0+a=a<b+a$. Osea $a<a+b<b$.
+        Por este teorema $a+b<0+0=0$.
     \end{enumerate}
 
     \item Si $a<b$ y $0<c$, entonces $ac<bc$.% (Multiplicación por positivo).
@@ -1642,6 +1627,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
     %\textbf{Observación:} \[b-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b}{2}-a\]
 
+\pagebreak
+
     \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
     
     Para que $\exists a^{-1}$, requerimos $a\neq 0$. También, sabemos que $a\neq 1$ y $a\neq -1$ pues $1=1^{-1}$ y $-1=(-1)^{-1}$, pero buscamos desigualdad. Entonces, observemos los casos: \begin{enumerate}[label=\roman*)]
@@ -1680,13 +1667,12 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \item Si $a<0$ y $0<b$, entonces $\frac{1}{a}<0$ y $0<\frac{1}{b}$. Por transitividad, $\frac{1}{a}<\frac{1}{b}$.
         % por ley de los signos, $ab<0$, por lo que $\frac{1}{ab}<0$. De donde sigue que $b \cdot \frac{1}{ab} = \frac{1}{a} < \frac{1}{b} = a\cdot \frac{1}{ab}$.
         \item Si $b<0$ y $0<a$, por transitividad, $b<a$, lo que contradice el supuesto inicial (descartamos este caso).
-        \item Si $a<0$ y $b<0$, entonces\begin{align*}
+        \item Si $a<0$ y $b<0$, por ley de los signos $0<a a$, $0<b b$ y $0<ab$. Luego,\begin{align*}
             a &< b && \text{Supuesto inicial}\\
-            a \cdot b &<a\cdot a&& \text{Multiplicación por negativo}\\
-            (a \cdot a) \cdot b &<( a\cdot b)\cdot b&& \text{Multiplicación por negativo}\\
-            a^2b &< ab^2 && \text{Notación} && \text{(*)}
-        \end{align*} Sabemos que $a^2>0$ y $b^2>0$, y por la ley de los signos, $a^2b^2>0$, de donde sigue que $\frac{1}{a^2b^2}>0$. De (*) obtenemos que \begin{align*}
-            \bigl(a^2b\bigr) \cdot \frac{1}{a^2b^2} &< \bigl(ab^2\bigr)\cdot \frac{1}{a^2b^2}\\
+            a \cdot (ab) &< b \cdot (ab) && \text{(*)}
+            %a^2b &< ab^2 && \text{Notación} && \text{(*)}
+        \end{align*} Por ley de los signos, $aa\cdot bb>0$, de donde sigue que $\frac{1}{aa\cdot bb}>0$. De (*) obtenemos que \begin{align*}
+            \bigl(a \cdot (ab)\bigr) \cdot \frac{1}{aa\cdot bb} &< \bigl(b \cdot (ab)\bigr)\cdot \frac{1}{aa\cdot bb}\\
             \frac{1}{b} &< \frac{1}{a}
         \end{align*}
     \end{enumerate}
@@ -1872,6 +1858,8 @@ Demuestre lo siguiente:
         Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{ n\in \N : m+n \in \N \}$. Por definición, $1\in \N$ y $m+1\in \N$, entonces $1\in A$, es decir, $A\neq \emptyset$. \\[5pt] Por otra parte, si $n\in A$ debe ser el caso que $n\in \N$ y $m+n\in \N$. Como $\N$ es un conjunto inductivo, $n+1 \in \N$ y $(m+n)+1 \in \N$, luego, por la asociatividad de la suma, $m+(n+1)\in \N$. Por la condición de $A$, se cumple que $n+1\in A$, por lo que $A$ es un conjunto inductivo. De esto se concluye que $\N\subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la suma de números naturales es un número natural.    
     \end{proof} \vspace{-1em}
 
+\pagebreak
+
     \item Si $m,n\in \N$, entonces $m\cdot n \in \N$. (Cerradura de la multiplicación en $\N$).
     \vspace{-1em}\begin{proof}$ $\newline
         Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{n\in \N: m\cdot n \in \N\}$. Por definición, $1 \in \N$. Adenás, $m\cdot 1 \in \N$, entonces $1 \in A$, es decir $A \neq \emptyset$.
@@ -2046,7 +2034,7 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
                 %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
             \end{array} \right.
         \end{align*}
-    Si $n+1=1$, sigue que $n=0$, pero $n\geq 1$, lo que es una contradicción. Por tanto, $1^{n+1}=1\cdot 1^n=1^n$, por (ii) se verifica que $1^n=1$, es decir, $1^{n+1}=1$, lo que implica que $n+1\in A$.
+    Como $n+1>1$, sigue que $1^{n+1}=1\cdot 1^n=1^n$, por (ii) se verifica que $1^n=1$, es decir, $1^{n+1}=1$, lo que implica que $n+1\in A$.
     \end{enumerate}
 
     Por el principio de inducción matemática, $A=\N$, por lo que $1^n=1, \forall n\in \N$.
@@ -2085,6 +2073,20 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
     \end{align*}\vspace{-2em}
     \end{enumerate}\vspace{-1em}
     Por el principio de inducción matemática, $A=\N$, por lo que $a^m \cdot a^n = a^{m+n}, \forall m,n\in \N$.
+    \end{proof} \vspace{-1em}
+
+    \item $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+    \vspace{-1em}
+    \begin{proof}
+    Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.\begin{enumerate}[label=\roman*)]
+    \item Notemos que \begin{align*}
+    \frac{a^1}{b^1} &= \frac{a}{b}\\
+    &= \qty(\frac{a}{b})^1
+    \end{align*}
+    Por lo que $1\in A$.
+    \item Si $n\in A$, tenemos $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+    \item Por definición 
+    \end{enumerate}
     \end{proof} \vspace{-1em}
 
     \item $\frac{a^n}{a^m} = a^{n-m}$.
