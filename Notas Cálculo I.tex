@@ -382,9 +382,7 @@ Introducimos la propiedad que nos permite relacionar las operaciones de suma $+$
 %
 %En este apartado utilizaremos un ejemplo para puntualizar la falta de rigor en la que pueden caer los estudiantes; dichas puntualizaciones pueden parecer exageradas y el lector podría considerar que el autor está siendo \textit{pedante} en el uso sintáctico de los axiomas, pero la idea es proveer al estudiante de un uso riguroso de la formalización matemática.
 %
-Sean $a$ y $b$ números reales.
-
-Consideremos la proposición: $b\cdot 0 = 0$. El siguiente es un esbozo de la prueba propuesta por un estudiante:
+Proposición: $b\cdot 0 = 0$. El siguiente es un esbozo de la prueba propuesta por un estudiante:
 %\vspace{1em} \begin{align*}
 %    b \cdot 0 &= b\cdot \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
 %    &= ab + (-ab) && \text{Distribución}\\
@@ -635,11 +633,11 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
 
 \end{enumerate}
 
-\section*{Notación}
+\pagebreak
 
-Esta sección tiene el propósito de introducir al lector al uso de notación por cambio de \textit{etiqueta}, esto es, asignar distintos símbolos a \textit{objetos} con los que hemos trabajado, con el fin de agilizar la demostración de teoremas.
+\textbf{Notación}
+%Esta sección tiene el propósito de introducir al lector al uso de notación por cambio de \textit{etiqueta}, esto es, asignar distintos símbolos a \textit{objetos} con los que hemos trabajado, con el fin de agilizar la demostración de teoremas.
 \begin{itemize}
-\item Si $x\in \R$, representaremos con el símbolo $x^2$ a la multiplicación $x\cdot x$.%, y lo llamaremos el cuadrado de $x$.
 \item Si $x$ y $y$ son números reales, representaremos con el símbolo $x-y$ a la suma $x+(-y)$.
 \item Si $x,y\in \R$ y $y\neq 0$, representaremos con el símbolo $ \frac{x}{y}$ al número $x \cdot y^{-1}$.
 \item Si $x$ y $y$ son números reales, representaremos con el símbolo $xy$ a la multiplicación $x\cdot y$.
@@ -650,18 +648,6 @@ Esta sección tiene el propósito de introducir al lector al uso de notación po
 Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
-    \item $(a+b)(a-b)=a^2-b^2$. (Diferencia de cuadrados).
-\vspace{-1em}\begin{proof} 
-    \begin{align*}
-    (a+b)(a-b) &= (a+b)\bigl(a+(-b)\bigr) && \text{Notación}\\
-    &= (a+b)\cdot a + (a+b)\cdot (-b) && \text{Distribución}\\
-    &= a\cdot (a+b) + (-b)\cdot (a+b) && \text{Conmutatividad}\\
-    &= a\cdot a + a\cdot b + (-b)\cdot a + (-b) \cdot b && \text{Distribución}\\
-    &= a^2+ ab -ba -b^2 && \text{Notación}\\
-    &=a^2-b^2 && \text{Inverso aditivo} \qedhere
-    \end{align*}    
-\end{proof} \vspace{-1em}
-
     \item $\frac{a}{b}=a\cdot \frac{1}{b}$, si $b\neq 0$.% (Definición de la división).
     \vspace{-1em}
     \begin{proof} 
@@ -778,8 +764,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     \end{align*}     
     \end{proof} \vspace{-1em}
 
-\pagebreak
-
     \item $\frac{a}{c} \pm  \frac{b}{c}=\frac{a\pm b}{c}$, si $c\neq 0$. (Suma de fracciones con denominador conmún).
     \vspace{-1em}
     \begin{proof} 
@@ -801,6 +785,27 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     &= \frac{ad \pm cb}{bd} && \text{Suma de fracciones con denominador común} \qedhere
     \end{align*}
     \end{proof} \vspace{-1em}
+
+    \item $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$, si $b\neq 0$.
+    \vspace{-1em}\begin{proof} \leavevmode
+        \begin{center}\vspace{-2em}
+            \begin{minipage}[t]{.5\linewidth}
+                \begin{align*}
+                    \frac{-a}{b} &= (-a)\cdot b^{-1} && \text{Notación}\\
+                    &= -\bigl(ab^{-1}\bigr) && \text{Multiplicación por inverso aditivo}\\
+                    &= -\frac{a}{b} && \text{Notación}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}[t]{.5\linewidth}
+                \begin{align*}
+                    \frac{a}{-b} &= a \cdot (-b)^{-1} && \text{Notación}\\
+            &= -\bigl(ab^{-1}\bigr) && \text{Multiplicación por inverso aditivo}\\
+            &= -\frac{a}{b} && \text{Notación} \qedhere
+                \end{align*}
+            \end{minipage}
+            \end{center}    
+    \end{proof} \vspace{-1em}
+    \textbf{Nota:} En esta prueba está implícito que $\exists (-b)^{-1}\in \R$, lo cual es válido, pues $b\neq 0$, por lo que $-b\neq 0$.
     %\vspace{-1em}\begin{proof} \begin{align*}
     %    \frac{a}{b} \pm \frac{c}{d} &= ab^{-1} \pm cd^{-1} && \text{Notación}\\
     %    &= a\cdot 1 \cdot b^{-1} \pm c\cdot 1 \cdot d^{-1} && \text{Neutro multiplicativo}\\
@@ -889,6 +894,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 %\end{proof} \vspace{-1em}
 \end{enumerate}
 
+\pagebreak
 
 \subsection*{Una nota sobre notación}
 
@@ -938,6 +944,32 @@ Podemos probar igualdad de todas ellas a partir de las propiedades de la suma/mu
     &= b \ \nicefrac{+}{\cdot} \ (a \ \nicefrac{+}{\cdot} \ c) && \text{Conmutatividad}&& \text{Forma (xi)}\\
     &= (b \ \nicefrac{+}{\cdot} \ a) \ \nicefrac{+}{\cdot} \ c && \text{Asociatividad}&& \text{Forma (xii)}
 \end{align*}
+
+A partir de esta igualdad (y otras probadas anteriormente) introducimos la siguiente \textbf{notación:}
+
+\begin{itemize}%[label=\roman*)]
+\item Si $x$, $y$ y $z$ son números reales, representaremos con el símbolo $x+y+z$ a la suma de estos.
+%
+%Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de sumar tres números reales son equivalentes.
+%
+%\item Si $x$ y $y$ son números reales, representaremos con el símbolo $xy$ a la multiplicación $x\cdot y$; a esta multiplicación la llamaremos el producto de $x$ y $y$.
+%
+%Podemos usar esta notación sin ambigüedad pues $x\cdot y = y\cdot x$ por la conmutatividad de la multiplicación.
+%%
+%Ya que hemos probado que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$, por esta notación podemos reescribir $(-x)y=-(xy)=x(-y)$.
+
+\item Si $x$, $y$ y $z$ son números reales, representaremos con el símbolo $xyz$ a la multiplicación de estos.
+%cualquiera de los símbolos \begin{itemize}%[label=\roman*)]
+%    \item $x\cdot y\cdot z$
+%    \item $x\cdot z\cdot y$
+%    \item $y\cdot x\cdot z$
+%    \item $y\cdot z\cdot x$
+%    \item $z\cdot x\cdot y$
+%    \item $x\cdot y\cdot z$
+%\end{itemize}
+%A la multiplicación de $x$, $y$ y $z$.
+%
+%Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de multiplicar tres números reales son equivalentes.
 %
 %Las siguientes son todas las \textit{formas} en que podríamos sumar tres números reales $a$, $b$ y $c$.
 %\begin{center}
@@ -1034,53 +1066,16 @@ Podemos probar igualdad de todas ellas a partir de las propiedades de la suma/mu
 %    &= (b\cdot a)\cdot c && \text{Asociatividad}&& \text{Forma (xii)}
 %\end{align*}
 
-Así como reutilizar las \textit{formas} de proposiciones probadas nos permite agilizar la escritura de demostraciones; establecer notación tiene el mismo propósito. No obstante, cada vez que acordemos el uso de notación esta debe ser justificada para evitar ambigüedad; en ocasiones la justificación es tan simple como utilizar diferentes \textit{etiquetas} para los mismos \textit{objetos}, como ya ha sido empleada, pero en otras, la notación requiere de mayor explicación para su uso adecuado.% y evitar \textit{abuso de la notación}.
+%Así como reutilizar las \textit{formas} de proposiciones probadas nos permite agilizar la escritura de demostraciones; establecer notación tiene el mismo propósito. No obstante, cada vez que acordemos el uso de notación esta debe ser justificada para evitar ambigüedad; en ocasiones la justificación es tan simple como utilizar diferentes \textit{etiquetas} para los mismos \textit{objetos}, como ya ha sido empleada, pero en otras, la notación requiere de mayor explicación para su uso adecuado.% y evitar \textit{abuso de la notación}.
 
 %\textbf{Notación:}
-
-\pagebreak
-
-\begin{enumerate}[label=\roman*)]
-\item Si $x$, $y$ y $z$ son números reales, representaremos con el símbolo $x+y+z$ a la suma de estos.
-
-Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de sumar tres números reales son equivalentes.
-%
-%\item Si $x$ y $y$ son números reales, representaremos con el símbolo $xy$ a la multiplicación $x\cdot y$; a esta multiplicación la llamaremos el producto de $x$ y $y$.
-%
-%Podemos usar esta notación sin ambigüedad pues $x\cdot y = y\cdot x$ por la conmutatividad de la multiplicación.
-%%
-%Ya que hemos probado que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$, por esta notación podemos reescribir $(-x)y=-(xy)=x(-y)$.
-
-\item Si $x$, $y$ y $z$ son números reales, representaremos con el símbolo $x\cdot y\cdot z$ a la multiplicación de estos.
-%cualquiera de los símbolos \begin{itemize}%[label=\roman*)]
-%    \item $x\cdot y\cdot z$
-%    \item $x\cdot z\cdot y$
-%    \item $y\cdot x\cdot z$
-%    \item $y\cdot z\cdot x$
-%    \item $z\cdot x\cdot y$
-%    \item $x\cdot y\cdot z$
-%\end{itemize}
-%A la multiplicación de $x$, $y$ y $z$.
-Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de multiplicar tres números reales son equivalentes.
-
-Por la notación (ii) podemos usar el símbolo $xyz$ para representar la multiplicación de cualesquiera números reales $x$, $y$ y $z$.
-%Asimismo, de la notación (ii) obtenemos que podemos usar cualquiera de los símbolos \begin{itemize}%[label=\roman*)]
-%    \item $xyz$
-%    \item $xzy$
-%    \item $yxz$
-%    \item $yzx$
-%    \item $zxy$
-%    \item $xyz$
-%\end{itemize}
-%Para representar la multiplicación de $x$, $y$ y $z$.
-
-\item Si $x$ y $y$ son números reales, representaremos con el símbolo $-xy$ a cualquiera de los productos $(-x)\cdot y$, $-(x \cdot y)$ o $x\cdot (-y)$.
+\item Si $x$ y $y$ son números reales, representaremos con el símbolo $-xy$ a cualquiera de $(-x)\cdot y$, $-(x \cdot y)$ o $x\cdot (-y)$.
 
 Podemos usar esta notación sin ambigüedad ya que hemos probado que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$.
-
-Por la notación (ii) podemos reescribir esta igualdad como $(-x)y=-(xy)=x(-y)$, sin embargo, de esta no se obtiene el símbolo $-xy$.
-
-\item Si $x$ es un número real, representaremos con el símbolo $-x^{-1}$ al inverso multiplicativo de $-x$ o al inverso aditivo de $x^{-1}$.
+%
+%Por la notación (ii) podemos rees%cribir esta igualdad como $(-x)y=-(xy)=x(-y)$, sin embargo, de esta no se obtiene el símbolo $-xy$.
+%
+\item Si $x\in \R$, representaremos con el símbolo $-x^{-1}$ al inverso multiplicativo de $-x$ o al inverso aditivo de $x^{-1}$.
     
 Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(x^{-1})=(-x)^{-1}$.
 %
@@ -1090,36 +1085,13 @@ Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(x^{-1})=
 %Observemos que sería un error reescribir la multiplicación $x\cdot (-y)$ como $a-b$, pues reservamos esta notación para la suma $a+(-y)$, por lo que $x\cdot (-y)$ debería reescribirse como $x(-y)$.
 %
 
-\item Al número $1+1$ lo denotaremos con el símbolo $2$ y lo llamaremos número dos. Al número $2+1$ lo denotaremos con el símbolo $3$ y lo llamaremos número tres...
-\end{enumerate}
+\item Al número $1+1$ lo denotaremos con el símbolo $2$. Al número $2+1$ lo denotaremos con el símbolo $3$...
+\end{itemize}
 
 %\textbf{Ejercicio:} Reescriba las demostraciones de las listas de ejercicios 1,2 y 3, utilizando esta notación.
 
-\textbf{Nota:} El uso de notación es opcional y en ocasiones prescindiremos de ella para procurar claridad.% en las demostraciones.
+\textbf{Nota:} El uso de notación es opcional y en ocasiones prescindimos de ella.%prescindiremos de ella para procurar claridad.% en las demostraciones.
 
-El siguiente es un ejemplo del uso de la notación listada arriba:
-
-$\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$, si $b\neq 0$.
-    \vspace{-1em}\begin{proof} \leavevmode
-        \begin{center}\vspace{-2em}
-            \begin{minipage}[t]{.5\linewidth}
-                \begin{align*}
-                    \frac{-a}{b} &= (-a)\cdot b^{-1} && \text{Notación (viii)}\\
-                    &= - \bigl(ab^{-1}\bigr) && \text{Notación (iv)}\\
-                    &= -\frac{a}{b} && \text{Notación (viii)}
-                \end{align*}
-            \end{minipage}%
-            \begin{minipage}[t]{.5\linewidth}
-                \begin{align*}
-                    \frac{a}{-b} &= a \cdot (-b)^{-1} && \text{Notación (viii)}\\
-            &= -\bigl(ab^{-1}\bigr) && \text{Notación (iv)}\\
-            &= -\frac{a}{b} && \text{Notación (viii)} \qedhere
-                \end{align*}
-            \end{minipage}
-            \end{center}    
-    \end{proof} \vspace{-1em}
-    \textbf{Nota:} En esta prueba está implícito que $\exists (-b)^{-1}\in \R$, lo cual es válido, pues $b\neq 0$, por lo que $-b\neq 0$.
-    %
     %\textbf{Demostración:} \begin{align*}
     %    \frac{a}{-b} &= \frac{-(-a)}{-b} && \text{Unicidad del inverso aditivo}\\
     %    &= \bigl(-(-a)\bigr) \cdot (-b)^{-1} && \text{Notación}\\
@@ -1133,7 +1105,8 @@ $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$, si $b\neq 0$.
     %\end{align*} De las igualdades (*) y (**) tenemos que $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$.
 
 \pagebreak
-\subsection*{Un campo finito}
+
+\section*{Un campo finito}
 
 Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$. El siguiente es un esbozo de la prueba:
 \vspace{1em}\begin{align*}
@@ -1166,7 +1139,7 @@ Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$. El siguiente es un esboz
 %a\cdot (2) &= b\cdot (2) &&\text{Notación} \\
 %a &= b && \text{¿Ley de cancelación?}
 %\end{align*}
-A pesar de que se verifica la igualdad $2a=2b$, aún necesitamos justificar que $a=b$. Podríamos apelar a la ley de cancelación de la multiplicación, pero para su uso requerimos que $2\neq 0$, el cual es un hecho que hasta ahora no ha sido demostrado. No obstante, los axiomas que hemos listado y los resultados que hemos obtenido de ellos no son suficientes para probar este hecho, el lector debería indagar cuáles serían las implicaciones si se define que $2=0$. Para clarificar este punto, consideremos el siguiente conjunto: %, pues si suponemos que $2=0$, tendríamos consistencia con todos los axiomas listados hasta ahora, es decir, no habría motivo para suponer que $2\neq 0$.
+A pesar de que se verifica la igualdad $2a=2b$, aún necesitamos justificar que $a=b$. Podríamos apelar a la ley de cancelación de la multiplicación, pero para su uso requerimos que $2\neq 0$, el cual es un hecho que hasta ahora no ha sido demostrado. No obstante, los axiomas que hemos listado y los resultados que hemos obtenido de ellos no son suficientes para probar este hecho, el lector debería indagar en las implicaciones de definir que $2=0$ y decidir si este hecho es contradictorio. Para clarificar este punto, consideremos el siguiente conjunto: %, pues si suponemos que $2=0$, tendríamos consistencia con todos los axiomas listados hasta ahora, es decir, no habría motivo para suponer que $2\neq 0$.
 %Supongamos que $2=0$.
 %
 %\begin{enumerate}[label=\roman*)]
@@ -1193,7 +1166,7 @@ Sea $\Omega$ un conjunto dotado con las operaciones suma $+$ y multipllicación 
 
 ¿Qué elementos pertenecen a $\Omega$?
 
-Sabemos que el $0$ y $1$ son elementos de $\Omega$, en virtud de los axiomas (4) y (9). Asimismo, por el axioma (5) tenemos los inversos aditivos de $0$ y $1$, es decir, garantizamos la existencia de $-1$ y $-0$. De la misma manera, por el axioma (10) podemos afirmar que $1^{-1}$ es un miembro de $\Omega$. Sin embargo, los axiomas de conmutatividad (2) y (7), de asociatividad (3) y (8), y el axioma de distribución (11), no son axiomas de existencia y para su uso requerimos elementos de $\Omega$, es decir, no podemos \textit{conocer} elementos adicionales de $\Omega$ directamente de estos axiomas.
+Sabemos que $0$ y $1$ son elementos de $\Omega$, en virtud de los axiomas (4) y (9). Asimismo, el axioma (5) garantiza la existencia de $-1$ y $-0$. De la misma manera, por el axioma (10) podemos afirmar que $1^{-1}$ es un miembro de $\Omega$. Sin embargo, los axiomas de conmutatividad (2) y (7), de asociatividad (3) y (8), y el axioma de distribución (11), no son axiomas de existencia y para su uso requerimos elementos de $\Omega$, es decir, no podemos \textit{conocer} elementos adicionales de $\Omega$ apartir de estos.
 
 Con estas consideraciones, sabemos que $\set{0,1,-0,-1,1^{-1}}\subset \Omega$. Sin embargo, hemos probado que $0=-0$ y $1=1^{-1}$, por lo que hasta ahora, solo podemos afirmar que $0,1,-1$ son miembros de $\Omega$.
 
@@ -1214,18 +1187,18 @@ Finalmente, por el axioma de cerradura (1) se verifica lo siguiente:
     \item $1+(-1)\in \Omega$, pero como $1+(-1)=0$, no encontramos un miembro distinto a los conocidos.
     \item$1+1\in \Omega$, el cual es un elemento del que no podemos afirmar sea distinto a los conocidos.
 \end{enumerate}
-Si definimos que bajo $\Omega$, $2=0$, es decir, que $1+1=0$, entonces $1+1$ no sería un miembro distinto a los conocidos. Además, por unicidad del inverso aditivo, si $1+1=0$, sigue que $1=-1$. De este modo, $\Omega$ cumpliría con todos los axiomas de campo consistentemente y constaría de los elementos $0$ y $1$ únicamente.
+Si definimos que bajo $\Omega$, $2=0$, es decir, que $1+1=0$, entonces $1+1$ no sería un miembro distinto a los conocidos. Además, por unicidad del inverso aditivo, si $1+1=0$, sigue que $1=-1$. De este modo, $\Omega$ cumpliría con todos los axiomas de campo consistentemente y su extensión sería $\Omega \defined \set{0,1}$.
 
-Por lo anterior, si buscamos expandir el conjunto de los números reales, requerimos establecer propiedades adicionales.
-
-\textbf{Nota:} Hasta este punto el autor ha procurado enunciar cada propiedad que se utiliza en la demostración de proposiciones, sin embargo, se espera que con el dominio de dichas propiedades y el manejo adecuado de la notación, el lector sea capáz de inferir el uso que de estas propiedades y notación en pruebas de futuras proposiciones. Por ello dejaremos de enunciar cada propiedad que sea empleada excepto en aquellos casos en los que el autor considere que se requiera para preservar claridad. Sin embargo, el dejar de enunciar propiedades empleadas lo realizaremos paulatinamente, de modo que el lector pueda acostumbrarse a esta forma de escritura.
+Por lo anterior, para expandir el conjunto de los números reales, requerimos establecer propiedades adicionales.
+%
+%\textbf{Nota:} Hasta este punto al probar proposiciones el autor ha procurado enunciar cada propiedad que se utiliza, sin embargo, se espera que el lector sea capáz de inferir el uso de estas y de la notación en lo que resta del curso. Por ello dejaremos de enunciar cada propiedad o proposición que sea empleada excepto en aquellos casos en los que el autor considere que se requiera para preservar claridad.% Sin embargo, el dejar de enunciar propiedades empleadas lo realizaremos paulatinamente, de modo que el lector pueda acostumbrarse a esta forma de escritura.
 
 \pagebreak
 
 \part*{Axiomas de orden}
 
-\subsection*{Números positivos}
-
+%\subsection*{Números positivos}
+%
 %\begin{enumerate}[label=O\arabic*)]
 %    \item Se cumple una y sólo una de las siguientes condiciones (Tricotomía):
 %        \begin{enumerate}[label=\roman*)]
@@ -1247,131 +1220,53 @@ Existe un subconjunto del conjunto de los números reales llamado conjunto de lo
 \item $-x \in \R^+$.
 \end{enumerate}
 \end{enumerate}\vspace{-1em}
-%
-\bfit{Teorema:} $0\notin \R^+$. (Cero no es positivo).
-\vspace{-1em}
-\begin{proof}
-Si $0\in \R^+$ también $-0\in \R^+$, pues $0=-0$. Además $0=0$, es decir, se verifican las tres condiciones de tricotomía, lo que contradice que solo una debe cumplirse. Por tanto, $0\notin \R^+$.
-\end{proof} \vspace{-1em}
 
-\subsection*{Números negativos}
+\subsection*{Lista de Ejercicios}
+\begin{enumerate}[label=\alph*)]
+    \item Demuestre que $0\notin \R^+$.
+    \vspace{-1em}\begin{proof} 
+    Si $0\in \R^+$ se contradice el axioma de tricotomía.
+    \end{proof} \vspace{-1em}
 
-%Notemos que si $x\in \R$ tal que $x\in \R^+$, se verifica que $\exists (-x)\in \R$ y
-Notemos que si $x\in \R^+$, por tricotomía, $x\neq 0$, y por esto $-x\neq 0$. Asimismo, $-x\notin \R^+$. De esto sigue que $-x\in \R\setminus \R^+\union \set{0}$. Recíprocamente, si $-x\notin \R^+$ y $-x\neq 0$, por tricotomía se verifica que $-(-x)=x\in \R^+$. En otras palabras, $x\in \R^+ \Longleftrightarrow -x\in \R\setminus \R^+\union \set{0}$.
+    \item Demuestre que $1\in \R^+$. (Uno es positivo).
+    \vspace{-1em}\begin{proof} Consideremos los casos: \begin{enumerate}[label=\roman*)]
+    \item $1=0$, pero este caso se descarta por axioma del neutro multiplicativo.
+    \item Si $-1\in \R^+$, por cerradura de la multiplicación en $\R^+$, $(-1) \cdot (-1)=1\in \R^+$, pero esto contradice la propiedad de tricotomía.
+    \end{enumerate} Por tanto, $1\in \R^+$.
+    \end{proof} \vspace{-1em}
+\end{enumerate}
 
-\bfit{Definición:}\begin{itemize}
-    \item Denotaremos al conjunto $\R\setminus \R^+\union \set{0}$ con el símbolo $\R^-$ y lo llamaremos conjunto de los números reales negativos.
-    \item Al conjunto $\R^+\union \set{0}$ lo llamaremos conjunto de los números reales no negativos.
-\end{itemize}
-Usando la definición, tenemos que $x\in \R^+ \Longleftrightarrow -x\in \R^-$, y de forma equivalente, $-y\in \R^+ \Longleftrightarrow y\in \R^-$, pues $-(-y)=y$. Notemos que por definición, si $x\in \R$ con $x\neq 0$, $x$ y $-x$ pertenecen a conjuntos disjuntos, uno es positivo y el otro negativo.% A este hecho lo llamaremos la disjunción de inversos aditivos.
-%\bfit{Definición:}\begin{itemize}
-%    \item Al conjunto $\R^+\defined \set{0<x| x\in \R}$ lo llamaremos conjunto de los números reales positivos.
-%    \item Al conjunto $\R^-\defined \set{x<0| x\in \R}$ lo llamaremos conjunto de los números reales negativos.
-%\end{itemize}
-
-Por lo anterior, si $x\in \R$, por tricotomía tenemos los casos (excluyentes): \vspace{-1em}\begin{enumerate}[label=\roman*)]
-\item $x \in \R^+ \Longleftrightarrow -x\in \R^-$.
-\item $x = 0$.
-\item $-x \in \R^+ \Longleftrightarrow x\in \R^-$.
-\end{enumerate}\vspace{-1em}
-
-Convenientemente, reescribimos la propiedad de tricotomía como sigue:
-
-Para cada $x\in \R$, se verifica una y solo una de las siguientes condiciones\vspace{-1em} \begin{enumerate}[label=\roman*)]
-    \item $x\in \R^+$.
-    \item $x=0$.
-    \item $x\in \R^-$.
-\end{enumerate}\vspace{-1em}
-%\bfit{Teorema:} $0\notin \R^-$.
-%\vspace{-1em}
-%\begin{proof}
-%Si $0\in \R^-$, entonces $-0=0\in \R^+$, pero cero no es positivo. Por tanto, $0\notin \R^-$.
-%\end{proof} \vspace{-1em}
-%
-
-\subsection*{Relación de orden}
-
-Por otra parte, notemos que para cualesquiera números reales $x$ y $y$ tenemos que $x=y$ o $x\neq y$. A su vez, \vspace{-1em}\begin{enumerate}[label=\roman*)]
-\item Si $x=y$, entonces $x-y=0$.
-\item Si $x\neq y$, por tricotomía tenemos dos casos (excluyentes):\begin{itemize}
-    \item $x-y\in \R^+$.
-    \item $x-y\in \R^-$.
+\textbf{Observación:} para cualesquiera números reales $a$ y $b$ tenemos que $a=b$ o $a\neq b$. A su vez, \vspace{-1em}\begin{enumerate}[label=\roman*)]
+\item Si $a=b$, entonces $a-b=0$.
+\item Si $a\neq b$, por tricotomía tenemos dos casos (excluyentes):\begin{itemize}
+    \item $a-b\in \R^+$.%, lo que denotamos como $b<a$ (o $a>b$).
+    \item $-(a-b)=b-a\in \R^+$.%, lo que denotamos como $a<b$ (o $b>a$).
 \end{itemize}%  o .%$-(x-y)=y-x\in \R^+$.% (o equivalentemente $x-y\in \R^-$).
 \end{enumerate}\vspace{-1em}
-%\begin{enumerate}[label=\roman*)]
-%\item $x\in \R^+$ y $y\in \R^+$.
-%\item $x=0$ y $y\in \R^+$.
-%\item $x\in \R^+$ y $y=0$.
-%\item $x=0$ y $y=0$.
-%\item $x=0$ y $y\in \R^-$.
-%\item $x\in \R^-$ y $y=0$.
-%\item $x\in \R^-$ y $y\in \R^-$.
-%\item $x\in \R^-$ y $y\in \R^+$.
-%\item $x\in \R^+$ y $y\in \R^-$.
-%\end{enumerate}
-\textbf{Nota:} Sabemos que si $x,y\in \R$, $x-y$ es un número real, pero aún no contamos con las herramientas para verificar la pertenencia de $x-y$ respecto de $\R^+$ y $\R^-$. Sin embargo, cuando dicha pertenencia ocurran, usaremos la siguiente \bfit{definición}:
 
-\pagebreak
+A partir de esta observación introducimos la siguiente \bfit{definición:}
 
-\begin{itemize}
-\item Si $x-y\in \R^+$, diremos que $x$ es mayor que $y$ y escribiremos $y<x$ (o $x>y$).% o $x>y$.
-\item Si $x-y\in \R^-$, diremos que $x$ es menor que $y$ y escribiremos $x<y$ (o $y>x$).% o $y>x$.
+Sean $x,y\in \R$, \begin{itemize}
+    \item Si $x-y\in \R^+$, escribimos $y<x$ (o $x>y$).
 \end{itemize}
 
-%Por tricotomía, para cada $x\in \R$ con $x\neq 0$, tenemos que $x\in \R^+$ o $x\in \R^-$. Como $x=x+0=x-0$, sigue que
-En particular, sabemos que para $x\in \R$ se verifica que $x=x+0=x-0$, por lo que
-\vspace{-1em}\begin{enumerate}[label=\roman*)]
-\item Si $x\in \R^+$, entonces $x-0\in \R^+$, lo que denotamos como $0<x$ o $x>0$. Recíprocamente, si $0<x$ o $x>0$, por definición $x-0=x\in \R^+$.
-\item Si $x\in \R^-$, entonces $x-0\in \R^-$, lo que denotamos como $x<0$ o $0>x$. Recíprocamente, si $x<0$ o $0>x$, por definición $x-0=x\in \R^-$.
+De esta definición sigue que dados $x,y\in \R$, por tricotomía se verifica una y solo una de las siguientes condiciones\vspace{-1em} \begin{enumerate}[label=\roman*)]
+    \item $y<x$.
+    \item $x=y$.
+    \item $x<y$.
 \end{enumerate}\vspace{-1em}
 
-Puesto de otro modo, tenemos que \vspace{-1em}\begin{enumerate}[label=\roman*)]
-    \item $x\in \R^+$ si y solo si $0<x$. (Definición de número real positivo).
-    \item $x\in \R^-$ si y solo si $x<0$. (Definición de número real negativo).
-\end{enumerate}\vspace{-1em}
-
-%Por tricotomía, para cada $x\in \R$ con $x\neq 0$ tenemos que $x\in \R^+$ o $-x\in \R^+$. \vspace{-1em}\begin{enumerate}[label=\roman*)]
-%    \item Sabemos que $x=x+0=x-0$, por lo que si $x\in \R^+$, entonces $x-0\in \R^+$, lo que escribimos como $0<x$.% Por tanto, definimos $\R^+\defined \set{0<x:x\in \R}$.
-%    \item Sabemos que $-x=0-x$, por lo que si $-x\in \R^+$ tenemos $0-x\in \R^+$, lo que escribimos como $x<0$.% Por tanto, definimos $\R^-\defined \set{x<0:x\in \R}$.
-%\end{enumerate}\vspace{-1em}
-%%\bfit{Teorema:} $y\in \R^-$ si y solo si $y<0$. (Definición de número real negativo).
-%\vspace{-1em}
-%\begin{proof} \leavevmode
-%    \begin{itemize}
-%    \item[$\Rightarrow)$] Si $y\in \R^-$, entonces $-y\in \R^+$. Como $-y$ es inverso aditivo positivo, sigue que $y<0$.
-%    \item[$\Leftarrow)$] Si $y<0$, entonces $-y\in \R^+$, ya que es inverso aditivo positivo. Como $-y$ es positivo, sigue que $y\in \R^-$. \qedhere
-%    \end{itemize}
-%\end{proof} \vspace{-1em}
-%
-Por tanto, una forma equivalente de la propiedad de tricotomía es la siguiente: para cada $x\in \R$, se verifica una y solo una de las siguientes condiciones:\vspace{-1em} \begin{enumerate}[label=\roman*)]
-    \item $0<x$.
-    \item $x=0$.
-    \item $x<0$.
-\end{enumerate}\vspace{-1em}
-
-%Es inmediato que si
-Sea $x\in \R$ con $x\neq 0$, como $x$ y $-x$ pertenecen a conjuntos disjuntos,\vspace{-1em}\begin{enumerate}[label=\roman*)]
-\item Si $0<x$, entonces $-x<0$.
-\item Si $x<0$, entonces $0<-x$.
-\end{enumerate}\vspace{-1em}
-
-En otras palabras, $0<x$ si y solo si $-x<0$.
-
-\textbf{Notación:} Sean $x,y,z\in \R$.\begin{itemize}
-    \item Utilizaremos la notación $x<y<z$ para indicar que $x<y$ y $y<z$.
-    \item Escribimos $x\geq y$ o $y\leq x$, si $y<x$ o $x=y$.
+\textbf{Notación:} Dados $x,y,z\in \R$, utilizaremos la notación \begin{itemize}
+    \item $y \leq x$ (o $x\geq y$) para indicar que $y<x$ o $x=y$.
+    \item $x<y<z$ para indicar que $x<y$ y $y<z$.
 \end{itemize}
 %
-%\textbf{Definición:} Para cada $x\in \R$ se verifica que $x+0=x-0$, por lo que si $x\in \R^+$ tenemos $x-0\in \R^+$, lo que escribimos como $0<x$. Por tanto, definimos $\R^+\defined \set{0<x:x\in \R}$.
-%
-%\textbf{Definición:} Para cada $x\in \R$ se verifica que $\exists (-x)\in \R$. Notemos que $-x=0-x$, por lo que si $-x\in \R^+$ tenemos $0-x\in \R^+$, lo que escribimos como $x<0$. Definimos al conjunto de los números reales negativos como sigue: $\R^-\defined \set{x<0:x\in \R}$.
-%
-%%\bfit{Definición:}  Sean $a$ y $b$ números reales, decimos que: \begin{itemize}
-%    \item $a$ es menor que $b$ o que $b$ es mayor que $a$ y escribimos $a<b$ o $b>a$, si $b-a \in \R^+$.
-%    \item $a$ es menor o igual que $b$ o que $b$ es mayor o igual que $a$, y escribimos $a \leq b$ o $b \%geq a$, si $b - a \in \R^+$ o $a = b$.
+%Hasta este punto sabemos que $x-y$ es un número real, pero aún no contamos con las herramientas para verificar la pertenencia de $x-y$ respecto de $\R^+$. Sin embargo, cuando dicha pertenencia ocurra, usaremos la siguiente \textbf{definición}:
+%%Si $x,y\in \R$, por la cerradura de la suma en $\R$, se verifica que $x-y\in \R$, pero aún 
+%\begin{itemize}
+%\item Si $x-y\in \R^+$, lo denotamos como $y<x$ (o $x>y$).% o $x>y$. %diremos que $x$ es mayor que $y$ y
+%\item Si $x-y\in \R^-$, lo denotamos como $x<y$ (o $y>x$).% o $y>x$. %diremos que $x$ es menor que $y$ y
 %\end{itemize}
-%
-%\textbf{Notación:} Sean $x$, $y$ y $z$ números reales, utilizaremos la notación $m<n<z$ para indicar que $x<y$ y $y<z$.
 \subsection*{Lista de Ejercicios 5 (LE5)}
 Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 \begin{enumerate}[label=\alph*)]
@@ -1435,11 +1330,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     %    \R^-\coloneqq \set{m\in \R: -a\in \R^+}
     % \]
 %
-    \item $0\notin \R^+$ y $0\notin \R^-$.
-    \vspace{-1em}\begin{proof} 
-    Si $0\in \R^+$ o $0\in \R^-$, tenemos que $0<0$, lo que contradice el axioma de tricotomía.
-    \end{proof} \vspace{-1em}
-%
     %\item $0<a$ si y solo si $-a<0$.
     %\vspace{-1em}
     %\begin{proof}
@@ -1453,16 +1343,18 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     %        \end{enumerate}
     %    \end{itemize}
     %\end{proof} \vspace{-1em}
-%
-    \item $0<1$. (Uno es positivo).
-    \vspace{-1em}\begin{proof} 
-        Por axioma del neutro multiplicativo, $1\neq 0$. Si $1<0$, por definición, $0-1=-1>0$. Por la cerradura de la multiplicación en $\R^+$ se verifica que $(-1) \cdot (-1) \in \R^+$, de donde sigue que $(-1) \cdot (-1) = 1>0$, es decir, tenemos que $1>0$ y $1<0$, pero esto contradice la propiedad de transitividad. Por tanto, $0<1$.
+    \item Si $a<b$, entonces $\exists! x\in \R^+$ tal que $a+x=b$.
+    \begin{proof}\vspace{-1em} \leavevmode
+    \begin{enumerate}[label=\roman*)]
+    \item Primero probaremos su existencia. Sea $a<b$. Por definición, $b-a\in \R^+$. Tomando $x=b-a$, tenemos que $a+x=a+b-a=b$.
+    \item Ahora probaremos la unicidad. Sean $x,y\in \R^+$ tales que $a+x=b$ y $a+y=b$, notemos que $x=b-a$ y $y=b-a$, es decir, $x=y$. \qedhere
+    \end{enumerate}\vspace{-1em}
     \end{proof} \vspace{-1em}
-    %\textbf{Nota:} Es inmediato que $1\in \R^+ \iff 0<1 \iff -1<0$.
+    
 
     \item Si $a<b$ y $b<c$, entonces $a<c$. (Transitividad).
     \vspace{-1em}\begin{proof} 
-        Por definición $b-a >0$ y $c-b >0$. Por la cerradura de la suma en $\R^+$, $(b-a) + (c-b) >0$. De donde sigue que $(b-a)+(c-b)=b-a+c-b=c-a>0$, es decir, $a<c$.
+        Por definición $(b-a) , (c-b) \in \R^+$. Por cerradura de la suma en $\R^+$, $(b-a) + (c-b) \in \R^+$. De donde sigue que $(b-a)+(c-b)=b-a+c-b=c-a\in \R^+$, es decir, $a<c$.
     \end{proof} \vspace{-1em}
         %\begin{align*}
         %(b-a) + (c-b) &= b - a + c -b && \text{Notación}\\
@@ -1471,13 +1363,13 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         %&= 0 - a +c && \text{Inverso aditivo}\\
         %&= -a +c && \text{Neutro aditivo}\\
         %&= c-a && \text{Conmutatividad}
-        %\end{align*} Entonces $c-a >0$, es decir, $a<c$.
+        %\end{align*} Entonces $c-a \in \R^+$, es decir, $a<c$.
 
     \item $a<b$ si y solo si $a+c<b+c$. (Ley de cancelación de la suma en desigualdades).
     
     \vspace{-1em}\begin{proof} \leavevmode
     \begin{itemize}
-        \item[$\Rightarrow)$] Si $a<b$, por definición, $b-a >0$. Luego, \begin{align*}
+        \item[$\Rightarrow)$] Si $a<b$, por definición, $b-a \in \R^+$. Luego, \begin{align*}
             b - a% &= b -a + 0 && \text{Neutro aditivo}\\
             &= b-a+c-c && \text{Inverso aditivo}\\
             &= b+c-a-c && \text{Conmutatividad}\\
@@ -1486,18 +1378,16 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
             %&= b+c+(-1)(a+c) && \text{Distribución}\\
             %&= b+c+\big(-(a+c)\big) && \text{Multiplicación por ($-1$)}\\
             &= b+c-(a+c) && \text{Distribución del signo}
-            \end{align*} De este modo, $b+c-(a+c)>0$, es decir, $a+c<b+c$.
-        \item[$\Leftarrow)$] Si $a+c<b+c$, por definición $b+a-(a+c)>0$. Luego, \begin{align*}
+            \end{align*} De este modo, $b+c-(a+c)\in \R^+$, es decir, $a+c<b+c$.
+        \item[$\Leftarrow)$] Si $a+c<b+c$, por definición $b+a-(a+c)\in \R^+$. Luego, \begin{align*}
             b+c-(a+c) &= b+c-a-c && \text{Distribución del signo}\\
             %&= b-a+c-c && \text{Conmutatividad}\\
             %&= b-a+0 && \text{Inverso aditivo}\\
             &= b-a && \text{Inverso aditivo}
-        \end{align*} De este modo, $b-a>0$, es decir, $a<b$. \qedhere
+        \end{align*} De este modo, $b-a\in \R^+$, es decir, $a<b$. \qedhere
         \end{itemize}    
     \end{proof} \vspace{-1em}
     \textbf{Nota:} Si el contexto es claro, enunciaremos esta proposición como ley de cancelación.
-
-\pagebreak
 
     \bfit{Corolario:}
     \begin{enumerate}[label=\roman*)]
@@ -1508,8 +1398,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                     \Rightarrow) \qquad \qquad
                     0 &< a && \text{Hipótesis}\\
                     0 + (-a) &< a + (-a) && \text{Ley de cancelación}\\
-                    0 + (-a) &< 0 && \text{Inverso aditivo}\\
-                    -a &< 0 && \text{Neutro aditivo}
+                    %0 + (-a) &< 0 && \text{Inverso aditivo}\\
+                    -a &< 0% && \text{Neutro aditivo}
                 \end{align*}
         \end{minipage}%
         \begin{minipage}[r]{.5\linewidth}
@@ -1517,8 +1407,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                 \Leftarrow) \qquad \qquad
                 -a &< 0 && \text{Hipótesis}\\
                 -a + a &< 0 + a && \text{Ley de cancelación}\\
-                0 &< 0 + a && \text{Inverso aditivo}\\
-                0 &< a && \text{Neutro aditivo} \qedhere
+                %0 &< 0 + a && \text{Inverso aditivo}\\
+                0 &< a%&& \text{Neutro aditivo} \qedhere
             \end{align*}
         \end{minipage}
         \end{center}
@@ -1530,7 +1420,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                 \Rightarrow) \qquad \qquad
                 a &< a + b && \text{Hipótesis}\\
                 a -a &< a + b - a && \text{Ley de cancelación}\\
-                0 &< b && \text{Inverso aditivo}
+                0 &< b% && \text{Inverso aditivo}
             \end{align*}
         \end{minipage}%
         \begin{minipage}[r]{.5\linewidth}
@@ -1538,7 +1428,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                 \Leftarrow) \qquad \qquad
                 0 &< b && \text{Hipótesis}\\
                 0 + a &< a + b && \text{Ley de cancelación}\\
-                a &< a + b && \text{Neutro aditivo}
+                a &< a + b% && \text{Neutro aditivo}
             \end{align*}
         \end{minipage}
         \end{center}
@@ -1548,14 +1438,14 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
             \begin{align*} \Rightarrow) \qquad \qquad
                 a+b &< a && \text{Hipótesis}\\
                 a+b-a &< a-a && \text{Ley de cancelación}\\
-                b &< 0 && \text{Inverso aditivo}
+                b &< 0% && \text{Inverso aditivo}
             \end{align*}
         \end{minipage}%
         \begin{minipage}[r]{.5\linewidth}
             \begin{align*} \Leftarrow) \qquad \qquad
                 b &< 0 && \text{Hipótesis}\\
                 b + a &< 0 + a && \text{Ley de cancelación}\\
-                b+ a &< a && \text{Neutro aditivo}
+                b+ a &< a% && \text{Neutro aditivo}
             \end{align*}
         \end{minipage}
         \end{center}
@@ -1567,7 +1457,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                 -a+a-b &< b +a-b && \text{Ley de cancelación}\\
                 %a-a-b &< b-b+a && \text{Conmutatividad}\\
                 %0-b &< 0 + a && \text{Inverso aditivo}\\
-                -b &< a && \text{Inverso aditivo}
+                -b &< a% && \text{Inverso aditivo}
             \end{align*}
         \end{minipage}%
         \begin{minipage}[r]{.5\linewidth}
@@ -1576,7 +1466,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                 -b + b-a &< a + b-a && \text{Ley de cancelación}\\
                 %b-b-a &< b+a-a && \text{Conmutatividad}\\
                 %0 -a &< b + 0 && \text{Inverso aditivo}\\
-                -a &< b && \text{Inverso aditivo}
+                -a &< b% && \text{Inverso aditivo}
             \end{align*}
         \end{minipage}
         \end{center}
@@ -1587,7 +1477,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                 \Rightarrow) \qquad \qquad
                 a &< -b && \text{Hipótesis}\\
                 a - a + b &< -b -a +b && \text{Ley de cancelación}\\
-                b &< -a && \text{Inverso aditivo}
+                b &< -a% && \text{Inverso aditivo}
             \end{align*}
         \end{minipage}%
         \begin{minipage}[r]{.5\linewidth}
@@ -1595,7 +1485,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                 \Leftarrow) \qquad \qquad
                 b &< -a && \text{Hipótesis}\\
                 b -b +a &< -a + -b +a && \text{Ley de cancelación}\\
-                a &< -b && \text{Inverso aditivo}
+                a &< -b% && \text{Inverso aditivo}
             \end{align*}
         \end{minipage}
         \end{center}
@@ -1606,7 +1496,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                 \Rightarrow) \qquad \qquad
                 a &< b && \text{Hipótesis}\\
                 a -a -b &< b -b -a && \text{Ley de cancelación}\\
-                -b &< -a && \text{Inverso aditivo}
+                -b &< -a% && \text{Inverso aditivo}
             \end{align*}
         \end{minipage}%
         \begin{minipage}[r]{.5\linewidth}
@@ -1614,7 +1504,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
                 \Leftarrow) \qquad \qquad
                 -b &< -a && \text{Hipótesis}\\
                 -b + b +a &< -a +b -a && \text{Ley de cancelación}\\
-                a &< b && \text{Inverso aditivo}
+                a &< b &&% \text{Inverso aditivo}
             \end{align*}
         \end{minipage}
         \end{center}
@@ -1622,28 +1512,18 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
     \item Si $a<b$ y $c < d$, entonces $a+c<b+d$. (Suma de desigualdades).
     \vspace{-1em}\begin{proof} 
-        Por definición $b-a>0$ y $d-c>0$. Por la cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c)>0$. Luego, \begin{align*}
-            (b-a)+(d-c) &= b-a+d-c && \text{Notación}\\
-            &= b+d-a-c && \text{Conmutatividad}\\
-            %&= b+d+(-a)+(-c) && \text{Notación}\\
-            %&= b+d+(-1)a+(-1)c && \text{Multiplicación por ($-1$)}\\
-            %&= b+d+ (-1) (a + c) && \text{Distribución}\\
-            %&= b+d +\big(-(a+c) \big) && \text{Multiplicación por ($-1$)}\\
-            %&= b+d +\big(-(a+c) \big) && \text{Distribución del signo}\\
-            &= b+d - (a+c) && \text{Distribución del signo}
-            \end{align*}
-        De este modo, $b+d-(a+c)>0$, es decir, $a+c<b+d$.    
+        Por definición $b-a\in \R^+$ y $d-c\in \R^+$. Por cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c)=b+d-a-c\in \R^+$. Por distribución del signo $b+d-a-c=b+d-(a+c)\in \R^+$, es decir, $a+c<b+d$.
     \end{proof} \vspace{-1em}
     %\textbf{Observación:} La suma de desigualdades preserva el orden.
-    \textbf{Nota:} No se satisface doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de esta hipótesis únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
+    %\textbf{Nota:} No hay doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de este hecho únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
     %Esta proposición difiere de la ley de la cancelación (de la suma en desigualdades) ya que no se satisface una doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de esta hipótesis únicamente, que $a<b$. Ej. $a=4, c=0, b=3, d=4$, cumplen la hipótesis $a+c=4+0=4<7=3+4=b+d$, pero $a=4<3=b$ es una contradicción.
 
     \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
-        \item Si $0<a$ y $0<b$, entonces $0<a+b$.
-        
-        Por este teorema $0+0=0<a+b$.
-
-        \item Si $a<0$ y $b<0$, entonces $a+b<0$.
+        %\item Si $0<a$ y $0<b$, entonces $0<a+b$.
+        %
+        %Por este teorema $0+0=0<a+b$.
+%
+        \item Si $a<0$ y $b<0$, entonces $a+b<0$.% (Cerradura de la suma en $\R^-$).
         
         Por este teorema $a+b<0=0+0$.
 
@@ -1652,47 +1532,40 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         Si $a<0$ y $0<b$, por transitividad $a<b$. Tomando $a<0$ por la ley de cancelación, $a+b<b=0+b$. Y tomando, $0<b$, por la ley de cancelación, $0+a=a<b+a$. Osea $a<a+b<b$.
     \end{enumerate}
 
-    \item Si $a<b$ y $0<c$, entonces $ac<bc$. (Multiplicación por positivo).
+    \item Si $a<b$ y $0<c$, entonces $ac<bc$.% (Multiplicación por positivo).
     
     \vspace{-1em}\begin{proof} 
-        Por definición $b-a >0$ y $c >0$. Por la cerradura de la multiplicación en $\R^+$ se verifica que $c(b-a) >0$. Por la propiedad distributiva sigue que $c(b-a)=cb-ca$ y por conmutatividad tenemos que $cb-ca=bc-ac$. De este modo, $bc-ac >0$, es decir, $ac<bc$.    
+        Por definición $b-a \in\R^+$ y $c \in\R^+$. Por cerradura de la multiplicación en $\R^+$ se verifica que $c(b-a) \in\R^+$. Sigue que $c(b-a)=cb-ca=bc-ac \in\R^+$, es decir, $ac<bc$.    
     \end{proof} \vspace{-1em}
-
-    \textbf{Observación:} La multiplicación por números reales positivos preserva el orden de la desigualdad.
+%
+    %\textbf{Observación:} La multiplicación por números reales positivos preserva el orden de la desigualdad.
     %\textbf{Nota:} De este resultado sigue que si $m<0$ y $0<n$, entonces $mn<0=0\cdot n$ —multiplicación por cero.
 
-    \item Si $a<b$ y $c<0$, entonces $bc<ac$. (Multiplicación por negativo).
+    \item Si $a<b$ y $c<0$, entonces $bc<ac$.% (Multiplicación por negativo).
     
     \vspace{-1em}\begin{proof} 
-    Por definición $b-a >0$ y $0 - c=-c >0$. Luego, por la cerradura de la multiplicación en $\R^+$, sigue que $-c(b-a) >0$. Notemos que:
-    \begin{align*}
-    -c(b-a) &= -c \Bigl( b + (-a) \Bigr) && \text{Notación}\\
-    &= (-c) \cdot b + (-c) \cdot (-a) && \text{Distribución}\\
-    %&= (-c) \cdot b + c \cdot a && \text{Por (k) de LE1}\\
-    %&= -(c \cdot b) + c \cdot a && \text{Por (i) de LE1}\\
-    %&= ca -(cb) && \text{Conmutatividad}\\
-    %&= ac - (bc) && \text{Conmutatividad}
-    &= -cb +ca && \text{Multiplicación por inverso aditivo}
-    \end{align*}
-    Finalmente, $-cb +ca=ac - bc >0$, es decir, $ac>bc$.    
+    Como $b-a\in\R^+$ y $-c\in\R^+$, por cerradura de la multiplicación en $\R^+$, $-c(b-a) \in\R^+$. Sigue que $-c(b-a)= -c \Bigl( b + (-a) \Bigr)=(-c) \cdot b + (-c) \cdot (-a)=-cb +ca $. Finalmente, $-cb +ca=ac - bc \in\R^+$, es decir, $bc<ac$.    
     \end{proof} \vspace{-1em}
-
-    \textbf{Observación:} La multiplicación por números reales negativos cambia el orden de la desigualdad.
+    %\textbf{Observación:} La multiplicación por números reales negativos cambia el orden de la desigualdad.
     %\textbf{Nota:} De esta demostración sigue que: \begin{enumerate}[label=\roman*)]
     %    \item Si $0<m$ y $n<0$, entonces $mn<0$. (Positivo por negativo/negativo por positivo es negativo).
     %    \item Si $m<0$ y $n<0$, entonces $0<mn$. (Negativo por negativo es positivo).
     %\end{enumerate}
 
-    \item Si $0<a$, entonces $0<a^{-1}$. (Inverso multiplicativo positivo).
+    \item Si $0<a$, entonces $0<a^{-1}$.% (Inverso multiplicativo positivo).
     \vspace{-1em}\begin{proof} 
-    Supongamos que $a^{-1}<0$. Como $0<a$, al multiplicar en desigualdades preserva el orden, por lo que $a^{-1} \cdot a<0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1} \cdot a = 1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a=0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}>0$.
+    Sea que $a^{-1}<0$. Como $0<a$, al multiplicar en desigualdades preserva el orden, por lo que $a^{-1} \cdot a<0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1} \cdot a = 1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a=0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}>0$.
     \end{proof} \vspace{-1em}
     %\text{Nota:} Análogamente, Si $a<0$, entonces $a^{-1}<0$. (Inverso multiplicativo negativo).
 
-    \item Si $a<0$, entonces $a^{-1}<0$. (Inverso multiplicativo negativo).
-    \vspace{-1em}\begin{proof} 
-        Supongamos que $a^{-1}>0$. Como $a<0$, al multiplicar en desigualdades cambia el orden, por lo que $a^{-1} \cdot a < 0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1}\cdot a =1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a =0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}<0$.
+    \bfit{Corolario:} Si $a<0$, entonces $a^{-1}<0$.% (Inverso multiplicativo negativo).
+    \vspace{-1em}
+    \begin{proof}
+    Sea $a<0$, sabemos que $-a>0$, por lo que $-a^{-1}>0$, de donde sigue que $a^{-1}<0$. \qedhere
     \end{proof} \vspace{-1em}
+    %\vspace{-1em}\begin{proof} 
+    %    Sea que $a^{-1}>0$. Como $a<0$, al multiplicar en desigualdades cambia el orden, por lo que $a^{-1} \cdot a < 0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1}\cdot a =1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a =0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}<0$.
+    %\end{proof} \vspace{-1em}
 
     \item Sea $a,b\in \R$. Encuentre las condiciones que deben cumplirse para que $ab<0$ o $0<ab$. (Ley de los signos).
     
@@ -1705,15 +1578,15 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
     Conclusión:
     \begin{enumerate}[label=\arabic*)]
-        \item Por (i) y (ii) sabemos que para verificar $ab<0$, un componente del producto debe ser positivo y el otro negativo.
-        \item Por (iii) sabemos que para verificar $0<ab$, ambos componentes del producto deben ser positivos o ambos negativos.
+        \item Por (i) y (ii), para verificar $ab<0$, un componente debe ser mayor a cero y el otro menor a cero.%un componente del producto debe ser positivo y el otro negativo.
+        \item Por (iii), para verificar $0<ab$, ambos componentes deben ser mayores o ambos menores a cero.%del producto deben ser positivos o ambos negativos.
     \end{enumerate}
-
-    \textbf{Nota:} Nos referiremos a (1) y (2) y a la cerradura de la multiplicación en $\R^+$ como ley de los signos.    
+%
+%    \textbf{Nota:} Nos referiremos a (1) y (2) como ley de los signos.    
     %\item $0<ab$ si y solo si $0<a$ y $0<b$ o $a<0$ y $b<0$. (Producto positivo).
     %\textbf{Demostración:}
     %\begin{itemize}
-    %    \item[$\Rightarrow$)] Supongamos que $0<ab$. Sin pérdida de generalidad, observemos la tricotomía de $a$. Si $a=0$, tenemos que $ab=0$, lo que contradice la hipótesis, por lo que tenemos dos casos:
+    %    \item[$\Rightarrow$)] Sea que $0<ab$. Sin pérdida de generalidad, observemos la tricotomía de $a$. Si $a=0$, tenemos que $ab=0$, lo que contradice la hipótesis, por lo que tenemos dos casos:
     %    \begin{enumerate}[label=\roman*)]
     %        \item si $a>0$, el inverso multiplicativo es positivo, $a^{-1}>0$. Entonces, \begin{align*}
     %            0 &< ab && \text{Hipótesis}\\
@@ -1741,58 +1614,33 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     %    \end{enumerate}
     %\end{itemize} \qed
 
-\pagebreak
-
-    \item $0\leq a^2$.
-    \vspace{-1em}\begin{proof} 
-        Por tricotomía $a=0$ o $0<a$ o $a<0$. Si $a=0$, entonces $a^2=a\cdot a =0 \cdot 0 =0$. Luego,
-        \begin{center}\vspace{-1em}
-            \begin{minipage}[l]{.5\linewidth}
-                \begin{align*}
-                    0 &< a && \text{Hipótesis}\\
-                    0 \cdot a &< a \cdot a && \text{Multiplicación por positivo}\\
-                    0 &< a \cdot a && \text{Multiplicación por 0}\\
-                    0 &< a^2 && \text{Notación}
-                \end{align*}
-            \end{minipage}%
-            \begin{minipage}[r]{.5\linewidth}
-                \begin{align*}
-                    a &< 0 && \text{Hipótesis}\\
-                    0 \cdot a &< a\cdot a && \text{Multiplicación por negativo}\\
-                    0 &< a\cdot a && \text{Multiplicación por 0}\\
-                    0 &< a^2 && \text{Notación}
-                \end{align*}
-            \end{minipage}
-        \end{center} En cualquier caso, $0\leq a^2$.
+    \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$. (Punto medio).
+    \vspace{-1em}\begin{proof} \leavevmode% \vspace{-1em}
+        \begin{center}\vspace{-2em}
+        \begin{minipage}[r]{.4\linewidth}
+        \begin{align*}
+        a &< b \\
+        a + a &< a+b \\
+        2a &< a+b \\
+        %2a \cdot \frac{1}{2} &< (a+b) \cdot \frac{1}{2} \\
+        %\frac{2a}{2} &< \frac{a+b}{2} \\
+        a &< \frac{a+b}{2}
+        \end{align*}
+        \end{minipage}%
+        \begin{minipage}[l]{.4\linewidth}
+        \begin{align*}
+        a &< b \\
+        a + b &< b+b \\
+        a +b &< 2b \\
+        %(a+b) \cdot \frac{1}{2} &< 2b \cdot \frac{1}{2} \\
+        %\frac{a+b}{2} &< \frac{2b}{2} \\
+        \frac{a+b}{2} &< b \qedhere
+        \end{align*}
+        \end{minipage}%
+        \end{center}% Por notación, $a < \frac{a+b}{2} < b$.
     \end{proof} \vspace{-1em}
-    
-        \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$. (Punto medio).
-        \vspace{-1em}\begin{proof} \leavevmode% \vspace{-1em}
-            \begin{center}\vspace{-2em}
-            \begin{minipage}[r]{.4\linewidth}
-            \begin{align*}
-            a &< b \\
-            a + a &< a+b \\
-            2a &< a+b \\
-            %2a \cdot \frac{1}{2} &< (a+b) \cdot \frac{1}{2} \\
-            %\frac{2a}{2} &< \frac{a+b}{2} \\
-            a &< \frac{a+b}{2}
-            \end{align*}
-            \end{minipage}%
-            \begin{minipage}[l]{.4\linewidth}
-            \begin{align*}
-            a &< b \\
-            a + b &< b+b \\
-            a +b &< 2b \\
-            %(a+b) \cdot \frac{1}{2} &< 2b \cdot \frac{1}{2} \\
-            %\frac{a+b}{2} &< \frac{2b}{2} \\
-            \frac{a+b}{2} &< b \qedhere
-            \end{align*}
-            \end{minipage}%
-            \end{center}% Por notación, $a < \frac{a+b}{2} < b$.
-        \end{proof} \vspace{-1em}
-        \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
-        %\textbf{Observación:} \[b-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b}{2}-a\]
+    \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
+    %\textbf{Observación:} \[b-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b}{2}-a\]
 
     \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
     
@@ -1843,8 +1691,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \end{align*}
     \end{enumerate}
     Conclusión: \begin{itemize}
-        \item Por (i) y (iv), si ambos componentes son positivos o ambos negativos, entonces los inversos multiplicativos invierten el orden.
-        \item Por (ii), si el componente menor es negativo y el mayor es positivo, entonces los inversos multiplicativos conservan el orden.
+        \item Por (i) y (iv), si ambos componentes son mayores o ambos menores a cero, los inversos multiplicativos invierten el orden.%positivos o ambos negativos, entonces los inversos multiplicativos invierten el orden.
+        \item Por (ii), si el componente menor es menor a cero y el mayor es mayor a cero, entonces los inversos multiplicativos conservan el orden.
     \end{itemize}
     %
     %\item Si $0 \leq a<b$ y $0 \leq c<d$, entonces $ac<bd$.
@@ -1899,7 +1747,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
         \item Si $b<0$, entonces $b+d<0$ y $d<0$.
     \end{enumerate}
 
-    Por tanto, debe cumplirse que $b$ y $d$ deben ser ambos positivos o ambos negativos.
+    Por tanto, debe cumplirse que $b$ y $d$ deben ser ambos mayores a cero o ambos menores a cero.
 
 \end{enumerate}
 %\bfit{Definición:}  El conjunto de los números reales no negativos es el conjunto: \[
@@ -1908,163 +1756,59 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
 \pagebreak
 
-\section*{Valor absoluto}
+\section*{Números reales negativos}
 
-\bfit{Definición:}  Sea $a$ un número real, definimos el valor absoluto de $a$, denotado por $|a|$ como sigue:
+\bfit{Definición:}\begin{itemize}
+    \item Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
+    \item Llamaremos al conjunto $\R^+\union \set{0}$ conjunto de los números reales no negativos.
+\end{itemize}
 
-    \[
-        |a| = \left\{
-    \begin{array}{@{}r@{\thinspace}l}
-        a, &  \ \text{si}  \ a>0\\
-        0, &  \ \text{si}  \ a=0\\
-        -a, & \  \text{si} \  a<0
-    \end{array} \right. \]
-Notemos que $|a|\geq 0, \ \forall a\in \R$, y que la definición es equivalente a las siguientes:
-
-\begin{center}
-\begin{minipage}[c]{.3\linewidth}
-    \[|a| = \left\{
-        \begin{array}{@{}r@{\thinspace}l}
-            a, & \ \text{si} \ a\geq 0\\
-            -a, & \ \text{si} \ a<0
-        \end{array} \right.\]
-    \end{minipage}%
-\begin{minipage}[c]{.3\linewidth}
-    \[|a| = \left\{
-        \begin{array}{@{}r@{\thinspace}l}
-            a, & \ \text{si} \ a>0\\
-            -a, & \ \text{si} \ a\leq 0
-        \end{array} \right.\]
-\end{minipage}
-\end{center}
-
-El lector de vería verificar este hecho. (\textit{Hint}: $0=-0$).
-
-\subsection*{Lista de Ejercicios 4 (LE4)}
-
-Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
+\subsection*{Lista de ejercicios 6 (LE6)}
 
 \begin{enumerate}[label=\alph*)]
-\item $\pm a\leq |a|$.
+    \item Demuestre que $\R^+$ y $\R^-$ son conjuntos disjuntos.
+    \vspace{-1em}
+    \begin{proof}%$ $\newline 
+    Si $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) \neq \emptyset$, entonces $\exists x\in \R$ tal que \begin{itemize}%[label=\roman*)]
+    \item[(*)] $x\in \R^+$, y 
+    \item[(**)] $x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$.
+    \end{itemize}  De (**) sigue que $x\notin \R^+\union \set{0}$, es decir, $x\notin \set{0}$ y $x\notin \R^+$, pero esto contradice a (*).
 
-\vspace{-1em}\begin{proof}
-    Por casos.
-    \begin{enumerate}[label=\roman*)]
-        \item Si $0 \leq a$, por definición, $|a|=a$, por lo que $a\leq |a|$. Luego, por la hipótesis tenemos que $-a \leq 0$, y por transitividad, $-a\leq |a|$.
-        \item Si $a<0$, por definición, $|a|=-a$, por lo que $-a\leq |a|$. Luego, por la hipótesis tenemos que $0<-a$, y por transitividad, $a<|a|$.
-    \end{enumerate}
-    En cualquier caso, $\pm a\leq |a|$.
-\end{proof} \vspace{-1em}    
+    Por tanto, $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) = \emptyset$, es decir, $\R^+$ y $\R^-$ son conjuntos disjuntos.
+    \end{proof} \vspace{-1em}
 
-\item $|a|=|-a|$.
-\vspace{-1em}\begin{proof}
-    Por casos.
-    \begin{enumerate}[label=\roman*)]
-        \item Si $0 \leq a$, por definición, $|a|=a$. Luego, por la hipótesis tenemos que $-a \leq 0$. Si $-a<0$, $|-a|=a$ y si $-a=0$, $|-a|=a$. De este modo, $|a|=|-a|$.
-        \item Si $a<0$, por definición, $|a|=-a$. Luego, por la hipótesis tenemos que $0<-a$, por lo que $|-a|=-a$. De este modo, $|a|=|-a|$.
-    \end{enumerate}
-    En cualquier caso, $|a|=|-a|$.
-\end{proof} \vspace{-1em}
+    \item Demuestre que si $x,y \in \R^-$, entonces $x+y\in \R^-$. (Cerradura de la suma en $\R^-$).
+    \vspace{-1em}
+    \begin{proof}
+    Sea $x,y\in \R^-$. Sigue que $(-x), (-y)\in \R^+$, y por la cerradura de la suma en $\R^+$, $-x-y=-(x+y)\in \R^+$, por lo que $x+y\in \R^-$.
+    \end{proof} \vspace{-1em}
 
-\item $|ab|=|a||b|$.
-
-\vspace{-1em}\begin{proof}
-    Por casos.
-    \begin{enumerate}[label=\roman*)]
-        \item Si $a>0$ y $b>0$, por definición, $|a|=a$ y $|b|=b$. Luego, $ab>0$ por lo que $|ab|=ab$. Por tanto, $|ab| =|a||b|$.
-        \item Si $a>0$ y $b<0$, por definición, $|a|=a$ y $|b|=-b$. Luego, $ab<0$ por lo que $|ab|=-ab$. Por tanto, $|  ab|=|a||b|$.
-        \item Si $a<0$ y $b<0$, por definición, $|a|=-a$ y $|b|=-b$. Luego, $ab>0$ por lo que $|ab|=ab$. Por tanto, $|  ab|=|a||b|$.
-    \end{enumerate}
-    En cualquier caso, $|ab|=|a||b|$.
-\end{proof} \vspace{-1em}
-
-\item $|a|^2=a^2$.
-\vspace{-1em}\begin{proof} 
-    $0 \leq a^2 = |a^2|= |a\cdot a|=|a| \cdot |a|= |a|^2$. \qedhere
-\end{proof} \vspace{-1em}
-
-\item $|a|<b$ si y solo si $-b<a<b$.
-
-\vspace{-1em}\begin{proof} \leavevmode
+    \item Demuestre que $x\in \R^+$ si y solo si $-x\in \R^-$.
+    \vspace{-1em}
+    \begin{proof}\leavevmode
     \begin{itemize}
-        \item[$\Rightarrow)$] Supongamos que $|a|<b$.
-        
-        Sabemos que $\pm a \leq |a|$, y por transitividad $a<b$ y $-a<b$, por lo que $-b<a$. Por tanto, $-b<a<b$.
-        \item[$\Leftarrow)$] Supongamos que $-b<a<b$. Tenemos dos casos: \begin{enumerate}[label=\roman*)]
-            \item Si $0\leq |a|$, por definición, $|a|=a$, y por la hipótesis, $|a|<b$.
-            \item Si $a<0$, por definición, $|a|=-a$, y por la hipótesis, $|a|<b$.
-        \end{enumerate} En cualquier caso, $|a|<b$. \qedhere 
+    \item[$\Rightarrow)$] Sea $x\in \R^+$. Por tricotomía, $-x\notin \R^+$ y $x\neq 0$ (y por esto $-x\neq 0$). Sigue que $-x\in \R\setminus \bigl(\R^+\union \set{0}\bigr)$, y por definción, $-x\in \R^-$.
+    \item[$\Leftarrow)$] Sea $-x\in \R^-$. Por definición, $-x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$, por lo que, $-x\notin \R^+\union \set{0}$, es decir, $-x\notin \R^+$ y $-x\notin \set{0}$ (y por tanto $-x\neq 0$). Entonces, por tricotomía, $-(-x)=x\in \R^+$. \qedhere
     \end{itemize}
-\end{proof} \vspace{-1em}
-
-\textbf{Nota:} Nos referiremos a esta proposición como teorema para eliminar el valor absoluto en algunas desigualdades.
-
-    \item $|a+b|\leq |a|+|b|$. (Desigualdad del triángulo).
-
-    \vspace{-1em}\begin{proof} 
-        Por casos.
-        \begin{enumerate}[label=\roman*)]
-            \item Si $0 \leq a+b$, por definición, $|a+b|=a+b$. Como, $a \leq |a|$ y $b \leq |b|$, entonces, $a+b \leq |a|+|b|$. Por tanto, $|a+b| \leq |a|+|b|$.
-            \item Si $a+b<0$, por definición, $|a+b|=-\bigl(a+b\bigr)=-a-b$. Como, $-a \leq |a|$ y $-b \leq |b|$, entonces, $-a-b \leq |a|+|b|$. Por tanto, $|a+b| \leq |a|+|b|$. \qedhere
-        \end{enumerate}    
-    \end{proof} \vspace{-1em}
-%
-    %\textbf{Nota:} En esta demostración se observaron los casos para la suma $a+b$. Sin embargo, resulta conveniente observar los casos para $a$ y $b$, pues esto nos permitirá notar cuando la desigualdad del triángulo es estricta y cuando se cumple con igualdad.   
-    %\begin{enumerate}[label=\roman*)]
-    %    \item Supongamos que $|a+b|=|a|+|b|$, 
-    %\end{enumerate}
-
-    \item $\big| |a|-|b| \big| \leq |a-b|$. (Desigualdad del triángulo inversa).
-
-    \begin{proof} \leavevmode
-    \begin{center}\vspace{-2.5em}
-    \begin{minipage}[t]{.5\linewidth}
-    \begin{align*}
-        |(b-a)+a| &\leq |b-a|+|a| && \text{Desg. del trig.} \\
-        |b| &\leq |b-a|+|a| \\
-        -|b-a| &\leq |a|-|b| \\
-        -|a-b| &\leq |a|-|b| && \text{(*)}
-    \end{align*}
-    \end{minipage}%
-    \begin{minipage}[t]{.5\linewidth}
-    \begin{align*}
-        |(a-b)+b| &\leq |a-b|+|b| && \text{Desg. del trig.} \\
-        |a| &\leq |a-b|+|b| \\
-        |a|-|b| &\leq |a-b| && \text{(**)}
-    \end{align*}
-    \end{minipage}
-    \end{center}
-    De las desigualdades (*) y (**) sigue que $\big| |a| - |b| \big| \leq |a-b|$.
     \end{proof} \vspace{-1em}
 
-    \bfit{Corolario:} $|a|-|b|\leq |a-b|$ y $|b|-|a|\leq |a-b|$.
-    Por la desigualdad del triángulo inversa, $\big| |a|-|b| \big| \leq |a-b|$, de donde $-|a-b|\leq |a|-|b|\leq |a-b|$. Por lo que,
-    \begin{center}\vspace{-2em}
-    \begin{minipage}[t]{.3\linewidth}
-    \begin{align*}
-        |a|-|b| &\leq |a-b| && \qquad \text{y}
-    \end{align*}
-    \end{minipage}%
-    \begin{minipage}[t]{.3\linewidth}
-    \begin{align*}
-        -|a-b| &\leq |a|-|b|\\
-        -\bigl(|a|-|b|\bigr) &\leq |a-b| \\
-        |b|-|a| &\leq |a-b| && \qedhere
-    \end{align*}
-    \end{minipage}
-    \end{center}
+    \item Demuestre que $x\in \R^+$ si y solo si $0<x$. (Caracterización de $\R^+$).
+    \vspace{-1em}
+    \begin{proof}\leavevmode
+    \begin{itemize}
+    \item[$\Rightarrow)$] Sea $x\in \R^+$, notemos que $x=x-0\in \R^+$, lo que denotamos como $0<x$.
+    \item[$\Leftarrow)$] Sea $0<x$, por definición $x-0=x\in \R^+$. \qedhere
+    \end{itemize}
+    \end{proof} \vspace{-1em}
 
-\item Si $b\neq 0$, entonces $\left| \frac{a}{b} \right| = \frac{|a|}{|b|}$.
-
-\vspace{-1em}\begin{proof} Por casos.
-    \begin{enumerate}[label=\roman*)]
-        \item Si $a \geq 0$ y $b>0$, entonces $|a|=a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} \geq 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
-        \item Si $a \geq 0$ y $b<0$, entonces $|a|=a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} \leq 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
-        \item Si $a<0$ y $b>0$, entonces $|a|=-a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} < 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
-        \item Si $a<0$ y $b<0$, entonces $|a|=-a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} > 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$. \qedhere
-    \end{enumerate}    
-\end{proof} \vspace{-1em}
-
+    \item Demuestre que $x\in \R^-$ si y solo si $x<0$. (Caracterización de $\R^-$).
+    \vspace{-1em}
+    \begin{proof}\leavevmode
+    \begin{itemize}
+    \item[$\Rightarrow)$] Sea $x\in \R^-$. Notemos que $-x=0-x\in \R^+$, por lo que $x<0$.
+    \item[$\Leftarrow)$] Sea $x<0$. Por definición, $0-x=-x\in \R^+$, por lo que $x\in \R^-$. \qedhere
+    \end{itemize}
+    \end{proof} \vspace{-1em}
 \end{enumerate}
 
 \pagebreak
@@ -2077,7 +1821,7 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
         \item Si $n \in A$ entonces se verifica que $n+1 \in A$.
     \end{enumerate}
 
-\subsection*{Lista de Ejercicios 6 (LE6)}
+\subsection*{Lista de Ejercicios 7 (LE7)}
 
 \begin{enumerate}[label=\arabic*)]
     \item ¿El conjunto de los números reales es un conjunto inductivo?
@@ -2089,32 +1833,50 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
     
     \textbf{Respuesta:} Sí, pues $1\in \R^+$, y si $n\in \R^+$, entonces $n+1 \in \R^+$ por la cerradura de la suma en $\R^+$.
 
-    \item Sea $A\coloneqq \{B \subseteq \R: B \text{ es un conjunto inductivo}\}$. Demuestre que $A\neq \emptyset$ y que $C=\bigcap B$ es un conjunto inductivo.
-    
-    \vspace{-1em}\begin{proof} 
-    Claramente $A \neq \emptyset$, pues $\R, \R^+ \subseteq A$.
-    
-    Luego, por hipótesis, $\forall B \in A$ tenemos que $B\subseteq \R $ por lo que $C\subseteq \R$. Además, $\forall B\in A$, se verifica que $1\in B$. Consecuentemente, $1\in C$. Por otra parte, si $n\in B$ para todo $B\in A$, tendremos que $n+1\in B$, por lo que $n+1 \in C$. Por tanto, $C$ es un conjunto inductivo.
-    \end{proof} \vspace{-1em}
+    \item Sea $\mathcal{F}= \set{A\subset \R: \text{$A$ es un conjunto inductivo}}$.
+    \begin{enumerate}[label=\alph*)]
+    \item Demuestre que $\mathcal{F}$ es no vacío.
+    %\vspace{-1em}
+    \begin{proof}
+        Como $\R \subset \R$, y $\R$ es un conjunto inductivo, entonces $\R \in \mathcal{F}$, por lo que $\mathcal{F} \neq \emptyset$.
+    \end{proof}% \vspace{-1em}
+    \item Demuestre que $\bigcap \mathcal{F}$ es un conjunto inductivo.% (Definición del conjunto de los números naturales).
+    %\vspace{-1em}
+    \begin{proof}
+    Por definición, $1\in A, \forall A\in \mathcal{F}$, por lo que $1\in \bigcap \mathcal{F}$. Luego, si $n\in A, \forall A\in \mathcal{F}$, como cada $A$ es un conjunto inductivo, $n+1\in A, \forall A\in \mathcal{F}$, por lo que Si $n \in \bigcap \mathcal{F}$, entonces $n+1 \in \bigcap \mathcal{F}$. Por tanto, $\bigcap \mathcal{F}$ es un conjunto inductivo.
+    \end{proof}% \vspace{-1em}
+    \end{enumerate}
+
+    %\item Sea $A\coloneqq \{B \subseteq \R: B \text{ es un conjunto inductivo}\}$. Demuestre que $A\neq \emptyset$ y que $C=\bigcap B$ es un conjunto inductivo.
+    %
+    %\vspace{-1em}\begin{proof} 
+    %Claramente $A \neq \emptyset$, pues $\R, \R^+ \subseteq A$.
+    %
+    %Luego, por hipótesis, $\forall B \in A$ tenemos que $B\subseteq \R $ por lo que $C\subseteq \R$. Además, $\forall B\in A$, se verifica que $1\in B$. Consecuentemente, $1\in C$. Por otra parte, si $n\in B$ para todo $B\in A$, tendremos que $n+1\in B$, por lo que $n+1 \in C$. Por tanto, $C$ es un conjunto inductivo.
+    %\end{proof} \vspace{-1em}
 \end{enumerate}
+%
+%\bfit{Definición:}  Al conjunto $C$ de (3) de LE6 lo llamaremos conjunto de los números naturales y lo %denotaremos con el símbolo $\N$.
 
-\bfit{Definición:}  Al conjunto $C$ de (3) de LE6 lo llamaremos conjunto de los números naturales y lo denotaremos con el símbolo $\N$.
+\bfit{Definición:}
 
-\subsection*{Lista de ejercicios 7 (LE7)}
+Sea $\mathcal{F}= \set{A\subset \R: \text{$A$ es un conjunto inductivo}}$. Llamaremos al conjunto $\N = \bigcap \mathcal{F}$ conjunto de los números naturales.
+
+\subsection*{Lista de ejercicios 8 (LE8)}
 
 Demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
-    \item La suma de números naturales es un número natural. (Cerradura de la suma en $\N$).
+    \item Si $m,n\in \N$, entonces $m+n \in \N$. (Cerradura de la suma en $\N$).
     \vspace{-1em}\begin{proof}$ $\newline
         Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{ n\in \N : m+n \in \N \}$. Por definición, $1\in \N$ y $m+1\in \N$, entonces $1\in A$, es decir, $A\neq \emptyset$. \\[5pt] Por otra parte, si $n\in A$ debe ser el caso que $n\in \N$ y $m+n\in \N$. Como $\N$ es un conjunto inductivo, $n+1 \in \N$ y $(m+n)+1 \in \N$, luego, por la asociatividad de la suma, $m+(n+1)\in \N$. Por la condición de $A$, se cumple que $n+1\in A$, por lo que $A$ es un conjunto inductivo. De esto se concluye que $\N\subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la suma de números naturales es un número natural.    
     \end{proof} \vspace{-1em}
 
-    \item La multiplicación de números naturales es un número natural. (Cerradura de la multiplicación en $\N$).
+    \item Si $m,n\in \N$, entonces $m\cdot n \in \N$. (Cerradura de la multiplicación en $\N$).
     \vspace{-1em}\begin{proof}$ $\newline
         Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{n\in \N: m\cdot n \in \N\}$. Por definición, $1 \in \N$. Adenás, $m\cdot 1 \in \N$, entonces $1 \in A$, es decir $A \neq \emptyset$.
     
-        Luego, si $n \in A$ debe ser el caso que $n\in \N$ y $m \cdot n \in \N$. Por la cerradura de la suma en $\N$ se verifica que $m\cdot n + m \in \N$. Notemos que $m\cdot n + m=m\cdot n + m\cdot 1 = m\cdot (n+1)$, por lo que $m \cdot (n+1) \in \N$. Como $\N$ es un conjunto inductivo, tenemos que $n+1\in \N$. De este modo, $n+1\in A$. Lo que implica que $A$ es un conjunto inductivo. De esto se concluye que $\N \subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la multiplicación de números naturales es un número natural.
+        Luego, si $n \in A$ debe ser el caso que $n\in \N$ y $m \cdot n \in \N$. Por cerradura de la suma en $\N$ se verifica que $m\cdot n + m \in \N$. Notemos que $m\cdot n + m=m\cdot n + m\cdot 1 = m\cdot (n+1)$, por lo que $m \cdot (n+1) \in \N$. Como $\N$ es un conjunto inductivo, tenemos que $n+1\in \N$. De este modo, $n+1\in A$. Lo que implica que $A$ es un conjunto inductivo. De esto se concluye que $\N \subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la multiplicación de números naturales es un número natural.
     \end{proof} \vspace{-1em}
 
     \item $1\leq n, \forall n\in \N$. (Elemento mínimo de $\N$).
@@ -2125,18 +1887,6 @@ Demuestre lo siguiente:
     \end{proof} \vspace{-1em}
 
     \bfit{Definición:}  Sea $A\subseteq \R$ con $A \neq \emptyset$, decimos que $m$ es elemento mínimo de $A$ si $m\in A$ y $m\leq a, \forall a\in A$.
-
-    \item $0<\frac{1}{n}\leq 1, \forall n\in \N$.
-    \vspace{-1em}\begin{proof} 
-        Sea $n\in \N$ arbitrario pero fijo. Sabemos que $n\geq 1$, por lo que tenemos dos casos: \begin{enumerate}[label=\roman*)]
-            \item Si $n=1$, tenemos que $\frac{1}{n}=\frac{1}{1}=1$. Por lo que $0<\frac{1}{n}\leq 1$.
-            \item Si $n>1$, por transitividad $n>0$, lo que implica que $\frac{1}{n}>0$. Retomando la hipótesis, \begin{align*}
-                n &> 1\\
-                n \cdot \frac{1}{n} &> 1\cdot \frac{1}{n}\\
-                1 &> \frac{1}{n}
-            \end{align*} Por lo que $0<\frac{1}{n}\leq 1$. 
-        \end{enumerate} Como $n$ es arbitrario, se verifica que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
-    \end{proof} \vspace{-1em}
 
     \item Para todo $n\in \N$ con $n>1$ se verifica que $n-1\in \N$.
     \vspace{-1em}\begin{proof} 
@@ -2159,7 +1909,7 @@ Demuestre lo siguiente:
 
         \item Sea $x\in \R$. Si $m\in \N$ y $m-1<x<m$, entonces $x$ no es un número natural.
         
-        Supongamos que $x\in \N$. Por hipótesis $x<m$ y $m-1<x$, de donde obtenemos:
+        Sea que $x\in \N$. Por hipótesis $x<m$ y $m-1<x$, de donde obtenemos:
         \begin{center}\vspace{-1em}
             \begin{minipage}[l]{.4\linewidth}
             \begin{align*}
@@ -2254,7 +2004,7 @@ Demuestre lo siguiente:
         \item Sea $S\subseteq \N$ tal que $S$ es un conjunto inductivo, entonces $S=\N$. (Principio de inducción matemática).
 
         %\vspace{-1em}\begin{proof} 
-            Supongamos que $S\neq \N$, entonces el conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$). Pr definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $\N\setminus S\subset \N$, por el principio del buen orden, tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$, como $m\in \N$, sigue que $1 \leq m$. Como $m\in \N\setminus S$ y $1\notin \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, y por este teorema, $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, tenemos que $m-1\notin \N\setminus S$, osea $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, $S=\N$.    
+            Sea $S\neq \N$. El conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$). Pr definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $\N\setminus S\subset \N$, por el principio del buen orden, tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$, como $m\in \N$, sigue que $1 \leq m$. Como $m\in \N\setminus S$ y $1\notin \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, y por este teorema, $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, tenemos que $m-1\notin \N\setminus S$, osea $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, $S=\N$.    
         %\end{proof} \vspace{-1em}
 
         \item Sea $x\in \R^+$. Si $n\in \N$ y $x+n\in \N$, entonces $x\in \N$.
@@ -2264,11 +2014,305 @@ Demuestre lo siguiente:
 
 \end{enumerate}
 
+\section*{Potenciación}
+
+\bfit{Definición:}  Sea $b\in \R$ y $n\in \N$,
+    \[
+        b^n = \left\{
+    \begin{array}{@{}r@{\thinspace}l}
+        b, &  \ \text{si}  \ n = 1\\
+        b\cdot b^{n-1}, &  \ \text{si}  \ n > 1
+        %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+    \end{array} \right. \]
+
+\textbf{Notación:} Sea $b\in \R$ y $n\in \N$. Si $b^n \neq 0$, denotaremos $\frac{1}{b^n}$ como $b^{-n}$.
+
+\subsection*{Lista de Ejercicios 8}
+
+Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+    \item $1^n=1, \forall n\in \N$.
+    \vspace{-1em}
+    \begin{proof} Sea $A=\set{n|1^n=1}$.
+    \begin{enumerate}[label=\roman*)]
+    \item Notemos que $1\in A$, pues $1^1=1$, por definición.
+    \item Si $n\in A$, entonces $1^n=1$.
+    \item Por definición, \begin{align*}
+        1^{n+1} = \left\{
+            \begin{array}{@{}r@{\thinspace}l}
+                1, &  \ \text{si}  \ n+1 = 1\\
+                1\cdot 1^{n}, &  \ \text{si}  \ n+1 > 1
+                %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+            \end{array} \right.
+        \end{align*}
+    Si $n+1=1$, sigue que $n=0$, pero $n\geq 1$, lo que es una contradicción. Por tanto, $1^{n+1}=1\cdot 1^n=1^n$, por (ii) se verifica que $1^n=1$, es decir, $1^{n+1}=1$, lo que implica que $n+1\in A$.
+    \end{enumerate}
+
+    Por el principio de inducción matemática, $A=\N$, por lo que $1^n=1, \forall n\in \N$.
+    \end{proof} \vspace{-1em}
+
+    \item $a^m \cdot a^n = a^{m+n}$.
+    
+    \vspace{-1em}
+    \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n|a^{m+n}=a^m\cdot a^n}$.
+
+    \vspace{-1em}\begin{enumerate}[label=\roman*)]
+    \item Por definición \vspace{1em}\begin{align*}
+        a^{m+1} = \left\{
+            \begin{array}{@{}r@{\thinspace}l}
+                a, &  \ \text{si}  \ m+1 = 1\\
+                a\cdot a^{m}, &  \ \text{si}  \ m+1 > 1
+                %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+            \end{array} \right.
+        \end{align*}\vspace{-1em}
+        
+        Si $m+1=1$, entonces $m=0$, pero $m\geq 1$, por lo que $a^{m+1}=a\cdot a^m=a^m\cdot a^1$, lo que implica que $1\in A$.
+    \item Si $n\in A$, tenemos que $a^{m+n}=a^m\cdot a^n$.
+    \item Por definición \vspace{1em}\begin{align*}
+        a^{m+(n+1)} = \left\{
+            \begin{array}{@{}r@{\thinspace}l}
+                a, &  \ \text{si}  \ m+(n+1) = 1\\
+                a\cdot a^{m+n}, &  \ \text{si}  \ m+(n+1) > 1
+                %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+            \end{array} \right.
+        \end{align*}\vspace{-1em}
+
+    Si $m+(n+1)=1$, sigue que $m+n=0$, y por la cerradura de la suma en $\N$, $0\in \N$, lo que es una contradicción. Por tanto, \vspace{1em}\begin{align*}
+        a^{m+(n+1)} &=a\cdot a^{m+n} && \text{Definición}\\
+        &= a\cdot a^m \cdot a^n && \text{Por (ii)}\\
+        &= a^m \cdot a^{n+1} && \text{Por (i)}
+    \end{align*}\vspace{-2em}
+    \end{enumerate}\vspace{-1em}
+    Por el principio de inducción matemática, $A=\N$, por lo que $a^m \cdot a^n = a^{m+n}, \forall m,n\in \N$.
+    \end{proof} \vspace{-1em}
+
+    \item $\frac{a^n}{a^m} = a^{n-m}$.
+    \vspace{-1em}
+    \begin{proof}
+    Por casos: \begin{enumerate}[label=\roman*)]
+    \item Si $m=n$, entonces $\frac{a^n}{a^m}=1$
+    \item Si $n-m=1$, entonces $a^{n-m}=a$
+    \end{enumerate}\vspace{-1em}
+    \end{proof} \vspace{-1em}
+
+    \item Si $b\neq 0$, entonces $b^n \neq 0, \forall n\in \N$.
+
+\end{enumerate}
+
+\subsection*{Lista de Ejercicios 7 (LE7)}
+
+$(a+b)(a-b)=a^2-b^2$. (Diferencia de cuadrados).
+\vspace{-1em}\begin{proof} 
+    \begin{align*}
+    (a+b)(a-b) &= (a+b)\bigl(a+(-b)\bigr) && \text{Notación}\\
+    &= (a+b)\cdot a + (a+b)\cdot (-b) && \text{Distribución}\\
+    &= a\cdot (a+b) + (-b)\cdot (a+b) && \text{Conmutatividad}\\
+    &= a\cdot a + a\cdot b + (-b)\cdot a + (-b) \cdot b && \text{Distribución}\\
+    &= a^2+ ab -ba -b^2 && \text{Notación}\\
+    &=a^2-b^2 && \text{Inverso aditivo} \qedhere
+    \end{align*}    
+\end{proof} \vspace{-1em}
+
+$0\leq a^2$.
+    \vspace{-1em}\begin{proof} 
+        Por tricotomía $a=0$ o $0<a$ o $a<0$. Si $a=0$, entonces $a^2=a\cdot a =0 \cdot 0 =0$. Luego,
+        \begin{center}\vspace{-1em}
+            \begin{minipage}[l]{.5\linewidth}
+                \begin{align*}
+                    0 &< a && \text{Hipótesis}\\
+                    0 \cdot a &< a \cdot a && \text{Multiplicación por positivo}\\
+                    0 &< a \cdot a && \text{Multiplicación por 0}\\
+                    0 &< a^2 && \text{Notación}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}[r]{.5\linewidth}
+                \begin{align*}
+                    a &< 0 && \text{Hipótesis}\\
+                    0 \cdot a &< a\cdot a && \text{Multiplicación por negativo}\\
+                    0 &< a\cdot a && \text{Multiplicación por 0}\\
+                    0 &< a^2 && \text{Notación}
+                \end{align*}
+            \end{minipage}
+        \end{center} En cualquier caso, $0\leq a^2$.
+    \end{proof} \vspace{-1em}
+
+\section*{Valor absoluto}
+
+\bfit{Definición:}  Sea $a$ un número real, definimos el valor absoluto de $a$, denotado por $|a|$ como sigue:
+
+    \[
+        |a| = \left\{
+    \begin{array}{@{}r@{\thinspace}l}
+        a, &  \ \text{si}  \ a>0\\
+        0, &  \ \text{si}  \ a=0\\
+        -a, & \  \text{si} \  a<0
+    \end{array} \right. \]
+Notemos que $|a|\geq 0, \ \forall a\in \R$, y que la definición es equivalente a las siguientes:
+
+\begin{center}
+\begin{minipage}[c]{.3\linewidth}
+    \[|a| = \left\{
+        \begin{array}{@{}r@{\thinspace}l}
+            a, & \ \text{si} \ a\geq 0\\
+            -a, & \ \text{si} \ a<0
+        \end{array} \right.\]
+    \end{minipage}%
+\begin{minipage}[c]{.3\linewidth}
+    \[|a| = \left\{
+        \begin{array}{@{}r@{\thinspace}l}
+            a, & \ \text{si} \ a>0\\
+            -a, & \ \text{si} \ a\leq 0
+        \end{array} \right.\]
+\end{minipage}
+\end{center}
+
+El lector devería verificar este hecho. (\textit{Hint}: $0=-0$).
+
+\subsection*{Lista de Ejercicios 4 (LE4)}
+
+Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+\item $\pm a\leq |a|$.
+
+\vspace{-1em}\begin{proof}
+    Por casos.
+    \begin{enumerate}[label=\roman*)]
+        \item Si $0 \leq a$, por definición, $|a|=a$, por lo que $a\leq |a|$. Luego, por la hipótesis tenemos que $-a \leq 0$, y por transitividad, $-a\leq |a|$.
+        \item Si $a<0$, por definición, $|a|=-a$, por lo que $-a\leq |a|$. Luego, por la hipótesis tenemos que $0<-a$, y por transitividad, $a<|a|$.
+    \end{enumerate}
+    En cualquier caso, $\pm a\leq |a|$.
+\end{proof} \vspace{-1em}    
+
+\item $|a|=|-a|$.
+\vspace{-1em}\begin{proof}
+    Por casos.
+    \begin{enumerate}[label=\roman*)]
+        \item Si $0 \leq a$, por definición, $|a|=a$. Luego, por la hipótesis tenemos que $-a \leq 0$. Si $-a<0$, $|-a|=a$ y si $-a=0$, $|-a|=a$. De este modo, $|a|=|-a|$.
+        \item Si $a<0$, por definición, $|a|=-a$. Luego, por la hipótesis tenemos que $0<-a$, por lo que $|-a|=-a$. De este modo, $|a|=|-a|$.
+    \end{enumerate}
+    En cualquier caso, $|a|=|-a|$.
+\end{proof} \vspace{-1em}
+
+\item $|ab|=|a||b|$.
+
+\vspace{-1em}\begin{proof}
+    Por casos.
+    \begin{enumerate}[label=\roman*)]
+        \item Si $a>0$ y $b>0$, por definición, $|a|=a$ y $|b|=b$. Luego, $ab>0$ por lo que $|ab|=ab$. Por tanto, $|ab| =|a||b|$.
+        \item Si $a>0$ y $b<0$, por definición, $|a|=a$ y $|b|=-b$. Luego, $ab<0$ por lo que $|ab|=-ab$. Por tanto, $|  ab|=|a||b|$.
+        \item Si $a<0$ y $b<0$, por definición, $|a|=-a$ y $|b|=-b$. Luego, $ab>0$ por lo que $|ab|=ab$. Por tanto, $|  ab|=|a||b|$.
+    \end{enumerate}
+    En cualquier caso, $|ab|=|a||b|$.
+\end{proof} \vspace{-1em}
+
+\item $|a|^2=a^2$.
+\vspace{-1em}\begin{proof} 
+    $0 \leq a^2 = |a^2|= |a\cdot a|=|a| \cdot |a|= |a|^2$. \qedhere
+\end{proof} \vspace{-1em}
+
+\item $|a|<b$ si y solo si $-b<a<b$.
+
+\vspace{-1em}\begin{proof} \leavevmode
+    \begin{itemize}
+        \item[$\Rightarrow)$] Sea que $|a|<b$.
+        
+        Sabemos que $\pm a \leq |a|$, y por transitividad $a<b$ y $-a<b$, por lo que $-b<a$. Por tanto, $-b<a<b$.
+        \item[$\Leftarrow)$] Sea que $-b<a<b$. Tenemos dos casos: \begin{enumerate}[label=\roman*)]
+            \item Si $0\leq |a|$, por definición, $|a|=a$, y por la hipótesis, $|a|<b$.
+            \item Si $a<0$, por definición, $|a|=-a$, y por la hipótesis, $|a|<b$.
+        \end{enumerate} En cualquier caso, $|a|<b$. \qedhere 
+    \end{itemize}
+\end{proof} \vspace{-1em}
+
+\textbf{Nota:} Nos referiremos a esta proposición como teorema para eliminar el valor absoluto en algunas desigualdades.
+
+    \item $|a+b|\leq |a|+|b|$. (Desigualdad del triángulo).
+
+    \vspace{-1em}\begin{proof} 
+        Por casos.
+        \begin{enumerate}[label=\roman*)]
+            \item Si $0 \leq a+b$, por definición, $|a+b|=a+b$. Como, $a \leq |a|$ y $b \leq |b|$, entonces, $a+b \leq |a|+|b|$. Por tanto, $|a+b| \leq |a|+|b|$.
+            \item Si $a+b<0$, por definición, $|a+b|=-\bigl(a+b\bigr)=-a-b$. Como, $-a \leq |a|$ y $-b \leq |b|$, entonces, $-a-b \leq |a|+|b|$. Por tanto, $|a+b| \leq |a|+|b|$. \qedhere
+        \end{enumerate}    
+    \end{proof} \vspace{-1em}
+%
+    %\textbf{Nota:} En esta demostración se observaron los casos para la suma $a+b$. Sin embargo, resulta conveniente observar los casos para $a$ y $b$, pues esto nos permitirá notar cuando la desigualdad del triángulo es estricta y cuando se cumple con igualdad.   
+    %\begin{enumerate}[label=\roman*)]
+    %    \item Supongamos que $|a+b|=|a|+|b|$, 
+    %\end{enumerate}
+
+    \item $\big| |a|-|b| \big| \leq |a-b|$. (Desigualdad del triángulo inversa).
+
+    \vspace{-1em}\begin{proof} \leavevmode
+    \begin{center}\vspace{-2.5em}
+    \begin{minipage}[t]{.5\linewidth}
+    \begin{align*}
+        |(b-a)+a| &\leq |b-a|+|a| && \text{Desg. del trig.} \\
+        |b| &\leq |b-a|+|a| \\
+        -|b-a| &\leq |a|-|b| \\
+        -|a-b| &\leq |a|-|b| && \text{(*)}
+    \end{align*}
+    \end{minipage}%
+    \begin{minipage}[t]{.5\linewidth}
+    \begin{align*}
+        |(a-b)+b| &\leq |a-b|+|b| && \text{Desg. del trig.} \\
+        |a| &\leq |a-b|+|b| \\
+        |a|-|b| &\leq |a-b| && \text{(**)}
+    \end{align*}
+    \end{minipage}
+    \end{center}
+    De las desigualdades (*) y (**) sigue que $\big| |a| - |b| \big| \leq |a-b|$.
+    \end{proof} \vspace{-1em}
+
+    \bfit{Corolario:} $|a|-|b|\leq |a-b|$ y $|b|-|a|\leq |a-b|$.
+    \vspace{-1em}
+    \begin{proof}
+    Por la desigualdad del triángulo inversa, $\big| |a|-|b| \big| \leq |a-b|$, de donde $|a|-|b|\leq |a-b|$ y \begin{align*}
+        -|a-b| &\leq |a|-|b|\\
+        -\bigl(|a|-|b|\bigr) &\leq |a-b| \\
+        |b|-|a| &\leq |a-b| && \qedhere
+    \end{align*}
+    \end{proof} \vspace{-1em}
+
+\item Si $b\neq 0$, entonces $\left| \frac{a}{b} \right| = \frac{|a|}{|b|}$.
+
+\vspace{-1em}\begin{proof} Por casos.
+    \begin{enumerate}[label=\roman*)]
+        \item Si $a \geq 0$ y $b>0$, entonces $|a|=a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} \geq 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+        \item Si $a \geq 0$ y $b<0$, entonces $|a|=a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} \leq 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+        \item Si $a<0$ y $b>0$, entonces $|a|=-a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} < 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+        \item Si $a<0$ y $b<0$, entonces $|a|=-a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} > 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$. \qedhere
+    \end{enumerate}    
+\end{proof} \vspace{-1em}
+
+\end{enumerate}
+
+%\bfit{Definición:} \begin{itemize}
+%    \item Llamaremos al conjunto $\Z = \N \union \set{0} \union \set{-n | n\in \N}$ conjunto de los números enteros.
+%    \item Llamaremos al conjunto $\Z^- = \set{-n| n\in \N}$ conjunto de los números enteros negativos.
+%    \item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo denotaremos con el símbolo $\Z^+$.
+%\end{itemize}
+
+
+
 \subsection*{Lista de Ejercicios 8 (LE8)}
 
 Sean $a$ y $b$ números reales, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
+    \item $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+    \vspace{-1em}\begin{proof} 
+        Sea $n\in \N$ arbitrario pero fijo. Sabemos que $n\geq 1$, por lo que tenemos dos casos: \begin{enumerate}[label=\roman*)]
+            \item Si $n=1$, tenemos que $\frac{1}{n}=\frac{1}{1}=1$. Por lo que $0<\frac{1}{n}\leq 1$.
+            \item Si $n>1$, por transitividad $n>0$, lo que implica que $\frac{1}{n}>0$. Retomando la hipótesis, \begin{align*}
+                n &> 1\\
+                n \cdot \frac{1}{n} &> 1\cdot \frac{1}{n}\\
+                1 &> \frac{1}{n}
+            \end{align*} Por lo que $0<\frac{1}{n}\leq 1$. 
+        \end{enumerate} Como $n$ es arbitrario, se verifica que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+    \end{proof} \vspace{-1em}
     \item $0 \leq a^{2n} \, \forall n\in \N$.
     \item Si $0\leq a$, entonces $ 0 \leq a^n, \, \forall n\in \N$.
     \item Si $0 \leq a <b$, entonces $a^n < b^n, \, \forall n\in \N$.
