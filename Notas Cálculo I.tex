@@ -1744,10 +1744,11 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
 \section*{Números reales negativos}
 
-\bfit{Definición:}\begin{itemize}
-    \item Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
-    \item Llamaremos al conjunto $\R^+\union \set{0}$ conjunto de los números reales no negativos.
-\end{itemize}
+\bfit{Definición:} Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
+%\begin{itemize}
+%    \item Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
+%    \item Llamaremos al conjunto $\R^+\union \set{0}$ conjunto de los números reales no negativos.
+%\end{itemize}
 
 \subsection*{Lista de ejercicios 6 (LE6)}
 
@@ -2034,7 +2035,7 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
                 %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
             \end{array} \right.
         \end{align*}
-    Como $n+1>1$, sigue que $1^{n+1}=1\cdot 1^n=1^n$, por (ii) se verifica que $1^n=1$, es decir, $1^{n+1}=1$, lo que implica que $n+1\in A$.
+    Como $n>0$, se tiene $n+1>1$, de donde sigue que $1^{n+1}=1\cdot 1^n=1^n$, por (ii) se verifica que $1^n=1$, es decir, $1^{n+1}=1$, lo que implica que $n+1\in A$.
     \end{enumerate}
 
     Por el principio de inducción matemática, $A=\N$, por lo que $1^n=1, \forall n\in \N$.
@@ -2055,23 +2056,23 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
             \end{array} \right.
         \end{align*}\vspace{-1em}
         
-        Si $m+1=1$, entonces $m=0$, pero $m\geq 1$, por lo que $a^{m+1}=a\cdot a^m=a^m\cdot a^1$, lo que implica que $1\in A$.
+        Como $m>0$, sigue que $m+1>1$, por lo que $a^{m+1}=a\cdot a^m=a^m\cdot a^1$, lo que implica que $1\in A$.
     \item Si $n\in A$, tenemos que $a^{m+n}=a^m\cdot a^n$.
     \item Por definición \vspace{1em}\begin{align*}
         a^{m+(n+1)} = \left\{
             \begin{array}{@{}r@{\thinspace}l}
                 a, &  \ \text{si}  \ m+(n+1) = 1\\
                 a\cdot a^{m+n}, &  \ \text{si}  \ m+(n+1) > 1
-                %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
             \end{array} \right.
         \end{align*}\vspace{-1em}
 
-    Si $m+(n+1)=1$, sigue que $m+n=0$, y por la cerradura de la suma en $\N$, $0\in \N$, lo que es una contradicción. Por tanto, \vspace{1em}\begin{align*}
+    Como $m+n>0$, sigue que $m+(n+1)>1$. Por tanto, \vspace{1em}\begin{align*}
         a^{m+(n+1)} &=a\cdot a^{m+n} && \text{Definición}\\
         &= a\cdot a^m \cdot a^n && \text{Por (ii)}\\
         &= a^m \cdot a^{n+1} && \text{Por (i)}
-    \end{align*}\vspace{-2em}
+    \end{align*}\vspace{-1em}
     \end{enumerate}\vspace{-1em}
+
     Por el principio de inducción matemática, $A=\N$, por lo que $a^m \cdot a^n = a^{m+n}, \forall m,n\in \N$.
     \end{proof} \vspace{-1em}
 
@@ -2079,22 +2080,29 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
     \vspace{-1em}
     \begin{proof}
     Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.\begin{enumerate}[label=\roman*)]
-    \item Notemos que \begin{align*}
-    \frac{a^1}{b^1} &= \frac{a}{b}\\
-    &= \qty(\frac{a}{b})^1
-    \end{align*}
-    Por lo que $1\in A$.
+    \item Notemos que $\frac{a^1}{b^1}= \frac{a}{b}= \qty(\frac{a}{b})^1$. Por lo que $1\in A$.
     \item Si $n\in A$, tenemos $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
-    \item Por definición 
-    \end{enumerate}
+    \item Como $n>0$, se tiene $n+1>1$, por definición \vspace{1em}\begin{align*}
+            \qty(\frac{a}{b})^{n+1} &= \frac{a}{b}\cdot \qty(\frac{a}{b})^n\\
+            &=\frac{a}{b}\cdot \frac{a^n}{b^n} && \text{Por (ii)}\\
+            &= \frac{a\cdot a^n}{b\cdot b^n}\\
+            &= \frac{a^{n+1}}{b^{n+1}} && \text{Por tanto, $n+1\in A$.}
+        \end{align*}\vspace{-2em}
+    \end{enumerate}\vspace{1em}
+    Por el principio de inducción matemática, $A=\N$, por lo que $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
     \end{proof} \vspace{-1em}
 
-    \item $\frac{a^n}{a^m} = a^{n-m}$.
+    \item Si $m\neq n$, entonces $\frac{a^n}{a^m} = a^{n-m}$.
     \vspace{-1em}
     \begin{proof}
-    Por casos: \begin{enumerate}[label=\roman*)]
-    \item Si $m=n$, entonces $\frac{a^n}{a^m}=1$
-    \item Si $n-m=1$, entonces $a^{n-m}=a$
+    Por casos: \vspace{-1em}\begin{enumerate}[label=\roman*)]
+    \item Sea $m>n$. Notemos que $m-n\in \N$, y por definición \vspace{1em}\begin{align*}
+        a^{n-m} = \left\{
+            \begin{array}{@{}r@{\thinspace}l}
+                a, &  \ \text{si}  \ n-m = 1\\
+                a\cdot a^{n-m-1}, &  \ \text{si}  \ m-n > 1
+            \end{array} \right.
+        \end{align*}\vspace{-1em}
     \end{enumerate}\vspace{-1em}
     \end{proof} \vspace{-1em}
 
