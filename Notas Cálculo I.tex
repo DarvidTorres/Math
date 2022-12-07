@@ -1766,12 +1766,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     Por tanto, $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) = \emptyset$, es decir, $\R^+$ y $\R^-$ son conjuntos disjuntos.
     \end{proof} \vspace{-1em}
 
-    \item Demuestre que si $x,y \in \R^-$, entonces $x+y\in \R^-$. (Cerradura de la suma en $\R^-$).
-    \vspace{-1em}
-    \begin{proof}
-    Sea $x,y\in \R^-$. Sigue que $(-x), (-y)\in \R^+$, y por la cerradura de la suma en $\R^+$, $-x-y=-(x+y)\in \R^+$, por lo que $x+y\in \R^-$.
-    \end{proof} \vspace{-1em}
-
     \item Demuestre que $x\in \R^+$ si y solo si $-x\in \R^-$.
     \vspace{-1em}
     \begin{proof}\leavevmode
@@ -1779,6 +1773,12 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     \item[$\Rightarrow)$] Sea $x\in \R^+$. Por tricotomía, $-x\notin \R^+$ y $x\neq 0$ (y por esto $-x\neq 0$). Sigue que $-x\in \R\setminus \bigl(\R^+\union \set{0}\bigr)$, y por definción, $-x\in \R^-$.
     \item[$\Leftarrow)$] Sea $-x\in \R^-$. Por definición, $-x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$, por lo que, $-x\notin \R^+\union \set{0}$, es decir, $-x\notin \R^+$ y $-x\notin \set{0}$ (y por tanto $-x\neq 0$). Entonces, por tricotomía, $-(-x)=x\in \R^+$. \qedhere
     \end{itemize}
+    \end{proof} \vspace{-1em}
+
+    \item Demuestre que si $x,y \in \R^-$, entonces $x+y\in \R^-$. (Cerradura de la suma en $\R^-$).
+    \vspace{-1em}
+    \begin{proof}
+    Sea $x,y\in \R^-$. Sigue que $(-x), (-y)\in \R^+$, y por la cerradura de la suma en $\R^+$, $-x-y=-(x+y)\in \R^+$, por lo que $x+y\in \R^-$.
     \end{proof} \vspace{-1em}
 
     \item Demuestre que $x\in \R^+$ si y solo si $0<x$. (Caracterización de $\R^+$).
@@ -2044,6 +2044,10 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
     \end{proof} \vspace{-1em}
 
     \item $0^n=0, \forall n\in \N$.
+    \vspace{-1em}
+    \begin{proof}
+    Es claro que $0^1=0$. Luego, si $0^n=0$, tenemos que $0^{n+1}=0 \cdot 0^n$, lo que es una multiplicación por $0$, es decir, $0^{n+1}=0$.
+    \end{proof} \vspace{-1em}
     
 
     \item $a^m \cdot a^n = a^{m+n}$.
