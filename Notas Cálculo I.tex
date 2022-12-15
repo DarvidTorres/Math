@@ -2101,19 +2101,22 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
     Por el principio de inducción matemática, $A=\N$, por lo que $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
     \end{proof} \vspace{-1em}
 
-    \item Si $m\neq n$, entonces $a^n\cdot a^{-m} = a^{n-m}$.
+    \item Si $m\neq n$, y $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
     \vspace{-1em}
     \begin{proof}
     Por casos: \vspace{-1em}\begin{enumerate}[label=\roman*)]
     \item Sea $m>n$. Notemos que $m-n\in \N$, y por definición \vspace{1em}\begin{align*}
-        a^{n-m} = \left\{
+        a^{m-n} = \left\{
             \begin{array}{@{}r@{\thinspace}l}
-                a, &  \ \text{si}  \ n-m = 1\\
-                a\cdot a^{n-m-1}, &  \ \text{si}  \ m-n > 1
+                a, &  \ \text{si}  \ m-n = 1\\
+                a\cdot a^{m-n-1}, &  \ \text{si}  \ m-n> 1
             \end{array} \right.
         \end{align*}\vspace{-1em}
-    \end{enumerate}\vspace{-1em}
+    \end{enumerate}
+
+    Como $n\in \N$, si $m=1$ tenemos que $m\leq n$, pero esto contradice nuestro supuesto inicial, por lo que $m>1$ y por definición, $a^m=a\cdot a^{m-1}$. Luego, $a^n=a$ si $n=1$ y $a^n=a\cdot a^n-1$ si $n>1$.
     \end{proof} \vspace{-1em}
+    
 
     \item Si $b\neq 0$, entonces $b^n \neq 0, \forall n\in \N$.
 
