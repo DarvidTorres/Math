@@ -35,15 +35,15 @@
 \let\intersection\cap
 
 %the code below manipulates space around \align environment https://tex.stackexchange.com/questions/47400/remove-vertical-space-around-align
-\usepackage{etoolbox}
-\newcommand{\zerodisplayskips}{%
-\setlength{\abovedisplayskip}{0em}}%
-%\setlength{\belowdisplayskip}{-0em}%
-%\setlength{\abovedisplayshortskip}{0em}}%
-%\setlength{\belowdisplayshortskip}{-0em}}
-\appto{\normalsize}{\zerodisplayskips}
-\appto{\small}{\zerodisplayskips}
-\appto{\footnotesize}{\zerodisplayskips}
+%\usepackage{etoolbox}
+%\newcommand{\zerodisplayskips}{%
+%\setlength{\abovedisplayskip}{0em}}%
+%%\setlength{\belowdisplayskip}{-0em}%
+%%\setlength{\abovedisplayshortskip}{0em}}%
+%%\setlength{\belowdisplayshortskip}{-0em}}
+%\appto{\normalsize}{\zerodisplayskips}
+%\appto{\small}{\zerodisplayskips}
+%\appto{\footnotesize}{\zerodisplayskips}
 
 %bold all lists$
 \setlist[enumerate]{font=\bfseries}
@@ -117,7 +117,7 @@ Si $a$, $b$ y $c$ son números reales tales que $a+c=b+c$, entonces $a=b$. El si
  a &= b \end{align*}
 Aunque el resultado anterior no es incorrecto, debemos justificar cada igualdad a partir de las propiedades conocidas con el fin de preservar rigurosiad, al menos en la primera parte de este curso. Esto ayudará a que el lector se famirialice con el uso de las propiedades básicas de los números reales, antes de proceder a realizar pruebas más elaboradas.
 
-\pagebreak
+
 
 \subsection*{Lista de Ejercicios 1}
 
@@ -125,18 +125,18 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
  \item Si $a+b=a$, entonces $b=0$. (Unicidad del neutro aditivo).
- \vspace{-1em}\begin{proof}
+ \begin{proof}
   \begin{align*}
-   b &= b + 0 && \text{Neutro aditivo}\\
-   &= b + \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
-   &= (b+a) + (-a) && \text{Asociatividad}\\
-   &= (a+b) + (-a) && \text{Conmutatividad}\\
-   &= a + (-a) && \text{Hipótesis}\\
-   &= 0 && \text{Neutro aditivo} \qedhere
+  b &= b + 0 && \text{Neutro aditivo}\\
+  &= b + \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
+  &= (b+a) + (-a) && \text{Asociatividad}\\
+  &= (a+b) + (-a) && \text{Conmutatividad}\\
+  &= a + (-a) && \text{Hipótesis}\\
+  &= 0 && \text{Neutro aditivo} \qedhere
   \end{align*}
  \end{proof}\vspace{-1em}
  %\item Demuestre que el elemento neutro para la suma es único. (Unicidad del neutro aditivo).
- %\vspace{-1em}\begin{proof} 
+ %\begin{proof} 
  %Supongamos que existen 0 y $\tilde{0}$ números reales tales que $a+0 = a$ y $a+\tilde{0} = a$. Luego, \begin{align*}
  % 0 &=a+(-a) && \text{Inverso aditivo}\\
  % &=\left( a+\tilde{0} \right)+\left(-a\right) && \text{Hipótesis}\\
@@ -145,10 +145,10 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
  % &=\tilde{0} + 0 && \text{Inverso aditivo}\\
  % &=\tilde{0} && \text{Neutro aditivo}\qedhere
  % \end{align*} 
- %\end{proof} \vspace{-1em}
+ %\end{proof}
  
  \item Si $a+b=0$, entonces $b=-a$. (Unicidad del inverso aditivo).
- \vspace{-1em}\begin{proof}
+ \begin{proof}
  \begin{align*}
    b &= b + 0 && \text{Neutro aditivo}\\
    &= b + \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
@@ -158,9 +158,9 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
    &= (-a) + 0 && \text{Conmutatividad}\\
    &= -a && \text{Neutro aditivo} \qedhere
   \end{align*}
- \end{proof} \vspace{-1em}
+ \end{proof}
  %\item Demuestre que el inverso aditivo de cada número real es único. (Unicidad del inverso aditivo).
- %\vspace{-1em}\begin{proof} 
+ %\begin{proof} 
  % Sea $a\in \R$ arbitrario pero fijo. Supongamos que existen $-a$ y $-\tilde{a}$ números reales tales que $a + \left(-a\right) = 0$ y $a + \left(- \tilde{a}\right) = 0$. Notemos que:
  %\begin{align*}
  %-a &= -a+0 && \text{Neutro aditivo}\\
@@ -171,47 +171,46 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
  %&= \left(-\tilde{a} \right)+0 && \text{Inverso aditivo}\\
  %&= -\tilde{a} && \text{Neutro aditivo} \qedhere
  %\end{align*} 
- %\end{proof} \vspace{-1em}
+ %\end{proof}
  \textbf{Nota:} Demostrar proposiciones para números reales arbitrarios (cualesquiera elementos de $\R$), nos permite reutilizar las \textit{formas} como esquema para otras pruebas. Por ejemplo, la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, nos permite sustituir $x$ y $y$ por cuales quiera números reales, como en el ejemplo que sigue:
  
  \bfit{Corolario:} $-(-a)=a$. (Inverso aditivo del inverso aditivo).
- \vspace{-1em}\begin{proof}
+ \begin{proof}
  \begin{align*}
   0 &= a + (-a) && \text{Inverso aditivo}\\
   &= (-a) + a && \text{Conmutatividad}
  \end{align*} Por la unicidad del inverso aditivo sigue que $a=-(-a)$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, hemos tomado $x=(-a)$ y $y=a$.
 
  \item $-0 = 0$. (Cero es igual a su inverso aditivo).
- \vspace{-1em}\begin{proof}
+ \begin{proof}
   \begin{align*}
    0 &= 0 + (-0) && \text{Inverso aditivo}\\
    &= (-0) + 0 && \text{Conmutatividad}\\
    &= -0 && \text{Neutro aditivo} \qedhere
   \end{align*}
- \end{proof} \vspace{-1em}
- %\vspace{-1em}\begin{proof} 
+ \end{proof}
+ %\begin{proof} 
  % Por la propiedad del neutro aditivo tenemos que $0+0=0$. Además, el inverso aditivo de $0$ satisface que $0 + (-0) = 0$. Debido a que el inverso aditivo de cada número real es único, de la igualdad anterior sigue que $-0 = 0$. \qedhere 
- %\end{proof} \vspace{-1em}
+ %\end{proof}
 %
  \item Si $a\neq 0$, entonces $-a\neq 0$.
- \vspace{-1em}
  \begin{proof} 
-  Si $-a=0$, se verifica que \vspace{1em} \begin{align*}
+  Si $-a=0$, se verifica que  \begin{align*}
    a &= a + 0 && \text{Neutro aditivo}\\
    &= a + (-a) && \text{Hipótesis}\\
    &= 0 && \text{Inverso aditivo}
   \end{align*} Por contraposición, si $a\neq 0$, entonces $-a\neq 0$.
   %Otra forma:
   %Sea $a$ un número real distinto de cero tal que $-a=0$. El inverso aditivo satisface que $a+(-a)=0$, y de la hipótesis, $a+0=0$. De esta igualdad sigue que $a=0$, lo que contradice nuestro supuesto inicial, por lo que que $-a\neq 0$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
-\pagebreak
+
 
  \item $-(a+b)=(-a)+(-b)$. (Distribución del signo).
 
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   \begin{align*}
    0 &= 0 + 0 && \text{Neutro aditivo} \\
    &= \bigl(a+(-a)\bigr) + \bigl(b + (-b)\bigr) && \text{Inverso aditivo} \\
@@ -222,23 +221,22 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
    &= (a+b) + \bigl((-a)+ (-b)\bigr) && \text{Asociatividad}
    \end{align*}
    Por la unicidad del inverso aditivo, $(-a)+ (-b)=-(a+b)$.  
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, hemos tomado $x=(a+b)$ y $y=(-a)+ (-b)$.
 
- \bfit{Corolario:} $-\bigl(a+(-b)\bigr)=b+(-a)$. \vspace{-1em}
- \begin{proof} 
+ \bfit{Corolario:} $-\bigl(a+(-b)\bigr)=b+(-a)$. \begin{proof} 
   \begin{align*}
   -\bigl(a+(-b)\bigr)&= (-a) + \bigl(-(-b)\bigr) &&\text{Distribución del signo} \\
   &= (-a) + b &&\text{Inverso aditivo del inverso aditivo} \\
   &= b +(-a) &&\text{Conmutatividad} \qedhere
   \end{align*} 
- \end{proof} \vspace{-1em}
+ \end{proof}
 
   \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la distribución del signo, $-(x+y)=(-x)+(-y)$, hemos tomado $x=a$ y $y=(-b)$.
 
  \item Si $a+c=b+c$, entonces $a=b$. (Ley de cancelación de la suma).
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
  \begin{align*}
   a &= a+0 && \text{Neutro aditivo}\\
   &= a+ \bigl(c+(-c)\bigr) && \text{Inverso aditivo}\\
@@ -248,14 +246,14 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
   &= b + 0 && \text{Inverso aditivo}\\
   &= b &&\text{Neutro aditivo} \qedhere
  \end{align*} 
-\end{proof} \vspace{-1em}
+\end{proof}
 
 \textbf{Observación:} En el segundo paso de la demostración, podíamos sustituir $0$ por $a+(-a)$ o por $b+(-b)$ (o por cualquier suma igual a $0$). sin embargo, no en todos los casos resultaría útil. Observamos pues que para demostrar proposiciones matemáticas no basta con conocer las propiedades que satisfacen los \textit{objetos} (en este caso números reales) con los que trabajamos; también requerimos intuir su uso apropiado. La experiencia indica que esta intuición se adquiere con la práctica. El lector debería verificar qué ocurre si sustituimos $0$ por $a+(-a)$ o $b+(-b)$ en el segundo paso de esta prueba.
 
 \textbf{Nota:} Si el contexto es claro, enunciaremos esta proposición como ley de cancelación.
 \end{enumerate}
 
-\pagebreak
+
 
 \section*{Axiomas de la multiplicación}
 La multiplicación $\cdot$ satisface las siguientes propiedades:
@@ -282,7 +280,6 @@ La multiplicación $\cdot$ satisface las siguientes propiedades:
 Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
  \begin{enumerate}[label=\alph*)]
  \item Si $a\neq 0$ y $a\cdot b = a$, entonces $b=1$. (Unicidad del neutro multiplicativo).
- \vspace{-1em}
  \begin{proof} 
  \begin{align*}
   b &= b \cdot 1 && \text{Neutro multiplicativo}\\
@@ -292,11 +289,11 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
   &= a \cdot a^{-1} && \text{Hipótesis}\\
   &= 1 && \text{Inverso multiplicativo} \qedhere
  \end{align*} 
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Nota:} La prueba requiere que $a\neq 0$, pues de otro modo (si $a=0$), no podemos garantizar que $b=1$. Veremos la prueba de este hecho más adelante.
  %Demuestre que el elemento identidad para la multiplicación es único. (Unicidad del neutro multiplicativo).
  %
- %\vspace{-1em}\begin{proof} 
+ %\begin{proof} 
  % Supongamos que existen $1$ y $\tilde{1}$ números reales tales que $a\cdot 1=a$ y $a\cdot\tilde{1}=a$. Luego,
  %\begin{align*}
  %1 &= a \cdot a^{-1} && \text{Inverso multiplicativo}\\
@@ -306,10 +303,9 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
  %&= \tilde{1} \cdot 1 && \text{Inverso multiplicativo}\\
  %&= \tilde{1} && \text{Neutro multiplicativo}\qedhere
  %\end{align*}  
- %\end{proof} \vspace{-1em}
+ %\end{proof}
  
  \item Si $a\neq 0$ y $a\cdot b =1$, entonces $b=a^{-1}$. (Unicidad del inverso multiplicativo).
- \vspace{-1em}
  \begin{proof} 
  \begin{align*}
   b &= b \cdot 1 && \text{Neutro multiplicativo}\\
@@ -319,11 +315,11 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
   &= a^{-1} \cdot 1 && \text{Hipótesis}\\
   &= a^{-1} && \text{Neutro multiplicativo} \qedhere
  \end{align*} 
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Nota:} La prueba requiere que $a\neq 0$, pues de otro modo no podemos garantizar la existencia de su inverso multiplicativo.
  %Demuestre que el inverso multiplicativo de cada número real distinto de cero es único. (Unicidad del inverso multiplicativo).
  %
- %\vspace{-1em}\begin{proof} Supongamos que existen $a^{-1}$ y $\tilde{a}^{-1}$ números reales, distintos de cero, tales que $a \cdot a^{-1} = 1$ y $a \cdot \tilde{a}^{-1} = 1$. Luego,
+ %\begin{proof} Supongamos que existen $a^{-1}$ y $\tilde{a}^{-1}$ números reales, distintos de cero, tales que $a \cdot a^{-1} = 1$ y $a \cdot \tilde{a}^{-1} = 1$. Luego,
  % \begin{align*}
  %  a^{-1} &= a^{-1} \cdot 1 && \text{Neutro multiplicativo} \\
  %  &= a^{-1} \cdot \left(a \cdot \tilde{a}^{-1} \right) && \text{Por hipótesis} \\
@@ -333,26 +329,25 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
  %  &= \tilde{a}^{-1} \cdot 1 && \text{Conmutatividad} \\
  %  &= \tilde{a}^{-1} && \text{Neutro multiplicativo}\qedhere
  %  \end{align*}  
- %\end{proof} \vspace{-1em}
+ %\end{proof}
  
  \item $1=1^{-1}$. (Uno es inverso multiplicativo).
- \vspace{-1em}
  \begin{proof} 
  \begin{align*}
   1 &= 1 \cdot 1^{-1} && \text{Inverso multiplicativo}\\
   &= 1^{-1} \cdot 1 && \text{Conmutatividad}\\
   &= 1^{-1} && \text{Neutro multiplicativo} \qedhere
  \end{align*} 
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Nota:} Por el axioma del neutro multiplicativo sabemos que $1\neq 0$, por lo que existe su inverso multiplicativo.
- %\vspace{-1em}\begin{proof}
+ %\begin{proof}
  % Por axioma del neutro multiplicativo tenemos que $1\cdot 1 = 1$ y $1\neq 0$, por lo que existe $1^{-1}$ tal que $1 \cdot 1^{-1}=1$. Por unicidad del inverso multiplicativo, de la igualdad anterior sigue que $1=1^{-1}$.
- %\end{proof} \vspace{-1em}
+ %\end{proof}
 
-\pagebreak
+
  
  \item Si $c\neq 0$ y $a\cdot c=b\cdot c$, entonces $a=b$. (Ley de cancelación de la multiplicación).
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   \begin{align*}
    a &= a\cdot 1 && \text{Neutro multiplicativo}\\
    &= a \cdot \bigl(c\cdot c^{-1}\bigr) && \text{Inverso multiplicativo}\\
@@ -362,7 +357,7 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
    &= b \cdot 1 && \text{Inverso multiplicativo}\\
    &= b && \text{Neutro multiplicativo}\qedhere
    \end{align*} 
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Observación:} La prueba requiere que $c\neq 0$, pues de otro modo no podemos garantizar la existencia de su inverso multiplicativo.
  %Para esta proposición requerimos que $c\neq 0$, ya que de caber la posibilidad de que $c=0$, no tendríamos garantía de que $a=b$. El lector debería verificar este hecho. (Ej. $2\cdot 0 = 1 \cdot 0$).
 
@@ -383,7 +378,7 @@ Introducimos la propiedad que nos permite relacionar las operaciones de suma $+$
 %En este apartado utilizaremos un ejemplo para puntualizar la falta de rigor en la que pueden caer los estudiantes; dichas puntualizaciones pueden parecer exageradas y el lector podría considerar que el autor está siendo \textit{pedante} en el uso sintáctico de los axiomas, pero la idea es proveer al estudiante de un uso riguroso de la formalización matemática.
 %
 Proposición: $b\cdot 0 = 0$. El siguiente es un esbozo de la prueba propuesta por un estudiante:
-%\vspace{1em} \begin{align*}
+% \begin{align*}
 % b \cdot 0 &= b\cdot \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
 % &= ab + (-ab) && \text{Distribución}\\
 % &= 0 && \text{Inverso aditivo}
@@ -393,13 +388,13 @@ Proposición: $b\cdot 0 = 0$. El siguiente es un esbozo de la prueba propuesta p
 %Asimismo, al utilizar la propiedad distributiva se está empleando conmutatividad no enunciada, pues la síntaxis de la distribución indica que el número a la izquierda de la multiplicación debe ser \textit{distribuido} a la izquierda de los componentes de la suma, es decir, $b\cdot \bigl(a+(-a)\bigr)=b\cdot a+ b\cdot (-a)$ por la propiedad distributiva, y luego $b\cdot a+ b\cdot (-a)=a\cdot b+ (-a)\cdot b$, por conmutatividad.
 %
 %Al considerar el comentario anterior, el estudiante reescribe el esbozo como sigue:
-\vspace{1em} \begin{align*}
+ \begin{align*}
  b\cdot 0 &= b\cdot \bigl(a+ (-a)\bigr) && \text{Inverso aditivo}\\
  &= b\cdot a + b\cdot (-a) && \text{Distribución}\\
  &= a\cdot b + (-a) \cdot b && \text{Conmutatividad}\\
  &= 0 && \text{¿?}
 \end{align*}
-Pero se requiere probar que $a\cdot b+(-a)\cdot b=0$. Observemos ahora el siguiente esbozo para esta prueba: \vspace{1em} \begin{align*}
+Pero se requiere probar que $a\cdot b+(-a)\cdot b=0$. Observemos ahora el siguiente esbozo para esta prueba:  \begin{align*}
  a\cdot b+ (-a) \cdot b &= b\cdot a + b\cdot (-a) && \text{Conmutatividad}\\
  &= b\cdot \bigl(a+(-a)\bigr) && \text{Distribución}\\
  &= b\cdot 0 && \text{Inverso aditivo}\\
@@ -407,7 +402,7 @@ Pero se requiere probar que $a\cdot b+(-a)\cdot b=0$. Observemos ahora el siguie
 \end{align*}
 No obstante, se ha propuesto un \textbf{argumento circular}, por lo que no es posible verificar ninguna de las proposiciones anteriores. Requerimos pues, depender únicamente de axiomas o proposiciones previamente probadas para continuar.
 
-\pagebreak
+
 
 \subsection*{Lista de Ejercicios 3 (LE3)}
 
@@ -416,7 +411,7 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
 \begin{enumerate}[label=\alph*)]
 
  \item $a \cdot 0 = 0$. (Multiplicación por $0$).
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   \begin{align*}
    a\cdot0&=a\cdot0+0 && \text{Neutro aditivo}\\
    &=a\cdot0+\bigl(a+\left(-a\right)\bigr) && \text{Inverso aditivo}\\
@@ -427,25 +422,23 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
    &=a+\left(-a\right) && \text{Neutro multiplicativo}\\
    &=0 && \text{Inverso aditivo} \qedhere
   \end{align*} 
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \bfit{Corolario:} Si $a\neq 0$, entonces $a^{-1}\neq 0$. (Cero no es inverso multiplicativo).
- \vspace{-1em}
  \begin{proof} 
   Sea $a\neq 0$. Si $a^{-1}=0$, se verifica que \begin{align*}
    1 &= a\cdot a^{-1} && \text{Inverso multiplicativo}\\
    &= a\cdot 0 && \text{Hipótesis}\\
    &= 0 && \text{Multiplicación por $0$}
   \end{align*} Pero esto contradice la propiedad del neutro multiplicativo. Por tanto, si $a\neq 0$, entonces $a^{-1}\neq 0$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \textbf{Nota:} El axioma del neutro multiplicativo no implica directamente que $0$ no pueda ser inverso multiplicativo de algún número real, únicamente indica que si $x\in \R$ y $x\neq 0$, entonces $\exists x^{-1}$. El axioma tampoco especifica que para $0$ el inverso multiplicativo no existe, sin embargo, si suponemos su existencia, es decir, si $\exists 0^{-1}\in \R$ tal que $0\cdot 0^{-1}=1$, tenemos por la multiplicación por $0$ que $0=1$, lo que es una contradicción.
 
  \item Si $ a \cdot b = 0 $, entonces $a=0$ o $b=0$ (disyunción).
- \vspace{-1em}
  \begin{proof} Demostraremos primero que si $a\neq 0$ y $b\neq 0$, entonces $a\cdot b\neq 0$.
  
- Sea $a\neq 0$ y $b\neq 0$. Notemos que \vspace{1em}\begin{align*}
+ Sea $a\neq 0$ y $b\neq 0$. Notemos que \begin{align*}
   a &= a\cdot 1 && \text{Neutro multiplicativo}\\
   &= a\cdot \bigl(b\cdot b^{-1}\bigr) && \text{Inverso multiplicativo}\\
   &= (a\cdot b) \cdot b^{-1} && \text{Asociatividad}
@@ -453,8 +446,8 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
  Por hipótesis $a\neq 0$, por lo que $0\neq (a\cdot b) \cdot b^{-1}$. Además, $b^{-1}\neq 0$, pues cero no es inverso multiplicativo.
  
  Si $a\cdot b=0$, por la multiplicación por cero, $(a\cdot b) \cdot b^{-1}=0$, lo que es una contradicción. Por tanto, si $a\neq 0$ y $b\neq 0$, entonces $a\cdot b\neq 0$. Finalmente, por contraposición, si $a\cdot b =0$, entonces $a=0$ o $b=0$.
- \end{proof} \vspace{-1em}
- %\vspace{-1em}\begin{proof} 
+ \end{proof}
+ %\begin{proof} 
  %Supongamos que $a$ es distinto de $0$.
  %\begin{align*}
  %b &= b \cdot 1	&& \text{Neutro multiplicativo} \\
@@ -465,11 +458,10 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
  %&= a^{-1} \cdot 0	&& \text{Conmutatividad}\\
  %&= 0 && \text{Multiplicación por $0$} \qedhere
  %\end{align*} 
- %\end{proof} \vspace{-1em}
+ %\end{proof}
  %\textbf{Nota:} Al utilizar la expresión $A$ o $B$ nos referimos a la disyunción (lógica).%, es decir, la proposición es verdadera si únicamente $a=0$, únicamente $b=0$ o ambos $a$ y $b$ son iguales a cero.
 
  \item Si $a\neq 0$ y $b\neq 0$, entonces $(a \cdot b)^{-1}=a^{-1} \cdot b^{-1}$. (Multiplicación de inversos multiplicativos).
- \vspace{-1em}
  \begin{proof} 
  \begin{align*}
   1 &= b\cdot b^{-1} && \text{Inverso multiplicativo}\\
@@ -478,9 +470,9 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
   &= (b\cdot a) \cdot \bigl(a^{-1} \cdot b^{-1}\bigr) && \text{Asociatividad}\\
   &= (a\cdot b) \cdot \bigl(a^{-1} \cdot b^{-1}\bigr) && \text{Conmutatividad}
  \end{align*} Por la unicidad del inverso multiplicativo $a^{-1} \cdot b^{-1}=(a\cdot b)^{-1}$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Nota:} En esta demostración está implícito que $\exists (a\cdot b)^{-1}\in \R$, lo cual es válido pues hemos probado que si $a\neq 0$ y $b\neq 0$, entonces $a\cdot b\neq 0$, por lo que existe su inverso multiplicativo.
- %\vspace{-1em}\begin{proof} 
+ %\begin{proof} 
  % \begin{align*}
  % && \quad \left(a \cdot b \right) \cdot  \left(a^{-1} \cdot b^{-1}  \right)	&=	 \left( \left(a \cdot b\right) \cdot a^{-1}  \right) \cdot b^{-1}  	&& \text{Asociatividad}\\
  % && \quad &=	 \left( \left(b\cdot a \right) \cdot a^{-1}  \right) \cdot b^{-1}  	&& \text{Conmutatividad}\\
@@ -490,28 +482,27 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
  % && \quad &=	1	&& \text{Inverso multiplicativo}
  % \end{align*}
  % Sigue que $\left(a^{-1} \cdot b^{-1} \right)$ es inverso multiplicativo de $\left( a \cdot b\right)$, y por la unicidad del inverso multiplicativo, sigue que $\left(a^{-1} \cdot b^{-1} \right) = \left( a \cdot b\right)^{-1}$. 
- %\end{proof} \vspace{-1em}
+ %\end{proof}
 
-\pagebreak
+
 
  \item Si $a\neq 0$, entonces $\left( a^{-1} \right)^{-1}=a$.
- \vspace{-1em}
  \begin{proof} 
   \begin{align*}
    1 &= a\cdot a^{-1} && \text{Inverso multiplicativo}\\
    &= a^{-1} \cdot a && \text{Conmutatividad}
   \end{align*} Por la unicidad del inverso multiplicativo sigue que $a=\bigl(a^{-1}\bigr)^{-1}$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Nota:} En esta demostración está implícito que $\exists\left( a^{-1} \right)^{-1}\in \R$, lo cual es válido pues cero no es inverso multiplicativo, es decir, tenemos $a^{-1}\neq 0$, por lo que existe su inverso multiplicativo.
  
  Al emplear la \textit{forma} de la unicidad del inverso multiplicativo, $x\neq 0 \land x\cdot y=1 \Longrightarrow y = x^{-1}$, hemos tomado $x=a^{-1}$ y $y=a$.
- %\vspace{-1em}\begin{proof} 
+ %\begin{proof} 
  % El inverso multiplicativo de $a$ satisface que $a\cdot a^{-1}=1$, y por conmutatividad, $a^{-1} \cdot a=1$, de esta igualdad se sigue que $a$ es inverso multiplicativo de $a^{-1}$. Similarmente, el inverso multiplicativo de $a^{-1}$ satisface que $ a^{-1} \cdot \left( a^{-1} \right)^{-1} =1$, y por la unicidad del inverso multiplicativo, sigue que $\left( a^{-1} \right)^{-1}=a$.  
- %\end{proof} \vspace{-1em}
+ %\end{proof}
 
  \item $(-1)=(-1)^{-1}$. (Menos uno es inverso multiplicativo).
  
- \vspace{-1em}\begin{proof} Primero probaremos la existencia de $(-1)^{-1}$.
+ \begin{proof} Primero probaremos la existencia de $(-1)^{-1}$.
   
  Si $-1=0$, tenemos que $1+(-1)=1+0$, y por neutro aditivo $1+(-1)=1$, pero el inverso aditivo satisface que $1+(-1)=1$, de donde sigue que $1=0$, lo que contradice la propiedad del neutro multiplicativo. Por tanto, $-1\neq 0$, por lo que $\exists (-1)^{-1}\in \R$. Luego,
 
@@ -521,11 +512,11 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
   &= (-1)\cdot (-1)^{-1} + (-1) \cdot 1 && \text{Neutro multiplicativo}\\
   &= (-1) \cdot \Bigl((-1)^{-1} + 1\Bigr) && \text{Distribución}
  \end{align*} Como $-1\neq 0$, sigue que $(-1)^{-1} + 1=0$, y por conmutatividad $1+(-1)^{-1}=0$. Finalmente, por unicidad del inverso aditivo, $(-1)^{-1}=-1$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, hemos tomado $x=1$ y $y=(-1)^{-1}$.
 
  \item $(-a) \cdot b = -(a \cdot b) = a \cdot (-b)$. (Multiplicación por inverso aditivo).% (Ley de los signos: menos por más/más por menos es menos).
- \vspace{-1em}\begin{proof} \leavevmode
+ \begin{proof} \leavevmode
  \begin{center}\vspace{-2em}
  \begin{minipage}[t]{.5\linewidth}
   \begin{align*}
@@ -546,7 +537,7 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
  \end{proof}%
  \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, hemos tomado, $x=a\cdot b$ y $y=(-a)\cdot b$, por una parte y $y=a\cdot (-b)$, por la otra.
  %Otra forma:
- %\vspace{-1em}\begin{proof} 
+ %\begin{proof} 
  %\begin{align*}
  % (-a) \cdot b &= \bigl( \left(-1 \right) \cdot a \bigr) \cdot b && \text{Multiplicación por ($-1$)}\\
  % &= (-1) \cdot (a \cdot b) && \text{Asociatividad}\\
@@ -557,7 +548,7 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
  % &= a\cdot \bigl((-1)\cdot b\bigr) && \text{Conmutatividad}\\
  % &= a \cdot (-b) && \text{Multiplicación por ($-1$)} && \text{(**)}
  % \end{align*} Por (*) y (**) tenemos que $ (-a) \cdot b = -(a \cdot b) = a \cdot (-b)$.
- %\end{proof} \vspace{-1em}
+ %\end{proof}
  %\textbf{Nota:} A partir de esta demostración evitamos la ambigüedad que se mencionó en el apartado \textit{Una nota sobre rigurosidad}.
 
  \bfit{Corolario:}
@@ -569,10 +560,10 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
     \qquad (-a)\cdot (-b) &= a \cdot \bigl(-(-b)\bigr) && \text{Multiplicación por inverso aditivo}\\
     \qquad &= a \cdot b && \text{Inverso aditivo del inverso aditivo} \qedhere
    \end{align*} 
-  \end{proof} \vspace{-1em}
+  \end{proof}
   \textbf{Nota:} Al emplear la \textit{forma} de la multiplicación por inverso aditivo, $(-x)\cdot y = x \cdot (-y)$, hemos tomado $x=a$ y $y=(-b)$.
   %Otra demostración
-  %\vspace{-1em}\begin{proof} 
+  %\begin{proof} 
   % \begin{align*}
   %  (-a) \cdot (-b) &= (-a) \cdot \bigl( (-1) \cdot b \bigr) && \text{Multiplicación por ($-1$)}\\
   %  &= \bigl( (-a) \cdot (-1) \bigr) \cdot b && \text{Asociatividad}\\
@@ -580,14 +571,14 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
   %  &= -(-a) \cdot b && \text{Multiplicación por ($-1$)}\\
   %  &= a \cdot b && \text{Unicidad del inverso aditivo} \qedhere
   % \end{align*} 
-  %\end{proof} \vspace{-1em}
+  %\end{proof}
   %\textbf{Nota:} A las proposiciones $ (-m) \cdot n = -(m \cdot n) $ y $ (-m) \cdot (-n) = m \cdot n $, las enunciaremos como \textbf{leyes de los signos}.
 %
   %\item $(-1) \cdot a =-a $. (Multiplicación por -1).
 %
   %Por el teorema, $(-1)\cdot a = -(1\cdot a) = -a$.
   %
-  %\vspace{-1em}\begin{proof} 
+  %\begin{proof} 
   % \begin{align*}
   % 0 &= a \cdot 0 && \text{Multiplicación por $0$}\\
   % &= a \cdot \bigl(1+(-1)\bigr) && \text{Inverso aditivo}\\
@@ -595,7 +586,7 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
   % &= a + a \cdot (-1)  && \text{Neutro multiplicativo}\\
   % &= a + (-1) \cdot a  && \text{Conmutatividad}
   % \end{align*} Sigue que $(-1) \cdot a$ es inverso aditivo de $a$, el cual es único, por lo que $(-1) \cdot a = -a$.
-  %\end{proof} \vspace{-1em}
+  %\end{proof}
   %\textbf{Observación:} Al multiplicar cualquier número real por ($-1$) obtenemos el inverso multiplicativo de ese número real.
   %
   %Otra forma de demostrar este hecho es la siguiente: \begin{align*}
@@ -612,7 +603,7 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
   % &= \left( -1 \right)  \cdot a && \text{Conmutatividad}
   %\end{align*} \qed
 
-\pagebreak
+
 
   \item $-(a^{-1})=(-a)^{-1}=(-1)\cdot a^{-1}$. (Inverso aditivo del inverso multiplicativo).
   %\vspace{-1em}
@@ -627,13 +618,13 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
    &= -\Bigl(\qty(a^{-1})\cdot 1\Bigr) && \text{Multiplicación por inverso aditivo}\\
    &= -\Bigl(a^{-1}\Bigr) && \text{Neutro multiplicativo} \qedhere
   \end{align*}
-  \end{proof} \vspace{-1em}
+  \end{proof}
   \textbf{Nota:} Al emplear la \textit{forma} de la multiplicación por inverso aditivo, $(-x)\cdot y = -(x\cdot y)$, hemos tomado $x=1$ y $y=a^{-1}$, por una parte, y $x=(a^{-1})$ y $y=1$, por la otra.
  \end{enumerate}% casos especiales (-a)b=-ab
 
 \end{enumerate}
 
-\pagebreak
+
 
 \textbf{Notación}
 %Esta sección tiene el propósito de introducir al lector al uso de notación por cambio de \textit{etiqueta}, esto es, asignar distintos símbolos a \textit{objetos} con los que hemos trabajado, con el fin de agilizar la demostración de teoremas.
@@ -649,7 +640,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
  \item $\frac{a}{b}=a\cdot \frac{1}{b}$, si $b\neq 0$.% (Definición de la división).
- \vspace{-1em}
  \begin{proof} 
  \begin{align*}
   \frac{a}{b} &= a\cdot b^{-1} && \text{Notación}\\
@@ -657,15 +647,15 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   &= a\cdot \bigl(1\cdot b^{-1}\bigr) && \text{Asociatividad}\\
   &= a\cdot \frac{1}{b} && \text{Notación} \qedhere
  \end{align*}
- \end{proof} \vspace{-1em}
- %\vspace{-1em}\begin{proof} \begin{align*} \qquad
+ \end{proof}
+ %\begin{proof} \begin{align*} \qquad
  % a\cdot \frac{1}{b} &= (a\cdot 1) \cdot \frac{1}{b} && \text{Neutro multiplicativo}\\
  % &= \bigl(a\cdot 1^{-1}\bigr) \cdot \frac{1}{b} && \text{Uno es inverso multiplicativo}\\
  % &= \frac{a}{1} \cdot \frac{1}{b} && \text{Notación}\\
  % &= \frac{a\cdot 1}{1\cdot b} && \text{Multiplicación de fracciones}\\
  % &= \frac{a}{b} && \text{Neutro multiplicativo} \qedhere
  %\end{align*}
- %\end{proof} \vspace{-1em}
+ %\end{proof}
  %\begin{align*}
  % \frac{a}{b} &= a\cdot b^{-1} && \text{Notación}\\
  % &= a\cdot 1 \cdot 1\cdot b^{-1}&& \text{Neutro multiplicativo}\\
@@ -676,14 +666,13 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %\end{align*}
 
  \item $a \cdot \frac{c}{b} = \frac{ac}{b}$, si $b \neq 0$.
- \vspace{-1em}
  \begin{proof} 
  \begin{align*}
   a\cdot \frac{c}{b} &= a\cdot \bigl(c\cdot b^{-1}\bigr) && \text{Notación}\\
   &= (ac) \cdot b^{-1} && \text{Asociatividad}\\
   &= \frac{ac}{b} && \text{Notación} \qedhere
  \end{align*}
- \end{proof} \vspace{-1em}
+ \end{proof}
  %\vspace{-1em}
  %\begin{proof} 
  %\begin{align*}
@@ -693,7 +682,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  % &= \frac{ac}{1\cdot b} && \text{Multiplicación de fracciones}\\
  % &= \frac{a}{b} && \text{Neutro multiplicativo} \qedhere
  %\end{align*}
- %\end{proof} \vspace{-1em}
+ %\end{proof}
  %\begin{align*}
  % a\cdot \frac{c}{b} &= a\cdot c \cdot \frac{1}{b} && \text{Definición de la división}\\
  % &= a\cdot c \cdot 1 \cdot \frac{1}{b} && \text{Neutro multiplicativo}\\
@@ -717,8 +706,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  % &= ac\cdot (bd)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
  % &= \frac{ac}{bd} && \text{Notación} \qedhere
  %\end{align*}
- %\end{proof} \vspace{-1em}
- \vspace{-1em}\begin{proof}
+ %\end{proof}
+ \begin{proof}
  \begin{align*}\qquad \ \qquad
  \frac{a}{b} \cdot \frac{c}{d} &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) && \text{Notación}\\
  &= a \cdot \Bigl( b^{-1} \cdot \left( c \cdot d^{-1} \right) \Bigr) && \text{Asociatividad}\\
@@ -729,10 +718,9 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  &= (a\cdot c) \cdot (b\cdot d)^{-1} && \text{Asociatividad}\\
  &= \frac{ac}{bd} && \text{Notación} \qedhere
  \end{align*} 
- \end{proof} \vspace{-1em}
+ \end{proof}
  
  \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$. (Cancelación de factores en común).
- \vspace{-1em}
  \begin{proof} 
  \begin{align*}
  \frac{a}{b}&=\frac{a}{b}\cdot 1 && \text{Neutro multiplicativo}\\
@@ -740,7 +728,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  &= \frac{a}{b} \cdot \frac{c}{c} && \text{Notación}\\
  &= \frac{ac}{b\cdot c} && \text{Multiplicación de fracciones} \qedhere
  \end{align*}
- \end{proof} \vspace{-1em}
+ \end{proof}
  %Otra forma de demostrar esta proposición es la siguiente:
  %\begin{align*}
  % \frac{ac}{bc} &= a \cdot c \cdot \left( bc \right)^{-1} && \text{Notación}\\
@@ -752,7 +740,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %\end{align*}
  
  \item $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}$, si $b, c, d \neq 0$. (Regla del sandwich).
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
  \begin{align*} \qquad \ \qquad
  \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Notación}\\
  &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Notación}\\
@@ -762,10 +750,9 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  &= \frac{a}{b} \cdot \frac{d}{c} && \text{Notación}\\
  &= \frac{ad}{bc} && \text{Multiplicación de fracciones} \qedhere
  \end{align*}  
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item $\frac{a}{c} \pm  \frac{b}{c}=\frac{a\pm b}{c}$, si $c\neq 0$. (Suma de fracciones con denominador conmún).
- \vspace{-1em}
  \begin{proof} 
  \begin{align*}
  \frac{a}{c} \pm  \frac{b}{c} &= \bigl(a\cdot c^{-1}\bigr) \pm  \bigl(b\cdot c^{-1}\bigr) && \text{Notación}\\
@@ -774,20 +761,19 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  &= (a\pm b) \cdot c^{-1} && \text{Conmutatividad}\\
  &= \frac{a\pm b}{c} && \text{Notación} \qedhere
  \end{align*}
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} $, si $b, d \neq 0$. (Suma de fracciones).
- \vspace{-1em}
  \begin{proof} 
  \begin{align*} \qquad \ \qquad
  \frac{a}{b} \pm \frac{c}{d} &= \frac{ad}{bd} \pm \frac{cb}{db} && \text{Cancelación de factores en común}\\
  &= \frac{ad}{bd} \pm \frac{cb}{bd} && \text{Conmutatividad}\\
  &= \frac{ad \pm cb}{bd} && \text{Suma de fracciones con denominador común} \qedhere
  \end{align*}
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$, si $b\neq 0$.
- \vspace{-1em}\begin{proof} \leavevmode
+ \begin{proof} \leavevmode
   \begin{center}\vspace{-2em}
    \begin{minipage}[t]{.5\linewidth}
     \begin{align*}
@@ -804,9 +790,9 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     \end{align*}
    \end{minipage}
    \end{center} 
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Nota:} En esta prueba está implícito que $\exists (-b)^{-1}\in \R$, lo cual es válido, pues $b\neq 0$, por lo que $-b\neq 0$.
- %\vspace{-1em}\begin{proof} \begin{align*}
+ %\begin{proof} \begin{align*}
  % \frac{a}{b} \pm \frac{c}{d} &= ab^{-1} \pm cd^{-1} && \text{Notación}\\
  % &= a\cdot 1 \cdot b^{-1} \pm c\cdot 1 \cdot d^{-1} && \text{Neutro multiplicativo}\\
  % &= ad\cdot d^{-1}b^{-1} \pm cb\cdot b^{-1}d^{-1} && \text{Inverso multiplicativo}\\
@@ -814,8 +800,8 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  % &= (bd)^{-1} \bigl(ad\pm cd\bigr) && \text{Distribución}\\
  % &= \frac{ad \pm bc}{bd} && \text{Notación} \qedhere
  %\end{align*}
- %\end{proof} \vspace{-1em}
- %\vspace{-1em}\begin{proof} 
+ %\end{proof}
+ %\begin{proof} 
  %\begin{align*}
  %\frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Notación}\\
  %&=	\left( a \cdot 1 \right)   \cdot b^{-1} \pm \left( c \cdot 1 \right) \cdot d^{-1} && \text{Neutro multiplicativo}\\
@@ -829,7 +815,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %&=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Conmutatividad}\\
  %&=	\frac{ad \pm bc}{bd} && \text{Notación} \qedhere
  %\end{align*} 
- %\end{proof} \vspace{-1em}
+ %\end{proof}
  %\item $\frac{-a}{-b}=\frac{a}{b}$, si $b\neq 0$.
  % \begin{align*}
  %  \frac{-a}{-b} &= (-a)\cdot (-b)^{-1} && \text{Notación}\\
@@ -853,12 +839,12 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
  %
  %$a=\frac{a}{1}$. (División por $1$).
- %\vspace{-1em}\begin{proof} 
+ %\begin{proof} 
  % El neutro multiplicativo satisface que $a=a\cdot 1=a\cdot 1^{-1}$, y por notación $a=\frac{a}{1}$.
- %\end{proof} \vspace{-1em}
+ %\end{proof}
 
 %\item Si $ab^{-1}=ba^{-1}$, entonces $a^2=b^2$.
-%\vspace{-1em}\begin{proof} 
+%\begin{proof} 
 %\begin{align*}
 % a^2 &= a\cdot a && \text{Notación}\\
 % &= (a\cdot a) \cdot 1 && \text{Neutro multiplicativo}\\
@@ -875,10 +861,10 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 % &= b\cdot b && \text{Neutro multiplicativo}\\
 % &= b^2 && \text{Notación} \qedhere
 %\end{align*}
-%\end{proof} \vspace{-1em}
+%\end{proof}
 %
 %\item Si $a^2=b^2$, entonces $a=b$ o $a=-b$.
-%\vspace{-1em}\begin{proof} 
+%\begin{proof} 
 % \begin{align*}
 %  0 &= b^2 - b^2 && \text{Inverso aditivo}\\
 %  &= a^2 - b^2 && \text{Hipótesis}\\
@@ -891,10 +877,10 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 %  &= a (a+b) - b(b+a) && \text{Distribución}\\
 %  &= (a+b)  (a-b) && \text{Distribución}
 %  \end{align*} De la multiplicativo por $0$, sigue que $a+b=0$ o $a-b=0$. Sumando inverso aditivo de $b$ en ambas igualdades tenemos que $a=-b$ o $a=b$.
-%\end{proof} \vspace{-1em}
+%\end{proof}
 \end{enumerate}
 
-\pagebreak
+
 
 \subsection*{Una nota sobre notación}
 
@@ -931,7 +917,7 @@ Las siguientes son todas las \textit{formas} en que podríamos sumar/multiplicar
 \end{center}
 
 Podemos probar igualdad de todas ellas a partir de las propiedades de la suma/multiplicación:
-\vspace{1em}\begin{align*}
+\begin{align*}
  (a \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ c &= a \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
  &= a \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ b) && \text{Conmutatividad} && \text{Forma (iii)}\\
  &= (a \ \nicefrac{+}{\cdot} \ c) \ \nicefrac{+}{\cdot} \ b && \text{Asociatividad} && \text{Forma (iv)}\\
@@ -1006,7 +992,7 @@ A partir de esta igualdad (y otras probadas anteriormente) introducimos la sigui
 %%las anteriores pueden obtenerse utilizando los axiomas de conmutatividad y asociatividad de la suma, con lo que garantizamos la igualdad de todas ellas, y descartamos la necesidad de enumerarlas todas como axiomas.
 %%Notemos que para sumar tres números diferentes $(a,b,c)$, siempre requerimos ejecutar, primero, la suma de dos de ellos $(a+b)$, y luego tomar este resultado para sumarlo al tercer número $(a+b)+c$, a esto alude el lado izquierdo de la igualdad de la asociatividad de la suma (\textbf{S2}). También podemos cambiar el orden, realizando la suma de $a$ y $b$, luego tomar el número $c$ y sumarle a este último el resultado que habíamos obtenido con anterioridad: $c+(a+b)$. Estos resultados (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$.
 %%Notemos que las formas (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$. Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y \textbf{(ii)} satisfacen igualdad, por lo que tenemos $(a+b)+c=a+(b+c)$. De esto el lector puede inferir cuál es el uso de estos axiomas y cómo demostrar la igualdad de todas las formas de sumar tres números reales.
-%\vspace{1em}\begin{align*}
+%\begin{align*}
 % (a+b)+c &= a+(b+c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
 % &= a+(c+b) && \text{Conmutatividad} && \text{Forma (iii)}\\
 % &= (a+c)+b && \text{Asociatividad} && \text{Forma (iv)}\\
@@ -1104,12 +1090,12 @@ Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(x^{-1})=
  % &= \frac{-a}{b} && \text{Multiplicación por ($-1$)} && \text{(**)}
  %\end{align*} De las igualdades (*) y (**) tenemos que $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$.
 
-\pagebreak
+
 
 \section*{Un campo finito}
 
 Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$. El siguiente es un esbozo de la prueba:
-\vspace{1em}\begin{align*}
+\begin{align*}
  2a %&= (1+1)a && \text{Notación}\\
  %&= a(1+1) && \text{Conmutatividad}\\
  %&= a\cdot 1 + a\cdot 1 && \text{Distribución}\\
@@ -1195,7 +1181,7 @@ Por lo anterior, para expandir el conjunto de los números reales, requerimos es
 %
 %\textbf{Nota:} Hasta este punto al probar proposiciones el autor ha procurado enunciar cada propiedad que se utiliza, sin embargo, se espera que el lector sea capáz de inferir el uso de estas y de la notación en lo que resta del curso. Por ello dejaremos de enunciar cada propiedad o proposición que sea empleada excepto en aquellos casos en los que el autor considere que se requiera para preservar claridad.% Sin embargo, el dejar de enunciar propiedades empleadas lo realizaremos paulatinamente, de modo que el lector pueda acostumbrarse a esta forma de escritura.
 
-\pagebreak
+
 
 \part*{Axiomas de orden}
 
@@ -1221,21 +1207,21 @@ Existe un subconjunto del conjunto de los números reales llamado conjunto de lo
 \item $x = 0$.
 \item $-x \in \R^+$.
 \end{enumerate}
-\end{enumerate}\vspace{-1em}
+\end{enumerate}
 
 \subsection*{Lista de Ejercicios}
 \begin{enumerate}[label=\alph*)]
  \item Demuestre que $0\notin \R^+$.
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
  Si $0\in \R^+$ se contradice el axioma de tricotomía.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Demuestre que $1\in \R^+$. (Uno es positivo).
- \vspace{-1em}\begin{proof} Consideremos los casos: \begin{enumerate}[label=\roman*)]
+ \begin{proof} Consideremos los casos: \begin{enumerate}[label=\roman*)]
  \item $1=0$, pero este caso se descarta por axioma del neutro multiplicativo.
  \item Si $-1\in \R^+$, por cerradura de la multiplicación en $\R^+$, $(-1) \cdot (-1)=1\in \R^+$, pero esto contradice la propiedad de tricotomía.
  \end{enumerate} Por tanto, $1\in \R^+$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 \end{enumerate}
 
 \textbf{Observación:} para cualesquiera números reales $a$ y $b$ tenemos que $a=b$ o $a\neq b$. A su vez, \vspace{-1em}\begin{enumerate}[label=\roman*)]
@@ -1244,7 +1230,7 @@ Existe un subconjunto del conjunto de los números reales llamado conjunto de lo
  \item $a-b\in \R^+$.%, lo que denotamos como $b<a$ (o $a>b$).
  \item $-(a-b)=b-a\in \R^+$.%, lo que denotamos como $a<b$ (o $b>a$).
 \end{itemize}%  o .%$-(x-y)=y-x\in \R^+$.% (o equivalentemente $x-y\in \R^-$).
-\end{enumerate}\vspace{-1em}
+\end{enumerate}
 
 A partir de esta observación introducimos la siguiente \bfit{definición:}
 
@@ -1256,7 +1242,7 @@ De esta definición sigue que dados $x,y\in \R$, por tricotomía se verifica una
  \item $y<x$.
  \item $x=y$.
  \item $x<y$.
-\end{enumerate}\vspace{-1em}
+\end{enumerate}
 
 \textbf{Notación:} Dados $x,y,z\in \R$, utilizaremos la notación \begin{itemize}
  \item $y \leq x$ (o $x\geq y$) para indicar que $y<x$ o $x=y$.
@@ -1273,12 +1259,12 @@ De esta definición sigue que dados $x,y\in \R$, por tricotomía se verifica una
 Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 \begin{enumerate}[label=\alph*)]
 %\item $a \in \R^+$ si y solo si $a>0$. (Definición de número real positivo).
-%\vspace{-1em}\begin{proof} \leavevmode
+%\begin{proof} \leavevmode
 % \begin{itemize}
 %  \item[$\Rightarrow)$] El cero satisface que $a=a+0=a-0$. Si $a \in \R^+$, entonces $a-0 \in \R^+$, es decir, $0<a$.
 %  \item[$\Leftarrow)$] Si $0<a$, entonces $a-0 \in \R^+$, y sabemos que el cero satisface que $a-0=a+0=a$, por lo que $a \in \R^+$. \qedhere
 % \end{itemize}
-%\end{proof} \vspace{-1em}
+%\end{proof}
 %\bfit{Definición:}  Si $x$ es un número real tal que $0<x$ diremos que $x$ es un númeo real positivo.
  %La definición de número real positivo es equivalente a número real mayor a cero.
  %Todo número real positivo es mayor a cero, y todo número real mayor a cero es un número real positivo.
@@ -1310,7 +1296,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   %\end{minipage}
   %\end{center}
   %Otra forma de demostrar este hecho es la siguiente:
-  %\vspace{-1em}\begin{proof}\leavevmode
+  %\begin{proof}\leavevmode
   % \begin{enumerate}[label=\roman*)]
   %  \item Supongamos que $0<a$. Notemos que: \begin{align*}
   %   0 + (-a) &< a + (-a) && \text{Ley de cancelación}\\
@@ -1324,7 +1310,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   %   0 &< a && \text{Neutro aditivo} \qedhere
   %  \end{align*}
   % \end{enumerate} 
-  %\end{proof} \vspace{-1em}
+  %\end{proof}
   %\textbf{Observación:} El inverso aditivo de cualquier número real positivo es menor a cero.
   % El conjunto de los números reales negativos se representa con el símbolo $\R^-$.
   %\bfit{Definición:}  El conjunto de los números reales negativos se representa con el símbolo $\R^-$ y se define como los elementos en los números reales cuyos inversos aditivos pertenecen al conjunto de los números reales positivos:
@@ -1344,18 +1330,18 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %   \item El inverso aditivo satisface que $a-a=0$. Si $a<0$, por la cerradura de la suma en $\R^+$,
  %  \end{enumerate}
  % \end{itemize}
- %\end{proof} \vspace{-1em}
+ %\end{proof}
 % \item Si $a<b$, entonces $\exists! x\in \R^+$ tal que $a+x=b$.
 % \begin{proof}\vspace{-1em} \leavevmode
 % \begin{enumerate}[label=\roman*)]
 % \item Primero probaremos su existencia. Sea $a<b$. Por definición, $b-a\in \R^+$. Tomando $x=b-a$, tenemos que $a+x=a+b-a=b$.
 % \item Ahora probaremos la unicidad. Sean $x,y\in \R^+$ tales que $a+x=b$ y $a+y=b$, notemos que $x=b-a$ y $y=b-a$, es decir, $x=y$. \qedhere
-% \end{enumerate}\vspace{-1em}
-% \end{proof} \vspace{-1em}
+% \end{enumerate}
+% \end{proof}
  \item Si $a<b$ y $b<c$, entonces $a<c$. (Transitividad).
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Por definición $(b-a) , (c-b) \in \R^+$. Por cerradura de la suma en $\R^+$, $(b-a) + (c-b) \in \R^+$. De donde sigue que $(b-a)+(c-b)=b-a+c-b=c-a\in \R^+$, es decir, $a<c$.
- \end{proof} \vspace{-1em}
+ \end{proof}
   %\begin{align*}
   %(b-a) + (c-b) &= b - a + c -b && \text{Notación}\\
   %&= b-a -b+c && \text{Conmutatividad}\\
@@ -1367,12 +1353,12 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
  \item $a<b$ si y solo si $a+c<b+c$. (Ley de cancelación de la suma en desigualdades).
  
- \vspace{-1em}\begin{proof} \leavevmode
+ \begin{proof} \leavevmode
  \begin{itemize}
   \item[$\Rightarrow)$] Si $a<b$, por definición, $b-a \in \R^+$. Luego, $b-a=b-a+c-c=b+c-a-c=b+c-(a+c)$. De este modo, $b+c-(a+c)\in \R^+$, es decir, $a+c<b+c$.
   \item[$\Leftarrow)$] Si $a+c<b+c$, por definición $b+a-(a+c)\in \R^+$. Luego, $b+c-(a+c)=b+c-a-c=b-a$. De este modo, $b-a\in \R^+$, es decir, $a<b$. \qedhere
   \end{itemize} 
- \end{proof} \vspace{-1em}
+ \end{proof}
  \textbf{Nota:} Si el contexto es claro, enunciaremos esta proposición como ley de cancelación.
 
  \bfit{Corolario:}
@@ -1499,12 +1485,12 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   Por transitividad $a<b$. Tomando $0<b$, por ley de cancelación, $a<b+a$, y tomando $a<0$, por ley de cancelación, $a+b<b$. Por tanto, $a<a+b<b$.
  \end{enumerate} % Corolario
 
-\pagebreak
+
 
  \item Si $a<b$ y $c < d$, entonces $a+c<b+d$. (Suma de desigualdades).
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
  Por definición $b-a\in \R^+$ y $d-c\in \R^+$. Por cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c)\in \R^+$. Luego, $(b-a)+(d-c)=b+d-a-c=b+d-(a+c)$. Por lo que $b+d-(a+c)=\in \R^+$, es decir, $a+c<b+d$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  %\textbf{Observación:} La suma de desigualdades preserva el orden.
  %\textbf{Nota:} No hay doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de este hecho únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
  %Esta proposición difiere de la ley de la cancelación (de la suma en desigualdades) ya que no se satisface una doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de esta hipótesis únicamente, que $a<b$. Ej. $a=4, c=0, b=3, d=4$, cumplen la hipótesis $a+c=4+0=4<7=3+4=b+d$, pero $a=4<3=b$ es una contradicción.
@@ -1521,18 +1507,18 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
  \item Si $a<b$ y $0<c$, entonces $ac<bc$.% (Multiplicación por positivo).
  
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Por definición $b-a \in\R^+$ y $c \in\R^+$. Por cerradura de la multiplicación en $\R^+$ se verifica que $c(b-a) \in\R^+$. Sigue que $c(b-a)=cb-ca=bc-ac \in\R^+$, es decir, $ac<bc$. 
- \end{proof} \vspace{-1em}
+ \end{proof}
 %
  %\textbf{Observación:} La multiplicación por números reales positivos preserva el orden de la desigualdad.
  %\textbf{Nota:} De este resultado sigue que si $m<0$ y $0<n$, entonces $mn<0=0\cdot n$ —multiplicación por cero.
 
  \item Si $a<b$ y $c<0$, entonces $bc<ac$.% (Multiplicación por negativo).
  
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
  Como $b-a\in\R^+$ y $-c\in\R^+$, por cerradura de la multiplicación en $\R^+$, $-c(b-a) \in\R^+$. Sigue que $-c(b-a)= -c \Bigl( b + (-a) \Bigr)=(-c) \cdot b + (-c) \cdot (-a)=-cb +ca $. Finalmente, $-cb +ca=ac - bc \in\R^+$, es decir, $bc<ac$. 
- \end{proof} \vspace{-1em}
+ \end{proof}
  %\textbf{Observación:} La multiplicación por números reales negativos cambia el orden de la desigualdad.
  %\textbf{Nota:} De esta demostración sigue que: \begin{enumerate}[label=\roman*)]
  % \item Si $0<m$ y $n<0$, entonces $mn<0$. (Positivo por negativo/negativo por positivo es negativo).
@@ -1540,19 +1526,18 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %\end{enumerate}
 
  \item Si $0<a$, entonces $0<a^{-1}$.% (Inverso multiplicativo positivo).
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
  Sea que $a^{-1}<0$. Como $0<a$, al multiplicar en desigualdades preserva el orden, por lo que $a^{-1} \cdot a<0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1} \cdot a = 1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a=0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}>0$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  %\text{Nota:} Análogamente, Si $a<0$, entonces $a^{-1}<0$. (Inverso multiplicativo negativo).
 
  \bfit{Corolario:} Si $a<0$, entonces $a^{-1}<0$.% (Inverso multiplicativo negativo).
- \vspace{-1em}
  \begin{proof}
  Sea $a<0$, sabemos que $-a>0$, por lo que $-a^{-1}>0$, de donde sigue que $a^{-1}<0$. \qedhere
- \end{proof} \vspace{-1em}
- %\vspace{-1em}\begin{proof} 
+ \end{proof}
+ %\begin{proof} 
  % Sea que $a^{-1}>0$. Como $a<0$, al multiplicar en desigualdades cambia el orden, por lo que $a^{-1} \cdot a < 0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1}\cdot a =1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a =0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}<0$.
- %\end{proof} \vspace{-1em}
+ %\end{proof}
 
  \item Sea $a,b\in \R$. Encuentre las condiciones que deben cumplirse para que $ab<0$ o $0<ab$. (Ley de los signos).
  
@@ -1602,7 +1587,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %\end{itemize} \qed
 
  \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$. (Punto medio).
- \vspace{-1em}\begin{proof} \leavevmode% \vspace{-1em}
+ \begin{proof} \leavevmode% \vspace{-1em}
   \begin{center}\vspace{-2em}
   \begin{minipage}[r]{.4\linewidth}
   \begin{align*}
@@ -1625,11 +1610,11 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   \end{align*}
   \end{minipage}%
   \end{center}% Por notación, $a < \frac{a+b}{2} < b$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
  %\textbf{Observación:} \[b-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b}{2}-a\]
 
-\pagebreak
+
 
  \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
  
@@ -1742,7 +1727,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 %  \R^+\cup \set{0}
 %  \]
 
-\pagebreak
+
 
 \section*{Números reales negativos}
 
@@ -1756,7 +1741,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
  \item Demuestre que $\R^+$ y $\R^-$ son conjuntos disjuntos.
- \vspace{-1em}
  \begin{proof}%$ $\newline 
  Si $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) \neq \emptyset$, entonces $\exists x\in \R$ tal que \begin{itemize}%[label=\roman*)]
  \item[(*)] $x\in \R^+$, y 
@@ -1764,43 +1748,39 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  \end{itemize}  De (**) sigue que $x\notin \R^+\union \set{0}$, es decir, $x\notin \set{0}$ y $x\notin \R^+$, pero esto contradice a (*).
 
  Por tanto, $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) = \emptyset$, es decir, $\R^+$ y $\R^-$ son conjuntos disjuntos.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Demuestre que $x\in \R^+$ si y solo si $-x\in \R^-$.
- \vspace{-1em}
  \begin{proof}\leavevmode
  \begin{itemize}
  \item[$\Rightarrow)$] Sea $x\in \R^+$. Por tricotomía, $-x\notin \R^+$ y $x\neq 0$ (y por esto $-x\neq 0$). Sigue que $-x\in \R\setminus \bigl(\R^+\union \set{0}\bigr)$, y por definción, $-x\in \R^-$.
  \item[$\Leftarrow)$] Sea $-x\in \R^-$. Por definición, $-x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$, por lo que, $-x\notin \R^+\union \set{0}$, es decir, $-x\notin \R^+$ y $-x\notin \set{0}$ (y por tanto $-x\neq 0$). Entonces, por tricotomía, $-(-x)=x\in \R^+$. \qedhere
  \end{itemize}
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Demuestre que si $x,y \in \R^-$, entonces $x+y\in \R^-$. (Cerradura de la suma en $\R^-$).
- \vspace{-1em}
  \begin{proof}
  Sea $x,y\in \R^-$. Sigue que $(-x), (-y)\in \R^+$, y por la cerradura de la suma en $\R^+$, $-x-y=-(x+y)\in \R^+$, por lo que $x+y\in \R^-$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Demuestre que $x\in \R^+$ si y solo si $0<x$. (Caracterización de $\R^+$).
- \vspace{-1em}
  \begin{proof}\leavevmode
  \begin{itemize}
  \item[$\Rightarrow)$] Sea $x\in \R^+$, notemos que $x=x-0\in \R^+$, lo que denotamos como $0<x$.
  \item[$\Leftarrow)$] Sea $0<x$, por definición $x-0=x\in \R^+$. \qedhere
  \end{itemize}
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Demuestre que $x\in \R^-$ si y solo si $x<0$. (Caracterización de $\R^-$).
- \vspace{-1em}
  \begin{proof}\leavevmode
  \begin{itemize}
  \item[$\Rightarrow)$] Sea $x\in \R^-$. Notemos que $-x=0-x\in \R^+$, por lo que $x<0$.
  \item[$\Leftarrow)$] Sea $x<0$. Por definición, $0-x=-x\in \R^+$, por lo que $x\in \R^-$. \qedhere
  \end{itemize}
- \end{proof} \vspace{-1em}
+ \end{proof}
 \end{enumerate}
 
-\pagebreak
+
 
 \part*{Inducción matemática}
 
@@ -1838,11 +1818,11 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
  %\item Sea $A\coloneqq \{B \subseteq \R: B \text{ es un conjunto inductivo}\}$. Demuestre que $A\neq \emptyset$ y que $C=\bigcap B$ es un conjunto inductivo.
  %
- %\vspace{-1em}\begin{proof} 
+ %\begin{proof} 
  %Claramente $A \neq \emptyset$, pues $\R, \R^+ \subseteq A$.
  %
  %Luego, por hipótesis, $\forall B \in A$ tenemos que $B\subseteq \R $ por lo que $C\subseteq \R$. Además, $\forall B\in A$, se verifica que $1\in B$. Consecuentemente, $1\in C$. Por otra parte, si $n\in B$ para todo $B\in A$, tendremos que $n+1\in B$, por lo que $n+1 \in C$. Por tanto, $C$ es un conjunto inductivo.
- %\end{proof} \vspace{-1em}
+ %\end{proof}
 \end{enumerate}
 %
 %\bfit{Definición:}  Al conjunto $C$ de (3) de LE6 lo llamaremos conjunto de los números naturales y lo %denotaremos con el símbolo $\N$.
@@ -1857,39 +1837,39 @@ Demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
  \item Si $m,n\in \N$, entonces $m+n \in \N$. (Cerradura de la suma en $\N$).
- \vspace{-1em}\begin{proof}$ $\newline
+ \begin{proof}$ $\newline
   Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{ n\in \N : m+n \in \N \}$. Por definición, $1\in \N$ y $m+1\in \N$, entonces $1\in A$, es decir, $A\neq \emptyset$. \\[5pt] Por otra parte, si $n\in A$ debe ser el caso que $n\in \N$ y $m+n\in \N$. Como $\N$ es un conjunto inductivo, $n+1 \in \N$ y $(m+n)+1 \in \N$, luego, por la asociatividad de la suma, $m+(n+1)\in \N$. Por la condición de $A$, se cumple que $n+1\in A$, por lo que $A$ es un conjunto inductivo. De esto se concluye que $\N\subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la suma de números naturales es un número natural. 
- \end{proof} \vspace{-1em}
+ \end{proof}
 
-\pagebreak
+
 
  \item Si $m,n\in \N$, entonces $m\cdot n \in \N$. (Cerradura de la multiplicación en $\N$).
- \vspace{-1em}\begin{proof}$ $\newline
+ \begin{proof}$ $\newline
   Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{n\in \N: m\cdot n \in \N\}$. Por definición, $1 \in \N$. Adenás, $m\cdot 1 \in \N$, entonces $1 \in A$, es decir $A \neq \emptyset$.
  
   Luego, si $n \in A$ debe ser el caso que $n\in \N$ y $m \cdot n \in \N$. Por cerradura de la suma en $\N$ se verifica que $m\cdot n + m \in \N$. Notemos que $m\cdot n + m=m\cdot n + m\cdot 1 = m\cdot (n+1)$, por lo que $m \cdot (n+1) \in \N$. Como $\N$ es un conjunto inductivo, tenemos que $n+1\in \N$. De este modo, $n+1\in A$. Lo que implica que $A$ es un conjunto inductivo. De esto se concluye que $\N \subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la multiplicación de números naturales es un número natural.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item $1\leq n, \forall n\in \N$. (Elemento mínimo de $\N$).
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Sea $A\coloneqq \{n\in \N: n\geq 1\}$. Como $1\in \N$ y $1\geq 1$, tenemos que $1\in A$.
 
   Si $n\in A$ debe ser el caso que $n\in \N$ y $1\leq n$. Además, por la cerradura de la suma en $\N$, $n+1\in \N$. Luego, $0 \leq 1$ de donde sigue que $n \leq n+1$. Por transitividad, $1\leq n+1$, por lo que $n+1\in A$, lo que implica que $A$ es un conjunto inductivo, es decir, $\N\subseteq A$ y como $A\subseteq \N$, $A=N$. En otras palabras, $n\geq 1, \forall n\in\N$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \bfit{Definición:}  Sea $A\subseteq \R$ con $A \neq \emptyset$, decimos que $m$ es elemento mínimo de $A$ si $m\in A$ y $m\leq a, \forall a\in A$.
 
  \item Para todo $n\in \N$ con $n>1$ se verifica que $n-1\in \N$.
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Sea $A \coloneqq \set{n\in \N | n>1, n-1\in \N}\union \set{1}$. Sea $m\in A$ con $m>1$, tenemos que $m\in \N$, y como $\N$ es un conjunto inductivo, se verifica que $m+1\in\N$. Luego, $(m+1)-1=m$, por lo que $(m+1)-1\in \N$. Como $m>1$, por transitividad, $m>0$, de donde sigue que $m+1>1$, por lo que $m+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. Por tanto $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Sean $m$ y $n$ números naturales. Si $n<m$, entonces $m-n\in\N$.
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Sea $A \coloneqq \set{n\in \N| n<m, \ m-n\in\N, \ m\in \N}$. Por definición, $1\in \N$ y $1+1\in \N$. Además, $1>0$, de donde sigue que $1+1>1$. Luego, $1=(1+1)-1\in \N$, por lo que $1\in A$. 
 
   Si $n \in A$, $\exists m\in \N$ tal que $m-n\in \N$ y $n<m$, de donde obtenemos $n+1<m+1$. Como $m,n\in \N$ y $\N$ es un conjunto inductivo, $n+1\in \N$ y $m+1 \in \N$. Notemos que $m+1-(n+1)=m-n$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, se cumple que $A=\N$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \bfit{Corolario:} \begin{enumerate}[label=\roman*)]
   \item Sea $x\in \R$. Si $n\in \N$ y $n<x<n+1$, entonces $x$ no es un número natural.
@@ -1926,7 +1906,7 @@ Demuestre lo siguiente:
   Sea $A\subset \N$ con $A\neq \emptyset$. Supongamos que $A$ no tiene elemento mínimo.
   
   Como $A\neq \emptyset$, se tiene que $\exists x\in A$, y como $A\subset \N$, entonces $x\in \N$. Sabemos que $1$ es elemento mínimo de $\N$, por lo que, en particular $1\leq x$. Como $A$ no tiene elemento mínimo, no puede ser el caso que $x=1$, pues $1\leq x,\forall x\in A$. De esto sigue que $1<x$, y por este teorema, se verifica que $x-1\in \N$, y sabemos que $x-1<x$. Como $\N$ es un conjunto inductivo, $x+1\in \N$, y sabemos que $x<x+1$. De este modo, tenemos que $x-1<x<x+1$, pero por este teorema, esta desigualdad implica que $x$ no es un número natural, lo que es una contradicción. Por tanto, $A$ tiene elemento mínimo.
-  %\vspace{-1em}\begin{proof} 
+  %\begin{proof} 
   %Sea $A\subset \N$ con $A \neq \emptyset$. Supongamos que $A$ no tiene elemento mínimo.%, es decir, supongamos que si $c\leq a, \forall a\in A$, entonces $c\notin A$.
   %
   %Sea $S\defined \set{n\in \N| n<a, \forall a\in A}$.
@@ -1943,7 +1923,7 @@ Demuestre lo siguiente:
   %
   %Finalmente, dado que $A\neq \emptyset$, $\exists a_0\in A$ tal que $n<a_0, \forall n\in \N$, por lo que podemos elegir $n=a_0<a_0$, lo que es una contradicción. Por tanto, $A$ debe tener elemento mínimo.
   %%notemos que $A\intersection S=\emptyset$, y dado que $A\subseteq \N$ y $S=\N$, sigue que $A=\emptyset$, pero esto es una contradicción. Por tanto, si $A\subseteq \N$ con $A\neq \emptyset$, entonces $A$ tiene elemento mínimo.
-  %\end{proof} \vspace{-1em}
+  %\end{proof}
   %
   %Todo subconjunto no vacío del conjunto de los números naturales tiene elemento mínimo. Esto significa que si $A\subseteq \N$ y $A \neq \emptyset$, entonces existe un elemento $c\in A$ tal que $c\leq a, \forall a\in A$.
   
@@ -1969,7 +1949,7 @@ Demuestre lo siguiente:
   %
 
   %\item Sea $x\in \R$. Si $n\in \N$ y $n-1<x<n$, entonces $x$ no es un número natural.
-  %\vspace{-1em}\begin{proof}
+  %\begin{proof}
   %Supongamos que $x\in \N$. Por hipótesis $x<n$ y $n-1<x$, de donde obtenemos:
   %\begin{center}\vspace{-1em}
   % \begin{minipage}[l]{.4\linewidth}
@@ -1990,13 +1970,13 @@ Demuestre lo siguiente:
   % \end{minipage}
   %\end{center}
   %Suponemos que $x\in \N$, y como $\N$ es un conjunto inductivo, sigue que $x+1\in \N$. Como $n<x+1$, con $n\in \N$, por el teorema se verifica que $x+1-n \in \N$, por lo que $1\leq x+1-n$. No obstante, tenemos que $x-n+1<1$, osea $1\leq x+1-n<1$, lo que es una contradicción. Por tanto, $x$ no es un número natural.
-  %\end{proof} \vspace{-1em}
+  %\end{proof}
 
   \item Sea $S\subseteq \N$ tal que $S$ es un conjunto inductivo, entonces $S=\N$. (Principio de inducción matemática).
 
-  %\vspace{-1em}\begin{proof} 
+  %\begin{proof} 
    Sea $S\neq \N$. El conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$). Pr definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $\N\setminus S\subset \N$, por el principio del buen orden, tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$, como $m\in \N$, sigue que $1 \leq m$. Como $m\in \N\setminus S$ y $1\notin \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, y por este teorema, $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, tenemos que $m-1\notin \N\setminus S$, osea $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, $S=\N$. 
-  %\end{proof} \vspace{-1em}
+  %\end{proof}
 
   \item Sea $x\in \R^+$. Si $n\in \N$ y $x+n\in \N$, entonces $x\in \N$.
 
@@ -2023,99 +2003,110 @@ Demuestre lo siguiente:
 Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
- \item $1^n=1, \forall n\in \N$.
- \vspace{-1em}
- \begin{proof} Sea $A=\set{n|1^n=1}$.
- \begin{enumerate}[label=\roman*)]
- \item Notemos que $1\in A$, pues $1^1=1$, por definición.
- \item Si $n\in A$, entonces $1^n=1$.
- \item Por definición, \begin{align*}
+  \item $1^n=1, \forall n\in \N$.
+  \vspace{-1em}
+  \begin{proof} Sea $A=\set{n|1^n=1}$.
+  \begin{enumerate}[label=\roman*)]
+  \item Notemos que $1\in A$, pues $1^1=1$, por definición.
+  \item Si $n\in A$, entonces $1^n=1$.
+  \item Por definición, \begin{align*}
   1^{n+1} = \left\{
-   \begin{array}{@{}r@{\thinspace}l}
+  \begin{array}{@{}r@{\thinspace}l}
     1, &  \ \text{si}  \ n+1 = 1\\
     1\cdot 1^{n}, &  \ \text{si}  \ n+1 > 1
     %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
-   \end{array} \right.
+  \end{array} \right.
   \end{align*}
  Como $n>0$, se tiene $n+1>1$, de donde sigue que $1^{n+1}=1\cdot 1^n=1^n$, por (ii) se verifica que $1^n=1$, es decir, $1^{n+1}=1$, lo que implica que $n+1\in A$.
  \end{enumerate}
 
  Por el principio de inducción matemática, $A=\N$, por lo que $1^n=1, \forall n\in \N$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item $0^n=0, \forall n\in \N$.
- \vspace{-1em}
  \begin{proof}
  Es claro que $0^1=0$. Luego, si $0^n=0$, tenemos que $0^{n+1}=0 \cdot 0^n$, lo que es una multiplicación por $0$, es decir, $0^{n+1}=0$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  
+  \item $a^m \cdot a^n = a^{m+n}$.
 
- \item $a^m \cdot a^n = a^{m+n}$.
- 
- \vspace{-1em}
  \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n|a^{m+n}=a^m\cdot a^n}$.
 
  \vspace{-1em}\begin{enumerate}[label=\roman*)]
- \item Por definición \vspace{1em}\begin{align*}
+ \item Por definición \begin{align*}
   a^{m+1} = \left\{
-   \begin{array}{@{}r@{\thinspace}l}
+  \begin{array}{@{}r@{\thinspace}l}
     a, &  \ \text{si}  \ m+1 = 1\\
     a\cdot a^{m}, &  \ \text{si}  \ m+1 > 1
     %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
-   \end{array} \right.
-  \end{align*}\vspace{-1em}
+  \end{array} \right.
+  \end{align*}
   
   Como $m>0$, sigue que $m+1>1$, por lo que $a^{m+1}=a\cdot a^m=a^m\cdot a^1$, lo que implica que $1\in A$.
  \item Si $n\in A$, tenemos que $a^{m+n}=a^m\cdot a^n$.
- \item Por definición \vspace{1em}\begin{align*}
+ \item Por definición \begin{align*}
   a^{m+(n+1)} = \left\{
    \begin{array}{@{}r@{\thinspace}l}
     a, &  \ \text{si}  \ m+(n+1) = 1\\
     a\cdot a^{m+n}, &  \ \text{si}  \ m+(n+1) > 1
    \end{array} \right.
-  \end{align*}\vspace{-1em}
+  \end{align*}
 
- Como $m+n>0$, sigue que $m+(n+1)>1$. Por tanto, \vspace{1em}\begin{align*}
+ Como $m+n>0$, sigue que $m+(n+1)>1$. Por tanto, \begin{align*}
   a^{m+(n+1)} &=a\cdot a^{m+n} && \text{Definición}\\
   &= a\cdot a^m \cdot a^n && \text{Por (ii)}\\
   &= a^m \cdot a^{n+1} && \text{Por (i)}
- \end{align*}\vspace{-1em}
- \end{enumerate}\vspace{-1em}
+ \end{align*}
+ \end{enumerate}
 
  Por el principio de inducción matemática, $A=\N$, por lo que $a^m \cdot a^n = a^{m+n}, \forall m,n\in \N$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
- \vspace{-1em}
  \begin{proof}
  Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.\begin{enumerate}[label=\roman*)]
  \item Notemos que $\frac{a^1}{b^1}= \frac{a}{b}= \qty(\frac{a}{b})^1$. Por lo que $1\in A$.
  \item Si $n\in A$, tenemos $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
- \item Como $n>0$, se tiene $n+1>1$, por definición \vspace{1em}\begin{align*}
+ \item Como $n>0$, se tiene $n+1>1$, por definición \begin{align*}
    \qty(\frac{a}{b})^{n+1} &= \frac{a}{b}\cdot \qty(\frac{a}{b})^n\\
    &=\frac{a}{b}\cdot \frac{a^n}{b^n} && \text{Por (ii)}\\
    &= \frac{a\cdot a^n}{b\cdot b^n}\\
    &= \frac{a^{n+1}}{b^{n+1}} && \text{Por tanto, $n+1\in A$.}
-  \end{align*}\vspace{-2em}
- \end{enumerate}\vspace{1em}
+  \end{align*}\
+ \end{enumerate}
  Por el principio de inducción matemática, $A=\N$, por lo que $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Si $m\neq n$, y $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
- \vspace{-1em}
  \begin{proof}
  Por casos: \vspace{-1em}\begin{enumerate}[label=\roman*)]
- \item Sea $m>n$. Notemos que $m-n\in \N$, y por definición \vspace{1em}\begin{align*}
+ \item Sea $m>n$. Notemos que si $m=1$ tenemos que $m\leq n$, pero esto contradice nuestro supuesto, por lo que $m>1$, y por definición, $a^m=a\cdot a^{m-1}$. Luego, \begin{itemize}
+  \item Si $n=1$, entonces $a^n=a$, en cuyo caso \begin{align*}
+    \frac{a^m}{a^n} &= \frac{a\cdot a^{m-1}}{a}\\
+    &= a^{m-1}\\
+    &= a^{m-n}
+  \end{align*}
+  \item Si $n>1$, entonces $a^n=a\cdot a^{n-1}$, en cuyo caso \begin{align*}
+    a^{m-n} &= a^{m-n+1-1} \\
+    &= a^{m-1-n+1}\\
+    &= a^{m-1-(n-1)}\\
+    \frac{a^m}{a^n} &= \frac{a\cdot a^{m-1}}{a\cdot a^{n-1}}\\
+    &= \frac{a^{m-1}}{a^{n-1}}
+  \end{align*}
+  Sabemos que $n-1 \in\N$, pues $n$ y $1$ son números naturales, y $n>1$. Además, como $a\neq 0$ por hipótesis, denotamos $\frac{1}{a^{n-1}}$ como $a^{-\bigl(n-1\bigr)} = a^{1-n}$, sin embargo, para tener que $frac{a^{m-1}}{a^{n-1}} = a^{(m-1)+(1-n)}$ requerimos que $1-n\in \N$, lo cual no siempre es el caso. Por lo tanto, requerimos expandir el conjunto de $\N$.
+ \end{itemize}
+ 
+ Notemos que $m-n\in \N$, y por definición \begin{align*}
   a^{m-n} = \left\{
    \begin{array}{@{}r@{\thinspace}l}
     a, &  \ \text{si}  \ m-n = 1\\
     a\cdot a^{m-n-1}, &  \ \text{si}  \ m-n> 1
    \end{array} \right.
-  \end{align*}\vspace{-1em}
+  \end{align*}
  \end{enumerate}
 
  Como $n\in \N$, si $m=1$ tenemos que $m\leq n$, pero esto contradice nuestro supuesto inicial, por lo que $m>1$ y por definición, $a^m=a\cdot a^{m-1}$. Luego, $a^n=a$ si $n=1$ y $a^n=a\cdot a^n-1$ si $n>1$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  
 
  \item Si $b\neq 0$, entonces $b^n \neq 0, \forall n\in \N$.
@@ -2125,7 +2116,7 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
 \subsection*{Lista de Ejercicios 7 (LE7)}
 
 $(a+b)(a-b)=a^2-b^2$. (Diferencia de cuadrados).
-\vspace{-1em}\begin{proof} 
+\begin{proof} 
  \begin{align*}
  (a+b)(a-b) &= (a+b)\bigl(a+(-b)\bigr) && \text{Notación}\\
  &= (a+b)\cdot a + (a+b)\cdot (-b) && \text{Distribución}\\
@@ -2134,10 +2125,10 @@ $(a+b)(a-b)=a^2-b^2$. (Diferencia de cuadrados).
  &= a^2+ ab -ba -b^2 && \text{Notación}\\
  &=a^2-b^2 && \text{Inverso aditivo} \qedhere
  \end{align*} 
-\end{proof} \vspace{-1em}
+\end{proof}
 
 $0\leq a^2$.
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Por tricotomía $a=0$ o $0<a$ o $a<0$. Si $a=0$, entonces $a^2=a\cdot a =0 \cdot 0 =0$. Luego,
   \begin{center}\vspace{-1em}
    \begin{minipage}[l]{.5\linewidth}
@@ -2157,7 +2148,7 @@ $0\leq a^2$.
     \end{align*}
    \end{minipage}
   \end{center} En cualquier caso, $0\leq a^2$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
 \section*{Valor absoluto}
 
@@ -2198,28 +2189,28 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
 \begin{enumerate}[label=\alph*)]
 \item $\pm a\leq |a|$.
 
-\vspace{-1em}\begin{proof}
+\begin{proof}
  Por casos.
  \begin{enumerate}[label=\roman*)]
   \item Si $0 \leq a$, por definición, $|a|=a$, por lo que $a\leq |a|$. Luego, por la hipótesis tenemos que $-a \leq 0$, y por transitividad, $-a\leq |a|$.
   \item Si $a<0$, por definición, $|a|=-a$, por lo que $-a\leq |a|$. Luego, por la hipótesis tenemos que $0<-a$, y por transitividad, $a<|a|$.
  \end{enumerate}
  En cualquier caso, $\pm a\leq |a|$.
-\end{proof} \vspace{-1em} 
+\end{proof} 
 
 \item $|a|=|-a|$.
-\vspace{-1em}\begin{proof}
+\begin{proof}
  Por casos.
  \begin{enumerate}[label=\roman*)]
   \item Si $0 \leq a$, por definición, $|a|=a$. Luego, por la hipótesis tenemos que $-a \leq 0$. Si $-a<0$, $|-a|=a$ y si $-a=0$, $|-a|=a$. De este modo, $|a|=|-a|$.
   \item Si $a<0$, por definición, $|a|=-a$. Luego, por la hipótesis tenemos que $0<-a$, por lo que $|-a|=-a$. De este modo, $|a|=|-a|$.
  \end{enumerate}
  En cualquier caso, $|a|=|-a|$.
-\end{proof} \vspace{-1em}
+\end{proof}
 
 \item $|ab|=|a||b|$.
 
-\vspace{-1em}\begin{proof}
+\begin{proof}
  Por casos.
  \begin{enumerate}[label=\roman*)]
   \item Si $a>0$ y $b>0$, por definición, $|a|=a$ y $|b|=b$. Luego, $ab>0$ por lo que $|ab|=ab$. Por tanto, $|ab| =|a||b|$.
@@ -2227,16 +2218,16 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
   \item Si $a<0$ y $b<0$, por definición, $|a|=-a$ y $|b|=-b$. Luego, $ab>0$ por lo que $|ab|=ab$. Por tanto, $|  ab|=|a||b|$.
  \end{enumerate}
  En cualquier caso, $|ab|=|a||b|$.
-\end{proof} \vspace{-1em}
+\end{proof}
 
 \item $|a|^2=a^2$.
-\vspace{-1em}\begin{proof} 
+\begin{proof} 
  $0 \leq a^2 = |a^2|= |a\cdot a|=|a| \cdot |a|= |a|^2$. \qedhere
-\end{proof} \vspace{-1em}
+\end{proof}
 
 \item $|a|<b$ si y solo si $-b<a<b$.
 
-\vspace{-1em}\begin{proof} \leavevmode
+\begin{proof} \leavevmode
  \begin{itemize}
   \item[$\Rightarrow)$] Sea que $|a|<b$.
   
@@ -2246,19 +2237,19 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
    \item Si $a<0$, por definición, $|a|=-a$, y por la hipótesis, $|a|<b$.
   \end{enumerate} En cualquier caso, $|a|<b$. \qedhere 
  \end{itemize}
-\end{proof} \vspace{-1em}
+\end{proof}
 
 \textbf{Nota:} Nos referiremos a esta proposición como teorema para eliminar el valor absoluto en algunas desigualdades.
 
  \item $|a+b|\leq |a|+|b|$. (Desigualdad del triángulo).
 
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Por casos.
   \begin{enumerate}[label=\roman*)]
    \item Si $0 \leq a+b$, por definición, $|a+b|=a+b$. Como, $a \leq |a|$ y $b \leq |b|$, entonces, $a+b \leq |a|+|b|$. Por tanto, $|a+b| \leq |a|+|b|$.
    \item Si $a+b<0$, por definición, $|a+b|=-\bigl(a+b\bigr)=-a-b$. Como, $-a \leq |a|$ y $-b \leq |b|$, entonces, $-a-b \leq |a|+|b|$. Por tanto, $|a+b| \leq |a|+|b|$. \qedhere
   \end{enumerate} 
- \end{proof} \vspace{-1em}
+ \end{proof}
 %
  %\textbf{Nota:} En esta demostración se observaron los casos para la suma $a+b$. Sin embargo, resulta conveniente observar los casos para $a$ y $b$, pues esto nos permitirá notar cuando la desigualdad del triángulo es estricta y cuando se cumple con igualdad.   
  %\begin{enumerate}[label=\roman*)]
@@ -2267,7 +2258,7 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
 
  \item $\big| |a|-|b| \big| \leq |a-b|$. (Desigualdad del triángulo inversa).
 
- \vspace{-1em}\begin{proof} \leavevmode
+ \begin{proof} \leavevmode
  \begin{center}\vspace{-2.5em}
  \begin{minipage}[t]{.5\linewidth}
  \begin{align*}
@@ -2286,28 +2277,27 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
  \end{minipage}
  \end{center}
  De las desigualdades (*) y (**) sigue que $\big| |a| - |b| \big| \leq |a-b|$.
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \bfit{Corolario:} $|a|-|b|\leq |a-b|$ y $|b|-|a|\leq |a-b|$.
- \vspace{-1em}
  \begin{proof}
  Por la desigualdad del triángulo inversa, $\big| |a|-|b| \big| \leq |a-b|$, de donde $|a|-|b|\leq |a-b|$ y \begin{align*}
   -|a-b| &\leq |a|-|b|\\
   -\bigl(|a|-|b|\bigr) &\leq |a-b| \\
   |b|-|a| &\leq |a-b| && \qedhere
  \end{align*}
- \end{proof} \vspace{-1em}
+ \end{proof}
 
 \item Si $b\neq 0$, entonces $\left| \frac{a}{b} \right| = \frac{|a|}{|b|}$.
 
-\vspace{-1em}\begin{proof} Por casos.
+\begin{proof} Por casos.
  \begin{enumerate}[label=\roman*)]
   \item Si $a \geq 0$ y $b>0$, entonces $|a|=a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} \geq 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
   \item Si $a \geq 0$ y $b<0$, entonces $|a|=a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} \leq 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
   \item Si $a<0$ y $b>0$, entonces $|a|=-a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} < 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
   \item Si $a<0$ y $b<0$, entonces $|a|=-a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} > 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$. \qedhere
  \end{enumerate} 
-\end{proof} \vspace{-1em}
+\end{proof}
 
 \end{enumerate}
 
@@ -2325,7 +2315,7 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
  \item $0<\frac{1}{n}\leq 1, \forall n\in \N$.
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Sea $n\in \N$ arbitrario pero fijo. Sabemos que $n\geq 1$, por lo que tenemos dos casos: \begin{enumerate}[label=\roman*)]
    \item Si $n=1$, tenemos que $\frac{1}{n}=\frac{1}{1}=1$. Por lo que $0<\frac{1}{n}\leq 1$.
    \item Si $n>1$, por transitividad $n>0$, lo que implica que $\frac{1}{n}>0$. Retomando la hipótesis, \begin{align*}
@@ -2334,7 +2324,7 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
     1 &> \frac{1}{n}
    \end{align*} Por lo que $0<\frac{1}{n}\leq 1$. 
   \end{enumerate} Como $n$ es arbitrario, se verifica que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
- \end{proof} \vspace{-1em}
+ \end{proof}
  \item $0 \leq a^{2n} \, \forall n\in \N$.
  \item Si $0\leq a$, entonces $ 0 \leq a^n, \, \forall n\in \N$.
  \item Si $0 \leq a <b$, entonces $a^n < b^n, \, \forall n\in \N$.
@@ -2430,33 +2420,33 @@ Demuestre lo siguiente:
 \begin{enumerate}
  \item Sea $A$ un subconjunto no vacío de $\R$. $A$ está acotado si y solo si $A$ está acotado superior e inferiormente.
  
- \vspace{-1em}\begin{proof} \leavevmode
+ \begin{proof} \leavevmode
   \begin{itemize}
    \item[$\Rightarrow)$] ads
    \item[$\Leftarrow)$] asdf
   \end{itemize}
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene supremo, este es único.
  
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Supongamos que $s_1$ y $s_2$ son supremos de $A$. Como $s_1$ es una cota superior de $A$ y $s_2$ es elemento supremo, entonces $s_2\leq s_1$. Similarmente, $s_1\leq s_2$. Por tanto, $s_1=s_2$. 
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene ínfimo, este es único.
  
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Supongamos que $m_1$ y $m_2$ son ínfimos de $A$. Como $m_1$ es una cota superior de $A$ y $m_2$ es elemento ínfimo, entonces $m_1\leq m_2$. Similarmente, $m_2\leq m_1$. Por tanto, $m_1=m_2$. 
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Una cota superior $M$ de un conjunto no vacío $S$ de $\R$ es el supremo de $S$ si y solo si para toda $\varepsilon>0$ existe $s_\varepsilon \in S$ tal que $M-\varepsilon<s_\varepsilon$.
 
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   \begin{enumerate}[label=\roman*)]
    \item Sea $M$ una cota superior de $S$ tal que $\forall \epsilon>0, \exists s_{\epsilon}$ tal que $M-\epsilon<s_{\epsilon}$. Si $M$ no es el supremo de $S$, tendríamos que $\exists V$ tal que $s_@a \leq V < M$. Elegimos $\epsilon = M-V$, con lo que $V<s_{\epsilon}$, lo que contradice nuestra hipótesis. Por tanto, $M$ es el supremo de $S$.
    \item Sea $M$ el supremo de $S$ y $\epsilon>0$. Como $M<M+\epsilon$, entonces $M-\epsilon$ no es una cota superior de $S$, por lo que $\exists s_\epsilon$ tal que $s_\epsilon>M-\epsilon$. \qedhere
    \end{enumerate} 
- \end{proof} \vspace{-1em}
+ \end{proof}
 \end{enumerate}
 
 \subsection*{Axioma del supremo}
@@ -2538,7 +2528,7 @@ Al objeto $a$ lo llamaremos primer componente de la pareja ordenada $(a,b)$ y al
 
 \textbf{Demostración:} Pendiente
 
-\pagebreak
+
 
 \section*{Entorno}
 
@@ -2561,33 +2551,33 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
 \begin{enumerate}[label=\alph*)]
  \item Si $0 \leq a < \varepsilon$ para toda $\varepsilon > 0$, entonces $a=0$.
  
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Supongamos que $0<a$, sigue que $0<\frac{a}{2}<a$. En particular, $\epsilon=\frac{a}{2}$, entonces $\varepsilon<a$, pero esto contradice nuestra hipótesis de que $a< \varepsilon$ para toda $\varepsilon>0$. Por tanto, $a=0$. 
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Si $a \leq b + \varepsilon$ para toda $\varepsilon > 0$, entonces $a \leq b$.
  
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Sean $a$ y $b$ números reales tales que $a \leq b + \varepsilon$, $\forall \varepsilon > 0$. Supongamos que $a > b$. Luego, $a-b>0$. Notemos que $(a-b) \cdot \frac{1}{2} > 0 \cdot \frac{1}{2}$, es decir $\frac{(a-b)}{2} > 0$. Sea $\varepsilon = \frac{(a-b)}{2}$, sigue que $a=2\varepsilon+b$. Además, $2\varepsilon > \varepsilon$, de donde obtenemos $2 \varepsilon + b > \varepsilon + b$. De este modo, $a > b+\varepsilon$, pero esto contradice nuestra hipótesis. Por tanto, $a \leq b$. 
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Si $x\in V_\varepsilon(a)$ para toda $\varepsilon>0$, entonces $x=a$.
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Si $x\in V_\varepsilon(a)$ tenemos que $|x-a|<\varepsilon$. Además, $0\leq |x-a|$, por definición. Así, $0\leq |x-a|<\varepsilon$. Como esta desigualdad se cumple para toda $\varepsilon>0$, por (p) de LE3, sigue que $|x-a|=0$. De este modo, $|x-a|=x-a$ con $x-a=0$. Por tanto, $x=a$. 
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Sea $U:=\{x: 0<x<1\}$. Si $a\in U$, sea $\varepsilon$ el menor de los números $a$ y $1-a$. Demuestre que $V_\varepsilon(a) \subseteq U$.
- \vspace{-1em}\begin{proof} \leavevmode
+ \begin{proof} \leavevmode
   \begin{enumerate}[label=\roman*)]
    \item Si $a>1-a$, tenememos $\varepsilon=1-a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<1-a$. De (f) de LE4 sigue que $a-1<y-a<1-a$ (*). Tomando el lado derecho de (*) obtenemos $y<1$. Luego, de la hipótesis sigue que $2a>1$, osea $2a-1>0$. Del lado izquierdo de la desigualdad (*), tenemos $2a-1<y$, por lo que $0<y$.
    \item Si $1-a>a$, tenemos $\varepsilon=a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<a$. De (f) de LE4 sigue que $-a<y-a<a$. Sumando $a$ en esta desigualdad obtenemos $0<y<2a$. Luego, de la hipótesis sigue que $1>2a$, entonces $0<y<1$.\end{enumerate}
    En cualquier caso, $0<y<1$, lo que implica que $V_\varepsilon(a) \subseteq U$. 
- \end{proof} \vspace{-1em}
+ \end{proof}
 
  \item Demuestre que si $a\neq b$, entonces existen $U_\varepsilon(a)$ y $V_\varepsilon(b)$ tales que $U\cap V =\emptyset$.
- \vspace{-1em}\begin{proof} 
+ \begin{proof} 
   Supongamos que para toda $U_\varepsilon(a)$ y $V_\varepsilon(b)$ se cumple que $U_\varepsilon(a) \cap V_\varepsilon(b) \neq \emptyset$. Entonces, existe $x$ tal que $x\in U_\varepsilon(a)$ y $x\in V_\varepsilon(b)$. Como en ambas vecindades tenemos $\epsilon>0$ arbitraria, por (a) de LE5, sigue que $x=a$ y $x=b$, pero esto contradice el supuesto de que $a\neq b$. Por tanto, deben existir $U_\varepsilon(a)$ y $V_\varepsilon(b)$ tales que $U\cap V =\emptyset$. 
- \end{proof} \vspace{-1em}
+ \end{proof}
 \end{enumerate}
 
 \section*{Sucesiones}
