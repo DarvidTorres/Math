@@ -1224,7 +1224,7 @@ Existe un subconjunto del conjunto de los números reales llamado conjunto de lo
  \end{proof}
 \end{enumerate}
 
-\textbf{Observación:} para cualesquiera números reales $a$ y $b$ tenemos que $a=b$ o $a\neq b$. A su vez, \vspace{-1em}\begin{enumerate}[label=\roman*)]
+\textbf{Observación:} para cualesquiera números reales $a$ y $b$ tenemos que $a=b$ o $a\neq b$. A su vez, \begin{enumerate}[label=\roman*)]
 \item Si $a=b$, entonces $a-b=0$.
 \item Si $a\neq b$, por tricotomía tenemos dos casos (excluyentes):\begin{itemize}
  \item $a-b\in \R^+$.%, lo que denotamos como $b<a$ (o $a>b$).
@@ -1985,7 +1985,7 @@ Demuestre lo siguiente:
 
 \end{enumerate}
 
-\section*{Potenciación}
+\subsection*{Potenciación}
 
 \bfit{Definición:}  Sea $b\in \R$ y $n\in \N$,
  \[
@@ -1995,8 +1995,6 @@ Demuestre lo siguiente:
   b\cdot b^{n-1}, &  \ \text{si}  \ n > 1
   %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
  \end{array} \right. \]
-
-\textbf{Notación:} Sea $b\in \R$ y $n\in \N$. Si $b \neq 0$, denotaremos $\frac{1}{b^n}$ como $b^{-n}$.
 
 \subsection*{Lista de Ejercicios 8}
 
@@ -2032,7 +2030,7 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
 
  \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n|a^{m+n}=a^m\cdot a^n}$.
 
- \vspace{-1em}\begin{enumerate}[label=\roman*)]
+ \begin{enumerate}[label=\roman*)]
  \item Por definición \begin{align*}
   a^{m+1} = \left\{
   \begin{array}{@{}r@{\thinspace}l}
@@ -2077,41 +2075,39 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
  Por el principio de inducción matemática, $A=\N$, por lo que $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
  \end{proof}
 
- \item Si $m\neq n$, y $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
- \begin{proof}
- Por casos: \vspace{-1em}\begin{enumerate}[label=\roman*)]
- \item Sea $m>n$. Notemos que si $m=1$ tenemos que $m\leq n$, pero esto contradice nuestro supuesto, por lo que $m>1$, y por definición, $a^m=a\cdot a^{m-1}$. Luego, \begin{itemize}
+ \end{enumerate}
+
+ \section*{Números enteros}
+
+ \textbf{Notación:} Sea $b\in \R$ y $n\in \N$. Si $b \neq 0$, denotaremos $\frac{1}{b^n}$ como $b^{-n}$.
+
+ \textbf{Proposición:} Si $m\neq n$, y $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$. El siguiente es un esbozo de la prueba propuesta por un estudiante:
+
+Consideremos el caso cuando $m>n$. Notemos que si $m=1$ tenemos que $m\leq n$, pero esto contradice nuestro supuesto, por lo que $m>1$, y por definición, $a^m=a\cdot a^{m-1}$. Luego, \begin{itemize}
   \item Si $n=1$, entonces $a^n=a$, en cuyo caso \begin{align*}
     \frac{a^m}{a^n} &= \frac{a\cdot a^{m-1}}{a}\\
     &= a^{m-1}\\
     &= a^{m-n}
   \end{align*}
-  \item Si $n>1$, entonces $a^n=a\cdot a^{n-1}$, en cuyo caso \begin{align*}
-    a^{m-n} &= a^{m-n+1-1} \\
-    &= a^{m-1-n+1}\\
-    &= a^{m-1-(n-1)}\\
+  \item Si $n>1$, entonces $a^n=a\cdot a^{n-1}$, en cuyo caso
+  
+  \begin{align*}
     \frac{a^m}{a^n} &= \frac{a\cdot a^{m-1}}{a\cdot a^{n-1}}\\
-    &= \frac{a^{m-1}}{a^{n-1}}
+    &= \frac{a^{m-1}}{a^{n-1}}\\
+    %a^{m-n} &= a^{m-n+1-1} \\
+    %&= a^{m-1-n+1}\\
+    %&= a^{m-1-(n-1)}\\
   \end{align*}
-  Sabemos que $n-1 \in\N$, pues $n$ y $1$ son números naturales, y $n>1$. Además, como $a\neq 0$ por hipótesis, denotamos $\frac{1}{a^{n-1}}$ como $a^{-\bigl(n-1\bigr)} = a^{1-n}$, sin embargo, para tener que $frac{a^{m-1}}{a^{n-1}} = a^{(m-1)+(1-n)}$ requerimos que $1-n\in \N$, lo cual no siempre es el caso. Por lo tanto, requerimos expandir el conjunto de $\N$.
+  Sabemos que $n-1 \in\N$, pues $n$ y $1$ son números naturales, y $n>1$. Además, como $a\neq 0$ por hipótesis, denotamos $\frac{1}{a^{n-1}}$ como $a^{-\bigl(n-1\bigr)} = a^{1-n}$, sin embargo, para tener que $\frac{a^{m-1}}{a^{n-1}} = a^{m-1}\cdot a^{1-n} = a^{(m-1)+(1-n)}$ requerimos que $1-n\in \N$, como se probó en (c) de LE8, pero dado que $n>1$, sigue que $0>n-1$ con $n-1\neq \N$, por lo que no podemos emplear dicha proposición. Por lo tanto, requerimos expandir el conjunto de $\N$.
  \end{itemize}
- 
- Notemos que $m-n\in \N$, y por definición \begin{align*}
-  a^{m-n} = \left\{
-   \begin{array}{@{}r@{\thinspace}l}
-    a, &  \ \text{si}  \ m-n = 1\\
-    a\cdot a^{m-n-1}, &  \ \text{si}  \ m-n> 1
-   \end{array} \right.
-  \end{align*}
- \end{enumerate}
 
- Como $n\in \N$, si $m=1$ tenemos que $m\leq n$, pero esto contradice nuestro supuesto inicial, por lo que $m>1$ y por definición, $a^m=a\cdot a^{m-1}$. Luego, $a^n=a$ si $n=1$ y $a^n=a\cdot a^n-1$ si $n>1$.
- \end{proof}
- 
-
- \item Si $b\neq 0$, entonces $b^n \neq 0, \forall n\in \N$.
-
-\end{enumerate}
+  \bfit{Definción:} \begin{itemize}
+    \item Al conjunto $\N \cup {0} \cup {-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
+    \item Al conjunto ${-n: n\in \N}$ lo llamaremos conjunto de los números enteros negativos y lo representaremos con el símbolo $\Z^-$.
+    \item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo representaremos con el símbolo $\Z^+$.
+   \end{itemize}
+   
+   \textbf{Observación.} Los conjuntos $\N$, ${0}$, ${-n: n\in \N}$ son disjuntos por pares.
 
 \subsection*{Lista de Ejercicios 7 (LE7)}
 
@@ -2474,14 +2470,6 @@ Para cada número real $x$ existe un número natural $n$ tal que $x<n$.
 \textbf{Demostración:}
 
 Supongamos que existe $x\in \R$ tal que $n\leq x, \forall n\in \N$. Notemos que $x$ es una cota superior de $\N$, pero esto contradice el teorema que establece que el conjunto de los números naturales no está acotado superiormente. Por tanto, se satisface la propiedad arquimediana del conjunto de los números reales. \qed
-
-\textbf{Definción.} \begin{itemize}
- \item Al conjunto $\N \cup {0} \cup {-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
- \item Al conjunto ${-n: n\in \N}$ lo llamaremos conjunto de los números enteros negativos y lo representaremos con el símbolo $\Z^-$.
- \item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo representaremos con el símbolo $\Z^+$.
-\end{itemize}
-
-\textbf{Observación.} Los conjuntos $\N$, ${0}$, ${-n: n\in \N}$ son disjuntos por pares.
 
 \subsection*{Lista de Ejercicios 9 (LE9)}
 
