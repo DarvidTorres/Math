@@ -631,6 +631,9 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
 \begin{itemize}
 \item Si $x$ y $y$ son números reales, representaremos con el símbolo $x-y$ a la suma $x+(-y)$.
 \item Si $x,y\in \R$ y $y\neq 0$, representaremos con el símbolo $ \frac{x}{y}$ al número $x \cdot y^{-1}$.
+
+Es inmediato que si $w\neq 0$, entonces $\frac{w}{w} = w\cdot w^{-1} = 1$.
+
 \item Si $x$ y $y$ son números reales, representaremos con el símbolo $xy$ a la multiplicación $x\cdot y$.
 \end{itemize}
 
@@ -1864,11 +1867,9 @@ Demuestre lo siguiente:
   Sea $A \coloneqq \set{n\in \N | n>1, n-1\in \N}\union \set{1}$. Sea $m\in A$ con $m>1$, tenemos que $m\in \N$, y como $\N$ es un conjunto inductivo, se verifica que $m+1\in\N$. Luego, $(m+1)-1=m$, por lo que $(m+1)-1\in \N$. Como $m>1$, por transitividad, $m>0$, de donde sigue que $m+1>1$, por lo que $m+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. Por tanto $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$.
  \end{proof}
 
- \item Sean $m$ y $n$ números naturales. Si $n<m$, entonces $m-n\in\N$.
+ \item Sean $m$ y $n$ números naturales. Si $n<m$, entonces $m-n\in\N$. 
  \begin{proof} 
-  Sea $A \coloneqq \set{n\in \N| n<m, \ m-n\in\N, \ m\in \N}$. Por definición, $1\in \N$ y $1+1\in \N$. Además, $1>0$, de donde sigue que $1+1>1$. Luego, $1=(1+1)-1\in \N$, por lo que $1\in A$. 
-
-  Si $n \in A$, $\exists m\in \N$ tal que $m-n\in \N$ y $n<m$, de donde obtenemos $n+1<m+1$. Como $m,n\in \N$ y $\N$ es un conjunto inductivo, $n+1\in \N$ y $m+1 \in \N$. Notemos que $m+1-(n+1)=m-n$, por lo que $n+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, se cumple que $A=\N$.
+  Sea $n\in \N$ arbitrario pero fijo. Definimos $A \coloneqq \set{m\in \N| n<m, \ m-n\in\N}\union \set{1}$. Si $m_0\in A$ con $m_0>1$, tenemos que $n<m_0$ y $m_0-n\in \N$ con $m_0\in \N$. Como $\N$ es un conjunto inductivo, sigue que $m_0+1\in \N$. Además, $m_0<m_0+1$, y por transitividad $n<m_0+1$. Luego, por la cerradura de la suma en $\N$ tenemos que $(m_0-n)+1 =(m_0+1)-n \in \N$, por lo que $m_0+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, se cumple que $A=\N$.
  \end{proof}
 
  \bfit{Corolario:} \begin{enumerate}[label=\roman*)]
@@ -1996,7 +1997,9 @@ Demuestre lo siguiente:
   %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
  \end{array} \right. \]
 
-\subsection*{Lista de Ejercicios 8}
+ \textbf{Notación:} Sea $b\in \R$ y $n\in \N$. Si $b \neq 0$, denotaremos $\frac{1}{b^n}$ como $b^{-n}$.
+
+\subsection*{Lista de Ejercicios 9}
 
 Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
 
@@ -2060,46 +2063,47 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
  Por el principio de inducción matemática, $A=\N$, por lo que $a^m \cdot a^n = a^{m+n}, \forall m,n\in \N$.
  \end{proof}
 
- \item $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+ \item Si $b\neq 0$, entonces $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
  \begin{proof}
- Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.\begin{enumerate}[label=\roman*)]
+ Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.
+ \begin{enumerate}[label=\roman*)]
  \item Notemos que $\frac{a^1}{b^1}= \frac{a}{b}= \qty(\frac{a}{b})^1$. Por lo que $1\in A$.
  \item Si $n\in A$, tenemos $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
- \item Como $n>0$, se tiene $n+1>1$, por definición \begin{align*}
-   \qty(\frac{a}{b})^{n+1} &= \frac{a}{b}\cdot \qty(\frac{a}{b})^n\\
-   &=\frac{a}{b}\cdot \frac{a^n}{b^n} && \text{Por (ii)}\\
-   &= \frac{a\cdot a^n}{b\cdot b^n}\\
-   &= \frac{a^{n+1}}{b^{n+1}} && \text{Por tanto, $n+1\in A$.}
-  \end{align*}\
+ \item Como $n>0$, se tiene $n+1>1$, por definición
+  \begin{align*}
+    \qty(\frac{a}{b})^{n+1} &= \frac{a}{b}\cdot \qty(\frac{a}{b})^n\\
+    &=\frac{a}{b}\cdot \frac{a^n}{b^n} && \text{Por (ii)}\\
+    &= \frac{a\cdot a^n}{b\cdot b^n}\\
+    &= \frac{a^{n+1}}{b^{n+1}} && \text{Por tanto, $n+1\in A$.}
+   \end{align*}\
  \end{enumerate}
  Por el principio de inducción matemática, $A=\N$, por lo que $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
  \end{proof}
 
- \end{enumerate}
+ \item Sea $m\neq n$. Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
+ 
+ \begin{proof}
+   Sea $n\in \N$ arbitrario pero fijo. Definimos $A=\set{m \in \N|\frac{a^m}{a^n}=a^{m-n}, \ m>n}\union\set{1}$. 
+   Sea $m_0 \in A$ con $m_0>1$, entonces $\frac{a^{m_0}}{a^n} = a^{m_0-n}$ con $n<m_0$ y $m_0\in \N$. Como $\N$ es un conjunto inductivo, sigue que $m_0+1\in \N$, y $m_0<m_0+1$, por transitividad, $n<m_0+1$. Sigue que \begin{align*}
+    \frac{a^{m_0+1}}{a^n} &= \frac{a^{m_0}\cdot a}{a^n}\\
+    &= a\cdot \frac{a^{m_0}}{a^n}\\
+    &= a\cdot a^{m_0-n}
+   \end{align*}
+   Como $m_0,n \in \N$ y $m_0>n$, se verifica, por (e) de LE8, que $m_0-n\in \N$, y por (c) de LE9, $a\cdot a^{m_0-n} = a^{1+(m_0-n)} = a^{(m_0+1)-n}$, lo que implica que $m_0+1 \in A$. Por el principio de inducción matemática, $A=\N$. Como $n$ es arbitrario, si $m>n$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
+ \end{proof}
 
  \section*{Números enteros}
 
- \textbf{Notación:} Sea $b\in \R$ y $n\in \N$. Si $b \neq 0$, denotaremos $\frac{1}{b^n}$ como $b^{-n}$.
+ El lector notará que para que la proposición $\frac{a^m}{a^n} = a^{m-n}$ sea probada, requerimos, además de la evidente condición $a\neq 0$, que $m\neq n$, pues si tenemos el caso donde $m=n$, entonces \begin{align*}
+  \frac{a^m}{a^n} &= \frac{a^n}{a^n}\\
+  &= \qty(\frac{a}{a})^n && \text{(d) de LE9}\\
+  &= \bigl(a\cdot a^{-1}\bigr)^n && \text{Notación}\\
+  &= 1^n && \text{Inverso multiplicativo}\\
+  &= 1 && \text{(a) de LE9}
+\end{align*}
+Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es posible probar que $a^0 = 1$, pues definimos las propiedades de los exponentes para númeos naturales, y tenemos que $0\notin \N$. Por tanto, introducimos el hecho de que $x^0 = 1, \forall x\in \R$ como una definición, pero al hacerlo, expandimos las propiedades de potenciación al conjunto de los números enteros.
 
- \textbf{Proposición:} Si $m\neq n$, y $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$. El siguiente es un esbozo de la prueba propuesta por un estudiante:
-
-Consideremos el caso cuando $m>n$. Notemos que si $m=1$ tenemos que $m\leq n$, pero esto contradice nuestro supuesto, por lo que $m>1$, y por definición, $a^m=a\cdot a^{m-1}$. Luego, \begin{itemize}
-  \item Si $n=1$, entonces $a^n=a$, en cuyo caso \begin{align*}
-    \frac{a^m}{a^n} &= \frac{a\cdot a^{m-1}}{a}\\
-    &= a^{m-1}\\
-    &= a^{m-n}
-  \end{align*}
-  \item Si $n>1$, entonces $a^n=a\cdot a^{n-1}$, en cuyo caso
-  
-  \begin{align*}
-    \frac{a^m}{a^n} &= \frac{a\cdot a^{m-1}}{a\cdot a^{n-1}}\\
-    &= \frac{a^{m-1}}{a^{n-1}}\\
-    %a^{m-n} &= a^{m-n+1-1} \\
-    %&= a^{m-1-n+1}\\
-    %&= a^{m-1-(n-1)}\\
-  \end{align*}
-  Sabemos que $n-1 \in\N$, pues $n$ y $1$ son números naturales, y $n>1$. Además, como $a\neq 0$ por hipótesis, denotamos $\frac{1}{a^{n-1}}$ como $a^{-\bigl(n-1\bigr)} = a^{1-n}$, sin embargo, para tener que $\frac{a^{m-1}}{a^{n-1}} = a^{m-1}\cdot a^{1-n} = a^{(m-1)+(1-n)}$ requerimos que $1-n\in \N$, como se probó en (c) de LE8, pero dado que $n>1$, sigue que $0>n-1$ con $n-1\neq \N$, por lo que no podemos emplear dicha proposición. Por lo tanto, requerimos expandir el conjunto de $\N$.
- \end{itemize}
+ \end{enumerate}
 
   \bfit{Definción:} \begin{itemize}
     \item Al conjunto $\N \cup {0} \cup {-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
