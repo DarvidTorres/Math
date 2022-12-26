@@ -2106,12 +2106,21 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
  \end{enumerate}
 
   \bfit{Definción:} \begin{itemize}
-    \item Al conjunto $\N \cup {0} \cup {-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
+    \item Al conjunto $\N \cup {0} \cup \set{-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
     \item Al conjunto ${-n: n\in \N}$ lo llamaremos conjunto de los números enteros negativos y lo representaremos con el símbolo $\Z^-$.
-    \item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo representaremos con el símbolo $\Z^+$.
+    %\item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo representaremos con el símbolo $\Z^+$.
    \end{itemize}
    
-   \textbf{Observación.} Los conjuntos $\N$, ${0}$, ${-n: n\in \N}$ son disjuntos por pares.
+   %\textbf{Observación.} Los conjuntos $\N$, ${0}$, ${-n: n\in \N}$ son disjuntos por pares.
+
+   \bfit{Definición:}  Sea $a\in \R$ y $m\in \Z$,
+ \[
+  a^m = \left\{
+ \begin{array}{@{}r@{\thinspace}l}
+  a\cdot a^{m-1}, &  \ \text{si}  \ m \geq 1\\
+  1, &  \ \text{si}  \ m = 0\\
+  \frac{1}{a^{-m}}, &  \ \text{si}  \ m < 1 \ \text{y} \ a\neq 0
+ \end{array} \right. \]
 
 \subsection*{Lista de Ejercicios 7 (LE7)}
 
