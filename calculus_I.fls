@@ -1,6 +1,6 @@
-PWD d:\Programing\ESFM
+PWD c:\Programming\Math\Math
 INPUT C:\Users\Darvi\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\Programing\ESFM\calculus_I.tex
+INPUT c:\Programming\Math\Math\calculus_I.tex
 OUTPUT calculus_I.log
 INPUT C:\Users\Darvi\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Darvi\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
