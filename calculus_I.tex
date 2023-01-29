@@ -1888,7 +1888,7 @@ Demuestre lo siguiente:
   
   Por hipótesis, $n<x$, de donde sigue que $n+(-x+1)<x+(-x+1)$, osea, $n-x+1<1$. Como $\N$ es un conjunto inductivo, $n+1\in \N$. Ahora, supongamos que $x\in \N$, de la hipótesis $x<n+1$ sigue que $n+1-x\in \N$, por este teorema, y como $1$ es elemento mínimo de $\N$, tenemos que $1\leq n+1-x$. Esto implica que $1\leq n+1-x < 1$, lo que es una contradicción. Por tanto, $x$ no es un número natural.
 
-  \textbf{Nota:} Otra forma de plantear esta proposición es la siguiente:
+  \textbf{Nota:} Otra forma de plantear esta proposición es la siguiente (ii):
 
   \item Sea $x\in \R$. Si $m\in \N$ y $m-1<x<m$, entonces $x$ no es un número natural.
   
@@ -1996,6 +1996,58 @@ Demuestre lo siguiente:
  \end{enumerate} %Corolario
 
 \end{enumerate}
+
+\pagebreak
+
+\subsection*{Una nota sobre inducción matemática}
+
+$0<\frac{1}{n}\leq 1, \forall n\in \N$. \begin{proof}
+  Sea $A \defined \set{n|0<\frac{1}{n} \leq 1, n\in \N}$. Notemos que $1\in A$, pues $0<\frac{1}{1} \leq 1$. Luego, si $n\in A$, tenemos que $0<\frac{1}{n} \leq 1$. También $n<n+1$, de donde sigue que $\frac{1}{n+1} < \frac{1}{n}$. Finalmente, como $n+1>0$, sigue que $\frac{1}{n+1}>0$, y por transitividad, $0<\frac{1}{n+1}\leq 1$. Como $\N$ es un conjunto inductivo, sigue que $n+1\in \N$, por lo que $n+1\in A$, y por el principio de inducción matemática, $A =\N$.
+\end{proof}
+
+El lector notará que la prueba consiste en: \begin{enumerate}
+  \item Definir un subconjuto $A$ de números naturales (el cual satisface la propiedad objetivo).
+  \item Demostrar que $A$ es un conjunto inductivo: \begin{itemize}
+    \item Exhibir que $1$ pertenece a $A$.
+    \item Plantear que algún número natural $n$ pertenece a $A$.
+    \item Probar que $n+1$ pertenece a $A$ como consecuencia de que $n\in A$.
+  \end{itemize}
+  \item Enunciar el prinicipio de inducción matemática (que garantiza la propiedad para todo número natural).
+\end{enumerate}
+
+Esta \textit{receta} nos permite probar proposiciones sobre los números naturales; no obstante, la tradición de los libros de texto es definir de manera implícita el conjunto con el que se trabaja y —en ocasiones— enunciar el principio de inducción matemática al inicio de la prueba. Por ejemplo:
+
+Demostrar que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+\begin{proof}
+  Procedemos por inducción. \begin{enumerate}[label=\roman*)]
+    \item Es claro que $n=1$ satisface la desigualdad, pues $0<\frac{1}{1} \leq 1$.
+    \item Supongamos que la desigualdad se cumple para $n=k$, es decir, supongamos que \begin{align*}
+      0&<\frac{1}{k}\leq 1 && \text{Hipótesis de inducción}
+    \end{align*}
+    \item Demostraremos, a partir de (ii), que la desigualdad se cumple también para $n=k+1$. Es decir, probaremos que \begin{align*}
+      0&<\frac{1}{k+1}\leq 1
+    \end{align*}
+    En efecto, notemos que $k<k+1$, de donde obtenemos que $\frac{1}{k+1} < \frac{1}{k}$. Además, como $k+1>0$, sigue que $\frac{1}{k+1}>0$. Y de la hipótesis de inducción tenemos que \[0 < \frac{1}{k+1} < \frac{1}{k} \leq 1\]
+    es decir, \begin{align*}
+      0<\frac{1}{k+1}\leq 1.
+    \end{align*}
+  \end{enumerate}
+  Por tanto, $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+\end{proof}
+
+Sin embargo, el lector debería ser cuidadoso de no considerar el uso de inducción matemática como la única estratégia para demostrar proposiciones sobre los elementos de $\N$, por ejemplo, en este caso.
+
+Demostrar que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+ \begin{proof} Por casos.
+  Sea $n\in \N$ arbitrario pero fijo. Sabemos que $n\geq 1$, por lo que tenemos dos casos: \begin{enumerate}[label=\roman*)]
+   \item Si $n=1$, tenemos que $\frac{1}{n}=\frac{1}{1}=1$. Por lo que $0<\frac{1}{n}\leq 1$.
+   \item Si $n>1$, por transitividad $n>0$, lo que implica que $\frac{1}{n}>0$. Retomando la hipótesis, \begin{align*}
+    n &> 1\\
+    n \cdot \frac{1}{n} &> 1\cdot \frac{1}{n}\\
+    1 &> \frac{1}{n}
+   \end{align*} Por lo que $0<\frac{1}{n}\leq 1$. 
+  \end{enumerate} Como $n$ es arbitrario, se verifica que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+ \end{proof}
 
 \subsection*{Potenciación}
 
@@ -2409,17 +2461,6 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
 Sean $a$ y $b$ números reales, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
- \item $0<\frac{1}{n}\leq 1, \forall n\in \N$.
- \begin{proof} 
-  Sea $n\in \N$ arbitrario pero fijo. Sabemos que $n\geq 1$, por lo que tenemos dos casos: \begin{enumerate}[label=\roman*)]
-   \item Si $n=1$, tenemos que $\frac{1}{n}=\frac{1}{1}=1$. Por lo que $0<\frac{1}{n}\leq 1$.
-   \item Si $n>1$, por transitividad $n>0$, lo que implica que $\frac{1}{n}>0$. Retomando la hipótesis, \begin{align*}
-    n &> 1\\
-    n \cdot \frac{1}{n} &> 1\cdot \frac{1}{n}\\
-    1 &> \frac{1}{n}
-   \end{align*} Por lo que $0<\frac{1}{n}\leq 1$. 
-  \end{enumerate} Como $n$ es arbitrario, se verifica que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
- \end{proof}
  \item $0 \leq a^{2n} \, \forall n\in \N$.
  \item Si $0\leq a$, entonces $ 0 \leq a^n, \, \forall n\in \N$.
  \item Si $0 \leq a <b$, entonces $a^n < b^n, \, \forall n\in \N$.
