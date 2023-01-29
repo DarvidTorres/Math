@@ -2129,17 +2129,29 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
     Si $m=0$, la prueba está terminada, y hemos probado que la proposición es verdadera si $m\geq 1$. Luego, si $m<1$, tenemos que $1^m = \frac{1}{1^{-m}}$, donde $-m\in \N$, por lo que $1^m = \frac{1}{1} = 1$.
   \end{proof}
 
-  \item $a^m\cdot a^n = a^{m+n}, \forall m\in \Z$. \begin{proof}
-    Sin pérdida de generalidad, si $n=0$, tenemos que $a^m\cdot a^0 = a^m \cdot 1 = a^m = a^{m+0}$. Ya probamos que la proposición es verdadera para $n\geq 1$ y $m\geq 1$. Luego, sea $a\neq 0$, y \begin{enumerate}[label=\roman*)]
+  \item $a^m\cdot a^n = a^{m+n}, \forall m\in \Z$.
+  \begin{proof}\leavevmode
+  \begin{enumerate}[label=\arabic*)]
+    \item Sin pérdida de generalidad, si $n=0$, tenemos que $a^m\cdot a^0 = a^m \cdot 1 = a^m = a^{m+0}$.
+    \item Ya probamos que la proposición es verdadera para $n\geq 1$ y $m\geq 1$.
+    \item Sea $a\neq 0$, y \begin{enumerate}[label=\roman*)]
       \item Sin pérdida de generalidad, si $n<1$ y $m>0$, tenemos $a^m\cdot a^n = \frac{a^m}{a^{-n}}$, donde $-n\in \N$; a su vez, \begin{itemize}
         \item Si $-n = m$, entonces \begin{align*}
           \frac{a^m}{a^{-n}} &= 1 \\
           &= a^0\\
           &= a^{m-m}\\
+          &= a^{m-(-n)}\\
+          &= a^{m+n}
         \end{align*}
+        \item Si $-n\neq m$, por (e) de LE9, sigue que $\frac{a^m}{a^{-n}} = a^{m-(-n)} = a^{m+n}$.
       \end{itemize}
+      \item Si $n<1$ y $m<1$, entonces \begin{align*}
+        a^m\cdot a^n &= \frac{1}{a^{-m}} \cdot \frac{1}{a^{-m}}\\
+        &= \frac{1}{a^{-m}a^{-n}}
+      \end{align*}
+      Como $-m, -n\in \N$, por (e) de LE9
     \end{enumerate}
-    
+  \end{enumerate}
   \end{proof}
 
  \end{enumerate}
