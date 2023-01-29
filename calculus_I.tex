@@ -755,6 +755,17 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  \end{align*}  
  \end{proof}
 
+ \bfit{Corolario:} $\left(\frac{a}{b}\right)^{-1} = \frac{b}{a}$ si $a,b \neq 0$.
+ \begin{proof}
+  \begin{align*}
+    \left(\frac{a}{b}\right)^{-1} &= \frac{1}{\frac{a}{b}} && \text{Notación}\\
+    &= \frac{1^{-1}}{\frac{a}{b}} && \text{Uno es inverso multiplicativo}\\
+    &= \frac{\frac{1}{1}}{\frac{a}{b}} && \text{Notación}\\
+    &= \frac{1\cdot b}{1\cdot a} && \text{Teorema}\\
+    &= \frac{b}{a} && \text{Neutro multiplicativo} \qedhere
+  \end{align*}
+ \end{proof}
+
  \item $\frac{a}{c} \pm  \frac{b}{c}=\frac{a\pm b}{c}$, si $c\neq 0$. (Suma de fracciones con denominador conmún).
  \begin{proof} 
  \begin{align*}
@@ -2126,33 +2137,35 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
 
  \begin{enumerate}[label=\alph*)]
   \item $1^m = 1, \forall m\in \Z$. \begin{proof}
-    Si $m=0$, la prueba está terminada, y hemos probado que la proposición es verdadera si $m\geq 1$. Luego, si $m<1$, tenemos que $1^m = \frac{1}{1^{-m}}$, donde $-m\in \N$, por lo que $1^m = \frac{1}{1} = 1$.
+    Si $m=0$, la prueba está terminada, y hemos probado que la proposición es verdadera si $m\in \N$. Luego, si $m<0$, tenemos que $1^m = \frac{1}{1^{-m}}$, donde $-m\in \N$, por lo que $1^m = \frac{1}{1} = 1$.
   \end{proof}
 
-  \item Sea $a\neq 0$ y $b\neq 0$, si $n<0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}$.
-  \begin{proof}
-    Notemos que \begin{align*}
-      \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
-      &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
-      &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
-      &= \frac{1}{\frac{a^{-n}}{b^{-n}}}\\
-      &= \frac{\frac{1}{1}}{\frac{a^{-n}}{b^{-n}}}\\
-      &= \frac{1\cdot b^{-n}}{1\cdot a^{-n}} && \text{Regla del sandwich}\\
-      &= \frac{b^{-n}}{a^{-n}} && \text{Con $-n\in \N$}\\
-      &= \left(\frac{b}{a}\right)^{-n} && \text{(d) de LE9} \qedhere
-    \end{align*}
+  \item Sea $a,b\neq 0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}, \forall n\in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Si $n\in \N$, notemos que \begin{align*}
+        \left(\frac{b}{a}\right)^{-n} &= \frac{1}{\left(\frac{b}{a}\right)^n} && \text{Definición}\\
+        &= \frac{1}{\frac{b^n}{a^n}} && \text{(d) de LE9}\\
+        &= \frac{a^n}{b^n} && \text{Regla del sandwich}\\
+        &= \left(\frac{a}{b}\right)^n && \text{(d) de LE9}
+      \end{align*}
+      \item Si $n=0$, notemos que $\frac{a^n}{b^n} = \frac{a^0}{b^0} = \frac{1}{1} = 1 = \left(\frac{b}{a}\right)^0 = \left(\frac{b}{a}\right)^n$.
+      \item Si $n<0$, notemos que \begin{align*}
+        \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
+        &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
+        &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
+        &= \frac{1}{\frac{a^{-n}}{b^{-n}}}\\
+        &= \frac{b^{-n}}{a^{-n}} && \text{Regla del sandwich}\\
+        &= \left(\frac{b}{a}\right)^{-n} && \text{(d) de LE9} \qedhere
+      \end{align*}
+    \end{enumerate}
   \end{proof}
 
   \item $\frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n, \forall n\in \Z$.
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\roman*)]
       \item Ya probamos que la proposición es verdadera para $n\in \N$.
-      \item Si $n=0$, tenemos que \begin{align*}
-        \frac{a^n}{b^n} &= \frac{1}{1}\\
-        &= 1\\
-        &= \left(\frac{a}{b}\right)^0\\
-        &= \left(\frac{a}{b}\right)^n
-      \end{align*}
+      \item Si $n=0$, tenemos que $\frac{a^n}{b^n} = \frac{a^0}{b^0} = \frac{1}{1} = 1 = \left(\frac{a}{b}\right)^0= \left(\frac{a}{b}\right)^n$.
       \item Sea $a\neq 0$ y $b\neq 0$, si $n<0$, sigue que \begin{align*}
         \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
         &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
