@@ -1999,7 +1999,7 @@ Demuestre lo siguiente:
 
  \textbf{Notación:} Sea $b\in \R$ y $n\in \N$. Si $b \neq 0$, denotaremos $\frac{1}{b^n}$ como $b^{-n}$.
 
-\subsection*{Lista de Ejercicios 9}
+\subsection*{Lista de Ejercicios 9 (LE9)}
 
 Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
 
@@ -2131,8 +2131,8 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
 
   \item $a^m\cdot a^n = a^{m+n}, \forall m\in \Z$.
   \begin{proof}\leavevmode
-  \begin{enumerate}[label=\arabic*)]
-    \item Sin pérdida de generalidad, si $n=0$, tenemos que $a^m\cdot a^0 = a^m \cdot 1 = a^m = a^{m+0}$.
+  \begin{enumerate}[label=\Roman*)]
+    \item Sin pérdida de generalidad, si $n=0$, tenemos que $a^m\cdot a^0 = a^m \cdot 1 = a^m = a^{m+0}=a^{m+n}$.
     \item Ya probamos que la proposición es verdadera para $n\geq 1$ y $m\geq 1$.
     \item Sea $a\neq 0$, y \begin{enumerate}[label=\roman*)]
       \item Sin pérdida de generalidad, si $n<1$ y $m>0$, tenemos $a^m\cdot a^n = \frac{a^m}{a^{-n}}$, donde $-n\in \N$; a su vez, \begin{itemize}
@@ -2149,7 +2149,10 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
         a^m\cdot a^n &= \frac{1}{a^{-m}} \cdot \frac{1}{a^{-m}}\\
         &= \frac{1}{a^{-m}a^{-n}}
       \end{align*}
-      Como $-m, -n\in \N$, por (e) de LE9
+      Como $-m, -n\in \N$, por (c) de LE9, \begin{align*}
+        \frac{1}{a^{-m}a^{-n}} &= \frac{1}{a^{-m-n}}\\
+        &= \frac{1}{a^{-(m+n)}}
+      \end{align*}
     \end{enumerate}
   \end{enumerate}
   \end{proof}

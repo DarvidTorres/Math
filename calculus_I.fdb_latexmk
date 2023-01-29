@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1674957595 "c:/Programming/Math/Math/calculus_I.tex" "calculus_I.pdf" "calculus_I" 1674957597 0
+["pdflatex"] 1674957958 "c:/Programming/Math/Math/calculus_I.tex" "calculus_I.pdf" "calculus_I" 1674957961 0
   "C:/Users/Darvi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1672070941 200510 4f6af45ef50fee805ab1f6d0a91098aa ""
   "C:/Users/Darvi/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1637184010 12668 6edafe931752a1a035badda8e15dd656 ""
   "C:/Users/Darvi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1672080292 23168607 899b7a15984f8acc09adbc52a4af47b2 ""
@@ -96,9 +96,9 @@
   "C:/Users/Darvi/AppData/Local/Programs/MiKTeX/tex/latex/units/nicefrac.sty" 1469025550 4163 0462ee5ab265cf59dc15a41a3b883101 ""
   "C:/Users/Darvi/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/Darvi/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Programming/Math/Math/calculus_I.tex" 1674957593 151179 3d4e2e3e653b13ba17a7a2966dce598d ""
-  "calculus_I.aux" 1674957597 70 2d96e6efc092b3c0553c56d5faef52e9 "pdflatex"
-  "calculus_I.tex" 1674957593 151179 3d4e2e3e653b13ba17a7a2966dce598d ""
+  "c:/Programming/Math/Math/calculus_I.tex" 1674957956 151317 005674aa39a2875b15e3a84a95380bd1 ""
+  "calculus_I.aux" 1674957960 70 2d96e6efc092b3c0553c56d5faef52e9 "pdflatex"
+  "calculus_I.tex" 1674957956 151317 005674aa39a2875b15e3a84a95380bd1 ""
   (generated)
   "calculus_I.aux"
   "calculus_I.log"
