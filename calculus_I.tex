@@ -2106,8 +2106,8 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
  \end{enumerate}
 
   \bfit{Definción:} \begin{itemize}
-    \item Al conjunto $\N \cup {0} \cup \set{-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
-    \item Al conjunto ${-n: n\in \N}$ lo llamaremos conjunto de los números enteros negativos y lo representaremos con el símbolo $\Z^-$.
+    \item Al conjunto $\N \cup \set{0} \cup \set{-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
+    \item Al conjunto $\set{-n: n\in \N}$ lo llamaremos conjunto de los números enteros negativos y lo representaremos con el símbolo $\Z^-$.
     %\item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo representaremos con el símbolo $\Z^+$.
    \end{itemize}
    
@@ -2117,9 +2117,9 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
  \[
   a^m = \left\{
  \begin{array}{@{}r@{\thinspace}l}
-  a\cdot a^{m-1}, &  \ \text{si}  \ m \geq 1\\
+  a\cdot a^{m-1}, &  \ \text{si}  \ m > 0\\
   1, &  \ \text{si}  \ m = 0\\
-  \frac{1}{a^{-m}}, &  \ \text{si}  \ m < 1 \ \text{y} \ a\neq 0
+  \frac{1}{a^{-m}}, &  \ \text{si}  \ m < 0 \ \text{y} \ a\neq 0
  \end{array} \right. \]
 
  \subsection*{Lista de Ejercicios 10 (LE10)}
@@ -2129,13 +2129,48 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
     Si $m=0$, la prueba está terminada, y hemos probado que la proposición es verdadera si $m\geq 1$. Luego, si $m<1$, tenemos que $1^m = \frac{1}{1^{-m}}$, donde $-m\in \N$, por lo que $1^m = \frac{1}{1} = 1$.
   \end{proof}
 
+  \item Sea $a\neq 0$ y $b\neq 0$, si $n<0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}$.
+  \begin{proof}
+    Notemos que \begin{align*}
+      \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
+      &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
+      &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
+      &= \frac{1}{\frac{a^{-n}}{b^{-n}}}\\
+      &= \frac{\frac{1}{1}}{\frac{a^{-n}}{b^{-n}}}\\
+      &= \frac{1\cdot b^{-n}}{1\cdot a^{-n}} && \text{Regla del sandwich}\\
+      &= \frac{b^{-n}}{a^{-n}} && \text{Con $-n\in \N$}\\
+      &= \left(\frac{b}{a}\right)^{-n} && \text{(d) de LE9} \qedhere
+    \end{align*}
+  \end{proof}
+
+  \item $\frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n, \forall n\in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Ya probamos que la proposición es verdadera para $n\in \N$.
+      \item Si $n=0$, tenemos que \begin{align*}
+        \frac{a^n}{b^n} &= \frac{1}{1}\\
+        &= 1\\
+        &= \left(\frac{a}{b}\right)^0\\
+        &= \left(\frac{a}{b}\right)^n
+      \end{align*}
+      \item Sea $a\neq 0$ y $b\neq 0$, si $n<0$, sigue que \begin{align*}
+        \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
+        &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
+        &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
+        &= \frac{1}{\frac{a^{-n}}{b^{-n}}} && \text{Con $-n\in \N$}\\
+        &= \frac{1}{\left(\frac{a}{b}\right)^{-n}} && \text{(d) de LE9}\\
+        &= \left(\frac{a}{b}\right)^n && \text{Definición} \qedhere
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+
   \item $a^m\cdot a^n = a^{m+n}, \forall m\in \Z$.
   \begin{proof}\leavevmode
   \begin{enumerate}[label=\Roman*)]
     \item Sin pérdida de generalidad, si $n=0$, tenemos que $a^m\cdot a^0 = a^m \cdot 1 = a^m = a^{m+0}=a^{m+n}$.
-    \item Ya probamos que la proposición es verdadera para $n\geq 1$ y $m\geq 1$.
+    \item Ya probamos que la proposición es verdadera para $m,n\in \N$.
     \item Sea $a\neq 0$, y \begin{enumerate}[label=\roman*)]
-      \item Sin pérdida de generalidad, si $n<1$ y $m>0$, tenemos $a^m\cdot a^n = \frac{a^m}{a^{-n}}$, donde $-n\in \N$; a su vez, \begin{itemize}
+      \item Sin pérdida de generalidad, si $n<0$ y $m>0$, tenemos $a^m\cdot a^n = \frac{a^m}{a^{-n}}$, donde $-n\in \N$; a su vez, \begin{itemize}
         \item Si $-n = m$, entonces \begin{align*}
           \frac{a^m}{a^{-n}} &= 1 \\
           &= a^0\\
@@ -2145,13 +2180,14 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
         \end{align*}
         \item Si $-n\neq m$, por (e) de LE9, sigue que $\frac{a^m}{a^{-n}} = a^{m-(-n)} = a^{m+n}$.
       \end{itemize}
-      \item Si $n<1$ y $m<1$, entonces \begin{align*}
+      \item Si $n<0$ y $m<0$, entonces \begin{align*}
         a^m\cdot a^n &= \frac{1}{a^{-m}} \cdot \frac{1}{a^{-m}}\\
         &= \frac{1}{a^{-m}a^{-n}}
       \end{align*}
       Como $-m, -n\in \N$, por (c) de LE9, \begin{align*}
-        \frac{1}{a^{-m}a^{-n}} &= \frac{1}{a^{-m-n}}\\
-        &= \frac{1}{a^{-(m+n)}}
+        \frac{1}{a^{-m}a^{-n}} &= \frac{1}{a^{-m+(-n)}}\\
+        &= \frac{1}{a^{-(m+n)}}\\
+        &= a^{m+n} && \text{Definición} \qedhere
       \end{align*}
     \end{enumerate}
   \end{enumerate}
