@@ -2164,9 +2164,13 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
 
  \end{enumerate}
 
+ \subsection*{Notación sigma}
+
+ 
+
  \section*{Números enteros}
 
- \bfit{Proposición:} Si $m,n\in \N$ con $m\neq n$. Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
+ \bfit{Proposición:} Sea $m,n\in \N$ con $m\neq n$. Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
  
  \begin{proof}
    Sea $n\in \N$ arbitrario pero fijo. Definimos $A=\set{m \in \N|\frac{a^m}{a^n}=a^{m-n}, \ m>n}\union\set{1}$. 
@@ -2287,7 +2291,7 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
       \item Si $m<0$, con $a\neq 0$ y $b\neq 0$, entonces \begin{align*}
         \bigl(ab\bigr)^m &= \frac{1}{(ab)^{-m}}\\
         &= \frac{1}{a^{-m}b^{-m}} && \text{(e) de LE9}\\
-        &= a^mb^n && \text{Definición}
+        &= a^mb^m && \text{Definición}
       \end{align*}
     \end{enumerate}
   \end{proof}
@@ -2300,47 +2304,23 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
         \item Si $m=0$, sigue que $a^{mn} = a^0 = 1 = 1^n = (a^0)^n = (a^m)^n$.
         \item Si $n=0$, sigue que $a^{mn} = a^0 = 1 = (a^m)^0 = (a^m)^n$.
       \end{itemize}
+      \item Finalmente, si $a\neq 0$ \begin{itemize}
+        \item Si $n<0$ y $m\in \N$, sigue que \begin{align*}
+          \bigl(a^m\bigr)^n &= \frac{1}{(a^m)^{-n}} && \text{Definición}\\
+          &= \frac{1}{a^{-mn}} && \text{(f) de LE9}\\
+          &= a^{mn} && \text{Definición}
+        \end{align*}
+        \item Si $m<0$ y $n\in \N$, sigue que \begin{align*}
+          \bigl(a^m\bigr)^n &= \left(\frac{1}{a^{-m}}\right)^n && \text{Definición}\\
+          &= \frac{1^n}{(a^{-m})^n} && \text{(d) de LE9}\\
+          &= \frac{1}{a^{-mn}} && \text{(f) de LE9}\\
+          &= a^{mn} && \text{Definición} && \qedhere
+        \end{align*}
+      \end{itemize}
     \end{enumerate}
   \end{proof}
 
  \end{enumerate}
-
-\subsection*{Lista de Ejercicios 7 (LE7)}
-
-$(a+b)(a-b)=a^2-b^2$. (Diferencia de cuadrados).
-\begin{proof} 
- \begin{align*}
- (a+b)(a-b) &= (a+b)\bigl(a+(-b)\bigr) && \text{Notación}\\
- &= (a+b)\cdot a + (a+b)\cdot (-b) && \text{Distribución}\\
- &= a\cdot (a+b) + (-b)\cdot (a+b) && \text{Conmutatividad}\\
- &= a\cdot a + a\cdot b + (-b)\cdot a + (-b) \cdot b && \text{Distribución}\\
- &= a^2+ ab -ba -b^2 && \text{Notación}\\
- &=a^2-b^2 && \text{Inverso aditivo} \qedhere
- \end{align*} 
-\end{proof}
-
-$0\leq a^2$.
- \begin{proof} 
-  Por tricotomía $a=0$ o $0<a$ o $a<0$. Si $a=0$, entonces $a^2=a\cdot a =0 \cdot 0 =0$. Luego,
-  \begin{center}\vspace{-1em}
-   \begin{minipage}[l]{.5\linewidth}
-    \begin{align*}
-     0 &< a && \text{Hipótesis}\\
-     0 \cdot a &< a \cdot a && \text{Multiplicación por positivo}\\
-     0 &< a \cdot a && \text{Multiplicación por 0}\\
-     0 &< a^2 && \text{Notación}
-    \end{align*}
-   \end{minipage}%
-   \begin{minipage}[r]{.5\linewidth}
-    \begin{align*}
-     a &< 0 && \text{Hipótesis}\\
-     0 \cdot a &< a\cdot a && \text{Multiplicación por negativo}\\
-     0 &< a\cdot a && \text{Multiplicación por 0}\\
-     0 &< a^2 && \text{Notación}
-    \end{align*}
-   \end{minipage}
-  \end{center} En cualquier caso, $0\leq a^2$.
- \end{proof}
 
 \section*{Valor absoluto}
 
