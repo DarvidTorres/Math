@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+
+\usepackage[top=0.5in,bottom=0.5in,right=0.5in,left=0.5in]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage[spanish]{babel}
+\usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
+\usepackage{mathtools} %\coloneqq command
+\usepackage{braket}
+%\usepackage[spanish]{babel}
+\usepackage{adjustbox}
+\usepackage{nicefrac} % for Elegant fractions in one line https://tex.stackexchange.com/questions/128496/elegant-fractions-in-one-line/128498
+\usepackage{physics} % for nice brackets \qty(...) \qty[...] \qty{...} https://www.reddit.com/r/LaTeX/comments/7qkbfv/redefine_left_right/
+
+\usepackage{array,multirow}
+
+\renewcommand*{\proofname}{\textbf{Demostración:}}
+
+%Conjuntos de números
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+
+%Shorter comands
+\newcommand{\defined}{\coloneqq}
+\newcommand{\bfit}[1]{\textbf{\textit{#1}}}
+\let\epsilon\varepsilon
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\let\set\Set
+\let\union\cup
+\let\propersubset\subset
+\let\subset\subseteq
+\let\intersection\cap
+
+%the code below manipulates space around \align environment https://tex.stackexchange.com/questions/47400/remove-vertical-space-around-align
+%\usepackage{etoolbox}
+%\newcommand{\zerodisplayskips}{%
+%\setlength{\abovedisplayskip}{0em}}%
+%%\setlength{\belowdisplayskip}{-0em}%
+%%\setlength{\abovedisplayshortskip}{0em}}%
+%%\setlength{\belowdisplayshortskip}{-0em}}
+%\appto{\normalsize}{\zerodisplayskips}
+%\appto{\small}{\zerodisplayskips}
+%\appto{\footnotesize}{\zerodisplayskips}
+
+%bold all lists$
+\setlist[enumerate]{font=\bfseries}
+%\setlist{leftmargin=0em}
+\setlist[itemize]{topsep=0pt}%{noitemsep, topsep=0pt}
+
+\setlength{\parindent}{0pt} %no indent for the document
+\setlength{\parskip}{1em} %add space between paragraphs
+\pagestyle{empty}
+
+\begin{document}
+
+\title{Álgebra Lineal I}
+\author{Darvid \\ \texttt{darvid.torres@gmail.com}}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+
+\part*{Espacios vectoriales}
+
+\bfit{Definición:} Una operación binaria $(*)$ sobre un cojunto $V$ es una función:
+\begin{align*}
+ * &: V \times V \to V\\
+ &*(u,v) = u*v\in V.
+\end{align*}
+\bfit{Definición:}  Sea $K$ un campo. Un espacio vectorial sobre $K$, es un conjunto $V$ no vacío, dotado con dos operaciones binarias, suma: $+$ y multiplicación por escalares $\cdot$, las cuales satisfacen los siguientes:
+
+\section*{Axiomas}
+
+\begin{enumerate}
+    \item Cerradura (de la suma): Si $u,v\in V$, entonces $u+v \in V$.
+    \item Conmutatividad (de la suma): Si $u,v\in V$, entonces $u+v=v+u$.
+    \item Asociatividad (de la suma): Si $u,v,w\in V$, entonces $u+(v+w)=(u+v)+w$.
+    \item Neutro aditivo: $\exists 0\in V$ tal que si $v\in V$, entonces $0+v=v$.
+    \item Inverso aditivo: Si $v\in V$, entonces $\exists (-v)\in V$ tal que $v+(-v)=0$.
+    \item Multiplicación por escalares: Si $\alpha \in K$, entonces $\alpha \cdot v\in V$.
+    \item Asociatividad (de la multiplicación por escalares): Si $\alpha, \beta\in K$ y $v\in V$, entonces $(\alpha\cdot \beta)\cdot v = \alpha \cdot (\beta \cdot v)$.
+    \item Neutro multiplicativo: Sea $1$ es el elemento identidad en $K$ y $v\in V$, entonces $1\cdot v=v$.
+    \item P. Distributiva: Si $\alpha, \beta \in K$ y $u,v\in V$, entonces \begin{itemize}
+        \item $\alpha \cdot (u+v) = \alpha \cdot u + \alpha \cdot v$.
+        \item $(\alpha+\beta) \cdot v = \alpha \cdot v + \beta \cdot v$.
+    \end{itemize}
+\end{enumerate}
+
+\bfit{Definición:} A los elementos de $K$ los llamaremos escalares y a los de $V$, vectores.
+
+\textbf{Nota:} El uso de los símbolos $+$ y $\cdot$ no debe confundirse con las operaciones definidas sobre $K$, sin embargo, abusando de la notación, utilizaremos los mismos. Es decir, deberíamos utilizar símbolos distintos para denotar la suma y multiplicación en $V$, respecto de los de $K$, pero para simplificar la escritura, prescindiremos de ello.
+
+\subsection*{Lista de ejercicios 1 (LE1)}
+\begin{enumerate}
+    \item Sea $F$ un campo y un espacio vectorial sobre sí mismo
+\end{enumerate}
+
+\end{document}
