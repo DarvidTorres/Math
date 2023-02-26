@@ -2164,10 +2164,6 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
 
  \end{enumerate}
 
- \subsection*{Notación sigma}
-
- 
-
  \section*{Números enteros}
 
  \bfit{Proposición:} Sea $m,n\in \N$ con $m\neq n$. Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
@@ -2190,8 +2186,6 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
   &= 1 && \text{(a) de LE9}
 \end{align*}
 Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es posible probar que $a^0 = 1$, pues definimos las propiedades de los exponentes para númeos naturales, y tenemos que $0\notin \N$. Por tanto, introducimos el hecho de que $x^0 = 1, \forall x\in \R$ como una definición, pero al hacerlo, expandimos las propiedades de potenciación al conjunto de los números enteros.
-
-\pagebreak
 
   \bfit{Definción:} \begin{itemize}
     \item Al conjunto $\N \cup \set{0} \cup \set{-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
@@ -2321,6 +2315,32 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
   \end{proof}
 
  \end{enumerate}
+
+ \section*{Notación sigma}
+
+ \textbf{Sumatoria:} Sea $a,b\in \Z$, 
+ \[
+  \sum_{i=a}^{b} f(i) = \left\{
+ \begin{array}{@{}l@{\thinspace}l}
+  0 &,  \ \text{si}  \ b<a\\
+  f(a) + \sum_{i=a+1}^{b} f(i) &,  \ \text{si}  \ a\leq b.\\
+ \end{array} \right. \]
+
+ La definición anterior es equivalente a la siguiente (el lector debería verifiar tal equivalencia):
+\[
+ \sum_{i=a}^{b} f(i) = \left\{
+\begin{array}{@{}l@{\thinspace}l}
+ 0 &,  \ \text{si}  \ b<a\\
+ f(b) + \sum_{i=a}^{b-1} f(i) &,  \ \text{si}  \ a\leq b.\\
+\end{array} \right. \]
+
+Ejemplo, \begin{align*}
+  \sum_{n=1}^{3} n &= 1 + \sum_{n=2}^{3} n\\
+  &= 1 + 2 + \sum_{n=3}^3 n\\
+  &= 1 + 2 + 3 + \sum_{n=4}^3 n\\
+  &= 1 + 2 + 3 + 0\\
+  &= 6
+\end{align*}
 
 \section*{Valor absoluto}
 
