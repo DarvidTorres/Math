@@ -2195,14 +2195,19 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
    
    %\textbf{Observación.} Los conjuntos $\N$, ${0}$, ${-n: n\in \N}$ son disjuntos por pares.
 
-   \bfit{Definición:}  Sea $a\in \R$ y $m\in \Z$,
- \[
-  a^m = \left\{
- \begin{array}{@{}r@{\thinspace}l}
-  a\cdot a^{m-1}, &  \ \text{si}  \ m > 0\\
-  1, &  \ \text{si}  \ m = 0\\
-  \frac{1}{a^{-m}}, &  \ \text{si}  \ m < 0 \ \text{y} \ a\neq 0
- \end{array} \right. \]
+%\bfit{Definición:}  Sea $a\in \R$ y $m\in \Z$,
+% \[
+%  a^m = \left\{
+% \begin{array}{@{}r@{\thinspace}l}
+%  a\cdot a^{m-1}, &  \ \text{si}  \ m > 0\\
+%  1, &  \ \text{si}  \ m = 0\\
+%  \frac{1}{a^{-m}}, &  \ \text{si}  \ m < 0 \ \text{y} \ a\neq 0
+% \end{array} \right. \]
+
+\bfit{Definición:} Sea $a\in \R$ y $n\in \N$, \begin{itemize}
+  \item $a^0=1, \forall a\in \R$.
+  \item $a^{-n}=\frac{1}{a^n}$, si $a\neq 0$.
+\end{itemize}
 
  \subsection*{Lista de Ejercicios 10 (LE10)}
 
@@ -2316,31 +2321,154 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
 
  \end{enumerate}
 
+ \pagebreak
+
  \section*{Notación sigma}
 
- \textbf{Sumatoria:} Sea $a,b\in \Z$, 
- \[
-  \sum_{i=a}^{b} f(i) = \left\{
- \begin{array}{@{}l@{\thinspace}l}
-  0 &,  \ \text{si}  \ b<a\\
-  f(a) + \sum_{i=a+1}^{b} f(i) &,  \ \text{si}  \ a\leq b.\\
- \end{array} \right. \]
+ \textbf{Definición:} Sea $a,b\in \Z$, definimos a la sumatoria como cualquiera de las siguientes:
 
- La definición anterior es equivalente a la siguiente (el lector debería verifiar tal equivalencia):
-\[
- \sum_{i=a}^{b} f(i) = \left\{
-\begin{array}{@{}l@{\thinspace}l}
- 0 &,  \ \text{si}  \ b<a\\
- f(b) + \sum_{i=a}^{b-1} f(i) &,  \ \text{si}  \ a\leq b.\\
-\end{array} \right. \]
+ \begin{center}
+  \begin{minipage}[c]{.5\linewidth}
+    \[
+    \sum_{i=a}^{b} f(i) \defined \left\{
+   \begin{array}{@{}l@{\thinspace}l}
+    0 &,  \ \text{si}  \ a>b\\
+    f(i) &,  \ \text{si}  \ a=b\\
+    f(a) + \sum_{i=a+1}^{b} f(i) &,  \ \text{si}  \ a<b.
+   \end{array} \right. \]
+   \end{minipage}%
+  \begin{minipage}[c]{.5\linewidth}
+   \[\sum_{i=a}^{b} f(i) \defined \left\{
+    \begin{array}{@{}l@{\thinspace}l}
+     0 &,  \ \text{si}  \ a>b\\
+     f(i) &,  \ \text{si}  \ a=b\\
+     f(b) + \sum_{i=a}^{b-1} f(i) &,  \ \text{si}  \ a<b.
+    \end{array} \right. \]
+  \end{minipage}
+  \end{center}
 
-Ejemplo, \begin{align*}
-  \sum_{n=1}^{3} n &= 1 + \sum_{n=2}^{3} n\\
-  &= 1 + 2 + \sum_{n=3}^3 n\\
-  &= 1 + 2 + 3 + \sum_{n=4}^3 n\\
-  &= 1 + 2 + 3 + 0\\
-  &= 6
+El lector debería verificar que ambas definiciones son equivalentes.
+
+%Las siguientes son definiciones equivalentes:
+%
+%\begin{center}
+%  \begin{minipage}[c]{.5\linewidth}
+%    \[\sum_{i=a}^{b} f(i) \defined \left\{
+%      \begin{array}{@{}l@{\thinspace}l}
+%       0 &,  \ \text{si}  \ a>b\\
+%       f(a) + \sum_{i=a+1}^{b} f(i) &,  \ \text{si}  \ a\leq b.
+%      \end{array} \right.\]
+%   \end{minipage}%
+%  \begin{minipage}[c]{.5\linewidth}
+%    \[\sum_{i=a}^{b} f(i) \defined \left\{
+%      \begin{array}{@{}l@{\thinspace}l}
+%       0 &,  \ \text{si}  \ a>b\\
+%       f(b) + \sum_{i=a}^{b-1} f(i) &,  \ \text{si}  \ a\leq b.
+%      \end{array} \right. \]
+%  \end{minipage}
+%  \end{center}
+
+
+\textbf{Ejemplo:}
+\begin{align*}
+  \sum_{i=-1}^{1} i &= -1 + \sum_{i=0}^{1} i\\
+  &= -1 + 0 + \sum_{i=1}^1 i\\
+  &= -1 + 0 + 1\\
+  &= 0
 \end{align*}
+
+\subsection*{Lista de Ejercicios 11 (LE11)}
+
+Sea $a,b\in \Z$, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+  \item Sea $c\in \R$, si $a\leq b$, entonces \begin{align*}
+    \sum_{i=a}^b c &= (b-a+1)c
+  \end{align*}
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*)]
+      \item Se comprueba para $a=b$, \begin{align*}
+        \sum_{i=a}^b c = c = 1\cdot c = (b-a+1)\cdot c
+      \end{align*}
+      \item Si $a<b$ se tiene que \begin{enumerate}[label=\roman*)]
+        \item Se verifica para $b=a+1$, \begin{align*}
+          \sum_{i=a}^{a+1} c &= c + \sum_{i=a+1}^{a+1} c = c + c = 2c = (2+a-a)c = (1+1+a-a)c = \Bigl((a+1)-a+1\Bigr) c
+        \end{align*}
+        \item Supongamos que se cumple para $b=a+k$ con $k\in \N$, es decir, suponemos que \begin{align*}
+          \sum_{i=a}^{a+k} c &= \Bigl((a+k)-a+1\Bigr) c
+        \end{align*}
+        \item Notemos que \begin{align*}
+          \sum_{i=a}^{a+k+1} c &= c + \sum_{i=a}^{a+k} c\\
+          &= c + \Bigl((a+k)-a+1\Bigr) c && \text{Hip. Inducción}\\
+          &= \Bigl(1 + \bigl((a+k)-a+1\bigr) \Bigr)c\\
+          &= \Bigl((a+k+1)-a+1\Bigr)c && \qedhere
+        \end{align*}
+      \end{enumerate}
+    \end{enumerate}
+  \end{proof}
+
+  \bfit{Corolario:} Sea $n\in \N$ \begin{align*}
+    \sum_{i=1}^n c = nc
+  \end{align*}
+  \begin{proof} $\sum_{i=1}^n c = \bigl((n-1)+1\bigr) c = nc$.
+  \end{proof}
+
+  \item $\sum_{i=a}^b f(i) = \sum_{i=a+k}^{b+k} f(i-k), \forall k\in \Z$.
+
+  \item $\sum_{i=1}^n \Bigl(x \cdot g(i)\Bigr) = x\cdot \sum_{i=1}^n g(i)$.
+  \begin{enumerate}[label=\Roman*)]
+    \item Si $n<k$, \begin{align*}
+      \sum_{i=1}^n \Bigl(x \cdot g(i)\Bigr) = 0 = x\cdot 0 = x\cdot \sum_{i=1}^n g(i)
+    \end{align*}
+    \item Si $n\geq k$,
+    \begin{enumerate}[label=\roman*)]
+      \item Se verifica para $n=1$, \begin{align*}
+        \sum_{i=1}^{1} \Bigl(x \cdot g(1)\Bigr) = x\cdot g(1) = x\cdot \sum_{i=1}^{1} g(1)
+      \end{align*}
+      \item Supongamos que la igualdad se cumple para $n=k$, es decir, suponemos que
+      \begin{align*}
+        \sum_{i=1}^k \Bigl(x \cdot g(i)\Bigr) = x\cdot \sum_{i=1}^k g(i)
+      \end{align*}
+      \item Notemos que
+      \begin{align*}
+        \sum_{i=1}^{k+1} \Bigl(x \cdot g(i)\Bigr) &= x\cdot g(i) + \sum_{i=2}^{k+1} \Bigl(x\cdot g(i)\Bigr)\\
+        &= x\cdot g(i) + x\cdot \sum_{i=2}^{k+1} g(i)\\
+        &= x \left(g(i)+ \sum_{i=2}^{k+1} g(i)\right)\\
+        &= x\cdot \sum_{i=1}^{k+1} g(i)
+      \end{align*}
+    \end{enumerate}
+  \end{enumerate}
+
+  \item Sea $a, b\in \Z, k\in \R$, se verifica que $\sum_{i=a}^b k = (a-b+1)k$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Se verifica para $a=1$ \begin{itemize}
+        \item Si $b<a$
+      \end{itemize}
+    \end{enumerate}
+  \end{proof}
+
+  \item Sea $c\in \R$, $\sum_{i=1}^n c = c\cdot n$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Se verifica para $n=1$, \begin{align*}
+        \sum_{i=1}^1 c &= c + \sum_{i=2}^1 && \text{Definición (1)}\\
+        &= c + 0 && \text{Definición}\\
+        &= c \cdot 1 && \text{Neutros aditivo y multiplicativo}
+      \end{align*}
+      \item Supongamos que $n=k$ tal que $\sum_{i=1}^k c = c \cdot k$.
+      \item Notemos que \begin{align*}
+        \sum_{i=1}^{k+1} c &= c + \sum_{i=1}^{k} && \text{Definición (2)}\\
+        &= c + c \cdot k && \text{Hipótesis de inducción}\\
+        &= c\cdot (k+1) && \qedhere
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+
+  \item $\sum_{i=1}^n c \cdot f(n) = c\sum_{i=1}^n$
+
+  \item $\sum_{i=1}^n n = \frac{n(n+1)}{2}$. (Niño Gauss).
+\end{enumerate}
 
 \section*{Valor absoluto}
 
