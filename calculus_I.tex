@@ -206,8 +206,6 @@ Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
   %Sea $a$ un número real distinto de cero tal que $-a=0$. El inverso aditivo satisface que $a+(-a)=0$, y de la hipótesis, $a+0=0$. De esta igualdad sigue que $a=0$, lo que contradice nuestro supuesto inicial, por lo que que $-a\neq 0$.
  \end{proof}
 
-
-
  \item $-(a+b)=(-a)+(-b)$. (Distribución del signo).
 
  \begin{proof} 
@@ -2008,7 +2006,7 @@ El lector notará que la prueba consiste en: \begin{enumerate}
   \item Definir un subconjuto $A$ de números naturales (el cual satisface la propiedad objetivo).
   \item Demostrar que $A$ es un conjunto inductivo: \begin{itemize}
     \item Exhibir que $1$ pertenece a $A$.
-    \item Plantear que algún número natural $n$ pertenece a $A$.
+    \item Plantear que algún número natural $n$ pertenece a $A$. (Hipótesis de inducción).
     \item Probar que $n+1$ pertenece a $A$.% como consecuencia de que $n\in A$.
   \end{itemize}
   \item Enunciar el prinicipio de inducción matemática (que garantiza la propiedad para todo número natural).
@@ -2023,7 +2021,7 @@ Esta \textit{receta} nos permite probar proposiciones sobre los números natural
     \item Supongamos que la desigualdad se cumple para $n=k$, es decir, supongamos que \begin{align*}
       0&<\frac{1}{k}\leq 1 && \text{(hipótesis de inducción)}
     \end{align*}
-    \item Demostraremos, a partir de (ii), que la desigualdad se cumple también para $n=k+1$. Es decir, probaremos que \begin{align*}
+    \item Demostraremos, a partir de la hipótesis de inducción, que la desigualdad se cumple también para $n=k+1$. Es decir, probaremos que \begin{align*}
       0&<\frac{1}{k+1}\leq 1
     \end{align*}
     En efecto, notemos que $k<k+1$, de donde obtenemos que $\frac{1}{k+1} < \frac{1}{k}$. Además, como $k+1>0$, sigue que $\frac{1}{k+1}>0$. Y de la hipótesis de inducción tenemos que \[0 < \frac{1}{k+1} < \frac{1}{k} \leq 1\]
@@ -2151,7 +2149,7 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
     \end{align*}
     \item Si $n=k+1$ sigue que \begin{align*}
       (ab)^{k+1} &= (ab)^k (ab) && \text{(c) de LE9}\\
-      &= a^kb^k (ab) && \text{(ii)}\\
+      &= a^kb^k (ab) && \text{Hip. Inducción}\\
       &= a^{k+1} b^{k+1} && \text{(c) de LE9} \qedhere 
     \end{align*}
   \end{enumerate}
@@ -2406,7 +2404,7 @@ Sea $a,b\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
-  \textbf{Nota:} $(b-a+1)$ es el número de \textit{iteraciones}, \textit{cíclos}, o \textit{sumandos} de la sumatoria $\sum_{n=a}^{b} f(n)$.
+  \textbf{Definición:} $(b-a+1)$ es el número de \textit{iteraciones}, \textit{cíclos}, o \textit{sumandos} de la sumatoria $\sum_{n=a}^{b} f(n)$.
 
   \bfit{Corolario:} Si $c\in \R$ y $n\in \N$, \[\sum_{n=1}^n c = nc\]
   \begin{proof} $\sum_{n=1}^n c = \bigl((n-1)+1\bigr) c = nc$.
@@ -2443,14 +2441,14 @@ Sea $a,b\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
-  \item Sea $c\in \R$, \[\sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) = c\cdot \sum_{n=a}^{b} f(n) \qquad \text{(Distributividad)}\]
+  \item Sea $c\in \R$, \[c\cdot \sum_{n=a}^{b} f(n) = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) \qquad \text{(Distributividad)}\]
     \begin{proof}\leavevmode
       \begin{enumerate}[label=\Roman*)]
         \item Si $a>b$, \begin{align*}
-          \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) = 0 = c\cdot 0 = c\cdot \sum_{n=a}^{b} f(n)
+          c\cdot \sum_{n=a}^{b} f(n) = c\cdot 0 = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr)
         \end{align*}
         \item Si $a=b$, \begin{align*}
-          \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) = c\cdot \sum_{n=a}^{b} f(n) 
+          c\cdot \sum_{n=a}^{b} f(n) = c\cdot f(n) = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) 
         \end{align*}
         \item Si $b>a$,
           \begin{enumerate}[label=\roman*)]
@@ -2474,8 +2472,60 @@ Sea $a,b\in \Z$, demuestre lo siguiente:
         \end{enumerate}
     \end{proof}
 
-  \item \[\sum_{n=a}^{b} f(n) \pm \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(f(n) \pm g(n)\Bigr) \qquad \text{Asociatividad}\]
-        
+  \item \[\sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr) \qquad \text{(Asociatividad)}\]
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $a>b$,
+      \begin{align*}
+        \sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) = 0 = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr)
+      \end{align*}
+      \item Si $a=b$,
+      \begin{align*}
+        \sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) &= f(n) + g(n) = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr)
+      \end{align*}
+      \item Si $b>a$,
+      \begin{enumerate}[label=\roman*)]
+        \item Se comprueba para $b=a+1$,
+        \begin{align*}
+          \sum_{n=a}^{a+1} \Bigl(f(n) + g(n)\Bigr) &= \Bigl(f(a) + g(a)\Bigr) + \sum_{n=a+1}^{a+1} \Bigl(f(n) + g(n)\Bigr)\\
+          &= f(a) + g(a) + \Bigl(f(a+1) + g(a+1)\Bigr)\\
+          &= \Bigl(f(a) + f(a+1)\Bigr) + \Bigl(g(a) + g(a+1)\Bigr)\\
+          &= \Biggl(f(a) + \sum_{n=a+1}^{a+1} f(n)\Biggr) + \Biggl(g(a) + \sum_{n=a+1}^{a+1} g(n)\Biggr)\\
+          &= \sum_{n=a}^{a+1} f(n) + \sum_{n=a}^{a+1} g(n)
+        \end{align*}
+        \item Supongamos que se verifica para $b=a+k$, con $k\in \N$, es decir, suponemos que
+        \begin{align*}
+          \sum_{n=a}^{a+k} \Bigl(f(n) + g(n)\Bigr) &= \sum_{n=a}^{a+k} f(n) + \sum_{n=a}^{a+k} g(n)
+        \end{align*}
+        \item Notemos que
+        \begin{align*}
+          \sum_{n=a}^{a+k+1} \Bigl(f(n) + g(n)\Bigr) &= \Bigl(f(a+k+1) + g(a+k+1)\Bigr) + \sum_{n=a}^{a+k} \Bigl(f(n) + g(n)\Bigr)\\
+          &= f(a+k+1) + g(a+k+1) + \sum_{n=a}^{a+k} f(n) + \sum_{n=a}^{a+k} g(n) && \text{Hip. Inducción}\\
+          &= \Biggl(f(a+k+1) + \sum_{n=a}^{a+k} f(n)\Biggr) + \Biggl(g(a+k+1) + \sum_{n=a}^{a+k} g(n)\Biggr)\\
+          &= \sum_{n=a}^{a+k+1} f(n) + \sum_{n=a}^{a+k+1} g(n)
+        \end{align*}
+      \end{enumerate}
+    \end{enumerate}
+  \end{proof}
+  
+  \textbf{Corolario:} \begin{enumerate}[label=\roman*)]
+    \item Sea $s,t\in \R$, \[s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr)\]
+    \begin{proof}
+      \begin{align*}
+        s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) &= \sum_{n=a}^{b} \Bigl(s\cdot f(n)\Bigr) + \sum_{n=a}^{b} \Bigl(t\cdot g(n)\Bigr) && \text{Distributividad}\\
+        &= \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr) && \text{Asociatividad} \qedhere
+      \end{align*}
+    \end{proof}
+    \item \[\sum_{n=a}^{b} f(n) - \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(f(n) - g(n)\Bigr)\]
+    \begin{proof}
+      \begin{align*}
+        \sum_{n=a}^{b} f(n) - \sum_{n=a}^{b} g(n) &= \sum_{n=a}^{b} f(n) + (-1)\sum_{n=a}^{b} g(n)\\
+        &= \sum_{n=a}^{b} \Bigl(f(n) + (-1)\cdot g(n)\Bigr)\\
+        &= \sum_{n=a}^{b} \Bigl(f(n) - g(n)\Bigr) \qedhere
+      \end{align*}
+    \end{proof}
+  \end{enumerate}
+
     
   \end{enumerate}
 
