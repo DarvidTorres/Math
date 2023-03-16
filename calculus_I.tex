@@ -2005,12 +2005,14 @@ Demuestre lo siguiente:
 El lector notará que la prueba consiste en: \begin{enumerate}
   \item Definir un subconjuto $A$ de números naturales (el cual satisface la propiedad objetivo).
   \item Demostrar que $A$ es un conjunto inductivo: \begin{itemize}
-    \item Exhibir que $1$ pertenece a $A$.
-    \item Plantear que algún número natural $n$ pertenece a $A$. (Hipótesis de inducción).
-    \item Probar que $n+1$ pertenece a $A$.% como consecuencia de que $n\in A$.
+    \item Exhibir que $1$ pertenece a $A$ (caso base).
+    \item Plantear que algún número natural $n$ pertenece a $A$ (hipótesis de inducción o paso inductivo).
+    \item Probar que $n+1$ pertenece a $A$.
   \end{itemize}
   \item Enunciar el prinicipio de inducción matemática (que garantiza la propiedad para todo número natural).
 \end{enumerate}
+
+\textbf{Nota:} No se exige que $n+1\in A$ sea una consecuencia de que $n\in A$, sin embargo, este suele ser el caso; por lo que, si se prescinde del paso inductivo para probar que $n+1$ cumple la propiedad enunciada, es un buen hábito detenerse y comprobar el desarrollo, puede ser que se haya cometido un error o que en realidad no necesite inducción para la prueba.
 
 Esta \textit{receta} nos permite probar proposiciones sobre los números naturales; no obstante, la tradición de los libros de texto es definir de manera implícita el conjunto con el que se trabaja y —si acaso— enunciar el principio de inducción matemática al inicio de la prueba. Por ejemplo:
 
@@ -2365,14 +2367,25 @@ El lector debería verificar que ambas definiciones son equivalentes.
   %\end{minipage}
 %\end{center}
 
-
-\textbf{Ejemplo:}
-\begin{align*}
-  \sum_{n=-1}^{1} n^3 &= (-1)^3 + \sum_{n=0}^{1} n^3\\
-  &= -1 + 0^3 + \sum_{n=1}^1 n^3\\
-  &= -1 + 0 + 1^3\\
-  &= 0
-\end{align*}
+Dado que contamos con una definición que puede ser planteada de dos maneras, podemos utilizar cualquiera a conveniencia, pues siempre se obtiene el mismo resultado; por ejemplo:
+\begin{center}
+  \begin{minipage}[c]{.5\linewidth}
+    \begin{align*}
+      \sum_{n=-1}^{1} n^3 &= (-1)^3 + \sum_{n=0}^{1} n^3\\
+      &= -1 + 0^3 + \sum_{n=1}^1 n^3\\
+      &= -1 + 0 + 1^3\\
+      &= 0
+    \end{align*}
+   \end{minipage}%
+  \begin{minipage}[c]{.5\linewidth}
+    \begin{align*}
+      \sum_{n=-1}^{1} n^3 &= 1^3 + \sum_{n=-1}^{0} n^3\\
+      &= 1 + 0^3 + \sum_{n=-1}^{-1} n^3\\
+      &= 1 + 0 + (-1)^3\\
+      &= 0
+    \end{align*}
+  \end{minipage}
+  \end{center}
 
 \subsection*{Lista de Ejercicios 11 (LE11)}
 
@@ -2489,7 +2502,7 @@ Sea $a,b\in \Z$, demuestre lo siguiente:
         \begin{align*}
           \sum_{n=a}^{a+1} \Bigl(f(n) + g(n)\Bigr) &= \Bigl(f(a) + g(a)\Bigr) + \sum_{n=a+1}^{a+1} \Bigl(f(n) + g(n)\Bigr)\\
           &= f(a) + g(a) + \Bigl(f(a+1) + g(a+1)\Bigr)\\
-          &= \Bigl(f(a) + f(a+1)\Bigr) + \Bigl(g(a) + g(a+1)\Bigr)\\
+          &= \Bigl(f(a) + f(a+1)\Bigr) + \Bigl(g(a) + g(a+1)\Bigr) && \text{Asociatividad (de la suma)}\\
           &= \Biggl(f(a) + \sum_{n=a+1}^{a+1} f(n)\Biggr) + \Biggl(g(a) + \sum_{n=a+1}^{a+1} g(n)\Biggr)\\
           &= \sum_{n=a}^{a+1} f(n) + \sum_{n=a}^{a+1} g(n)
         \end{align*}
@@ -2508,7 +2521,7 @@ Sea $a,b\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
   
-  \textbf{Corolario:} \begin{enumerate}[label=\roman*)]
+  \textbf{Corolario:} \begin{enumerate}[label=\roman*)]  
     \item Sea $s,t\in \R$, \[s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr)\]
     \begin{proof}
       \begin{align*}
@@ -2526,8 +2539,78 @@ Sea $a,b\in \Z$, demuestre lo siguiente:
     \end{proof}
   \end{enumerate}
 
+  \item \[\sum_{n=a}^{b} f(n) + \sum_{n=p}^{q} g(n) = \sum_{n=p}^{q} g(n) + \sum_{n=a}^{b} f(n)\qquad \text{(Conmutatividad (de la summatoria))}\]
+
+  \item Sea $s\in \Z$, si $s<j<s+1$, entonces $j\notin \Z$.
+  \begin{proof} Supongamos que $j\in \Z$. Tenemos tres casos:
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $j\in \set{0}$, tenemos que $0<s+1$, de donde sigue que $s+1\in \N$, por definición (de $\Z$), pero como $s<0$, obtenemos $s+1<1$, lo que es una contradicción, pues todo número natural es mayor o igual a 1.
+      \textbf{Nota:} Se asume que la suma es cerrada en $\Z$, pues la hipótesis únicamente exige que $s\in \Z$, pero no que $s+1\in \Z$. El lector debería verificar este hecho.
+      \item Si $j\in\N$, tenemos tres casos para $s$:
+      \begin{enumerate}[label=\roman*)]
+        \item Si $s=0$, sigue que $s=0<j<1=s+1$, pero esto es una contradicción, pues todo número natural es mayor o igual a 1.
+        \item Si $s\in \N$, por el corolario (i) de (e) de LE8, es una contradicción.
+        \item Si $-s\in \N$, se tiene que $-s>0$, por lo que $s<0$, de done sigue que $s+1<1$, pero $j<s+1$ y por transitividad, $j<1$, lo que es una contradicción.
+      \end{enumerate}
+      \item Si $-j\in \N$, sigue que $-j>0$, por lo que $j<0$, y por transitividad, $s<0$, de esto sigue que $s\neq 0$ y $s\notin \N$, por lo que $-s\in \N$. Como $s<j$ y $j<s+1$, sigue que $-j<-s$ y $-(s+1)=-s-1<-j$; de este modo, $-s-1<-j<-s$, con $-s, -j\in \N$, pero se contradice el corolario (ii) de (e) de LE8.
+    \end{enumerate}
+    En cualquier caso $j\notin \Z$.
+  \end{proof}
+
+  \item Sea $s,j,t\in \Z$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Partir la suma)}\]
+  \begin{proof}
+    Consideremos todos los casos:
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $s=j=t$,
+      \begin{align*}
+        \sum_{n=s}^{t}f(n) &= f(s)\\
+        &= f(s) + 0\\
+        &= \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n)
+      \end{align*}
+      \item Si $s<j=t$,
+      \begin{align*}
+        \sum_{n=s}^{t}f(n) &= \sum_{n=s}^{j}f(n)\\
+        &= \sum_{n=s}^{j}f(n) + 0\\
+        &= \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n)
+      \end{align*}
+      \item Si $s=j<t$,
+      \begin{align*}
+        \sum_{n=s}^{t}f(n) &= f(s) + \sum_{n=s+1}^{t}f(n)\\
+        &= \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n)
+      \end{align*}
+      \item Si $s<j<t$,
+      \begin{proof}
+        Sea $j\in \Z$ arbitrario pero fijo,
+        \begin{enumerate}[label=\roman*)]
+          \item Si $t=j+1$,
+          \begin{align*}
+            \sum_{n=s}^{t}f(n) &=  \sum_{n=s}^{j+1}f(n)\\
+            &= f(j+1) + \sum_{n=s}^{j}f(n)\\
+            &= \sum_{n=s}^{j}f(n) + f(j+1) && \text{Conmutatividad (de la sumatoria)}\\
+            &= \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n)
+          \end{align*}
+        \end{enumerate}
+      \end{proof}
+    \end{enumerate}
+  \end{proof}
     
   \end{enumerate}
+
+\subsection*{Una nota sobre la notación sigma}
+
+\textbf{Abuso de la notación}
+
+Considere el siguiente argumento planteado por un estudiante, y decida si está o no de acuerdo:
+
+En la definición     \[
+  \sum_{n=a}^{b} f(n) \defined \left\{
+ \begin{array}{@{}l@{\thinspace}l}
+  0 &,  \ \text{si}  \ a>b\\
+  f(n) &,  \ \text{si}  \ a=b\\
+  f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ a<b.
+ \end{array} \right. \]
+
+Se observa que, estrictamente, se abusa de la notación; pues si tenemos enteros $a,b\in \Z$ tales que $a<b$, hemos definido $\sum_{n=a}^{b} f(n) = f(a) + \sum_{n=a+1}^{b}f(n)$; el lector notará que del lado izquierdo de esta igualdad $n=a$ pero del lado derecho $n=a+1$, es decir, se emplea la misma letra $n$ para números enteros distintos, lo que resulta útil en este caso ya que la definición de sumatoria está dada \textit{recursivamente} (en términos de sí misma), sin embargo, de manera minuciosa (y pedante), se podría reescribir, para $b>a$, como $\sum_{n=a}^{b}f(n) = f(a) + \sum_{n+1=a+1}^{b}f(n+1)$, pero en cada iteración tendríamos que cambiar el índice (inferior) y, con ello, la variable a evaluar, lo que llegaría a ser laborioso, especialmente si se requiere de expresar múltiples iteraciones; por ello, se acude %al abuso mencionado.
 
 \section*{Valor absoluto}
 
