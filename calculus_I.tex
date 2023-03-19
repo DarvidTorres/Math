@@ -1491,6 +1491,11 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
    \end{align*}
   \end{minipage}
   \end{center}
+  
+  \item Si $a<b<c$, entonces $-c<-b<-a$.
+  
+  Notemos que $a < b \Rightarrow -b < -a$ y $b < c\Rightarrow -c < -b$. Es decir, $-c<-b<-a$.
+
   \item Si $a<0$ y $0<b$, entonces $a<a+b<b$.
   
   Por transitividad $a<b$. Tomando $0<b$, por ley de cancelación, $a<b+a$, y tomando $a<0$, por ley de cancelación, $a+b<b$. Por tanto, $a<a+b<b$.
@@ -1507,9 +1512,9 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %Esta proposición difiere de la ley de la cancelación (de la suma en desigualdades) ya que no se satisface una doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de esta hipótesis únicamente, que $a<b$. Ej. $a=4, c=0, b=3, d=4$, cumplen la hipótesis $a+c=4+0=4<7=3+4=b+d$, pero $a=4<3=b$ es una contradicción.
 
  \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
-  %\item Si $0<a$ y $0<b$, entonces $0<a+b$.
-  %
-  %Por este teorema $0+0=0<a+b$.
+  \item Si $0<a$ y $0<b$, entonces $0<a+b$.
+  
+  Por este teorema $0+0=0<a+b$.
 %
   \item Si $a<0$ y $b<0$, entonces $a+b<0$.% (Cerradura de la suma en $\R^-$).
   
@@ -1535,20 +1540,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  % \item Si $0<m$ y $n<0$, entonces $mn<0$. (Positivo por negativo/negativo por positivo es negativo).
  % \item Si $m<0$ y $n<0$, entonces $0<mn$. (Negativo por negativo es positivo).
  %\end{enumerate}
-
- \item Si $0<a$, entonces $0<a^{-1}$.% (Inverso multiplicativo positivo).
- \begin{proof} 
- Sea que $a^{-1}<0$. Como $0<a$, al multiplicar en desigualdades preserva el orden, por lo que $a^{-1} \cdot a<0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1} \cdot a = 1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a=0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}>0$.
- \end{proof}
- %\text{Nota:} Análogamente, Si $a<0$, entonces $a^{-1}<0$. (Inverso multiplicativo negativo).
-
- \bfit{Corolario:} Si $a<0$, entonces $a^{-1}<0$.% (Inverso multiplicativo negativo).
- \begin{proof}
- Sea $a<0$, sabemos que $-a>0$, por lo que $-a^{-1}>0$, de donde sigue que $a^{-1}<0$. \qedhere
- \end{proof}
- %\begin{proof} 
- % Sea que $a^{-1}>0$. Como $a<0$, al multiplicar en desigualdades cambia el orden, por lo que $a^{-1} \cdot a < 0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1}\cdot a =1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a =0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}<0$.
- %\end{proof}
 
  \item Sea $a,b\in \R$. Encuentre las condiciones que deben cumplirse para que $ab<0$ o $0<ab$. (Ley de los signos).
  
@@ -1625,8 +1616,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
  %\textbf{Observación:} \[b-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b}{2}-a\]
 
-
-
  \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
  
  Para que $\exists a^{-1}$, requerimos $a\neq 0$. También, sabemos que $a\neq 1$ y $a\neq -1$ pues $1=1^{-1}$ y $-1=(-1)^{-1}$, pero buscamos desigualdad. Entonces, observemos los casos: \begin{enumerate}[label=\roman*)]
@@ -1657,6 +1646,90 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   \item Por (i) y (iii), $a<a^{-1}$, si $a<-1$ o $0<a<1$.
   \item Por (ii) y (iv), $a^{-1}<a$, si $-1<a<0$ o $1<a$.
  \end{itemize}
+
+ \item Si $0<a$, entonces $0<a^{-1}$.% (Inverso multiplicativo positivo).
+ \begin{proof} 
+ Sea que $a^{-1}<0$. Como $0<a$, al multiplicar en desigualdades preserva el orden, por lo que $a^{-1} \cdot a<0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1} \cdot a = 1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a=0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}>0$.
+ \end{proof}
+ %\text{Nota:} Análogamente, Si $a<0$, entonces $a^{-1}<0$. (Inverso multiplicativo negativo).
+
+ \bfit{Corolario:}
+ \begin{enumerate}[label=\roman*)]
+  \item  Si $a<0$, entonces $a^{-1}<0$.
+  
+  Notemos que que $a<0 \Rightarrow 0<-a$, por lo que $-a^{-1}>0$, de donde sigue que $a^{-1}<0$.
+  \item Si $0<a<1$, entonces $1<a^{-1}$.
+  
+  Notemos que $0<a \Rightarrow 0<a^{-1}$. Luego,
+  \begin{align*}
+    a &< 1\\
+    a\cdot a^{-1} &< 1\cdot a^{-1}\\
+    1 &< a^{-1}
+   \end{align*}
+
+   \item Si $1<a$, entonces $0<a^{-1}<1$.
+   
+   Notemos que $1 < a \Rightarrow 0 < a \Rightarrow 0 < a^{-1}$. Luego,
+   \begin{align*}
+    1 &< a\\
+    1\cdot a^{-1} &< a\cdot a^{-1}\\
+    0< a^{-1} &< 1
+   \end{align*}
+
+   \item Si $-1<a<0$, entonces $a^{-1}<-1$.
+   
+   Notemos que $a<0 \Rightarrow 0<-a$ y $-1 < a \Rightarrow -a < 1$, por lo que $0< -a < 1$. Luego,
+   \begin{align*}
+    1 &< -a^{-1}\\
+    a^{-1} &< -1
+   \end{align*}
+
+   \item Si $a<-1$, entonces $-1<a^{-1}<0$.
+   
+   Notemos que $a<-1 \Rightarrow 1<-a$. Luego,
+   \begin{align*}
+    0<-a^{-1} &<1\\
+    -1 < a^{-1} &< 0
+   \end{align*}
+
+   \item Si $0<a<1$ y $0<b<1$, entonces $0<ab<1$.
+ 
+   Notemos que $ab>0$. Como $a<1$, sigue que $ab<b$, y a su vez, $b<1$, por lo que $0<ab<1$.
+   \item Si $-1<a<0$ y $0<b<1$, entonces $-1<ab<0$.
+   
+   Notemos que $ab<0$. Como $b<1$, sigue que $a<ab$, y a su vez $-1<a$, por lo que $-1<ab<0$.
+   \item Si $-1<a<0$ y $-1<b<0$, entonces $0<ab<1$.
+   
+   $-1<a<0 \Rightarrow a^{-1}<-1 \Rightarrow 1<-a^{-1}$ y $-1<b<0 \Rightarrow b^{-1}<-1 \Rightarrow 1<-b^{-1} \Rightarrow 0<-b^{-1}$.
+   \begin{align*}
+    1 &< -a^{-1}\\
+    1\cdot (-b^{-1}) &< (-a^{-1})\cdot (-b^{-1})\\
+    -b^{-1} &< a^{-1}b^{-1}\\
+    1 &< a^{-1}b^{-1}&& \text{$1<-b^{-1}$}\\
+    1 &< (ab)^{-1}
+   \end{align*}
+   Por lo que $0<\bigl((ab)^{-1}\bigr)^{-1} < 1$, es decir, $0<ab<1$.
+ \end{enumerate}
+ 
+ %\begin{proof} 
+ % Sea que $a^{-1}>0$. Como $a<0$, al multiplicar en desigualdades cambia el orden, por lo que $a^{-1} \cdot a < 0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1}\cdot a =1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a =0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}<0$.
+ %\end{proof}
+
+ \item Sea $a<b$ y $c<d$, encuentre las condiciones que deben cumplirse para que $ac<bd$ o $bd<ac$.
+  
+ \begin{enumerate}[label=\Roman*)]
+   \item Sea $0<a<b$.
+   \begin{enumerate}[label=\roman*)]
+    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
+    \item Si $c<0<d$, entonces $c<d \Rightarrow ac < ad$ y $a<b \Rightarrow ad<bd$. Por transitividad, $ac<bd$.
+    \item Si $c<d<0$, entonces $a<b \Rightarrow bc<ac$ y $c<d \Rightarrow ac<ad$. Por transitividad, $bc<ad$.
+   \end{enumerate}
+   \item Sea $a<0<b$.
+   \begin{enumerate}[label=\roman*)]
+    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
+    \item Si $c<0<d$, entonces 
+   \end{enumerate}
+ \end{enumerate}
 
  \item Sea $a<b$. Encuentre las condiciones que deben cumplirse para que $\frac{1}{a}<\frac{1}{b}$ o $\frac{1}{b}<\frac{1}{a}$.
  
@@ -2319,13 +2392,31 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
     \end{enumerate}
   \end{proof}
 
+  \item Sea $a<b$ y $n\in \Z$, encuentre las condiciones que deben cumplirse para que $a^n< b^n$ o $b^n< a^n$.
+  \begin{enumerate}[label=\roman*)]
+    \item Si $n=0$, no se cumple ninguna condición, pues $a^0=b^0$.
+    \item Sea $n\in \N$,
+    \begin{enumerate}[label=\roman*)]
+      \item Si $n=1$,
+      \begin{align*}
+        a &< b && \text{Hip.}\\
+        a^1 &< b^1
+      \end{align*}
+      \item Supongamos que $a^k<b^k$ con $k\in \N$.
+      \item Notemos que
+      \begin{align*}
+        a^k &< b^k && \text{Hip. Ind.}\\
+        a^k \cdot a &< b^k 
+      \end{align*}
+    \end{enumerate}
+  \end{enumerate}
  \end{enumerate}
 
  \pagebreak
 
  \section*{Notación sigma}
 
- \textbf{Definición:} Sea $a,b\in \Z$, definimos a la sumatoria como cualquiera de las siguientes:
+ \textbf{Definición:} Sea $a,b\in \Z$ y $f: \Z\to \R$, definimos a la sumatoria como cualquiera de las siguientes:
 
  \begin{center}
   \begin{minipage}[c]{.5\linewidth}
@@ -2347,7 +2438,16 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
   \end{minipage}
   \end{center}
 
-El lector debería verificar que ambas definiciones son equivalentes.
+Decimos que
+\begin{itemize}
+  \item $n$ es el índice
+  \item $a$ el límite inferior
+  \item $b$ el límite superior
+  \item $f(n)$ el elemento típico (o genérico)
+\end{itemize}
+de la sumatoria.
+
+\textbf{Nota:} El lector debería verificar que ambas definiciones son equivalentes.
 
 %Otra forma de escribir estas definiciones es la siguiente:
 %\begin{center}
@@ -2389,9 +2489,39 @@ Dado que contamos con una definición que puede ser planteada de dos maneras, po
 
 \subsection*{Lista de Ejercicios 11 (LE11)}
 
-Sea $a,b\in \Z$, demuestre lo siguiente:
+Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
+  \item \[\sum_{n=p}^{q} g(n) + \sum_{n=s}^{t} h(n) = \sum_{n=s}^{t} h(n) + \sum_{n=p}^{q} g(n)\qquad \text{(Conmutatividad de la summatoria)}\]
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*.]
+      \item Primero probaremos que $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R,\forall n\in \Z$, es decir, que la imagen de la sumatoria siempre es un número real; la motivación es que, al estar definida \textit{recursivamente}, la función podría parecer asignar números reales a funciones, pero este no es el caso.
+      
+      Por definición, si $a\geq b$, entonces $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R$. Para el caso $a<b$ procedemos por inducción:
+      \begin{enumerate}[label=\roman*)]
+        \item Se verifica para $b=a+1$,
+        \begin{align*}
+          \sum_{n=a}^{b} f(n) &= \sum_{n=a}^{a+1} f(n)\\
+          &= f(n+1) + \sum_{n=a}^{a} f(n)\\
+          &= f(n+1) + f(n)
+        \end{align*}
+        Como $f(n+1)\in \R$ y $f(n)\in \R$ y la suma es cerrada en $\R$ se tiene que $\Bigl(f(n+1) + f(n)\Bigr)\in \R$, osea, $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R$.
+        \item Supongamos que $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R$, con $b=a+k$, para algún $k\in \N$.
+      \item Si $b=a+k+1$,
+      \begin{align*}
+        \sum_{n=a}^{b} f(n) &= \sum_{n=a}^{a+k+1} f(n)\\
+        &= f(n+k+1) + \sum_{n=a}^{a+k} f(n)\\
+        &= f(n+k+1) + \sum_{n=a}^{a+k} f(n)
+      \end{align*}
+      Como $f(n+k+1)\in \R$ y $\sum_{n=a}^{a+k} f(n)\in \R$ (hip. ind.), se tiene que $\Bigl(f(n+k+1) + \sum_{n=a}^{a+k} f(n)\Bigr)\in \R$, es decir, $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R$.
+      \end{enumerate}
+      En cualquier caso $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R$.
+    
+
+    \item Como $\Bigl(\sum_{n=p}^{q} g(n)\Bigr)\in \R$ y $\Bigl(\sum_{n=s}^{t} h(n)\Bigr)\in \R$, por conmutatividad de la suma en $\R$, sigue que \[\sum_{n=p}^{q} g(n) + \sum_{n=s}^{t} h(n) = \sum_{n=s}^{t} h(n) + \sum_{n=p}^{q} g(n)\]
+    \end{enumerate}
+  \end{proof}
+
   \item Sea $c\in \R$, si $a\leq b$, entonces \begin{align*}
     \sum_{n=a}^b c &= (b-a+1)c
   \end{align*}
@@ -2522,7 +2652,7 @@ Sea $a,b\in \Z$, demuestre lo siguiente:
   \end{proof}
   
   \textbf{Corolario:} \begin{enumerate}[label=\roman*)]  
-    \item Sea $s,t\in \R$, \[s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr)\]
+    \item \[s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr)\]
     \begin{proof}
       \begin{align*}
         s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) &= \sum_{n=a}^{b} \Bigl(s\cdot f(n)\Bigr) + \sum_{n=a}^{b} \Bigl(t\cdot g(n)\Bigr) && \text{Distributividad}\\
@@ -2538,8 +2668,6 @@ Sea $a,b\in \Z$, demuestre lo siguiente:
       \end{align*}
     \end{proof}
   \end{enumerate}
-
-  \item \[\sum_{n=a}^{b} f(n) + \sum_{n=p}^{q} g(n) = \sum_{n=p}^{q} g(n) + \sum_{n=a}^{b} f(n)\qquad \text{(Conmutatividad (de la summatoria))}\]
 
   \item Sea $s\in \Z$, si $s<j<s+1$, entonces $j\notin \Z$.
   \begin{proof} Supongamos que $j\in \Z$. Tenemos tres casos:
@@ -2578,19 +2706,27 @@ Sea $a,b\in \Z$, demuestre lo siguiente:
         \sum_{n=s}^{t}f(n) &= f(s) + \sum_{n=s+1}^{t}f(n)\\
         &= \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n)
       \end{align*}
-      \item Si $s<j<t$,
-      \begin{proof}
+      \item Si $s<j<t$.
         Sea $j\in \Z$ arbitrario pero fijo,
         \begin{enumerate}[label=\roman*)]
           \item Si $t=j+1$,
           \begin{align*}
             \sum_{n=s}^{t}f(n) &=  \sum_{n=s}^{j+1}f(n)\\
             &= f(j+1) + \sum_{n=s}^{j}f(n)\\
-            &= \sum_{n=s}^{j}f(n) + f(j+1) && \text{Conmutatividad (de la sumatoria)}\\
+            &= \sum_{n=s}^{j}f(n) + f(j+1) && \text{Conmutatividad}\\
+            &= \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n)
+          \end{align*}
+          \item Supongamos que $\sum_{n=s}^{j+k}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{j+k}f(n)$ para algún $k\in \N$.
+          \item Si $t=j+k+1$, notemos que
+          \begin{align*}
+            \sum_{n=s}^{t}f(n) &= \sum_{n=s}^{j+k+1}f(n)\\
+            &= f(j+k+1) + \sum_{n=s}^{j+k}f(n)\\
+            &= f(j+k+1) + \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{j+k}f(n) && \text{Hip. Ind.}\\
+            &= \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{j+k}f(n) +f(j+k+1)\\
+            &= \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{j+k+1}f(n)\\
             &= \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n)
           \end{align*}
         \end{enumerate}
-      \end{proof}
     \end{enumerate}
   \end{proof}
     
