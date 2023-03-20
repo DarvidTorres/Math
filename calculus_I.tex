@@ -1496,50 +1496,76 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   
   Notemos que $a < b \Rightarrow -b < -a$ y $b < c\Rightarrow -c < -b$. Es decir, $-c<-b<-a$.
 
-  \item Si $a<0$ y $0<b$, entonces $a<a+b<b$.
-  
-  Por transitividad $a<b$. Tomando $0<b$, por ley de cancelación, $a<b+a$, y tomando $a<0$, por ley de cancelación, $a+b<b$. Por tanto, $a<a+b<b$.
  \end{enumerate} % Corolario
 
-
-
- \item Si $a<b$ y $c < d$, entonces $a+c<b+d$. (Suma de desigualdades).
+ \item Si $a<b$ y $c < d$, entonces $a+c<b+d$. (Suma \textit{vertical} de desigualdades).
  \begin{proof} 
  Por definición $b-a\in \R^+$ y $d-c\in \R^+$. Por cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c)\in \R^+$. Luego, $(b-a)+(d-c)=b+d-a-c=b+d-(a+c)$. Por lo que $b+d-(a+c)=\in \R^+$, es decir, $a+c<b+d$.
  \end{proof}
- %\textbf{Observación:} La suma de desigualdades preserva el orden.
+ \textbf{Observación:} La suma \textit{vertical} de desigualdades preserva el orden.
  %\textbf{Nota:} No hay doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de este hecho únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
  %Esta proposición difiere de la ley de la cancelación (de la suma en desigualdades) ya que no se satisface una doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de esta hipótesis únicamente, que $a<b$. Ej. $a=4, c=0, b=3, d=4$, cumplen la hipótesis $a+c=4+0=4<7=3+4=b+d$, pero $a=4<3=b$ es una contradicción.
 
  \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
   \item Si $0<a$ y $0<b$, entonces $0<a+b$.
   
-  Por este teorema $0+0=0<a+b$.
+  Por este teorema, $0+0=0<a+b$.
 %
   \item Si $a<0$ y $b<0$, entonces $a+b<0$.% (Cerradura de la suma en $\R^-$).
   
-  Por este teorema $a+b<0+0=0$.
+  Por este teorema, $a+b<0=0+0$.
  \end{enumerate}
 
- \item Si $a<b$ y $0<c$, entonces $ac<bc$.% (Multiplicación por positivo).
- 
- \begin{proof} 
-  Por definición $b-a \in\R^+$ y $c \in\R^+$. Por cerradura de la multiplicación en $\R^+$ se verifica que $c(b-a) \in\R^+$. Sigue que $c(b-a)=cb-ca=bc-ac \in\R^+$, es decir, $ac<bc$. 
- \end{proof}
-%
- %\textbf{Observación:} La multiplicación por números reales positivos preserva el orden de la desigualdad.
- %\textbf{Nota:} De este resultado sigue que si $m<0$ y $0<n$, entonces $mn<0=0\cdot n$ —multiplicación por cero.
+ \item Sea $a<b$. Encuentre las condiciones que deben cumplirse para que $a<b<a+b$, $a<a+b<b$, o $a+b<a<b$.
+ \begin{enumerate}[label=\roman*)]
+  \item Si $0<a$, por ley de cancelación, $0+b<a+b$, por lo que $b<a+b$, y así $a<b<a+b$.
+  \item Si $a<0$ y $0<b$, por ley de cancelación,
+  \begin{center}\vspace{-1em}
+  \begin{minipage}[l]{.3\linewidth}
+   \begin{align*}
+      a &< 0\\
+      a + b &< 0 +b\\
+      a+b &< b
+   \end{align*}
+  \end{minipage}%
+  \begin{minipage}[r]{.3\linewidth}
+   \begin{align*}
+      0 &< b\\
+      0 + a &< b +a\\
+      a &< b +a
+   \end{align*}
+  \end{minipage}
+  \end{center}
+  Por tanto, $a<a+b<b$.
+  \item Si $b<0$. por ley de cancelación, $b+a<0+a$, es decir, $a+b<a$, por lo que $a+b<a<b$.
+ \end{enumerate}
 
- \item Si $a<b$ y $c<0$, entonces $bc<ac$.% (Multiplicación por negativo).
- 
- \begin{proof} 
- Como $b-a\in\R^+$ y $-c\in\R^+$, por cerradura de la multiplicación en $\R^+$, $-c(b-a) \in\R^+$. Sigue que $-c(b-a)= -c \Bigl( b + (-a) \Bigr)=(-c) \cdot b + (-c) \cdot (-a)=-cb +ca $. Finalmente, $-cb +ca=ac - bc \in\R^+$, es decir, $bc<ac$. 
- \end{proof}
- %\textbf{Observación:} La multiplicación por números reales negativos cambia el orden de la desigualdad.
+ \bfit{Conclusión:} Si $a<b$ y
+ \begin{itemize}
+  \item $0<a$, entonces $a<b<a+b$.
+  \item $a<0$, entonces $a<a+b<b$.
+  \item $b<0$, entonces $a+b<a<b$.
+ \end{itemize}
+
+ \item Sea $a<b$ y $c\in \R$. Encuentre las condiciones que deben cumplirse para que $ac<bc$ o $bc<ac$.
+ \begin{enumerate}[label=\roman*)]
+  \item Sea $c \in\R^+$. Por definición $b-a \in\R^+$. Por cerradura de la multiplicación en $\R^+$ se verifica que $c(b-a) \in\R^+$. Sigue que $c(b-a)=cb-ca=bc-ac \in\R^+$, es decir, $ac<bc$. 
+  %
+   %\textbf{Observación:} La multiplicación por números reales positivos preserva el orden de la desigualdad.
+   %\textbf{Nota:} De este resultado sigue que si $m<0$ y $0<n$, entonces $mn<0=0\cdot n$ —multiplicación por cero.
+  \item Sea $-c\in\R^+$. Como $b-a\in\R^+$, por cerradura de la multiplicación en $\R^+$, $-c(b-a) \in\R^+$. Sigue que $-c(b-a)= -c \Bigl( b + (-a) \Bigr)=(-c) \cdot b + (-c) \cdot (-a)=-cb +ca $. Finalmente, $-cb +ca=ac - bc \in\R^+$, es decir, $bc<ac$.
+  %\textbf{Observación:} La multiplicación por números reales negativos cambia el orden de la desigualdad.
  %\textbf{Nota:} De esta demostración sigue que: \begin{enumerate}[label=\roman*)]
  % \item Si $0<m$ y $n<0$, entonces $mn<0$. (Positivo por negativo/negativo por positivo es negativo).
  % \item Si $m<0$ y $n<0$, entonces $0<mn$. (Negativo por negativo es positivo).
  %\end{enumerate}
+ \end{enumerate}
+
+ \bfit{Conclusión:}
+ \begin{itemize}
+  \item Si $a<b$ y $0<c$, entonces $ac<bc$.% (Multiplicación por positivo).
+  \item Si $a<b$ y $c<0$, entonces $bc<ac$.% (Multiplicación por negativo).
+ \end{itemize}
 
  \item Sea $a,b\in \R$. Encuentre las condiciones que deben cumplirse para que $ab<0$ o $0<ab$. (Ley de los signos).
  
@@ -1551,16 +1577,16 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  \end{enumerate}
 
  Conclusión:
- \begin{enumerate}[label=\arabic*)]
+ \begin{itemize}
   \item Por (i) y (ii), para verificar $ab<0$, un componente debe ser mayor a cero y el otro menor a cero.%un componente del producto debe ser positivo y el otro negativo.
   \item Por (iii), para verificar $0<ab$, ambos componentes deben ser mayores o ambos menores a cero.%del producto deben ser positivos o ambos negativos.
- \end{enumerate}
+ \end{itemize}
 %
 % \textbf{Nota:} Nos referiremos a (1) y (2) como ley de los signos. 
  %\item $0<ab$ si y solo si $0<a$ y $0<b$ o $a<0$ y $b<0$. (Producto positivo).
  %\textbf{Demostración:}
  %\begin{itemize}
- % \item[$\Rightarrow$)] Sea que $0<ab$. Sin pérdida de generalidad, observemos la tricotomía de $a$. Si $a=0$, tenemos que $ab=0$, lo que contradice la hipótesis, por lo que tenemos dos casos:
+ % \item[$\Rightarrow$)] Sea $0<ab$. Sin pérdida de generalidad, observemos la tricotomía de $a$. Si $a=0$, tenemos que $ab=0$, lo que contradice la hipótesis, por lo que tenemos dos casos:
  % \begin{enumerate}[label=\roman*)]
  %  \item si $a>0$, el inverso multiplicativo es positivo, $a^{-1}>0$. Entonces, \begin{align*}
  %   0 &< ab && \text{Hipótesis}\\
@@ -1616,7 +1642,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  
  \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
 
- \bfit{Observación:} $b-\frac{a+b}{2} = \frac{a+b}{2}-a$ (la \textit{distancia} de $a$ y $b$ al punto medio es la misma).
+ \bfit{Observación:} $b-\frac{a+b}{2} = \frac{a+b}{2}-a$ (la \textit{distancia desde} $a$ y \textit{desde} $b$ al punto medio es la misma).
  \[b-\frac{a+b}{2} = \frac{2b}{2}-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b-2a}{2}= \frac{a+b}{2}-\frac{2a}{2} = \frac{a+b}{2}-a\]
 
  \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
@@ -1650,91 +1676,59 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   \item Por (ii) y (iv), $a^{-1}<a$, si $-1<a<0$ o $1<a$.
  \end{itemize}
 
- \item Si $0<a$, entonces $0<a^{-1}$.% (Inverso multiplicativo positivo).
- \begin{proof} 
- Sea que $a^{-1}<0$. Como $0<a$, al multiplicar en desigualdades preserva el orden, por lo que $a^{-1} \cdot a<0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1} \cdot a = 1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a=0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}>0$.
- \end{proof}
+ \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $0<a^{-1}$ o $a^{-1}<0$.
+ 
+ \begin{enumerate}[label=\roman*)]
+  \item Sea $0<a$. Supongamos que $a^{-1}<0$. Como $0<a$, al multiplicar en desigualdades preserva el orden, por lo que $a^{-1} \cdot a<0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1} \cdot a = 1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a=0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tricotomía, $a^{-1}>0$.
+  \item Sea $a<0$. Sigue que $0<-a$, por lo que $-a^{-1}>0$, de donde sigue que $a^{-1}<0$.
+ \end{enumerate}
+
+ \bfit{Conclusión:}
+ \begin{itemize}
+  \item Si $0<a$, entonces $0<a^{-1}$.% (Inverso multiplicativo positivo).
+  \item Si $a<0$, entonces $a^{-1}<0$.
+ \end{itemize}
  %\text{Nota:} Análogamente, Si $a<0$, entonces $a^{-1}<0$. (Inverso multiplicativo negativo).
 
- \bfit{Corolario:}
+ \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $1<a^{-1}$, $0<a^{-1}<1$, $-1<a^{-1}<0$, o $a^{-1}<1$.
  \begin{enumerate}[label=\roman*)]
-  \item  Si $a<0$, entonces $a^{-1}<0$.
   
-  Notemos que que $a<0 \Rightarrow 0<-a$, por lo que $-a^{-1}>0$, de donde sigue que $a^{-1}<0$.
-  \item Si $0<a<1$, entonces $1<a^{-1}$.
-  
-  Notemos que $0<a \Rightarrow 0<a^{-1}$. Luego,
+  \item Sea $0<a<1$. Notemos que $0<a \Rightarrow 0<a^{-1}$. Luego,
   \begin{align*}
     a &< 1\\
     a\cdot a^{-1} &< 1\cdot a^{-1}\\
     1 &< a^{-1}
    \end{align*}
 
-   \item Si $1<a$, entonces $0<a^{-1}<1$.
-   
-   Notemos que $1 < a \Rightarrow 0 < a \Rightarrow 0 < a^{-1}$. Luego,
+   \item Sea $1<a$. Notemos que $1 < a \Rightarrow 0 < a \Rightarrow 0 < a^{-1}$. Luego,
    \begin{align*}
     1 &< a\\
     1\cdot a^{-1} &< a\cdot a^{-1}\\
     0< a^{-1} &< 1
    \end{align*}
 
-   \item Si $-1<a<0$, entonces $a^{-1}<-1$.
-   
-   Notemos que $a<0 \Rightarrow 0<-a$ y $-1 < a \Rightarrow -a < 1$, por lo que $0< -a < 1$. Luego,
+   \item Sea $-1<a<0$. Notemos que $a<0 \Rightarrow 0<-a$ y $-1 < a \Rightarrow -a < 1$, por lo que $0< -a < 1$. Luego,
    \begin{align*}
     1 &< -a^{-1}\\
     a^{-1} &< -1
    \end{align*}
 
-   \item Si $a<-1$, entonces $-1<a^{-1}<0$.
-   
-   Notemos que $a<-1 \Rightarrow 1<-a$. Luego,
+   \item Sea $a<-1$. Notemos que $a<-1 \Rightarrow 1<-a$. Luego,
    \begin{align*}
     0<-a^{-1} &<1\\
     -1 < a^{-1} &< 0
    \end{align*}
+  \end{enumerate}
 
-   \item Si $0<a<1$ y $0<b<1$, entonces $0<ab<1$.
- 
-   Notemos que $ab>0$. Como $a<1$, sigue que $ab<b$, y a su vez, $b<1$, por lo que $0<ab<1$.
-   \item Si $-1<a<0$ y $0<b<1$, entonces $-1<ab<0$.
-   
-   Notemos que $ab<0$. Como $b<1$, sigue que $a<ab$, y a su vez $-1<a$, por lo que $-1<ab<0$.
-   \item Si $-1<a<0$ y $-1<b<0$, entonces $0<ab<1$.
-   
-   $-1<a<0 \Rightarrow a^{-1}<-1 \Rightarrow 1<-a^{-1}$ y $-1<b<0 \Rightarrow b^{-1}<-1 \Rightarrow 1<-b^{-1} \Rightarrow 0<-b^{-1}$.
-   \begin{align*}
-    1 &< -a^{-1}\\
-    1\cdot (-b^{-1}) &< (-a^{-1})\cdot (-b^{-1})\\
-    -b^{-1} &< a^{-1}b^{-1}\\
-    1 &< a^{-1}b^{-1}&& \text{$1<-b^{-1}$}\\
-    1 &< (ab)^{-1}
-   \end{align*}
-   Por lo que $0<\bigl((ab)^{-1}\bigr)^{-1} < 1$, es decir, $0<ab<1$.
- \end{enumerate}
- 
- %\begin{proof} 
- % Sea que $a^{-1}>0$. Como $a<0$, al multiplicar en desigualdades cambia el orden, por lo que $a^{-1} \cdot a < 0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1}\cdot a =1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a =0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tanto, $a^{-1}<0$.
- %\end{proof}
+  \bfit{Conclusión:}
+  \begin{itemize}
+    \item Si $0<a<1$, entonces $1<a^{-1}$.
+    \item Si $1<a$, entonces $0<a^{-1}<1$.
+    \item Si $-1<a<0$, entonces $a^{-1}<-1$.
+    \item Si $a<-1$, entonces $-1<a^{-1}<0$.
+  \end{itemize}
 
- \item Sea $a<b$ y $c<d$, encuentre las condiciones que deben cumplirse para que $ac<bd$ o $bd<ac$.
-  
- \begin{enumerate}[label=\Roman*)]
-   \item Sea $0<a<b$.
-   \begin{enumerate}[label=\roman*)]
-    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
-    \item Si $c<0<d$, entonces $c<d \Rightarrow ac < ad$ y $a<b \Rightarrow ad<bd$. Por transitividad, $ac<bd$.
-    \item Si $c<d<0$, entonces $a<b \Rightarrow bc<ac$ y $c<d \Rightarrow ac<ad$. Por transitividad, $bc<ad$.
-   \end{enumerate}
-   \item Sea $a<0<b$.
-   \begin{enumerate}[label=\roman*)]
-    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
-    \item Si $c<0<d$, entonces 
-   \end{enumerate}
- \end{enumerate}
-
- \item Sea $a<b$. Encuentre las condiciones que deben cumplirse para que $\frac{1}{a}<\frac{1}{b}$ o $\frac{1}{b}<\frac{1}{a}$.
+  \item Sea $a<b$. Encuentre las condiciones que deben cumplirse para que $\frac{1}{a}<\frac{1}{b}$ o $\frac{1}{b}<\frac{1}{a}$.
  
  Sabemos que $a\neq 0$ y $b\neq 0$, pues requerimos la existencia de su inverso multiplicativo. Luego, por tricotomía, $0<a$ o $a<0$ y $0<b$ o $b<0$, entonces observemos los casos: \begin{enumerate}[label=\roman*)]
   \item Si $0<a$ y $0<b$, por ley de los signos, $0<ab$, por lo que $0<\frac{1}{ab}$. Entonces, $a\cdot \frac{1}{ab} = \frac{1}{b} < \frac{1}{a} = b \cdot \frac{1}{ab}$.
@@ -1750,9 +1744,9 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
    \frac{1}{b} &< \frac{1}{a}
   \end{align*}
  \end{enumerate}
- Conclusión: \begin{itemize}
-  \item Por (i) y (iv), si ambos componentes son mayores o ambos menores a cero, los inversos multiplicativos invierten el orden.%positivos o ambos negativos, entonces los inversos multiplicativos invierten el orden.
-  \item Por (ii), si el componente menor es menor a cero y el mayor es mayor a cero, entonces los inversos multiplicativos conservan el orden.
+ \bfit{Conclusión:} Si $a<b$ y\begin{itemize}
+  \item $0<a$ y $0<b$, o $a<0$ y $b<0$, entonces, $\frac{1}{b}<\frac{1}{a}$. %si ambos componentes son mayores o ambos menores a cero, los inversos multiplicativos invierten el orden.%positivos o ambos negativos, entonces los inversos multiplicativos invierten el orden.
+  \item $a<0$ y $0<b$, entonces $\frac{1}{a}<\frac{1}{b}$.%Por (ii), si el componente menor es menor a cero y el mayor es mayor a cero, entonces los inversos multiplicativos conservan el orden.
  \end{itemize}
  %
  %\item Si $0 \leq a<b$ y $0 \leq c<d$, entonces $ac<bd$.
@@ -1774,6 +1768,62 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %0 &< \frac{1}{a} - \frac{1}{b} && \text{Por (c) de LE2}\\
  %\frac{1}{b} &< \frac{1}{a} && \text{Por (d) de LE3}
  %\end{align*} \qed
+
+ \item Sea $a,b\in \R$. Encuentre las condiciones que deben cumplirse para que $1<ab$, $0<ab<1$, $-1<ab<0$, o $ab<-1$.
+  \begin{enumerate}[label=\roman*)]
+    \item Sea $1<a$ y $1<b$. Por ley de cancelación, $0<a-1$ y $0<b-1$. Luego,
+    \begin{align*}
+      0 &< (b-1)(a-1)\\
+      0 &< \bigl(b+(-1)\bigr)\bigl(a+(-1)\bigr)\\
+      0 &< a\bigl(b+(-1)\bigr) + (-1)\bigl(b+(-1)\bigr)\\
+      0 &< ab + (-1)a + (-1)b + (-1)(-1)\\
+      0 &< ab + (-1)a + (-1)b + 1\\
+      0 &< ab + (-1)(a+b) + 1\\
+      0 &< ab -(a+b) + 1\\
+      a+b &< ab + 1
+    \end{align*}
+    Por la suma vertical de desigualdades, $1+1<a+b$, y por transitividad, $1+1<ab+1$, de donde $1<ab$.
+
+    \item Sea $0<a<1$ y $1<b$. Notemos que $1<a^{-1}$, por lo que 
+
+    \item Sea $0<a<1$ y $0<b<1$. Notemos que $ab>0$. Como $a<1$, sigue que $ab<b$, y a su vez, $b<1$, por lo que $0<ab<1$.
+    
+   \item Sea $-1<a<0$ y $0<b<1$. Notemos que $ab<0$. Como $b<1$, sigue que $a<ab$, y a su vez $-1<a$, por lo que $-1<ab<0$.
+   
+   \item Si $-1<a<0$ y $-1<b<0$. Se tiene que $-1<a<0 \Rightarrow a^{-1}<-1 \Rightarrow 1<-a^{-1}$ y $-1<b<0 \Rightarrow b^{-1}<-1 \Rightarrow 1<-b^{-1} \Rightarrow 0<-b^{-1}$.
+   \begin{align*}
+    1 &< -a^{-1}\\
+    1\cdot (-b^{-1}) &< (-a^{-1})\cdot (-b^{-1})\\
+    -b^{-1} &< a^{-1}b^{-1}\\
+    1 &< a^{-1}b^{-1}&& \text{$1<-b^{-1}$}\\
+    1 &< (ab)^{-1}
+   \end{align*}
+   Por lo que $0<\bigl((ab)^{-1}\bigr)^{-1} < 1$, es decir, $0<ab<1$.
+  \end{enumerate}
+
+  \bfit{Conclusión:}
+  \begin{itemize}
+    \item Si $1<a$ y $1<b$, entonces $1<ab$.
+    \item Si $0<a<1$ y $0<b<1$, entonces $0<ab<1$.
+    \item Si $-1<a<0$ y $0<b<1$, entonces $-1<ab<0$.
+    \item Si $-1<a<0$ y $-1<b<0$, entonces $0<ab<1$.
+  \end{itemize}
+
+ \item Sea $a<b$ y $c<d$, encuentre las condiciones que deben cumplirse para que $ac<bd$ o $bd<ac$.
+  
+ \begin{enumerate}[label=\Roman*)]
+   \item Sea $0<a<b$.
+   \begin{enumerate}[label=\roman*)]
+    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
+    \item Si $c<0<d$, entonces $c<d \Rightarrow ac < ad$ y $a<b \Rightarrow ad<bd$. Por transitividad, $ac<bd$.
+    \item Si $c<d<0$, entonces $a<b \Rightarrow bc<ac$ y $c<d \Rightarrow ac<ad$. Por transitividad, $bc<ad$.
+   \end{enumerate}
+   \item Sea $a<0<b$.
+   \begin{enumerate}[label=\roman*)]
+    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
+    \item Si $c<0<d$, entonces 
+   \end{enumerate}
+ \end{enumerate}
 
  \item Sea $\frac{a}{b}<\frac{c}{d}$. Encuentre las condiciones que deben cumplirse para que $\frac{a}{b}<\frac{a+c}{b+d}<\frac{c}{d}$. (Mediante).
 
@@ -1813,8 +1863,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 %\bfit{Definición:}  El conjunto de los números reales no negativos es el conjunto: \[
 %  \R^+\cup \set{0}
 %  \]
-
-
 
 \section*{Números reales negativos}
 
@@ -1965,7 +2013,7 @@ Demuestre lo siguiente:
 
   \item Sea $x\in \R$. Si $m\in \N$ y $m-1<x<m$, entonces $x$ no es un número natural.
   
-  Sea que $x\in \N$. Por hipótesis $x<m$ y $m-1<x$, de donde obtenemos:
+  Sea $x\in \N$. Por hipótesis $x<m$ y $m-1<x$, de donde obtenemos:
   \begin{center}\vspace{-1em}
    \begin{minipage}[l]{.4\linewidth}
    \begin{align*}
@@ -2830,10 +2878,10 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
 
 \begin{proof} \leavevmode
  \begin{itemize}
-  \item[$\Rightarrow)$] Sea que $|a|<b$.
+  \item[$\Rightarrow)$] Sea $|a|<b$.
   
   Sabemos que $\pm a \leq |a|$, y por transitividad $a<b$ y $-a<b$, por lo que $-b<a$. Por tanto, $-b<a<b$.
-  \item[$\Leftarrow)$] Sea que $-b<a<b$. Tenemos dos casos: \begin{enumerate}[label=\roman*)]
+  \item[$\Leftarrow)$] Sea $-b<a<b$. Tenemos dos casos: \begin{enumerate}[label=\roman*)]
    \item Si $0\leq |a|$, por definición, $|a|=a$, y por la hipótesis, $|a|<b$.
    \item Si $a<0$, por definición, $|a|=-a$, y por la hipótesis, $|a|<b$.
   \end{enumerate} En cualquier caso, $|a|<b$. \qedhere 
