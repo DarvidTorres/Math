@@ -10,7 +10,7 @@
 \usepackage{adjustbox}
 \usepackage{nicefrac} % for Elegant fractions in one line https://tex.stackexchange.com/questions/128496/elegant-fractions-in-one-line/128498
 \usepackage{physics} % for nice brackets \qty(...) \qty[...] \qty{...} https://www.reddit.com/r/LaTeX/comments/7qkbfv/redefine_left_right/
-
+\usepackage{tcolorbox} % Frame box
 \usepackage{array,multirow}
 
 \renewcommand*{\proofname}{\textbf{Demostración:}}
@@ -109,13 +109,15 @@ La suma $+$ satisface las siguientes propiedades:
  %Para cada número real $x$ existe un número real llamado inverso aditivo de $x$, denotado por $-x$ (menos $x$); la propiedad que caracteriza a este elemento es $x + (-x) = 0$.
 \end{enumerate}
 
-\subsection*{Necesidad de justificar}
-
-Si $a$, $b$ y $c$ son números reales tales que $a+c=b+c$, entonces $a=b$. El siguiente es un esbozo de la prueba propuesta por un estudiante: \begin{align*}
- a+c &= b+c\\
- a &= b+c-c\\
- a &= b \end{align*}
-Aunque el resultado anterior no es incorrecto, debemos justificar cada igualdad a partir de las propiedades conocidas con el fin de preservar rigurosiad, al menos en la primera parte de este curso. Esto ayudará a que el lector se famirialice con el uso de las propiedades básicas de los números reales, antes de proceder a realizar pruebas más elaboradas.
+\begin{tcolorbox}
+  \subsection*{Necesidad de justificar}
+  
+  Si $a$, $b$ y $c$ son números reales tales que $a+c=b+c$, entonces $a=b$. El siguiente es un esbozo de la prueba propuesta por un estudiante: \begin{align*}
+   a+c &= b+c\\
+   a &= b+c-c\\
+   a &= b \end{align*}
+  Aunque el resultado anterior no es incorrecto, debemos justificar cada igualdad a partir de las propiedades conocidas con el fin de preservar rigurosiad, al menos en la primera parte de este curso. Esto ayudará a que el lector se famirialice con el uso de las propiedades básicas de los números reales, antes de proceder a realizar pruebas más elaboradas.
+\end{tcolorbox}
 
 
 
@@ -765,7 +767,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  \end{proof}
 
  \item $\frac{a}{c} \pm  \frac{b}{c}=\frac{a\pm b}{c}$, si $c\neq 0$. (Suma de fracciones con denominador conmún).
- \begin{proof} 
+ \begin{proof}
  \begin{align*}
  \frac{a}{c} \pm  \frac{b}{c} &= \bigl(a\cdot c^{-1}\bigr) \pm  \bigl(b\cdot c^{-1}\bigr) && \text{Notación}\\
  &= \bigl(c^{-1} \cdot a\bigr) \pm  \bigl(c^{-1} \cdot b\bigr) && \text{Conmutatividad}\\
@@ -892,7 +894,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 %\end{proof}
 \end{enumerate}
 
-
+\begin{tcolorbox}
 \subsection*{Una nota sobre notación}
 
 Las siguientes son todas las \textit{formas} en que podríamos sumar/multiplicar tres números reales $a$, $b$ y $c$.
@@ -1102,7 +1104,7 @@ Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(x^{-1})=
  %\end{align*} De las igualdades (*) y (**) tenemos que $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$.
 
 
-
+\end{tcolorbox}
 \section*{Un campo finito}
 
 Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$. El siguiente es un esbozo de la prueba:
@@ -1266,6 +1268,62 @@ De esta definición sigue que dados $x,y\in \R$, por tricotomía se verifica una
 %\item Si $x-y\in \R^+$, lo denotamos como $y<x$ (o $x>y$).% o $x>y$. %diremos que $x$ es mayor que $y$ y
 %\item Si $x-y\in \R^-$, lo denotamos como $x<y$ (o $y>x$).% o $y>x$. %diremos que $x$ es menor que $y$ y
 %\end{itemize}
+
+%\bfit{Definición:}  El conjunto de los números reales no negativos es el conjunto: \[
+%  \R^+\cup \set{0}
+%  \]
+
+\section*{Números reales negativos}
+
+\bfit{Definición:} Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
+%\begin{itemize}
+% \item Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
+% \item Llamaremos al conjunto $\R^+\union \set{0}$ conjunto de los números reales no negativos.
+%\end{itemize}
+
+\subsection*{Lista de ejercicios 6 (LE6)}
+
+\begin{enumerate}[label=\alph*)]
+ \item Demuestre que $\R^+$ y $\R^-$ son conjuntos disjuntos.
+ \begin{proof}%$ $\newline 
+ Si $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) \neq \emptyset$, entonces $\exists x\in \R$ tal que \begin{itemize}%[label=\roman*)]
+ \item[(*)] $x\in \R^+$, y 
+ \item[(**)] $x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$.
+ \end{itemize}  De (**) sigue que $x\notin \R^+\union \set{0}$, es decir, $x\notin \set{0}$ y $x\notin \R^+$, pero esto contradice a (*).
+
+ Por tanto, $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) = \emptyset$, es decir, $\R^+$ y $\R^-$ son conjuntos disjuntos.
+ \end{proof}
+
+ \item Demuestre que $x\in \R^+$ si y solo si $-x\in \R^-$.
+ \begin{proof}\leavevmode
+ \begin{itemize}
+ \item[$\Rightarrow)$] Sea $x\in \R^+$. Por tricotomía, $-x\notin \R^+$ y $x\neq 0$ (y por esto $-x\neq 0$). Sigue que $-x\in \R\setminus \bigl(\R^+\union \set{0}\bigr)$, y por definción, $-x\in \R^-$.
+ \item[$\Leftarrow)$] Sea $-x\in \R^-$. Por definición, $-x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$, por lo que, $-x\notin \R^+\union \set{0}$, es decir, $-x\notin \R^+$ y $-x\notin \set{0}$ (y por tanto $-x\neq 0$). Entonces, por tricotomía, $-(-x)=x\in \R^+$. \qedhere
+ \end{itemize}
+ \end{proof}
+
+ \item Demuestre que si $x,y \in \R^-$, entonces $x+y\in \R^-$. (Cerradura de la suma en $\R^-$).
+ \begin{proof}
+ Sea $x,y\in \R^-$. Sigue que $(-x), (-y)\in \R^+$, y por la cerradura de la suma en $\R^+$, $-x-y=-(x+y)\in \R^+$, por lo que $x+y\in \R^-$.
+ \end{proof}
+
+ \item Demuestre que $x\in \R^+$ si y solo si $0<x$. (Caracterización de $\R^+$).
+ \begin{proof}\leavevmode
+ \begin{itemize}
+ \item[$\Rightarrow)$] Sea $x\in \R^+$, notemos que $x=x-0\in \R^+$, lo que denotamos como $0<x$.
+ \item[$\Leftarrow)$] Sea $0<x$, por definición $x-0=x\in \R^+$. \qedhere
+ \end{itemize}
+ \end{proof}
+
+ \item Demuestre que $x\in \R^-$ si y solo si $x<0$. (Caracterización de $\R^-$).
+ \begin{proof}\leavevmode
+ \begin{itemize}
+ \item[$\Rightarrow)$] Sea $x\in \R^-$. Notemos que $-x=0-x\in \R^+$, por lo que $x<0$.
+ \item[$\Leftarrow)$] Sea $x<0$. Por definición, $0-x=-x\in \R^+$, por lo que $x\in \R^-$. \qedhere
+ \end{itemize}
+ \end{proof}
+\end{enumerate}
+
 \subsection*{Lista de Ejercicios 5 (LE5)}
 Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 \begin{enumerate}[label=\alph*)]
@@ -1734,7 +1792,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   \item Si $0<a$ y $0<b$, por ley de los signos, $0<ab$, por lo que $0<\frac{1}{ab}$. Entonces, $a\cdot \frac{1}{ab} = \frac{1}{b} < \frac{1}{a} = b \cdot \frac{1}{ab}$.
   \item Si $a<0$ y $0<b$, entonces $\frac{1}{a}<0$ y $0<\frac{1}{b}$. Por transitividad, $\frac{1}{a}<\frac{1}{b}$.
   % por ley de los signos, $ab<0$, por lo que $\frac{1}{ab}<0$. De donde sigue que $b \cdot \frac{1}{ab} = \frac{1}{a} < \frac{1}{b} = a\cdot \frac{1}{ab}$.
-  \item Si $b<0$ y $0<a$, por transitividad, $b<a$, lo que contradice el supuesto inicial (descartamos este caso).
+  %\item Si $b<0$ y $0<a$, por transitividad, $b<a$, lo que contradice el supuesto inicial (descartamos este caso).
   \item Si $a<0$ y $b<0$, por ley de los signos $0<a a$, $0<b b$ y $0<ab$. Luego,\begin{align*}
    a &< b && \text{Supuesto inicial}\\
    a \cdot (ab) &< b \cdot (ab) && \text{(*)}
@@ -1768,6 +1826,37 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %0 &< \frac{1}{a} - \frac{1}{b} && \text{Por (c) de LE2}\\
  %\frac{1}{b} &< \frac{1}{a} && \text{Por (d) de LE3}
  %\end{align*} \qed
+
+ \item Sea $a,b\in\R$. Encuentre las condiciones que deben cumplirse para que $1<\frac{a}{b}$,$0<\frac{a}{b}<1$, $-1<\frac{a}{b}<0$, o $\frac{a}{b}<-1$.
+ \begin{enumerate}[label=\roman*)]
+  \item Si $0<b<a$, se tiene que $0<\frac{1}{b}$. Luego,
+  \begin{align*}
+    b &< a\\
+    b \cdot \frac{1}{b}&<\cdot \frac{1}{b} a\\
+    1 &< \frac{a}{b}
+  \end{align*}
+
+  \item Si $0<a<b$, se tiene que $0<\frac{1}{b}$. Luego,
+  \begin{align*}
+    0 < a &< b\\
+    0 \cdot \frac{1}{b} < a\cdot \frac{1}{b} &< b\cdot \frac{1}{b}\\
+    0 < \frac{a}{b}&<1
+  \end{align*}
+
+  \item Si $a<0<b$, se tiene que $0<\frac{1}{b}$. Luego,
+  \begin{align*}
+    a &< 0\\
+    a \cdot \frac{1}{b}&< 0\cdot \frac{1}{b}\\
+    \frac{a}{b} &< 0 && \text{(*)}\\
+    0 &< -\frac{a}{b}
+  \end{align*}
+  Del mismo modo,
+  \begin{align*}
+    -1
+  \end{align*}
+  Por (*) y (**) se verifica que $-1<\frac{a}{b}<0$.
+
+ \end{enumerate}
 
  \item Sea $a,b\in \R$. Encuentre las condiciones que deben cumplirse para que $1<ab$, $0<ab<1$, $-1<ab<0$, o $ab<-1$.
   \begin{enumerate}[label=\roman*)]
@@ -1860,61 +1949,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  Por tanto, debe cumplirse que $b$ y $d$ deben ser ambos mayores a cero o ambos menores a cero.
 
 \end{enumerate}
-%\bfit{Definición:}  El conjunto de los números reales no negativos es el conjunto: \[
-%  \R^+\cup \set{0}
-%  \]
-
-\section*{Números reales negativos}
-
-\bfit{Definición:} Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
-%\begin{itemize}
-% \item Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
-% \item Llamaremos al conjunto $\R^+\union \set{0}$ conjunto de los números reales no negativos.
-%\end{itemize}
-
-\subsection*{Lista de ejercicios 6 (LE6)}
-
-\begin{enumerate}[label=\alph*)]
- \item Demuestre que $\R^+$ y $\R^-$ son conjuntos disjuntos.
- \begin{proof}%$ $\newline 
- Si $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) \neq \emptyset$, entonces $\exists x\in \R$ tal que \begin{itemize}%[label=\roman*)]
- \item[(*)] $x\in \R^+$, y 
- \item[(**)] $x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$.
- \end{itemize}  De (**) sigue que $x\notin \R^+\union \set{0}$, es decir, $x\notin \set{0}$ y $x\notin \R^+$, pero esto contradice a (*).
-
- Por tanto, $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) = \emptyset$, es decir, $\R^+$ y $\R^-$ son conjuntos disjuntos.
- \end{proof}
-
- \item Demuestre que $x\in \R^+$ si y solo si $-x\in \R^-$.
- \begin{proof}\leavevmode
- \begin{itemize}
- \item[$\Rightarrow)$] Sea $x\in \R^+$. Por tricotomía, $-x\notin \R^+$ y $x\neq 0$ (y por esto $-x\neq 0$). Sigue que $-x\in \R\setminus \bigl(\R^+\union \set{0}\bigr)$, y por definción, $-x\in \R^-$.
- \item[$\Leftarrow)$] Sea $-x\in \R^-$. Por definición, $-x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$, por lo que, $-x\notin \R^+\union \set{0}$, es decir, $-x\notin \R^+$ y $-x\notin \set{0}$ (y por tanto $-x\neq 0$). Entonces, por tricotomía, $-(-x)=x\in \R^+$. \qedhere
- \end{itemize}
- \end{proof}
-
- \item Demuestre que si $x,y \in \R^-$, entonces $x+y\in \R^-$. (Cerradura de la suma en $\R^-$).
- \begin{proof}
- Sea $x,y\in \R^-$. Sigue que $(-x), (-y)\in \R^+$, y por la cerradura de la suma en $\R^+$, $-x-y=-(x+y)\in \R^+$, por lo que $x+y\in \R^-$.
- \end{proof}
-
- \item Demuestre que $x\in \R^+$ si y solo si $0<x$. (Caracterización de $\R^+$).
- \begin{proof}\leavevmode
- \begin{itemize}
- \item[$\Rightarrow)$] Sea $x\in \R^+$, notemos que $x=x-0\in \R^+$, lo que denotamos como $0<x$.
- \item[$\Leftarrow)$] Sea $0<x$, por definición $x-0=x\in \R^+$. \qedhere
- \end{itemize}
- \end{proof}
-
- \item Demuestre que $x\in \R^-$ si y solo si $x<0$. (Caracterización de $\R^-$).
- \begin{proof}\leavevmode
- \begin{itemize}
- \item[$\Rightarrow)$] Sea $x\in \R^-$. Notemos que $-x=0-x\in \R^+$, por lo que $x<0$.
- \item[$\Leftarrow)$] Sea $x<0$. Por definición, $0-x=-x\in \R^+$, por lo que $x\in \R^-$. \qedhere
- \end{itemize}
- \end{proof}
-\end{enumerate}
-
 
 
 \part*{Inducción matemática}
@@ -2172,7 +2206,7 @@ Sin embargo, el lector debería ser cuidadoso de no considerar el uso de inducci
   \end{enumerate} Como $n$ es arbitrario, se verifica que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
  \end{proof}
 
-\subsection*{Potenciación}
+\section*{Potenciación}
 
 \bfit{Definición:}  Sea $b\in \R$ y $n\in \N$,
  \[
@@ -2780,6 +2814,9 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
         \end{enumerate}
     \end{enumerate}
   \end{proof}
+
+
+  \item 
     
   \end{enumerate}
 
@@ -2797,7 +2834,7 @@ En la definición     \[
   f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ a<b.
  \end{array} \right. \]
 
-Se observa que, estrictamente, se abusa de la notación; pues si tenemos enteros $a,b\in \Z$ tales que $a<b$, hemos definido $\sum_{n=a}^{b} f(n) = f(a) + \sum_{n=a+1}^{b}f(n)$; el lector notará que del lado izquierdo de esta igualdad $n=a$ pero del lado derecho $n=a+1$, es decir, se emplea la misma letra $n$ para números enteros distintos, lo que resulta útil en este caso ya que la definición de sumatoria está dada \textit{recursivamente} (en términos de sí misma), sin embargo, de manera minuciosa (y pedante), se podría reescribir, para $b>a$, como $\sum_{n=a}^{b}f(n) = f(a) + \sum_{n+1=a+1}^{b}f(n+1)$, pero en cada iteración tendríamos que cambiar el índice (inferior) y, con ello, la variable a evaluar, lo que llegaría a ser laborioso, especialmente si se requiere de expresar múltiples iteraciones; por ello, se acude %al abuso mencionado.
+Se observa que, estrictamente, se abusa de la notación; pues si tenemos enteros $a,b\in \Z$ tales que $a<b$, hemos definido $\sum_{n=a}^{b} f(n) = f(a) + \sum_{n=a+1}^{b}f(n)$; el lector notará que del lado izquierdo de esta igualdad $n=a$ pero del lado derecho $n=a+1$, es decir, se emplea la misma letra $n$ para números enteros distintos, lo que resulta útil en este caso ya que la definición de sumatoria está dada \textit{recursivamente} (en términos de sí misma), sin embargo, de manera minuciosa (y pedante), se podría reescribir, para $b>a$, como $\sum_{n=a}^{b}f(n) = f(a) + \sum_{n+1=a+1}^{b}f(n+1)$, pero en cada iteración tendríamos que cambiar el índice (inferior) y, con ello, la variable a evaluar, lo que llegaría a ser laborioso, especialmente si se requiere de expresar múltiples iteraciones; por ello, se acude al abuso mencionado.
 
 \section*{Valor absoluto}
 
