@@ -2552,7 +2552,7 @@ de la sumatoria.
   %\end{minipage}
 %\end{center}
 
-Dado que contamos con una definición que puede ser planteada de dos maneras, podemos utilizar cualquiera a conveniencia, pues siempre se obtiene el mismo resultado; por ejemplo:
+Dado que contamos con una definición que puede ser planteada de dos maneras, podemos utilizar cualquiera (de las dos) a conveniencia, pues siempre se obtiene el mismo resultado; por ejemplo:
 \begin{center}
   \begin{minipage}[c]{.5\linewidth}
     \begin{align*}
@@ -2634,8 +2634,8 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
   \textbf{Definición:} $(b-a+1)$ es el número de \textit{iteraciones}, \textit{cíclos}, o \textit{sumandos} de la sumatoria $\sum_{n=a}^{b} f(n)$.
 
-  \bfit{Corolario:} Si $c\in \R$ y $n\in \N$, \[\sum_{n=1}^n c = nc\]
-  \begin{proof} $\sum_{n=1}^n c = \bigl((n-1)+1\bigr) c = nc$.
+  \bfit{Corolario:} Si $c\in \R$ y $n\in \N$, \[\sum_{i=1}^n c = nc\]
+  \begin{proof} $\sum_{i=1}^n c = \bigl((n-1)+1\bigr) c = nc$.
   \end{proof}
 
   \item Sea $c\in \Z$, \[\sum_{n=a}^b f(n) = \sum_{n=a+c}^{b+c} f(n-c) \qquad \text{(Cambio de índice)}\]
@@ -2770,9 +2770,9 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     En cualquier caso $j\notin \Z$.
   \end{proof}
 
-  \item Sea $s,j,t\in \Z$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Partir la suma)}\]
+  \item Si $s\leq j\leq t$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Partir la suma)}\]
   \begin{proof}
-    Consideremos todos los casos:
+    Consideremos los casos:
     \begin{enumerate}[label=\Roman*)]
       \item Si $s=j=t$,
       \begin{align*}
@@ -2815,8 +2815,33 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
+  \textbf{Nota:} En esta proposición se pide que $s\leq j\leq t$, sin embargo, resulta interesante observar los casos sin esta restricción:
+  \begin{enumerate}[label=\roman*)]
+  \item Si $s>j>t$,
+  \begin{align*}
+    \sum_{n=s}^{t} f(n) = 0 = \sum_{n=s}^{j} f(n) + \sum_{n=j+1}^{t}
+  \end{align*}
 
-  \item 
+  \item Si $s>j=t$,
+  \begin{align*}
+    \sum_{n=s}^{t} f(n)= 0 = \sum_{n=s}^{j} f(n) + \sum_{n=j+1}^{t}
+  \end{align*}
+
+  \item Si $s=j>t$,
+  \begin{align*}
+    \sum_{n=s}^{j} f(n) + \sum_{n=j+1}^{t} &= f(n) + 0 = f(n) \neq 0 = \sum_{n=s}^{t} f(n)
+  \end{align*}
+  \end{enumerate}
+
+  El lector notará que para partir la suma en el caso $s=j>t$, debe cumplirse que $f(n)=0$, pero esto dependerá de cada función y de los íncides $s=j$, por lo que en general, $f(n)\neq 0$, por ejemplo para cualquier sumatoria $\sum_{n=a}^{b} c$, donde $c\neq 0$.
+
+  \item \[\sum_{n=a}^{b}f(n) = \sum_{n=0}^{b-a} f(b-n)\] (la suma del primer termino hasta el ultimo es igual a la suma del ultimo hasta el primero)
+
+
+  \item \[\sum_{n=a}^b f(n) = \sum_{n=0}^b f(n) - \sum_{n=0}^{a-1} f(n)\]
+  \begin{proof}\leavevmode
+    Pendiente
+  \end{proof}
     
   \end{enumerate}
 
