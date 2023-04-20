@@ -2669,6 +2669,44 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
+  \bfit{Corolario:} \[\sum_{n=a}^b f(m+n) = \sum_{n=a+c}^{b+c} f(m+n-c)\]
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $b=a$, 
+      \begin{align*}
+        \sum_{n=a}^b f(m+n) &= \sum_{n=a}^a f(m+n)\\
+        &= f(m+a)\\
+        &= \sum_{n=a+c}^{a+c} f(m+n-c)
+      \end{align*}
+
+      \item Si $b>a$,
+      \begin{enumerate}[label=\roman*)]
+        \item Se comprueba para $b=a+1$,
+        \begin{align*}
+          \sum_{n=a}^b f(m+n) &= \sum_{n=a}^{a+1} f(m+n)\\
+          &= f(m+a+1) + \sum_{n=a}^{a} f(m+n)\\
+          &= f(m+a+1) + f(m+a)\\
+          &= f(m+a+1) + \sum_{n=a+c}^{a+c} f(m+n-c)\\
+          &= \sum_{n=a+c}^{a+c+1} f(m+n-c)\\
+          &= \sum_{n=a+c}^{b+c} f(m+n-c)
+        \end{align*}
+
+        \item Supongamos que se verifica para $b=a+k$, es decir, suponemos que
+        \begin{align*}
+          \sum_{n=a}^{a+k} f(m+n) &= \sum_{n=a+c}^{a+k+c} f(m+n-c)
+        \end{align*}
+
+        \item Si $b=a+k+1$,
+        \begin{align*}
+          \sum_{n=a}^{a+k+1} f(m+n) &= f(m+a+k+1) + \sum_{n=a}^{a+k} f(m+n)\\
+          &= f(m+a+k+1) + \sum_{n=a+c}^{a+k+c} f(m+n-c) && \text{Hip. Inducción}\\
+          &= \sum_{n=a+c}^{a+k+1+c} f(m+n-c)
+        \end{align*}
+      \end{enumerate}
+
+    \end{enumerate}
+  \end{proof}
+
   \item Sea $c\in \R$, \[c\cdot \sum_{n=a}^{b} f(n) = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) \qquad \text{(Distributividad)}\]
     \begin{proof}\leavevmode
       \begin{enumerate}[label=\Roman*)]
@@ -2838,7 +2876,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
   \item \[\sum_{n=a}^{b}f(n) = \sum_{n=0}^{b-a} f(b-n)\]
   \begin{proof}\leavevmode
-    \begin{enumerate}[label=\roman*)]
+    \begin{enumerate}[label=\Roman*)]
     \item Si $b<a$, entonces $b-a<0$, por lo que
     \begin{align*}
       \sum_{n=0}^{b-a} f(b-n) = 0 = \sum_{n=a}^{b}f(n)
@@ -2851,7 +2889,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
       &= f(b)\\
       &= \sum_{n=a}^{b} f(n)
     \end{align*}
-    \end{enumerate}
+    
 
     \item Si $b>a$,
     \begin{enumerate}[label=\roman*)]
@@ -2873,10 +2911,16 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
         &= \sum_{n=0}^{k} f(a+k-n)
       \end{align*}
 
-      \item Notemos que
+      \item Si $b=a+k+1$,
       \begin{align*}
-        asdf
+        \sum_{n=a}^{b} f(n) &= \sum_{n=a}^{a+k+1} f(n)\\
+        &= f(a+k+1) + \sum_{n=a}^{a+k} f(n)\\
+        &= f(a+k+1) + \sum_{n=0}^{k} f(a+k-n) && \text{Hip. Inducción}\\
+        &= \sum_{n=-1}^{k} f(a+k-n)\\
+        &= \sum_{n=0}^{k+1} f(a+k-n-1) && \text{Cambio de índice}\\
       \end{align*}
+    \end{enumerate}
+
     \end{enumerate}
   \end{proof}
 
