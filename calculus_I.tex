@@ -13,6 +13,8 @@
 \usepackage{tcolorbox} % Frame box
 \usepackage{array,multirow}
 
+\usepackage{relsize} %% to reduce size of contradition symbol
+
 \renewcommand*{\proofname}{\textbf{Demostración:}}
 
 %Conjuntos de números
@@ -23,6 +25,7 @@
 \newcommand{\R}{\mathbb{R}}
 
 %Shorter comands
+\newcommand{\contradiction}{\mathsmaller{\stackrel{\mathlarger{\nabla}}{\boldsymbol{\boldsymbol{\circ}}}}}
 \newcommand{\defined}{\coloneqq}
 \newcommand{\bfit}[1]{\textbf{\textit{#1}}}
 \let\epsilon\varepsilon
@@ -2678,7 +2681,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
         &= f(m+a)\\
         &= \sum_{n=a+c}^{a+c} f(m+n-c)
       \end{align*}
-
+ 
       \item Si $b>a$,
       \begin{enumerate}[label=\roman*)]
         \item Se comprueba para $b=a+1$,
@@ -2874,6 +2877,16 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
   El lector notará que para partir la suma en el caso $s=j>t$, debe cumplirse que $f(n)=0$, pero esto dependerá de cada función y de los íncides $s=j$, por lo que en general, $f(n)\neq 0$, por ejemplo para cualquier sumatoria $\sum_{n=a}^{b} c$, donde $c\neq 0$.
 
+  \item \[\sum_{n=a}^{b}f(n) = \sum_{n=0}^{b} f(n) - \sum_{n=0}^{a-1} f(n)\]
+  \begin{proof}\leavevmode
+    \begin{align*}
+      \sum_{n=0}^{b} f(n) - \sum_{n=0}^{a-1} f(n) &= \sum_{n=0}^{a} f(n) + \sum_{a+1}^{b} f(n) - \sum_{n=0}^{a-1}f(n) && \text{Partir la suma}\\
+      &= \sum_{n=0}^{a-1} f(n) + \sum_{n=a}^{a} f(n) + \sum_{a+1}^{b} f(n) - \sum_{n=0}^{a-1}f(n) && \text{Partir la suma}\\
+      &= \sum_{n=a}^{a} f(n) + \sum_{a+1}^{b} f(n)\\
+      &= \sum_{n=a}^{b}f(n)
+    \end{align*}
+  \end{proof}
+
   \item \[\sum_{n=a}^{b}f(n) = \sum_{n=0}^{b-a} f(b-n)\]
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\Roman*)]
@@ -2913,11 +2926,8 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
       \item Si $b=a+k+1$,
       \begin{align*}
-        \sum_{n=a}^{b} f(n) &= \sum_{n=a}^{a+k+1} f(n)\\
-        &= f(a+k+1) + \sum_{n=a}^{a+k} f(n)\\
-        &= f(a+k+1) + \sum_{n=0}^{k} f(a+k-n) && \text{Hip. Inducción}\\
-        &= \sum_{n=-1}^{k} f(a+k-n)\\
-        &= \sum_{n=0}^{k+1} f(a+k-n-1) && \text{Cambio de índice}\\
+        \sum_{n=0}^{(a+k+1)-a} f(a+k+1-n) &= \sum_{n=0}^{k+1} f(a+k+1-n)\\
+        &= f(a) + \sum_{n=0}^{k} f(a+k+1-n)
       \end{align*}
     \end{enumerate}
 
