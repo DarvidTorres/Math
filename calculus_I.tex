@@ -115,7 +115,7 @@ La suma $+$ satisface las siguientes propiedades:
 \begin{tcolorbox}
   \subsection*{Necesidad de justificar}
   
-  Si $a$, $b$ y $c$ son números reales tales que $a+c=b+c$, entonces $a=b$. El siguiente es un esbozo de la prueba propuesta por un estudiante: \begin{align*}
+  \textit{Proposición}: Si $a$, $b$ y $c$ son números reales tales que $a+c=b+c$, entonces $a=b$. El siguiente es un esbozo de la prueba propuesta por un estudiante: \begin{align*}
    a+c &= b+c\\
    a &= b+c-c\\
    a &= b \end{align*}
@@ -376,7 +376,8 @@ Introducimos la propiedad que nos permite relacionar las operaciones de suma $+$
  %Distribución de la multiplicación sobre la suma. Para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n+l)=m \cdot n+m \cdot l $.
 \end{enumerate}
 
-\subsection*{Ejemplo de argumento circular}
+\begin{tcolorbox}
+  \subsection*{Ejemplo de argumento circular}
 %
 %En este apartado utilizaremos un ejemplo para puntualizar la falta de rigor en la que pueden caer los estudiantes; dichas puntualizaciones pueden parecer exageradas y el lector podría considerar que el autor está siendo \textit{pedante} en el uso sintáctico de los axiomas, pero la idea es proveer al estudiante de un uso riguroso de la formalización matemática.
 %
@@ -404,6 +405,7 @@ Pero se requiere probar que $a\cdot b+(-a)\cdot b=0$. Observemos ahora el siguie
  &= 0 && \text{¿?}
 \end{align*}
 No obstante, se ha propuesto un \textbf{argumento circular}, por lo que no es posible verificar ninguna de las proposiciones anteriores. Requerimos pues, depender únicamente de axiomas o proposiciones previamente probadas para continuar.
+\end{tcolorbox}
 
 
 
@@ -2490,7 +2492,7 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
         a &< b && \text{Hip.}\\
         a^1 &< b^1
       \end{align*}
-      \item Supongamos que $a^k<b^k$ con $k\in \N$.
+      \item Supongamos que $a^k<b^k$, con $k\in \N$.
       \item Notemos que
       \begin{align*}
         a^k &< b^k && \text{Hip. Ind.}\\
@@ -2580,7 +2582,7 @@ Dado que contamos con una definición que puede ser planteada de dos maneras, po
 Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
-  \item \[\sum_{n=p}^{q} g(n) + \sum_{n=s}^{t} h(n) = \sum_{n=s}^{t} h(n) + \sum_{n=p}^{q} g(n)\qquad \text{(Conmutatividad de la summatoria)}\]
+  \item \[\sum_{n=p}^{q} g(n) + \sum_{n=s}^{t} h(n) = \sum_{n=s}^{t} h(n) + \sum_{n=p}^{q} g(n)\qquad \text{(Conmutatividad de la sumatoria)}\]
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\Roman*.]
       \item Primero probaremos que $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R,\forall n\in \Z$, es decir, que la imagen de la sumatoria siempre es un número real; la motivación es que, al estar definida \textit{recursivamente}, la función podría parecer asignar números reales a funciones, pero este no es el caso.
@@ -2622,7 +2624,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
         \item Se verifica para $b=a+1$, \begin{align*}
           \sum_{n=a}^{a+1} c &= c + \sum_{n=a+1}^{a+1} c = c + c = 2c = (2+a-a)c = (1+1+a-a)c = \Bigl((a+1)-a+1\Bigr) c
         \end{align*}
-        \item Supongamos que se cumple para $b=a+k$ con $k\in \N$, es decir, suponemos que \begin{align*}
+        \item Supongamos que se cumple para $b=a+k$, con $k\in \N$; es decir, suponemos que \begin{align*}
           \sum_{n=a}^{a+k} c &= \Bigl((a+k)-a+1\Bigr) c
         \end{align*}
         \item Notemos que \begin{align*}
@@ -2641,74 +2643,164 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \begin{proof} $\sum_{i=1}^n c = \bigl((n-1)+1\bigr) c = nc$.
   \end{proof}
 
-  \item Sea $c\in \Z$, \[\sum_{n=a}^b f(n) = \sum_{n=a+c}^{b+c} f(n-c) \qquad \text{(Cambio de índice)}\]
-  \begin{proof}\leavevmode
-    \begin{enumerate}[label=\Roman*)]
-      \item Si $a>b$, \begin{align*}
-        \sum_{n=a}^b f(n) = 0 = \sum_{n=a+c}^{b+c} f(n-c)
-      \end{align*}
-      \item Si $a=b$, \begin{align*}
-        \sum_{n=a+c}^{b+c} f(n-c) &= \sum_{n=a+c}^{a+c} f\Bigl((a+c)-c\Bigr) && \text{Hipótesis}\\
-        &= f(a) && \text{Definición}\\
-        &= \sum_{n=a}^b f(n)
-      \end{align*}
-      \item Si $a<b$, \begin{enumerate}[label=\roman*)]
-        \item Se comprueba para $b=a+1$, \begin{align*}
-          \sum_{n=a+c}^{(a+1)+c} f(n-c) &= f\Bigl((a+c)-c\Bigr) + \sum_{n=a+c+1}^{(a+1)+c} f(n-c)\\
-          &= f(a) + f\Bigl((a+c+1)-c\Bigr)\\
-          &= f(a) + f(a+1)\\
-          &= f(a) + \sum_{n=a+1}^{a+1} f(n) \\
-          &= \sum_{n=a}^{a+1} f(n)
-        \end{align*}
-        \item Supongamos que se verifica para $b=a+k$ con $k\in \N$, es decir, suponemos que \begin{align*}
-          \sum_{n=a}^{a+k} f(n) &= \sum_{n=a+c}^{(a+k)+c} f(n-c)
-        \end{align*}
-        \item Notemos que \begin{align*}
-          \sum_{a+c}^{(a+k+1)+c} f(n-c) &= f\Bigl(\bigl((a+k+1)+c\bigr)-c\Bigr) + \sum_{n=a+c}^{a+k+c} f(n-c)\\
-          &= f(a+k+1) + \sum_{n=a}^{a+k} f(n) && \text{Hip. Inducción}\\
-          &= \sum_{n=a}^{a+k+1} f(n)
-        \end{align*}
-      \end{enumerate}
-    \end{enumerate}
-  \end{proof}
+  \item Sea $\ell, m\in \R$ y $c\in \Z$, encuentre las condiciones que deben cumplirse para que
+  
+  \[\sum_{n=a}^b f(\ell+m\cdot n) = \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c)\]
 
-  \bfit{Corolario:} \[\sum_{n=a}^b f(m+n) = \sum_{n=a+c}^{b+c} f(m+n-c)\]
-  \begin{proof}\leavevmode
-    \begin{enumerate}[label=\Roman*)]
-      \item Si $b=a$, 
+  \begin{enumerate}[label=\Roman*)]
+    \item Notemos que si $c=0$, la proposición es \textit{tautológica}; por lo que suponemos en todo caso que $c\neq 0$.
+    \item Si $a>b$, no importa qué valores tome $\ell$ o $m$, la proposición se verifica por definición:
+    \begin{align*}
+      \sum_{n=a}^b f(\ell+m\cdot n) = 0 = \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c)
+    \end{align*}
+    \item Si $a=b$ y $m=0$,
+    \begin{align*}
+      \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c) &= \sum_{n=a+c}^{a+c} f(\ell+m\cdot n-c)\\
+      &= f\bigl(\ell+0\cdot (a+c)-c\bigr)\\
+      &=f(\ell+0-c)\\
+      &= f(\ell-c)\\
+      &\neq f(\ell)\\
+      &= f(\ell+0)\\
+      &= f(\ell+0\cdot a)\\
+      &= \sum_{n=a}^a f(\ell+m\cdot n)\\
+      &= \sum_{n=a}^b f(\ell+m\cdot n)
+    \end{align*}
+    Por lo que descartamos este caso.
+
+    \item Si $a=b$, $m\neq 0$ y $m\neq 1$,
+    \begin{align*}
+      \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c) &= \sum_{n=a+c}^{a+c} f(\ell+m\cdot n-c)\\
+      &= f\bigl(\ell+m(a+c)-c\bigr)\\
+      &= f\bigl(\ell+ma+mc-c\bigr)\\
+      &\neq f\bigl(\ell+ma\bigr)\\
+      &= \sum_{n=a}^a f(\ell+m\cdot n)\\
+      &= \sum_{n=a}^b f(\ell+m\cdot n)
+    \end{align*}
+    Por lo que descartamos este caso.
+
+    \item Si $a=b$ y $m=1$,
+    \begin{align*}
+      \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c) &= \sum_{n=a+c}^{a+c} f(\ell+m\cdot n-c)\\
+      &= f\bigl(\ell+1\cdot (a+c)-c\bigr)\\
+      &= f(\ell + a)\\
+      &= f(\ell+1\cdot a)\\
+      &= \sum_{n=a}^a f(\ell+m\cdot n)\\
+      &= \sum_{n=a}^b f(\ell+m\cdot n)
+    \end{align*}
+
+    \item Si $a<b$ y $m=0$.
+    
+    Para $b=a+1$ se tiene
+    \begin{align*}
+      \sum_{n=a}^b f(\ell+m\cdot n) &=\sum_{n=a}^{a+1} f(\ell+m\cdot n)\\
+      &= f\bigl(\ell+0\cdot (a+1)\bigr) + \sum_{n=a}^{a} f(\ell+0\cdot n)\\
+      &= f\bigl(\ell+0\cdot (a+1)\bigr) + f(\ell+0\cdot a)\\
+      &= f(\ell) + f(\ell)\\
+      &= 2 f(\ell)\\
+      &\neq 2 f(\ell - c) \\
+      &= f(\ell-c) + f(\ell-c)\\
+      &= f\bigl(\ell+0\cdot (a+c)-c\bigr) + f\Bigl(\ell +0\cdot (a+c+1)-c\Bigr)\\
+      &= f\bigl(\ell+0\cdot (a+c)-c\bigr) + \sum_{n=a+c+1}^{a+c+1} f(\ell+m\cdot n-c)\\
+      &= \sum_{n=a+c}^{(a+1)+c} f(\ell+m\cdot n-c)\\
+      &= \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c)
+    \end{align*}
+    Por lo que descartamos este caso.
+
+    \item Si $a<b$, $m\neq 0$ y $m\neq 1$,
+    Para $b=a+1$ se tiene
+    \begin{align*}
+      \sum_{n=a}^b f(\ell+m\cdot n) &=\sum_{n=a}^{a+1} f(\ell+m\cdot n)\\
+      &= f\bigl(\ell+m\cdot (a+1)\bigr) + \sum_{n=a}^{a} f(\ell+m\cdot n)\\
+      &= f\bigl(\ell+m\cdot (a+1)\bigr) + f(\ell+m\cdot a)\\
+      &= f(\ell+ma+m) + f(\ell+ma)\\
+      &\neq f(\ell+ma+mc-c) + f(\ell+ma+mc+m-c)\\
+      &= f\bigl(\ell+m\cdot (a+c)-c\bigr) + f\Bigl(\ell +m\cdot (a+c+1)-c\Bigr)\\
+      &= f\bigl(\ell+m\cdot (a+c)-c\bigr) + \sum_{n=a+c+1}^{a+c+1} f(\ell+m\cdot n-c)\\
+      &= \sum_{n=a+c}^{(a+1)+c} f(\ell+m\cdot n-c)\\
+      &= \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c)
+    \end{align*}
+    Por lo que descartamos este caso.
+
+    \item Si $a<b$, $m=1$,
+    \begin{enumerate}[label=\roman*)]
+      \item Si $b=a+1$,
       \begin{align*}
-        \sum_{n=a}^b f(m+n) &= \sum_{n=a}^a f(m+n)\\
-        &= f(m+a)\\
-        &= \sum_{n=a+c}^{a+c} f(m+n-c)
+        \sum_{n=a}^b f(\ell+m\cdot n) &=\sum_{n=a}^{a+1} f(\ell+n)\\
+        &= f\bigl(\ell+ (a+1)\bigr) + \sum_{n=a}^{a} f(\ell+ n)\\
+        &= f(\ell+a+1) + f(\ell+a)\\
+        &= f(\ell+a+1) + f(\ell +(a+c)-c)\\
+        &= f\bigl(\ell+(a+1+c)-c\bigr) + \sum_{n=a+c}^{a+c} f(\ell+ n-c)\\
+        &= \sum_{n=a+c}^{(a+1)+c} f(\ell+n-c)\\
+        &= \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c)
       \end{align*}
- 
-      \item Si $b>a$,
-      \begin{enumerate}[label=\roman*)]
-        \item Se comprueba para $b=a+1$,
-        \begin{align*}
-          \sum_{n=a}^b f(m+n) &= \sum_{n=a}^{a+1} f(m+n)\\
-          &= f(m+a+1) + \sum_{n=a}^{a} f(m+n)\\
-          &= f(m+a+1) + f(m+a)\\
-          &= f(m+a+1) + \sum_{n=a+c}^{a+c} f(m+n-c)\\
-          &= \sum_{n=a+c}^{a+c+1} f(m+n-c)\\
-          &= \sum_{n=a+c}^{b+c} f(m+n-c)
-        \end{align*}
 
-        \item Supongamos que se verifica para $b=a+k$, es decir, suponemos que
-        \begin{align*}
-          \sum_{n=a}^{a+k} f(m+n) &= \sum_{n=a+c}^{a+k+c} f(m+n-c)
-        \end{align*}
+      \item Supongamos que se verifica para $b=a+k$, con $k\in \N$; es decir, supenmos que
+      \begin{align*}
+        \sum_{n=a}^{a+k} f(\ell+n) &= \sum_{n=a+c}^{(a+k)+c} f(\ell+n-c)
+      \end{align*}
 
-        \item Si $b=a+k+1$,
-        \begin{align*}
-          \sum_{n=a}^{a+k+1} f(m+n) &= f(m+a+k+1) + \sum_{n=a}^{a+k} f(m+n)\\
-          &= f(m+a+k+1) + \sum_{n=a+c}^{a+k+c} f(m+n-c) && \text{Hip. Inducción}\\
-          &= \sum_{n=a+c}^{a+k+1+c} f(m+n-c)
-        \end{align*}
-      \end{enumerate}
-
+      \item Notemos que
+      \begin{align*}
+        \sum_{n=a}^{a+k+1} f(\ell+n) &= f\bigl(\ell+ (a+k+1)\bigr) + \sum_{n=a}^{a} f(\ell+ n)\\
+        &= f(\ell+a+k+1) + f(\ell+a)\\
+        &= f(\ell+a+k+1) + f(\ell +(a+c)-c)\\
+        &= f\bigl(\ell+(a+k+1+c)-c\bigr) + \sum_{n=a+c}^{a+c} f(\ell+ n-c)\\
+        &= \sum_{n=a+c}^{(a+k+1)+c} f(\ell+n-c)
+      \end{align*}
     \end{enumerate}
+
+
+    Por lo que en general, planteamos la proposición como sigue:
+
+    Si $c\in \Z\setminus \set{0}$, $\ell \in \R$, entonces \[\sum_{n=a}^b f(\ell+n) = \sum_{n=a+c}^{b+c} f(\ell+n-c) \qquad \text{(Cambio de índice 1)}\]
+    
+  \end{enumerate}
+
+  \item Sea $c\in \Z\setminus \set{0}$, $m\in \R$, \[\sum_{n=a}^b f(m-n) = \sum_{n=a+c}^{b+c} f\bigl(m-(n-c)\bigr) \qquad \text{(Cambio de índice 2)}\]
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+    \item Si $a>b$,
+    \begin{align*}
+      \sum_{n=a}^b f(m-n) = 0 = \sum_{n=a+c}^{b+c} f\bigl(m-(n-c)\bigr)
+    \end{align*}
+
+    \item Si $a=b$,
+    \begin{align*}
+      \sum_{n=a+c}^{b+c} f\bigl(m-(n-c)\bigr) &= \sum_{n=a+c}^{a+c} f\bigl(m-(n-c)\bigr)\\
+      &= f\Bigl(m-\bigl((a+c)-c\bigr)\Bigr)\\
+      &= f(m-a)\\
+      &= \sum_{n=a}^a f(m-n)\\
+      &= \sum_{n=a}^b f(m-n)
+    \end{align*}
+
+    \item Si $a<b$,
+    \begin{enumerate}[label=\roman*)]
+      \item Se verifica para $b=a+1$,
+      \begin{align*}
+        \sum_{n=a+c}^{(a+1)+c} f\bigl(m-(n-c)\bigr) &= f\Bigl(m-\bigl((a+c)-c\bigr)\Bigr) + \sum_{n=a+c+1}^{a+c+1} f\bigl(m-(n-c)\bigr)\\
+        &= f(m-a) + f\Bigl(m-\bigl((a+c+1)-c\bigr)\Bigr)\\
+        &= f(m-a) + f\bigl(m-(a+1)\bigr)\\
+        &= f(m-a) + f(m-a-1)\\
+        &= f(m-a) + f\bigl(m-(a+1)\bigr)\\
+        &= f(m-a) + \sum_{n=a+1}^{a+1} f(m-n)\\
+        &= \sum_{n=a}^{a+1} f(m-n)
+      \end{align*}
+
+      \item Supongamos qu ese verifica para $b=a+k$, con $k\in \N$; es decir, suponemos que
+      \begin{align*}
+        \sum_{n=a}^{a+k} f(m-n) = \sum_{n=a+c}^{(a+k)+c} f\bigl(m-(n-c)\bigr)
+      \end{align*}
+
+      \item Notemos que
+      \begin{align*}
+        \sum_{n=a+c}^{(a+k+1)+c} f\bigl(m-(n-c)\bigr) &= f\Bigl(m-\bigl((a+k+1+c)-c\bigr)\Bigr) + \sum_{n=a+c}^{a+k+c} f\bigl(m-(n-c)\bigr)\\
+        &= f\bigl(m-(a+k+1)\bigr) + \sum_{n=a}^{a+k} f(m-n) && \text{Hip. Ind.}\\
+        &= \sum_{n=a}^{a+k+1} f(m-n)
+      \end{align*}
+    \end{enumerate}
+  \end{enumerate}
   \end{proof}
+
 
   \item Sea $c\in \R$, \[c\cdot \sum_{n=a}^{b} f(n) = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) \qquad \text{(Distributividad)}\]
     \begin{proof}\leavevmode
@@ -2812,6 +2904,9 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \end{proof}
 
   \item Si $s\leq j\leq t$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Partir la suma)}\]
+  
+  \textbf{Nota:} Alternativamente podemos escribir esta igualdad como sigue: Si $s\leq j\leq t$, entonces $\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j-1}f(n) + \sum_{n=j}^{t}f(n)$. El lector debería verificar esta equivalencia
+
   \begin{proof}
     Consideremos los casos:
     \begin{enumerate}[label=\Roman*)]
@@ -2857,10 +2952,10 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \end{proof}
 
   \textbf{Nota:} En esta proposición se restringe que $s\leq j\leq t$, pues la proposición no es válida para todo $s\geq j\geq t$:
-  \begin{enumerate}[label=\roman*)]
+  \begin{enumerate}[label=\Roman*)]
   \item Si $s>j>t$,
   \begin{align*}
-    \sum_{n=s}^{t} f(n) = 0 = \sum_{n=s}^{j} f(n) + \sum_{n=j+1}^{t}
+    \sum_{n=s}^{t} f(n) = 0 = \sum_{n=s}^{j} f(n) + \sum_{n=j+1}^{t} f(n)
   \end{align*}
 
   \item Si $s>j=t$,
@@ -2869,15 +2964,15 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \end{align*}
 
   \item Si $s=j>t$,
-  \begin{align*}
-    \sum_{n=s}^{j} f(n) + \sum_{n=j+1}^{t} &= f(n) + 0 = f(n) \neq 0 = \sum_{n=s}^{t} f(n)
-  \end{align*}
-  Por lo que descartamos este caso.
+  \begin{enumerate}[label=\roman*)]
+    \item $\sum_{n=s}^{j} f(n) + \sum_{n=j+1}^{t} f(n) = f(n) + 0 = f(n)$.
+    \item $\sum_{n=s}^{t} f(n) = 0$.
+    
+    El lector notará que para partir la suma en este caso, debe cumplirse que $f(n)=0$, pero esto dependerá de cada función y de los íncides, por lo que en general, $f(n)\neq 0$, por ejemplo para cualquier sumatoria $\sum_{n=a}^{b} c$, donde $c\neq 0$.
+
   \end{enumerate}
 
-  El lector notará que para partir la suma en el caso $s=j>t$, debe cumplirse que $f(n)=0$, pero esto dependerá de cada función y de los íncides $s=j$, por lo que en general, $f(n)\neq 0$, por ejemplo para cualquier sumatoria $\sum_{n=a}^{b} c$, donde $c\neq 0$.
-
-  \item \[\sum_{n=a}^{b}f(n) = \sum_{n=0}^{b} f(n) - \sum_{n=0}^{a-1} f(n)\]
+  \bfit{Corolario:} \[\sum_{n=a}^{b}f(n) = \sum_{n=0}^{b} f(n) - \sum_{n=0}^{a-1} f(n)\]
   \begin{proof}\leavevmode
     \begin{align*}
       \sum_{n=0}^{b} f(n) - \sum_{n=0}^{a-1} f(n) &= \sum_{n=0}^{a} f(n) + \sum_{a+1}^{b} f(n) - \sum_{n=0}^{a-1}f(n) && \text{Partir la suma}\\
@@ -2886,6 +2981,8 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
       &= \sum_{n=a}^{b}f(n)
     \end{align*}
   \end{proof}
+
+  \end{enumerate}
 
   \item \[\sum_{n=a}^{b}f(n) = \sum_{n=0}^{b-a} f(b-n)\]
   \begin{proof}\leavevmode
@@ -2920,25 +3017,25 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
       \item Supongamos que se verifica para $b=a+k$, con $k\in \N$, es decir, suponemos que
       \begin{align*}
-        \sum_{n=a}^{a+k}f(n) &= \sum_{n=0}^{(a+k)-a} f(a+k-n)\\
-        &= \sum_{n=0}^{k} f(a+k-n)
+        \sum_{n=a}^{a+k}f(n) = \sum_{n=0}^{(a+k)-a} f(a+k-n) = \sum_{n=0}^{k} f(a+k-n)
       \end{align*}
 
       \item Si $b=a+k+1$,
       \begin{align*}
-        \sum_{n=0}^{(a+k+1)-a} f(a+k+1-n) &= \sum_{n=0}^{k+1} f(a+k+1-n)\\
-        &= f(a) + \sum_{n=0}^{k} f(a+k+1-n)
+        \sum_{n=a}^{a+k+1} f(n) &= f(a+k+1) + \sum_{n=a}^{a+k} f(n)\\
+        &= f(a+k+1) + \sum_{n=0}^{k} f(a+k-n) && \text{Hip. Ind.}\\
+        &= f\bigl(a+k-(-1)\bigr) + \sum_{n=0}^{k} f(a+k-n)\\
+        &= \sum_{n=-1}^k f(a+k-n) && \text{Definición (de sumatoria)}\\
+        &= \sum_{n=-1+(1)}^{k+(1)} f\bigl(a+k-(n-1)\bigr) && \text{Cambio de índice 2}\\
+        &= \sum_{n=0}^{k+1} f(a+k+1-n)
       \end{align*}
+      
     \end{enumerate}
 
     \end{enumerate}
   \end{proof}
 
 
-  \item \[\sum_{n=a}^b f(n) = \sum_{n=0}^b f(n) - \sum_{n=0}^{a-1} f(n)\]
-  \begin{proof}\leavevmode
-    Pendiente
-  \end{proof}
     
   \end{enumerate}
 
