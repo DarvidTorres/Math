@@ -2044,15 +2044,18 @@ Demuestre lo siguiente:
  \end{proof}
 
  \bfit{Corolario:} \begin{enumerate}[label=\roman*)]
-  \item Sea $x\in \R$. Si $n\in \N$ y $n<x<n+1$, entonces $x$ no es un número natural.
+  \item Sea $x\in \R$. Si $n\in \N$ y $n<x<n+1$, entonces $x$ no es un número natural. (La \textit{distancia} entre un número natural y su \textit{sucesor} es $1$).
   
-  Por hipótesis, $n<x$, de donde sigue que $n+(-x+1)<x+(-x+1)$, osea, $n-x+1<1$. Como $\N$ es un conjunto inductivo, $n+1\in \N$. Ahora, supongamos que $x\in \N$, de la hipótesis $x<n+1$ sigue que $n+1-x\in \N$, por este teorema, y como $1$ es elemento mínimo de $\N$, tenemos que $1\leq n+1-x$. Esto implica que $1\leq n+1-x < 1$, lo que es una contradicción. Por tanto, $x$ no es un número natural.
+  \begin{proof}\leavevmode
+    Por hipótesis, $n<x$, de donde sigue que $n+(-x+1)<x+(-x+1)$, osea, $n-x+1<1$. Como $\N$ es un conjunto inductivo, $n+1\in \N$. Ahora, supongamos que $x\in \N$, de la hipótesis $x<n+1$ sigue que $n+1-x\in \N$, por este teorema, y como $1$ es elemento mínimo de $\N$, tenemos que $1\leq n+1-x$. Esto implica que $1\leq n+1-x < 1$, lo que es una contradicción. Por tanto, $x$ no es un número natural.
+  \end{proof}
 
   \textbf{Nota:} Otra forma de plantear esta proposición es la siguiente (ii):
 
-  \item Sea $x\in \R$. Si $m\in \N$ y $m-1<x<m$, entonces $x$ no es un número natural.
+  \item Sea $x\in \R$. Si $m\in \N$ y $m-1<x<m$, entonces $x$ no es un número natural. (La \textit{distancia} entre un número natural y su \textit{antecesor} es $1$).
   
-  Sea $x\in \N$. Por hipótesis $x<m$ y $m-1<x$, de donde obtenemos:
+  \begin{proof}\leavevmode
+    Sea $x\in \N$. Por hipótesis $x<m$ y $m-1<x$, de donde obtenemos:
   \begin{center}\vspace{-1em}
    \begin{minipage}[l]{.4\linewidth}
    \begin{align*}
@@ -2072,12 +2075,15 @@ Demuestre lo siguiente:
    \end{minipage}
   \end{center}
   Por hipótesis $x\in \N$, y como $\N$ es un conjunto inductivo, sigue que $x+1\in \N$. Como $m<x+1$, con $m\in \N$, por este teorema se verifica que $x+1-m \in \N$, y como $1$ es elemento mínimo de $\N$, sigue que $1\leq x+1-m$. Esto implica que $1\leq x+1-m<1$, lo que es una contradicción. Por tanto, $x$ no es un número natural.
+  \end{proof}
 
   \item Todo subconjunto no vacío de $\N$ tiene elemento mínimo. (Principio del buen orden).
   
-  Sea $A\subset \N$ con $A\neq \emptyset$. Supongamos que $A$ no tiene elemento mínimo.
+  \begin{proof}\leavevmode
+    Sea $A\subset \N$ con $A\neq \emptyset$. Supongamos que $A$ no tiene elemento mínimo.
   
   Como $A\neq \emptyset$, se tiene que $\exists x\in A$, y como $A\subset \N$, entonces $x\in \N$. Sabemos que $1$ es elemento mínimo de $\N$, por lo que, en particular $1\leq x$. Como $A$ no tiene elemento mínimo, no puede ser el caso que $x=1$, pues $1\leq x,\forall x\in A$. De esto sigue que $1<x$, y por este teorema, se verifica que $x-1\in \N$, y sabemos que $x-1<x$. Como $\N$ es un conjunto inductivo, $x+1\in \N$, y sabemos que $x<x+1$. De este modo, tenemos que $x-1<x<x+1$, pero por este teorema, esta desigualdad implica que $x$ no es un número natural, lo que es una contradicción. Por tanto, $A$ tiene elemento mínimo.
+  \end{proof}
   %\begin{proof} 
   %Sea $A\subset \N$ con $A \neq \emptyset$. Supongamos que $A$ no tiene elemento mínimo.%, es decir, supongamos que si $c\leq a, \forall a\in A$, entonces $c\notin A$.
   %
@@ -2146,13 +2152,15 @@ Demuestre lo siguiente:
 
   \item Sea $S\subseteq \N$ tal que $S$ es un conjunto inductivo, entonces $S=\N$. (Principio de inducción matemática).
 
-  %\begin{proof} 
-   Sea $S\neq \N$. El conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$). Pr definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $\N\setminus S\subset \N$, por el principio del buen orden, tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$, como $m\in \N$, sigue que $1 \leq m$. Como $m\in \N\setminus S$ y $1\notin \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, y por este teorema, $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, tenemos que $m-1\notin \N\setminus S$, osea $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, $S=\N$. 
-  %\end{proof}
+  \begin{proof} 
+  Sea $S\neq \N$. El conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$). Pr definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $\N\setminus S\subset \N$, por el principio del buen orden, tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$, como $m\in \N$, sigue que $1 \leq m$. Como $m\in \N\setminus S$ y $1\notin \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, y por este teorema, $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, tenemos que $m-1\notin \N\setminus S$, osea $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, $S=\N$. 
+  \end{proof}
 
   \item Sea $x\in \R^+$. Si $n\in \N$ y $x+n\in \N$, entonces $x\in \N$.
 
-  Por definición, $x>0$, por lo que $n<n+x$. Por hipótesis, $x+n\in \N$ y $n\in \N$. Luego, por este teorema, $(x+n)-n \in \N$, osea, $x\in \N$.
+  \begin{proof}\leavevmode
+    Por definición, $x>0$, por lo que $n<n+x$. Por hipótesis, $x+n\in \N$ y $n\in \N$. Luego, por este teorema, $(x+n)-n \in \N$, osea, $x\in \N$.
+  \end{proof}
  \end{enumerate} %Corolario
 
 \end{enumerate}
@@ -2367,12 +2375,36 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
 %  \frac{1}{a^{-m}}, &  \ \text{si}  \ m < 0 \ \text{y} \ a\neq 0
 % \end{array} \right. \]
 
+\subsection*{Lista de Ejercicios 10 (LE10)}
+
+\begin{enumerate}[label=\alph*)]
+  \item ¿El conjunto de los números enteros es un campo (satisface los axiomas de campo)?
+  
+  \textbf{Respuesta:} No, pues el axioma del inverso multiplicativo solo se satisface para $1$ y $-1$.
+
+  \item Sea $s\in \Z$, demuestre que si $s<j<s+1$, entonces $j\notin \Z$.
+  \begin{proof} Supongamos que $j\in \Z$. Tenemos tres casos:
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $j\in \set{0}$, tenemos que $0<s+1$, de donde sigue que $s+1\in \N$, por definición (de $\Z$), pero como $s<0$, obtenemos $s+1<1$, lo que es una contradicción, pues todo número natural es mayor o igual a 1.
+      \textbf{Nota:} Se asume que la suma es cerrada en $\Z$, pues la hipótesis únicamente exige que $s\in \Z$, pero no que $s+1\in \Z$. El lector debería verificar este hecho.
+      \item Si $j\in\N$, tenemos tres casos para $s$:
+      \begin{enumerate}[label=\roman*)]
+        \item Si $s=0$, sigue que $s=0<j<1=s+1$, pero esto es una contradicción, pues todo número natural es mayor o igual a 1.
+        \item Si $s\in \N$, por el corolario (i) de (e) de LE8, es una contradicción.
+        \item Si $-s\in \N$, se tiene que $-s>0$, por lo que $s<0$, de done sigue que $s+1<1$, pero $j<s+1$ y por transitividad, $j<1$, lo que es una contradicción.
+      \end{enumerate}
+      \item Si $-j\in \N$, sigue que $-j>0$, por lo que $j<0$, y por transitividad, $s<0$, de esto sigue que $s\neq 0$ y $s\notin \N$, por lo que $-s\in \N$. Como $s<j$ y $j<s+1$, sigue que $-j<-s$ y $-(s+1)=-s-1<-j$; de este modo, $-s-1<-j<-s$, con $-s, -j\in \N$, pero se contradice el corolario (ii) de (e) de LE8.
+    \end{enumerate}
+    En cualquier caso $j\notin \Z$.
+  \end{proof}
+\end{enumerate}
+
 \bfit{Definición:} Sea $a\in \R$ y $n\in \N$, \begin{itemize}
   \item $a^0=1, \forall a\in \R$.
   \item $a^{-n}=\frac{1}{a^n}$, si $a\neq 0$.
 \end{itemize}
 
- \subsection*{Lista de Ejercicios 10 (LE10)}
+\subsection*{Lista de Ejercicios 11 (LE11)}
 
  \begin{enumerate}[label=\alph*)]
   \item $1^m = 1, \forall m\in \Z$. \begin{proof}
@@ -2500,62 +2532,151 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
       \end{align*}
     \end{enumerate}
   \end{enumerate}
- \end{enumerate}
+  \end{enumerate}
 
- \pagebreak
+\pagebreak
 
- \section*{Notación sigma}
+\section*{Notación sigma}
 
- \textbf{Definición:} Sea $a,b\in \Z$ y $f: \Z\to \R$, definimos a la sumatoria como cualquiera de las siguientes:
+\textbf{Definición:} Sea $|b-a|\in \Z$ y $f: \R\to \R$, definimos a la sumatoria como sigue:
 
- \begin{center}
-  \begin{minipage}[c]{.5\linewidth}
-    \[
+\[
     \sum_{n=a}^{b} f(n) \defined \left\{
-   \begin{array}{@{}l@{\thinspace}l}
-    0 &,  \ \text{si}  \ a>b\\
-    f(n) &,  \ \text{si}  \ a=b\\
-    f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ a<b.
-   \end{array} \right. \]
-   \end{minipage}%
-  \begin{minipage}[c]{.5\linewidth}
-   \[\sum_{n=a}^{b} f(n) \defined \left\{
     \begin{array}{@{}l@{\thinspace}l}
-     0 &,  \ \text{si}  \ a>b\\
-     f(n) &,  \ \text{si}  \ a=b\\
-     f(b) + \sum_{n=a}^{b-1} f(n) &,  \ \text{si}  \ a<b.
+    f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ b\geq a.\\
+    0 &,  \ \text{si}  \ b<a
     \end{array} \right. \]
-  \end{minipage}
-  \end{center}
 
 Decimos que
 \begin{itemize}
-  \item $n$ es el índice
-  \item $a$ el límite inferior
-  \item $b$ el límite superior
-  \item $f(n)$ el elemento típico (o genérico)
+  \item $n$ es el índice,
+  \item $a$ el límite inferior,
+  \item $b$ el límite superior,
+  \item $f(n)$ el elemento típico (o genérico),
 \end{itemize}
-de la sumatoria.
+de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
 
-\textbf{Nota:} El lector debería verificar que ambas definiciones son equivalentes. \textit{Hint:} La suma del primer termino hasta el ultimo es igual a la suma del ultimo hasta el primero.
+\textbf{Ejemplos:}
 
-%Otra forma de escribir estas definiciones es la siguiente:
-%\begin{center}
-  %\begin{minipage}[c]{.5\linewidth}
-    %\[\sum_{n=a}^{b} f(n) \defined \left\{
-      %\begin{array}{@{}l@{\thinspace}l}
-       %0 &,  \ \text{si}  \ a>b\\
-       %f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ a\leq b.
-      %\end{array} \right.\]
-   %\end{minipage}%
-  %\begin{minipage}[c]{.5\linewidth}
-    %\[\sum_{n=a}^{b} f(n) \defined \left\{
-      %\begin{array}{@{}l@{\thinspace}l}
-       %0 &,  \ \text{si}  \ a>b\\
-       %f(b) + \sum_{n=a}^{b-1} f(n) &,  \ \text{si}  \ a\leq b.
-      %\end{array} \right. \]
-  %\end{minipage}
-%\end{center}
+\begin{enumerate}
+  \item \begin{align*}
+    \sum_{i=2}^{5} i^2 &= (2)^2 + \sum_{i=3}^{5} i^2\\
+    &= 4 + (3)^2 + \sum_{i=4}^{5} i^2\\
+    &= 4 + 9 + (4)^2 + \sum_{i=5}^{5} i^2 && \text{(*)}\\
+    &= 4 + 9 + 16 + (5)^2 + \sum_{i=6}^{5} i^2\\
+    &= 4 + 9 + 16 + 25 + 0\\
+    &= 54
+  \end{align*}
+
+  \item \begin{align*}
+    \sum_{m=-3}^{-1} 2m  &= 2(-3) + \sum_{m=-2}^{-1} 2m\\
+    &= -6 + 2(-2) + \sum_{m=-1}^{-1} 2m  && \text{(**)}\\
+    &= -6 + -4 + 2(-1) + \sum_{m=0}^{-1} 2m\\
+    &= -6 + -4 + -2 + 0\\
+    &= -12
+  \end{align*}
+
+  \item \begin{align*}
+    \sum_{n=0}^{3} 2^n &= 2^0 + \sum_{n=1}^{3} 2^n\\
+    &= 1 + 2^1 + \sum_{n=2}^{3} 2^n\\
+    &= 1 + 2 + \sum_{n=3}^{3} 2^n  && \text{(***)}\\
+    &= 1 + 2 + 2^3 + \sum_{n=4}^{3} 2^n\\
+    &= 1 + 2 + 8 + 0\\
+    &= 11
+  \end{align*}
+
+  \item \begin{align*}
+    \sum_{j=0}^{-1} j &= 0
+  \end{align*}
+\end{enumerate}
+
+
+  El lector notará que, en el caso en que los límites inferior y superior son iguales (*, **, y ***), la imagen de la sumatoria es el elemento típico \textit{evaluado} en el índice, es decir,
+
+  \textbf{Observación:} Si $a=b$, entonces
+  \begin{align*}
+    \sum_{n=a}^{b} f(n) &= f(n) && \text{(Límites iguales)}
+  \end{align*}
+
+  \begin{proof}\leavevmode
+    Sea $m\in \Z$,
+  \begin{align*}
+    \sum_{n=m}^{m} f(n) &= f(m=n) + \sum_{n=m+1}^{m} f(n) && \text{Definición}\\
+    &= f(n) + 0 && \text{Definición}\\
+    &= f(n) && \qedhere
+  \end{align*}
+  \end{proof}
+
+  \textbf{Nota:} En este caso, el índice \textit{itera} en un único valor.
+
+  A partir de esto tenemos que:
+  \[
+    \sum_{n=a}^{b} f(n) = \left\{
+    \begin{array}{@{}l@{\thinspace}l}
+    f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ a<b.\\
+    f(n) &,  \ \text{si}  \ a=b\\
+    0 &,  \ \text{si}  \ a>b
+    \end{array} \right. \]
+
+    El lector notará también que la suma del primer termino hasta el ultimo es
+    igual a la suma del ultimo hasta el primero, es decir,
+
+    \textbf{Observación:} Sea $a,b\in \R$ arbitrarios pero fijos tales que $a\leq b$, entonces
+    \begin{align*}
+      \sum_{n=a}^{b} f(n) = f(b) + \sum_{n=a}^{b-1} f(n) && \text{(Suma inversa)}
+    \end{align*}
+
+    \begin{proof}\leavevmode
+      \begin{enumerate}[label=\Roman*)]
+        \item Si $b-a=0$,
+        \begin{align*}
+          \sum_{n=a}^{b} f(n) &= f(n)\\
+          &= f(b) && \text{$n=a=b$}\\
+          &= f(b) + 0\\
+          &= f(b) + \sum_{n=a}^{a-1} f(n) && \text{$a-1<a$}\\
+          &= f(b) + \sum_{n=a}^{b-1} f(n)
+        \end{align*}
+
+        \item Para el caso $a<b$, procedemos por inducción sobre $b-a$.
+        \begin{enumerate}[label=\roman*)]
+          \item Se verifica para $b=a+1$,
+          \begin{align*}
+            \sum_{n=a}^{b=a+1} f(n) &= f(a) + \sum_{n=a+1}^{a+1} f(n) && \text{Definición}\\
+            &= f(a) + \sum_{n=b}^{b} f(n) && \text{Hipótesis}\\
+            &= f(a) + f(b)\\
+            &= f(b) + f(a)\\
+            &= f(b) + \sum_{n=a}^{a} f(n)\\
+            &= f(b) + \sum_{n=a}^{b-1} f(n) && \text{$b=a+1 \Rightarrow b-1=a$}
+          \end{align*}
+
+          \item Supongamos que se verifica para $b=a+k$, con $k\in \N$; es decir, suponemos que
+          \begin{align*}
+            \sum_{n=a}^{a+k} f(n) &= f(b) + \sum_{n=a}^{b-1} f(n)
+          \end{align*}
+
+          \item Notemos que
+          \begin{align*}
+            \sum_{n=a}^{b=a+k+1} f(n) &= f(a) + \sum_{n=a+1}^{a+k+1} f(n) && \text{Definición}\\
+            &= f(a) + f(b) + \sum_{n=a+1}^{a+k+1} f(n)\\
+            &= f(a+k+1) + f(b) + \sum_{n=a}^{b-1} f(n)\\
+            &= f(a+k+1) + \sum_{n=a}^{a+k} f(n)\\
+            &= f(b) + \sum_{n=a}^{b-1} f(n)
+          \end{align*}
+        \end{enumerate}
+
+        Pendiente
+        
+      \end{enumerate}
+    \end{proof}
+
+    \[\sum_{n=a}^{b} f(n) \defined \left\{
+    \begin{array}{@{}l@{\thinspace}l}
+      0 &,  \ \text{si}  \ a>b\\
+      f(n) &,  \ \text{si}  \ a=b\\
+      f(b) + \sum_{n=a}^{b-1} f(n) &,  \ \text{si}  \ a<b.
+    \end{array} \right. \]
+
+\textbf{Nota:} El lector debería verificar que ambas definiciones son equivalentes. \textit{Hint:} 
 
 Dado que contamos con una definición que puede ser planteada de dos maneras, podemos utilizar cualquiera (de las dos) a conveniencia, pues siempre se obtiene el mismo resultado; por ejemplo:
 \begin{center}
@@ -2587,7 +2708,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \begin{enumerate}[label=\Roman*.]
       \item Primero probaremos que $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R,\forall n\in \Z$, es decir, que la imagen de la sumatoria siempre es un número real; la motivación es que, al estar definida \textit{recursivamente}, la función podría parecer asignar números reales a funciones, pero este no es el caso.
       
-      Por definición, si $a\geq b$, entonces $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R$. Para el caso $a<b$ procedemos por inducción:
+      Por definición, si $a>b$, entonces, $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)=0\in \R$; si $a=b$, entonces $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)=f(n)\in \R$. Para el caso $a<b$ procedemos por inducción:
       \begin{enumerate}[label=\roman*)]
         \item Se verifica para $b=a+1$,
         \begin{align*}
@@ -2608,9 +2729,97 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
       En cualquier caso $\Bigl(\sum_{n=a}^{b} f(n)\Bigr)\in \R$.
     
 
-    \item Como $\Bigl(\sum_{n=p}^{q} g(n)\Bigr)\in \R$ y $\Bigl(\sum_{n=s}^{t} h(n)\Bigr)\in \R$, por conmutatividad de la suma en $\R$, sigue que \[\sum_{n=p}^{q} g(n) + \sum_{n=s}^{t} h(n) = \sum_{n=s}^{t} h(n) + \sum_{n=p}^{q} g(n)\]
+    \item Finalmente demostramos la Conmutatividad de la sumatoria.
+    
+    Como $\Bigl(\sum_{n=p}^{q} g(n)\Bigr)\in \R$ y $\Bigl(\sum_{n=s}^{t} h(n)\Bigr)\in \R$, por conmutatividad de la suma en $\R$, sigue que \[\sum_{n=p}^{q} g(n) + \sum_{n=s}^{t} h(n) = \sum_{n=s}^{t} h(n) + \sum_{n=p}^{q} g(n)\]
     \end{enumerate}
   \end{proof}
+
+  \item \[\sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr) \qquad \text{(Asociatividad de la sumatoria)}\]
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $a>b$,
+      \begin{align*}
+        \sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) = 0 = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr)
+      \end{align*}
+      \item Si $a=b$,
+      \begin{align*}
+        \sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) &= f(n) + g(n) = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr)
+      \end{align*}
+      \item Si $b>a$,
+      \begin{enumerate}[label=\roman*)]
+        \item Se comprueba para $b=a+1$,
+        \begin{align*}
+          \sum_{n=a}^{a+1} \Bigl(f(n) + g(n)\Bigr) &= \Bigl(f(a) + g(a)\Bigr) + \sum_{n=a+1}^{a+1} \Bigl(f(n) + g(n)\Bigr)\\
+          &= f(a) + g(a) + \Bigl(f(a+1) + g(a+1)\Bigr)\\
+          &= \Bigl(f(a) + f(a+1)\Bigr) + \Bigl(g(a) + g(a+1)\Bigr) && \text{Asociatividad (de la suma)}\\
+          &= \Biggl(f(a) + \sum_{n=a+1}^{a+1} f(n)\Biggr) + \Biggl(g(a) + \sum_{n=a+1}^{a+1} g(n)\Biggr)\\
+          &= \sum_{n=a}^{a+1} f(n) + \sum_{n=a}^{a+1} g(n)
+        \end{align*}
+        \item Supongamos que se verifica para $b=a+k$, con $k\in \N$, es decir, suponemos que
+        \begin{align*}
+          \sum_{n=a}^{a+k} \Bigl(f(n) + g(n)\Bigr) &= \sum_{n=a}^{a+k} f(n) + \sum_{n=a}^{a+k} g(n)
+        \end{align*}
+        \item Notemos que
+        \begin{align*}
+          \sum_{n=a}^{a+k+1} \Bigl(f(n) + g(n)\Bigr) &= \Bigl(f(a+k+1) + g(a+k+1)\Bigr) + \sum_{n=a}^{a+k} \Bigl(f(n) + g(n)\Bigr)\\
+          &= f(a+k+1) + g(a+k+1) + \sum_{n=a}^{a+k} f(n) + \sum_{n=a}^{a+k} g(n) && \text{Hip. Inducción}\\
+          &= \Biggl(f(a+k+1) + \sum_{n=a}^{a+k} f(n)\Biggr) + \Biggl(g(a+k+1) + \sum_{n=a}^{a+k} g(n)\Biggr)\\
+          &= \sum_{n=a}^{a+k+1} f(n) + \sum_{n=a}^{a+k+1} g(n)
+        \end{align*}
+      \end{enumerate}
+    \end{enumerate}
+  \end{proof}
+
+
+  \item Sea $c\in \R$, \[c\cdot \sum_{n=a}^{b} f(n) = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) \qquad \text{(Distributividad de la sumatoria)}\]
+    \begin{proof}\leavevmode
+      \begin{enumerate}[label=\Roman*)]
+        \item Si $a>b$, \begin{align*}
+          c\cdot \sum_{n=a}^{b} f(n) = c\cdot 0 = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr)
+        \end{align*}
+        \item Si $a=b$, \begin{align*}
+          c\cdot \sum_{n=a}^{b} f(n) = c\cdot f(n) = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) 
+        \end{align*}
+        \item Si $b>a$,
+          \begin{enumerate}[label=\roman*)]
+          \item Se comprueba para $b=a+1$, \begin{align*}
+            \sum_{n=a}^{a+1} \Bigl(c \cdot f(n)\Bigr) &= c\cdot f(a) + \sum_{n=a+1}^{a+1} c\cdot f(n)\\
+            &= c\cdot f(a) + c\cdot f(a+1)\\
+            &= c \cdot \Bigl(f(a) + f(a+1)\Bigr)\\
+            &= c\cdot \Biggl(f(a) + \sum_{n=a+1}^{a+1} f(n)\Biggr)\\
+            &= c\cdot \sum_{n=a}^{a+1} f(n)
+          \end{align*}
+          \item Supongamos que se verifica para $b=a+k$, con $k\in \N$, es decir, suponemos que \begin{align*}
+            \sum_{n=a}^{a+k} \Bigl(c \cdot f(n)\Bigr) = c\cdot \sum_{n=a}^{a+k} f(n) 
+          \end{align*}
+          \item Notemos que \begin{align*}
+            \sum_{n=a}^{a+k+1} \Bigl(c \cdot f(n)\Bigr) &= c\cdot f(a+k+1) + \sum_{n=a}^{a+k} \Bigl(c \cdot f(n)\Bigr)\\
+            &= c\cdot f(a+k+1) + c\cdot \sum_{n=a}^{a+k} f(n) && \text{Hip. Inducción}\\
+            &= c \cdot \Biggl(f(a+k+1)+ \sum_{n=a}^{a+k} f(n)\Biggr)\\
+            &= c\cdot \sum_{n=a}^{a+k+1} f(n)
+          \end{align*}
+          \end{enumerate}
+        \end{enumerate}
+    \end{proof}
+  
+    \textbf{Corolario:} Sea $s,t\in \R$ \begin{enumerate}[label=\roman*)]  
+      \item \[s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr)\]
+      \begin{proof}
+        \begin{align*}
+          s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) &= \sum_{n=a}^{b} \Bigl(s\cdot f(n)\Bigr) + \sum_{n=a}^{b} \Bigl(t\cdot g(n)\Bigr) && \text{Distributividad de la sumatoria}\\
+          &= \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr) && \text{Asociatividad} \qedhere
+        \end{align*}
+      \end{proof}
+      \item \[\sum_{n=a}^{b} f(n) - \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(f(n) - g(n)\Bigr)\]
+      \begin{proof}
+        \begin{align*}
+          \sum_{n=a}^{b} f(n) - \sum_{n=a}^{b} g(n) &= \sum_{n=a}^{b} f(n) + (-1)\sum_{n=a}^{b} g(n)\\
+          &= \sum_{n=a}^{b} \Bigl(f(n) + (-1)\cdot g(n)\Bigr) && \text{Por (i) de este corolario}\\
+          &= \sum_{n=a}^{b} \Bigl(f(n) - g(n)\Bigr)
+        \end{align*}
+      \end{proof}
+    \end{enumerate}
 
   \item Sea $c\in \R$, si $a\leq b$, entonces \begin{align*}
     \sum_{n=a}^b c &= (b-a+1)c
@@ -2637,9 +2846,11 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
+  \bfit{Nota:} En esta proposición se restringe que $a\leq b$, pues si $a>b$, se tiene que $\sum_{n=a}^{b} c = 0 \neq (b-a+1)c$; únicamente en el caso que $c=0$, se cumpliría la igualdad con $a>b$.
+
   \textbf{Definición:} $(b-a+1)$ es el número de \textit{iteraciones}, \textit{cíclos}, o \textit{sumandos} de la sumatoria $\sum_{n=a}^{b} f(n)$.
 
-  \bfit{Corolario:} Si $c\in \R$ y $n\in \N$, \[\sum_{i=1}^n c = nc\]
+  \bfit{Corolario:} Si $c\in \R$ y $n\in \N$, entonces $\sum_{i=1}^n c = nc$.
   \begin{proof} $\sum_{i=1}^n c = \bigl((n-1)+1\bigr) c = nc$.
   \end{proof}
 
@@ -2648,7 +2859,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \[\sum_{n=a}^b f(\ell+m\cdot n) = \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c)\]
 
   \begin{enumerate}[label=\Roman*)]
-    \item Notemos que si $c=0$, la proposición es \textit{tautológica}; por lo que suponemos en todo caso que $c\neq 0$.
+    \item Notemos que si $c=0$, la proposición es \textit{tautológica}; por lo que, en adelante, suponemos que $c\neq 0$.
     \item Si $a>b$, no importa qué valores tome $\ell$ o $m$, la proposición se verifica por definición:
     \begin{align*}
       \sum_{n=a}^b f(\ell+m\cdot n) = 0 = \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c)
@@ -2752,11 +2963,11 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
     Por lo que en general, planteamos la proposición como sigue:
 
-    Si $c\in \Z\setminus \set{0}$, $\ell \in \R$, entonces \[\sum_{n=a}^b f(\ell+n) = \sum_{n=a+c}^{b+c} f(\ell+n-c) \qquad \text{(Cambio de índice 1)}\]
+    Si $c\in \Z$, $\ell \in \R$, entonces \[\sum_{n=a}^b f(\ell+n) = \sum_{n=a+c}^{b+c} f(\ell+n-c) \qquad \text{(Cambio de límites 1)}\]
     
   \end{enumerate}
 
-  \item Sea $c\in \Z\setminus \set{0}$, $m\in \R$, \[\sum_{n=a}^b f(m-n) = \sum_{n=a+c}^{b+c} f\bigl(m-(n-c)\bigr) \qquad \text{(Cambio de índice 2)}\]
+  \item Sea $c\in \Z$, $m\in \R$, \[\sum_{n=a}^b f(m-n) = \sum_{n=a+c}^{b+c} f\bigl(m-(n-c)\bigr) \qquad \text{(Cambio de límites 2)}\]
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\roman*)]
     \item Si $a>b$,
@@ -2801,107 +3012,25 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \end{enumerate}
   \end{proof}
 
-
-  \item Sea $c\in \R$, \[c\cdot \sum_{n=a}^{b} f(n) = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) \qquad \text{(Distributividad)}\]
-    \begin{proof}\leavevmode
-      \begin{enumerate}[label=\Roman*)]
-        \item Si $a>b$, \begin{align*}
-          c\cdot \sum_{n=a}^{b} f(n) = c\cdot 0 = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr)
-        \end{align*}
-        \item Si $a=b$, \begin{align*}
-          c\cdot \sum_{n=a}^{b} f(n) = c\cdot f(n) = \sum_{n=a}^{b} \Bigl(c \cdot f(n)\Bigr) 
-        \end{align*}
-        \item Si $b>a$,
-          \begin{enumerate}[label=\roman*)]
-          \item Se comprueba para $b=a+1$, \begin{align*}
-            \sum_{n=a}^{a+1} \Bigl(c \cdot f(n)\Bigr) &= c\cdot f(a) + \sum_{n=a+1}^{a+1} c\cdot f(n)\\
-            &= c\cdot f(a) + c\cdot f(a+1)\\
-            &= c \cdot \Bigl(f(a) + f(a+1)\Bigr)\\
-            &= c\cdot \Biggl(f(a) + \sum_{n=a+1}^{a+1} f(n)\Biggr)\\
-            &= c\cdot \sum_{n=a}^{a+1} f(n)
-          \end{align*}
-          \item Supongamos que se verifica para $b=a+k$, con $k\in \N$, es decir, suponemos que \begin{align*}
-            \sum_{n=a}^{a+k} \Bigl(c \cdot f(n)\Bigr) = c\cdot \sum_{n=a}^{a+k} f(n) 
-          \end{align*}
-          \item Notemos que \begin{align*}
-            \sum_{n=a}^{a+k+1} \Bigl(c \cdot f(n)\Bigr) &= c\cdot f(a+k+1) + \sum_{n=a}^{a+k} \Bigl(c \cdot f(n)\Bigr)\\
-            &= c\cdot f(a+k+1) + c\cdot \sum_{n=a}^{a+k} f(n) && \text{Hip. Inducción}\\
-            &= c \cdot \Biggl(f(a+k+1)+ \sum_{n=a}^{a+k} f(n)\Biggr)\\
-            &= c\cdot \sum_{n=a}^{a+k+1} f(n)
-          \end{align*}
-          \end{enumerate}
-        \end{enumerate}
-    \end{proof}
-
-  \item \[\sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr) \qquad \text{(Asociatividad)}\]
+  \item Sea $m\in \R$ y $c\in \Z$, \[\sum_{n=a}^{b}f\bigl(m\pm n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m\pm (n- c)\bigr) \qquad \text{(Cambio de índice)}\]
   \begin{proof}\leavevmode
-    \begin{enumerate}[label=\Roman*)]
-      \item Si $a>b$,
+    \begin{enumerate}[label=\roman*)]
+      \item Por el cambio de límites 1 se tiene que 
       \begin{align*}
-        \sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) = 0 = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr)
+        \sum_{n=a}^{b}f\bigl(m+ n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m+ (n- c)\bigr)
       \end{align*}
-      \item Si $a=b$,
+      \item Por el cambio de límites 2 se tiene que
       \begin{align*}
-        \sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) &= f(n) + g(n) = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr)
+        \sum_{n=a}^{b}f\bigl(m-n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m-(n- c)\bigr)
       \end{align*}
-      \item Si $b>a$,
-      \begin{enumerate}[label=\roman*)]
-        \item Se comprueba para $b=a+1$,
-        \begin{align*}
-          \sum_{n=a}^{a+1} \Bigl(f(n) + g(n)\Bigr) &= \Bigl(f(a) + g(a)\Bigr) + \sum_{n=a+1}^{a+1} \Bigl(f(n) + g(n)\Bigr)\\
-          &= f(a) + g(a) + \Bigl(f(a+1) + g(a+1)\Bigr)\\
-          &= \Bigl(f(a) + f(a+1)\Bigr) + \Bigl(g(a) + g(a+1)\Bigr) && \text{Asociatividad (de la suma)}\\
-          &= \Biggl(f(a) + \sum_{n=a+1}^{a+1} f(n)\Biggr) + \Biggl(g(a) + \sum_{n=a+1}^{a+1} g(n)\Biggr)\\
-          &= \sum_{n=a}^{a+1} f(n) + \sum_{n=a}^{a+1} g(n)
-        \end{align*}
-        \item Supongamos que se verifica para $b=a+k$, con $k\in \N$, es decir, suponemos que
-        \begin{align*}
-          \sum_{n=a}^{a+k} \Bigl(f(n) + g(n)\Bigr) &= \sum_{n=a}^{a+k} f(n) + \sum_{n=a}^{a+k} g(n)
-        \end{align*}
-        \item Notemos que
-        \begin{align*}
-          \sum_{n=a}^{a+k+1} \Bigl(f(n) + g(n)\Bigr) &= \Bigl(f(a+k+1) + g(a+k+1)\Bigr) + \sum_{n=a}^{a+k} \Bigl(f(n) + g(n)\Bigr)\\
-          &= f(a+k+1) + g(a+k+1) + \sum_{n=a}^{a+k} f(n) + \sum_{n=a}^{a+k} g(n) && \text{Hip. Inducción}\\
-          &= \Biggl(f(a+k+1) + \sum_{n=a}^{a+k} f(n)\Biggr) + \Biggl(g(a+k+1) + \sum_{n=a}^{a+k} g(n)\Biggr)\\
-          &= \sum_{n=a}^{a+k+1} f(n) + \sum_{n=a}^{a+k+1} g(n)
-        \end{align*}
-      \end{enumerate}
     \end{enumerate}
   \end{proof}
-  
-  \textbf{Corolario:} \begin{enumerate}[label=\roman*)]  
-    \item \[s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr)\]
-    \begin{proof}
-      \begin{align*}
-        s\cdot \sum_{n=a}^{b} f(n) + t\cdot \sum_{n=a}^{b} g(n) &= \sum_{n=a}^{b} \Bigl(s\cdot f(n)\Bigr) + \sum_{n=a}^{b} \Bigl(t\cdot g(n)\Bigr) && \text{Distributividad}\\
-        &= \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr) && \text{Asociatividad} \qedhere
-      \end{align*}
-    \end{proof}
-    \item \[\sum_{n=a}^{b} f(n) - \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(f(n) - g(n)\Bigr)\]
-    \begin{proof}
-      \begin{align*}
-        \sum_{n=a}^{b} f(n) - \sum_{n=a}^{b} g(n) &= \sum_{n=a}^{b} f(n) + (-1)\sum_{n=a}^{b} g(n)\\
-        &= \sum_{n=a}^{b} \Bigl(f(n) + (-1)\cdot g(n)\Bigr)\\
-        &= \sum_{n=a}^{b} \Bigl(f(n) - g(n)\Bigr) \qedhere
-      \end{align*}
-    \end{proof}
-  \end{enumerate}
 
-  \item Sea $s\in \Z$, si $s<j<s+1$, entonces $j\notin \Z$.
-  \begin{proof} Supongamos que $j\in \Z$. Tenemos tres casos:
-    \begin{enumerate}[label=\Roman*)]
-      \item Si $j\in \set{0}$, tenemos que $0<s+1$, de donde sigue que $s+1\in \N$, por definición (de $\Z$), pero como $s<0$, obtenemos $s+1<1$, lo que es una contradicción, pues todo número natural es mayor o igual a 1.
-      \textbf{Nota:} Se asume que la suma es cerrada en $\Z$, pues la hipótesis únicamente exige que $s\in \Z$, pero no que $s+1\in \Z$. El lector debería verificar este hecho.
-      \item Si $j\in\N$, tenemos tres casos para $s$:
-      \begin{enumerate}[label=\roman*)]
-        \item Si $s=0$, sigue que $s=0<j<1=s+1$, pero esto es una contradicción, pues todo número natural es mayor o igual a 1.
-        \item Si $s\in \N$, por el corolario (i) de (e) de LE8, es una contradicción.
-        \item Si $-s\in \N$, se tiene que $-s>0$, por lo que $s<0$, de done sigue que $s+1<1$, pero $j<s+1$ y por transitividad, $j<1$, lo que es una contradicción.
-      \end{enumerate}
-      \item Si $-j\in \N$, sigue que $-j>0$, por lo que $j<0$, y por transitividad, $s<0$, de esto sigue que $s\neq 0$ y $s\notin \N$, por lo que $-s\in \N$. Como $s<j$ y $j<s+1$, sigue que $-j<-s$ y $-(s+1)=-s-1<-j$; de este modo, $-s-1<-j<-s$, con $-s, -j\in \N$, pero se contradice el corolario (ii) de (e) de LE8.
-    \end{enumerate}
-    En cualquier caso $j\notin \Z$.
-  \end{proof}
+  \textbf{Nota:} El lector encontrará que en ocasiones, en lugar de utilizar este teorema simplemente se trabaja con susbsituciones sobre el índice, por ejemplo:
+
+  \begin{align*}
+    \sum_{i=1}^{n} (i-1) &= \sum_{j=0}^{n-1} j && \text{donde $j=i-1$}
+  \end{align*}
 
   \item Si $s\leq j\leq t$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Partir la suma)}\]
   
@@ -3026,7 +3155,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
         &= f(a+k+1) + \sum_{n=0}^{k} f(a+k-n) && \text{Hip. Ind.}\\
         &= f\bigl(a+k-(-1)\bigr) + \sum_{n=0}^{k} f(a+k-n)\\
         &= \sum_{n=-1}^k f(a+k-n) && \text{Definición (de sumatoria)}\\
-        &= \sum_{n=-1+(1)}^{k+(1)} f\bigl(a+k-(n-1)\bigr) && \text{Cambio de índice 2}\\
+        &= \sum_{n=-1+(1)}^{k+(1)} f\bigl(a+k-(n-1)\bigr) && \text{Cambio de índice}\\
         &= \sum_{n=0}^{k+1} f(a+k+1-n)
       \end{align*}
       
@@ -3035,6 +3164,11 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
+  \bfit{Corolario:} \[\sum_{n=0}^{b}f(n) = \sum_{n=0}^{b} f(b-n)\]
+
+  \begin{proof}\leavevmode
+    La porposición se verifica por el teorema para $a=0$.
+  \end{proof}
 
     
   \end{enumerate}
@@ -3053,7 +3187,21 @@ En la definición     \[
   f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ a<b.
  \end{array} \right. \]
 
-Se observa que, estrictamente, se abusa de la notación; pues si tenemos enteros $a,b\in \Z$ tales que $a<b$, hemos definido $\sum_{n=a}^{b} f(n) = f(a) + \sum_{n=a+1}^{b}f(n)$; el lector notará que del lado izquierdo de esta igualdad $n=a$ pero del lado derecho $n=a+1$, es decir, se emplea la misma letra $n$ para números enteros distintos, lo que resulta útil en este caso ya que la definición de sumatoria está dada \textit{recursivamente} (en términos de sí misma), sin embargo, de manera minuciosa (y pedante), se podría reescribir, para $b>a$, como $\sum_{n=a}^{b}f(n) = f(a) + \sum_{n+1=a+1}^{b}f(n+1)$, pero en cada iteración tendríamos que cambiar el índice (inferior) y, con ello, la variable a evaluar, lo que llegaría a ser laborioso, especialmente si se requiere de expresar múltiples iteraciones; por ello, se acude al abuso mencionado.
+Se observa que, estrictamente, se abusa de la notación; pues si tenemos enteros $a,b\in \Z$ tales que $a<b$, hemos definido $\sum_{n=a}^{b} f(n) = f(a) + \sum_{n=a+1}^{b}f(n)$; el lector notará que del lado izquierdo de esta igualdad $n=a$ pero del lado derecho $n=a+1$, es decir, se emplea el mismo símbolo $n$ para números enteros distintos, lo que resulta útil en este caso ya que la definición de sumatoria está dada \textit{recursivamente}, sin embargo, de manera minuciosa (y pedante), se podría reescribir, para $b>a$, como $\sum_{n=a}^{b}f(n) = f(a) + \sum_{n+1=a+1}^{b}f(n+1)$, pero en cada iteración tendríamos que cambiar el índice (inferior) y, con ello, la variable a evaluar, lo que llegaría a ser laborioso, especialmente si se requiere de expresar múltiples iteraciones; por ello, se acude al abuso mencionado.
+
+\textbf{Extensión}
+
+Usualmente, el alcance de una suma se extiende al primer símbolo de suma o resta que no está entre paréntesis o es parte de algún término más amplio (por ejemplo, en el numerador de una fracción), de manera que:
+
+\begin{align*}
+  \sum_{i=1}^{n} i^2 + 1 = \left(\sum_{i=1}^{n}i^2\right) + 1 = 1 + \sum_{i=1}^{n} i^2 \neq \sum_{i=1}^{n} \bigl(i^2+1\bigr)
+\end{align*}
+
+dado que esto puede resultar confuso, generalmente es más seguro encerrar el argumento de la sumatoria entre paréntesis (como en la segunda forma arriba) o mover los términos finales al principio (como en la tercera forma arriba). Una excepción (a la confusión) es cuando se suman dos sumas, como en
+
+\begin{align*}
+  \sum_{i=1}^{n} i^2 + \sum_{i=1}^{n^2} i = \left(\sum_{i=1}^{n}i^2\right) + \left(\sum_{i=1}^{n^2}i\right)
+\end{align*}
 
 \section*{Valor absoluto}
 
