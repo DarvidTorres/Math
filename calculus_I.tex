@@ -2597,13 +2597,13 @@ de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
 
   \textbf{Observación:} Si $a=b$, entonces
   \begin{align*}
-    \sum_{n=a}^{b} f(n) &= f(n) && \text{(Límites iguales)}
+    \sum_{n=a}^{b} f(n) &= f(n) && \text{(Índices iguales de la sumatoria)}
   \end{align*}
 
   \begin{proof}\leavevmode
-    Sea $m\in \Z$,
+    Sea $m\in \R$,
   \begin{align*}
-    \sum_{n=m}^{m} f(n) &= f(m=n) + \sum_{n=m+1}^{m} f(n) && \text{Definición}\\
+    \sum_{{\color{magenta}n}=m}^{m} f({\color{magenta}n}) &= f(m={\color{magenta}n}) + \sum_{{\color{cyan}n}=m+1}^{m} f({\color{cyan}n}) && \text{Definición}\\
     &= f(n) + 0 && \text{Definición}\\
     &= f(n) && \qedhere
   \end{align*}
@@ -2623,53 +2623,53 @@ de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
     El lector notará también que la suma del primer termino hasta el ultimo es
     igual a la suma del ultimo hasta el primero, es decir,
 
-    \textbf{Observación:} Sea $a,b\in \R$ arbitrarios pero fijos tales que $a\leq b$, entonces
+    \textbf{Proposición:} Sea $(b-a)\in \N$ arbitrario pero fijo, entonces
     \begin{align*}
-      \sum_{n=a}^{b} f(n) = f(b) + \sum_{n=a}^{b-1} f(n) && \text{(Suma inversa)}
+      \sum_{n=a}^{b} f(n) = f(b) + \sum_{n=a}^{b-1} f(n) && \text{(Sumatoria inversa)}
     \end{align*}
 
     \begin{proof}\leavevmode
       \begin{enumerate}[label=\Roman*)]
-        \item Si $b-a=0$,
-        \begin{align*}
-          \sum_{n=a}^{b} f(n) &= f(n)\\
-          &= f(b) && \text{$n=a=b$}\\
-          &= f(b) + 0\\
-          &= f(b) + \sum_{n=a}^{a-1} f(n) && \text{$a-1<a$}\\
-          &= f(b) + \sum_{n=a}^{b-1} f(n)
-        \end{align*}
-
-        \item Para el caso $a<b$, procedemos por inducción sobre $b-a$.
-        \begin{enumerate}[label=\roman*)]
-          \item Se verifica para $b=a+1$,
+%        \item Si $b-a\in \set{0}$,
+%        \begin{align*}
+%          \sum_{n=a}^{b} f(n) &= f(b) && \text{Definición}\\
+%          &= f(b) + 0\\
+%          &= f(b) + \sum_{n=a}^{a-1} f(n) && \text{$a-1<a$}\\
+%          &= f(b) + \sum_{n=a}^{b-1} f(n)
+%        \end{align*}
+          \item Se verifica para $(b-a)=1$,
           \begin{align*}
-            \sum_{n=a}^{b=a+1} f(n) &= f(a) + \sum_{n=a+1}^{a+1} f(n) && \text{Definición}\\
+            \sum_{n=a}^{a+1} f(n) &= f(a) + \sum_{n=a+1}^{a+1} f(n) && \text{Definición}\\
             &= f(a) + \sum_{n=b}^{b} f(n) && \text{Hipótesis}\\
             &= f(a) + f(b)\\
-            &= f(b) + f(a)\\
             &= f(b) + \sum_{n=a}^{a} f(n)\\
-            &= f(b) + \sum_{n=a}^{b-1} f(n) && \text{$b=a+1 \Rightarrow b-1=a$}
+            &= f(b) + \sum_{n=a}^{b-1} f(n) && \text{$b-a=1 \Rightarrow b-1=a$}
           \end{align*}
 
-          \item Supongamos que se verifica para $b=a+k$, con $k\in \N$; es decir, suponemos que
+          \item Supongamos que si $b-a=k$, entonces
           \begin{align*}
-            \sum_{n=a}^{a+k} f(n) &= f(b) + \sum_{n=a}^{b-1} f(n)
+            \sum_{n=a}^{b} f(n) &= f(b) + \sum_{n=a}^{b-1} f(n)
           \end{align*}
 
-          \item Notemos que
+          \item Notemos que si $b-a=k+1$, se tiene que
           \begin{align*}
-            \sum_{n=a}^{b=a+k+1} f(n) &= f(a) + \sum_{n=a+1}^{a+k+1} f(n) && \text{Definición}\\
-            &= f(a) + f(b) + \sum_{n=a+1}^{a+k+1} f(n)\\
-            &= f(a+k+1) + f(b) + \sum_{n=a}^{b-1} f(n)\\
-            &= f(a+k+1) + \sum_{n=a}^{a+k} f(n)\\
+            \sum_{n=a}^{a+k+1} f(n) &= f(a) + \sum_{n=a+1}^{a+k+1} f(n) && \text{Definición}\\
+            &= f(a) + f(a+k+1) + \sum_{n=a+1}^{a+k} f(n) && \text{Hip. Ind.}\\
+            &= f(a+k+1) + f(a) + \sum_{n=a+1}^{a+k} f(n)\\
+            &= f(a+k+1) + \sum_{n=a}^{a+k} f(n) && \text{Definición}\\
             &= f(b) + \sum_{n=a}^{b-1} f(n)
           \end{align*}
         \end{enumerate}
-
-        Pendiente
-        
-      \end{enumerate}
     \end{proof}
+
+    \textbf{Observación:} Sea $a,b\in \R$.
+    \begin{itemize}
+      \item Si $b=a$, entonces $b-a\in \set{0}$, y por índices iguales de la sumatoria se tiene que $\sum_{n=a}^{b} f(n) = f(n)$.
+      \item Por definición, si $b<a$ se tiene que $\sum_{n=a}^{b} f(n) =0$, que en particular se verifica si $b-a\in \set{-n:n\in \N}$.
+    \end{itemize}
+    A partir de esta observación y de la Sumatoria Inversa se tiene que
+
+    \textbf{Definición:} Si $(b-a)\in \Z$, entonces
 
     \[\sum_{n=a}^{b} f(n) \defined \left\{
     \begin{array}{@{}l@{\thinspace}l}
@@ -2678,9 +2678,7 @@ de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
       f(b) + \sum_{n=a}^{b-1} f(n) &,  \ \text{si}  \ a<b.
     \end{array} \right. \]
 
-\textbf{Nota:} El lector debería verificar que ambas definiciones son equivalentes. \textit{Hint:} 
-
-Dado que contamos con una definición que puede ser planteada de dos maneras, podemos utilizar cualquiera (de las dos) a conveniencia, pues siempre se obtiene el mismo resultado; por ejemplo:
+    De este modo, siempre que la \textit{distancia} entre los límites de la sumatoria sea un número entero, contaremos con una definición alternativa para la sumatoria. Dado que contamos con una definición que puede ser planteada de dos maneras, podemos utilizar cualquiera (de las dos) a conveniencia; por ejemplo:
 \begin{center}
   \begin{minipage}[c]{.5\linewidth}
     \begin{align*}
@@ -3181,19 +3179,11 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
 Considere el siguiente argumento planteado por un estudiante, y decida si está o no de acuerdo:
 
-En la definición     \[
-  \sum_{n=a}^{b} f(n) \defined \left\{
- \begin{array}{@{}l@{\thinspace}l}
-  0 &,  \ \text{si}  \ a>b\\
-  f(n) &,  \ \text{si}  \ a=b\\
-  f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ a<b.
- \end{array} \right. \]
-
-Se observa que, estrictamente, se abusa de la notación; pues si tenemos enteros $a,b\in \Z$ tales que $a<b$, hemos definido $\sum_{n=a}^{b} f(n) = f(a) + \sum_{n=a+1}^{b}f(n)$; el lector notará que del lado izquierdo de esta igualdad $n=a$ pero del lado derecho $n=a+1$, es decir, se emplea el mismo símbolo $n$ para números enteros distintos, lo que resulta útil en este caso ya que la definición de sumatoria está dada \textit{recursivamente}, sin embargo, de manera minuciosa (y pedante), se podría reescribir, para $b>a$, como $\sum_{n=a}^{b}f(n) = f(a) + \sum_{n+1=a+1}^{b}f(n+1)$, pero en cada iteración tendríamos que cambiar el índice (inferior) y, con ello, la variable a evaluar, lo que llegaría a ser laborioso, especialmente si se requiere de expresar múltiples iteraciones; por ello, se acude al abuso mencionado.
+Para números reales $a$ y $b$ tales que $a<b$, hemos definido $\sum_{n=a}^{b} f(n) = f(a) + \sum_{n=a+1}^{b}f(n)$; el lector notará que del lado izquierdo de esta igualdad $n=a$ pero del lado derecho $n=a+1$, es decir, se emplea el mismo símbolo $n$ para números enteros distintos, lo que resulta útil en este caso ya que la definición de sumatoria está dada \textit{recursivamente}; sin embargo, de manera minuciosa (y pedante), se podría reescribir como $\sum_{n=a}^{b}f(n) = f(a) + \sum_{n+1=a+1}^{b}f(n+1)$, pero en cada iteración tendríamos que cambiar el índice (inferior) y, con ello, la variable a evaluar, lo que llegaría a ser laborioso, especialmente si se requiere de expresar múltiples iteraciones; por ello, se acude al abuso mencionado.
 
 \textbf{Extensión}
 
-Usualmente, el alcance de una suma se extiende al primer símbolo de suma o resta que no está entre paréntesis o es parte de algún término más amplio (por ejemplo, en el numerador de una fracción), de manera que:
+Usualmente, el alcance de una suma se extiende hasta el primer símbolo de suma o resta que no está entre paréntesis o que no es parte de algún término más amplio (por ejemplo, en el numerador de una fracción), de manera que:
 
 \begin{align*}
   \sum_{i=1}^{n} i^2 + 1 = \left(\sum_{i=1}^{n}i^2\right) + 1 = 1 + \sum_{i=1}^{n} i^2 \neq \sum_{i=1}^{n} \bigl(i^2+1\bigr)
