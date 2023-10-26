@@ -13,6 +13,8 @@
 \usepackage{tcolorbox} % Frame box
 \usepackage{array,multirow}
 
+\usepackage{xcolor} % package to color brackets. https://latex-tutorial.com/color-latex/
+
 \usepackage{relsize} %% to reduce size of contradition symbol
 
 \renewcommand*{\proofname}{\textbf{Demostración:}}
@@ -67,7 +69,7 @@
 
 \part*{Axiomas de campo}
 
-Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A los elementos de este conjunto los llamaremos números reales. Este conjunto está dotado con dos operaciones binarias: suma: $+$ y multiplicación: $\cdot$ 
+Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A los elementos de este conjunto los llamaremos números reales. Este conjunto está dotado con dos operaciones binarias: $+$ (suma) y $\cdot$ (multiplicación). 
 %\begin{enumerate}[label=\roman*)]
 % \item Suma: $+$
 % \item Multiplicación: $\cdot$
@@ -93,7 +95,7 @@ Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A
 %Las suma y multiplicación de números reales satisfacen los siguientes \textbf{axiomas}:
 %
 \section*{Axiomas de la suma}
-La suma $+$ satisface las siguientes propiedades:
+La suma satisface las siguientes propiedades:
 \begin{enumerate}%[label=S\arabic*., start=0]
  \item Cerradura (de la suma): Si $x,y\in \R$, entonces $x+y \in \R$.
  %La suma es cerrada. Esto significa que si $x,y\in \R$, se verifica que $x+y \in \R$.
@@ -2538,13 +2540,13 @@ Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es p
 
 \section*{Notación sigma}
 
-\textbf{Definición:} Sea $|b-a|\in \Z$ y $f: \R\to \R$, definimos a la sumatoria como sigue:
+\textbf{Definición:} Sea $a,b\in \R$ y $f: \R\to \R$, definimos a la sumatoria como sigue:
 
 \[
-    \sum_{n=a}^{b} f(n) \defined \left\{
+    \sum_{{\color{teal}n}=a}^{b} f({\color{teal}n}) \defined \left\{
     \begin{array}{@{}l@{\thinspace}l}
-    f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ b\geq a.\\
-    0 &,  \ \text{si}  \ b<a
+    f(a) + \sum_{{\color{violet}n}=a+1}^{b} f({\color{violet}n}) &,  \ \text{si}  \ b\geq a\\
+    0 &,  \ \text{si}  \ b<a.
     \end{array} \right. \]
 
 Decimos que
@@ -2552,7 +2554,7 @@ Decimos que
   \item $n$ es el índice,
   \item $a$ el límite inferior,
   \item $b$ el límite superior,
-  \item $f(n)$ el elemento típico (o genérico),
+  \item $f(n)$ el elemento típico (o genérico)
 \end{itemize}
 de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
 
@@ -2562,16 +2564,16 @@ de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
   \item \begin{align*}
     \sum_{i=2}^{5} i^2 &= (2)^2 + \sum_{i=3}^{5} i^2\\
     &= 4 + (3)^2 + \sum_{i=4}^{5} i^2\\
-    &= 4 + 9 + (4)^2 + \sum_{i=5}^{5} i^2 && \text{(*)}\\
-    &= 4 + 9 + 16 + (5)^2 + \sum_{i=6}^{5} i^2\\
+    &= 4 + 9 + (4)^2 + \sum_{i={\color{magenta}5}}^{{\color{magenta}5}} i^2 && (*)\\
+    &= 4 + 9 + 16 + ({\color{magenta}5})^2 + \sum_{i=6}^{5} i^2\\
     &= 4 + 9 + 16 + 25 + 0\\
     &= 54
   \end{align*}
 
   \item \begin{align*}
     \sum_{m=-3}^{-1} 2m  &= 2(-3) + \sum_{m=-2}^{-1} 2m\\
-    &= -6 + 2(-2) + \sum_{m=-1}^{-1} 2m  && \text{(**)}\\
-    &= -6 + -4 + 2(-1) + \sum_{m=0}^{-1} 2m\\
+    &= -6 + 2(-2) + \sum_{m={\color{magenta}-1}}^{{\color{magenta}-1}} 2m  && (\dag)\\
+    &= -6 + -4 + 2({\color{magenta}-1}) + \sum_{m=0}^{-1} 2m\\
     &= -6 + -4 + -2 + 0\\
     &= -12
   \end{align*}
@@ -2579,8 +2581,8 @@ de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
   \item \begin{align*}
     \sum_{n=0}^{3} 2^n &= 2^0 + \sum_{n=1}^{3} 2^n\\
     &= 1 + 2^1 + \sum_{n=2}^{3} 2^n\\
-    &= 1 + 2 + \sum_{n=3}^{3} 2^n  && \text{(***)}\\
-    &= 1 + 2 + 2^3 + \sum_{n=4}^{3} 2^n\\
+    &= 1 + 2 + \sum_{n={\color{magenta}3}}^{{\color{magenta}3}} 2^n  && (\ddag)\\
+    &= 1 + 2 + 2^{\color{magenta}3} + \sum_{n=4}^{3} 2^n\\
     &= 1 + 2 + 8 + 0\\
     &= 11
   \end{align*}
@@ -2591,7 +2593,7 @@ de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
 \end{enumerate}
 
 
-  El lector notará que, en el caso en que los límites inferior y superior son iguales (*, **, y ***), la imagen de la sumatoria es el elemento típico \textit{evaluado} en el índice, es decir,
+  El lector notará que, en el caso en que los límites inferior y superior son iguales ($*, \dag, \ddag$), la imagen de la sumatoria es el elemento típico \textit{evaluado} en el índice, es decir,
 
   \textbf{Observación:} Si $a=b$, entonces
   \begin{align*}
