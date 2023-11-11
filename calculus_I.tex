@@ -2590,6 +2590,14 @@ de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
   \item \begin{align*}
     \sum_{j=0}^{-1} j &= 0
   \end{align*}
+
+  \item \begin{align*}
+    \sum_{n=1}^{3} \frac{k}{n+1} &= \frac{k}{(1)+1} + \sum_{n=2}^{3} \frac{k}{n+1}\\
+    &= \frac{k}{2} + \frac{k}{(2)+1} + \sum_{n=3}^{3} \frac{k}{n+1}\\
+    &= \frac{k}{2} + \frac{k}{3} + \frac{k}{(3)+1} + \sum_{n=4}^{3} \frac{k}{n+1}\\
+    &= \frac{k}{2} + \frac{k}{3} + \frac{k}{4} + 0\\
+    &= \frac{k}{2} + \frac{k}{3} + \frac{k}{4}\\
+  \end{align*}
 \end{enumerate}
 
 
@@ -2821,6 +2829,14 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
       \end{proof}
     \end{enumerate}
 
+  \item \[\sum_{n=a}^{b} \left(\sum_{m=s}^{t} f()\right)\]
+
+  \item \[\sum_{n=a}^{b} \left(\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)\right) = \left(\sum_{n=a}^{b} f(n)\right)  \cdot \left(\sum_{m=s}^{t} g(m)\right)\]
+
+  \item \[\sum_{n=a}^{b} \Bigl(f(n) \cdot  g(n)\Bigr) \neq \left(\sum_{n=a}^{b} f(n)\right)  \cdot \left(\sum_{n=a}^{b} g(n)\right)\]
+  
+
+
   \item Sea $c\in \R$, si $a\leq b$, entonces \begin{align*}
     \sum_{n=a}^b c &= (b-a+1)c
   \end{align*}
@@ -2846,7 +2862,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
-  \bfit{Nota:} En esta proposición se restringe que $a\leq b$, pues si $a>b$, se tiene que $\sum_{n=a}^{b} c = 0 \neq (b-a+1)c$; únicamente en el caso que $c=0$, se cumpliría la igualdad con $a>b$.
+  \textbf{Nota:} En esta proposición se restringe que $a\leq b$, pues si $a>b$, se tiene que $\sum_{n=a}^{b} c = 0 \neq (b-a+1)c$; únicamente en el caso que $c=0$, se cumpliría la igualdad con $a>b$.
 
   \textbf{Definición:} $(b-a+1)$ es el número de \textit{iteraciones}, \textit{cíclos}, o \textit{sumandos} de la sumatoria $\sum_{n=a}^{b} f(n)$.
 
@@ -2952,7 +2968,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
       \item Notemos que
       \begin{align*}
-        \sum_{n=a}^{a+k+1} f(\ell+n) &= f\bigl(\ell+ (a+k+1)\bigr) + \sum_{n=a}^{a} f(\ell+ n)\\
+        \sum_{n=a}^{a+k+1} f(\ell+n) &= f\Bigl(\ell+ (a+k+1)\Bigr) + \sum_{n=a}^{a} f(\ell+ n)\\
         &= f(\ell+a+k+1) + f(\ell+a)\\
         &= f(\ell+a+k+1) + f(\ell +(a+c)-c)\\
         &= f\bigl(\ell+(a+k+1+c)-c\bigr) + \sum_{n=a+c}^{a+c} f(\ell+ n-c)\\
