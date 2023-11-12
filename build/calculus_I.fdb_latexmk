@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1699591480 "d:/Git/Math/Math/calculus_I.tex" "build/calculus_I.pdf" "calculus_I" 1699591485 0
-  "build/calculus_I.aux" 1699591485 70 2ff3828ef0ac1df69bc01413ec15edce "pdflatex"
+["pdflatex"] 1699760173 "d:/Git/Math/Math/calculus_I.tex" "build/calculus_I.pdf" "calculus_I" 1699760181 0
+  "build/calculus_I.aux" 1699760180 70 2ff3828ef0ac1df69bc01413ec15edce "pdflatex"
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1679269123 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1679270936 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1679270170 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -162,8 +162,8 @@
   "c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1679278189 4662804 131178ccc9b2f4741a821427ce79dce1 ""
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1679278595 7883418 08ec303e6a47a1f98614bfe0520f7d86 ""
   "c:/texlive/2022/texmf.cnf" 1679278146 713 e69b156964470283e0530f5060668171 ""
-  "calculus_I.tex" 1699591477 197960 7b1c6c28207da13f18136e844b6e4e1f ""
-  "d:/Git/Math/Math/calculus_I.tex" 1699591477 197960 7b1c6c28207da13f18136e844b6e4e1f ""
+  "calculus_I.tex" 1699760169 198092 0a8db391f309b0c8b7c2125ff56c1495 ""
+  "d:/Git/Math/Math/calculus_I.tex" 1699760169 198092 0a8db391f309b0c8b7c2125ff56c1495 ""
   (generated)
   "build/calculus_I.aux"
   "build/calculus_I.log"
