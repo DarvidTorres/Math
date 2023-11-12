@@ -2743,6 +2743,11 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
+  \bfit{Corolario:} \[\sum_{n=p}^{q} g(n) \cdot \sum_{n=s}^{t} h(n) = \sum_{n=s}^{t} h(n) \cdot \sum_{n=p}^{q} g(n)\]
+  \begin{proof}\leavevmode
+    Como $\Bigl(\sum_{n=p}^{q} g(n)\Bigr)\in \R$ y $\Bigl(\sum_{n=s}^{t} h(n)\Bigr)\in \R$, igualdad se verifica por la conmutatividad de la multiplicación en $\R$.
+  \end{proof}
+
   \item \[\sum_{n=a}^{b} f(n) + \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(f(n) + g(n)\Bigr) \qquad \text{(Asociatividad de la sumatoria)}\]
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\Roman*)]
@@ -2832,13 +2837,30 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \item \[\sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) = \sum_{m=s}^{t} \left(\sum_{n=a}^{b} f(n,m)\right)\]
   
   \begin{enumerate}[label=\Roman*)]
-    \item Si 
+    \item Si $b=a$ y $s=t$
+    \item Si $b=a$ y $s<t$
+    \item Si $b<a$ y $s=t$
+    \item Si $b<a$ y $s<t$
   \end{enumerate}
   
   \item \[\sum_{n=a}^{b} \left(\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)\right) = \left(\sum_{n=a}^{b} f(n)\right)  \cdot \left(\sum_{m=s}^{t} g(m)\right)\]
+  
+  \begin{proof}\leavevmode
+    Notemos que en la sumatoria $\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)$, $f(n)$ es constante, por lo que
+    \begin{align*}
+      \sum_{n=a}^{b} \left(\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)\right) &= \sum_{n=a}^{b} \left( f(n) \sum_{m=s}^{t} g(m)\right)
+    \end{align*}
+
+    De la misma manera, en la sumatoria (de índice $n$) $\sum_{n=a}^{b} \Bigl( f(n) \sum_{m=s}^{t} g(m)\Bigr)$, se tiene que $\sum_{m=s}^{t} g(m)$ es constante, por lo que
+    \begin{align*}
+      \sum_{n=a}^{b} \left( f(n) \sum_{m=s}^{t} g(m)\right) &= \left(\sum_{m=s}^{t} g(m)\right) \cdot \left(\sum_{n=a}^{b} f(n)\right)\\
+      &= \left(\sum_{n=a}^{b} f(n)\right) \cdot \left(\sum_{m=s}^{t} g(m)\right)
+    \end{align*}
+  \end{proof}
 
   \item \[\sum_{n=a}^{b} \Bigl(f(n) \cdot  g(n)\Bigr) \neq \left(\sum_{n=a}^{b} f(n)\right)  \cdot \left(\sum_{n=a}^{b} g(n)\right)\]
   
+  \item \[\sum_{n=a}^{b} \frac{f(n)}{g(n)} \neq \frac{\sum_{n=a}^{b} f(n)}{\sum_{n=a}^{b}g(n)}\]  
 
 
   \item Sea $c\in \R$, si $a\leq b$, entonces \begin{align*}
