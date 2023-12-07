@@ -2826,6 +2826,13 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \begin{enumerate}[label=\Roman*)]
     \item Si $b\geq a$ y $s\geq t$
     
+    Se tiene que
+    \begin{align*}
+      \sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) &= \\
+      &= \sum_{m=s}^{t}
+      \left(\sum_{n=a}^{b} f(n,m)\right)
+    \end{align*}
+    
     \item Si $b=a$ y $s<t$
     \item Si $b<a$ y $s=t$
     \item Si $b<a$ y $s<t$
