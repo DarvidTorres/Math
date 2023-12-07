@@ -2823,24 +2823,25 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
   \item \[\sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) = \sum_{m=s}^{t} \left(\sum_{n=a}^{b} f(n,m)\right)\]
   
-  \begin{enumerate}[label=\Roman*)]
-    \item Si $b=a$ y $s=t$
-    
-    \begin{proof}\leavevmode
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $b=a$ y $s=t$
+      
       \begin{align*}
         \sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) &= \sum_{n=a}^{a} \left(\sum_{m=s}^{s} f(n,m)\right)\\
-        &= \sum_{n=a}^{a} \left(f(n,s)\right)\\
+        &= \sum_{n=a}^{a} f(n,s)\\
         &= f(a,s)\\
+        &= \sum_{n=a}^{a} f(n,s)
       \end{align*}
-    \end{proof}
-    
-    \item Si $b>a$ y $s=t$
-    \item Si $b=a$ y $s>t$
-    \item Si $b>a$ y $s>t$    
-    \item Si $b=a$ y $s<t$
-    \item Si $b<a$ y $s=t$
-    \item Si $b<a$ y $s<t$
-  \end{enumerate}
+      
+      \item Si $b>a$ y $s=t$
+      \item Si $b=a$ y $s>t$
+      \item Si $b>a$ y $s>t$    
+      \item Si $b=a$ y $s<t$
+      \item Si $b<a$ y $s=t$
+      \item Si $b<a$ y $s<t$
+    \end{enumerate}
+  \end{proof}
   
   \item \[\sum_{n=a}^{b} \left(\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)\right) = \left(\sum_{n=a}^{b} f(n)\right)  \cdot \left(\sum_{m=s}^{t} g(m)\right)\]
   
