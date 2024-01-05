@@ -1,0 +1,49 @@
+\ProvidesPackage{preamble}
+
+\documentclass[11pt]{article}
+
+\usepackage[top=0.5in,bottom=0.5in,right=0.5in,left=0.5in]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage[spanish]{babel}
+\usepackage{amsfonts, amssymb, amsmath, amsthm, enumitem}
+\usepackage{mathtools} %\coloneqq command
+\usepackage{braket}
+%\usepackage[spanish]{babel}
+\usepackage{adjustbox}
+\usepackage{nicefrac} % for Elegant fractions in one line https://tex.stackexchange.com/questions/128496/elegant-fractions-in-one-line/128498
+\usepackage{physics} % for nice brackets \qty(...) \qty[...] \qty{...} https://www.reddit.com/r/LaTeX/comments/7qkbfv/redefine_left_right/
+\usepackage{tcolorbox} % Frame box
+\usepackage{array,multirow}
+
+\usepackage{xcolor} % package to color brackets. https://latex-tutorial.com/color-latex/
+
+\usepackage{relsize} %% to reduce size of contradition symbol
+
+\renewcommand*{\proofname}{\textbf{Demostración:}}
+
+%Conjuntos de números
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+
+%Shorter comands
+\newcommand{\contradiction}{\mathsmaller{\stackrel{\mathlarger{\nabla}}{\boldsymbol{\boldsymbol{\circ}}}}}
+\newcommand{\defined}{\coloneqq}
+\newcommand{\bfit}[1]{\textbf{\textit{#1}}}
+\let\epsilon\varepsilon
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\let\set\Set
+\let\union\cup
+\let\propersubset\subset
+\let\subset\subseteq
+\let\intersection\cap
+
+\setlist[enumerate]{font=\bfseries} %bold all lists$
+\setlist[itemize]{topsep=0pt}
+
+\setlength{\parindent}{0pt} %no indent for the document
+\setlength{\parskip}{1em} %add space between paragraphs
+\pagestyle{empty}
