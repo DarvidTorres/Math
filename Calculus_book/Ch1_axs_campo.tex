@@ -1,0 +1,1134 @@
+\part*{Axiomas de campo}
+
+Existe un conjunto llamado conjunto de los números reales, denotado por $\R$. A los elementos de este conjunto los llamaremos números reales. Este conjunto está dotado con dos operaciones binarias: $+$ (suma) y $\cdot$ (multiplicación). 
+%\begin{enumerate}[label=\roman*)]
+% \item Suma: $+$
+% \item Multiplicación: $\cdot$
+%\end{enumerate}
+%\vspace{-0.5cm}
+%\begin{center}
+%\noindent\begin{minipage}[r]{5.5cm}
+%\begin{align*}
+% \text{Suma} \ + : \R \times \R &\to \R\\
+% (m,n) &\mapsto m+n
+%\end{align*}
+%\end{minipage}%
+%\begin{minipage}[l]{6.5cm}
+%\begin{align*}
+% \text{y} \qquad \text{Multiplicación} \ \cdot : \R \times \R &\to \R\\
+% (m,n) &\mapsto m \cdot n
+%\end{align*}
+%\end{minipage}
+%\end{center}
+%
+%La notación anterior denota la cerradura de estas operaciones, es decir, que para cuales quiera dos números reales $(m,n)$, la suma y multiplicación son números reales, $(m+n)\in \R$ y $(m\cdot n)\in \R$.
+%
+%Las suma y multiplicación de números reales satisfacen los siguientes \textbf{axiomas}:
+%
+\section*{Axiomas de la suma}
+La suma satisface las siguientes propiedades:
+\begin{enumerate}%[label=S\arabic*., start=0]
+ \item Cerradura (de la suma): Si $x,y\in \R$, entonces $x+y \in \R$.
+ %La suma es cerrada. Esto significa que si $x,y\in \R$, se verifica que $x+y \in \R$.
+
+ \item Conmutatividad (de la suma): Si $x, y\in \R$, entonces $x+y =y+x$.
+ %La suma es conmutativa. Esto significa que si $x, y\in \R$, se verifica que $x+y =y+x$.
+
+ \item Asociatividad (de la suma): Si $x, y, z\in \R$, entonces $(x+y)+z = x+(y+z)$.
+ %La suma es asociativa. Esto significa que si $x, y, z\in \R$, se verifica que $(x+y)+z = x+(y+z)$.
+ %
+ \item Neutro aditivo (o cero): $\exists 0\in \R$ tal que si $x\in \R$, entonces $x+0=x$.
+ %Existe un número real llamado neutro aditivo (o cero), denotado por $0$, tal que si $x\in \R$, entonces $x+0=x$.
+ %Existe un número real llamado elemento neutro para la suma o cero, denotado por $0$, el cual satisface la siguiente condición: $ x+0=x,\forall x \in \R$
+ \item Inverso aditivo: Si $x\in \R$, entonces $\exists (-x)\in \R$ tal que $x+(-x)=0$.
+ %Si $x\in \R$ y $x\neq 0$, entonces existe un número real llamado inverso aditivo de $x$, denotado por $-x$, tal que $x+(-x)=0$.
+ %Para cada número real $x$ existe un número real llamado inverso aditivo de $x$, denotado por $-x$ (menos $x$); la propiedad que caracteriza a este elemento es $x + (-x) = 0$.
+\end{enumerate}
+
+\begin{tcolorbox}
+  \subsection*{Necesidad de justificar}
+  
+  \textit{Proposición}: Si $a$, $b$ y $c$ son números reales tales que $a+c=b+c$, entonces $a=b$. El siguiente es un esbozo de la prueba propuesta por un estudiante: \begin{align*}
+   a+c &= b+c\\
+   a &= b+c-c\\
+   a &= b \end{align*}
+  Aunque el resultado anterior no es incorrecto, debemos justificar cada igualdad a partir de las propiedades conocidas con el fin de preservar rigurosiad, al menos en la primera parte de este curso. Esto ayudará a que el lector se famirialice con el uso de las propiedades básicas de los números reales, antes de proceder a realizar pruebas más elaboradas.
+\end{tcolorbox}
+
+
+
+\subsection*{Lista de Ejercicios 1}
+
+Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+ \item Si $a+b=a$, entonces $b=0$. (Unicidad del neutro aditivo).
+ \begin{proof}
+  \begin{align*}
+  b &= b + 0 && \text{Neutro aditivo}\\
+  &= b + \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
+  &= (b+a) + (-a) && \text{Asociatividad}\\
+  &= (a+b) + (-a) && \text{Conmutatividad}\\
+  &= a + (-a) && \text{Hipótesis}\\
+  &= 0 && \text{Neutro aditivo} \qedhere
+  \end{align*}
+ \end{proof}\vspace{-1em}
+ %\item Demuestre que el elemento neutro para la suma es único. (Unicidad del neutro aditivo).
+ %\begin{proof} 
+ %Supongamos que existen 0 y $\tilde{0}$ números reales tales que $a+0 = a$ y $a+\tilde{0} = a$. Luego, \begin{align*}
+ % 0 &=a+(-a) && \text{Inverso aditivo}\\
+ % &=\left( a+\tilde{0} \right)+\left(-a\right) && \text{Hipótesis}\\
+ % &=\left( \tilde{0}+a \right)+\left(-a\right) && \text{Conmutatividad}\\
+ % &=\tilde{0} + \bigl( a + \left(-a \right)\bigr) && \text{Asociatividad}\\
+ % &=\tilde{0} + 0 && \text{Inverso aditivo}\\
+ % &=\tilde{0} && \text{Neutro aditivo}\qedhere
+ % \end{align*} 
+ %\end{proof}
+ 
+ \item Si $a+b=0$, entonces $b=-a$. (Unicidad del inverso aditivo).
+ \begin{proof}
+ \begin{align*}
+   b &= b + 0 && \text{Neutro aditivo}\\
+   &= b + \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
+   &= (b+a) + (-a) && \text{Asociatividad}\\
+   &= (a+b) + (-a) && \text{Conmutatividad}\\
+   &= 0 + (-a) && \text{Hipótesis}\\
+   &= (-a) + 0 && \text{Conmutatividad}\\
+   &= -a && \text{Neutro aditivo} \qedhere
+  \end{align*}
+ \end{proof}
+ %\item Demuestre que el inverso aditivo de cada número real es único. (Unicidad del inverso aditivo).
+ %\begin{proof} 
+ % Sea $a\in \R$ arbitrario pero fijo. Supongamos que existen $-a$ y $-\tilde{a}$ números reales tales que $a + \left(-a\right) = 0$ y $a + \left(- \tilde{a}\right) = 0$. Notemos que:
+ %\begin{align*}
+ %-a &= -a+0 && \text{Neutro aditivo}\\
+ %&= 0+\left(-a\right) && \text{Conmutatividad}\\
+ %&= \bigl(a+\left(-\tilde{a} \right)\bigr)+\left(-a\right) && \text{Hipótesis}\\
+ %&= \bigl(\left(-\tilde{a} \right)+a\bigr)+\left(-a\right) && \text{Conmutatividad}\\
+ %&= \left(-\tilde{a} \right)+\bigl(a+\left(-a\right)\bigr) && \text{Asociatividad}\\
+ %&= \left(-\tilde{a} \right)+0 && \text{Inverso aditivo}\\
+ %&= -\tilde{a} && \text{Neutro aditivo} \qedhere
+ %\end{align*} 
+ %\end{proof}
+ \textbf{Nota:} Demostrar proposiciones para números reales arbitrarios (cualesquiera elementos de $\R$), nos permite reutilizar las \textit{formas} como esquema para otras pruebas. Por ejemplo, la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, nos permite sustituir $x$ y $y$ por cuales quiera números reales, como en el ejemplo que sigue:
+ 
+ \bfit{Corolario:} $-(-a)=a$. (Inverso aditivo del inverso aditivo).
+ \begin{proof}
+ \begin{align*}
+  0 &= a + (-a) && \text{Inverso aditivo}\\
+  &= (-a) + a && \text{Conmutatividad}
+ \end{align*} Por la unicidad del inverso aditivo sigue que $a=-(-a)$.
+ \end{proof}
+ \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, hemos tomado $x=(-a)$ y $y=a$.
+
+ \item $-0 = 0$. (Cero es igual a su inverso aditivo).
+ \begin{proof}
+  \begin{align*}
+   0 &= 0 + (-0) && \text{Inverso aditivo}\\
+   &= (-0) + 0 && \text{Conmutatividad}\\
+   &= -0 && \text{Neutro aditivo} \qedhere
+  \end{align*}
+ \end{proof}
+ %\begin{proof} 
+ % Por la propiedad del neutro aditivo tenemos que $0+0=0$. Además, el inverso aditivo de $0$ satisface que $0 + (-0) = 0$. Debido a que el inverso aditivo de cada número real es único, de la igualdad anterior sigue que $-0 = 0$. \qedhere 
+ %\end{proof}
+%
+ \item Si $a\neq 0$, entonces $-a\neq 0$.
+ \begin{proof} 
+  Si $-a=0$, se verifica que  \begin{align*}
+   a &= a + 0 && \text{Neutro aditivo}\\
+   &= a + (-a) && \text{Hipótesis}\\
+   &= 0 && \text{Inverso aditivo}
+  \end{align*} Por contraposición, si $a\neq 0$, entonces $-a\neq 0$.
+  %Otra forma:
+  %Sea $a$ un número real distinto de cero tal que $-a=0$. El inverso aditivo satisface que $a+(-a)=0$, y de la hipótesis, $a+0=0$. De esta igualdad sigue que $a=0$, lo que contradice nuestro supuesto inicial, por lo que que $-a\neq 0$.
+ \end{proof}
+
+ \item $-(a+b)=(-a)+(-b)$. (Distribución del signo).
+
+ \begin{proof} 
+  \begin{align*}
+   0 &= 0 + 0 && \text{Neutro aditivo} \\
+   &= \bigl(a+(-a)\bigr) + \bigl(b + (-b)\bigr) && \text{Inverso aditivo} \\
+   &= a + \Bigl((-a)+ \bigl(b + (-b)\bigr)\Bigr) && \text{Asociatividad} \\
+   &= a + \Bigl( \bigl((-a)+b\bigr) +(-b)\Bigr) && \text{Asociatividad} \\
+   &= a + \Bigl( \bigl(b+(-a)\bigr) +(-b)\Bigr) && \text{Conmutatividad} \\
+   &= a + \Bigl( b + \bigl( (-a)+(-b) \bigr) \Bigr) && \text{Asociatividad} \\
+   &= (a+b) + \bigl((-a)+ (-b)\bigr) && \text{Asociatividad}
+   \end{align*}
+   Por la unicidad del inverso aditivo, $(-a)+ (-b)=-(a+b)$.  
+ \end{proof}
+
+ \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, hemos tomado $x=(a+b)$ y $y=(-a)+ (-b)$.
+
+ \bfit{Corolario:} $-\bigl(a+(-b)\bigr)=b+(-a)$. \begin{proof} 
+  \begin{align*}
+  -\bigl(a+(-b)\bigr)&= (-a) + \bigl(-(-b)\bigr) &&\text{Distribución del signo} \\
+  &= (-a) + b &&\text{Inverso aditivo del inverso aditivo} \\
+  &= b +(-a) &&\text{Conmutatividad} \qedhere
+  \end{align*} 
+ \end{proof}
+
+  \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la distribución del signo, $-(x+y)=(-x)+(-y)$, hemos tomado $x=a$ y $y=(-b)$.
+
+ \item Si $a+c=b+c$, entonces $a=b$. (Ley de cancelación de la suma).
+ \begin{proof} 
+ \begin{align*}
+  a &= a+0 && \text{Neutro aditivo}\\
+  &= a+ \bigl(c+(-c)\bigr) && \text{Inverso aditivo}\\
+  &= (a+c) + (-c) && \text{Asociatividad}\\
+  &= (b+c) + (-c) && \text{Hipótesis}\\
+  &= b + \bigl(c+(-c)\bigr) && \text{Asociatividad}\\
+  &= b + 0 && \text{Inverso aditivo}\\
+  &= b &&\text{Neutro aditivo} \qedhere
+ \end{align*} 
+\end{proof}
+
+\textbf{Observación:} En el segundo paso de la demostración, podíamos sustituir $0$ por $a+(-a)$ o por $b+(-b)$ (o por cualquier suma igual a $0$). sin embargo, no en todos los casos resultaría útil. Observamos pues que para demostrar proposiciones matemáticas no basta con conocer las propiedades que satisfacen los \textit{objetos} (en este caso números reales) con los que trabajamos; también requerimos intuir su uso apropiado. La experiencia indica que esta intuición se adquiere con la práctica. El lector debería verificar qué ocurre si sustituimos $0$ por $a+(-a)$ o $b+(-b)$ en el segundo paso de esta prueba.
+
+\textbf{Nota:} Si el contexto es claro, enunciaremos esta proposición como ley de cancelación.
+\end{enumerate}
+
+
+
+\section*{Axiomas de la multiplicación}
+La multiplicación $\cdot$ satisface las siguientes propiedades:
+
+\begin{enumerate}[start=6]%[label=M\arabic*., start=0]
+ \item Cerradura (de la multiplicación): Si $x,y\in \R$, entonces $x\cdot y\in \R$.
+ %La multiplicación es cerrada. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que $m\cdot n\in \R$.
+
+ \item Conmutatividad (de la multiplicación): Si $x,y\in \R$, entonces $x\cdot y = y\cdot x$.
+ %La multiplicación es conmutativa. Esto significa que para cualesquiera números reales $m$ y $n$ se verifica que: $ m \cdot n = n \cdot m $.
+
+ \item Asociatividad (de la multiplicación): Si $x,y,z\in \R$, entonces $(x\cdot y) \cdot z = x \cdot (y\cdot z)$.
+ %La multiplicación es asociativa. Esto significa que para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n \cdot l) = (m \cdot n) \cdot l $.
+
+ \item Neutro multiplicativo (o uno): $\exists 1\in \R$ y $1\neq 0$ tal que si $x\in \R$, entonces $x\cdot 1 = x$.
+ %Existe un número real distinto de cero, llamado elemento identidad para la multiplicación o uno, denotado por $1$, que satisface la siguiente condición: $ m \cdot 1 = m,\forall m \in \R $.
+
+ \item Inverso multiplicativo: Si $x\in \R$ y $x\neq 0$, entonces $\exists x^{-1}\in \R$ tal que $x\cdot x^{-1}=1$.
+ %Para cada número real $m$ distinto de cero existe un número real llamado inverso multiplicativo de $m$, denotado por $m^{-1}$, este elemento tiene la siguiente propiedad: $m \cdot m^{-1} = 1$.
+\end{enumerate}
+
+\subsection*{Lista de Ejercicios 2}
+
+Sean $a$, $b$, y $c$ números reales, demuestre lo siguiente:
+ \begin{enumerate}[label=\alph*)]
+ \item Si $a\neq 0$ y $a\cdot b = a$, entonces $b=1$. (Unicidad del neutro multiplicativo).
+ \begin{proof} 
+ \begin{align*}
+  b &= b \cdot 1 && \text{Neutro multiplicativo}\\
+  &= b \cdot (a\cdot a^{-1}) && \text{Inverso multiplicativo}\\
+  &= (b\cdot a) \cdot a^{-1} && \text{Asociatividad}\\
+  &= (a\cdot b) \cdot a^{-1} && \text{Conmutatividad}\\
+  &= a \cdot a^{-1} && \text{Hipótesis}\\
+  &= 1 && \text{Inverso multiplicativo} \qedhere
+ \end{align*} 
+ \end{proof}
+ \textbf{Nota:} La prueba requiere que $a\neq 0$, pues de otro modo (si $a=0$), no podemos garantizar que $b=1$. Veremos la prueba de este hecho más adelante.
+ %Demuestre que el elemento identidad para la multiplicación es único. (Unicidad del neutro multiplicativo).
+ %
+ %\begin{proof} 
+ % Supongamos que existen $1$ y $\tilde{1}$ números reales tales que $a\cdot 1=a$ y $a\cdot\tilde{1}=a$. Luego,
+ %\begin{align*}
+ %1 &= a \cdot a^{-1} && \text{Inverso multiplicativo}\\
+ %&= \left( a \cdot \tilde{1} \right) \cdot a^{-1} && \text{Por hipótesis}\\
+ %&= \left( \tilde{1} \cdot a \right) \cdot a^{-1} && \text{Conmutatividad}\\
+ %&= \tilde{1} \cdot \left( a \cdot a^{-1} \right) && \text{Asociatividad}\\
+ %&= \tilde{1} \cdot 1 && \text{Inverso multiplicativo}\\
+ %&= \tilde{1} && \text{Neutro multiplicativo}\qedhere
+ %\end{align*}  
+ %\end{proof}
+ 
+ \item Si $a\neq 0$ y $a\cdot b =1$, entonces $b=a^{-1}$. (Unicidad del inverso multiplicativo).
+ \begin{proof} 
+ \begin{align*}
+  b &= b \cdot 1 && \text{Neutro multiplicativo}\\
+  &= b \cdot (a\cdot a^{-1}) && \text{Inverso multiplicativo}\\
+  &= (b\cdot a) \cdot a^{-1} && \text{Asociatividad}\\
+  &= a^{-1} \cdot (a\cdot b) && \text{Conmutatividad}\\
+  &= a^{-1} \cdot 1 && \text{Hipótesis}\\
+  &= a^{-1} && \text{Neutro multiplicativo} \qedhere
+ \end{align*} 
+ \end{proof}
+ \textbf{Nota:} La prueba requiere que $a\neq 0$, pues de otro modo no podemos garantizar la existencia de su inverso multiplicativo.
+ %Demuestre que el inverso multiplicativo de cada número real distinto de cero es único. (Unicidad del inverso multiplicativo).
+ %
+ %\begin{proof} Supongamos que existen $a^{-1}$ y $\tilde{a}^{-1}$ números reales, distintos de cero, tales que $a \cdot a^{-1} = 1$ y $a \cdot \tilde{a}^{-1} = 1$. Luego,
+ % \begin{align*}
+ %  a^{-1} &= a^{-1} \cdot 1 && \text{Neutro multiplicativo} \\
+ %  &= a^{-1} \cdot \left(a \cdot \tilde{a}^{-1} \right) && \text{Por hipótesis} \\
+ %  &= \left( a^{-1} \cdot a \right) \cdot \tilde{a} ^{-1} && \text{Asociatividad} \\
+ %  &= \left(a \cdot a^{-1} \right) \cdot \tilde{a}^{-1} && \text{Conmutatividad} \\
+ %  &= 1 \cdot \tilde{a}^{-1} && \text{Inverso multiplicativo} \\
+ %  &= \tilde{a}^{-1} \cdot 1 && \text{Conmutatividad} \\
+ %  &= \tilde{a}^{-1} && \text{Neutro multiplicativo}\qedhere
+ %  \end{align*}  
+ %\end{proof}
+ 
+ \item $1=1^{-1}$. (Uno es inverso multiplicativo).
+ \begin{proof} 
+ \begin{align*}
+  1 &= 1 \cdot 1^{-1} && \text{Inverso multiplicativo}\\
+  &= 1^{-1} \cdot 1 && \text{Conmutatividad}\\
+  &= 1^{-1} && \text{Neutro multiplicativo} \qedhere
+ \end{align*} 
+ \end{proof}
+ \textbf{Nota:} Por el axioma del neutro multiplicativo sabemos que $1\neq 0$, por lo que existe su inverso multiplicativo.
+ %\begin{proof}
+ % Por axioma del neutro multiplicativo tenemos que $1\cdot 1 = 1$ y $1\neq 0$, por lo que existe $1^{-1}$ tal que $1 \cdot 1^{-1}=1$. Por unicidad del inverso multiplicativo, de la igualdad anterior sigue que $1=1^{-1}$.
+ %\end{proof}
+
+
+ 
+ \item Si $c\neq 0$ y $a\cdot c=b\cdot c$, entonces $a=b$. (Ley de cancelación de la multiplicación).
+ \begin{proof} 
+  \begin{align*}
+   a &= a\cdot 1 && \text{Neutro multiplicativo}\\
+   &= a \cdot \bigl(c\cdot c^{-1}\bigr) && \text{Inverso multiplicativo}\\
+   &= (a \cdot c) \cdot c^{-1} && \text{Asociatividad}\\
+   &= (b \cdot c) \cdot c^{-1} && \text{Hipótesis}\\
+   &= b \cdot \bigl(c\cdot c^{-1}\bigr) && \text{Asociatividad}\\
+   &= b \cdot 1 && \text{Inverso multiplicativo}\\
+   &= b && \text{Neutro multiplicativo}\qedhere
+   \end{align*} 
+ \end{proof}
+ \textbf{Observación:} La prueba requiere que $c\neq 0$, pues de otro modo no podemos garantizar la existencia de su inverso multiplicativo.
+ %Para esta proposición requerimos que $c\neq 0$, ya que de caber la posibilidad de que $c=0$, no tendríamos garantía de que $a=b$. El lector debería verificar este hecho. (Ej. $2\cdot 0 = 1 \cdot 0$).
+
+ \textbf{Nota:} Si el contexto es claro, enunciaremos esta proposición como ley de cancelación.
+ \end{enumerate}
+ 
+\section*{Propiedad distributiva}
+
+Introducimos la propiedad que nos permite relacionar las operaciones de suma $+$ y multiplicación $\cdot$
+
+\begin{enumerate}[start=11]%[label=P.D.]
+ \item Distribución (de la multiplicación sobre la suma): Si $x,y,z\in \R$, entonces $x\cdot (y+z)=x\cdot y+ x\cdot z$.
+ %Distribución de la multiplicación sobre la suma. Para cualesquiera números reales $m$, $n$ y $l$ se verifica que: $ m \cdot (n+l)=m \cdot n+m \cdot l $.
+\end{enumerate}
+
+\begin{tcolorbox}
+  \subsection*{Ejemplo de argumento circular}
+%
+%En este apartado utilizaremos un ejemplo para puntualizar la falta de rigor en la que pueden caer los estudiantes; dichas puntualizaciones pueden parecer exageradas y el lector podría considerar que el autor está siendo \textit{pedante} en el uso sintáctico de los axiomas, pero la idea es proveer al estudiante de un uso riguroso de la formalización matemática.
+%
+Proposición: $b\cdot 0 = 0$. El siguiente es un esbozo de la prueba propuesta por un estudiante:
+% \begin{align*}
+% b \cdot 0 &= b\cdot \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
+% &= ab + (-ab) && \text{Distribución}\\
+% &= 0 && \text{Inverso aditivo}
+%\end{align*}
+%De inmediato podemos señalar la \textbf{ambigüedad} en el uso de la notación en el segundo paso. ¿Qué debemos entender por $-ab$? Por como fue enunciado, se pretendía que $-ab$ fuera el inverso aditivo de $ab$, es decir, se intuye que $-ab=-(ab)$, pero al enunciar la propiedad distributiva se asumió que $-ab=(-a)\cdot b$, es decir, se supone la igualdad $-(ab)=(-a)\cdot b$, pero esta requiere demostración.
+%
+%Asimismo, al utilizar la propiedad distributiva se está empleando conmutatividad no enunciada, pues la síntaxis de la distribución indica que el número a la izquierda de la multiplicación debe ser \textit{distribuido} a la izquierda de los componentes de la suma, es decir, $b\cdot \bigl(a+(-a)\bigr)=b\cdot a+ b\cdot (-a)$ por la propiedad distributiva, y luego $b\cdot a+ b\cdot (-a)=a\cdot b+ (-a)\cdot b$, por conmutatividad.
+%
+%Al considerar el comentario anterior, el estudiante reescribe el esbozo como sigue:
+ \begin{align*}
+ b\cdot 0 &= b\cdot \bigl(a+ (-a)\bigr) && \text{Inverso aditivo}\\
+ &= b\cdot a + b\cdot (-a) && \text{Distribución}\\
+ &= a\cdot b + (-a) \cdot b && \text{Conmutatividad}\\
+ &= 0 && \text{¿?}
+\end{align*}
+Pero se requiere probar que $a\cdot b+(-a)\cdot b=0$. Observemos ahora el siguiente esbozo para esta prueba:  \begin{align*}
+ a\cdot b+ (-a) \cdot b &= b\cdot a + b\cdot (-a) && \text{Conmutatividad}\\
+ &= b\cdot \bigl(a+(-a)\bigr) && \text{Distribución}\\
+ &= b\cdot 0 && \text{Inverso aditivo}\\
+ &= 0 && \text{¿?}
+\end{align*}
+No obstante, se ha propuesto un \textbf{argumento circular}, por lo que no es posible verificar ninguna de las proposiciones anteriores. Requerimos pues, depender únicamente de axiomas o proposiciones previamente probadas para continuar.
+\end{tcolorbox}
+
+
+
+\subsection*{Lista de Ejercicios 3 (LE3)}
+
+Sean $a$ y $b$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+
+ \item $a \cdot 0 = 0$. (Multiplicación por $0$).
+ \begin{proof} 
+  \begin{align*}
+   a\cdot0&=a\cdot0+0 && \text{Neutro aditivo}\\
+   &=a\cdot0+\bigl(a+\left(-a\right)\bigr) && \text{Inverso aditivo}\\
+   &=a\cdot0+\bigl(a\cdot1+\left(-a\right)\bigr) && \text{Neutro multiplicativo}\\
+   &=\left(a\cdot0+a\cdot1\right)+\left(-a\right) && \text{Asociatividad}\\
+   &=\bigl(a\cdot\left(0+1\right)\bigr)+\left(-a\right) && \text{Distribución}\\
+   &=a\cdot1+\left(-a\right) && \text{Neutro aditivo}\\
+   &=a+\left(-a\right) && \text{Neutro multiplicativo}\\
+   &=0 && \text{Inverso aditivo} \qedhere
+  \end{align*} 
+ \end{proof}
+
+ \bfit{Corolario:} Si $a\neq 0$, entonces $a^{-1}\neq 0$. (Cero no es inverso multiplicativo).
+ \begin{proof} 
+  Sea $a\neq 0$. Si $a^{-1}=0$, se verifica que \begin{align*}
+   1 &= a\cdot a^{-1} && \text{Inverso multiplicativo}\\
+   &= a\cdot 0 && \text{Hipótesis}\\
+   &= 0 && \text{Multiplicación por $0$}
+  \end{align*} Pero esto contradice la propiedad del neutro multiplicativo. Por tanto, si $a\neq 0$, entonces $a^{-1}\neq 0$.
+ \end{proof}
+
+ \textbf{Nota:} El axioma del neutro multiplicativo no implica directamente que $0$ no pueda ser inverso multiplicativo de algún número real, únicamente indica que si $x\in \R$ y $x\neq 0$, entonces $\exists x^{-1}$. El axioma tampoco especifica que para $0$ el inverso multiplicativo no existe, sin embargo, si suponemos su existencia, es decir, si $\exists 0^{-1}\in \R$ tal que $0\cdot 0^{-1}=1$, tenemos por la multiplicación por $0$ que $0=1$, lo que es una contradicción.
+
+ \item Si $ a \cdot b = 0 $, entonces $a=0$ o $b=0$ (disyunción).
+ \begin{proof} Demostraremos primero que si $a\neq 0$ y $b\neq 0$, entonces $a\cdot b\neq 0$.
+ 
+ Sea $a\neq 0$ y $b\neq 0$. Notemos que \begin{align*}
+  a &= a\cdot 1 && \text{Neutro multiplicativo}\\
+  &= a\cdot \bigl(b\cdot b^{-1}\bigr) && \text{Inverso multiplicativo}\\
+  &= (a\cdot b) \cdot b^{-1} && \text{Asociatividad}
+ \end{align*}
+ Por hipótesis $a\neq 0$, por lo que $0\neq (a\cdot b) \cdot b^{-1}$. Además, $b^{-1}\neq 0$, pues cero no es inverso multiplicativo.
+ 
+ Si $a\cdot b=0$, por la multiplicación por cero, $(a\cdot b) \cdot b^{-1}=0$, lo que es una contradicción. Por tanto, si $a\neq 0$ y $b\neq 0$, entonces $a\cdot b\neq 0$. Finalmente, por contraposición, si $a\cdot b =0$, entonces $a=0$ o $b=0$.
+ \end{proof}
+ %\begin{proof} 
+ %Supongamos que $a$ es distinto de $0$.
+ %\begin{align*}
+ %b &= b \cdot 1	&& \text{Neutro multiplicativo} \\
+ %&= b \cdot  \left(a \cdot a^{-1}  \right) 	&& \text{Inverso multiplicativo} \\
+ %&= \left(b\cdot a\right)  \cdot a^{-1}	&& \text{Asociatividad} \\
+ %&= \left(a\cdot b\right)  \cdot a^{-1}	&& \text{Conmutatividad} \\
+ %&= 0 \cdot a^{-1}	&& \text{Por hipótesis}\\
+ %&= a^{-1} \cdot 0	&& \text{Conmutatividad}\\
+ %&= 0 && \text{Multiplicación por $0$} \qedhere
+ %\end{align*} 
+ %\end{proof}
+ %\textbf{Nota:} Al utilizar la expresión $A$ o $B$ nos referimos a la disyunción (lógica).%, es decir, la proposición es verdadera si únicamente $a=0$, únicamente $b=0$ o ambos $a$ y $b$ son iguales a cero.
+
+ \item Si $a\neq 0$ y $b\neq 0$, entonces $(a \cdot b)^{-1}=a^{-1} \cdot b^{-1}$. (Multiplicación de inversos multiplicativos).
+ \begin{proof} 
+ \begin{align*}
+  1 &= b\cdot b^{-1} && \text{Inverso multiplicativo}\\
+  &= (b\cdot 1) \cdot b^{-1} && \text{Neutro multiplicativo}\\
+  &= \bigl(b\cdot (a\cdot a^{-1})\bigr) \cdot b^{-1} && \text{Inverso multiplicativo}\\
+  &= (b\cdot a) \cdot \bigl(a^{-1} \cdot b^{-1}\bigr) && \text{Asociatividad}\\
+  &= (a\cdot b) \cdot \bigl(a^{-1} \cdot b^{-1}\bigr) && \text{Conmutatividad}
+ \end{align*} Por la unicidad del inverso multiplicativo $a^{-1} \cdot b^{-1}=(a\cdot b)^{-1}$.
+ \end{proof}
+ \textbf{Nota:} En esta demostración está implícito que $\exists (a\cdot b)^{-1}\in \R$, lo cual es válido pues hemos probado que si $a\neq 0$ y $b\neq 0$, entonces $a\cdot b\neq 0$, por lo que existe su inverso multiplicativo.
+ %\begin{proof} 
+ % \begin{align*}
+ % && \quad \left(a \cdot b \right) \cdot  \left(a^{-1} \cdot b^{-1}  \right)	&=	 \left( \left(a \cdot b\right) \cdot a^{-1}  \right) \cdot b^{-1}  	&& \text{Asociatividad}\\
+ % && \quad &=	 \left( \left(b\cdot a \right) \cdot a^{-1}  \right) \cdot b^{-1}  	&& \text{Conmutatividad}\\
+ % && \quad &=	 \Bigl(b\cdot  \left(a \cdot a^{-1}\right) \Bigr) \cdot b^{-1}	&& \text{Asociatividad}\\
+ % && \quad &=	 \left(b\cdot 1 \right) \cdot b^{-1}	&& \text{Inverso multiplicativo}\\
+ % && \quad &=	b\cdot b^{-1}	&& \text{Neutro multiplicativo}\\
+ % && \quad &=	1	&& \text{Inverso multiplicativo}
+ % \end{align*}
+ % Sigue que $\left(a^{-1} \cdot b^{-1} \right)$ es inverso multiplicativo de $\left( a \cdot b\right)$, y por la unicidad del inverso multiplicativo, sigue que $\left(a^{-1} \cdot b^{-1} \right) = \left( a \cdot b\right)^{-1}$. 
+ %\end{proof}
+
+
+
+ \item Si $a\neq 0$, entonces $\left( a^{-1} \right)^{-1}=a$.
+ \begin{proof} 
+  \begin{align*}
+   1 &= a\cdot a^{-1} && \text{Inverso multiplicativo}\\
+   &= a^{-1} \cdot a && \text{Conmutatividad}
+  \end{align*} Por la unicidad del inverso multiplicativo sigue que $a=\bigl(a^{-1}\bigr)^{-1}$.
+ \end{proof}
+ \textbf{Nota:} En esta demostración está implícito que $\exists\left( a^{-1} \right)^{-1}\in \R$, lo cual es válido pues cero no es inverso multiplicativo, es decir, tenemos $a^{-1}\neq 0$, por lo que existe su inverso multiplicativo.
+ 
+ Al emplear la \textit{forma} de la unicidad del inverso multiplicativo, $x\neq 0 \land x\cdot y=1 \Longrightarrow y = x^{-1}$, hemos tomado $x=a^{-1}$ y $y=a$.
+ %\begin{proof} 
+ % El inverso multiplicativo de $a$ satisface que $a\cdot a^{-1}=1$, y por conmutatividad, $a^{-1} \cdot a=1$, de esta igualdad se sigue que $a$ es inverso multiplicativo de $a^{-1}$. Similarmente, el inverso multiplicativo de $a^{-1}$ satisface que $ a^{-1} \cdot \left( a^{-1} \right)^{-1} =1$, y por la unicidad del inverso multiplicativo, sigue que $\left( a^{-1} \right)^{-1}=a$.  
+ %\end{proof}
+
+ \item $(-1)=(-1)^{-1}$. (Menos uno es inverso multiplicativo).
+ 
+ \begin{proof} Primero probaremos la existencia de $(-1)^{-1}$.
+  
+ Si $-1=0$, tenemos que $1+(-1)=1+0$, y por neutro aditivo $1+(-1)=1$, pero el inverso aditivo satisface que $1+(-1)=1$, de donde sigue que $1=0$, lo que contradice la propiedad del neutro multiplicativo. Por tanto, $-1\neq 0$, por lo que $\exists (-1)^{-1}\in \R$. Luego,
+
+ \vspace{-1em} \begin{align*}
+  0 &= 1 + (-1) && \text{Inverso aditivo}\\
+  &= (-1)\cdot (-1)^{-1} + (-1) && \text{Inverso multiplicativo}\\
+  &= (-1)\cdot (-1)^{-1} + (-1) \cdot 1 && \text{Neutro multiplicativo}\\
+  &= (-1) \cdot \Bigl((-1)^{-1} + 1\Bigr) && \text{Distribución}
+ \end{align*} Como $-1\neq 0$, sigue que $(-1)^{-1} + 1=0$, y por conmutatividad $1+(-1)^{-1}=0$. Finalmente, por unicidad del inverso aditivo, $(-1)^{-1}=-1$.
+ \end{proof}
+ \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, hemos tomado $x=1$ y $y=(-1)^{-1}$.
+
+ \item $(-a) \cdot b = -(a \cdot b) = a \cdot (-b)$. (Multiplicación por inverso aditivo).% (Ley de los signos: menos por más/más por menos es menos).
+ \begin{proof} \leavevmode
+ \begin{center}\vspace{-2em}
+ \begin{minipage}[t]{.5\linewidth}
+  \begin{align*}
+   0 &= b\cdot 0 && \text{Multiplicación por $0$}\\
+   &= b \cdot \bigl(a+(-a)\bigr) && \text{Inverso aditivo}\\
+   &= b\cdot a + b\cdot (-a) && \text{Distribución}\\
+   &= a\cdot b + (-a) \cdot b && \text{Conmutatividad}
+  \end{align*}
+ \end{minipage}%
+ \begin{minipage}[t]{.5\linewidth}
+  \begin{align*}
+   0 &= a\cdot 0 && \text{Multiplicación por $0$}\\
+   &= a \cdot \bigl(b+(-b)\bigr) && \text{Inverso aditivo}\\
+   &= a\cdot b + a\cdot (-b) && \text{Distribución}
+  \end{align*}
+ \end{minipage}
+ \end{center} Por unicidad del inverso aditivo, se verifica que $(-a)\cdot b = -(a\cdot b)=a\cdot (-b)$.
+ \end{proof}%
+ \textbf{Nota:} En esta demostración, al emplear la \textit{forma} de la unicidad del inverso aditivo, $x+y=0 \Longrightarrow y=-x$, hemos tomado, $x=a\cdot b$ y $y=(-a)\cdot b$, por una parte y $y=a\cdot (-b)$, por la otra.
+ %Otra forma:
+ %\begin{proof} 
+ %\begin{align*}
+ % (-a) \cdot b &= \bigl( \left(-1 \right) \cdot a \bigr) \cdot b && \text{Multiplicación por ($-1$)}\\
+ % &= (-1) \cdot (a \cdot b) && \text{Asociatividad}\\
+ % &= -(a \cdot b) && \text{Multiplicación por ($-1$)} && \text{(*)}\\
+ % &= -(b \cdot a) && \text{Conmutatividad}\\
+ % &= (-1) \cdot (b\cdot a) && \text{Multiplicación por ($-1$)}\\
+ % &= \bigl((-1)\cdot b\bigr) \cdot a && \text{Asociatividad}\\
+ % &= a\cdot \bigl((-1)\cdot b\bigr) && \text{Conmutatividad}\\
+ % &= a \cdot (-b) && \text{Multiplicación por ($-1$)} && \text{(**)}
+ % \end{align*} Por (*) y (**) tenemos que $ (-a) \cdot b = -(a \cdot b) = a \cdot (-b)$.
+ %\end{proof}
+ %\textbf{Nota:} A partir de esta demostración evitamos la ambigüedad que se mencionó en el apartado \textit{Una nota sobre rigurosidad}.
+
+ \bfit{Corolario:}
+ \begin{enumerate}[label=\roman*)]
+  \item $(-a)\cdot(-b)=a\cdot b$.% (Ley de los signos: menos por menos es más).
+  %\vspace{-1em}
+  \begin{proof} 
+   \begin{align*}
+    \qquad (-a)\cdot (-b) &= a \cdot \bigl(-(-b)\bigr) && \text{Multiplicación por inverso aditivo}\\
+    \qquad &= a \cdot b && \text{Inverso aditivo del inverso aditivo} \qedhere
+   \end{align*} 
+  \end{proof}
+  \textbf{Nota:} Al emplear la \textit{forma} de la multiplicación por inverso aditivo, $(-x)\cdot y = x \cdot (-y)$, hemos tomado $x=a$ y $y=(-b)$.
+  %Otra demostración
+  %\begin{proof} 
+  % \begin{align*}
+  %  (-a) \cdot (-b) &= (-a) \cdot \bigl( (-1) \cdot b \bigr) && \text{Multiplicación por ($-1$)}\\
+  %  &= \bigl( (-a) \cdot (-1) \bigr) \cdot b && \text{Asociatividad}\\
+  %  &= \bigl( (-1) \cdot (-a) \bigr) \cdot b && \text{Conmutatividad}\\
+  %  &= -(-a) \cdot b && \text{Multiplicación por ($-1$)}\\
+  %  &= a \cdot b && \text{Unicidad del inverso aditivo} \qedhere
+  % \end{align*} 
+  %\end{proof}
+  %\textbf{Nota:} A las proposiciones $ (-m) \cdot n = -(m \cdot n) $ y $ (-m) \cdot (-n) = m \cdot n $, las enunciaremos como \textbf{leyes de los signos}.
+%
+  %\item $(-1) \cdot a =-a $. (Multiplicación por -1).
+%
+  %Por el teorema, $(-1)\cdot a = -(1\cdot a) = -a$.
+  %
+  %\begin{proof} 
+  % \begin{align*}
+  % 0 &= a \cdot 0 && \text{Multiplicación por $0$}\\
+  % &= a \cdot \bigl(1+(-1)\bigr) && \text{Inverso aditivo}\\
+  % &= a \cdot 1 + a \cdot (-1)  && \text{Distribución}\\
+  % &= a + a \cdot (-1)  && \text{Neutro multiplicativo}\\
+  % &= a + (-1) \cdot a  && \text{Conmutatividad}
+  % \end{align*} Sigue que $(-1) \cdot a$ es inverso aditivo de $a$, el cual es único, por lo que $(-1) \cdot a = -a$.
+  %\end{proof}
+  %\textbf{Observación:} Al multiplicar cualquier número real por ($-1$) obtenemos el inverso multiplicativo de ese número real.
+  %
+  %Otra forma de demostrar este hecho es la siguiente: \begin{align*}
+  % -a&=-a+0 && \text{Neutro aditivo} \\
+  % &=-a+a \cdot 0 && \text{Multiplicación por $0$} \\
+  % &=-a+a \cdot  \bigl( 1+ \left( -1 \right)  \bigr) && \text{Inverso aditivo} \\
+  % &=-a+ \bigl( a \cdot 1+a \cdot  \left( -1 \right)  \bigr) && \text{Distribución} \\
+  % &=-a+ \bigl( a+a \cdot  \left( -1 \right)  \bigr) && \text{Inverso aultiplicativo} \\
+  % &= \left( -a+a \right) +a \cdot  \left( -1 \right) && \text{Asociatividad} \\
+  % &=a+ \left( -a \right) +a \cdot  \left( -1 \right) && \text{Conmutatividad} \\
+  % &=0+a \cdot  \left( -1 \right) && \text{Inverso aditivo} \\
+  % &=a \cdot  \left( -1 \right) + 0 && \text{Conmutatividad} \\
+  % &=a \cdot  \left( -1 \right) && \text{Neutro aditivo} \\
+  % &= \left( -1 \right)  \cdot a && \text{Conmutatividad}
+  %\end{align*} \qed
+
+
+
+  \item $-(a^{-1})=(-a)^{-1}=(-1)\cdot a^{-1}$. (Inverso aditivo del inverso multiplicativo).
+  %\vspace{-1em}
+  \begin{proof} 
+  \begin{align*}
+  \qquad (-1)\cdot a^{-1} &= -(1\cdot a^{-1}) && \text{Multiplicación por inverso aditivo}\\
+  \qquad &= -\bigl(a^{-1}\bigr) && \text{Neutro multiplicativo}
+  \end{align*}
+  Similarmente,
+  \begin{align*}
+   -(a^{-1}) &= \bigl(-(a^{-1})\bigr) \cdot 1 && \text{Neutro multiplicativo}\\
+   &= -\Bigl(\qty(a^{-1})\cdot 1\Bigr) && \text{Multiplicación por inverso aditivo}\\
+   &= -\Bigl(a^{-1}\Bigr) && \text{Neutro multiplicativo} \qedhere
+  \end{align*}
+  \end{proof}
+  \textbf{Nota:} Al emplear la \textit{forma} de la multiplicación por inverso aditivo, $(-x)\cdot y = -(x\cdot y)$, hemos tomado $x=1$ y $y=a^{-1}$, por una parte, y $x=(a^{-1})$ y $y=1$, por la otra.
+ \end{enumerate}% casos especiales (-a)b=-ab
+
+\end{enumerate}
+
+
+
+\textbf{Notación}
+%Esta sección tiene el propósito de introducir al lector al uso de notación por cambio de \textit{etiqueta}, esto es, asignar distintos símbolos a \textit{objetos} con los que hemos trabajado, con el fin de agilizar la demostración de teoremas.
+\begin{itemize}
+\item Si $x$ y $y$ son números reales, representaremos con el símbolo $x-y$ a la suma $x+(-y)$.
+\item Si $x,y\in \R$ y $y\neq 0$, representaremos con el símbolo $ \frac{x}{y}$ al número $x \cdot y^{-1}$.
+
+Es inmediato que si $w\neq 0$, entonces $\frac{w}{w} = w\cdot w^{-1} = 1$.
+
+\item Si $x$ y $y$ son números reales, representaremos con el símbolo $xy$ a la multiplicación $x\cdot y$.
+\end{itemize}
+
+\subsection*{Lista de ejercicios 4 (LE4)}
+
+Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+ \item $\frac{a}{b}=a\cdot \frac{1}{b}$, si $b\neq 0$.% (Definición de la división).
+ \begin{proof} 
+ \begin{align*}
+  \frac{a}{b} &= a\cdot b^{-1} && \text{Notación}\\
+  &= (a\cdot 1) \cdot b^{-1} && \text{Neutro multiplicativo}\\
+  &= a\cdot \bigl(1\cdot b^{-1}\bigr) && \text{Asociatividad}\\
+  &= a\cdot \frac{1}{b} && \text{Notación} \qedhere
+ \end{align*}
+ \end{proof}
+ %\begin{proof} \begin{align*} \qquad
+ % a\cdot \frac{1}{b} &= (a\cdot 1) \cdot \frac{1}{b} && \text{Neutro multiplicativo}\\
+ % &= \bigl(a\cdot 1^{-1}\bigr) \cdot \frac{1}{b} && \text{Uno es inverso multiplicativo}\\
+ % &= \frac{a}{1} \cdot \frac{1}{b} && \text{Notación}\\
+ % &= \frac{a\cdot 1}{1\cdot b} && \text{Multiplicación de fracciones}\\
+ % &= \frac{a}{b} && \text{Neutro multiplicativo} \qedhere
+ %\end{align*}
+ %\end{proof}
+ %\begin{align*}
+ % \frac{a}{b} &= a\cdot b^{-1} && \text{Notación}\\
+ % &= a\cdot 1 \cdot 1\cdot b^{-1}&& \text{Neutro multiplicativo}\\
+ % &= a \cdot 1^{-1} \cdot 1\cdot b^{-1} && \text{Uno es inverso multiplicativo}\\
+ % &= \frac{a}{1} \cdot \frac{1}{b} && \text{Notación}\\
+ % &= \frac{a\cdot 1}{1\cdot b} && \text{Multiplicación de fracciones}\\
+ % &= \frac{a}{b} && \text{Neutro multiplicativo} \qedhere
+ %\end{align*}
+
+ \item $a \cdot \frac{c}{b} = \frac{ac}{b}$, si $b \neq 0$.
+ \begin{proof} 
+ \begin{align*}
+  a\cdot \frac{c}{b} &= a\cdot \bigl(c\cdot b^{-1}\bigr) && \text{Notación}\\
+  &= (ac) \cdot b^{-1} && \text{Asociatividad}\\
+  &= \frac{ac}{b} && \text{Notación} \qedhere
+ \end{align*}
+ \end{proof}
+ %\vspace{-1em}
+ %\begin{proof} 
+ %\begin{align*}
+ % a\cdot \frac{c}{b} &= a\cdot 1 \cdot \frac{c}{b} && \text{Neutro multiplicativo}\\
+ % &= a\cdot 1^{-1} \cdot \frac{c}{b} && \text{Uno es inverso multiplicativo}\\
+ % &= \frac{a}{1} \cdot \frac{c}{b} && \text{Notación}\\
+ % &= \frac{ac}{1\cdot b} && \text{Multiplicación de fracciones}\\
+ % &= \frac{a}{b} && \text{Neutro multiplicativo} \qedhere
+ %\end{align*}
+ %\end{proof}
+ %\begin{align*}
+ % a\cdot \frac{c}{b} &= a\cdot c \cdot \frac{1}{b} && \text{Definición de la división}\\
+ % &= a\cdot c \cdot 1 \cdot \frac{1}{b} && \text{Neutro multiplicativo}\\
+ % &= a\cdot c\cdot 1^{-1} \cdot \frac{1}{b} && \text{Uno es inverso multiplicativo}\\
+ % &= \frac{ac}{1} \cdot \frac{1}{b} && \text{Notación}\\
+ % &= \frac{ac\cdot 1}{1\cdot b} && \text{Multiplicación de fracciones}\\
+ % &= \frac{ac}{b} && \text{Neutro multiplicativo}
+ %\end{align*}
+ %De la división por $1$, tenemos que $a\cdot \frac{c}{b}=\frac{a}{1}\cdot \frac{c}{b}$, y por este teorema $\frac{a}{1}\cdot \frac{c}{b}=\frac{ac}{b\cdot 1}$, osea $a \cdot \frac{c}{b} = \frac{ac}{b}$.
+ %Otra forma de demostrar esta proposición es la siguiente:
+ %\begin{align*}
+ % a \cdot \frac{c}{b} &= a \cdot \left( c \cdot b^{-1} \right) && \text{Notación}\\
+ % &= \left( a \cdot c \right) \cdot b^{-1} && \text{Asociatividad}\\
+ % &= \frac{ac}{b} && \text{Notación}
+ %\end{align*}
+
+ \item $\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$, si $b, d \neq 0$. (Multiplicación de fracciones).
+ %\vspace{-1em} \begin{proof} \begin{align*}
+ % \quad \frac{a}{b} \cdot \frac{c}{d} &= ab^{-1} \cdot cd^{-1} && \text{Notación}\\
+ % &= ac\cdot b^{-1}d^{-1} && \text{Conmutatividad}\\
+ % &= ac\cdot (bd)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
+ % &= \frac{ac}{bd} && \text{Notación} \qedhere
+ %\end{align*}
+ %\end{proof}
+ \begin{proof}
+ \begin{align*}\qquad \ \qquad
+ \frac{a}{b} \cdot \frac{c}{d} &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right) && \text{Notación}\\
+ &= a \cdot \Bigl( b^{-1} \cdot \left( c \cdot d^{-1} \right) \Bigr) && \text{Asociatividad}\\
+ &= a\cdot \Bigl(\bigl(b^{-1}\cdot c\bigr) \cdot d^{-1}\Bigr) && \text{Asociatividad}\\
+ &= a\cdot \Bigl(\bigl(c\cdot b^{-1}\bigr) \cdot d^{-1}\Bigr) && \text{Conmutatividad}\\
+ &= a\cdot \Bigl(c\cdot \bigl(b^{-1}\cdot d^{-1}\bigr)\Bigr) && \text{Conmutatividad}\\
+ &= a\cdot \Bigl(c\cdot \bigl(b\cdot d\bigr)^{-1}\Bigr) && \text{Multiplicación de inversos multiplicativos}\\
+ &= (a\cdot c) \cdot (b\cdot d)^{-1} && \text{Asociatividad}\\
+ &= \frac{ac}{bd} && \text{Notación} \qedhere
+ \end{align*} 
+ \end{proof}
+ 
+ \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$. (Cancelación de factores en común).
+ \begin{proof} 
+ \begin{align*}
+ \frac{a}{b}&=\frac{a}{b}\cdot 1 && \text{Neutro multiplicativo}\\
+ &= \frac{a}{b}\cdot \bigl(c \cdot c^{-1}\bigr) && \text{Inverso multiplicativo}\\
+ &= \frac{a}{b} \cdot \frac{c}{c} && \text{Notación}\\
+ &= \frac{ac}{b\cdot c} && \text{Multiplicación de fracciones} \qedhere
+ \end{align*}
+ \end{proof}
+ %Otra forma de demostrar esta proposición es la siguiente:
+ %\begin{align*}
+ % \frac{ac}{bc} &= a \cdot c \cdot \left( bc \right)^{-1} && \text{Notación}\\
+ % &= a \cdot c \cdot b^{-1} \cdot c^{-1} && \text{Multiplicación de inversos multiplicativos}\\
+ % &= a \cdot b^{-1} \cdot c \cdot c^{-1} && \text{Conmutatividad}\\
+ % &= a \cdot b^{-1} \cdot 1 && \text{Inverso multiplicativo}\\
+ % &= a \cdot b^{-1} && \text{Neutro multiplicativo}\\
+ % &= \frac{a}{b} && \text{Notación}
+ %\end{align*}
+ 
+ \item $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}$, si $b, c, d \neq 0$. (Regla del sandwich).
+ \begin{proof} 
+ \begin{align*} \qquad \ \qquad
+ \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Notación}\\
+ &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Notación}\\
+ &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot \left( d^{-1} \right) ^{-1} \right) && \text{Multiplicación de inversos multiplicativos}\\
+ &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot d \right) && \text{Unicidad del inverso multiplicativo}\\
+ &= \left( a \cdot b^{-1} \right) \cdot \left( d \cdot c^{-1} \right) && \text{Conmutatividad}\\
+ &= \frac{a}{b} \cdot \frac{d}{c} && \text{Notación}\\
+ &= \frac{ad}{bc} && \text{Multiplicación de fracciones} \qedhere
+ \end{align*}  
+ \end{proof}
+
+ \bfit{Corolario:} $\left(\frac{a}{b}\right)^{-1} = \frac{b}{a}$ si $a,b \neq 0$.
+ \begin{proof}
+  \begin{align*}
+    \left(\frac{a}{b}\right)^{-1} &= \frac{1}{\frac{a}{b}} && \text{Notación}\\
+    &= \frac{1^{-1}}{\frac{a}{b}} && \text{Uno es inverso multiplicativo}\\
+    &= \frac{\frac{1}{1}}{\frac{a}{b}} && \text{Notación}\\
+    &= \frac{1\cdot b}{1\cdot a} && \text{Teorema}\\
+    &= \frac{b}{a} && \text{Neutro multiplicativo} \qedhere
+  \end{align*}
+ \end{proof}
+
+ \item $\frac{a}{c} \pm  \frac{b}{c}=\frac{a\pm b}{c}$, si $c\neq 0$. (Suma de fracciones con denominador conmún).
+ \begin{proof}
+ \begin{align*}
+ \frac{a}{c} \pm  \frac{b}{c} &= \bigl(a\cdot c^{-1}\bigr) \pm  \bigl(b\cdot c^{-1}\bigr) && \text{Notación}\\
+ &= \bigl(c^{-1} \cdot a\bigr) \pm  \bigl(c^{-1} \cdot b\bigr) && \text{Conmutatividad}\\
+ &= c^{-1} \cdot (a\pm b) && \text{Distribución}\\
+ &= (a\pm b) \cdot c^{-1} && \text{Conmutatividad}\\
+ &= \frac{a\pm b}{c} && \text{Notación} \qedhere
+ \end{align*}
+ \end{proof}
+
+ \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} $, si $b, d \neq 0$. (Suma de fracciones).
+ \begin{proof} 
+ \begin{align*} \qquad \ \qquad
+ \frac{a}{b} \pm \frac{c}{d} &= \frac{ad}{bd} \pm \frac{cb}{db} && \text{Cancelación de factores en común}\\
+ &= \frac{ad}{bd} \pm \frac{cb}{bd} && \text{Conmutatividad}\\
+ &= \frac{ad \pm cb}{bd} && \text{Suma de fracciones con denominador común} \qedhere
+ \end{align*}
+ \end{proof}
+
+ \item $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$, si $b\neq 0$.
+ \begin{proof} \leavevmode
+  \begin{center}\vspace{-2em}
+   \begin{minipage}[t]{.5\linewidth}
+    \begin{align*}
+     \frac{-a}{b} &= (-a)\cdot b^{-1} && \text{Notación}\\
+     &= -\bigl(ab^{-1}\bigr) && \text{Multiplicación por inverso aditivo}\\
+     &= -\frac{a}{b} && \text{Notación}
+    \end{align*}
+   \end{minipage}%
+   \begin{minipage}[t]{.5\linewidth}
+    \begin{align*}
+     \frac{a}{-b} &= a \cdot (-b)^{-1} && \text{Notación}\\
+   &= -\bigl(ab^{-1}\bigr) && \text{Multiplicación por inverso aditivo}\\
+   &= -\frac{a}{b} && \text{Notación} \qedhere
+    \end{align*}
+   \end{minipage}
+   \end{center} 
+ \end{proof}
+ \textbf{Nota:} En esta prueba está implícito que $\exists (-b)^{-1}\in \R$, lo cual es válido, pues $b\neq 0$, por lo que $-b\neq 0$.
+ %\begin{proof} \begin{align*}
+ % \frac{a}{b} \pm \frac{c}{d} &= ab^{-1} \pm cd^{-1} && \text{Notación}\\
+ % &= a\cdot 1 \cdot b^{-1} \pm c\cdot 1 \cdot d^{-1} && \text{Neutro multiplicativo}\\
+ % &= ad\cdot d^{-1}b^{-1} \pm cb\cdot b^{-1}d^{-1} && \text{Inverso multiplicativo}\\
+ % &= ad \cdot \bigl(db\bigr)^{-1} \pm cd \cdot \bigl(bd\bigr)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
+ % &= (bd)^{-1} \bigl(ad\pm cd\bigr) && \text{Distribución}\\
+ % &= \frac{ad \pm bc}{bd} && \text{Notación} \qedhere
+ %\end{align*}
+ %\end{proof}
+ %\begin{proof} 
+ %\begin{align*}
+ %\frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Notación}\\
+ %&=	\left( a \cdot 1 \right)   \cdot b^{-1} \pm \left( c \cdot 1 \right) \cdot d^{-1} && \text{Neutro multiplicativo}\\
+ %&=	\Bigl( a \cdot  \left( d \cdot d^{-1} \right) \Bigr) \cdot b^{-1} \pm \Bigl( c \cdot  \left( b \cdot b^{-1}  \right)  \Bigr)  \cdot d^{-1} && \text{Inverso multiplicativo}\\
+ %&=	\Bigl(  \left( a \cdot d \right) \cdot d^{-1} \Bigr) \cdot b^{-1} \pm \Bigl(  \left( c \cdot b \right) \cdot b^{-1} \Bigr) \cdot d^{-1} && \text{Asociatividad}\\
+ %&=	\left( a \cdot d \right)  \cdot  \left( d^{-1} \cdot b^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Asociatividad}\\
+ %&=	\left( a \cdot d \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Conmutatividad}\\
+ %&=	\left( b^{-1} \cdot d^{-1}  \right) \cdot \left( a \cdot d \pm c \cdot b \right) && \text{Distribución}\\
+ %&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b^{-1} \cdot d^{-1} \right) && \text{Conmutatividad}\\
+ %&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b \cdot d \right)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
+ %&=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Conmutatividad}\\
+ %&=	\frac{ad \pm bc}{bd} && \text{Notación} \qedhere
+ %\end{align*} 
+ %\end{proof}
+ %\item $\frac{-a}{-b}=\frac{a}{b}$, si $b\neq 0$.
+ % \begin{align*}
+ %  \frac{-a}{-b} &= (-a)\cdot (-b)^{-1} && \text{Notación}\\
+ %  &= (-a)\cdot (-b^{-1}) && \text{Multiplicación por inverso aditivo}\\
+ %  &= -(a\cdot b^{-1}) && \text{Distribución del signo}\\
+ %  &= - \frac{a}{b} && \text{Notación}
+ % \end{align*}
+ % %\begin{align*}
+ % % \frac{-a}{-b} &= \frac{(-1)\cdot a}{(-1)\cdot b} && \text{Multiplicación por ($-1$)}\\
+ % % &=\frac{-1}{-1} \cdot \frac{a}{b} && \text{Teorema}\\
+ % % &= (-1)\cdot (-1)^{-1}\cdot \frac{a}{b} && \text{Notación}\\
+ % % &= 1\cdot \frac{a}{b} && \text{Inverso multiplicativo}\\
+ % % &= \frac{a}{b} && \text{Neutro multiplicativo}
+ % % \end{align*}
+ % \textbf{Nota:} En esta prueba está implícito que $-b$ tiene inverso multiplicativo, lo cual es válido, pues\begin{align*}
+ %  -b^{-1}&=-\bigl(b^{-1}\bigr) && \text{Notación}\\
+ %  &= -\qty\big(1\cdot b^{-1}) && \text{Neutro multiplicativo}\\
+ %  &= - \qty(\frac{1}{b}) && \text{Notación}
+ % \end{align*}
+ 
+
+ %
+ %$a=\frac{a}{1}$. (División por $1$).
+ %\begin{proof} 
+ % El neutro multiplicativo satisface que $a=a\cdot 1=a\cdot 1^{-1}$, y por notación $a=\frac{a}{1}$.
+ %\end{proof}
+
+%\item Si $ab^{-1}=ba^{-1}$, entonces $a^2=b^2$.
+%\begin{proof} 
+%\begin{align*}
+% a^2 &= a\cdot a && \text{Notación}\\
+% &= (a\cdot a) \cdot 1 && \text{Neutro multiplicativo}\\
+% &= (a\cdot a)\cdot\bigl( b\cdot b^{-1}\bigr) && \text{Inverso multiplicativo}\\
+% &= a\cdot \Bigl(a\cdot \bigl( b\cdot b^{-1}\bigr)\Bigr) && \text{Asociatividad}\\
+% &= a\cdot \Bigl(a\cdot \bigl(  b^{-1}\cdot b\bigr)\Bigr) && \text{Conmutatividad}\\
+% &= a\cdot \Bigl(\bigl(a\cdot b^{-1}\bigr)\cdot b \Bigr) && \text{Asociatividad}\\
+% &= a\cdot \Bigl(\bigl(b\cdot a^{-1}\bigr)\cdot b \Bigr) && \text{Hipótesis}\\
+% &= a\cdot \Bigl(\bigl(a^{-1}\cdot b\bigr)\cdot b \Bigr) && \text{Conmutatividad}\\
+% &= a\cdot \Bigl(a^{-1}\cdot (b\cdot b) \Bigr) && \text{Asociatividad}\\
+% &= \bigl(a\cdot a^{-1}\bigr) \cdot (b\cdot b)&& \text{Asociatividad}\\
+% &= 1 \cdot (b\cdot b)&& \text{Inverso multiplicativo}\\
+% &= (b\cdot b) \cdot 1 && \text{Conmutatividad}\\
+% &= b\cdot b && \text{Neutro multiplicativo}\\
+% &= b^2 && \text{Notación} \qedhere
+%\end{align*}
+%\end{proof}
+%
+%\item Si $a^2=b^2$, entonces $a=b$ o $a=-b$.
+%\begin{proof} 
+% \begin{align*}
+%  0 &= b^2 - b^2 && \text{Inverso aditivo}\\
+%  &= a^2 - b^2 && \text{Hipótesis}\\
+%  &= a^2 - b^2 + 0&& \text{Neutro aditivo}\\
+%  &= a^2 - b^2 + ab-ab&& \text{Inverso aditivo}\\
+%  &= a^2 + a b - b^2 -ab && \text{Conmutatividad}\\
+%  &= (a^2 + a b) + (- b^2)+(-a b)&& \text{Asociatividad}\\
+%  &= (a a + a b) + (- b b)+(-a b)&& \text{Notación}\\
+%  &= (a a + a b) -(b b + a b)&& \text{Distribución del signo}\\
+%  &= a (a+b) - b(b+a) && \text{Distribución}\\
+%  &= (a+b)  (a-b) && \text{Distribución}
+%  \end{align*} De la multiplicativo por $0$, sigue que $a+b=0$ o $a-b=0$. Sumando inverso aditivo de $b$ en ambas igualdades tenemos que $a=-b$ o $a=b$.
+%\end{proof}
+\end{enumerate}
+
+\begin{tcolorbox}
+\subsection*{Una nota sobre notación}
+
+Las siguientes son todas las \textit{formas} en que podríamos sumar/multiplicar tres números reales $a$, $b$ y $c$.
+\begin{center}
+ \begin{minipage}[c]{.2\linewidth}
+  \begin{enumerate}[label=\roman*.]
+   \item $(a \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ c$
+   \item $a \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ c)$
+   \item $a \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ b)$
+  \end{enumerate}
+  \end{minipage}%
+  \begin{minipage}[c]{.2\linewidth}
+   \begin{enumerate}[start=4,label=\roman*.]
+    \item $(a \ \nicefrac{+}{\cdot} \ c) \ \nicefrac{+}{\cdot} \ b$
+    \item $(c \ \nicefrac{+}{\cdot} \ a) \ \nicefrac{+}{\cdot} \ b$
+    \item $c \ \nicefrac{+}{\cdot} \ (a \ \nicefrac{+}{\cdot} \ b)$
+   \end{enumerate}
+   \end{minipage}%
+  \begin{minipage}[c]{.2\linewidth}
+   \begin{enumerate}[start=7,label=\roman*.]
+   \item $c \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ a)$
+   \item $(c \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ a$
+   \item $(b \ \nicefrac{+}{\cdot} \ c) \ \nicefrac{+}{\cdot} \ a$
+  \end{enumerate}
+  \end{minipage}
+  \begin{minipage}[c]{.2\linewidth}
+   \begin{enumerate}[start=10,label=\roman*.]
+   \item $b \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ a)$
+   \item $b \ \nicefrac{+}{\cdot} \ (a \ \nicefrac{+}{\cdot} \ c)$
+   \item $(b \ \nicefrac{+}{\cdot} \ a) \ \nicefrac{+}{\cdot} \ c$
+  \end{enumerate}
+  \end{minipage}
+\end{center}
+
+Podemos probar igualdad de todas ellas a partir de las propiedades de la suma/multiplicación:
+\begin{align*}
+ (a \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ c &= a \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
+ &= a \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ b) && \text{Conmutatividad} && \text{Forma (iii)}\\
+ &= (a \ \nicefrac{+}{\cdot} \ c) \ \nicefrac{+}{\cdot} \ b && \text{Asociatividad} && \text{Forma (iv)}\\
+ &= (c \ \nicefrac{+}{\cdot} \ a) \ \nicefrac{+}{\cdot} \ b && \text{Conmutatividad}&& \text{Forma (v)}\\
+ &= c \ \nicefrac{+}{\cdot} \ (a \ \nicefrac{+}{\cdot} \ b) && \text{Asociatividad}&& \text{Forma (vi)}\\
+ &= c \ \nicefrac{+}{\cdot} \ (b \ \nicefrac{+}{\cdot} \ a) && \text{Conmutatividad}&& \text{Forma (vii)}\\
+ &= (c \ \nicefrac{+}{\cdot} \ b) \ \nicefrac{+}{\cdot} \ a && \text{Asociatividad}&& \text{Forma (viii)}\\
+ &= (b \ \nicefrac{+}{\cdot} \ c) \ \nicefrac{+}{\cdot} \ a && \text{Conmutatividad}&& \text{Forma (ix)}\\
+ &= b \ \nicefrac{+}{\cdot} \ (c \ \nicefrac{+}{\cdot} \ a) && \text{Asociatividad}&& \text{Forma (x)}\\
+ &= b \ \nicefrac{+}{\cdot} \ (a \ \nicefrac{+}{\cdot} \ c) && \text{Conmutatividad}&& \text{Forma (xi)}\\
+ &= (b \ \nicefrac{+}{\cdot} \ a) \ \nicefrac{+}{\cdot} \ c && \text{Asociatividad}&& \text{Forma (xii)}
+\end{align*}
+
+A partir de esta igualdad (y otras probadas anteriormente) introducimos la siguiente \textbf{notación:}
+
+\begin{itemize}%[label=\roman*)]
+\item Si $x$, $y$ y $z$ son números reales, representaremos con el símbolo $x+y+z$ a la suma de estos.
+%
+%Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de sumar tres números reales son equivalentes.
+%
+%\item Si $x$ y $y$ son números reales, representaremos con el símbolo $xy$ a la multiplicación $x\cdot y$; a esta multiplicación la llamaremos el producto de $x$ y $y$.
+%
+%Podemos usar esta notación sin ambigüedad pues $x\cdot y = y\cdot x$ por la conmutatividad de la multiplicación.
+%%
+%Ya que hemos probado que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$, por esta notación podemos reescribir $(-x)y=-(xy)=x(-y)$.
+
+\item Si $x$, $y$ y $z$ son números reales, representaremos con el símbolo $xyz$ a la multiplicación de estos.
+%cualquiera de los símbolos \begin{itemize}%[label=\roman*)]
+% \item $x\cdot y\cdot z$
+% \item $x\cdot z\cdot y$
+% \item $y\cdot x\cdot z$
+% \item $y\cdot z\cdot x$
+% \item $z\cdot x\cdot y$
+% \item $x\cdot y\cdot z$
+%\end{itemize}
+%A la multiplicación de $x$, $y$ y $z$.
+%
+%Podemos usar esta notación sin ambigüedad ya que hemos probado que todas las formas de multiplicar tres números reales son equivalentes.
+%
+%Las siguientes son todas las \textit{formas} en que podríamos sumar tres números reales $a$, $b$ y $c$.
+%\begin{center}
+% \begin{minipage}[c]{.2\linewidth}
+%  \begin{enumerate}[label=\roman*.]
+%   \item $(a+b)+c$
+%   \item $a+(b+c)$
+%   \item $a+(c+b)$
+%  \end{enumerate}
+%  \end{minipage}%
+%  \begin{minipage}[c]{.2\linewidth}
+%   \begin{enumerate}[start=4,label=\roman*.]
+%    \item $(a+b)+c$
+%    \item $a+(b+c)$
+%    \item $a+(c+b)$
+%   \end{enumerate}
+%   \end{minipage}%
+%  \begin{minipage}[c]{.2\linewidth}
+%   \begin{enumerate}[start=7,label=\roman*.]
+%   \item $c+(b+a)$
+%   \item $(c+b)+a$
+%   \item $(b+c)+a$
+%  \end{enumerate}
+%  \end{minipage}
+%  \begin{minipage}[c]{.2\linewidth}
+%   \begin{enumerate}[start=10,label=\roman*.]
+%   \item $b+(c+a)$
+%   \item $b+(a+c)$
+%   \item $(b+a)+c$
+%  \end{enumerate}
+%  \end{minipage}
+%\end{center}
+%Podemos probar igualdad de todas ellas a partir de las propiedades de la suma.
+%%las anteriores pueden obtenerse utilizando los axiomas de conmutatividad y asociatividad de la suma, con lo que garantizamos la igualdad de todas ellas, y descartamos la necesidad de enumerarlas todas como axiomas.
+%%Notemos que para sumar tres números diferentes $(a,b,c)$, siempre requerimos ejecutar, primero, la suma de dos de ellos $(a+b)$, y luego tomar este resultado para sumarlo al tercer número $(a+b)+c$, a esto alude el lado izquierdo de la igualdad de la asociatividad de la suma (\textbf{S2}). También podemos cambiar el orden, realizando la suma de $a$ y $b$, luego tomar el número $c$ y sumarle a este último el resultado que habíamos obtenido con anterioridad: $c+(a+b)$. Estos resultados (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$.
+%%Notemos que las formas (\textbf{i} y \textbf{vii}) satisfacen igualdad debido a la conmutatividad de la suma (\textbf{S1}), $(a+b)+c=c+(a+b)$. Asimismo, por asociatividad de la suma (\textbf{S2}), las formas \textbf{(i)} y \textbf{(ii)} satisfacen igualdad, por lo que tenemos $(a+b)+c=a+(b+c)$. De esto el lector puede inferir cuál es el uso de estos axiomas y cómo demostrar la igualdad de todas las formas de sumar tres números reales.
+%\begin{align*}
+% (a+b)+c &= a+(b+c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
+% &= a+(c+b) && \text{Conmutatividad} && \text{Forma (iii)}\\
+% &= (a+c)+b && \text{Asociatividad} && \text{Forma (iv)}\\
+% &= (c+a)+b && \text{Conmutatividad}&& \text{Forma (v)}\\
+% &= c+(a+b) && \text{Asociatividad}&& \text{Forma (vi)}\\
+% &= c+(b+a) && \text{Conmutatividad}&& \text{Forma (vii)}\\
+% &= (c+b)+a && \text{Asociatividad}&& \text{Forma (viii)}\\
+% &= (b+c)+a && \text{Conmutatividad}&& \text{Forma (ix)}\\
+% &= b+(c+a) && \text{Asociatividad}&& \text{Forma (x)}\\
+% &= b+(a+c) && \text{Conmutatividad}&& \text{Forma (xi)}\\
+% &= (b+a)+c && \text{Asociatividad}&& \text{Forma (xii)}
+%\end{align*}
+%Similarmente, las siguientes son todas las \textit{formas} en que podríamos multiplicar tres números reales $a$, $b$ y $c$.
+%\begin{center}
+% \begin{minipage}[c]{.2\linewidth}
+%  \begin{enumerate}[label=\roman*.]
+%   \item $(a\cdot b)\cdot c$
+%   \item $a\cdot (b\cdot c)$
+%   \item $a\cdot (c\cdot b)$
+%  \end{enumerate}
+%  \end{minipage}%
+%  \begin{minipage}[c]{.2\linewidth}
+%   \begin{enumerate}[start=4,label=\roman*.]
+%    \item $(a\cdot b)\cdot c$
+%    \item $a\cdot (b\cdot c)$
+%    \item $a\cdot (c\cdot b)$
+%   \end{enumerate}
+%   \end{minipage}%
+%  \begin{minipage}[c]{.2\linewidth}
+%   \begin{enumerate}[start=7,label=\roman*.]
+%   \item $c\cdot (b\cdot a)$
+%   \item $(c\cdot b)\cdot a$
+%   \item $(b\cdot c)\cdot a$
+%  \end{enumerate}
+%  \end{minipage}
+%  \begin{minipage}[c]{.2\linewidth}
+%   \begin{enumerate}[start=10,label=\roman*.]
+%   \item $b\cdot (c\cdot a)$
+%   \item $b\cdot (a\cdot c)$
+%   \item $(b\cdot a)\cdot c$
+%  \end{enumerate}
+%  \end{minipage}
+%\end{center}
+%
+%Análogamente, podemos probar la igualdad de todas ellas a partir de las propiedades de la multiplicación.
+%\vspace{-1em}\begin{align*}
+% (a\cdot b)\cdot c &= a\cdot (b\cdot c) && \text{Asociatividad} && \text{Formas (i) y (ii)}\\
+% &= a\cdot (c\cdot b) && \text{Conmutatividad} && \text{Forma (iii)}\\
+% &= (a\cdot c)\cdot b && \text{Asociatividad} && \text{Forma (iv)}\\
+% &= (c\cdot a)\cdot b && \text{Conmutatividad}&& \text{Forma (v)}\\
+% &= c\cdot (a\cdot b) && \text{Asociatividad}&& \text{Forma (vi)}\\
+% &= c\cdot (b\cdot a) && \text{Conmutatividad}&& \text{Forma (vii)}\\
+% &= (c\cdot b)\cdot a && \text{Asociatividad}&& \text{Forma (viii)}\\
+% &= (b\cdot c)\cdot a && \text{Conmutatividad}&& \text{Forma (ix)}\\
+% &= b\cdot (c\cdot a) && \text{Asociatividad}&& \text{Forma (x)}\\
+% &= b\cdot (a\cdot c) && \text{Conmutatividad}&& \text{Forma (xi)}\\
+% &= (b\cdot a)\cdot c && \text{Asociatividad}&& \text{Forma (xii)}
+%\end{align*}
+
+%Así como reutilizar las \textit{formas} de proposiciones probadas nos permite agilizar la escritura de demostraciones; establecer notación tiene el mismo propósito. No obstante, cada vez que acordemos el uso de notación esta debe ser justificada para evitar ambigüedad; en ocasiones la justificación es tan simple como utilizar diferentes \textit{etiquetas} para los mismos \textit{objetos}, como ya ha sido empleada, pero en otras, la notación requiere de mayor explicación para su uso adecuado.% y evitar \textit{abuso de la notación}.
+
+%\textbf{Notación:}
+\item Si $x$ y $y$ son números reales, representaremos con el símbolo $-xy$ a cualquiera de $(-x)\cdot y$, $-(x \cdot y)$ o $x\cdot (-y)$.
+
+Podemos usar esta notación sin ambigüedad ya que hemos probado que $(-x)\cdot y = -(x \cdot y)=x\cdot (-y)$.
+%
+%Por la notación (ii) podemos rees%cribir esta igualdad como $(-x)y=-(xy)=x(-y)$, sin embargo, de esta no se obtiene el símbolo $-xy$.
+%
+\item Si $x\in \R$, representaremos con el símbolo $-x^{-1}$ al inverso multiplicativo de $-x$ o al inverso aditivo de $x^{-1}$.
+ 
+Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(x^{-1})=(-x)^{-1}$.
+%
+%\item Si $x$ y $y$ son números reales, representaremos con el símbolo $x-y$ a la suma $x+(-y)$.
+%
+%De esta notación obtenemos que $z-xy$ representa a cualquiera de las sumas $z+(-x)b$, $z+\bigl(-(xy)\bigr)$ y $z+x(-y)$ Podemos usar esta notación sin ambigüedad ya que hemos probado que $(-x)y=-(xy)=x(-y)$.
+%Observemos que sería un error reescribir la multiplicación $x\cdot (-y)$ como $a-b$, pues reservamos esta notación para la suma $a+(-y)$, por lo que $x\cdot (-y)$ debería reescribirse como $x(-y)$.
+%
+
+\item Al número $1+1$ lo denotaremos con el símbolo $2$. Al número $2+1$ lo denotaremos con el símbolo $3$...
+\end{itemize}
+
+%\textbf{Ejercicio:} Reescriba las demostraciones de las listas de ejercicios 1,2 y 3, utilizando esta notación.
+
+\textbf{Nota:} El uso de notación es opcional y en ocasiones prescindimos de ella.%prescindiremos de ella para procurar claridad.% en las demostraciones.
+
+ %\textbf{Demostración:} \begin{align*}
+ % \frac{a}{-b} &= \frac{-(-a)}{-b} && \text{Unicidad del inverso aditivo}\\
+ % &= \bigl(-(-a)\bigr) \cdot (-b)^{-1} && \text{Notación}\\
+ % &=(-1)\cdot (-a) \cdot (-b)^{-1} && \text{Multiplicación por ($-1$)}\\
+ % &=(-1) \cdot \frac{-a}{-b} && \text{Notación}\\
+ % &= (-1) \cdot \frac{a}{b} && \text{Multiplicación de fracciones}\\
+ % &= -\frac{a}{b} && \text{Multiplicación por ($-1$)} && \text{(*)}\\
+ % &= (-1) \cdot \frac{a}{b} && \text{Multiplicación por ($-1$)}\\
+ % &= \frac{(-1)\cdot a}{b} && \text{(a) de LE4}\\
+ % &= \frac{-a}{b} && \text{Multiplicación por ($-1$)} && \text{(**)}
+ %\end{align*} De las igualdades (*) y (**) tenemos que $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$.
+
+
+\end{tcolorbox}
+\section*{Un campo finito}
+
+Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$. El siguiente es un esbozo de la prueba:
+\begin{align*}
+ 2a %&= (1+1)a && \text{Notación}\\
+ %&= a(1+1) && \text{Conmutatividad}\\
+ %&= a\cdot 1 + a\cdot 1 && \text{Distribución}\\
+ %&= a + a && \text{Neutro multiplicativo}\\
+ &= a + a && \text{Notación}\\
+ %&= a +a + 0&& \text{Neutro aditivo}\\
+ &= a+a+b-b && \text{Inverso aditivo}\\
+ &= a-b+a+b && \text{Conmutatividad}\\
+ &= b-a +a +b && \text{Hipótesis}\\
+ %&= b+0 + b && \text{Inverso aditivo}\\
+ %&= b+b && \text{Neutro aditivo}\\
+ &= b+b && \text{Inverso aditivo}\\
+ &= 2b && \text{Notación}
+\end{align*}
+%\begin{align*}
+%a+(-b)&=b+(-a) && \text{Hipótesis} \\
+%\bigl(a+(-b)\bigr)+b&=\bigl(b+(-a)\bigr)+b&&\text{Ley de cancelación} \\
+%a + \bigl((-b)+b\bigr)&= b+\bigl((-a)+b\bigr)&&\text{Asociatividad} \\
+%a + \bigl(b+(-b)\bigr)&= b+\bigl(b+(-a)\bigr)&&\text{Conmutatividad} \\
+%a + 0&= b+\bigl(b+(-a)\bigr)&&\text{Inverso aditivo} \\
+%a + 0&= (b+b)+(-a)&&\text{Asociatividad} \\
+%(a + 0) + a&= \bigl((b+b)+(-a)\bigr)+a&&\text{Ley de cancelación} \\
+%(a + 0) + a&= (b+b)+\bigl((-a)+a\bigr)&&\text{Asociatividad} \\
+%(a + 0) + a&= (b+b)+\bigl(a+(-a)\bigr)&&\text{Conmutatividad} \\
+%(a + 0) + a&= (b+b)+0&&\text{Inverso aditivo} \\
+%a+ a&= b+b&&\text{Neutro aditivo} \\
+%a\cdot 1+ a\cdot 1&= b\cdot 1+ b\cdot 1&&\text{Neutro multiplicativo} \\
+%a\cdot (1+1)&= b\cdot (1+1)&&\text{Distribución} \\
+%a\cdot (2) &= b\cdot (2) &&\text{Notación} \\
+%a &= b && \text{¿Ley de cancelación?}
+%\end{align*}
+A pesar de que se verifica la igualdad $2a=2b$, aún necesitamos justificar que $a=b$. Podríamos apelar a la ley de cancelación de la multiplicación, pero para su uso requerimos que $2\neq 0$, el cual es un hecho que hasta ahora no ha sido demostrado. No obstante, los axiomas que hemos listado y los resultados que hemos obtenido de ellos no son suficientes para probar este hecho, el lector debería indagar en las implicaciones de definir que $2=0$ y decidir si este hecho es contradictorio. Para clarificar este punto, consideremos el siguiente conjunto: %, pues si suponemos que $2=0$, tendríamos consistencia con todos los axiomas listados hasta ahora, es decir, no habría motivo para suponer que $2\neq 0$.
+%Supongamos que $2=0$.
+%
+%\begin{enumerate}[label=\roman*)]
+% \item Cerradura de la suma: Por axioma de neutro multiplicativo, $1\in \R$, y por la cerradura de la suma, $1+1\in \R$, por notación $2\in \R$. También, por axioma de neutro aditivo $0\in \R$. Vemos que la hipótesis $2=0$ es consistente.
+% \item Conmutatividad de la suma. Sabemos que $a+b=b+a$, en el caso $a=b$ tenemos $a+a=b+b$. Tomando $a=1$ y $b=0$, tenemos $1+1=0+0$, osea $2=0$, lo cual es consistente con la hipótesis.
+% \item Asociatividad de la suma. Sabemos que $(a+b)+c=a+(b+c)$, tomando $a=b=c=1$ tenemos $(1+1)+1=1+(1+1)$ y por notación
+%\end{enumerate}
+
+%Sea $\Omega\defined \set{0,1}$ un conjunto dotado con las operaciones de suma y multiplicación.
+Sea $\Omega$ un conjunto dotado con las operaciones suma $+$ y multipllicación $\cdot$ que satisfacen las siguientes propiedades:
+\begin{enumerate}
+\item Cerradura (de la suma): Si $x,y\in \Omega$, entonces $x+y\in \Omega$.
+\item Conmutatividad (de la suma): Si $x,y\in \Omega$, entonces $x+y=y+x$.
+\item Asociatividad (de la suma): Si $x,y,z \in \Omega$, entonces $x+(y+z)=(x+y)+z$.
+\item Neutro aditivo: $\exists 0 \in \Omega$ tal que si $x\in \Omega$, entonces $x+0=x$.
+\item Inverso aditivo: para cada $x\in \Omega$, $\exists (-x)\in \Omega$ tal que $x+(-x)=0$.
+\item Cerradura (de la multiplicación): Si $x,y\in \Omega$, entonces $x\cdot y \in \Omega$.
+\item Conmutatividad (de la multiplicación): Si $x,y\in \Omega$, entonces $x\cdot y = y\cdot x$.
+\item Asociatividad (de la multiplicación): Si $x,y,z \in \Omega$, entonces $x\cdot (y\cdot z)=(x\cdot y)\cdot z$.
+\item Neutro multiplicativo: $\exists 1\in \Omega$ tal que si $x\in \Omega$, entonces $x\cdot 1=x$.
+\item Inverso multiplicativo: si $x\in \Omega$ tal que $x\neq 0$, entonces $\exists x^{-1}$ tal que $x\cdot x^{-1}=1$.
+\item Distribución (de la multiplicación sobre la suma): Si $x,y,z\in \R$, entonces $x\cdot(y+z)=x\cdot y+x\cdot z$.
+\end{enumerate}
+
+¿Qué elementos pertenecen a $\Omega$?
+
+Sabemos que $0$ y $1$ son elementos de $\Omega$, en virtud de los axiomas (4) y (9). Asimismo, el axioma (5) garantiza la existencia de $-1$ y $-0$. De la misma manera, por el axioma (10) podemos afirmar que $1^{-1}$ es un miembro de $\Omega$. Sin embargo, los axiomas de conmutatividad (2) y (7), de asociatividad (3) y (8), y el axioma de distribución (11), no son axiomas de existencia y para su uso requerimos elementos de $\Omega$, es decir, no podemos \textit{conocer} elementos adicionales de $\Omega$ apartir de estos.
+
+Con estas consideraciones, sabemos que $\set{0,1,-0,-1,1^{-1}}\subset \Omega$. Sin embargo, hemos probado que $0=-0$ y $1=1^{-1}$, por lo que hasta ahora, solo podemos afirmar que $0,1,-1$ son miembros de $\Omega$.
+
+Por otra parte, por el axioma de cerradura de la multiplicación (6), se verifica lo siguiente:
+
+\begin{enumerate}[label=\roman*)]
+ \item $0\cdot 0\in \Omega$, pero como $0\cdot 0=0$, no encontramos un miembro distinto a los conocidos.
+ \item $0 \cdot 1 \in \Omega$, pero como $0\cdot 1=0$, no encontramos un miembro distinto a los conocidos. 
+ \item $0 \cdot (-1) \in \Omega$, pero como $0\cdot (-1)=0$, no encontramos un miembro distinto a los conocidos.
+ \item $1\cdot (-1) \in \Omega$, pero como $1\cdot (-1)=-1$, no encontramos un miembro distinto a los conocidos.
+ \item $1\cdot 1\in \Omega$, pero como $1\cdot 1=1$, no encontramos un miembro distinto a los conocidos.
+\end{enumerate}
+Finalmente, por el axioma de cerradura (1) se verifica lo siguiente:
+\begin{enumerate}[label=\roman*)]
+ \item $0+0 \in \Omega$, pero como $0+0=0$, no encontramos un miembro distinto a los conocidos.
+ \item $0+1 \in \Omega$, pero como $0+1=1$, no encontramos un miembro distinto a los conocidos.
+ \item $0+(-1) \in \Omega$, pero como $0+(-1)=-1$, no encontramos un miembro distinto a los conocidos.
+ \item $1+(-1)\in \Omega$, pero como $1+(-1)=0$, no encontramos un miembro distinto a los conocidos.
+ \item$1+1\in \Omega$, el cual es un elemento del que no podemos afirmar sea distinto a los conocidos.
+\end{enumerate}
+Si definimos que bajo $\Omega$, $2=0$, es decir, que $1+1=0$, entonces $1+1$ no sería un miembro distinto a los conocidos. Además, por unicidad del inverso aditivo, si $1+1=0$, sigue que $1=-1$. De este modo, $\Omega$ cumpliría con todos los axiomas de campo consistentemente y su extensión sería $\Omega \defined \set{0,1}$.
+
+Por lo anterior, para expandir el conjunto de los números reales, requerimos establecer propiedades adicionales.
+%
+%\textbf{Nota:} Hasta este punto al probar proposiciones el autor ha procurado enunciar cada propiedad que se utiliza, sin embargo, se espera que el lector sea capáz de inferir el uso de estas y de la notación en lo que resta del curso. Por ello dejaremos de enunciar cada propiedad o proposición que sea empleada excepto en aquellos casos en los que el autor considere que se requiera para preservar claridad.% Sin embargo, el dejar de enunciar propiedades empleadas lo realizaremos paulatinamente, de modo que el lector pueda acostumbrarse a esta forma de escritura.
+
