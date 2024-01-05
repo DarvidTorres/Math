@@ -49,3 +49,7 @@
 \pagestyle{empty}
 
 \endinput
+
+% When you \include{filename}, inside filename.tex the material after \endinput will not be included. This command is optional; if filename.tex has no \endinput then LaTeX will read all of the file.
+
+% This can be useful for putting documentation or comments at the end of a file, or for avoiding junk characters that can be added if the file is transmitted in the body of an email. It is also useful for debugging: one strategy to localize errors is to put \endinput halfway through the included file and see if the error disappears. Now, knowing which half contains the error, moving \endinput to halfway through that area further narrows down the location. This process rapidly finds the offending line.
