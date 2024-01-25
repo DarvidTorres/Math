@@ -193,13 +193,11 @@ Demuestre lo siguiente:
   %\end{proof}
 
   \item Sea $S\subseteq \N$ tal que $S$ es un conjunto inductivo, entonces $S=\N$. (Principio de inducción matemática).
-
   \begin{proof} 
   Sea $S\neq \N$. El conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$). Pr definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $\N\setminus S\subset \N$, por el principio del buen orden, tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$, como $m\in \N$, sigue que $1 \leq m$. Como $m\in \N\setminus S$ y $1\notin \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, y por este teorema, $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, tenemos que $m-1\notin \N\setminus S$, osea $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, $S=\N$. 
   \end{proof}
 
   \item Sea $x\in \R^+$. Si $n\in \N$ y $x+n\in \N$, entonces $x\in \N$.
-
   \begin{proof}\leavevmode
     Por definición, $x>0$, por lo que $n<n+x$. Por hipótesis, $x+n\in \N$ y $n\in \N$. Luego, por este teorema, $(x+n)-n \in \N$, osea, $x\in \N$.
   \end{proof}
