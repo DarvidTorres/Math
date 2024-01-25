@@ -1,0 +1,577 @@
+\part*{Inducción matemática}
+
+\bfit{Definición:}  Sea $A\subset \R$, decimos que $A$ es un conjunto inductivo si se cumplen las siguientes condiciones:
+ \begin{enumerate}[label=\roman*)]
+  \item $1 \in A$.
+  \item Si $n \in A$ entonces se verifica que $n+1 \in A$.
+ \end{enumerate}
+
+\subsection*{Lista de Ejercicios 7 (LE7)}
+
+\begin{enumerate}[label=\arabic*)]
+ \item ¿El conjunto de los números reales es un conjunto inductivo?
+ 
+ \textbf{Respuesta:} Sí, ya que $1 \in \R$, y si $n\in \R$, entonces $n+1 \in \R$ por la cerradura de la suma en $\R$.
+
+
+ \item ¿$\R^+$ es un conjunto inductivo?
+ 
+ \textbf{Respuesta:} Sí, pues $1\in \R^+$, y si $n\in \R^+$, entonces $n+1 \in \R^+$ por la cerradura de la suma en $\R^+$.
+
+ \item Sea $\mathcal{F}= \set{A\subset \R: \text{$A$ es un conjunto inductivo}}$.
+ \begin{enumerate}[label=\alph*)]
+ \item Demuestre que $\mathcal{F}$ es no vacío.
+ %\vspace{-1em}
+ \begin{proof}
+  Como $\R \subset \R$, y $\R$ es un conjunto inductivo, entonces $\R \in \mathcal{F}$, por lo que $\mathcal{F} \neq \emptyset$.
+ \end{proof}% \vspace{-1em}
+ \item Demuestre que $\bigcap \mathcal{F}$ es un conjunto inductivo.% (Definición del conjunto de los números naturales).
+ %\vspace{-1em}
+ \begin{proof}
+ Por definición, $1\in A, \forall A\in \mathcal{F}$, por lo que $1\in \bigcap \mathcal{F}$. Luego, si $n\in A, \forall A\in \mathcal{F}$, como cada $A$ es un conjunto inductivo, $n+1\in A, \forall A\in \mathcal{F}$, por lo que Si $n \in \bigcap \mathcal{F}$, entonces $n+1 \in \bigcap \mathcal{F}$. Por tanto, $\bigcap \mathcal{F}$ es un conjunto inductivo.
+ \end{proof}% \vspace{-1em}
+ \end{enumerate}
+
+ %\item Sea $A\coloneqq \{B \subseteq \R: B \text{ es un conjunto inductivo}\}$. Demuestre que $A\neq \emptyset$ y que $C=\bigcap B$ es un conjunto inductivo.
+ %
+ %\begin{proof} 
+ %Claramente $A \neq \emptyset$, pues $\R, \R^+ \subseteq A$.
+ %
+ %Luego, por hipótesis, $\forall B \in A$ tenemos que $B\subseteq \R $ por lo que $C\subseteq \R$. Además, $\forall B\in A$, se verifica que $1\in B$. Consecuentemente, $1\in C$. Por otra parte, si $n\in B$ para todo $B\in A$, tendremos que $n+1\in B$, por lo que $n+1 \in C$. Por tanto, $C$ es un conjunto inductivo.
+ %\end{proof}
+\end{enumerate}
+%
+%\bfit{Definición:}  Al conjunto $C$ de (3) de LE6 lo llamaremos conjunto de los números naturales y lo %denotaremos con el símbolo $\N$.
+
+\bfit{Definición:}
+
+Sea $\mathcal{F}= \set{A\subset \R: \text{$A$ es un conjunto inductivo}}$. Llamaremos al conjunto $\N = \bigcap \mathcal{F}$ conjunto de los números naturales.
+
+\subsection*{Lista de ejercicios 8 (LE8)}
+
+Demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+ \item Si $m,n\in \N$, entonces $m+n \in \N$. (Cerradura de la suma en $\N$).
+ \begin{proof}$ $\newline
+  Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{ n\in \N : m+n \in \N \}$. Por definición, $1\in \N$ y $m+1\in \N$, entonces $1\in A$, es decir, $A\neq \emptyset$. \\[5pt] Por otra parte, si $n\in A$ debe ser el caso que $n\in \N$ y $m+n\in \N$. Como $\N$ es un conjunto inductivo, $n+1 \in \N$ y $(m+n)+1 \in \N$, luego, por la asociatividad de la suma, $m+(n+1)\in \N$. Por la condición de $A$, se cumple que $n+1\in A$, por lo que $A$ es un conjunto inductivo. De esto se concluye que $\N\subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la suma de números naturales es un número natural. 
+ \end{proof}
+
+
+
+ \item Si $m,n\in \N$, entonces $m\cdot n \in \N$. (Cerradura de la multiplicación en $\N$).
+ \begin{proof}$ $\newline
+  Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\{n\in \N: m\cdot n \in \N\}$. Por definición, $1 \in \N$. Adenás, $m\cdot 1 \in \N$, entonces $1 \in A$, es decir $A \neq \emptyset$.
+ 
+  Luego, si $n \in A$ debe ser el caso que $n\in \N$ y $m \cdot n \in \N$. Por cerradura de la suma en $\N$ se verifica que $m\cdot n + m \in \N$. Notemos que $m\cdot n + m=m\cdot n + m\cdot 1 = m\cdot (n+1)$, por lo que $m \cdot (n+1) \in \N$. Como $\N$ es un conjunto inductivo, tenemos que $n+1\in \N$. De este modo, $n+1\in A$. Lo que implica que $A$ es un conjunto inductivo. De esto se concluye que $\N \subseteq A$ y como $A\subseteq \N$, $A=\N$. En otras palabras, la multiplicación de números naturales es un número natural.
+ \end{proof}
+
+ \item $1\leq n, \forall n\in \N$. (Elemento mínimo de $\N$).
+ \begin{proof} 
+  Sea $A\coloneqq \{n\in \N: n\geq 1\}$. Como $1\in \N$ y $1\geq 1$, tenemos que $1\in A$.
+
+  Si $n\in A$ debe ser el caso que $n\in \N$ y $1\leq n$. Además, por la cerradura de la suma en $\N$, $n+1\in \N$. Luego, $0 \leq 1$ de donde sigue que $n \leq n+1$. Por transitividad, $1\leq n+1$, por lo que $n+1\in A$, lo que implica que $A$ es un conjunto inductivo, es decir, $\N\subseteq A$ y como $A\subseteq \N$, $A=N$. En otras palabras, $n\geq 1, \forall n\in\N$.
+ \end{proof}
+
+ \bfit{Definición:}  Sea $A\subseteq \R$ con $A \neq \emptyset$, decimos que $m$ es elemento mínimo de $A$ si $m\in A$ y $m\leq a, \forall a\in A$.
+
+ \item Para todo $n\in \N$ con $n>1$ se verifica que $n-1\in \N$.
+ \begin{proof} 
+  Sea $A \coloneqq \set{n\in \N | n>1, n-1\in \N}\union \set{1}$. Sea $m\in A$ con $m>1$, tenemos que $m\in \N$, y como $\N$ es un conjunto inductivo, se verifica que $m+1\in\N$. Luego, $(m+1)-1=m$, por lo que $(m+1)-1\in \N$. Como $m>1$, por transitividad, $m>0$, de donde sigue que $m+1>1$, por lo que $m+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. Por tanto $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$.
+ \end{proof}
+
+ \item Sean $m$ y $n$ números naturales. Si $n<m$, entonces $m-n\in\N$. 
+ \begin{proof} 
+  Sea $n\in \N$ arbitrario pero fijo. Definimos $A \coloneqq \set{m\in \N| n<m, \ m-n\in\N}\union \set{1}$. Si $m_0\in A$ con $m_0>1$, tenemos que $n<m_0$ y $m_0-n\in \N$ con $m_0\in \N$. Como $\N$ es un conjunto inductivo, sigue que $m_0+1\in \N$. Además, $m_0<m_0+1$, y por transitividad $n<m_0+1$. Luego, por la cerradura de la suma en $\N$ tenemos que $(m_0-n)+1 =(m_0+1)-n \in \N$, por lo que $m_0+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, se cumple que $A=\N$.
+ \end{proof}
+
+ \bfit{Corolario:} \begin{enumerate}[label=\roman*)]
+  \item Sea $x\in \R$. Si $n\in \N$ y $n<x<n+1$, entonces $x$ no es un número natural. (La \textit{distancia} entre un número natural y su \textit{sucesor} es $1$).
+  
+  \begin{proof}\leavevmode
+    Por hipótesis, $n<x$, de donde sigue que $n+(-x+1)<x+(-x+1)$, osea, $n-x+1<1$. Como $\N$ es un conjunto inductivo, $n+1\in \N$. Ahora, supongamos que $x\in \N$, de la hipótesis $x<n+1$ sigue que $n+1-x\in \N$, por este teorema, y como $1$ es elemento mínimo de $\N$, tenemos que $1\leq n+1-x$. Esto implica que $1\leq n+1-x < 1$, lo que es una contradicción. Por tanto, $x$ no es un número natural.
+  \end{proof}
+
+  \textbf{Nota:} Otra forma de plantear esta proposición es la siguiente (ii):
+
+  \item Sea $x\in \R$. Si $m\in \N$ y $m-1<x<m$, entonces $x$ no es un número natural. (La \textit{distancia} entre un número natural y su \textit{antecesor} es $1$).
+  
+  \begin{proof}\leavevmode
+    Sea $x\in \N$. Por hipótesis $x<m$ y $m-1<x$, de donde obtenemos:
+  \begin{center}\vspace{-1em}
+   \begin{minipage}[l]{.4\linewidth}
+   \begin{align*}
+    x +(-m+1) &< m +(-m+1)\\
+    %x -m &< m-m\\
+    %x-m &< 0\\
+    x+1-m &< 1
+   \end{align*}
+   \end{minipage}%
+   \begin{minipage}[r]{.4\linewidth}
+   \begin{align*}
+    (m-1) +1 &< (x)+1\\
+    %m-1-(m-1) &< x - (m-1)\\
+    %0 &< x-m+1\\
+    m &< x+1
+   \end{align*}
+   \end{minipage}
+  \end{center}
+  Por hipótesis $x\in \N$, y como $\N$ es un conjunto inductivo, sigue que $x+1\in \N$. Como $m<x+1$, con $m\in \N$, por este teorema se verifica que $x+1-m \in \N$, y como $1$ es elemento mínimo de $\N$, sigue que $1\leq x+1-m$. Esto implica que $1\leq x+1-m<1$, lo que es una contradicción. Por tanto, $x$ no es un número natural.
+  \end{proof}
+
+  \item Todo subconjunto no vacío de $\N$ tiene elemento mínimo. (Principio del buen orden).
+  
+  \begin{proof}\leavevmode
+    Sea $A\subset \N$ con $A\neq \emptyset$. Supongamos que $A$ no tiene elemento mínimo.
+  
+  Como $A\neq \emptyset$, se tiene que $\exists x\in A$, y como $A\subset \N$, entonces $x\in \N$. Sabemos que $1$ es elemento mínimo de $\N$, por lo que, en particular $1\leq x$. Como $A$ no tiene elemento mínimo, no puede ser el caso que $x=1$, pues $1\leq x,\forall x\in A$. De esto sigue que $1<x$, y por este teorema, se verifica que $x-1\in \N$, y sabemos que $x-1<x$. Como $\N$ es un conjunto inductivo, $x+1\in \N$, y sabemos que $x<x+1$. De este modo, tenemos que $x-1<x<x+1$, pero por este teorema, esta desigualdad implica que $x$ no es un número natural, lo que es una contradicción. Por tanto, $A$ tiene elemento mínimo.
+  \end{proof}
+  %\begin{proof} 
+  %Sea $A\subset \N$ con $A \neq \emptyset$. Supongamos que $A$ no tiene elemento mínimo.%, es decir, supongamos que si $c\leq a, \forall a\in A$, entonces $c\notin A$.
+  %
+  %Sea $S\defined \set{n\in \N| n<a, \forall a\in A}$.
+  %%
+  %%\textbf{Nota:} Nuestra intención es mostrar que $S$ es inductivo, con lo que llegaremos a una contradicción a partir del supuesto (de que $A$ no tiene elemento mínimo), por ello procedemos como sigue:
+  %
+  %Si $1\notin S$, entonces $\exists a_0\in A$ tal que $a_0 \leq 1$. Como $a_0\in \N$, sabemos que $1\leq a_0$, por lo que $1\leq a_0 \leq 1$, lo que implica que $a_0=1\in A$, pero $1\leq a, \forall a\in A$, pues los elementos de $A$ son números naturales. Por tanto, $1$ es elemento mínimo de $A$, pero esto contradice nuestro supuesto inicial. Por tanto, $1\in S$.
+  %%
+  %%\textbf{Nota:} Si suponemos que $\exists n\in S$ y esto implica que $n+1\in S$ estaríamos probamos que $S$ es un conjunto inductivo.
+  %
+  %Si $n\in S$, tenemos que $n\in \N$ (*) y $n<a, \forall a\in A$ (**).
+  %
+  %Luego, si $n+1\notin S$, entonces $\exists a_0\in A$ tal que $a_0 \leq n+1$. De (*) se sigue que $n+1\in \N$, pues $\N$ es un cojunto inductivo. A su vez, de (**) se tiene que, en particular, $n<a_0$, por lo que $n<a_0\leq n+1$ (***). Como $n$, $a_0$ y $n+1$ son números naturales, (***) no puede cumplirse con desigualdad estricta, así que $a_0=n+1\in A$. Por nuestro supuesto inicial $A$ no tiene elemento mínimo, esto es, $\exists m\in A$ tal que $m<n+1$, y así $n<m<n+1$, lo que es una contradicción. Por tanto, $n+1\in S$, es decir, $S$ es un conjunto inductivo, y por definición $S\subset \N$ y $\N\subset S$, por lo que $S=\N$.
+  %
+  %Finalmente, dado que $A\neq \emptyset$, $\exists a_0\in A$ tal que $n<a_0, \forall n\in \N$, por lo que podemos elegir $n=a_0<a_0$, lo que es una contradicción. Por tanto, $A$ debe tener elemento mínimo.
+  %%notemos que $A\intersection S=\emptyset$, y dado que $A\subseteq \N$ y $S=\N$, sigue que $A=\emptyset$, pero esto es una contradicción. Por tanto, si $A\subseteq \N$ con $A\neq \emptyset$, entonces $A$ tiene elemento mínimo.
+  %\end{proof}
+  %
+  %Todo subconjunto no vacío del conjunto de los números naturales tiene elemento mínimo. Esto significa que si $A\subseteq \N$ y $A \neq \emptyset$, entonces existe un elemento $c\in A$ tal que $c\leq a, \forall a\in A$.
+  
+  %\textbf{Observación:}
+  %
+  %Sabemos —por (c) de LE7— que cualquier subconjunto no vacío de $\N$ está acotado inferiormente. El principio del buen orden nos garantiza que cualquier subconjunto no vacío de $\N$ contiene una de sus cotas inferiores, a la que llamamos elemento mínimo.
+  %
+  %Notemos que si suponemos la existencia de un subconjunto no vacío de $\N$ tal que ninguna de sus cotas inferiores esté contenida en el conjunto, estaríamos negando el principio del buen orden. Es así cómo procedemos a probar el teorema.
+  
+  %Sea $A\subseteq \N$ con $A\neq \emptyset$. Supongamos que $A$ no contiene ninguna de sus cotas inferiores, es decir, supongamos que si $c\leq a, \forall a\in A$, entonces $c\notin A$.
+  %
+  %Definimos el conjunto $L\coloneqq \set{n\in \N: n\leq a, \forall a\in A}$. Es claro que $1\in L$. Veamos que si $n\in L$, tendríamos que $n\leq a, \forall a\in A$. Luego, si $n+1\notin L$, entonces $\exists a_0\in A$ tal que $n+1>a_0$, por lo que $n\leq a_0<n+1$, y —por (h) de LE7— no puede ser el caso que $n<a_0$, de donde sigue que $n=a_0$, pero esto contradice nuestro supuesto inicial, entonces, debe ser el caso que $n+1\in L$. Consecuentemente, $L$ es un conjunto inductivo, y —por definición— $\N\subseteq L$ y $L\subseteq \N$, lo que implica que $L=\N$.
+  %
+  %Finalmente, notemos que $A$ y $L$ son disjuntos, y dado que $A\subseteq \N$ y $L=\N$, sigue que $A=\emptyset$, pero esto es una contradicción. Por tanto, si $A\subseteq \N$ con $A\neq \emptyset$, entonces $\exists c\in A$ tal que $c\leq a, \forall a\in A$. \qed
+  %%
+  %\textbf{\textit{Teorema.}} Si $A\subseteq \N$ y $A\neq \emptyset$ y $A$ está acotado superiormente, entonces $A$ tiene elemento máximo, esto es existe un elemento $c\in A$ tal que $a\leq c, \forall a\in A$.
+  %
+  %\textbf{Demostración:}
+  %
+  %Sea $A\subseteq\N$ con $A\neq \emptyset$ y $A$ acotado superiormente. Supongamos que si $c\geq a, \forall a\in A$, entonces $c\notin A$.
+  %
+  %Definimos el conjunto $-A\coloneqq \set{-a: a\in A}$. Como $A$ está acotado superiormente, $\exists c\in \R$ tal que $c\geq a, \forall a\in A$. Notemos que $-a\geq -c, \forall -a\in -A$, lo que implica que $-A$ está acotado inferiormente, y por esto, $A$ tiene elemento mínimo. Sea $m$ el elemento mínimo de $-A$. Veamos que $m\leq -a, \forall -a\in -A$ de donde sigue que $a\leq -m, \forall a\in A$, con $-m\in A$ pero esto contradice nuestro supuesto inicial. Por tanto, $A$ tiene elemento máximo. \qed
+  %
+
+  %\item Sea $x\in \R$. Si $n\in \N$ y $n-1<x<n$, entonces $x$ no es un número natural.
+  %\begin{proof}
+  %Supongamos que $x\in \N$. Por hipótesis $x<n$ y $n-1<x$, de donde obtenemos:
+  %\begin{center}\vspace{-1em}
+  % \begin{minipage}[l]{.4\linewidth}
+  % \begin{align*}
+  %  x &< n\\
+  %  %x -n &< n-n\\
+  %  x-n &< 0\\
+  %  x-n +1 &< 1
+  % \end{align*}
+  % \end{minipage}%
+  % \begin{minipage}[r]{.4\linewidth}
+  % \begin{align*}
+  %  n-1 &< x\\
+  %  %n-1-(n-1) &< x - (n-1)\\
+  %  %0 &< x-n+1\\
+  %  n &< x+1
+  % \end{align*}
+  % \end{minipage}
+  %\end{center}
+  %Suponemos que $x\in \N$, y como $\N$ es un conjunto inductivo, sigue que $x+1\in \N$. Como $n<x+1$, con $n\in \N$, por el teorema se verifica que $x+1-n \in \N$, por lo que $1\leq x+1-n$. No obstante, tenemos que $x-n+1<1$, osea $1\leq x+1-n<1$, lo que es una contradicción. Por tanto, $x$ no es un número natural.
+  %\end{proof}
+
+  \item Sea $S\subseteq \N$ tal que $S$ es un conjunto inductivo, entonces $S=\N$. (Principio de inducción matemática).
+
+  \begin{proof} 
+  Sea $S\neq \N$. El conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$). Pr definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $\N\setminus S\subset \N$, por el principio del buen orden, tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$, como $m\in \N$, sigue que $1 \leq m$. Como $m\in \N\setminus S$ y $1\notin \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, y por este teorema, $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, tenemos que $m-1\notin \N\setminus S$, osea $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, $S=\N$. 
+  \end{proof}
+
+  \item Sea $x\in \R^+$. Si $n\in \N$ y $x+n\in \N$, entonces $x\in \N$.
+
+  \begin{proof}\leavevmode
+    Por definición, $x>0$, por lo que $n<n+x$. Por hipótesis, $x+n\in \N$ y $n\in \N$. Luego, por este teorema, $(x+n)-n \in \N$, osea, $x\in \N$.
+  \end{proof}
+ \end{enumerate} %Corolario
+
+\end{enumerate}
+
+\pagebreak
+
+\subsection*{Una nota sobre inducción matemática}
+
+\bfit{Proposición:} $0<\frac{1}{n}\leq 1, \forall n\in \N$. \begin{proof}
+  Sea $A \defined \set{n|0<\frac{1}{n} \leq 1, n\in \N}$. Notemos que $1\in A$, pues $0<\frac{1}{(1)} \leq 1$. Luego, si $n\in A$, tenemos que $0<\frac{1}{n} \leq 1$. También, $n<n+1$, por lo que $\frac{1}{n+1} < \frac{1}{n}$. Finalmente, como $n+1>0$, sigue que $\frac{1}{n+1}>0$, y por transitividad, $0<\frac{1}{n+1}\leq 1$. Como $\N$ es un conjunto inductivo, entonces $n+1\in \N$, se verifica $n+1\in A$, y por el principio de inducción matemática, $A =\N$.
+\end{proof}
+
+El lector notará que la prueba consiste en: \begin{enumerate}
+  \item Definir un subconjuto $A$ de números naturales (el cual satisface la propiedad objetivo).
+  \item Demostrar que $A$ es un conjunto inductivo: \begin{itemize}
+    \item Exhibir que $1$ pertenece a $A$ (caso base).
+    \item Plantear que algún número natural $n$ pertenece a $A$ (hipótesis de inducción o paso inductivo).
+    \item Probar que $n+1$ pertenece a $A$.
+  \end{itemize}
+  \item Enunciar el prinicipio de inducción matemática (que garantiza la propiedad para todo número natural).
+\end{enumerate}
+
+\textbf{Nota:} No se exige que $n+1\in A$ sea una consecuencia de que $n\in A$, sin embargo, este suele ser el caso; por lo que, si se prescinde del paso inductivo para probar que $n+1$ cumple la propiedad enunciada, es un buen hábito detenerse y comprobar el desarrollo, puede ser que se haya cometido un error o que en realidad no necesite inducción para la prueba.
+
+Esta \textit{receta} nos permite probar proposiciones sobre los números naturales; no obstante, la tradición de los libros de texto es definir de manera implícita el conjunto con el que se trabaja y —si acaso— enunciar el principio de inducción matemática al inicio de la prueba. Por ejemplo:
+
+\bfit{Proposición:} $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+\begin{proof}
+  Procedemos por inducción. \begin{enumerate}[label=\roman*)]
+    \item Es claro que $n=1$ satisface la desigualdad, pues $0<\frac{1}{1} \leq 1$.
+    \item Supongamos que la desigualdad se cumple para $n=k$, es decir, supongamos que \begin{align*}
+      0&<\frac{1}{k}\leq 1 && \text{(hipótesis de inducción)}
+    \end{align*}
+    \item Demostraremos, a partir de la hipótesis de inducción, que la desigualdad se cumple también para $n=k+1$. Es decir, probaremos que \begin{align*}
+      0&<\frac{1}{k+1}\leq 1
+    \end{align*}
+    En efecto, notemos que $k<k+1$, de donde obtenemos que $\frac{1}{k+1} < \frac{1}{k}$. Además, como $k+1>0$, sigue que $\frac{1}{k+1}>0$. Y de la hipótesis de inducción tenemos que \[0 < \frac{1}{k+1} < \frac{1}{k} \leq 1\]
+    es decir, \begin{align*}
+      0<\frac{1}{k+1}\leq 1.
+    \end{align*}
+  \end{enumerate}
+  Por tanto, $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+\end{proof}
+
+Sin embargo, el lector debería ser cuidadoso de no considerar el uso de inducción matemática como la única estratégia para demostrar proposiciones sobre los elementos de $\N$, por ejemplo, la proposición también puede ser probada por casos:
+
+\bfit{Proposición:} $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+ \begin{proof}
+  Sea $n\in \N$ arbitrario pero fijo. Sabemos que $n\geq 1$, por lo que tenemos dos casos: \begin{enumerate}[label=\roman*)]
+   \item Si $n=1$, tenemos que $\frac{1}{n}=\frac{1}{1}=1$. Por lo que $0<\frac{1}{n}\leq 1$.
+   \item Si $n>1$, por transitividad $n>0$, lo que implica que $\frac{1}{n}>0$. Retomando la hipótesis, \begin{align*}
+    n &> 1\\
+    n \cdot \frac{1}{n} &> 1\cdot \frac{1}{n}\\
+    1 &> \frac{1}{n}
+   \end{align*} Por lo que $0<\frac{1}{n}\leq 1$. 
+  \end{enumerate} Como $n$ es arbitrario, se verifica que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
+ \end{proof}
+
+\section*{Potenciación}
+
+\bfit{Definición:}  Sea $b\in \R$ y $n\in \N$,
+ \[
+  b^n = \left\{
+ \begin{array}{@{}r@{\thinspace}l}
+  b, &  \ \text{si}  \ n = 1\\
+  b\cdot b^{n-1}, &  \ \text{si}  \ n > 1
+  %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+ \end{array} \right. \]
+%
+ %\textbf{Notación:} Sea $b\in \R$ y $n\in \N$. Si $b \neq 0$, denotaremos $\frac{1}{b^n}$ como $b^{-n}$.
+%
+\subsection*{Lista de Ejercicios 9 (LE9)}
+
+Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+  \item $1^n=1, \forall n\in \N$.
+  \vspace{-1em}
+  \begin{proof} Sea $A=\set{n|1^n=1}$.
+  \begin{enumerate}[label=\roman*)]
+  \item Notemos que $1\in A$, pues $1^1=1$, por definición.
+  \item Si $n\in A$, entonces $1^n=1$.
+  \item Por definición, \begin{align*}
+  1^{n+1} = \left\{
+  \begin{array}{@{}r@{\thinspace}l}
+    1, &  \ \text{si}  \ n+1 = 1\\
+    1\cdot 1^{n}, &  \ \text{si}  \ n+1 > 1
+    %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+  \end{array} \right.
+  \end{align*}
+ Como $n>0$, se tiene $n+1>1$, de donde sigue que $1^{n+1}=1\cdot 1^n=1^n$, por (ii) se verifica que $1^n=1$, es decir, $1^{n+1}=1$, lo que implica que $n+1\in A$.
+ \end{enumerate}
+
+ Por el principio de inducción matemática, $A=\N$, por lo que $1^n=1, \forall n\in \N$.
+ \end{proof}
+
+ \item $0^n=0, \forall n\in \N$.
+ \begin{proof}
+ Es claro que $0^1=0$. Luego, si $0^n=0$, tenemos que $0^{n+1}=0 \cdot 0^n$, lo que es una multiplicación por $0$, es decir, $0^{n+1}=0$.
+ \end{proof}
+ 
+  \item $a^m \cdot a^n = a^{m+n}$.
+
+ \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n|a^{m+n}=a^m\cdot a^n}$.
+
+ \begin{enumerate}[label=\roman*)]
+ \item Por definición \begin{align*}
+  a^{m+1} = \left\{
+  \begin{array}{@{}r@{\thinspace}l}
+    a, &  \ \text{si}  \ m+1 = 1\\
+    a\cdot a^{m}, &  \ \text{si}  \ m+1 > 1
+    %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+  \end{array} \right.
+  \end{align*}
+  
+  Como $m>0$, sigue que $m+1>1$, por lo que $a^{m+1}=a\cdot a^m=a^m\cdot a^1$, lo que implica que $1\in A$.
+ \item Si $n\in A$, tenemos que $a^{m+n}=a^m\cdot a^n$.
+ \item Por definición \begin{align*}
+  a^{m+(n+1)} = \left\{
+   \begin{array}{@{}r@{\thinspace}l}
+    a, &  \ \text{si}  \ m+(n+1) = 1\\
+    a\cdot a^{m+n}, &  \ \text{si}  \ m+(n+1) > 1
+   \end{array} \right.
+  \end{align*}
+
+ Como $m+n>0$, sigue que $m+(n+1)>1$. Por tanto, \begin{align*}
+  a^{m+(n+1)} &=a\cdot a^{m+n} && \text{Definición}\\
+  &= a\cdot a^m \cdot a^n && \text{Por (ii)}\\
+  &= a^m \cdot a^{n+1} && \text{Por (i)}
+ \end{align*}
+ \end{enumerate}
+
+ Por el principio de inducción matemática, $A=\N$, por lo que $a^m \cdot a^n = a^{m+n}, \forall m,n\in \N$.
+ \end{proof}
+
+ \item Si $b\neq 0$, entonces $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+ \begin{proof}
+ Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.
+ \begin{enumerate}[label=\roman*)]
+ \item Notemos que $\frac{a^1}{b^1}= \frac{a}{b}= \qty(\frac{a}{b})^1$. Por lo que $1\in A$.
+ \item Si $n\in A$, tenemos $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+ \item Como $n>0$, se tiene $n+1>1$, por definición
+  \begin{align*}
+    \qty(\frac{a}{b})^{n+1} &= \frac{a}{b}\cdot \qty(\frac{a}{b})^n\\
+    &=\frac{a}{b}\cdot \frac{a^n}{b^n} && \text{Por (ii)}\\
+    &= \frac{a\cdot a^n}{b\cdot b^n}\\
+    &= \frac{a^{n+1}}{b^{n+1}} && \text{Por tanto, $n+1\in A$.}
+   \end{align*}\
+ \end{enumerate}
+ Por el principio de inducción matemática, $A=\N$, por lo que $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+ \end{proof}
+
+ \item $(ab)^n = a^nb^n, \forall n\in \N$.
+ \begin{proof}
+  Procedemos por inducción. \begin{enumerate}[label=\roman*)]
+    \item Se verifica para $n=1$, pues $(ab)^1=ab=a^1b^1=a^nb^n$.
+    \item Supongamos que la igualdad se verifica para $n=k$, es decir, suponemos que \begin{align*}
+      (ab)^k = a^kb^k
+    \end{align*}
+    \item Si $n=k+1$ sigue que \begin{align*}
+      (ab)^{k+1} &= (ab)^k (ab) && \text{(c) de LE9}\\
+      &= a^kb^k (ab) && \text{Hip. Inducción}\\
+      &= a^{k+1} b^{k+1} && \text{(c) de LE9} \qedhere 
+    \end{align*}
+  \end{enumerate}
+ \end{proof}
+
+ \item $a^{mn} = (a^m)^n, \forall m,n\in \N$.
+ \begin{proof}
+  Sea $n\in \N$ arbitrario pero fijo. Definimos $A\defined \set{m|(a^m)^n = a^{mn}, m\in \N}$. Es claro que $1\in A$, pues $(a^1)^n = (a)^n = a^n = a^{1\cdot n} = a^{mn}$. Si $m_0\in A$, entonces $(a^{m_0})^n = a^{m_0n}$ con $m_0\in \N$. Como $\N$ es un conjunto inductivo, $m+1\in \N$, de donde sigue que $a^{m+1} = a^m\cdot a$, por (c) de LE9. Por ello $(a^{m+1})^n = \big(a^m\cdot a\big)^n$, y por (e) de LE9, obtenemos que $\big(a^m\cdot a\big)^n = a^{mn}\cdot a^n$, de donde $a^{mn}\cdot a^n = a^{mn+n} = a^{n(m+1)}$, y así, $m+1\in A$, por lo que $A$ es un conjunto inductivo. Como $A\subseteq \N$, y por el principio de inducción matemática $A=\N$. Por tanto $(a^m)^n = a^{mn}, \forall m,n\in \N$.
+ \end{proof}
+
+ \end{enumerate}
+
+ \section*{Números enteros}
+
+ \bfit{Proposición:} Sea $m,n\in \N$ con $m\neq n$. Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
+ 
+ \begin{proof}
+   Sea $n\in \N$ arbitrario pero fijo. Definimos $A=\set{m \in \N|\frac{a^m}{a^n}=a^{m-n}, \ m>n}\union\set{1}$. 
+   Sea $m_0 \in A$ con $m_0>1$, entonces $\frac{a^{m_0}}{a^n} = a^{m_0-n}$ con $n<m_0$ y $m_0\in \N$. Como $\N$ es un conjunto inductivo, sigue que $m_0+1\in \N$, y $m_0<m_0+1$, por transitividad, $n<m_0+1$. Sigue que \begin{align*}
+    \frac{a^{m_0+1}}{a^n} &= \frac{a^{m_0}\cdot a}{a^n}\\
+    &= a\cdot \frac{a^{m_0}}{a^n}\\
+    &= a\cdot a^{m_0-n}
+   \end{align*}
+   Como $m_0,n \in \N$ y $m_0>n$, se verifica, por (e) de LE8, que $m_0-n\in \N$, y por (c) de LE9, $a\cdot a^{m_0-n} = a^{1+(m_0-n)} = a^{(m_0+1)-n}$, lo que implica que $m_0+1 \in A$. Por el principio de inducción matemática, $A=\N$. Como $n$ es arbitrario, si $m>n$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
+ \end{proof}
+
+ El lector notará que para que la proposición $\frac{a^m}{a^n} = a^{m-n}$ sea probada, además de que $a\neq 0$, requerimos que $m\neq n$, pues si tenemos el caso donde $m=n$, entonces \begin{align*}
+  \frac{a^m}{a^n} &= \frac{a^n}{a^n}\\
+  &= \qty(\frac{a}{a})^n && \text{(d) de LE9}\\
+  &= \bigl(a\cdot a^{-1}\bigr)^n && \text{Notación}\\
+  &= 1^n && \text{Inverso multiplicativo}\\
+  &= 1 && \text{(a) de LE9}
+\end{align*}
+Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es posible probar que $a^0 = 1$, pues definimos las propiedades de los exponentes para númeos naturales, y tenemos que $0\notin \N$. Por tanto, introducimos el hecho de que $x^0 = 1, \forall x\in \R$ como una definición, pero al hacerlo, expandimos las propiedades de potenciación al conjunto de los números enteros.
+
+  \bfit{Definción:} \begin{itemize}
+    \item Al conjunto $\N \cup \set{0} \cup \set{-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
+    \item Al conjunto $\set{-n: n\in \N}$ lo llamaremos conjunto de los números enteros negativos y lo representaremos con el símbolo $\Z^-$.
+    %\item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo representaremos con el símbolo $\Z^+$.
+   \end{itemize}
+   
+   %\textbf{Observación.} Los conjuntos $\N$, ${0}$, ${-n: n\in \N}$ son disjuntos por pares.
+
+%\bfit{Definición:}  Sea $a\in \R$ y $m\in \Z$,
+% \[
+%  a^m = \left\{
+% \begin{array}{@{}r@{\thinspace}l}
+%  a\cdot a^{m-1}, &  \ \text{si}  \ m > 0\\
+%  1, &  \ \text{si}  \ m = 0\\
+%  \frac{1}{a^{-m}}, &  \ \text{si}  \ m < 0 \ \text{y} \ a\neq 0
+% \end{array} \right. \]
+
+\subsection*{Lista de Ejercicios 10 (LE10)}
+
+\begin{enumerate}[label=\alph*)]
+  \item ¿El conjunto de los números enteros es un campo (satisface los axiomas de campo)?
+  
+  \textbf{Respuesta:} No, pues el axioma del inverso multiplicativo solo se satisface para $1$ y $-1$.
+
+  \item Sea $s\in \Z$, demuestre que si $s<j<s+1$, entonces $j\notin \Z$.
+  \begin{proof} Supongamos que $j\in \Z$. Tenemos tres casos:
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $j\in \set{0}$, tenemos que $0<s+1$, de donde sigue que $s+1\in \N$, por definición (de $\Z$), pero como $s<0$, obtenemos $s+1<1$, lo que es una contradicción, pues todo número natural es mayor o igual a 1.
+      \textbf{Nota:} Se asume que la suma es cerrada en $\Z$, pues la hipótesis únicamente exige que $s\in \Z$, pero no que $s+1\in \Z$. El lector debería verificar este hecho.
+      \item Si $j\in\N$, tenemos tres casos para $s$:
+      \begin{enumerate}[label=\roman*)]
+        \item Si $s=0$, sigue que $s=0<j<1=s+1$, pero esto es una contradicción, pues todo número natural es mayor o igual a 1.
+        \item Si $s\in \N$, por el corolario (i) de (e) de LE8, es una contradicción.
+        \item Si $-s\in \N$, se tiene que $-s>0$, por lo que $s<0$, de done sigue que $s+1<1$, pero $j<s+1$ y por transitividad, $j<1$, lo que es una contradicción.
+      \end{enumerate}
+      \item Si $-j\in \N$, sigue que $-j>0$, por lo que $j<0$, y por transitividad, $s<0$, de esto sigue que $s\neq 0$ y $s\notin \N$, por lo que $-s\in \N$. Como $s<j$ y $j<s+1$, sigue que $-j<-s$ y $-(s+1)=-s-1<-j$; de este modo, $-s-1<-j<-s$, con $-s, -j\in \N$, pero se contradice el corolario (ii) de (e) de LE8.
+    \end{enumerate}
+    En cualquier caso $j\notin \Z$.
+  \end{proof}
+\end{enumerate}
+
+\bfit{Definición:} Sea $a\in \R$ y $n\in \N$, \begin{itemize}
+  \item $a^0=1, \forall a\in \R$.
+  \item $a^{-n}=\frac{1}{a^n}$, si $a\neq 0$.
+\end{itemize}
+
+\subsection*{Lista de Ejercicios 11 (LE11)}
+
+ \begin{enumerate}[label=\alph*)]
+  \item $1^m = 1, \forall m\in \Z$. \begin{proof}
+    Si $m=0$, la prueba está terminada, y hemos probado que la proposición es verdadera si $m\in \N$. Luego, si $m<0$, tenemos que $1^m = \frac{1}{1^{-m}}$, donde $-m\in \N$, por lo que $1^m = \frac{1}{1} = 1$.
+  \end{proof}
+
+  \item Sea $a,b\neq 0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}, \forall n\in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Si $n\in \N$, notemos que \begin{align*}
+        \left(\frac{b}{a}\right)^{-n} &= \frac{1}{\left(\frac{b}{a}\right)^n} && \text{Definición}\\
+        &= \frac{1}{\frac{b^n}{a^n}} && \text{(d) de LE9}\\
+        &= \frac{a^n}{b^n} && \text{Regla del sandwich}\\
+        &= \left(\frac{a}{b}\right)^n && \text{(d) de LE9}
+      \end{align*}
+      \item Si $n=0$, notemos que $\frac{a^n}{b^n} = \frac{a^0}{b^0} = \frac{1}{1} = 1 = \left(\frac{b}{a}\right)^0 = \left(\frac{b}{a}\right)^n$.
+      \item Si $n<0$, notemos que \begin{align*}
+        \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
+        &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
+        &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
+        &= \frac{1}{\frac{a^{-n}}{b^{-n}}}\\
+        &= \frac{b^{-n}}{a^{-n}} && \text{Regla del sandwich}\\
+        &= \left(\frac{b}{a}\right)^{-n} && \text{(d) de LE9} \qedhere
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+
+  \item $\frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n, \forall n\in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Ya probamos que la proposición es verdadera para $n\in \N$.
+      \item Si $n=0$, tenemos que $\frac{a^n}{b^n} = \frac{a^0}{b^0} = \frac{1}{1} = 1 = \left(\frac{a}{b}\right)^0= \left(\frac{a}{b}\right)^n$.
+      \item Sea $a\neq 0$ y $b\neq 0$, si $n<0$, sigue que \begin{align*}
+        \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
+        &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
+        &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
+        &= \frac{1}{\frac{a^{-n}}{b^{-n}}} && \text{Con $-n\in \N$}\\
+        &= \frac{1}{\left(\frac{a}{b}\right)^{-n}} && \text{(d) de LE9}\\
+        &= \left(\frac{a}{b}\right)^n && \text{Definición} \qedhere
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+
+  \item $a^m\cdot a^n = a^{m+n}, \forall m\in \Z$.
+  \begin{proof}\leavevmode
+  \begin{enumerate}[label=\Roman*)]
+    \item Sin pérdida de generalidad, si $n=0$, tenemos que $a^m\cdot a^0 = a^m \cdot 1 = a^m = a^{m+0}=a^{m+n}$.
+    \item Ya probamos que la proposición es verdadera para $m,n\in \N$.
+    \item Sea $a\neq 0$, y \begin{enumerate}[label=\roman*)]
+      \item Sin pérdida de generalidad, si $n<0$ y $m>0$, tenemos $a^m\cdot a^n = \frac{a^m}{a^{-n}}$, donde $-n\in \N$; a su vez, \begin{itemize}
+        \item Si $-n = m$, entonces \begin{align*}
+          \frac{a^m}{a^{-n}} &= 1 \\
+          &= a^0\\
+          &= a^{m-m}\\
+          &= a^{m-(-n)}\\
+          &= a^{m+n}
+        \end{align*}
+        \item Si $-n\neq m$, por (e) de LE9, sigue que $\frac{a^m}{a^{-n}} = a^{m-(-n)} = a^{m+n}$.
+      \end{itemize}
+      \item Si $n<0$ y $m<0$, entonces \begin{align*}
+        a^m\cdot a^n &= \frac{1}{a^{-m}} \cdot \frac{1}{a^{-m}}\\
+        &= \frac{1}{a^{-m}a^{-n}}
+      \end{align*}
+      Como $-m, -n\in \N$, por (c) de LE9, \begin{align*}
+        \frac{1}{a^{-m}a^{-n}} &= \frac{1}{a^{-m+(-n)}}\\
+        &= \frac{1}{a^{-(m+n)}}\\
+        &= a^{m+n} && \text{Definición} \qedhere
+      \end{align*}
+    \end{enumerate}
+  \end{enumerate}
+  \end{proof}
+
+  \item $(ab)^m = a^mb^m, \forall m\in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}
+      \item Ya probamos que la proposición es verdadera para $m\in \N$.
+      \item Si $m=0$, sigue que $(ab)^m = 1 = a^0b^0 = a^mb^m$.
+      \item Si $m<0$, con $a\neq 0$ y $b\neq 0$, entonces \begin{align*}
+        \bigl(ab\bigr)^m &= \frac{1}{(ab)^{-m}}\\
+        &= \frac{1}{a^{-m}b^{-m}} && \text{(e) de LE9}\\
+        &= a^mb^m && \text{Definición}
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+
+  \item $a^{mn} = (a^m)^n, \forall m,n \in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Ya probamos que la proposición es verdadera para $m,n\in \N$.
+      \item Notemos que \begin{itemize}
+        \item Si $m=0$, sigue que $a^{mn} = a^0 = 1 = 1^n = (a^0)^n = (a^m)^n$.
+        \item Si $n=0$, sigue que $a^{mn} = a^0 = 1 = (a^m)^0 = (a^m)^n$.
+      \end{itemize}
+      \item Finalmente, si $a\neq 0$ \begin{itemize}
+        \item Si $n<0$ y $m\in \N$, sigue que \begin{align*}
+          \bigl(a^m\bigr)^n &= \frac{1}{(a^m)^{-n}} && \text{Definición}\\
+          &= \frac{1}{a^{-mn}} && \text{(f) de LE9}\\
+          &= a^{mn} && \text{Definición}
+        \end{align*}
+        \item Si $m<0$ y $n\in \N$, sigue que \begin{align*}
+          \bigl(a^m\bigr)^n &= \left(\frac{1}{a^{-m}}\right)^n && \text{Definición}\\
+          &= \frac{1^n}{(a^{-m})^n} && \text{(d) de LE9}\\
+          &= \frac{1}{a^{-mn}} && \text{(f) de LE9}\\
+          &= a^{mn} && \text{Definición} && \qedhere
+        \end{align*}
+      \end{itemize}
+    \end{enumerate}
+  \end{proof}
+
+  \item Sea $a<b$ y $n\in \Z$, encuentre las condiciones que deben cumplirse para que $a^n< b^n$ o $b^n< a^n$.
+  \begin{enumerate}[label=\roman*)]
+    \item Si $n=0$, no se cumple ninguna condición, pues $a^0=b^0$.
+    \item Sea $n\in \N$,
+    \begin{enumerate}[label=\roman*)]
+      \item Si $n=1$,
+      \begin{align*}
+        a &< b && \text{Hip.}\\
+        a^1 &< b^1
+      \end{align*}
+      \item Supongamos que $a^k<b^k$, con $k\in \N$.
+      \item Notemos que
+      \begin{align*}
+        a^k &< b^k && \text{Hip. Ind.}\\
+        a^k \cdot a &< b^k 
+      \end{align*}
+    \end{enumerate}
+  \end{enumerate}
+  \end{enumerate}
