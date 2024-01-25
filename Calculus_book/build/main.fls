@@ -704,10 +704,10 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 OUTPUT build/main.pdf
 INPUT c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT ./Ch1_axs_campo.tex
-INPUT Ch1_axs_campo.tex
-INPUT ./Ch1_axs_campo.tex
-INPUT Ch1_axs_campo.tex
+INPUT ./Ch1.tex
+INPUT Ch1.tex
+INPUT ./Ch1.tex
+INPUT Ch1.tex
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm

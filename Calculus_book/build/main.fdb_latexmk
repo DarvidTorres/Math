@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1704509611 "d:/Git/Math/Math/Calculus_book/main.tex" "build/main.pdf" "main" 1704509617 0
-  "Ch1_axs_campo.tex" 1704509265 66326 78657188b58d5ba31771a572826d269c ""
-  "build/main.aux" 1704509617 70 1bb00177bd3718766fdb73f75c3a3193 "pdflatex"
+["pdflatex"] 1706202175 "d:/Git/Math/Math/Calculus_book/main.tex" "build/main.pdf" "main" 1706202182 0
+  "Ch1.tex" 1704509265 66326 78657188b58d5ba31771a572826d269c ""
+  "build/main.aux" 1706202181 70 1bb00177bd3718766fdb73f75c3a3193 "pdflatex"
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1679269123 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1679270936 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1679270170 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -161,8 +161,8 @@
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1679278595 7883418 08ec303e6a47a1f98614bfe0520f7d86 ""
   "c:/texlive/2022/texmf.cnf" 1679278146 713 e69b156964470283e0530f5060668171 ""
   "cover.tex" 1704509603 309 cb7fbba72a9e7704e41c4de0ebaef30a ""
-  "d:/Git/Math/Math/Calculus_book/main.tex" 1704432925 156 6a1fad50c0762474468a2d30f8319721 ""
-  "main.tex" 1704432925 156 6a1fad50c0762474468a2d30f8319721 ""
+  "d:/Git/Math/Math/Calculus_book/main.tex" 1706202165 146 72d716043cf45ee9ff9c8aca1243239f ""
+  "main.tex" 1706202165 146 72d716043cf45ee9ff9c8aca1243239f ""
   "preamble.sty" 1704430915 2396 1d2cd3960ca97c62113d8def2dceb833 ""
   (generated)
   "build/main.aux"
