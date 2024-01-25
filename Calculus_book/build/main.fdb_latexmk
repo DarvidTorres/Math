@@ -1,10 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1706203986 "d:/Git/Math/Math/Calculus_book/main.tex" "build/main.pdf" "main" 1706203992 0
-  "Ch1_axs_campo.tex" 1704509265 66326 78657188b58d5ba31771a572826d269c ""
-  "Ch2_axs_orden.tex" 1706202345 35866 51be3cf8d0f6800eee19761f2089f930 ""
-  "Ch3_induccion.tex" 1706203602 35447 c850c885263605fc5ccad95e9190ee1d ""
-  "Ch4.valor_abs.tex" 1706203844 6864 6ab1fe57e82fab1e7316f91923c4c659 ""
-  "build/main.aux" 1706203991 70 f7a7dd29d9749b9829b5263583b94884 "pdflatex"
+["pdflatex"] 1706204198 "d:/Git/Math/Math/Calculus_book/main.tex" "build/main.pdf" "main" 1706204209 0
+  "axs_campo.tex" 1704509265 66326 78657188b58d5ba31771a572826d269c ""
+  "axs_orden.tex" 1706202345 35866 51be3cf8d0f6800eee19761f2089f930 ""
+  "build/main.aux" 1706204209 70 2b2df9252ce0c995246ad3318b7b3b74 "pdflatex"
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1679269123 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1679270936 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1679270170 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -166,10 +164,13 @@
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1679278595 7883418 08ec303e6a47a1f98614bfe0520f7d86 ""
   "c:/texlive/2022/texmf.cnf" 1679278146 713 e69b156964470283e0530f5060668171 ""
   "cover.tex" 1704509603 309 cb7fbba72a9e7704e41c4de0ebaef30a ""
-  "d:/Git/Math/Math/Calculus_book/main.tex" 1706203903 268 26f37c7a1a07db0cd18a11513819157d ""
-  "main.tex" 1706203903 268 26f37c7a1a07db0cd18a11513819157d ""
+  "d:/Git/Math/Math/Calculus_book/main.tex" 1706204178 277 355fa80173d60360f1de9ac051264662 ""
+  "induccion.tex" 1706203602 35447 c850c885263605fc5ccad95e9190ee1d ""
+  "main.tex" 1706204178 277 355fa80173d60360f1de9ac051264662 ""
   "pendiente.tex" 1706203891 21063 aa011cce785ec5e3411ccab35e6ac659 ""
   "preamble.sty" 1704430915 2396 1d2cd3960ca97c62113d8def2dceb833 ""
+  "sumatoria.tex" 1706204199 32166 6aba3ecada018b908e237569862f4400 ""
+  "valor_abs.tex" 1706203844 6864 6ab1fe57e82fab1e7316f91923c4c659 ""
   (generated)
   "build/main.aux"
   "build/main.log"
