@@ -1,0 +1,753 @@
+\part*{Axiomas de orden}
+
+%\subsection*{Números positivos}
+%
+%\begin{enumerate}[label=O\arabic*)]
+% \item Se cumple una y sólo una de las siguientes condiciones (Tricotomía):
+%  \begin{enumerate}[label=\roman*)]
+%  \item $0<x$.% En este caso decimos que $x$ es un número real positivo.
+%  \item $x=0$.
+%  \item $x<0$.% En este caso decimos que $x$ es un número real negativo.
+%  \end{enumerate}
+% \item Si $0<x$ y $0<y$, entonces $0<x+y$.
+% \item Si $0<x$ y $0<y$, entonces $0<x\cdot y$.
+%\end{enumerate}
+Existe un subconjunto del conjunto de los números reales llamado conjunto de los números reales positivos, denotado con el símbolo $\R^+$, el cual satisface las siguientes propiedades:%. Describimos las propiedades de orden de $\R$ en términos de $\R^+$.% El conjunto $\R^+$ satisface los siguientes \textbf{axiomas (de orden)}:
+\vspace{-1em} \begin{enumerate}[start=12]%[label=O\arabic*)]
+\item Si $x, y \in \R^+$, entonces $x + y \in \R^+$. (Cerradura de la suma en $\R^+$).
+\item Si $x, y \in \R^+$, entonces $x \cdot y \in \R^+$. (Cerradura de la multiplicación en $\R^+$).
+\item Para cada $x\in \R$, se verifica una y solo una de las siguientes condiciones (Tricotomía):
+\begin{enumerate}[label=\roman*)]
+\item $x \in \R^+$.
+\item $x = 0$.
+\item $-x \in \R^+$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Lista de Ejercicios}
+\begin{enumerate}[label=\alph*)]
+ \item Demuestre que $0\notin \R^+$.
+ \begin{proof} 
+ Si $0\in \R^+$ se contradice el axioma de tricotomía.
+ \end{proof}
+
+ \item Demuestre que $1\in \R^+$. (Uno es positivo).
+ \begin{proof} Consideremos los casos: \begin{enumerate}[label=\roman*)]
+ \item $1=0$, pero este caso se descarta por axioma del neutro multiplicativo.
+ \item Si $-1\in \R^+$, por cerradura de la multiplicación en $\R^+$, $(-1) \cdot (-1)=1\in \R^+$, pero esto contradice la propiedad de tricotomía.
+ \end{enumerate} Por tanto, $1\in \R^+$.
+ \end{proof}
+\end{enumerate}
+
+\textbf{Observación:} para cualesquiera números reales $a$ y $b$ tenemos que $a=b$ o $a\neq b$. A su vez, \begin{enumerate}[label=\roman*)]
+\item Si $a=b$, entonces $a-b=0$.
+\item Si $a\neq b$, por tricotomía tenemos dos casos (excluyentes):\begin{itemize}
+ \item $a-b\in \R^+$.%, lo que denotamos como $b<a$ (o $a>b$).
+ \item $-(a-b)=b-a\in \R^+$.%, lo que denotamos como $a<b$ (o $b>a$).
+\end{itemize}%  o .%$-(x-y)=y-x\in \R^+$.% (o equivalentemente $x-y\in \R^-$).
+\end{enumerate}
+
+A partir de esta observación introducimos la siguiente \bfit{definición:}
+
+Sean $x,y\in \R$, \begin{itemize}
+ \item Si $x-y\in \R^+$, escribimos $y<x$ (o $x>y$).
+\end{itemize}
+
+De esta definición sigue que dados $x,y\in \R$, por tricotomía se verifica una y solo una de las siguientes condiciones\vspace{-1em} \begin{enumerate}[label=\roman*)]
+ \item $y<x$.
+ \item $x=y$.
+ \item $x<y$.
+\end{enumerate}
+
+\textbf{Notación:} Dados $x,y,z\in \R$, utilizaremos la notación \begin{itemize}
+ \item $y \leq x$ (o $x\geq y$) para indicar que $y<x$ o $x=y$.
+ \item $x<y<z$ para indicar que $x<y$ y $y<z$.
+\end{itemize}
+%
+%Hasta este punto sabemos que $x-y$ es un número real, pero aún no contamos con las herramientas para verificar la pertenencia de $x-y$ respecto de $\R^+$. Sin embargo, cuando dicha pertenencia ocurra, usaremos la siguiente \textbf{definición}:
+%%Si $x,y\in \R$, por la cerradura de la suma en $\R$, se verifica que $x-y\in \R$, pero aún 
+%\begin{itemize}
+%\item Si $x-y\in \R^+$, lo denotamos como $y<x$ (o $x>y$).% o $x>y$. %diremos que $x$ es mayor que $y$ y
+%\item Si $x-y\in \R^-$, lo denotamos como $x<y$ (o $y>x$).% o $y>x$. %diremos que $x$ es menor que $y$ y
+%\end{itemize}
+
+%\bfit{Definición:}  El conjunto de los números reales no negativos es el conjunto: \[
+%  \R^+\cup \set{0}
+%  \]
+
+\section*{Números reales negativos}
+
+\bfit{Definición:} Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
+%\begin{itemize}
+% \item Llamaremos al conjunto $\R^-\defined \R\setminus\bigl(\R^+\union \set{0}\bigr)$ conjunto de los números reales negativos.
+% \item Llamaremos al conjunto $\R^+\union \set{0}$ conjunto de los números reales no negativos.
+%\end{itemize}
+
+\subsection*{Lista de ejercicios 6 (LE6)}
+
+\begin{enumerate}[label=\alph*)]
+ \item Demuestre que $\R^+$ y $\R^-$ son conjuntos disjuntos.
+ \begin{proof}%$ $\newline 
+ Si $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) \neq \emptyset$, entonces $\exists x\in \R$ tal que \begin{itemize}%[label=\roman*)]
+ \item[(*)] $x\in \R^+$, y 
+ \item[(**)] $x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$.
+ \end{itemize}  De (**) sigue que $x\notin \R^+\union \set{0}$, es decir, $x\notin \set{0}$ y $x\notin \R^+$, pero esto contradice a (*).
+
+ Por tanto, $\R^+ \intersection \Bigl(\R\setminus\bigl(\R^+\union \set{0}\bigr)\Bigr) = \emptyset$, es decir, $\R^+$ y $\R^-$ son conjuntos disjuntos.
+ \end{proof}
+
+ \item Demuestre que $x\in \R^+$ si y solo si $-x\in \R^-$.
+ \begin{proof}\leavevmode
+ \begin{itemize}
+ \item[$\Rightarrow)$] Sea $x\in \R^+$. Por tricotomía, $-x\notin \R^+$ y $x\neq 0$ (y por esto $-x\neq 0$). Sigue que $-x\in \R\setminus \bigl(\R^+\union \set{0}\bigr)$, y por definción, $-x\in \R^-$.
+ \item[$\Leftarrow)$] Sea $-x\in \R^-$. Por definición, $-x\in \R\setminus\bigl(\R^+\union \set{0}\bigr)$, por lo que, $-x\notin \R^+\union \set{0}$, es decir, $-x\notin \R^+$ y $-x\notin \set{0}$ (y por tanto $-x\neq 0$). Entonces, por tricotomía, $-(-x)=x\in \R^+$. \qedhere
+ \end{itemize}
+ \end{proof}
+
+ \item Demuestre que si $x,y \in \R^-$, entonces $x+y\in \R^-$. (Cerradura de la suma en $\R^-$).
+ \begin{proof}
+ Sea $x,y\in \R^-$. Sigue que $(-x), (-y)\in \R^+$, y por la cerradura de la suma en $\R^+$, $-x-y=-(x+y)\in \R^+$, por lo que $x+y\in \R^-$.
+ \end{proof}
+
+ \item Demuestre que $x\in \R^+$ si y solo si $0<x$. (Caracterización de $\R^+$).
+ \begin{proof}\leavevmode
+ \begin{itemize}
+ \item[$\Rightarrow)$] Sea $x\in \R^+$, notemos que $x=x-0\in \R^+$, lo que denotamos como $0<x$.
+ \item[$\Leftarrow)$] Sea $0<x$, por definición $x-0=x\in \R^+$. \qedhere
+ \end{itemize}
+ \end{proof}
+
+ \item Demuestre que $x\in \R^-$ si y solo si $x<0$. (Caracterización de $\R^-$).
+ \begin{proof}\leavevmode
+ \begin{itemize}
+ \item[$\Rightarrow)$] Sea $x\in \R^-$. Notemos que $-x=0-x\in \R^+$, por lo que $x<0$.
+ \item[$\Leftarrow)$] Sea $x<0$. Por definición, $0-x=-x\in \R^+$, por lo que $x\in \R^-$. \qedhere
+ \end{itemize}
+ \end{proof}
+\end{enumerate}
+
+\subsection*{Lista de Ejercicios 5 (LE5)}
+Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
+\begin{enumerate}[label=\alph*)]
+%\item $a \in \R^+$ si y solo si $a>0$. (Definición de número real positivo).
+%\begin{proof} \leavevmode
+% \begin{itemize}
+%  \item[$\Rightarrow)$] El cero satisface que $a=a+0=a-0$. Si $a \in \R^+$, entonces $a-0 \in \R^+$, es decir, $0<a$.
+%  \item[$\Leftarrow)$] Si $0<a$, entonces $a-0 \in \R^+$, y sabemos que el cero satisface que $a-0=a+0=a$, por lo que $a \in \R^+$. \qedhere
+% \end{itemize}
+%\end{proof}
+%\bfit{Definición:}  Si $x$ es un número real tal que $0<x$ diremos que $x$ es un númeo real positivo.
+ %La definición de número real positivo es equivalente a número real mayor a cero.
+ %Todo número real positivo es mayor a cero, y todo número real mayor a cero es un número real positivo.
+ %
+ %\textbf{Nota:} La definición de un número real positivo no está asociada al signo que acompaña al número.%, es decir, la proposición es válida para $-n\in \R^+ \iff -m>0$. El lector debería verificar este hecho.
+ %Esta demostración, cuya forma es $m\in \R^+ \iff m>0, \forall m\in \R$, nos permite reparar en el hecho de que la definición de un número real positivo no está asociada al signo que acompaña al número, es decir, la proposición es válida para $-a>0$, es decir, $-a\in \R^+ \iff -a>0, \forall -a\in \R$. El lector debería verificar este hecho.
+% \item $0<a$ si y solo si $-a<0$. (Definición de número real negativo).
+%  \begin{itemize}
+%   \item[$\Rightarrow)$] Si $0<a$, por definición $a-0\in \R^+$, sigue que $a-0=a+0=a\in \R^+$.
+%   \item[$\Leftarrow)$] Si $-a<0$, por definición $0-(-a)\in \R^+$ y  por unicidad del inverso aditivo $0-(-a)=a\in \R^+$.
+%  \end{itemize}
+%  \bfit{Definición:}  Si $x$ es un número real tal que $x<0$, diremos que $x$ es un número real negativo.
+%  %\begin{center}\vspace{-1em}
+  %\begin{minipage}[l]{.5\linewidth}
+  % \begin{align*}
+  %  \Rightarrow) \qquad \qquad
+  %  0 &< a && \text{Hipótesis}\\
+  %  0 -a &< a- a && \text{Teorema}\\
+  %  -a &< 0 && \text{Inverso aditivo}
+  % \end{align*}
+  %\end{minipage}%
+  %\begin{minipage}[r]{.5\linewidth}
+  % \begin{align*}
+  %  \Leftarrow) \qquad \qquad
+  %  -a &< 0 && \text{Hipótesis}\\
+  %  -a + a &< 0 +a && \text{Teorema}\\
+  %  0 &< a && \text{Inverso aditivo}
+  % \end{align*}
+  %\end{minipage}
+  %\end{center}
+  %Otra forma de demostrar este hecho es la siguiente:
+  %\begin{proof}\leavevmode
+  % \begin{enumerate}[label=\roman*)]
+  %  \item Supongamos que $0<a$. Notemos que: \begin{align*}
+  %   0 + (-a) &< a + (-a) && \text{Ley de cancelación}\\
+  %   0 + (-a) &< 0 && \text{Inverso aditivo}\\
+  %   -a &< 0 && \text{Neutro aditivo}
+  %  \end{align*}
+  %  \item Supongamos que $-a<0$. Notemos que:
+  %  \begin{align*}
+  %   -a + a &< 0 + a && \text{Ley de cancelación}\\
+  %   0 &< 0 + a && \text{Inverso aditivo}\\
+  %   0 &< a && \text{Neutro aditivo} \qedhere
+  %  \end{align*}
+  % \end{enumerate} 
+  %\end{proof}
+  %\textbf{Observación:} El inverso aditivo de cualquier número real positivo es menor a cero.
+  % El conjunto de los números reales negativos se representa con el símbolo $\R^-$.
+  %\bfit{Definición:}  El conjunto de los números reales negativos se representa con el símbolo $\R^-$ y se define como los elementos en los números reales cuyos inversos aditivos pertenecen al conjunto de los números reales positivos:
+ %\[
+ % \R^-\coloneqq \set{m\in \R: -a\in \R^+}
+ % \]
+%
+ %\item $0<a$ si y solo si $-a<0$.
+ %\vspace{-1em}
+ %\begin{proof}
+ % \begin{itemize}
+ %  \item[$\Rightarrow)$] Sea $0<a$. Por tricotomía tenemos tres casos \begin{enumerate}[label=\roman*)]
+ %   \item Si $0<-a$, por la cerradura de la suma en $\R^+$, $0<-a+a=0$, lo que es una contradicción.
+ %   \item El inverso aditivo satisface $a-a=0$. Si $-a=0$, sigue que $a-a=a+0=a$, es decir, $a=0$, lo que es una contradicción.
+ %  \end{enumerate} Por tanto si $0<a$, entonces $-a<0$.
+ %  \item[$\Leftarrow)$] Sea $-a<0$. Por tricotomía tenemos tres casos \begin{enumerate}[label=\roman*)]
+ %   \item El inverso aditivo satisface que $a-a=0$. Si $a<0$, por la cerradura de la suma en $\R^+$,
+ %  \end{enumerate}
+ % \end{itemize}
+ %\end{proof}
+% \item Si $a<b$, entonces $\exists! x\in \R^+$ tal que $a+x=b$.
+% \begin{proof}\vspace{-1em} \leavevmode
+% \begin{enumerate}[label=\roman*)]
+% \item Primero probaremos su existencia. Sea $a<b$. Por definición, $b-a\in \R^+$. Tomando $x=b-a$, tenemos que $a+x=a+b-a=b$.
+% \item Ahora probaremos la unicidad. Sean $x,y\in \R^+$ tales que $a+x=b$ y $a+y=b$, notemos que $x=b-a$ y $y=b-a$, es decir, $x=y$. \qedhere
+% \end{enumerate}
+% \end{proof}
+ \item Si $a<b$ y $b<c$, entonces $a<c$. (Transitividad).
+ \begin{proof} 
+  Por definición $(b-a) , (c-b) \in \R^+$. Por cerradura de la suma en $\R^+$, $(b-a) + (c-b) \in \R^+$. De donde sigue que $(b-a)+(c-b)=b-a+c-b=c-a\in \R^+$, es decir, $a<c$.
+ \end{proof}
+  %\begin{align*}
+  %(b-a) + (c-b) &= b - a + c -b && \text{Notación}\\
+  %&= b-a -b+c && \text{Conmutatividad}\\
+  %&= b-b -a+c && \text{Conmutatividad}\\
+  %&= 0 - a +c && \text{Inverso aditivo}\\
+  %&= -a +c && \text{Neutro aditivo}\\
+  %&= c-a && \text{Conmutatividad}
+  %\end{align*} Entonces $c-a \in \R^+$, es decir, $a<c$.
+
+ \item $a<b$ si y solo si $a+c<b+c$. (Ley de cancelación de la suma en desigualdades).
+ 
+ \begin{proof} \leavevmode
+ \begin{itemize}
+  \item[$\Rightarrow)$] Si $a<b$, por definición, $b-a \in \R^+$. Luego, $b-a=b-a+c-c=b+c-a-c=b+c-(a+c)$. De este modo, $b+c-(a+c)\in \R^+$, es decir, $a+c<b+c$.
+  \item[$\Leftarrow)$] Si $a+c<b+c$, por definición $b+a-(a+c)\in \R^+$. Luego, $b+c-(a+c)=b+c-a-c=b-a$. De este modo, $b-a\in \R^+$, es decir, $a<b$. \qedhere
+  \end{itemize} 
+ \end{proof}
+ \textbf{Nota:} Si el contexto es claro, enunciaremos esta proposición como ley de cancelación.
+
+ \bfit{Corolario:}
+ \begin{enumerate}[label=\roman*)]
+  \item $0<a$ si y solo si $-a<0$.
+  \begin{center}\vspace{-1em}
+   \begin{minipage}[l]{.5\linewidth}
+    \begin{align*}
+     \Rightarrow) \qquad \qquad
+     0 &< a && \text{Hipótesis}\\
+     0 + (-a) &< a + (-a) && \text{Ley de cancelación}\\
+     %0 + (-a) &< 0 && \text{Inverso aditivo}\\
+     -a &< 0% && \text{Neutro aditivo}
+    \end{align*}
+  \end{minipage}%
+  \begin{minipage}[r]{.5\linewidth}
+   \begin{align*}
+    \Leftarrow) \qquad \qquad
+    -a &< 0 && \text{Hipótesis}\\
+    -a + a &< 0 + a && \text{Ley de cancelación}\\
+    %0 &< 0 + a && \text{Inverso aditivo}\\
+    0 &< a%&& \text{Neutro aditivo} \qedhere
+   \end{align*}
+  \end{minipage}
+  \end{center}
+
+  \item $a<a+b$ si y solo si $0<b$.
+  \begin{center}\vspace{-1em}
+  \begin{minipage}[l]{.5\linewidth}
+   \begin{align*}
+    \Rightarrow) \qquad \qquad
+    a &< a + b && \text{Hipótesis}\\
+    a -a &< a + b - a && \text{Ley de cancelación}\\
+    0 &< b% && \text{Inverso aditivo}
+   \end{align*}
+  \end{minipage}%
+  \begin{minipage}[r]{.5\linewidth}
+   \begin{align*}
+    \Leftarrow) \qquad \qquad
+    0 &< b && \text{Hipótesis}\\
+    0 + a &< a + b && \text{Ley de cancelación}\\
+    a &< a + b% && \text{Neutro aditivo}
+   \end{align*}
+  \end{minipage}
+  \end{center}
+  \item $a+b<a$ si y solo si $b<0$.
+  \begin{center}\vspace{-1em}
+  \begin{minipage}[l]{.5\linewidth}
+   \begin{align*} \Rightarrow) \qquad \qquad
+    a+b &< a && \text{Hipótesis}\\
+    a+b-a &< a-a && \text{Ley de cancelación}\\
+    b &< 0% && \text{Inverso aditivo}
+   \end{align*}
+  \end{minipage}%
+  \begin{minipage}[r]{.5\linewidth}
+   \begin{align*} \Leftarrow) \qquad \qquad
+    b &< 0 && \text{Hipótesis}\\
+    b + a &< 0 + a && \text{Ley de cancelación}\\
+    b+ a &< a% && \text{Neutro aditivo}
+   \end{align*}
+  \end{minipage}
+  \end{center}
+  \item $-a<b$ si y solo si $-b<a$.
+  \begin{center}\vspace{-1em}
+  \begin{minipage}[l]{.5\linewidth}
+   \begin{align*}
+    \Rightarrow) \qquad \qquad -a &< b && \text{Hipótesis}\\
+    -a+a-b &< b +a-b && \text{Ley de cancelación}\\
+    %a-a-b &< b-b+a && \text{Conmutatividad}\\
+    %0-b &< 0 + a && \text{Inverso aditivo}\\
+    -b &< a% && \text{Inverso aditivo}
+   \end{align*}
+  \end{minipage}%
+  \begin{minipage}[r]{.5\linewidth}
+   \begin{align*}
+    \Leftarrow) \qquad \qquad   -b &< a && \text{Hipótesis}\\
+    -b + b-a &< a + b-a && \text{Ley de cancelación}\\
+    %b-b-a &< b+a-a && \text{Conmutatividad}\\
+    %0 -a &< b + 0 && \text{Inverso aditivo}\\
+    -a &< b% && \text{Inverso aditivo}
+   \end{align*}
+  \end{minipage}
+  \end{center}
+  \item $a<-b$ si y solo si $b<-a$.
+  \begin{center}\vspace{-1em}
+  \begin{minipage}[l]{.5\linewidth}
+   \begin{align*}
+    \Rightarrow) \qquad \qquad
+    a &< -b && \text{Hipótesis}\\
+    a - a + b &< -b -a +b && \text{Ley de cancelación}\\
+    b &< -a% && \text{Inverso aditivo}
+   \end{align*}
+  \end{minipage}%
+  \begin{minipage}[r]{.5\linewidth}
+   \begin{align*}
+    \Leftarrow) \qquad \qquad
+    b &< -a && \text{Hipótesis}\\
+    b -b +a &< -a + -b +a && \text{Ley de cancelación}\\
+    a &< -b% && \text{Inverso aditivo}
+   \end{align*}
+  \end{minipage}
+  \end{center}
+  \item $a<b$ si y solo si $-b<-a$.
+  \begin{center}\vspace{-1em}
+  \begin{minipage}[l]{.5\linewidth}
+   \begin{align*}
+    \Rightarrow) \qquad \qquad
+    a &< b && \text{Hipótesis}\\
+    a -a -b &< b -b -a && \text{Ley de cancelación}\\
+    -b &< -a% && \text{Inverso aditivo}
+   \end{align*}
+  \end{minipage}%
+  \begin{minipage}[r]{.5\linewidth}
+   \begin{align*}
+    \Leftarrow) \qquad \qquad
+    -b &< -a && \text{Hipótesis}\\
+    -b + b +a &< -a +b -a && \text{Ley de cancelación}\\
+    a &< b &&% \text{Inverso aditivo}
+   \end{align*}
+  \end{minipage}
+  \end{center}
+  
+  \item Si $a<b<c$, entonces $-c<-b<-a$.
+  
+  Notemos que $a < b \Rightarrow -b < -a$ y $b < c\Rightarrow -c < -b$. Es decir, $-c<-b<-a$.
+
+ \end{enumerate} % Corolario
+
+ \item Si $a<b$ y $c < d$, entonces $a+c<b+d$. (Suma \textit{vertical} de desigualdades).
+ \begin{proof} 
+ Por definición $b-a\in \R^+$ y $d-c\in \R^+$. Por cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c)\in \R^+$. Luego, $(b-a)+(d-c)=b+d-a-c=b+d-(a+c)$. Por lo que $b+d-(a+c)=\in \R^+$, es decir, $a+c<b+d$.
+ \end{proof}
+ \textbf{Observación:} La suma \textit{vertical} de desigualdades preserva el orden.
+ %\textbf{Nota:} No hay doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de este hecho únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
+ %Esta proposición difiere de la ley de la cancelación (de la suma en desigualdades) ya que no se satisface una doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de esta hipótesis únicamente, que $a<b$. Ej. $a=4, c=0, b=3, d=4$, cumplen la hipótesis $a+c=4+0=4<7=3+4=b+d$, pero $a=4<3=b$ es una contradicción.
+
+ \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
+  \item Si $0<a$ y $0<b$, entonces $0<a+b$.
+  
+  Por este teorema, $0+0=0<a+b$.
+%
+  \item Si $a<0$ y $b<0$, entonces $a+b<0$.% (Cerradura de la suma en $\R^-$).
+  
+  Por este teorema, $a+b<0=0+0$.
+ \end{enumerate}
+
+ \item Sea $a<b$. Encuentre las condiciones que deben cumplirse para que $a<b<a+b$, $a<a+b<b$, o $a+b<a<b$.
+ \begin{enumerate}[label=\roman*)]
+  \item Si $0<a$, por ley de cancelación, $0+b<a+b$, por lo que $b<a+b$, y así $a<b<a+b$.
+  \item Si $a<0$ y $0<b$, por ley de cancelación,
+  \begin{center}\vspace{-1em}
+  \begin{minipage}[l]{.3\linewidth}
+   \begin{align*}
+      a &< 0\\
+      a + b &< 0 +b\\
+      a+b &< b
+   \end{align*}
+  \end{minipage}%
+  \begin{minipage}[r]{.3\linewidth}
+   \begin{align*}
+      0 &< b\\
+      0 + a &< b +a\\
+      a &< b +a
+   \end{align*}
+  \end{minipage}
+  \end{center}
+  Por tanto, $a<a+b<b$.
+  \item Si $b<0$. por ley de cancelación, $b+a<0+a$, es decir, $a+b<a$, por lo que $a+b<a<b$.
+ \end{enumerate}
+
+ \bfit{Conclusión:} Si $a<b$ y
+ \begin{itemize}
+  \item $0<a$, entonces $a<b<a+b$.
+  \item $a<0$, entonces $a<a+b<b$.
+  \item $b<0$, entonces $a+b<a<b$.
+ \end{itemize}
+
+ \item Sea $a<b$ y $c\in \R$. Encuentre las condiciones que deben cumplirse para que $ac<bc$ o $bc<ac$.
+ \begin{enumerate}[label=\roman*)]
+  \item Sea $c \in\R^+$. Por definición $b-a \in\R^+$. Por cerradura de la multiplicación en $\R^+$ se verifica que $c(b-a) \in\R^+$. Sigue que $c(b-a)=cb-ca=bc-ac \in\R^+$, es decir, $ac<bc$. 
+  %
+   %\textbf{Observación:} La multiplicación por números reales positivos preserva el orden de la desigualdad.
+   %\textbf{Nota:} De este resultado sigue que si $m<0$ y $0<n$, entonces $mn<0=0\cdot n$ —multiplicación por cero.
+  \item Sea $-c\in\R^+$. Como $b-a\in\R^+$, por cerradura de la multiplicación en $\R^+$, $-c(b-a) \in\R^+$. Sigue que $-c(b-a)= -c \Bigl( b + (-a) \Bigr)=(-c) \cdot b + (-c) \cdot (-a)=-cb +ca $. Finalmente, $-cb +ca=ac - bc \in\R^+$, es decir, $bc<ac$.
+  %\textbf{Observación:} La multiplicación por números reales negativos cambia el orden de la desigualdad.
+ %\textbf{Nota:} De esta demostración sigue que: \begin{enumerate}[label=\roman*)]
+ % \item Si $0<m$ y $n<0$, entonces $mn<0$. (Positivo por negativo/negativo por positivo es negativo).
+ % \item Si $m<0$ y $n<0$, entonces $0<mn$. (Negativo por negativo es positivo).
+ %\end{enumerate}
+ \end{enumerate}
+
+ \bfit{Conclusión:}
+ \begin{itemize}
+  \item Si $a<b$ y $0<c$, entonces $ac<bc$.% (Multiplicación por positivo).
+  \item Si $a<b$ y $c<0$, entonces $bc<ac$.% (Multiplicación por negativo).
+ \end{itemize}
+
+ \item Sea $a,b\in \R$. Encuentre las condiciones que deben cumplirse para que $ab<0$ o $0<ab$. (Ley de los signos).
+ 
+ Si $a$ o $b$ son cero, tenemos que $ab=0$, por lo que descartamos esta posiblidad. Por tricotomía, $0<a$ o $a<0$ y $0<b$ o $b<0$, entonces observemos los casos:
+ \begin{enumerate}[label=\roman*)]
+  \item Si $0<a$ y $0<b$, por la cerradura de la multiplicacón en $\R^+$, tenemos que $0<ab$.
+  \item Sin pérdida de generalidad, si $0<a$ y $b<0$, tenemos que $0<-b$, y por la cerradura de la multiplicación en $\R^+$, $0<-ab$, por lo que $ab<0$.
+  \item Si $a<0$ y $b<0$, entonces $0<-a$ y $0<-b$, por lo que $0<(-a)(-b)=ab$.
+ \end{enumerate}
+
+ Conclusión:
+ \begin{itemize}
+  \item Por (i) y (ii), para verificar $ab<0$, un componente debe ser mayor a cero y el otro menor a cero.%un componente del producto debe ser positivo y el otro negativo.
+  \item Por (iii), para verificar $0<ab$, ambos componentes deben ser mayores o ambos menores a cero.%del producto deben ser positivos o ambos negativos.
+ \end{itemize}
+%
+% \textbf{Nota:} Nos referiremos a (1) y (2) como ley de los signos. 
+ %\item $0<ab$ si y solo si $0<a$ y $0<b$ o $a<0$ y $b<0$. (Producto positivo).
+ %\textbf{Demostración:}
+ %\begin{itemize}
+ % \item[$\Rightarrow$)] Sea $0<ab$. Sin pérdida de generalidad, observemos la tricotomía de $a$. Si $a=0$, tenemos que $ab=0$, lo que contradice la hipótesis, por lo que tenemos dos casos:
+ % \begin{enumerate}[label=\roman*)]
+ %  \item si $a>0$, el inverso multiplicativo es positivo, $a^{-1}>0$. Entonces, \begin{align*}
+ %   0 &< ab && \text{Hipótesis}\\
+ %   0 \cdot a^{1} &< ab \cdot a^{-1} && \text{Multiplicación por positivo}\\
+ %   0 &< ab \cdot a^{1} && \text{Multiplicación por cero}\\
+ %   0 &< ba \cdot a^{1} && \text{Conmutatividad}\\
+ %   0 &< b && \text{Inverso multiplicativo}
+ %  \end{align*}
+ %  \item si $a<0$, el inverso multiplicativo es negativo, $a^{-1}<0$. Entonces, \begin{align*}
+ %   0 &< ab && \text{Hipótesis}\\
+ %   ab \cdot a^{-1} &< 0 \cdot ab && \text{Multiplicación por negativo}\\
+ %   ab \cdot a^{1} &< 0&& \text{Multiplicación por cero}\\
+ %   ba \cdot a^{1} &< 0&& \text{Conmutatividad}\\
+ %   b &< 0&& \text{Inverso multiplicativo}
+ %  \end{align*}
+ % \end{enumerate}
+ % \item[$\Leftarrow$)] Por tricotomía, de la disyunción tenemos casos excluyentes:
+ % \begin{enumerate}[label=\roman*)]
+ %  \item Si $0<a$ y $0<b$, por la cerradura de la multiplicación en $\R^+$, $0<ab$.
+ %  \item Si $a<0$ y $b<0$, \begin{align*}
+ %   a &< 0 && \text{Hipótesis}\\
+ %   0 \cdot b &< a\cdot b && \text{Multiplicación por negativo}\\
+ %   0 &< ab && \text{Multiplicación por cero}
+ %  \end{align*}
+ % \end{enumerate}
+ %\end{itemize} \qed
+
+ \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$. (Punto medio).
+ \begin{proof} \leavevmode% \vspace{-1em}
+  \begin{center}\vspace{-2em}
+  \begin{minipage}[r]{.4\linewidth}
+  \begin{align*}
+  a &< b \\
+  a + a &< a+b \\
+  2a &< a+b \\
+  %2a \cdot \frac{1}{2} &< (a+b) \cdot \frac{1}{2} \\
+  %\frac{2a}{2} &< \frac{a+b}{2} \\
+  a &< \frac{a+b}{2}
+  \end{align*}
+  \end{minipage}%
+  \begin{minipage}[l]{.4\linewidth}
+  \begin{align*}
+  a &< b \\
+  a + b &< b+b \\
+  a +b &< 2b \\
+  %(a+b) \cdot \frac{1}{2} &< 2b \cdot \frac{1}{2} \\
+  %\frac{a+b}{2} &< \frac{2b}{2} \\
+  \frac{a+b}{2} &< b \qedhere
+  \end{align*}
+  \end{minipage}%
+  \end{center}% Por notación, $a < \frac{a+b}{2} < b$.
+ \end{proof}
+ 
+ \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
+
+ \bfit{Observación:} $b-\frac{a+b}{2} = \frac{a+b}{2}-a$ (la \textit{distancia desde} $a$ y \textit{desde} $b$ al punto medio es la misma).
+ \[b-\frac{a+b}{2} = \frac{2b}{2}-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b-2a}{2}= \frac{a+b}{2}-\frac{2a}{2} = \frac{a+b}{2}-a\]
+
+ \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
+ 
+ Para que $\exists a^{-1}$, requerimos $a\neq 0$. También, sabemos que $a\neq 1$ y $a\neq -1$ pues $1=1^{-1}$ y $-1=(-1)^{-1}$, pero buscamos desigualdad. Entonces, observemos los casos: \begin{enumerate}[label=\roman*)]
+  \item Si $a<-1$, entonces $1<-a$, y por transitividad $0<-a$, por lo que $0<-a^{-1}$, luego, \begin{align*}
+   1 &< -a \\
+   1\cdot \bigl(-a^{-1}\bigr) &< (-a) \cdot \bigl(-a^{-1}\bigr) \\
+   -a^{-1} &< 1\\
+   -1 &< a^{-1}
+  \end{align*} Por transitividad, $a < a^{-1}$.
+  \item Si $-1<a<0$, por notación $-1<a$ y $a<0$, de donde sigue que $-a<1$ y $0<-a$, por lo que $0<-a^{-1}$. \begin{align*}
+   -a &< 1 \\
+   (-a) \cdot (-a^{-1}) &< 1\cdot (-a^{-1})\\
+   1 &< -a^{-1}\\
+   a^{-1} &< -1
+  \end{align*} Por transitividad, $a^{-1}<a$.
+  \item Si $0<a<1$, por notación $0<a$ y $a<1$, de donde sigue que $0<a^{-1}$. Luego \begin{align*}
+   a &< 1 \\
+   a\cdot a^{-1} &< 1 \cdot a^{-1}\\
+   1 &< a^{-1}
+  \end{align*} Por transitividad $a<a^{-1}$.
+  \item Si $1<a$, por transitividad $0<a$, por lo que $0<a^{-1}$. Luego, \begin{align*}
+   1 <& a\\
+   1 \cdot a^{-1} &< a \cdot a^{-1}\\
+   a^{-1} &< 1
+  \end{align*} Por transitividad $a^{-1}<a$.
+ \end{enumerate}
+ Conclusión: \begin{itemize}
+  \item Por (i) y (iii), $a<a^{-1}$, si $a<-1$ o $0<a<1$.
+  \item Por (ii) y (iv), $a^{-1}<a$, si $-1<a<0$ o $1<a$.
+ \end{itemize}
+
+ \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $0<a^{-1}$ o $a^{-1}<0$.
+ 
+ \begin{enumerate}[label=\roman*)]
+  \item Sea $0<a$. Supongamos que $a^{-1}<0$. Como $0<a$, al multiplicar en desigualdades preserva el orden, por lo que $a^{-1} \cdot a<0 \cdot a$. Por un lado, tenemos el inverso multiplicativo $a^{-1} \cdot a = 1$, y por el otro, tenemos una multiplicación por cero, $0\cdot a=0$, con lo que tenemos que $1<0$, pero esto es una contradicción. Sabemos que $a^{-1}\neq 0$, ya que $0$ no es inverso multiplicativo. Por tricotomía, $a^{-1}>0$.
+  \item Sea $a<0$. Sigue que $0<-a$, por lo que $-a^{-1}>0$, de donde sigue que $a^{-1}<0$.
+ \end{enumerate}
+
+ \bfit{Conclusión:}
+ \begin{itemize}
+  \item Si $0<a$, entonces $0<a^{-1}$.% (Inverso multiplicativo positivo).
+  \item Si $a<0$, entonces $a^{-1}<0$.
+ \end{itemize}
+ %\text{Nota:} Análogamente, Si $a<0$, entonces $a^{-1}<0$. (Inverso multiplicativo negativo).
+
+ \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $1<a^{-1}$, $0<a^{-1}<1$, $-1<a^{-1}<0$, o $a^{-1}<1$.
+ \begin{enumerate}[label=\roman*)]
+  
+  \item Sea $0<a<1$. Notemos que $0<a \Rightarrow 0<a^{-1}$. Luego,
+  \begin{align*}
+    a &< 1\\
+    a\cdot a^{-1} &< 1\cdot a^{-1}\\
+    1 &< a^{-1}
+   \end{align*}
+
+   \item Sea $1<a$. Notemos que $1 < a \Rightarrow 0 < a \Rightarrow 0 < a^{-1}$. Luego,
+   \begin{align*}
+    1 &< a\\
+    1\cdot a^{-1} &< a\cdot a^{-1}\\
+    0< a^{-1} &< 1
+   \end{align*}
+
+   \item Sea $-1<a<0$. Notemos que $a<0 \Rightarrow 0<-a$ y $-1 < a \Rightarrow -a < 1$, por lo que $0< -a < 1$. Luego,
+   \begin{align*}
+    1 &< -a^{-1}\\
+    a^{-1} &< -1
+   \end{align*}
+
+   \item Sea $a<-1$. Notemos que $a<-1 \Rightarrow 1<-a$. Luego,
+   \begin{align*}
+    0<-a^{-1} &<1\\
+    -1 < a^{-1} &< 0
+   \end{align*}
+  \end{enumerate}
+
+  \bfit{Conclusión:}
+  \begin{itemize}
+    \item Si $0<a<1$, entonces $1<a^{-1}$.
+    \item Si $1<a$, entonces $0<a^{-1}<1$.
+    \item Si $-1<a<0$, entonces $a^{-1}<-1$.
+    \item Si $a<-1$, entonces $-1<a^{-1}<0$.
+  \end{itemize}
+
+  \item Sea $a<b$. Encuentre las condiciones que deben cumplirse para que $\frac{1}{a}<\frac{1}{b}$ o $\frac{1}{b}<\frac{1}{a}$.
+ 
+ Sabemos que $a\neq 0$ y $b\neq 0$, pues requerimos la existencia de su inverso multiplicativo. Luego, por tricotomía, $0<a$ o $a<0$ y $0<b$ o $b<0$, entonces observemos los casos: \begin{enumerate}[label=\roman*)]
+  \item Si $0<a$ y $0<b$, por ley de los signos, $0<ab$, por lo que $0<\frac{1}{ab}$. Entonces, $a\cdot \frac{1}{ab} = \frac{1}{b} < \frac{1}{a} = b \cdot \frac{1}{ab}$.
+  \item Si $a<0$ y $0<b$, entonces $\frac{1}{a}<0$ y $0<\frac{1}{b}$. Por transitividad, $\frac{1}{a}<\frac{1}{b}$.
+  % por ley de los signos, $ab<0$, por lo que $\frac{1}{ab}<0$. De donde sigue que $b \cdot \frac{1}{ab} = \frac{1}{a} < \frac{1}{b} = a\cdot \frac{1}{ab}$.
+  %\item Si $b<0$ y $0<a$, por transitividad, $b<a$, lo que contradice el supuesto inicial (descartamos este caso).
+  \item Si $a<0$ y $b<0$, por ley de los signos $0<a a$, $0<b b$ y $0<ab$. Luego,\begin{align*}
+   a &< b && \text{Supuesto inicial}\\
+   a \cdot (ab) &< b \cdot (ab) && \text{(*)}
+   %a^2b &< ab^2 && \text{Notación} && \text{(*)}
+  \end{align*} Por ley de los signos, $aa\cdot bb>0$, de donde sigue que $\frac{1}{aa\cdot bb}>0$. De (*) obtenemos que \begin{align*}
+   \bigl(a \cdot (ab)\bigr) \cdot \frac{1}{aa\cdot bb} &< \bigl(b \cdot (ab)\bigr)\cdot \frac{1}{aa\cdot bb}\\
+   \frac{1}{b} &< \frac{1}{a}
+  \end{align*}
+ \end{enumerate}
+ \bfit{Conclusión:} Si $a<b$ y\begin{itemize}
+  \item $0<a$ y $0<b$, o $a<0$ y $b<0$, entonces, $\frac{1}{b}<\frac{1}{a}$. %si ambos componentes son mayores o ambos menores a cero, los inversos multiplicativos invierten el orden.%positivos o ambos negativos, entonces los inversos multiplicativos invierten el orden.
+  \item $a<0$ y $0<b$, entonces $\frac{1}{a}<\frac{1}{b}$.%Por (ii), si el componente menor es menor a cero y el mayor es mayor a cero, entonces los inversos multiplicativos conservan el orden.
+ \end{itemize}
+ %
+ %\item Si $0 \leq a<b$ y $0 \leq c<d$, entonces $ac<bd$.
+ %
+ %\begin{enumerate}[label=\roman*)]
+ % \item Si $a=0$ o $c=0$, por (g) de LE1 se verifica que $ac=0$. Luego, por (j) de LE3, se verifica que $0<b$ y $0<d$. Así, $ac<bd$.
+ % \item Si $a>0$ y $c>0$. Por hipótesis, $a<b$, y por (e) de LE3, sigue que $ac<bc$. También, tenemos que $c<d$, y por (e) de LE3, sigue que $bc<db$. Finalmente, por (j) de LE3, se verifica que $ac<bd$. \qed
+ %\end{enumerate}
+ %
+ %\item Si $a<b$ y $0<ab$, entonces $b^{-1}<a^{-1}$.
+ %
+ %Notemos que:
+ %\begin{align*}
+ %a &< b && \text{Por hipótesis} \\
+ %a-a &< b-a && \text{Por (d) de LE3} \\
+ %0 &< b-a && \text{Inverso aditivo} \\
+ %0 \cdot \frac{1}{ab} &< (b-a) \cdot \frac{1}{ab} && \text{Por (h) y (e) de LE3}\\
+ %0 &< \frac{b-a}{ab} && \text{Multiplicación por $0$ y (a) de LE2}\\
+ %0 &< \frac{1}{a} - \frac{1}{b} && \text{Por (c) de LE2}\\
+ %\frac{1}{b} &< \frac{1}{a} && \text{Por (d) de LE3}
+ %\end{align*} \qed
+
+ \item Sea $a,b\in\R$. Encuentre las condiciones que deben cumplirse para que $1<\frac{a}{b}$,$0<\frac{a}{b}<1$, $-1<\frac{a}{b}<0$, o $\frac{a}{b}<-1$.
+ \begin{enumerate}[label=\roman*)]
+  \item Si $0<b<a$, se tiene que $0<\frac{1}{b}$. Luego,
+  \begin{align*}
+    b &< a\\
+    b \cdot \frac{1}{b}&<\cdot \frac{1}{b} a\\
+    1 &< \frac{a}{b}
+  \end{align*}
+
+  \item Si $0<a<b$, se tiene que $0<\frac{1}{b}$. Luego,
+  \begin{align*}
+    0 < a &< b\\
+    0 \cdot \frac{1}{b} < a\cdot \frac{1}{b} &< b\cdot \frac{1}{b}\\
+    0 < \frac{a}{b}&<1
+  \end{align*}
+
+  \item Si $a<0<b$, se tiene que $0<\frac{1}{b}$. Luego,
+  \begin{align*}
+    a &< 0\\
+    a \cdot \frac{1}{b}&< 0\cdot \frac{1}{b}\\
+    \frac{a}{b} &< 0 && \text{(*)}\\
+    0 &< -\frac{a}{b}
+  \end{align*}
+  Del mismo modo,
+  \begin{align*}
+    -1
+  \end{align*}
+  Por (*) y (**) se verifica que $-1<\frac{a}{b}<0$.
+
+ \end{enumerate}
+
+ \item Sea $a,b\in \R$. Encuentre las condiciones que deben cumplirse para que $1<ab$, $0<ab<1$, $-1<ab<0$, o $ab<-1$.
+  \begin{enumerate}[label=\roman*)]
+    \item Sea $1<a$ y $1<b$. Por ley de cancelación, $0<a-1$ y $0<b-1$. Luego,
+    \begin{align*}
+      0 &< (b-1)(a-1)\\
+      0 &< \bigl(b+(-1)\bigr)\bigl(a+(-1)\bigr)\\
+      0 &< a\bigl(b+(-1)\bigr) + (-1)\bigl(b+(-1)\bigr)\\
+      0 &< ab + (-1)a + (-1)b + (-1)(-1)\\
+      0 &< ab + (-1)a + (-1)b + 1\\
+      0 &< ab + (-1)(a+b) + 1\\
+      0 &< ab -(a+b) + 1\\
+      a+b &< ab + 1
+    \end{align*}
+    Por la suma vertical de desigualdades, $1+1<a+b$, y por transitividad, $1+1<ab+1$, de donde $1<ab$.
+
+    \item Sea $0<a<1$ y $1<b$. Notemos que $1<a^{-1}$, por lo que 
+
+    \item Sea $0<a<1$ y $0<b<1$. Notemos que $ab>0$. Como $a<1$, sigue que $ab<b$, y a su vez, $b<1$, por lo que $0<ab<1$.
+    
+   \item Sea $-1<a<0$ y $0<b<1$. Notemos que $ab<0$. Como $b<1$, sigue que $a<ab$, y a su vez $-1<a$, por lo que $-1<ab<0$.
+   
+   \item Si $-1<a<0$ y $-1<b<0$. Se tiene que $-1<a<0 \Rightarrow a^{-1}<-1 \Rightarrow 1<-a^{-1}$ y $-1<b<0 \Rightarrow b^{-1}<-1 \Rightarrow 1<-b^{-1} \Rightarrow 0<-b^{-1}$.
+   \begin{align*}
+    1 &< -a^{-1}\\
+    1\cdot (-b^{-1}) &< (-a^{-1})\cdot (-b^{-1})\\
+    -b^{-1} &< a^{-1}b^{-1}\\
+    1 &< a^{-1}b^{-1}&& \text{$1<-b^{-1}$}\\
+    1 &< (ab)^{-1}
+   \end{align*}
+   Por lo que $0<\bigl((ab)^{-1}\bigr)^{-1} < 1$, es decir, $0<ab<1$.
+  \end{enumerate}
+
+  \bfit{Conclusión:}
+  \begin{itemize}
+    \item Si $1<a$ y $1<b$, entonces $1<ab$.
+    \item Si $0<a<1$ y $0<b<1$, entonces $0<ab<1$.
+    \item Si $-1<a<0$ y $0<b<1$, entonces $-1<ab<0$.
+    \item Si $-1<a<0$ y $-1<b<0$, entonces $0<ab<1$.
+  \end{itemize}
+
+ \item Sea $a<b$ y $c<d$, encuentre las condiciones que deben cumplirse para que $ac<bd$ o $bd<ac$.
+  
+ \begin{enumerate}[label=\Roman*)]
+   \item Sea $0<a<b$.
+   \begin{enumerate}[label=\roman*)]
+    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
+    \item Si $c<0<d$, entonces $c<d \Rightarrow ac < ad$ y $a<b \Rightarrow ad<bd$. Por transitividad, $ac<bd$.
+    \item Si $c<d<0$, entonces $a<b \Rightarrow bc<ac$ y $c<d \Rightarrow ac<ad$. Por transitividad, $bc<ad$.
+   \end{enumerate}
+   \item Sea $a<0<b$.
+   \begin{enumerate}[label=\roman*)]
+    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
+    \item Si $c<0<d$, entonces 
+   \end{enumerate}
+ \end{enumerate}
+
+ \item Sea $\frac{a}{b}<\frac{c}{d}$. Encuentre las condiciones que deben cumplirse para que $\frac{a}{b}<\frac{a+c}{b+d}<\frac{c}{d}$. (Mediante).
+
+ Sabemos que $b\neq 0$ y $d\neq 0$. También, por definición, $\frac{c}{d}-\frac{a}{b}>0$, es decir, $(bc-ad)/(bd)>0$. Como $b$ y $d$ son distintos de cero, tenemos que $bd\neq 0$. Asimismo, $bc-ad\neq 0$.
+
+ Buscamos que $\frac{a}{b}<\frac{a+c}{b+d}<\frac{c}{d}$, para lo que es necesario que
+ \begin{center}%\vspace{-1em}
+ \begin{minipage}[l]{.5\linewidth}
+ \begin{align*}
+  \frac{a}{b} &< \frac{a+c}{b+d}\\
+  0 &< \frac{a+c}{b+d} - \frac{a}{b}\\
+  &= \frac{b(a+c)-\bigl(a(b+d)\bigr)}{b(b+d)}\\
+  &= \frac{ab+bc-ab-ad}{b(b+d)}\\
+  &= \frac{bc-ad}{b(b+d)}\\
+  &= \frac{bc-ad}{bd} \cdot \frac{d}{b+d}
+ \end{align*}
+ \end{minipage}%
+ \begin{minipage}[r]{.5\linewidth}
+ \begin{align*}
+  \frac{a+c}{b+d} &< \frac{c}{d}\\
+  0 &< \frac{c}{d} -\frac{a+c}{b+d}\\
+  &= \frac{c(b+d)-\bigl(d(a+c)\bigr)}{d(b+d)}\\
+  &= \frac{bc+cd-ad-cd}{d(b+d)}\\
+  &= \frac{bc-ad}{d(b+d)}\\
+  &= \frac{bc-ad}{bd} \cdot \frac{b}{b+d}
+ \end{align*}
+ \end{minipage}
+ \end{center}
+ Como $(bc-ad)/(bd)>0$, entonces $\frac{d}{b+d}>0$ y $\frac{b}{b+d}>0$. Por esto, $b+d\neq 0$. Finalmente, tenemos dos casos: \begin{enumerate}[label=\roman*)]
+  \item Si $b>0$, entonces $b+d>0$ y $d>0$.
+  \item Si $b<0$, entonces $b+d<0$ y $d<0$.
+ \end{enumerate}
+
+ Por tanto, debe cumplirse que $b$ y $d$ deben ser ambos mayores a cero o ambos menores a cero.
+
+\end{enumerate}
