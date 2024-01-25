@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1706203013 "d:/Git/Math/Math/Calculus_book/main.tex" "build/main.pdf" "main" 1706203020 0
+["pdflatex"] 1706203091 "d:/Git/Math/Math/Calculus_book/main.tex" "build/main.pdf" "main" 1706203096 0
   "Ch1_axs_campo.tex" 1704509265 66326 78657188b58d5ba31771a572826d269c ""
   "Ch2_axs_orden.tex" 1706202345 35866 51be3cf8d0f6800eee19761f2089f930 ""
-  "Ch3_induccion.tex" 1706203002 35461 02d930317db291ed2ae2ddfe1dc625bc ""
-  "build/main.aux" 1706203019 70 6604bf94f2268fdec5f4061b698432bc "pdflatex"
+  "Ch3_induccion.tex" 1706203061 35447 c850c885263605fc5ccad95e9190ee1d ""
+  "build/main.aux" 1706203095 70 2d96e6efc092b3c0553c56d5faef52e9 "pdflatex"
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1679269123 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1679270936 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1679270170 1536 02c06700a42be0f5a28664c7273f82e7 ""
