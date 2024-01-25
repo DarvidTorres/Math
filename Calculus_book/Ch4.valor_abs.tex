@@ -1,0 +1,156 @@
+\part*{Valor absoluto}
+
+\bfit{Definición:}  Sea $a$ un número real, definimos el valor absoluto de $a$, denotado por $|a|$ como sigue:
+
+ \[
+  |a| = \left\{
+ \begin{array}{@{}r@{\thinspace}l}
+  a, &  \ \text{si}  \ a>0\\
+  0, &  \ \text{si}  \ a=0\\
+  -a, & \  \text{si} \  a<0
+ \end{array} \right. \]
+Notemos que $|a|\geq 0, \ \forall a\in \R$, y que la definición es equivalente a las siguientes:
+
+\begin{center}
+\begin{minipage}[c]{.3\linewidth}
+ \[|a| = \left\{
+  \begin{array}{@{}r@{\thinspace}l}
+   a, & \ \text{si} \ a\geq 0\\
+   -a, & \ \text{si} \ a<0
+  \end{array} \right.\]
+ \end{minipage}%
+\begin{minipage}[c]{.3\linewidth}
+ \[|a| = \left\{
+  \begin{array}{@{}r@{\thinspace}l}
+   a, & \ \text{si} \ a>0\\
+   -a, & \ \text{si} \ a\leq 0
+  \end{array} \right.\]
+\end{minipage}
+\end{center}
+
+El lector devería verificar este hecho. (\textit{Hint}: $0=-0$).
+
+\subsection*{Lista de Ejercicios 4 (LE4)}
+
+Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+\item $\pm a\leq |a|$.
+
+\begin{proof}
+ Por casos.
+ \begin{enumerate}[label=\roman*)]
+  \item Si $0 \leq a$, por definición, $|a|=a$, por lo que $a\leq |a|$. Luego, por la hipótesis tenemos que $-a \leq 0$, y por transitividad, $-a\leq |a|$.
+  \item Si $a<0$, por definición, $|a|=-a$, por lo que $-a\leq |a|$. Luego, por la hipótesis tenemos que $0<-a$, y por transitividad, $a<|a|$.
+ \end{enumerate}
+ En cualquier caso, $\pm a\leq |a|$.
+\end{proof} 
+
+\item $|a|=|-a|$.
+\begin{proof}
+ Por casos.
+ \begin{enumerate}[label=\roman*)]
+  \item Si $0 \leq a$, por definición, $|a|=a$. Luego, por la hipótesis tenemos que $-a \leq 0$. Si $-a<0$, $|-a|=a$ y si $-a=0$, $|-a|=a$. De este modo, $|a|=|-a|$.
+  \item Si $a<0$, por definición, $|a|=-a$. Luego, por la hipótesis tenemos que $0<-a$, por lo que $|-a|=-a$. De este modo, $|a|=|-a|$.
+ \end{enumerate}
+ En cualquier caso, $|a|=|-a|$.
+\end{proof}
+
+\item $|ab|=|a||b|$.
+
+\begin{proof}
+ Por casos.
+ \begin{enumerate}[label=\roman*)]
+  \item Si $a>0$ y $b>0$, por definición, $|a|=a$ y $|b|=b$. Luego, $ab>0$ por lo que $|ab|=ab$. Por tanto, $|ab| =|a||b|$.
+  \item Si $a>0$ y $b<0$, por definición, $|a|=a$ y $|b|=-b$. Luego, $ab<0$ por lo que $|ab|=-ab$. Por tanto, $|  ab|=|a||b|$.
+  \item Si $a<0$ y $b<0$, por definición, $|a|=-a$ y $|b|=-b$. Luego, $ab>0$ por lo que $|ab|=ab$. Por tanto, $|  ab|=|a||b|$.
+ \end{enumerate}
+ En cualquier caso, $|ab|=|a||b|$.
+\end{proof}
+
+\item $|a|^2=a^2$.
+\begin{proof} 
+ $0 \leq a^2 = |a^2|= |a\cdot a|=|a| \cdot |a|= |a|^2$. \qedhere
+\end{proof}
+
+\item $|a|<b$ si y solo si $-b<a<b$.
+
+\begin{proof} \leavevmode
+ \begin{itemize}
+  \item[$\Rightarrow)$] Sea $|a|<b$.
+  
+  Sabemos que $\pm a \leq |a|$, y por transitividad $a<b$ y $-a<b$, por lo que $-b<a$. Por tanto, $-b<a<b$.
+  \item[$\Leftarrow)$] Sea $-b<a<b$. Tenemos dos casos: \begin{enumerate}[label=\roman*)]
+   \item Si $0\leq |a|$, por definición, $|a|=a$, y por la hipótesis, $|a|<b$.
+   \item Si $a<0$, por definición, $|a|=-a$, y por la hipótesis, $|a|<b$.
+  \end{enumerate} En cualquier caso, $|a|<b$. \qedhere 
+ \end{itemize}
+\end{proof}
+
+\textbf{Nota:} Nos referiremos a esta proposición como teorema para eliminar el valor absoluto en algunas desigualdades.
+
+ \item $|a+b|\leq |a|+|b|$. (Desigualdad del triángulo).
+
+ \begin{proof} 
+  Por casos.
+  \begin{enumerate}[label=\roman*)]
+   \item Si $0 \leq a+b$, por definición, $|a+b|=a+b$. Como, $a \leq |a|$ y $b \leq |b|$, entonces, $a+b \leq |a|+|b|$. Por tanto, $|a+b| \leq |a|+|b|$.
+   \item Si $a+b<0$, por definición, $|a+b|=-\bigl(a+b\bigr)=-a-b$. Como, $-a \leq |a|$ y $-b \leq |b|$, entonces, $-a-b \leq |a|+|b|$. Por tanto, $|a+b| \leq |a|+|b|$. \qedhere
+  \end{enumerate} 
+ \end{proof}
+%
+ %\textbf{Nota:} En esta demostración se observaron los casos para la suma $a+b$. Sin embargo, resulta conveniente observar los casos para $a$ y $b$, pues esto nos permitirá notar cuando la desigualdad del triángulo es estricta y cuando se cumple con igualdad.   
+ %\begin{enumerate}[label=\roman*)]
+ % \item Supongamos que $|a+b|=|a|+|b|$, 
+ %\end{enumerate}
+
+ \item $\big| |a|-|b| \big| \leq |a-b|$. (Desigualdad del triángulo inversa).
+
+ \begin{proof} \leavevmode
+ \begin{center}\vspace{-2.5em}
+ \begin{minipage}[t]{.5\linewidth}
+ \begin{align*}
+  |(b-a)+a| &\leq |b-a|+|a| && \text{Desg. del trig.} \\
+  |b| &\leq |b-a|+|a| \\
+  -|b-a| &\leq |a|-|b| \\
+  -|a-b| &\leq |a|-|b| && \text{(*)}
+ \end{align*}
+ \end{minipage}%
+ \begin{minipage}[t]{.5\linewidth}
+ \begin{align*}
+  |(a-b)+b| &\leq |a-b|+|b| && \text{Desg. del trig.} \\
+  |a| &\leq |a-b|+|b| \\
+  |a|-|b| &\leq |a-b| && \text{(**)}
+ \end{align*}
+ \end{minipage}
+ \end{center}
+ De las desigualdades (*) y (**) sigue que $\big| |a| - |b| \big| \leq |a-b|$.
+ \end{proof}
+
+ \bfit{Corolario:} $|a|-|b|\leq |a-b|$ y $|b|-|a|\leq |a-b|$.
+ \begin{proof}
+ Por la desigualdad del triángulo inversa, $\big| |a|-|b| \big| \leq |a-b|$, y notemos que $\pm \bigl(|a|-|b|\bigr)\leq \big| |a|-|b| \big|$, por transitividad sigue que $|a|-|b|\leq |a-b|$, también \begin{align*}
+  -|a-b| &\leq |a|-|b|\\
+  -\bigl(|a|-|b|\bigr) &\leq |a-b| \\
+  |b|-|a| &\leq |a-b| && \qedhere
+ \end{align*}
+ \end{proof}
+
+\item Si $b\neq 0$, entonces $\left| \frac{a}{b} \right| = \frac{|a|}{|b|}$.
+
+\begin{proof} Por casos.
+ \begin{enumerate}[label=\roman*)]
+  \item Si $a \geq 0$ y $b>0$, entonces $|a|=a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} \geq 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+  \item Si $a \geq 0$ y $b<0$, entonces $|a|=a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} \leq 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+  \item Si $a<0$ y $b>0$, entonces $|a|=-a$ y $|b|=b$. Además, $\frac{1}{b} >0$, de donde sigue que $\frac{a}{b} < 0$, por lo que $\big| \frac{a}{b} \big| =- \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$.
+  \item Si $a<0$ y $b<0$, entonces $|a|=-a$ y $|b|=-b$. Además, $\frac{1}{b} <0$, de donde sigue que $\frac{a}{b} > 0$ por lo que $\big| \frac{a}{b} \big| = \frac{a}{b}$. Por tanto, $ \big| \frac{a}{b} \big| = \frac{|a|}{|b|}$. \qedhere
+ \end{enumerate} 
+\end{proof}
+
+\end{enumerate}
+
+%\bfit{Definición:} \begin{itemize}
+% \item Llamaremos al conjunto $\Z = \N \union \set{0} \union \set{-n | n\in \N}$ conjunto de los números enteros.
+% \item Llamaremos al conjunto $\Z^- = \set{-n| n\in \N}$ conjunto de los números enteros negativos.
+% \item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo denotaremos con el símbolo $\Z^+$.
+%\end{itemize}
