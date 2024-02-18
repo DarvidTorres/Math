@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1708272290 "d:/Git/Math/Math/Calculus_book/main.tex" "build/main.pdf" "main" 1708272293 0
-  "build/main.aux" 1708272293 69 4186d4bffccd92d2246cf1bf2b05f742 "pdflatex"
+["pdflatex"] 1708272411 "d:/Git/Math/Math/Calculus_book/main.tex" "build/main.pdf" "main" 1708272415 0
+  "build/main.aux" 1708272414 69 4186d4bffccd92d2246cf1bf2b05f742 "pdflatex"
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1679269123 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1679270936 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1679270170 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -156,7 +156,7 @@
   "c:/texlive/2022/texmf.cnf" 1679278146 713 e69b156964470283e0530f5060668171 ""
   "d:/Git/Math/Math/Calculus_book/main.tex" 1708221542 288 2bd47c3fe6e0ea2f0bb3a16d1fb30467 ""
   "main.tex" 1708221542 288 2bd47c3fe6e0ea2f0bb3a16d1fb30467 ""
-  "pendiente.tex" 1708272285 23507 c8f60375ae8d05ccaac1b308518a9038 ""
+  "pendiente.tex" 1708272409 23665 540a9959050dbca78e23bb0982566bb5 ""
   "preamble.sty" 1704430915 2396 1d2cd3960ca97c62113d8def2dceb833 ""
   (generated)
   "build/main.aux"

@@ -192,7 +192,11 @@ Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conju
   \begin{proof}\leavevmode
     Por definición, $a\leq \sup (A)$, y $\inf(B) \leq b$. Notemos que $a$ es una cota inferior de $B$, por lo que $a\leq \inf(B)\leq b$. Similarmente, $b$ es una cota superior de $A$, por lo que $a\leq \sup(A)\leq b$.
     
-    Supongamos que $\inf(B) < \sup(A)$, entonces $\sup(A) - \inf(B) > 0$. Sea $\epsilon = \sup(A) - \inf(B)$, entonces 
+    Supongamos que $\inf(B) < \sup(A)$, entonces $\sup(A) - \inf(B) > 0$. Sea $\epsilon = \sup(A) - \inf(B)$, entonces $\exists a_0\in A$ tal que
+    \begin{align*}
+      \sup(A) - \sup(A) - \inf(B) &< a_0 \leq \sup(A)\\
+      - \inf(B) &< a_0 \leq \sup(A)
+    \end{align*}
   \end{proof}
 
 \end{enumerate}
