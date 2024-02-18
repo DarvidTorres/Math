@@ -294,37 +294,37 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
       \end{proof}
     \end{enumerate}
 
-  \item \[\sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) = \sum_{m=s}^{t} \left(\sum_{n=a}^{b} f(n,m)\right)\]
+  % \item \[\sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) = \sum_{m=s}^{t} \left(\sum_{n=a}^{b} f(n,m)\right)\]
   
-  \begin{proof}\leavevmode
-    \begin{enumerate}[label=\Roman*)]
-      \item Si $b=a$ y $s=t$
+  % \begin{proof}\leavevmode
+  %   \begin{enumerate}[label=\Roman*)]
+  %     \item Si $b=a$ y $s=t$
       
-      \begin{align*}
-        \sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) &= \sum_{n=a}^{a} \left(\sum_{m=s}^{s} f(n,m)\right)\\
-        &= \sum_{n=a}^{a} f(n,s)\\
-        &= f(a,s)\\
-        &= \sum_{m=s}^{s} f(a,m)\\
-        &= \sum_{m=s}^{s} \left(\sum_{n=a}^{a} f(n,m)\right)\\
-        &= \sum_{m=s}^{t} \left(\sum_{n=a}^{b} f(n,m)\right)
-      \end{align*}
+  %     \begin{align*}
+  %       \sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) &= \sum_{n=a}^{a} \left(\sum_{m=s}^{s} f(n,m)\right)\\
+  %       &= \sum_{n=a}^{a} f(n,s)\\
+  %       &= f(a,s)\\
+  %       &= \sum_{m=s}^{s} f(a,m)\\
+  %       &= \sum_{m=s}^{s} \left(\sum_{n=a}^{a} f(n,m)\right)\\
+  %       &= \sum_{m=s}^{t} \left(\sum_{n=a}^{b} f(n,m)\right)
+  %     \end{align*}
       
-      \item Si $b>a$ y $s=t$
+  %     \item Si $b>a$ y $s=t$
       
-      \begin{align*}
-        \sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) &= \sum_{n=a}^{b} \left(\sum_{m=s}^{s} f(n,m)\right)\\
-        &= \sum_{n=a}^{b} f(n,s)\\
-        &= \\
-        &= \sum_{m=s}^{t} \left(\sum_{n=a}^{b} f(n,m)\right)
-      \end{align*}
+  %     \begin{align*}
+  %       \sum_{n=a}^{b} \left(\sum_{m=s}^{t} f(n,m)\right) &= \sum_{n=a}^{b} \left(\sum_{m=s}^{s} f(n,m)\right)\\
+  %       &= \sum_{n=a}^{b} f(n,s)\\
+  %       &= \\
+  %       &= \sum_{m=s}^{t} \left(\sum_{n=a}^{b} f(n,m)\right)
+  %     \end{align*}
       
-      \item Si $b=a$ y $s>t$
-      \item Si $b>a$ y $s>t$    
-      \item Si $b=a$ y $s<t$
-      \item Si $b<a$ y $s=t$
-      \item Si $b<a$ y $s<t$
-    \end{enumerate}
-  \end{proof}
+  %     \item Si $b=a$ y $s>t$
+  %     \item Si $b>a$ y $s>t$    
+  %     \item Si $b=a$ y $s<t$
+  %     \item Si $b<a$ y $s=t$
+  %     \item Si $b<a$ y $s<t$
+  %   \end{enumerate}
+  % \end{proof}
   
   \item \[\sum_{n=a}^{b} \left(\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)\right) = \left(\sum_{n=a}^{b} f(n)\right)  \cdot \left(\sum_{m=s}^{t} g(m)\right)\]
   
