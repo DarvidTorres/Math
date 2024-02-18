@@ -153,29 +153,29 @@ Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conju
 Sea $\emptyset \neq A\subseteq B\subseteq \R$.
 
 \begin{enumerate}[label=\alph*)]
-  \item Sea $A\subseteq B\subseteq \R$ no vacíos y $B$ es acotado; se verifica que \[\inf B \leq \inf A \leq \sup (A) \leq \sup (B)\]
+  \item Sea $A\subseteq B\subseteq \R$ no vacíos y $B$ es acotado; se verifica que \[\inf (B) \leq \inf (A) \leq \sup (A) \leq \sup (B)\]
 
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\roman*)]
-      \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $\inf B \leq x$, por lo que $\inf B$ es cota inferior de $A$. Luego, $\inf B \leq \inf A$.
-      \item Sea $x\in A$. Por definición, $\inf A \leq x \leq \sup (A)$, por lo que $\inf A \leq \sup (A)$.
+      \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $\inf (B) \leq x$, por lo que $\inf (B)$ es cota inferior de $A$. Luego, $\inf (B) \leq \inf (A)$.
+      \item Sea $x\in A$. Por definición, $\inf (A) \leq x \leq \sup (A)$, por lo que $\inf (A) \leq \sup (A)$.
       \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $x\leq \sup (B)$, por lo que $\sup (B)$ es cota superior de $A$, y por definición, $\sup (A) \leq \sup (B)$.
     \end{enumerate}
   \end{proof}
   
   \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
-  \item $\inf B \leq \sup (A)$.
-  \item $\inf A \leq \sup (B)$.
+  \item $\inf (B) \leq \sup (A)$.
+  \item $\inf (A) \leq \sup (B)$.
   \end{enumerate}
-  \item $\forall \epsilon > 0$, $\exists b\in B$ tal que $\inf B \leq b < \inf B + \epsilon$
+  \item $\forall \epsilon > 0$, $\exists b\in B$ tal que $\inf (B) \leq b < \inf (B) + \epsilon$
   
   \begin{proof}\leavevmode
     Sea $\epsilon >0$. Notemos que
     \begin{align*}
       0 &< \epsilon\\
-      \inf B &< \inf B + \epsilon
+      \inf (B) &< \inf (B) + \epsilon
     \end{align*}
-    Por lo que $\bigl(\inf B +\epsilon\bigr)$ no es una cota inferior de $B$, entonces $\exists b\in B$ tal que $b < \inf B + \epsilon$.
+    Por lo que $\inf (B) +\epsilon$ no es una cota inferior de $B$, entonces $\exists b\in B$ tal que $b < \inf (B) + \epsilon$.
   \end{proof}
   
   \item $\forall \epsilon > 0$, $\exists a\in A$ tal que $\sup (A) - \epsilon < a \leq \sup (A)$.
@@ -186,7 +186,7 @@ Sea $\emptyset \neq A\subseteq B\subseteq \R$.
       \sup (A) &< \epsilon + \sup (A)\\
       \sup (A) - \epsilon &< \sup (A)
     \end{align*}
-    Por lo que $\big(\sup (A)-\epsilon\big)$ no es una cota superior de $A$, por lo que $\exists a\in A$ tal que $\sup (A) - \epsilon < a$.
+    Por lo que $\sup (A)-\epsilon$ no es una cota superior de $A$, por lo que $\exists a\in A$ tal que $\sup (A) - \epsilon < a$.
   \end{proof}
 \end{enumerate}
 
