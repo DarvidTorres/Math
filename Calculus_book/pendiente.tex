@@ -192,11 +192,11 @@ Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conju
   \begin{proof}\leavevmode
   Supongamos que $\inf(B) < \sup(A)$, entonces $\sup(A) - \inf(B) > 0$. Sea $\epsilon = \sup(A) - \inf(B)$, entonces $\exists b_\epsilon\in B$ tal que
     \begin{align*}
-      \inf(B) &\leq b_\epsilon < \inf(B) + \epsilon\\
-      \inf(B) &\leq b_\epsilon < \inf(B) + \sup(A) - \inf(B)\\
-      \inf(B) &\leq b_\epsilon < \sup(A)
+      b_\epsilon &< \inf(B) + \epsilon\\
+      b_\epsilon &< \inf(B) + \sup(A) - \inf(B)\\
+      b_\epsilon &< \sup(A)
     \end{align*}
-    Por lo que $b_\epsilon$ no es una cota superior de $A$, pero eso contradice la hipótesis de que $a\leq b$, $\forall a\in A$ y $\forall b\in B$.
+    Lo que es una contradicción.
   \end{proof}
 
 \end{enumerate}
