@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.19)  20 FEB 2024 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.19)  20 FEB 2024 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -542,9 +542,9 @@ Overfull \hbox (6.2447pt too wide) in paragraph at lines 337--353
  []$$[]$ 
  []
 
-[4] [5] [6] [7] [8]) (./pendiente.tex [9] [10
+[4] [5] [6] [7] [8] [9]) (./pendiente.tex [10] [11
 
-] [11] [12] [13] [14] [15] [16] [17]) [18] (build/main.aux) ) 
+] [12] [13] [14] [15] [16] [17] [18]) [19] (build/main.aux) ) 
 Here is how much of TeX's memory you used:
  16630 strings out of 476024
  321383 string characters out of 5794016
@@ -554,10 +554,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  101i,20n,104p,876b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on build/main.pdf (18 pages, 231988 bytes).
+Output written on build/main.pdf (19 pages, 232765 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 155 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
