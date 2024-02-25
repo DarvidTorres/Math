@@ -722,11 +722,11 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
 \subsection*{Una nota sobre la notación sigma}
 
-\textbf{Abuso de la notación}
+% \textbf{Abuso de la notación}
 
-Considere el siguiente argumento planteado por un estudiante, y decida si está o no de acuerdo:
+% Considere el siguiente argumento planteado por un estudiante, y decida si está o no de acuerdo:
 
-Para números reales $a$ y $b$ tales que $a<b$, hemos definido $\sum_{\underline{n=a}}^{b} f(n) = f(a) + \sum_{\underline{n=a+1}}^{b}f(n)$; el lector notará que del lado izquierdo de esta igualdad $n=a$ pero del lado derecho $n=a+1$, es decir, se emplea el mismo símbolo $n$ para números enteros distintos, lo que resulta útil en este caso ya que la definición de sumatoria está dada \textit{recursivamente}; sin embargo, de manera minuciosa (y pedante), se podría reescribir como $\sum_{n=a}^{b}f(n) = f(a) + \sum_{n+1=a+1}^{b}f(n+1)$, pero en cada iteración tendríamos que cambiar el límite inferior y, con ello, la variable a evaluar, lo que llegaría a ser laborioso, especialmente si se requiere de expresar múltiples iteraciones; por ello, se acude al abuso mencionado.
+% Para números reales $a$ y $b$ tales que $a<b$, hemos definido $\sum_{\underline{n=a}}^{b} f(n) = f(a) + \sum_{\underline{n=a+1}}^{b}f(n)$; el lector notará que del lado izquierdo de esta igualdad $n=a$ pero del lado derecho $n=a+1$, es decir, se emplea el mismo símbolo $n$ para números enteros distintos, lo que resulta útil en este caso ya que la definición de sumatoria está dada \textit{recursivamente}; sin embargo, de manera minuciosa (y pedante), se podría reescribir como $\sum_{n=a}^{b}f(n) = f(a) + \sum_{n+1=a+1}^{b}f(n+1)$, pero en cada iteración tendríamos que cambiar el límite inferior y, con ello, la variable a evaluar, lo que llegaría a ser laborioso, especialmente si se requiere de expresar múltiples iteraciones; por ello, se acude al abuso mencionado.
 
 \textbf{Extensión}
 
@@ -740,4 +740,15 @@ dado que esto puede resultar confuso, generalmente es más seguro encerrar el ar
 
 \begin{align*}
   \sum_{i=1}^{n} i^2 + \sum_{i=1}^{n^2} i = \left(\sum_{i=1}^{n}i^2\right) + \left(\sum_{i=1}^{n^2}i\right)
+\end{align*}
+
+\textbf{Límites no enteros}
+
+En principio, la sumatoria está bien definida para casos en los que los índices no son enteros, por ejemplo:
+
+\begin{align*}
+  \sum_{i=\frac{1}{2}}^{\frac{9}{4}} i &= \frac{1}{2} + \sum_{i=\frac{3}{2}}^{\frac{9}{4}} i \\
+  &= \frac{1}{2} + \frac{3}{2} + \sum_{i=\frac{5}{2}}^{\frac{9}{4}} i\\
+  &= \frac{1}{2} + \frac{3}{2} + 0\\
+  &= 2
 \end{align*}
