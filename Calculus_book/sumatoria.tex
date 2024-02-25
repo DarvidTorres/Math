@@ -71,9 +71,9 @@ de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
   \begin{proof}\leavevmode
     Sea $m\in \R$,
   \begin{align*}
-    \sum_{{\color{magenta}n}=m}^{m} f({\color{magenta}n}) &= f(m={\color{magenta}n}) + \sum_{{\color{cyan}n}=m+1}^{m} f({\color{cyan}n}) && \text{Definición}\\
-    &= f(n) + 0 && \text{Definición}\\
-    &= f(n) && \qedhere
+    \sum_{n}^{m} f(n) &= f(m) + \sum_{n=m+1}^{m} f(n) && \text{Definición}\\
+    &= f(m) + 0 && \text{Definición}\\
+    &= f(n) && \text{Hipótesis} \qedhere
   \end{align*}
   \end{proof}
 
