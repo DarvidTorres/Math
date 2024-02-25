@@ -351,12 +351,14 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
       &\neq f(a)\cdot g(a) + f(a+1) \cdot g(a+1) + f(a+1) \cdot g(a) + f(a) \cdot g(a+1)\\
       &= g(a) \cdot \big(f(a)+f(a+1)\big) + g(a+1) \cdot \big(f(a)+f(a+1)\big)\\
       &= \big(f(a)+f(a+1)\big) \cdot \big(g(a)+g(a+1)\big)\\
+      &= \left(f(a) + \sum_{n=a+1}^{a+1} f(n)\right) \cdot \left(g(a) + \sum_{n=a+1}^{a+1} g(n)\right)\\
       &= \left(\sum_{n=a}^{b} f(n)\right)  \cdot \left(\sum_{n=a}^{b} g(n)\right)
     \end{align*}
   \end{proof}
   
-  \item \[\sum_{n=a}^{b} \frac{f(n)}{g(n)} \neq \frac{\sum_{n=a}^{b} f(n)}{\sum_{n=a}^{b}g(n)}\]  
-
+  \item \[\sum_{n=a}^{b} \frac{f(n)}{g(n)} \neq \frac{\sum_{n=a}^{b} f(n)}{\sum_{n=a}^{b}g(n)}\]
+  
+  
 
   \item Sea $c\in \R$, si $a\leq b$, entonces \begin{align*}
     \sum_{n=a}^b c &= (b-a+1)c
