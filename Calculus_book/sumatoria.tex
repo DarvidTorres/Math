@@ -69,11 +69,11 @@ de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
   \end{align*}
 
   \begin{proof}\leavevmode
-    Sea $m\in \R$,
   \begin{align*}
-    \sum_{n}^{m} f(n) &= f(m) + \sum_{n=m+1}^{m} f(n) && \text{Definición}\\
-    &= f(m) + 0 && \text{Definición}\\
-    &= f(n) && \text{Hipótesis} \qedhere
+    \sum_{n=a}^{b} f(n) &= \sum_{n=a}^{a} f(n) && \text{Hipótesis}\\
+    &= f(a) + \sum_{n=a+1}^{a} f(n) && \text{Definición}\\
+    &= f(a) + 0 && \text{Definición}\\
+    &= f(n)\qedhere
   \end{align*}
   \end{proof}
 
