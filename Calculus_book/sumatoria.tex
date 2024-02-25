@@ -565,20 +565,6 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
-  \textbf{Nota:} El lector encontrará que en ocasiones, en lugar de utilizar este teorema simplemente se trabaja con susbsituciones sobre el índice, especialmente para casos en que $f(x)=x$. Por ejemplo:
-
-  \begin{align*}
-    \sum_{i=1}^{n} (i-1) &= \sum_{j=0}^{n-1} j && \text{donde $j=i-1$}
-  \end{align*}
-  
-  Como $j=i-1 \Rightarrow j+1=i$, se tiene que
-  \begin{align*}
-    (n-i) &= \big(n-(j+1)\big)\\
-    &= \big((n-1)-j\big)
-  \end{align*}
-  
-  es decir, la \textit{distancia} entre los índices se conserva.
-
   \item Si $s\leq j\leq t$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Partir la suma)}\]
   
   \textbf{Nota:} Alternativamente podemos escribir esta igualdad como sigue: Si $s\leq j\leq t$, entonces $\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j-1}f(n) + \sum_{n=j}^{t}f(n)$. El lector debería verificar esta equivalencia
