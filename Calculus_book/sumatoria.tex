@@ -348,8 +348,9 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \begin{align*}
       \sum_{n=a}^{b} \big(f(n)\cdot g(n)\big) &= f(a)\cdot g(a) + \sum_{a+1}^{a+1} \big(f(n)\cdot g(n)\big)\\
       &= f(a)\cdot g(a) + f(a+1)\cdot g(a+1)\\
-      &= g(a) \big(f(a)+f(a+1)\big) + g(a+1) \big(f(a)+f(a+1)\big)\\
-      &\neq \big(f(a)+f(a+1)\big) \cdot \big(g(a)+g(a+1)\big)\\
+      &\neq f(a)\cdot g(a) + f(a+1) \cdot g(a) + f(a) \cdot g(a+1) + f(a+1)\cdot g(a+1)\\
+      &= g(a) \cdot \big(f(a)+f(a+1)\big) + g(a+1) \cdot \big(f(a)+f(a+1)\big)\\
+      &= \big(f(a)+f(a+1)\big) \cdot \big(g(a)+g(a+1)\big)\\
       &= \left(\sum_{n=a}^{b} f(n)\right)  \cdot \left(\sum_{n=a}^{b} g(n)\right)
     \end{align*}
   \end{proof}
