@@ -571,7 +571,11 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \sum_{i=1}^{n} (i-1) &= \sum_{j=0}^{n-1} j && \text{donde $j=i-1$}
   \end{align*}
   
-  donde $(n-i)=\big((n-1)-j\big)$.
+  donde 
+  \begin{align*}
+    (n-i) &= \big(n-(j-1)\big)\\
+    &= \big((n-1)-j\big)
+  \end{align*}
 
   \item Si $s\leq j\leq t$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Partir la suma)}\]
   
