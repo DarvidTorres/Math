@@ -565,6 +565,32 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \end{enumerate}
   \end{proof}
 
+  \textbf{Nota:} El lector encontrará que en ocasiones, en lugar de utilizar este teorema simplemente se trabaja con susbsituciones sobre el índice, especialmente para casos en que $f(x)=x$. Por ejemplo, tomando la sumatoria de $f(n)=n$, de $1$ hasta $b$,
+  
+  \[\sum_{n=1}^{b} n\]
+  
+  Sea $c=n-1$, entonces $c+1=n$. Cuando el límite inferior $n=1$, se tiene que $c=1-1=0$. Luego, al considerar la \textit{distancia} entre los límites, tenemos que
+  \begin{align*}
+    b - n &= b - (c+1)\\
+    &= (b-1) - c
+  \end{align*}
+  
+  Al sustituir $a$ en la sumatoria, tenemos
+  
+  \[\sum_{a=1}^{b} a = \sum_{c=0}^{b-1} c+1\]
+
+  \begin{align*}
+    \sum_{i=1}^{n} (i-1) &= \sum_{j=0}^{n-1} j && \text{donde $j=i-1$}
+  \end{align*}
+  
+  Como $j=i-1 \Rightarrow j+1=i$, se tiene que
+  \begin{align*}
+    (n-i) &= \big(n-(j+1)\big)\\
+    &= \big((n-1)-j\big)
+  \end{align*}
+  
+  es decir, la \textit{distancia} entre los índices se conserva.
+
   \item Si $s\leq j\leq t$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Partir la suma)}\]
   
   \textbf{Nota:} Alternativamente podemos escribir esta igualdad como sigue: Si $s\leq j\leq t$, entonces $\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j-1}f(n) + \sum_{n=j}^{t}f(n)$. El lector debería verificar esta equivalencia
