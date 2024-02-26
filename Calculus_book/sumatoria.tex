@@ -767,3 +767,10 @@ Sin embargo, este uso no es común. El ejemplo también sirve para ilustrar que,
 \textbf{Sumatoria sobre conjuntos indexados}
 
 El índice de la sumatoria puede iterar sobre los elementos de un conjunto indexado finito, por ejemplo, \[\sum_{i\in \set{2, 3, 5}} i^2 = (2)^2 + (3)^2 + (5)^2 = 38\]
+
+\begin{align*}
+  \sum_{i=0}^{n} \sum_{j=0}^{i} (i+1)(j+1) &= \sum_{i=0}^{1} \sum_{j=0}^{i} (i+1)(j+1)\\
+  &= \sum_{i=0}^{1} \big((i+1)(0+1) + \sum_{j=1}^{i} (i+1)(j+1) \big)\\
+  &= \sum_{i=0}^{1} (i+1)(0+1) + \sum_{i=0}^{1} \sum_{j=1}^{i} (i+1)(j+1)\\
+  &= (0+1)\cdot 1 + \sum_{i=1}^{1} (i+1)(0+1)
+\end{align*}
