@@ -771,5 +771,6 @@ El índice de la sumatoria puede iterar sobre los elementos de un conjunto index
 \begin{align*}
   \sum_{i=0}^{n} \sum_{j=0}^{i} (i+1)(j+1) &= \sum_{i=0}^{1} \sum_{j=0}^{i} (i+1)(j+1)\\
   &= \sum_{i=0}^{1} \left(\sum_{j=0}^{i} (i+1)(j+1)\right)\\
-  &= \left(\sum_{i=0}^{1} (i+1)\right) \cdot \left(\sum_{j=1}^{i} (j+1)\right)
+  &= \left(\sum_{i=0}^{1} (i+1)\right) \cdot \left(\sum_{j=0}^{i} (j+1)\right)\\
+  &= \left((0+1) + \sum_{i=1}^{1} (i+1)\right) \cdot \left(\sum_{j=0}^{0} (j+1)\right)\\
 \end{align*}
