@@ -1,11 +1,11 @@
 \part*{Notación sigma}
 
-\textbf{Definición:} Sea $a,b\in \R$ y $f: \R\to \R$, definimos a la sumatoria como sigue:
+\textbf{Definición:} Sea $A, B\subseteq \R$ y $f:A \to B$, con $a,b\in A$. Definimos a la sumatoria de $a$ hasta $b$ de $f$ como sigue:
 
 \[
-    \sum_{{\color{teal}n}=a}^{b} f({\color{teal}n}) \defined \left\{
+    \sum_{n=a}^{b} f(n) \defined \left\{
     \begin{array}{@{}l@{\thinspace}l}
-    f(a) + \sum_{{\color{violet}n}=a+1}^{b} f({\color{violet}n}) &,  \ \text{si}  \ b\geq a\\
+    f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ b\geq a\\
     0 &,  \ \text{si}  \ b<a.
     \end{array} \right. \]
 
@@ -16,7 +16,12 @@ Decimos que
   \item $b$ el límite superior,
   \item $f(n)$ el elemento típico (o genérico)
 \end{itemize}
-de la sumatoria. También decimos que $n$ \textit{itera} desde $a$ hasta $b$.
+de la sumatoria.
+
+\textbf{Definición:} Llamamos al conjunto $\set{a + n | n\in \Z, 0\leq n \leq (b-a)}$, el conjunto iterable de $\sum_{n=a}^{b} f(n)$.
+
+
+decimos que $n$ \textit{itera} desde $a$ hasta $b$.
 
 \textbf{Ejemplos:}
 
@@ -776,4 +781,3 @@ El índice de la sumatoria puede iterar sobre los elementos de un conjunto index
 \end{align*}
 
 
-Sea $A,B\subseteq \R$, y $f:A\to B$. Sea $a, b \in A$. Llamamos al conjunto $\set{a + n | n\in \Z, 0\leq n \leq (b-a)}$, el conjunto iterable de $\sum_{n=a}^{b}$.
