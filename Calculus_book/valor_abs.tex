@@ -44,13 +44,6 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
   \item Si $a<0$, por definición, $|a|=-a$, por lo que $-a\leq |a|$. Luego, por la hipótesis tenemos que $0<-a$, y por transitividad, $a<|a|$.
  \end{enumerate}
  En cualquier caso, $\pm a\leq |a|$.
-\end{proof} 
-
-\item $\big||a|\big|=|a|$.
-\begin{proof}\leavevmode
-  \begin{enumerate}[label=\roman*)]
-    \item Si $0\leq a$, por definición, $|a|=a$. Por lo que $\big||a|\big|=|a|=a$.
-  \end{enumerate}
 \end{proof}
 
 \item $|a|=|-a|$.
@@ -61,6 +54,14 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
   \item Si $a<0$, por definición, $|a|=-a$. Luego, por la hipótesis tenemos que $0<-a$, por lo que $|-a|=-a$. De este modo, $|a|=|-a|$.
  \end{enumerate}
  En cualquier caso, $|a|=|-a|$.
+\end{proof}
+
+\item $\big||a|\big|=|a|$.
+\begin{proof}\leavevmode
+  \begin{enumerate}[label=\roman*)]
+    \item Si $0\leq a$, por definición, $|a|=a$. Por lo que $\big||a|\big|=|a|=a$.
+    \item Si $a<0$, por definición, $|a|=-a$. Por lo que $\big||a|\big|=|-a|=|a|$ \qedhere
+  \end{enumerate}
 \end{proof}
 
 \item $|ab|=|a||b|$.
