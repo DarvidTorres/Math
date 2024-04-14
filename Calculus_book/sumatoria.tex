@@ -359,16 +359,16 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \begin{proof}\leavevmode
     Notemos que
     
-    % Sea $n\in D(f)$ arbitrario pero fijo. Notemos que en la sumatoria $\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)$, $f(n)$ es constante, por lo que
-    % \begin{align*}
-    %   \sum_{n=a}^{b} \left(\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)\right) &= \sum_{n=a}^{b} \left( f(n) \sum_{m=s}^{t} g(m)\right)
-    % \end{align*}
+    Sea $n\in D(f)$ arbitrario pero fijo. Notemos que en la sumatoria $\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)$, $f(n)$ es constante, por lo que
+    \begin{align*}
+      \sum_{n=a}^{b} \left(\sum_{m=s}^{t} \Bigl(f(n) \cdot  g(m)\Bigr)\right) &= \sum_{n=a}^{b} \left( f(n) \sum_{m=s}^{t} g(m)\right)
+    \end{align*}
 
-    % De la misma manera, en la sumatoria (de índice $n$) $\sum_{n=a}^{b} \Bigl( f(n) \sum_{m=s}^{t} g(m)\Bigr)$, se tiene que $\sum_{m=s}^{t} g(m)$ es constante, por lo que
-    % \begin{align*}
-    %   \sum_{n=a}^{b} \left( f(n) \sum_{m=s}^{t} g(m)\right) &= \left(\sum_{m=s}^{t} g(m)\right) \cdot \left(\sum_{n=a}^{b} f(n)\right)\\
-    %   &= \left(\sum_{n=a}^{b} f(n)\right) \cdot \left(\sum_{m=s}^{t} g(m)\right)
-    % \end{align*}
+    De la misma manera, en la sumatoria (de índice $n$) $\sum_{n=a}^{b} \Bigl( f(n) \sum_{m=s}^{t} g(m)\Bigr)$, se tiene que $\sum_{m=s}^{t} g(m)$ es constante, por lo que
+    \begin{align*}
+      \sum_{n=a}^{b} \left( f(n) \sum_{m=s}^{t} g(m)\right) &= \left(\sum_{m=s}^{t} g(m)\right) \cdot \left(\sum_{n=a}^{b} f(n)\right)\\
+      &= \left(\sum_{n=a}^{b} f(n)\right) \cdot \left(\sum_{m=s}^{t} g(m)\right)
+    \end{align*}
   \end{proof}
 
   % \item Si $a<b$, entonces \[\sum_{n=a}^{b} \Bigl(f(n) \cdot  g(n)\Bigr) \neq \left(\sum_{n=a}^{b} f(n)\right)  \cdot \left(\sum_{n=a}^{b} g(n)\right)\]
