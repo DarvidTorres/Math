@@ -808,6 +808,10 @@ Notemos que la variable iterable de la sumatoria A ($i$) estará determinando el
 \begin{align*}
   \sum_{i=0}^{1} \left(\sum_{j=0}^{i}(i+1)(j+1)\right) &= \sum_{j=0}^{0} (0+1)(j+1) + \sum_{i=1}^{1} \left(\sum_{j=0}^{i}(i+1)(j+1)\right) \\
   &= (1)(0+1) + \sum_{j=0}^{1} (1+1) (j+1)\\
+  &= (1)(1) + (1+1)(0+1) + \sum_{j=1}^{1} (1+1) (j+1)\\
+  &= 1 + 2 + (1+1)(1+1)\\
+  &= 1 + 2 + 4\\
+  &= 7
 \end{align*}
 
 
