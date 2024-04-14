@@ -798,13 +798,15 @@ El índice de la sumatoria puede iterar sobre los elementos de un conjunto index
 
 \textbf{Sumatorias anidadas}
 
-Considere la siguientes sumatorias anidadas:
+Considere las siguientes sumatorias anidadas:
 \begin{align*}
-  \sum_{i=0}^{n} \sum_{j=0}^{i} (i+1)(j+1) = \sum_{i=0}^{n} \left(\sum_{j=0}^{i} (i+1)(j+1)\right)
+  \sum_{i=0}^{n} \sum_{j=0}^{i} (i+1)(j+1) = \overbrace{\sum_{i=0}^{n}}^{\text{A}} \overbrace{\left(\sum_{j=0}^{i} (i+1)(j+1)\right)}^{\text{B}}
 \end{align*}
+
+Recordemos que el límite superior de cada su
 
 
 
 \textbf{Notación Pi}
 
-\textbf{Definición:} Sea $A,B\subseteq \R$ y $f: A\to B$, con $a,b\in A$ y 
+\textbf{Definición:} Sea $A,B\subseteq \R$ y $f: A\to B
