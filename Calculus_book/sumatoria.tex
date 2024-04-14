@@ -806,8 +806,9 @@ Considere las siguientes sumatorias anidadas:
 Notemos que la variable iterable de la sumatoria A ($i$) estará determinando el valor del límite superior de la sumatoria B, por lo que únicamente requerimos un valor para $n$ que determine el límite superior de la sumatoria A para poder realizar el cálculo. Sea $n=1$.
 
 \begin{align*}
-  \sum_{i=0}^{1} \left(\sum_{j=0}^{i}(i+1)(j+1)\right)
+  \sum_{i=0}^{1} \left(\sum_{j=0}^{i}(i+1)(j+1)\right) &= \sum_{j=0}^{0} (0+1)(j+1) + \sum_{i=1}^{1} \left(\sum_{j=0}^{i}(i+1)(j+1)\right)
 \end{align*}
+
 
 
 
