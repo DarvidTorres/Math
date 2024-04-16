@@ -764,15 +764,17 @@ dado que esto puede resultar confuso, generalmente es más seguro encerrar el ar
 
 \textbf{Variables indexadas}
 
-\textbf{Definición:} Sea $A\propersubset \R$ y $M=\set{m|1\leq m\leq
-n}\propersubset \N$. Decimos que $A$ es un conjunto finito si existe una
-biyección $f: A \to M$, para algún $n \in \N$. \begin{itemize} \item Si $f$ y
+\textbf{Definición:} Sea $A\propersubset \R$ y $M=\set{m\in \N|1\leq m\leq
+n}$. Decimos que $A$ es un conjunto finito si existe una
+biyección $f: M \to A$, para algún $n \in \N$. \begin{itemize} \item Si $f$ y
 $n$ existen, llamamos a $n$ la cardinalidad del conjunto. \item El conjunto
 $\emptyset$ es considerado finito, de cardinalidad $0$. \end{itemize}
 
-Usualmente la sumatoria se presenta con la notación índice para conjuntos finitos, \[\sum_{i=m}^{n} a_i\]
+Usualmente la sumatoria se presenta con la notación índice para conjuntos finitos indexados, \[\sum_{i=m}^{n} a_i\]
 
-en la cual se tiene una función $f:A \to M$ tal que $i \mapsto a$, donde $i\in M\propersubset \N$.
+en la cual se tiene una función $f:M \to A$ tal que $i \mapsto a$, donde $i\in \N$. La notación índice se define como:
+
+\[f(i) \]
 
 
 
