@@ -792,11 +792,29 @@ en la cual se tiene una función% suprayectiva
 f : N &\to A\\
 i &\mapsto a
 \end{align*}
-donde $N\subseteq \N$
+donde $N\subseteq \N$. Por ejemplo:
 
-\textbf{Ejemplo:}
+\[\left| \sum_{i=1}^{n} a_i \right| \leq \sum_{i=1}^{n} |a_i| \qquad \text{(Desigualdad del triángulo generalizada)}\]
 
+\begin{proof}\leavevmode
+  \begin{enumerate}[label=\roman*)]
+    \item Se verifica para $n=2$, por la desigualdad del triángulo,
+    \[\left| \sum_{i=1}^{2} a_i \right| = \left|a_1 + \sum_{i=2}^{2} a_i \right| = |a_1 + a_2| \leq |a_1|+|a_2| = |a_1| + \sum_{i=2}^{2} |a_i| = \sum_{i=1}^{2} |a_i|\]
+    \item Supongamos que se cumple para $n=k$, es decir, suponemos que
+    \[\left| \sum_{i=1}^{k} a_i \right| \leq \sum_{i=1}^{k} |a_i|\]
+    \item Notemos que $|a_{k+1}| \leq |a_{k+1}|$. Luego, 
+    \begin{align*}
+      \left| \sum_{i=1}^{k+1} a_i \right| &= \left|a_{k+1}+ \sum_{i=1}^{k} a_i \right|\\
+      &\leq |a_{k+1}| + \left|\sum_{i=1}^{k} a_i \right| && \text{Desigualdad del triángulo}\\
+      &\leq |a_{k+1}| + \sum_{i=1}^{k} |a_i| && \text{Suma \textit{vertical} de desigualdades}\\
+      &= \sum_{i=1}^{k+1} |a_i|
+    \end{align*}
+  \end{enumerate}
+\end{proof}
 
+\textbf{Sumatoria sobre conjuntos indexados}
+
+El índice de la sumatoria puede iterar sobre los elementos de un conjunto indexado, por ejemplo, \[\sum_{i\in \set{2, 3, 5}} i^2 = (2)^2 + (3)^2 + (5)^2 = 38\]
 
 \textbf{Límites no enteros}
 
@@ -819,10 +837,6 @@ Sin embargo, este uso no es común. El ejemplo también sirve para ilustrar que,
   &= 7/2\\
   &= 3 + 1/2
 \end{align*}
-
-\textbf{Sumatoria sobre conjuntos indexados}
-
-El índice de la sumatoria puede iterar sobre los elementos de un conjunto indexado finito, por ejemplo, \[\sum_{i\in \set{2, 3, 5}} i^2 = (2)^2 + (3)^2 + (5)^2 = 38\]
 
 \textbf{Sumatorias anidadas}
 
@@ -853,7 +867,6 @@ Es claro que, en este caso ($n=1$), la \text{distancia} entre los límites de la
 \end{align*}
 
 También podríamos proceder con una definición para la sumatoria A y con otra para B. El lector debería verificar este hecho.
-
 
 \textbf{Notación Pi}
 
