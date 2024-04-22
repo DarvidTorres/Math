@@ -223,7 +223,7 @@ El lector notará que la prueba consiste en: \begin{enumerate}
 
 \textbf{Nota:} No se exige que $n+1\in A$ sea una consecuencia de que $n\in A$, sin embargo, este suele ser el caso; por lo que, si se prescinde del paso inductivo para probar que $n+1$ cumple la propiedad enunciada, es un buen hábito detenerse y comprobar el desarrollo, puede ser que se haya cometido un error o que en realidad no necesite inducción para la prueba.
 
-Este \textit{algoritmo} nos permite probar proposiciones sobre los números naturales; no obstante, la tradición de los libros de texto es definir de manera implícita el conjunto con el que se trabaja y —si acaso— enunciar el principio de inducción matemática al inicio de la prueba. Por ejemplo:
+Esta \textit{receta} nos permite probar proposiciones sobre los números naturales; no obstante, la tradición de los libros de texto es definir de manera implícita el conjunto con el que se trabaja y —si acaso— enunciar el principio de inducción matemática al inicio de la prueba. Por ejemplo:
 
 \bfit{Proposición:} $0<\frac{1}{n}\leq 1, \forall n\in \N$.
 \begin{proof}
@@ -257,11 +257,147 @@ Sin embargo, el lector debería ser cuidadoso de no considerar el uso de inducci
   \end{enumerate} Como $n$ es arbitrario, se verifica que $0<\frac{1}{n}\leq 1, \forall n\in \N$.
  \end{proof}
 
+\section*{Potenciación}
+
+\bfit{Definición:}  Sea $b\in \R$ y $n\in \N$,
+ \[
+  b^n = \left\{
+ \begin{array}{@{}r@{\thinspace}l}
+  b, &  \ \text{si}  \ n = 1\\
+  b\cdot b^{n-1}, &  \ \text{si}  \ n > 1
+  %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+ \end{array} \right. \]
+%
+ %\textbf{Notación:} Sea $b\in \R$ y $n\in \N$. Si $b \neq 0$, denotaremos $\frac{1}{b^n}$ como $b^{-n}$.
+%
+\subsection*{Lista de Ejercicios 9 (LE9)}
+
+Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+  \item $1^n=1, \forall n\in \N$.
+  \vspace{-1em}
+  \begin{proof} Sea $A=\set{n|1^n=1}$.
+  \begin{enumerate}[label=\roman*)]
+  \item Notemos que $1\in A$, pues $1^1=1$, por definición.
+  \item Si $n\in A$, entonces $1^n=1$.
+  \item Por definición, \begin{align*}
+  1^{n+1} = \left\{
+  \begin{array}{@{}r@{\thinspace}l}
+    1, &  \ \text{si}  \ n+1 = 1\\
+    1\cdot 1^{n}, &  \ \text{si}  \ n+1 > 1
+    %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+  \end{array} \right.
+  \end{align*}
+ Como $n>0$, se tiene $n+1>1$, de donde sigue que $1^{n+1}=1\cdot 1^n=1^n$, por (ii) se verifica que $1^n=1$, es decir, $1^{n+1}=1$, lo que implica que $n+1\in A$.
+ \end{enumerate}
+
+ Por el principio de inducción matemática, $A=\N$, por lo que $1^n=1, \forall n\in \N$.
+ \end{proof}
+
+ \item $0^n=0, \forall n\in \N$.
+ \begin{proof}
+ Es claro que $0^1=0$. Luego, si $0^n=0$, tenemos que $0^{n+1}=0 \cdot 0^n$, lo que es una multiplicación por $0$, es decir, $0^{n+1}=0$.
+ \end{proof}
+ 
+  \item $a^m \cdot a^n = a^{m+n}$.
+
+ \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n|a^{m+n}=a^m\cdot a^n}$.
+
+ \begin{enumerate}[label=\roman*)]
+ \item Por definición \begin{align*}
+  a^{m+1} = \left\{
+  \begin{array}{@{}r@{\thinspace}l}
+    a, &  \ \text{si}  \ m+1 = 1\\
+    a\cdot a^{m}, &  \ \text{si}  \ m+1 > 1
+    %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
+  \end{array} \right.
+  \end{align*}
+  
+  Como $m>0$, sigue que $m+1>1$, por lo que $a^{m+1}=a\cdot a^m=a^m\cdot a^1$, lo que implica que $1\in A$.
+ \item Si $n\in A$, tenemos que $a^{m+n}=a^m\cdot a^n$.
+ \item Por definición \begin{align*}
+  a^{m+(n+1)} = \left\{
+   \begin{array}{@{}r@{\thinspace}l}
+    a, &  \ \text{si}  \ m+(n+1) = 1\\
+    a\cdot a^{m+n}, &  \ \text{si}  \ m+(n+1) > 1
+   \end{array} \right.
+  \end{align*}
+
+ Como $m+n>0$, sigue que $m+(n+1)>1$. Por tanto, \begin{align*}
+  a^{m+(n+1)} &=a\cdot a^{m+n} && \text{Definición}\\
+  &= a\cdot a^m \cdot a^n && \text{Por (ii)}\\
+  &= a^m \cdot a^{n+1} && \text{Por (i)}
+ \end{align*}
+ \end{enumerate}
+
+ Por el principio de inducción matemática, $A=\N$, por lo que $a^m \cdot a^n = a^{m+n}, \forall m,n\in \N$.
+ \end{proof}
+
+ \item Si $b\neq 0$, entonces $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+ \begin{proof}
+ Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.
+ \begin{enumerate}[label=\roman*)]
+ \item Notemos que $\frac{a^1}{b^1}= \frac{a}{b}= \qty(\frac{a}{b})^1$. Por lo que $1\in A$.
+ \item Si $n\in A$, tenemos $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+ \item Como $n>0$, se tiene $n+1>1$, por definición
+  \begin{align*}
+    \qty(\frac{a}{b})^{n+1} &= \frac{a}{b}\cdot \qty(\frac{a}{b})^n\\
+    &=\frac{a}{b}\cdot \frac{a^n}{b^n} && \text{Por (ii)}\\
+    &= \frac{a\cdot a^n}{b\cdot b^n}\\
+    &= \frac{a^{n+1}}{b^{n+1}} && \text{Por tanto, $n+1\in A$.}
+   \end{align*}\
+ \end{enumerate}
+ Por el principio de inducción matemática, $A=\N$, por lo que $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+ \end{proof}
+
+ \item $(ab)^n = a^nb^n, \forall n\in \N$.
+ \begin{proof}
+  Procedemos por inducción. \begin{enumerate}[label=\roman*)]
+    \item Se verifica para $n=1$, pues $(ab)^1=ab=a^1b^1=a^nb^n$.
+    \item Supongamos que la igualdad se verifica para $n=k$, es decir, suponemos que \begin{align*}
+      (ab)^k = a^kb^k
+    \end{align*}
+    \item Si $n=k+1$ sigue que \begin{align*}
+      (ab)^{k+1} &= (ab)^k (ab) && \text{(c) de LE9}\\
+      &= a^kb^k (ab) && \text{Hip. Inducción}\\
+      &= a^{k+1} b^{k+1} && \text{(c) de LE9} \qedhere 
+    \end{align*}
+  \end{enumerate}
+ \end{proof}
+
+ \item $a^{mn} = (a^m)^n, \forall m,n\in \N$.
+ \begin{proof}
+  Sea $n\in \N$ arbitrario pero fijo. Definimos $A\defined \set{m|(a^m)^n = a^{mn}, m\in \N}$. Es claro que $1\in A$, pues $(a^1)^n = (a)^n = a^n = a^{1\cdot n} = a^{mn}$. Si $m_0\in A$, entonces $(a^{m_0})^n = a^{m_0n}$ con $m_0\in \N$. Como $\N$ es un conjunto inductivo, $m+1\in \N$, de donde sigue que $a^{m+1} = a^m\cdot a$, por (c) de LE9. Por ello $(a^{m+1})^n = \big(a^m\cdot a\big)^n$, y por (e) de LE9, obtenemos que $\big(a^m\cdot a\big)^n = a^{mn}\cdot a^n$, de donde $a^{mn}\cdot a^n = a^{mn+n} = a^{n(m+1)}$, y así, $m+1\in A$, por lo que $A$ es un conjunto inductivo. Como $A\subseteq \N$, y por el principio de inducción matemática $A=\N$. Por tanto $(a^m)^n = a^{mn}, \forall m,n\in \N$.
+ \end{proof}
+
+ \end{enumerate}
+
  \section*{Números enteros}
+
+ \bfit{Proposición:} Sea $m,n\in \N$ con $m\neq n$. Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
+ 
+ \begin{proof}
+   Sea $n\in \N$ arbitrario pero fijo. Definimos $A=\set{m \in \N|\frac{a^m}{a^n}=a^{m-n}, \ m>n}\union\set{1}$. 
+   Sea $m_0 \in A$ con $m_0>1$, entonces $\frac{a^{m_0}}{a^n} = a^{m_0-n}$ con $n<m_0$ y $m_0\in \N$. Como $\N$ es un conjunto inductivo, sigue que $m_0+1\in \N$, y $m_0<m_0+1$, por transitividad, $n<m_0+1$. Sigue que \begin{align*}
+    \frac{a^{m_0+1}}{a^n} &= \frac{a^{m_0}\cdot a}{a^n}\\
+    &= a\cdot \frac{a^{m_0}}{a^n}\\
+    &= a\cdot a^{m_0-n}
+   \end{align*}
+   Como $m_0,n \in \N$ y $m_0>n$, se verifica, por (e) de LE8, que $m_0-n\in \N$, y por (c) de LE9, $a\cdot a^{m_0-n} = a^{1+(m_0-n)} = a^{(m_0+1)-n}$, lo que implica que $m_0+1 \in A$. Por el principio de inducción matemática, $A=\N$. Como $n$ es arbitrario, si $m>n$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
+ \end{proof}
+
+ El lector notará que para que la proposición $\frac{a^m}{a^n} = a^{m-n}$ sea probada, además de que $a\neq 0$, requerimos que $m\neq n$, pues si tenemos el caso donde $m=n$, entonces \begin{align*}
+  \frac{a^m}{a^n} &= \frac{a^n}{a^n}\\
+  &= \qty(\frac{a}{a})^n && \text{(d) de LE9}\\
+  &= \bigl(a\cdot a^{-1}\bigr)^n && \text{Notación}\\
+  &= 1^n && \text{Inverso multiplicativo}\\
+  &= 1 && \text{(a) de LE9}
+\end{align*}
+Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es posible probar que $a^0 = 1$, pues definimos las propiedades de los exponentes para númeos naturales, y tenemos que $0\notin \N$. Por tanto, introducimos el hecho de que $x^0 = 1, \forall x\in \R$ como una definición, pero al hacerlo, expandimos las propiedades de potenciación al conjunto de los números enteros.
 
   \bfit{Definción:} \begin{itemize}
     \item Al conjunto $\N \cup \set{0} \cup \set{-n: n\in \N}$ lo llamaremos conjunto de los números enteros y lo representaremos con el símbolo $\Z$.
-    \item Al conjunto $\N\union\set{0}$ lo llamaremos conjunto de los números enteros no negativos.
     \item Al conjunto $\set{-n: n\in \N}$ lo llamaremos conjunto de los números enteros negativos y lo representaremos con el símbolo $\Z^-$.
     %\item Al conjunto $\N$ también lo llamaremos conjunto de los números enteros positivos y lo representaremos con el símbolo $\Z^+$.
    \end{itemize}
@@ -283,39 +419,12 @@ Sin embargo, el lector debería ser cuidadoso de no considerar el uso de inducci
   \item ¿El conjunto de los números enteros es un campo (satisface los axiomas de campo)?
   
   \textbf{Respuesta:} No, pues el axioma del inverso multiplicativo solo se satisface para $1$ y $-1$.
-  
-  \item Demuestre que la suma es cerrada en $\Z$.
-  \begin{proof}\leavevmode
-    Sea $a,b\in \Z$.
-    \begin{enumerate}[label=\Roman*)]
-      \item Si $a,b\in \N$, se verifica la cerradura de la suma en $\N$.
-      \item Si $a=0$ o $b=0$, la suma es cerrada por la identidad aditiva.
-      \item Si $a,b\in \set{-n|n\in \N}$, entonces $(-a)+(-b)=-(a+b)\in \N$, por lo que $-\bigl(-(a+b)\bigr)=a+b\in \set{-n|n\in \N}$ y a su vez, $a+b\in \Z$.
-      \item Sin pérdida de generalidad, sea $a\in \N$ y $b\in \set{-n|n\in \N}$. Por axiomas de orden, $a+b=0$, $a+b<0$ o $a+b>0$, en el primer caso se verifica la cerradura. Luego, 
-      \begin{enumerate}[label=\roman*)]
-        \item Si $a+b>0$, entonces $a>-b$, y como $-b\in \N$, por (c) de LE8, se tiene que $a-(-b)=a+b\in \N$.
-        \item Si $a+b<0$, entonces $a<-b$, como $-b\in \N$, por (c) de LE8, se tiene que $(-b)-a=-(a+b)\in \N$, de donde sigue que $-\bigl(-(a+b)\bigr)=a+b\in \set{-n|n\in \N}$.
-      \end{enumerate}
-    \end{enumerate}
-  \end{proof}
-  
-  \textbf{Observación:} Como $1\in \Z$, y la suma es cerrada en $\Z$, se tiene que $\Z$ es un conjunto inductivo.
-  
-  \item Demuestre que la multiplicación es cerrada en $\Z$.
-  \begin{proof}\leavevmode
-    \begin{enumerate}[label=\roman*)]
-      \item Si $a,b\in\N$, se verifica la cerradura de la multiplicación en $\N$.
-      \item Si $a=0$ o $b=0$, la suma es cerrada por la multiplicación por cero.
-      \item Si $a,b\in \set{-n|n\in \N}$, se tiene que $(-a)\cdot (-b)=ab\in \N$.
-      \item Sin pérdida de generalidad, sea $a\in \N$ y $b\in \set{-n|n\in
-      \N}$. Notemos que $a\cdot (-b)=-(ab)\in \N$, por lo que $a\cdot b\in \set{-n|n\in \N}$.
-    \end{enumerate}
-  \end{proof}
 
   \item Sea $s\in \Z$, demuestre que si $s<j<s+1$, entonces $j\notin \Z$.
   \begin{proof} Supongamos que $j\in \Z$. Tenemos tres casos:
     \begin{enumerate}[label=\Roman*)]
-      \item Si $j=0$, tenemos que $0<s+1$, de donde sigue que $s+1\in \N$, por definición (de $\Z$), pero como $s<0$, obtenemos $s+1<1$, lo que es una contradicción, pues todo número natural es mayor o igual a 1.
+      \item Si $j\in \set{0}$, tenemos que $0<s+1$, de donde sigue que $s+1\in \N$, por definición (de $\Z$), pero como $s<0$, obtenemos $s+1<1$, lo que es una contradicción, pues todo número natural es mayor o igual a 1.
+      \textbf{Nota:} Se asume que la suma es cerrada en $\Z$, pues la hipótesis únicamente exige que $s\in \Z$, pero no que $s+1\in \Z$. El lector debería verificar este hecho.
       \item Si $j\in\N$, tenemos tres casos para $s$:
       \begin{enumerate}[label=\roman*)]
         \item Si $s=0$, sigue que $s=0<j<1=s+1$, pero esto es una contradicción, pues todo número natural es mayor o igual a 1.
@@ -327,3 +436,138 @@ Sin embargo, el lector debería ser cuidadoso de no considerar el uso de inducci
     En cualquier caso $j\notin \Z$.
   \end{proof}
 \end{enumerate}
+
+\bfit{Definición:} Sea $a\in \R$ y $n\in \N$, \begin{itemize}
+  \item $a^0=1, \forall a\in \R$.
+  \item $a^{-n}=\frac{1}{a^n}$, si $a\neq 0$.
+\end{itemize}
+
+\subsection*{Lista de Ejercicios 11 (LE11)}
+
+ \begin{enumerate}[label=\alph*)]
+  \item $1^m = 1, \forall m\in \Z$. \begin{proof}
+    Si $m=0$, la prueba está terminada, y hemos probado que la proposición es verdadera si $m\in \N$. Luego, si $m<0$, tenemos que $1^m = \frac{1}{1^{-m}}$, donde $-m\in \N$, por lo que $1^m = \frac{1}{1} = 1$.
+  \end{proof}
+
+  \item Sea $a,b\neq 0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}, \forall n\in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Si $n\in \N$, notemos que \begin{align*}
+        \left(\frac{b}{a}\right)^{-n} &= \frac{1}{\left(\frac{b}{a}\right)^n} && \text{Definición}\\
+        &= \frac{1}{\frac{b^n}{a^n}} && \text{(d) de LE9}\\
+        &= \frac{a^n}{b^n} && \text{Regla del sandwich}\\
+        &= \left(\frac{a}{b}\right)^n && \text{(d) de LE9}
+      \end{align*}
+      \item Si $n=0$, notemos que $\frac{a^n}{b^n} = \frac{a^0}{b^0} = \frac{1}{1} = 1 = \left(\frac{b}{a}\right)^0 = \left(\frac{b}{a}\right)^n$.
+      \item Si $n<0$, notemos que \begin{align*}
+        \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
+        &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
+        &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
+        &= \frac{1}{\frac{a^{-n}}{b^{-n}}}\\
+        &= \frac{b^{-n}}{a^{-n}} && \text{Regla del sandwich}\\
+        &= \left(\frac{b}{a}\right)^{-n} && \text{(d) de LE9} \qedhere
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+
+  \item $\frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n, \forall n\in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Ya probamos que la proposición es verdadera para $n\in \N$.
+      \item Si $n=0$, tenemos que $\frac{a^n}{b^n} = \frac{a^0}{b^0} = \frac{1}{1} = 1 = \left(\frac{a}{b}\right)^0= \left(\frac{a}{b}\right)^n$.
+      \item Sea $a\neq 0$ y $b\neq 0$, si $n<0$, sigue que \begin{align*}
+        \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
+        &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
+        &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
+        &= \frac{1}{\frac{a^{-n}}{b^{-n}}} && \text{Con $-n\in \N$}\\
+        &= \frac{1}{\left(\frac{a}{b}\right)^{-n}} && \text{(d) de LE9}\\
+        &= \left(\frac{a}{b}\right)^n && \text{Definición} \qedhere
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+
+  \item $a^m\cdot a^n = a^{m+n}, \forall m\in \Z$.
+  \begin{proof}\leavevmode
+  \begin{enumerate}[label=\Roman*)]
+    \item Sin pérdida de generalidad, si $n=0$, tenemos que $a^m\cdot a^0 = a^m \cdot 1 = a^m = a^{m+0}=a^{m+n}$.
+    \item Ya probamos que la proposición es verdadera para $m,n\in \N$.
+    \item Sea $a\neq 0$, y \begin{enumerate}[label=\roman*)]
+      \item Sin pérdida de generalidad, si $n<0$ y $m>0$, tenemos $a^m\cdot a^n = \frac{a^m}{a^{-n}}$, donde $-n\in \N$; a su vez, \begin{itemize}
+        \item Si $-n = m$, entonces \begin{align*}
+          \frac{a^m}{a^{-n}} &= 1 \\
+          &= a^0\\
+          &= a^{m-m}\\
+          &= a^{m-(-n)}\\
+          &= a^{m+n}
+        \end{align*}
+        \item Si $-n\neq m$, por (e) de LE9, sigue que $\frac{a^m}{a^{-n}} = a^{m-(-n)} = a^{m+n}$.
+      \end{itemize}
+      \item Si $n<0$ y $m<0$, entonces \begin{align*}
+        a^m\cdot a^n &= \frac{1}{a^{-m}} \cdot \frac{1}{a^{-m}}\\
+        &= \frac{1}{a^{-m}a^{-n}}
+      \end{align*}
+      Como $-m, -n\in \N$, por (c) de LE9, \begin{align*}
+        \frac{1}{a^{-m}a^{-n}} &= \frac{1}{a^{-m+(-n)}}\\
+        &= \frac{1}{a^{-(m+n)}}\\
+        &= a^{m+n} && \text{Definición} \qedhere
+      \end{align*}
+    \end{enumerate}
+  \end{enumerate}
+  \end{proof}
+
+  \item $(ab)^m = a^mb^m, \forall m\in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}
+      \item Ya probamos que la proposición es verdadera para $m\in \N$.
+      \item Si $m=0$, sigue que $(ab)^m = 1 = a^0b^0 = a^mb^m$.
+      \item Si $m<0$, con $a\neq 0$ y $b\neq 0$, entonces \begin{align*}
+        \bigl(ab\bigr)^m &= \frac{1}{(ab)^{-m}}\\
+        &= \frac{1}{a^{-m}b^{-m}} && \text{(e) de LE9}\\
+        &= a^mb^m && \text{Definición}
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+
+  \item $a^{mn} = (a^m)^n, \forall m,n \in \Z$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Ya probamos que la proposición es verdadera para $m,n\in \N$.
+      \item Notemos que \begin{itemize}
+        \item Si $m=0$, sigue que $a^{mn} = a^0 = 1 = 1^n = (a^0)^n = (a^m)^n$.
+        \item Si $n=0$, sigue que $a^{mn} = a^0 = 1 = (a^m)^0 = (a^m)^n$.
+      \end{itemize}
+      \item Finalmente, si $a\neq 0$ \begin{itemize}
+        \item Si $n<0$ y $m\in \N$, sigue que \begin{align*}
+          \bigl(a^m\bigr)^n &= \frac{1}{(a^m)^{-n}} && \text{Definición}\\
+          &= \frac{1}{a^{-mn}} && \text{(f) de LE9}\\
+          &= a^{mn} && \text{Definición}
+        \end{align*}
+        \item Si $m<0$ y $n\in \N$, sigue que \begin{align*}
+          \bigl(a^m\bigr)^n &= \left(\frac{1}{a^{-m}}\right)^n && \text{Definición}\\
+          &= \frac{1^n}{(a^{-m})^n} && \text{(d) de LE9}\\
+          &= \frac{1}{a^{-mn}} && \text{(f) de LE9}\\
+          &= a^{mn} && \text{Definición} && \qedhere
+        \end{align*}
+      \end{itemize}
+    \end{enumerate}
+  \end{proof}
+
+  \item Sea $a<b$ y $n\in \Z$, encuentre las condiciones que deben cumplirse para que $a^n< b^n$ o $b^n< a^n$.
+  \begin{enumerate}[label=\roman*)]
+    \item Si $n=0$, no se cumple ninguna condición, pues $a^0=b^0$.
+    \item Sea $n\in \N$,
+    \begin{enumerate}[label=\roman*)]
+      \item Si $n=1$,
+      \begin{align*}
+        a &< b && \text{Hip.}\\
+        a^1 &< b^1
+      \end{align*}
+      \item Supongamos que $a^k<b^k$, con $k\in \N$.
+      \item Notemos que
+      \begin{align*}
+        a^k &< b^k && \text{Hip. Ind.}\\
+        a^k \cdot a &< b^k 
+      \end{align*}
+    \end{enumerate}
+  \end{enumerate}
+  \end{enumerate}
