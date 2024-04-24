@@ -413,6 +413,31 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \bfit{Corolario:} Si $c\in \R$ y $n\in \N$, entonces $\sum_{i=1}^n c = nc$.
   \begin{proof} $\sum_{i=1}^n c = \bigl((n-1)+1\bigr) c = nc$.
   \end{proof}
+  
+  \item Si $a\leq b$, entonces \[\sum_{n=a}^{b} \Big(f(n+1)-f(n)\Big) = f(b+1) - f(a) \qquad \text{Propiedad telescópica (de la sumatoria)}\]
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $a=b$, \[\sum_{n=a}^{b} \Big(f(n+1)-f(n)\Big) = f(n+1) - f(n) = f(b+1) - f(a)\]
+      \item Si $a<b$,
+      \begin{enumerate}[label=\roman*)]
+        \item Se verifica para $b=a+1$,
+        \begin{align*}
+          \sum_{n=a}^{a+1} \Big(f(n+1)-f(n)\Big) &= \Bigl(f\big(a+1\big)-f(a)\Bigr) + \sum_{n=a+1}^{a+1} \Big(f(n+1)-f(n)\Big)\\
+          &= \Bigl(f(a+1)-f(a)\Bigr) + \Bigl(f\big((a+1)+1\big)-f(a+1)\Bigr)\\
+          &= f\bigl((a+1)+1\bigr) - f(a)
+        \end{align*}
+        \item Supongamos que se cumple para $b=a+k$, con $k\in \N$; es decir, suponemos que
+        \[\sum_{n=a}^{a+k} \Big(f(n+1)-f(n)\Big) = f\bigl((a+k)+1\bigr) - f(a)\]
+        \item Notemos que
+        \begin{align*}
+          \sum_{n=a}^{a+k+1} \Big(f(n+1)-f(n)\Big) &= \Big(f(a+k+1+1)-f(a+k+1)\Big) + \sum_{n=a}^{a+k} \Big(f(n+1)-f(n)\Big)\\
+          &= \Big(f(a+k+1+1)-f(a+k+1)\Big) + f(a+k+1) - f(a)\\
+          &= f(a+k+1+1) - f(a)
+        \end{align*}
+      \end{enumerate}
+    \end{enumerate}
+  \end{proof}
+  \textbf{Nota:} En esta proposición se restringe que $a\leq b$, pues si $a>b$, se tiene que $\sum_{n=a}^{b} \Bigl(f(n+1)-f(n)\Bigr) = 0 \neq f(b+1) - f(a)$ únicamente el caso en que $f(b+1)=f(a)$, se cumpliría la igualdad con $a>b$.
 
   \item Sea $\ell, m\in \R$ y $c\in \Z$, encuentre las condiciones que deben cumplirse para que
   
@@ -881,7 +906,10 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
 
 \textbf{Observación:} El conjunto iterable es un subconjunto del domino de la función sobre la que opera el productorio. El lector debería verificar este hecho.
 
-\textbf{Proposición:} Si $a=b$, entonces
+\subsection*{Lista de Ejercicios}
+
+\begin{enumerate}[label=\alph*)]
+  \item Si $a=b$, entonces
   \begin{align*}
     \prod_{n=a}^{b} f(n) &= f(n) && \text{(Índices iguales del productorio)}
   \end{align*}
@@ -897,7 +925,7 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
     \end{align*}
   \end{proof}
 
-  A partir de esto tenemos que:
+  \textbf{Nota:} A partir de este resultado tenemos que:
   \[
     \prod_{n=a}^{b} f(n) = \left\{
     \begin{array}{@{}l@{\thinspace}l}
@@ -906,20 +934,13 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
     1 &,  \ \text{si}  \ a>b
     \end{array} \right. \]
     
-    \textbf{Proposición:} Sea $(b-a)\in \N$ arbitrario pero fijo, entonces
+    \item Sea $(b-a)\in \N$ arbitrario pero fijo, entonces
     \begin{align*}
       \prod_{n=a}^{b} f(n) = f(b) \cdot \prod_{n=a}^{b-1} f(n) && \text{(Productorio inverso)}
     \end{align*}
 
     \begin{proof}\leavevmode
       \begin{enumerate}[label=\Roman*)]
-%        \item Si $b-a\in \set{0}$,
-%        \begin{align*}
-%          \prod_{n=a}^{b} f(n) &= f(b) && \text{Definición}\\
-%          &= f(b) + 0\\
-%          &= f(b) \cdot \prod_{n=a}^{a-1} f(n) && \text{$a-1<a$}\\
-%          &= f(b) \cdot \prod_{n=a}^{b-1} f(n)
-%        \end{align*}
           \item Se verifica para $(b-a)=1$,
           \begin{align*}
             \prod_{n=a}^{a+1} f(n) &= f(a) \cdot \prod_{n=a+1}^{a+1} f(n) && \text{Definición}\\
@@ -945,6 +966,63 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
           \end{align*}
         \end{enumerate}
     \end{proof}
+    
+    \item \[\prod_{n=a}^{b} f(n) g(n) = \left(\prod_{n=a}^{b} f(n)\right) \left(\prod_{n=a}^{b} g(n)\right) \qquad \text{(Propiedad multiplicativa)}\]
+    
+    \begin{proof}\leavevmode
+      \begin{enumerate}[label=\Roman*)]
+        \item Si $a>b$, \[\prod_{n=a}^{b} f(n) g(n) = 1 = (1)(1) = \left(\prod_{n=a}^{b} f(n)\right) \left(\prod_{n=a}^{b} g(n)\right)\]
+        \item Si $a=b$, \[\prod_{n=a}^{b} f(n) g(n) = f(n)g(n) = \left(\prod_{n=a}^{b} f(n)\right) \left(\prod_{n=a}^{b} g(n)\right)\]
+        \item Si $a<b$,
+        \begin{enumerate}[label=\roman*)]
+          \item Se verifica para $b=a+1$,
+          \begin{align*}
+            \prod_{n=a}^{a+1} f(n) g(n) &= f(a) g(a) \cdot \prod_{n=a+1}^{a+1} f(n) g(n)\\
+            &= f(a) g(a) \cdot f(a+1) g(a+1)\\
+            &= f(a)f(a+1) \cdot g(a)g(a+1)\\
+            &= f(a) \left(\prod_{n=a+1}^{a+1} f(n)\right) \cdot g(a) \left(\prod_{n=a+1}^{a+1} g(n)\right)\\
+            &= \left(\prod_{n=a}^{a+1} f(n)\right) \left(\prod_{n=a}^{a+1} g(n)\right)
+          \end{align*}
+          \item Supongamos que si $b-a=k$, entonces
+          \[\prod_{n=a}^{a+k} f(n) g(n) = \left(\prod_{n=a}^{a+k} f(n)\right) \left(\prod_{n=a}^{a+k} g(n)\right)\]
+          \item Notemos que
+          \begin{align*}
+            \prod_{n=a}^{a+k+1} f(n) g(n) &= f(a+k+1)g(a+k+1) \cdot \prod_{n=a}^{a+k} f(n) g(n)\\
+            &= f(a+k+1)g(a+k+1) \cdot \left(\prod_{n=a}^{a+k} f(n)\right) \left(\prod_{n=a}^{a+k} g(n)\right) && \text{Hip. Ind.}\\
+            &=f(a+k+1) \left(\prod_{n=a}^{a+k} f(n)\right)  \cdot g(a+k+1) \left(\prod_{n=a}^{a+k} g(n)\right)\\
+            &= \left(\prod_{n=a}^{a+k+1} f(n)\right) \left(\prod_{n=a}^{a+k+1} g(n)\right)
+          \end{align*}
+        \end{enumerate}
+      \end{enumerate}
+    \end{proof}
+    
+    \textbf{Nota:} En particular, para una función constante $g(n)=c$, se tiene que \[\prod_{n=a}^{b} \big(f(n) \cdot c\big) = \left(\prod_{n=a}^{b} f(n)\right) \left(\prod_{n=a}^{b} c\right)\]
+    
+    \item Si $f(n)\neq 0$ y $a\leq b$, entonces \[\prod_{n=a}^{b} \frac{f(n+1)}{f(n)} = \frac{f(b+1)}{f(a)} \qquad \text{Propiedad telescópica (del productorio)}\]
+    \begin{proof}\leavevmode
+      \begin{enumerate}[label=\Roman*)]
+        \item Si $a=b$, \[\prod_{n=a}^{b} \frac{f(n+1)}{f(n)} = \frac{f(n+1)}{f(n)} = \frac{f(b+1)}{a}\]
+        \item Si $a<b$,
+        \begin{enumerate}[label=\roman*)]
+          \item Se verifica para $b=a+1$,
+          \begin{align*}
+            \prod_{n=a}^{a+1} \frac{f(n+1)}{f(n)} &= \frac{f(a+1)}{f(a)} \cdot \prod_{n=a+1}^{a+1} \frac{f(n+1)}{f(n)}\\
+            &= \frac{f(a+1)}{f(a)} \cdot \frac{f(a+1+1)}{f(a+1)}\\
+            &= \frac{f(a+1+1)}{f(a)}
+          \end{align*}
+          \item Supongamos que si $b-a=k$, entonces
+          \[\prod_{n=a}^{a+k} \frac{f(n+1)}{f(n)} = \frac{f(a+k+1)}{f(a)}\]
+          \item Notemos que
+          \begin{align*}
+            \prod_{n=a}^{a+k+1} \frac{f(n+1)}{f(n)} &= \frac{f(a+k+1+1)}{f(a+k+1)} \cdot \prod_{n=a}^{a+k} \frac{f(n+1)}{f(n)}\\
+            &= \frac{f(a+k+1+1)}{f(a+k+1)} \cdot \frac{f(a+k+1)}{f(a)} && \text{Hip. Ind.}\\
+            &= \frac{f(a+k+1+1)}{f(a)}
+          \end{align*}
+        \end{enumerate}
+      \end{enumerate}
+      
+    \end{proof}
+\end{enumerate}
 
 \section*{Potenciación}
 
@@ -1060,6 +1138,24 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
  \end{proof}
  
  \item Sea $a\neq 0$, se verifica que $a^{-n} = \frac{1}{a^n}$.
+ 
+ Primero probaremos que $(a^{-1})^n = a^{(-1)\cdot n}$
+ \begin{enumerate}[label=\roman*)]
+  \item Es claro que $(a^{-1})^1 = a^{-1} = a^{(-1)\cdot 1}$.
+  \item Supongamos que $(a^{-1})^k = a^{(-1)\cdot k}$.
+  \item Notemos que
+  \begin{align*}
+    (a^{-1})^{k+1} &= \prod_{i=1}^{k+1} a^{-1} && \text{Definición}\\
+    &= a^{-1} \cdot \prod_{i=1}^k a^{-1} && \text{Definición}\\
+    &= a^{-1} \cdot (a^{-1})^k && \text{Definición}\\
+    &= \frac{1}{a} \cdot \left(\frac{1}{a}\right)^k && \text{Notación}\\
+    &= \frac{1}{a} \cdot \left(\frac{1^k}{a^k}\right) && \text{Potencia de un \textit{cociente}}\\
+    &= \frac{1\cdot 1^k}{a\cdot a^k} && \text{Multiplicación de fracciones}\\
+    &= \frac{1^{k+1}}{a^{k+1}} && \text{Mult. Potencias de misma base}\\
+    &= \left(\frac{1}{a}\right)^{k+1} && \text{Potencia de un \textit{cociente}}
+  \end{align*}
+ \end{enumerate}
+ 
  \begin{proof}\leavevmode
   \begin{align*}
     \frac{1}{a^n} &= \frac{1^n}{a^n} && \text{Identidad multiplicativa}\\
@@ -1070,107 +1166,23 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
   \end{align*}
  \end{proof}
 
-  \item Sea $a,b\neq 0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}, \forall n\in \Z$.
+  \item Sea $a,b\neq 0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}$.
   \begin{proof}\leavevmode
-    \begin{enumerate}[label=\roman*)]
-      \item Si $n\in \N$, notemos que \begin{align*}
-        \left(\frac{b}{a}\right)^{-n} &= \frac{1}{\left(\frac{b}{a}\right)^n} && \text{Definición}\\
-        &= \frac{1}{\frac{b^n}{a^n}} && \text{(d) de LE9}\\
-        &= \frac{a^n}{b^n} && \text{Regla del sandwich}\\
-        &= \left(\frac{a}{b}\right)^n && \text{(d) de LE9}
-      \end{align*}
-      \item Si $n=0$, notemos que $\frac{a^n}{b^n} = \frac{a^0}{b^0} = \frac{1}{1} = 1 = \left(\frac{b}{a}\right)^0 = \left(\frac{b}{a}\right)^n$.
-      \item Si $n<0$, notemos que \begin{align*}
-        \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
-        &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
-        &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
-        &= \frac{1}{\frac{a^{-n}}{b^{-n}}}\\
-        &= \frac{b^{-n}}{a^{-n}} && \text{Regla del sandwich}\\
-        &= \left(\frac{b}{a}\right)^{-n} && \text{(d) de LE9} \qedhere
-      \end{align*}
-    \end{enumerate}
+    \begin{align*}
+      \frac{a^n}{b^n} &= \left(\frac{a}{b}\right)^n && \text{Potencia de un \textit{cociente}}\\
+      &= \left(\left(\frac{b}{a}\right)^{-1}\right)^n && \text{Corolario de regla del sandwich}\\
+      &= \left(\frac{b}{a}\right)^{(-1)n} && \text{Potencia de un producto}\\
+      &= \left(\frac{b}{a}\right)^{-n}
+    \end{align*}
   \end{proof}
-
-  \item $\frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n, \forall n\in \Z$.
+  
+  \item Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
   \begin{proof}\leavevmode
-    \begin{enumerate}[label=\roman*)]
-      \item Ya probamos que la proposición es verdadera para $n\in \N$.
-      \item Si $n=0$, tenemos que $\frac{a^n}{b^n} = \frac{a^0}{b^0} = \frac{1}{1} = 1 = \left(\frac{a}{b}\right)^0= \left(\frac{a}{b}\right)^n$.
-      \item Sea $a\neq 0$ y $b\neq 0$, si $n<0$, sigue que \begin{align*}
-        \frac{a^n}{b^n} &= a^n \cdot \frac{1}{b^n}\\
-        &= \frac{1}{a^{-n}} \cdot \frac{1}{\frac{1}{b^{-n}}} && \text{Definición}\\
-        &= \frac{1}{a^{-n}\cdot \frac{1}{b^{-n}}}\\
-        &= \frac{1}{\frac{a^{-n}}{b^{-n}}} && \text{Con $-n\in \N$}\\
-        &= \frac{1}{\left(\frac{a}{b}\right)^{-n}} && \text{(d) de LE9}\\
-        &= \left(\frac{a}{b}\right)^n && \text{Definición} \qedhere
-      \end{align*}
-    \end{enumerate}
-  \end{proof}
-
-  \item $a^m\cdot a^n = a^{m+n}, \forall m\in \Z$.
-  \begin{proof}\leavevmode
-  \begin{enumerate}[label=\Roman*)]
-    \item Sin pérdida de generalidad, si $n=0$, tenemos que $a^m\cdot a^0 = a^m \cdot 1 = a^m = a^{m+0}=a^{m+n}$.
-    \item Ya probamos que la proposición es verdadera para $m,n\in \N$.
-    \item Sea $a\neq 0$, y \begin{enumerate}[label=\roman*)]
-      \item Sin pérdida de generalidad, si $n<0$ y $m>0$, tenemos $a^m\cdot a^n = \frac{a^m}{a^{-n}}$, donde $-n\in \N$; a su vez, \begin{itemize}
-        \item Si $-n = m$, entonces \begin{align*}
-          \frac{a^m}{a^{-n}} &= 1 \\
-          &= a^0\\
-          &= a^{m-m}\\
-          &= a^{m-(-n)}\\
-          &= a^{m+n}
-        \end{align*}
-        \item Si $-n\neq m$, por (e) de LE9, sigue que $\frac{a^m}{a^{-n}} = a^{m-(-n)} = a^{m+n}$.
-      \end{itemize}
-      \item Si $n<0$ y $m<0$, entonces \begin{align*}
-        a^m\cdot a^n &= \frac{1}{a^{-m}} \cdot \frac{1}{a^{-m}}\\
-        &= \frac{1}{a^{-m}a^{-n}}
-      \end{align*}
-      Como $-m, -n\in \N$, por (c) de LE9, \begin{align*}
-        \frac{1}{a^{-m}a^{-n}} &= \frac{1}{a^{-m+(-n)}}\\
-        &= \frac{1}{a^{-(m+n)}}\\
-        &= a^{m+n} && \text{Definición} \qedhere
-      \end{align*}
-    \end{enumerate}
-  \end{enumerate}
-  \end{proof}
-
-  \item $(ab)^m = a^mb^m, \forall m\in \Z$.
-  \begin{proof}\leavevmode
-    \begin{enumerate}
-      \item Ya probamos que la proposición es verdadera para $m\in \N$.
-      \item Si $m=0$, sigue que $(ab)^m = 1 = a^0b^0 = a^mb^m$.
-      \item Si $m<0$, con $a\neq 0$ y $b\neq 0$, entonces \begin{align*}
-        \bigl(ab\bigr)^m &= \frac{1}{(ab)^{-m}}\\
-        &= \frac{1}{a^{-m}b^{-m}} && \text{(e) de LE9}\\
-        &= a^mb^m && \text{Definición}
-      \end{align*}
-    \end{enumerate}
-  \end{proof}
-
-  \item $a^{mn} = (a^m)^n, \forall m,n \in \Z$.
-  \begin{proof}\leavevmode
-    \begin{enumerate}[label=\roman*)]
-      \item Ya probamos que la proposición es verdadera para $m,n\in \N$.
-      \item Notemos que \begin{itemize}
-        \item Si $m=0$, sigue que $a^{mn} = a^0 = 1 = 1^n = (a^0)^n = (a^m)^n$.
-        \item Si $n=0$, sigue que $a^{mn} = a^0 = 1 = (a^m)^0 = (a^m)^n$.
-      \end{itemize}
-      \item Finalmente, si $a\neq 0$ \begin{itemize}
-        \item Si $n<0$ y $m\in \N$, sigue que \begin{align*}
-          \bigl(a^m\bigr)^n &= \frac{1}{(a^m)^{-n}} && \text{Definición}\\
-          &= \frac{1}{a^{-mn}} && \text{(f) de LE9}\\
-          &= a^{mn} && \text{Definición}
-        \end{align*}
-        \item Si $m<0$ y $n\in \N$, sigue que \begin{align*}
-          \bigl(a^m\bigr)^n &= \left(\frac{1}{a^{-m}}\right)^n && \text{Definición}\\
-          &= \frac{1^n}{(a^{-m})^n} && \text{(d) de LE9}\\
-          &= \frac{1}{a^{-mn}} && \text{(f) de LE9}\\
-          &= a^{mn} && \text{Definición} && \qedhere
-        \end{align*}
-      \end{itemize}
-    \end{enumerate}
+    \begin{align*}
+      \frac{a^m}{a^n} &= a^m \cdot \frac{1}{a^n}\\
+      &= a^m \cdot a^{-n}\\
+      &= a^m \cdot \qty(a^{-1})^n
+    \end{align*}
   \end{proof}
 
   \item Sea $a<b$ y $n\in \Z$, encuentre las condiciones que deben cumplirse para que $a^n< b^n$ o $b^n< a^n$.

@@ -663,7 +663,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  \end{align*} 
  \end{proof}
  
- \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$. (Cancelación de factores en común).
+ \item $\frac{a}{b} = \frac{ac}{bc}$, si $b,c \neq 0$. (Cancelación de factores).
  \begin{proof} 
  \begin{align*}
  \frac{a}{b}&=\frac{a}{b}\cdot 1 && \text{Neutro multiplicativo}\\
@@ -684,7 +684,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  
  \item $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}$, si $b, c, d \neq 0$. (Regla del sandwich).
  \begin{proof} 
- \begin{align*} \qquad \ \qquad
+ \begin{align*}
  \frac{\frac{a}{b}}{\frac{c}{d}} &= \frac{\left( a \cdot b^{-1} \right)}{\left( c \cdot d^{-1} \right)} && \text{Notación}\\
  &= \left( a \cdot b^{-1} \right) \cdot \left( c \cdot d^{-1} \right)^{-1} && \text{Notación}\\
  &= \left( a \cdot b^{-1} \right) \cdot \left( c^{-1} \cdot \left( d^{-1} \right) ^{-1} \right) && \text{Multiplicación de inversos multiplicativos}\\
@@ -706,7 +706,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   \end{align*}
  \end{proof}
 
- \item $\frac{a}{c} \pm  \frac{b}{c}=\frac{a\pm b}{c}$, si $c\neq 0$. (Suma de fracciones con denominador conmún).
+ \item $\frac{a}{c} \pm  \frac{b}{c}=\frac{a\pm b}{c}$, si $c\neq 0$. (Suma con denominador común).
  \begin{proof}
  \begin{align*}
  \frac{a}{c} \pm  \frac{b}{c} &= \bigl(a\cdot c^{-1}\bigr) \pm  \bigl(b\cdot c^{-1}\bigr) && \text{Notación}\\
@@ -716,123 +716,41 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  &= \frac{a\pm b}{c} && \text{Notación} \qedhere
  \end{align*}
  \end{proof}
+ 
+\pagebreak
 
- \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} $, si $b, d \neq 0$. (Suma de fracciones).
- \begin{proof} 
- \begin{align*} \qquad \ \qquad
- \frac{a}{b} \pm \frac{c}{d} &= \frac{ad}{bd} \pm \frac{cb}{db} && \text{Cancelación de factores en común}\\
- &= \frac{ad}{bd} \pm \frac{cb}{bd} && \text{Conmutatividad}\\
- &= \frac{ad \pm cb}{bd} && \text{Suma de fracciones con denominador común} \qedhere
- \end{align*}
+ \item Si $b, d \neq 0$, entonces \[\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd} \qquad \text{(Suma de fracciones)}\]
+ \begin{proof}\leavevmode
+  \begin{align*}
+    \frac{a}{b} \pm \frac{c}{d} &= \frac{ad}{bd} \pm \frac{cb}{db} && \text{Cancelación de factores}\\
+    &= \frac{ad}{bd} \pm \frac{cb}{bd} && \text{Conmutatividad}\\
+    &= \frac{ad \pm cb}{bd} && \text{Suma con denominador común}
+    \end{align*}
  \end{proof}
 
  \item $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$, si $b\neq 0$.
  \begin{proof} \leavevmode
-  \begin{center}\vspace{-2em}
-   \begin{minipage}[t]{.5\linewidth}
+  \begin{center}
+   \begin{minipage}[t]{.4\linewidth}
     \begin{align*}
      \frac{-a}{b} &= (-a)\cdot b^{-1} && \text{Notación}\\
-     &= -\bigl(ab^{-1}\bigr) && \text{Multiplicación por inverso aditivo}\\
+     &= -\bigl(ab^{-1}\bigr) && \text{Mult. Inv. aditivo}\\
      &= -\frac{a}{b} && \text{Notación}
     \end{align*}
    \end{minipage}%
-   \begin{minipage}[t]{.5\linewidth}
+   \begin{minipage}[t]{.4\linewidth}
     \begin{align*}
      \frac{a}{-b} &= a \cdot (-b)^{-1} && \text{Notación}\\
-   &= -\bigl(ab^{-1}\bigr) && \text{Multiplicación por inverso aditivo}\\
+   &= -\bigl(ab^{-1}\bigr) && \text{Mult. Inv. aditivo}\\
    &= -\frac{a}{b} && \text{Notación} \qedhere
     \end{align*}
    \end{minipage}
    \end{center} 
  \end{proof}
  \textbf{Nota:} En esta prueba está implícito que $\exists (-b)^{-1}\in \R$, lo cual es válido, pues $b\neq 0$, por lo que $-b\neq 0$.
- %\begin{proof} \begin{align*}
- % \frac{a}{b} \pm \frac{c}{d} &= ab^{-1} \pm cd^{-1} && \text{Notación}\\
- % &= a\cdot 1 \cdot b^{-1} \pm c\cdot 1 \cdot d^{-1} && \text{Neutro multiplicativo}\\
- % &= ad\cdot d^{-1}b^{-1} \pm cb\cdot b^{-1}d^{-1} && \text{Inverso multiplicativo}\\
- % &= ad \cdot \bigl(db\bigr)^{-1} \pm cd \cdot \bigl(bd\bigr)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
- % &= (bd)^{-1} \bigl(ad\pm cd\bigr) && \text{Distribución}\\
- % &= \frac{ad \pm bc}{bd} && \text{Notación} \qedhere
- %\end{align*}
- %\end{proof}
- %\begin{proof} 
- %\begin{align*}
- %\frac{a}{b} \pm \frac{c}{d}  &=	a \cdot b^{-1} \pm c \cdot d^{-1} && \text{Notación}\\
- %&=	\left( a \cdot 1 \right)   \cdot b^{-1} \pm \left( c \cdot 1 \right) \cdot d^{-1} && \text{Neutro multiplicativo}\\
- %&=	\Bigl( a \cdot  \left( d \cdot d^{-1} \right) \Bigr) \cdot b^{-1} \pm \Bigl( c \cdot  \left( b \cdot b^{-1}  \right)  \Bigr)  \cdot d^{-1} && \text{Inverso multiplicativo}\\
- %&=	\Bigl(  \left( a \cdot d \right) \cdot d^{-1} \Bigr) \cdot b^{-1} \pm \Bigl(  \left( c \cdot b \right) \cdot b^{-1} \Bigr) \cdot d^{-1} && \text{Asociatividad}\\
- %&=	\left( a \cdot d \right)  \cdot  \left( d^{-1} \cdot b^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Asociatividad}\\
- %&=	\left( a \cdot d \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) \pm \left( c \cdot b \right)  \cdot  \left( b^{-1} \cdot d^{-1}  \right) && \text{Conmutatividad}\\
- %&=	\left( b^{-1} \cdot d^{-1}  \right) \cdot \left( a \cdot d \pm c \cdot b \right) && \text{Distribución}\\
- %&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b^{-1} \cdot d^{-1} \right) && \text{Conmutatividad}\\
- %&=	\left( a \cdot d \pm c \cdot b \right) \cdot  \left( b \cdot d \right)^{-1} && \text{Multiplicación de inversos multiplicativos}\\
- %&=	\left( a \cdot d \pm b \cdot c \right) \cdot \left( b \cdot d \right)^{-1} && \text{Conmutatividad}\\
- %&=	\frac{ad \pm bc}{bd} && \text{Notación} \qedhere
- %\end{align*} 
- %\end{proof}
- %\item $\frac{-a}{-b}=\frac{a}{b}$, si $b\neq 0$.
- % \begin{align*}
- %  \frac{-a}{-b} &= (-a)\cdot (-b)^{-1} && \text{Notación}\\
- %  &= (-a)\cdot (-b^{-1}) && \text{Multiplicación por inverso aditivo}\\
- %  &= -(a\cdot b^{-1}) && \text{Distribución del signo}\\
- %  &= - \frac{a}{b} && \text{Notación}
- % \end{align*}
- % %\begin{align*}
- % % \frac{-a}{-b} &= \frac{(-1)\cdot a}{(-1)\cdot b} && \text{Multiplicación por ($-1$)}\\
- % % &=\frac{-1}{-1} \cdot \frac{a}{b} && \text{Teorema}\\
- % % &= (-1)\cdot (-1)^{-1}\cdot \frac{a}{b} && \text{Notación}\\
- % % &= 1\cdot \frac{a}{b} && \text{Inverso multiplicativo}\\
- % % &= \frac{a}{b} && \text{Neutro multiplicativo}
- % % \end{align*}
- % \textbf{Nota:} En esta prueba está implícito que $-b$ tiene inverso multiplicativo, lo cual es válido, pues\begin{align*}
- %  -b^{-1}&=-\bigl(b^{-1}\bigr) && \text{Notación}\\
- %  &= -\qty\big(1\cdot b^{-1}) && \text{Neutro multiplicativo}\\
- %  &= - \qty(\frac{1}{b}) && \text{Notación}
- % \end{align*}
- 
-
- %
- %$a=\frac{a}{1}$. (División por $1$).
- %\begin{proof} 
- % El neutro multiplicativo satisface que $a=a\cdot 1=a\cdot 1^{-1}$, y por notación $a=\frac{a}{1}$.
- %\end{proof}
-
-%\item Si $ab^{-1}=ba^{-1}$, entonces $a^2=b^2$.
-%\begin{proof} 
-%\begin{align*}
-% a^2 &= a\cdot a && \text{Notación}\\
-% &= (a\cdot a) \cdot 1 && \text{Neutro multiplicativo}\\
-% &= (a\cdot a)\cdot\bigl( b\cdot b^{-1}\bigr) && \text{Inverso multiplicativo}\\
-% &= a\cdot \Bigl(a\cdot \bigl( b\cdot b^{-1}\bigr)\Bigr) && \text{Asociatividad}\\
-% &= a\cdot \Bigl(a\cdot \bigl(  b^{-1}\cdot b\bigr)\Bigr) && \text{Conmutatividad}\\
-% &= a\cdot \Bigl(\bigl(a\cdot b^{-1}\bigr)\cdot b \Bigr) && \text{Asociatividad}\\
-% &= a\cdot \Bigl(\bigl(b\cdot a^{-1}\bigr)\cdot b \Bigr) && \text{Hipótesis}\\
-% &= a\cdot \Bigl(\bigl(a^{-1}\cdot b\bigr)\cdot b \Bigr) && \text{Conmutatividad}\\
-% &= a\cdot \Bigl(a^{-1}\cdot (b\cdot b) \Bigr) && \text{Asociatividad}\\
-% &= \bigl(a\cdot a^{-1}\bigr) \cdot (b\cdot b)&& \text{Asociatividad}\\
-% &= 1 \cdot (b\cdot b)&& \text{Inverso multiplicativo}\\
-% &= (b\cdot b) \cdot 1 && \text{Conmutatividad}\\
-% &= b\cdot b && \text{Neutro multiplicativo}\\
-% &= b^2 && \text{Notación} \qedhere
-%\end{align*}
-%\end{proof}
-%
-%\item Si $a^2=b^2$, entonces $a=b$ o $a=-b$.
-%\begin{proof} 
-% \begin{align*}
-%  0 &= b^2 - b^2 && \text{Inverso aditivo}\\
-%  &= a^2 - b^2 && \text{Hipótesis}\\
-%  &= a^2 - b^2 + 0&& \text{Neutro aditivo}\\
-%  &= a^2 - b^2 + ab-ab&& \text{Inverso aditivo}\\
-%  &= a^2 + a b - b^2 -ab && \text{Conmutatividad}\\
-%  &= (a^2 + a b) + (- b^2)+(-a b)&& \text{Asociatividad}\\
-%  &= (a a + a b) + (- b b)+(-a b)&& \text{Notación}\\
-%  &= (a a + a b) -(b b + a b)&& \text{Distribución del signo}\\
-%  &= a (a+b) - b(b+a) && \text{Distribución}\\
-%  &= (a+b)  (a-b) && \text{Distribución}
-%  \end{align*} De la multiplicativo por $0$, sigue que $a+b=0$ o $a-b=0$. Sumando inverso aditivo de $b$ en ambas igualdades tenemos que $a=-b$ o $a=b$.
-%\end{proof}
 \end{enumerate}
+
+\pagebreak
 
 \begin{tcolorbox}
 \subsection*{Una nota sobre notación}
@@ -1043,8 +961,10 @@ Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(x^{-1})=
  % &= \frac{-a}{b} && \text{Multiplicación por ($-1$)} && \text{(**)}
  %\end{align*} De las igualdades (*) y (**) tenemos que $\frac{a}{-b} = -\frac{a}{b}=\frac{-a}{b}$.
 
-
 \end{tcolorbox}
+
+\pagebreak
+
 \section*{Un campo finito}
 
 Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$. El siguiente es un esbozo de la prueba:
