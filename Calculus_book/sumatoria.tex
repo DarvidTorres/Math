@@ -81,23 +81,23 @@ de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}
 \end{enumerate}
 
 
-  El lector notará que, en el caso en que los límites inferior y superior son iguales ($*, \dag, \ddag$), la imagen de la sumatoria es el elemento típico \textit{evaluado} en el índice, es decir,
+  El lector notará que, en el caso en que los límites inferior y superior son iguales ($*, \dag, \ddag$), la imagen de la sumatoria es el elemento típico \textit{evaluado} en el índice, es decir, tenemos la siguiente
 
   \textbf{Observación:} Si $a=b$, entonces
   \begin{align*}
     \sum_{n=a}^{b} f(n) &= f(n) && \text{(Índices iguales de la sumatoria)}
   \end{align*}
-
+  
   \begin{proof}\leavevmode
-  \begin{align*}
-    \sum_{n=a}^{b} f(n) &= \sum_{n=a}^{a} f(n) && \text{Hipótesis}\\
-    &= f(a) + \sum_{n=a+1}^{a} f(n) && \text{Definición}\\
-    &= f(a) + 0 && \text{Definición}\\
-    &= f(n) && \qedhere
-  \end{align*}
+    Notemos que si $a=b$ se tiene que $\sum_{n=a}^{b} f(n) = \sum_{n=a}^{a} f(n)$, por lo que el conjunto iterable al que pertenece $n$ está dado por $\set{a+m|m\in \Z, 0\leq m\leq (a-a)}=\set{a+m|m\in \Z, 0\leq m\leq 0}$, lo que implica que $m=0$, por lo que $n=a$. Luego,
+    \begin{align*}
+      \sum_{n=a}^{b} f(n) &= \sum_{n=a}^{a} f(n) && \text{Hipótesis}\\
+      &= f(a) + \sum_{n=a+1}^{a} f(n) && \text{Definición}\\
+      &= f(a) + 0 && \text{Definición}\\
+      &= f(a)\\
+      &= f(n) && \qedhere
+    \end{align*}
   \end{proof}
-
-  \textbf{Nota:} En este caso, el índice itera en un único valor.
 
   A partir de esto tenemos que:
   \[
@@ -109,7 +109,7 @@ de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}
     \end{array} \right. \]
 
     El lector notará también que la suma del primer termino hasta el ultimo es
-    igual a la suma del ultimo hasta el primero, es decir,
+    igual a la suma del ultimo hasta el primero, es decir, tenemos la siguiente
 
     \textbf{Proposición:} Sea $(b-a)\in \N$ arbitrario pero fijo, entonces
     \begin{align*}
@@ -129,8 +129,9 @@ de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}
           \begin{align*}
             \sum_{n=a}^{a+1} f(n) &= f(a) + \sum_{n=a+1}^{a+1} f(n) && \text{Definición}\\
             &= f(a) + \sum_{n=b}^{b} f(n) && \text{Hipótesis}\\
-            &= f(a) + f(b)\\
-            &= f(b) + \sum_{n=a}^{a} f(n)\\
+            &= f(a) + f(b) && \text{Índices iguales}\\
+            &= f(b) + f(a) && \text{Conmutatividad}\\
+            &= f(b) + \sum_{n=a}^{a} f(n) && \text{Índices iguales}\\
             &= f(b) + \sum_{n=a}^{b-1} f(n) && \text{$b-a=1 \Rightarrow b-1=a$}
           \end{align*}
 
@@ -860,7 +861,7 @@ También podríamos proceder con una definición para la sumatoria A y con otra 
 
 \subsection*{Notación pi}
 
-\textbf{Definición:} Sea $A, B\subseteq \R$ y $f:A \to B$, con $a,b\in A$, y sea $n \in \set{a + m | m\in \Z, 0\leq m \leq (b-a)}$. Definimos al producto de $a$ hasta $b$ de $f$ como sigue:
+\textbf{Definición:} Sea $A, B\subseteq \R$ y $f:A \to B$, con $a,b\in A$, y sea $n \in \set{a + m | m\in \Z, 0\leq m \leq (b-a)}$. Definimos al productorio de $a$ hasta $b$ de $f$ como sigue:
 
 \[
     \prod_{n=a}^{b} f(n) \defined \left\{
@@ -876,7 +877,74 @@ Decimos que
   \item $b$ el límite superior;
   \item $f(n)$ el elemento típico (o genérico)
 \end{itemize}
-del producto.
+del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, el conjunto iterable de $\prod_{n=a}^{b} f(n)$. Decimos que $n$ itera desde $a$ hasta $b$.
+
+\textbf{Observación:} El conjunto iterable es un subconjunto del domino de la función sobre la que opera el productorio. El lector debería verificar este hecho.
+
+\textbf{Proposición:} Si $a=b$, entonces
+  \begin{align*}
+    \prod_{n=a}^{b} f(n) &= f(n) && \text{(Índices iguales del productorio)}
+  \end{align*}
+  
+  \begin{proof}\leavevmode
+    Notemos que si $a=b$ se tiene que $\prod_{n=a}^{b} f(n) = \prod_{n=a}^{a} f(n)$, por lo que el conjunto iterable al que pertenece $n$ está dado por $\set{a+m|m\in \Z, 0\leq m\leq (a-a)}=\set{a+m|m\in \Z, 0\leq m\leq 0}$, lo que implica que $m=0$, por lo que $n=a$. Luego,
+    \begin{align*}
+      \prod_{n=a}^{b} f(n) &= \prod_{n=a}^{a} f(n) && \text{Hipótesis}\\
+      &= f(a) \cdot \prod_{n=a+1}^{a} f(n) && \text{Definición}\\
+      &= f(a) \cdot 1 && \text{Definición}\\
+      &= f(a)\\
+      &= f(n) && \qedhere
+    \end{align*}
+  \end{proof}
+
+  A partir de esto tenemos que:
+  \[
+    \prod_{n=a}^{b} f(n) = \left\{
+    \begin{array}{@{}l@{\thinspace}l}
+    f(a) \cdot \prod_{n=a+1}^{b} f(n) &,  \ \text{si}  \ a<b.\\
+    f(n) &,  \ \text{si}  \ a=b\\
+    1 &,  \ \text{si}  \ a>b
+    \end{array} \right. \]
+    
+    \textbf{Proposición:} Sea $(b-a)\in \N$ arbitrario pero fijo, entonces
+    \begin{align*}
+      \prod_{n=a}^{b} f(n) = f(b) \cdot \prod_{n=a}^{b-1} f(n) && \text{(Productorio inverso)}
+    \end{align*}
+
+    \begin{proof}\leavevmode
+      \begin{enumerate}[label=\Roman*)]
+%        \item Si $b-a\in \set{0}$,
+%        \begin{align*}
+%          \prod_{n=a}^{b} f(n) &= f(b) && \text{Definición}\\
+%          &= f(b) + 0\\
+%          &= f(b) \cdot \prod_{n=a}^{a-1} f(n) && \text{$a-1<a$}\\
+%          &= f(b) \cdot \prod_{n=a}^{b-1} f(n)
+%        \end{align*}
+          \item Se verifica para $(b-a)=1$,
+          \begin{align*}
+            \prod_{n=a}^{a+1} f(n) &= f(a) \cdot \prod_{n=a+1}^{a+1} f(n) && \text{Definición}\\
+            &= f(a) \cdot \prod_{n=b}^{b} f(n) && \text{Hipótesis}\\
+            &= f(a) \cdot f(b) && \text{Índices iguales}\\
+            &= f(b) \cdot f(a) && \text{Conmutatividad}\\
+            &= f(b) \cdot \prod_{n=a}^{a} f(n) && \text{Índices iguales}\\
+            &= f(b) \cdot \prod_{n=a}^{b-1} f(n) && \text{$b-a=1 \Rightarrow b-1=a$}
+          \end{align*}
+
+          \item Supongamos que si $b-a=k$, entonces
+          \begin{align*}
+            \prod_{n=a}^{b} f(n) &= f(b) \cdot \prod_{n=a}^{b-1} f(n)
+          \end{align*}
+
+          \item Notemos que si $b-a=k+1$, se tiene que
+          \begin{align*}
+            \prod_{n=a}^{a+k+1} f(n) &= f(a) \cdot \prod_{n=a+1}^{a+k+1} f(n) && \text{Definición}\\
+            &= f(a) \cdot f(a+k+1) \cdot \prod_{n=a+1}^{a+k} f(n) && \text{Hip. Ind.}\\
+            &= f(a+k+1) \cdot f(a) \cdot \prod_{n=a+1}^{a+k} f(n)\\
+            &= f(a+k+1) \cdot \prod_{n=a}^{a+k} f(n) && \text{Definición}\\
+            &= f(b) \cdot \prod_{n=a}^{b-1} f(n)
+          \end{align*}
+        \end{enumerate}
+    \end{proof}
 
 \section*{Potenciación}
 
@@ -884,71 +952,30 @@ del producto.
 \[a^n \defined \prod_{i=1}^{n} a\]
 Decimos que $a$ es la base, y que $n$ es el exponente.
 
-\textbf{Observación:} $a^0 = \prod_{i=1}^{0} a = 1$, por definición; en particular (y bajo esta definición), $0^0=1$.
+\textbf{Observación:} $a^0 = \prod_{i=1}^{0} a = 1, \forall a\in \R$; en particular ---y bajo esta definición, $0^0=1$.
 
-\textbf{Notación:} Sea $b\neq0$, \[b^{-n} \defined (b^{-1})^n = \prod_{i=1}^{n} b^{-1}\]
+% \textbf{Notación:} Sea $b\neq0$, \[b^{-n} \defined (b^{-1})^n = \prod_{i=1}^{n} b^{-1}\]
 
 
 \subsection*{Lista de Ejercicios 9 (LE9)}
 
 Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
 
-\begin{enumerate}[label=\alph*)]
-  \item $1^n=1, \forall n\in \N$.
-  \vspace{-1em}
-  \begin{proof} Sea $A=\set{n|1^n=1}$.
-  \begin{enumerate}[label=\roman*)]
-  \item Notemos que $1\in A$, pues $1^1=1$, por definición.
-  \item Si $n\in A$, entonces $1^n=1$.
-  \item Por definición, \begin{align*}
-  1^{n+1} = \left\{
-  \begin{array}{@{}r@{\thinspace}l}
-    1, &  \ \text{si}  \ n+1 = 1\\
-    1\cdot 1^{n}, &  \ \text{si}  \ n+1 > 1
-    %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
-  \end{array} \right.
-  \end{align*}
- Como $n>0$, se tiene $n+1>1$, de donde sigue que $1^{n+1}=1\cdot 1^n=1^n$, por (ii) se verifica que $1^n=1$, es decir, $1^{n+1}=1$, lo que implica que $n+1\in A$.
- \end{enumerate}
-
- Por el principio de inducción matemática, $A=\N$, por lo que $1^n=1, \forall n\in \N$.
- \end{proof}
-
- \item $0^n=0, \forall n\in \N$.
- \begin{proof}
- Es claro que $0^1=0$. Luego, si $0^n=0$, tenemos que $0^{n+1}=0 \cdot 0^n$, lo que es una multiplicación por $0$, es decir, $0^{n+1}=0$.
- \end{proof}
- 
+\begin{enumerate}[label=\alph*)] 
   \item $a^m \cdot a^n = a^{m+n}$.
 
- \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n|a^{m+n}=a^m\cdot a^n}$.
-
- \begin{enumerate}[label=\roman*)]
- \item Por definición \begin{align*}
-  a^{m+1} = \left\{
-  \begin{array}{@{}r@{\thinspace}l}
-    a, &  \ \text{si}  \ m+1 = 1\\
-    a\cdot a^{m}, &  \ \text{si}  \ m+1 > 1
-    %\frac{1}{b^n}, &  \ \text{si}  \ n < 1\\
-  \end{array} \right.
-  \end{align*}
+ \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n\in \N|a^{m+n}=a^m\cdot a^n}$.
   
-  Como $m>0$, sigue que $m+1>1$, por lo que $a^{m+1}=a\cdot a^m=a^m\cdot a^1$, lo que implica que $1\in A$.
- \item Si $n\in A$, tenemos que $a^{m+n}=a^m\cdot a^n$.
- \item Por definición \begin{align*}
-  a^{m+(n+1)} = \left\{
-   \begin{array}{@{}r@{\thinspace}l}
-    a, &  \ \text{si}  \ m+(n+1) = 1\\
-    a\cdot a^{m+n}, &  \ \text{si}  \ m+(n+1) > 1
-   \end{array} \right.
-  \end{align*}
-
- Como $m+n>0$, sigue que $m+(n+1)>1$. Por tanto, \begin{align*}
-  a^{m+(n+1)} &=a\cdot a^{m+n} && \text{Definición}\\
-  &= a\cdot a^m \cdot a^n && \text{Por (ii)}\\
-  &= a^m \cdot a^{n+1} && \text{Por (i)}
- \end{align*}
- \end{enumerate}
+  \begin{enumerate}[label=\roman*)]
+    \item Notemos que 
+    \begin{align*}
+      a^{m+1} &= \prod_{i=1}^{m+1} a\\
+      &= a^{m+1} \cdot \prod_{i=1}^{m} a && \text{Productorio inverso}\\
+      &= 
+    \end{align*}
+    \item Si $k\in A$, tenemos que $a^{m+k} = a^m\cdot a^k$.
+  \end{enumerate}
+  
 
  Por el principio de inducción matemática, $A=\N$, por lo que $a^m \cdot a^n = a^{m+n}, \forall m,n\in \N$.
  \end{proof}
