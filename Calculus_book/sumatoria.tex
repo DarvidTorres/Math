@@ -948,88 +948,127 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
 
 \section*{Potenciación}
 
-\textbf{Definición:} Sea $a$ un número real y $n$ un entero no negativo, definimos la enésima potencia de $a$ como sigue:
+\textbf{Definición:} Sea $a$ un número real y $n$ un entero no negativo, y $f$ una función dada por $f(n)=a$. Definimos la enésima potencia de $a$ como sigue:
 \[a^n \defined \prod_{i=1}^{n} a\]
 Decimos que $a$ es la base, y que $n$ es el exponente.
 
-\textbf{Observación:} $a^0 = \prod_{i=1}^{0} a = 1, \forall a\in \R$; en particular ---y bajo esta definición, $0^0=1$.
-
-% \textbf{Notación:} Sea $b\neq0$, \[b^{-n} \defined (b^{-1})^n = \prod_{i=1}^{n} b^{-1}\]
-
+\textbf{Observación:} Sea $a\in \R$,
+\begin{itemize}
+  \item $a^1= \prod_{i=1}^{1} a = a$.
+  \item $a^0 = \prod_{i=1}^{0} a = 1$.%; en particular ---y bajo esta definición, $0^0=1$.
+\end{itemize}
 
 \subsection*{Lista de Ejercicios 9 (LE9)}
 
 Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)] 
-  \item $a^m \cdot a^n = a^{m+n}$.
+  \item $a^m \cdot a^n = a^{m+n}$ (Multiplicación de potencias de misma base)
 
- \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n\in \N|a^{m+n}=a^m\cdot a^n}$.
+ \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n|a^{m+n}=a^m\cdot a^n}$.
   
   \begin{enumerate}[label=\roman*)]
     \item Notemos que 
     \begin{align*}
       a^{m+1} &= \prod_{i=1}^{m+1} a\\
-      &= a^{m+1} \cdot \prod_{i=1}^{m} a && \text{Productorio inverso}\\
-      &= 
+      &= a \cdot \prod_{i=1}^{m} a && \text{Productorio inverso}\\
+      &= a \cdot a^m && \text{Definición}\\
+      &= a^m \cdot a^1
     \end{align*}
+    Por lo que $1\in A$.
     \item Si $k\in A$, tenemos que $a^{m+k} = a^m\cdot a^k$.
+    \item Notemos que
+    \begin{align*}
+      a^{m+(k+1)} &= \prod_{i=1}^{m+(k+1)} a\\
+      &= a \cdot \prod_{i=1}^{m+k} a && \text{Productorio inverso}\\
+      &= a \cdot a^{m+k} && \text{Definición}\\
+      &= a\cdot a^m \cdot a^k && \text{Hip. Ind.}\\
+      &= a^m \cdot a\cdot a^k\\
+      &= a^m \cdot a \cdot \prod_{i=1}^{k} a && \text{Definición}\\
+      &= a^m \cdot \prod_{i=1}^{k+1} a && \text{Productorio inverso}\\
+      &= a^m \cdot a^{k+1} && \text{Definición}
+    \end{align*}
+    Por tanto, $k+1\in A$.
   \end{enumerate}
-  
-
- Por el principio de inducción matemática, $A=\N$, por lo que $a^m \cdot a^n = a^{m+n}, \forall m,n\in \N$.
+  Por el principio de inducción matemática, $A=\N$.
  \end{proof}
 
- \item Si $b\neq 0$, entonces $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+ \item Si $b\neq 0$, entonces $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$. (Potencia de un \textit{cociente})
  \begin{proof}
  Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.
  \begin{enumerate}[label=\roman*)]
  \item Notemos que $\frac{a^1}{b^1}= \frac{a}{b}= \qty(\frac{a}{b})^1$. Por lo que $1\in A$.
  \item Si $n\in A$, tenemos $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
- \item Como $n>0$, se tiene $n+1>1$, por definición
-  \begin{align*}
-    \qty(\frac{a}{b})^{n+1} &= \frac{a}{b}\cdot \qty(\frac{a}{b})^n\\
-    &=\frac{a}{b}\cdot \frac{a^n}{b^n} && \text{Por (ii)}\\
-    &= \frac{a\cdot a^n}{b\cdot b^n}\\
-    &= \frac{a^{n+1}}{b^{n+1}} && \text{Por tanto, $n+1\in A$.}
-   \end{align*}\
+ \item Notemos que
+ \begin{align*}
+  \left(\frac{a}{b}\right)^{n+1} &= \left(\frac{a}{b}\right)^n \cdot \left(\frac{a}{b}\right)^1 && \text{Mult. Potencias de misma base}\\
+  &= \left(\frac{a^n}{b^n} \right)\cdot \left(\frac{a}{b}\right) && \text{(i) y (ii)}\\
+  &= \frac{a^n\cdot a}{b^n \cdot b}\\
+  &= \frac{a^{n+1}}{b^{n+1}} && \text{Mult. Potencias de misma base}
+ \end{align*}
  \end{enumerate}
- Por el principio de inducción matemática, $A=\N$, por lo que $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
  \end{proof}
 
- \item $(ab)^n = a^nb^n, \forall n\in \N$.
- \begin{proof}
-  Procedemos por inducción. \begin{enumerate}[label=\roman*)]
-    \item Se verifica para $n=1$, pues $(ab)^1=ab=a^1b^1=a^nb^n$.
+ \item $(ab)^n = a^nb^n$. (Potencia de un producto)
+ \begin{proof}\leavevmode
+  \begin{enumerate}[label=\roman*)]
+    \item Se verifica para $n=1$, pues $(ab)^1=ab=a^1b^1$.
     \item Supongamos que la igualdad se verifica para $n=k$, es decir, suponemos que \begin{align*}
       (ab)^k = a^kb^k
     \end{align*}
     \item Si $n=k+1$ sigue que \begin{align*}
-      (ab)^{k+1} &= (ab)^k (ab) && \text{(c) de LE9}\\
+      (ab)^{k+1} &= (ab)^k (ab) && \text{Mult. Potencias de misma base}\\
       &= a^kb^k (ab) && \text{Hip. Inducción}\\
-      &= a^{k+1} b^{k+1} && \text{(c) de LE9} \qedhere 
+      &= \big(a^k \cdot a\big) \big(b^k \cdot b^k\big)\\
+      &= a^{k+1} b^{k+1} && \text{Mult. Potencias de misma base} \qedhere 
     \end{align*}
   \end{enumerate}
  \end{proof}
 
- \item $a^{mn} = (a^m)^n, \forall m,n\in \N$.
+ \item $a^{mn} = (a^m)^n$. (Potencia de una potencia)
  \begin{proof}
-  Sea $n\in \N$ arbitrario pero fijo. Definimos $A\defined \set{m|(a^m)^n = a^{mn}, m\in \N}$. Es claro que $1\in A$, pues $(a^1)^n = (a)^n = a^n = a^{1\cdot n} = a^{mn}$. Si $m_0\in A$, entonces $(a^{m_0})^n = a^{m_0n}$ con $m_0\in \N$. Como $\N$ es un conjunto inductivo, $m+1\in \N$, de donde sigue que $a^{m+1} = a^m\cdot a$, por (c) de LE9. Por ello $(a^{m+1})^n = \big(a^m\cdot a\big)^n$, y por (e) de LE9, obtenemos que $\big(a^m\cdot a\big)^n = a^{mn}\cdot a^n$, de donde $a^{mn}\cdot a^n = a^{mn+n} = a^{n(m+1)}$, y así, $m+1\in A$, por lo que $A$ es un conjunto inductivo. Como $A\subseteq \N$, y por el principio de inducción matemática $A=\N$. Por tanto $(a^m)^n = a^{mn}, \forall m,n\in \N$.
+  Sea $n\in \N$ arbitrario pero fijo. Definimos $A\defined \set{m|(a^m)^n = a^{mn}}$.
+  \begin{enumerate}[label=\roman*)]
+    \item Es claro que $1\in A$, pues $(a^1)^n = (a)^n = a^n = a^{1\cdot n}$.
+    \item Si $k\in A$ tenemos que $(a^k)^n = a^{kn}$.
+    \item Notemos que
+    \begin{align*}
+      \qty(a^{k+1})^n &= \qty(a^k\cdot a)^n && \text{Mult. Potencias de misma base}\\
+      &= \qty(a^k)^n \cdot a^n && \text{Potencia de un producto}\\
+      &= a^{kn} \cdot a^n && \text{Hip. Inducción}\\
+      &= a^{kn+n} && \text{Mult. Potencias de misma base}\\
+      &= a^{(k+1)n} && \text{Distributividad}
+    \end{align*}
+    Por tanto, $k+1\in A$.
+  \end{enumerate}
+  Por el principio de inducción matemática, $A=\N$.
  \end{proof}
-
- \end{enumerate}
-
-\bfit{Definición:} Sea $a\in \R$ y $n\in \N$, \begin{itemize}
-  \item $a^0=1, \forall a\in \R$.
-  \item $a^{-n}=\frac{1}{a^n}$, si $a\neq 0$.
-\end{itemize}
-
-\subsection*{Lista de Ejercicios 11 (LE11)}
-
- \begin{enumerate}[label=\alph*)]
-  \item $1^m = 1, \forall m\in \Z$. \begin{proof}
-    Si $m=0$, la prueba está terminada, y hemos probado que la proposición es verdadera si $m\in \N$. Luego, si $m<0$, tenemos que $1^m = \frac{1}{1^{-m}}$, donde $-m\in \N$, por lo que $1^m = \frac{1}{1} = 1$.
-  \end{proof}
+ 
+ \item $1^n = 1$. (Identidad multiplicativa)
+ \begin{proof}\leavevmode
+  \begin{enumerate}[label=\roman*)]
+    \item Observemos que $1^1=1$.
+    \item Supongamos que $1^k=1$.
+    \item Notemos que
+    \begin{align*}
+      1^{k+1} &= 1^k \cdot 1^1 && \text{Mult. Potencias de misma base}\\
+      &= 1^k \cdot 1 && \text{Observación}\\
+      &= 1^k\\
+      &= 1 && \text{Hip. Inducción}
+    \end{align*}
+  \end{enumerate}
+ \end{proof}
+ 
+ \item Sea $a\neq 0$, se verifica que $a^{-n} = \frac{1}{a^n}$.
+ \begin{proof}\leavevmode
+  \begin{align*}
+    \frac{1}{a^n} &= \frac{1^n}{a^n} && \text{Identidad multiplicativa}\\
+    &= \left(\frac{1}{a}\right)^n && \text{Potencia de un \textit{cociente}}\\
+    &= \qty(a^{-1})^n && \text{Notación}\\
+    &= a^{(-1)n} && \text{Potencia de una potencia}\\
+    &= a^{-n}
+  \end{align*}
+ \end{proof}
 
   \item Sea $a,b\neq 0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}, \forall n\in \Z$.
   \begin{proof}\leavevmode
@@ -1153,27 +1192,6 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
     \end{enumerate}
   \end{enumerate}
   \end{enumerate}
-  
-  \bfit{Proposición:} Sea $m,n\in \N$ con $m\neq n$. Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
- 
- \begin{proof}
-   Sea $n\in \N$ arbitrario pero fijo. Definimos $A=\set{m \in \N|\frac{a^m}{a^n}=a^{m-n}, \ m>n}\union\set{1}$. 
-   Sea $m_0 \in A$ con $m_0>1$, entonces $\frac{a^{m_0}}{a^n} = a^{m_0-n}$ con $n<m_0$ y $m_0\in \N$. Como $\N$ es un conjunto inductivo, sigue que $m_0+1\in \N$, y $m_0<m_0+1$, por transitividad, $n<m_0+1$. Sigue que \begin{align*}
-    \frac{a^{m_0+1}}{a^n} &= \frac{a^{m_0}\cdot a}{a^n}\\
-    &= a\cdot \frac{a^{m_0}}{a^n}\\
-    &= a\cdot a^{m_0-n}
-   \end{align*}
-   Como $m_0,n \in \N$ y $m_0>n$, se verifica, por (e) de LE8, que $m_0-n\in \N$, y por (c) de LE9, $a\cdot a^{m_0-n} = a^{1+(m_0-n)} = a^{(m_0+1)-n}$, lo que implica que $m_0+1 \in A$. Por el principio de inducción matemática, $A=\N$. Como $n$ es arbitrario, si $m>n$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
- \end{proof}
-
- El lector notará que para que la proposición $\frac{a^m}{a^n} = a^{m-n}$ sea probada, además de que $a\neq 0$, requerimos que $m\neq n$, pues si tenemos el caso donde $m=n$, entonces \begin{align*}
-  \frac{a^m}{a^n} &= \frac{a^n}{a^n}\\
-  &= \qty(\frac{a}{a})^n && \text{(d) de LE9}\\
-  &= \bigl(a\cdot a^{-1}\bigr)^n && \text{Notación}\\
-  &= 1^n && \text{Inverso multiplicativo}\\
-  &= 1 && \text{(a) de LE9}
-\end{align*}
-Por otro lado, $a^{m-n} = a^{n-n} = a^0$. Sin embargo, hasta este punto, no es posible probar que $a^0 = 1$, pues definimos las propiedades de los exponentes para númeos naturales, y tenemos que $0\notin \N$. Por tanto, introducimos el hecho de que $x^0 = 1, \forall x\in \R$ como una definición, pero al hacerlo, expandimos las propiedades de potenciación al conjunto de los números enteros.
 
 \section*{Teorema binomial}
 
