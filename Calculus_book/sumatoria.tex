@@ -1036,40 +1036,45 @@ Decimos que $a$ es la base, y que $n$ es el exponente.
   \item $a^0 = \prod_{i=1}^{0} a = 1$.%; en particular ---y bajo esta definición, $0^0=1$.
 \end{itemize}
 
+\textbf{Notación:} Sea $a\neq 0$ \[a^{-n}\defined \frac{1}{a^n}\]
+
 \subsection*{Lista de Ejercicios 9 (LE9)}
 
-Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
+Sean $a,b\in \R$ y $m, n\in \N\union\set{0}$, demuestre lo siguiente:
 
-\begin{enumerate}[label=\alph*)] 
+\begin{enumerate}[label=\alph*)]
   \item $a^m \cdot a^n = a^{m+n}$ (Multiplicación de potencias de misma base)
-
- \begin{proof} Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n|a^{m+n}=a^m\cdot a^n}$.
-  
-  \begin{enumerate}[label=\roman*)]
-    \item Notemos que 
-    \begin{align*}
-      a^{m+1} &= \prod_{i=1}^{m+1} a\\
-      &= a \cdot \prod_{i=1}^{m} a && \text{Productorio inverso}\\
-      &= a \cdot a^m && \text{Definición}\\
-      &= a^m \cdot a^1
-    \end{align*}
-    Por lo que $1\in A$.
-    \item Si $k\in A$, tenemos que $a^{m+k} = a^m\cdot a^k$.
-    \item Notemos que
-    \begin{align*}
-      a^{m+(k+1)} &= \prod_{i=1}^{m+(k+1)} a\\
-      &= a \cdot \prod_{i=1}^{m+k} a && \text{Productorio inverso}\\
-      &= a \cdot a^{m+k} && \text{Definición}\\
-      &= a\cdot a^m \cdot a^k && \text{Hip. Ind.}\\
-      &= a^m \cdot a\cdot a^k\\
-      &= a^m \cdot a \cdot \prod_{i=1}^{k} a && \text{Definición}\\
-      &= a^m \cdot \prod_{i=1}^{k+1} a && \text{Productorio inverso}\\
-      &= a^m \cdot a^{k+1} && \text{Definición}
-    \end{align*}
-    Por tanto, $k+1\in A$.
-  \end{enumerate}
-  Por el principio de inducción matemática, $A=\N$.
- \end{proof}
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Sin pérdida de generalidad, supongamos que $m=0$, se tiene que \[a^m\cdot a^n = a^0\cdot a^n = 1\cdot a^n = a^n = a^{n+0} = a^{m+n}\]
+      Luego, sea $m\in\N$ arbitrario pero fijo. Definimos $A=\set{n\in \N|a^m\cdot a^n = a^{m+1}}$.
+    \item Si $m,n\in \N$,
+    \begin{enumerate}[label=\roman*)]
+      \item Notemos que 
+      \begin{align*}
+        a^{m+1} &= \prod_{i=1}^{m+1} a\\
+        &= a \cdot \prod_{i=1}^{m} a && \text{Productorio inverso}\\
+        &= a \cdot a^m && \text{Definición}\\
+        &= a^m \cdot a^1
+      \end{align*}
+      Por lo que $1\in A$.
+      \item Si $k\in A$, tenemos que $a^{m+k} = a^m\cdot a^k$.
+      \item Notemos que
+      \begin{align*}
+        a^{m+(k+1)} &= \prod_{i=1}^{m+(k+1)} a\\
+        &= a \cdot \prod_{i=1}^{m+k} a && \text{Productorio inverso}\\
+        &= a \cdot a^{m+k} && \text{Definición}\\
+        &= a\cdot a^m \cdot a^k && \text{Hip. Ind.}\\
+        &= a^m \cdot a\cdot a^k\\
+        &= a^m \cdot a \cdot \prod_{i=1}^{k} a && \text{Definición}\\
+        &= a^m \cdot \prod_{i=1}^{k+1} a && \text{Productorio inverso}\\
+        &= a^m \cdot a^{k+1} && \text{Definición}
+      \end{align*}
+      Por tanto, $k+1\in A$.
+    \end{enumerate}
+    Por el principio de inducción matemática, $A=\N$.
+    \end{enumerate}
+  \end{proof}
 
  \item Si $b\neq 0$, entonces $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$. (Potencia de un \textit{cociente})
  \begin{proof}
@@ -1137,34 +1142,74 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
   \end{enumerate}
  \end{proof}
  
- \item Sea $a\neq 0$, se verifica que $a^{-n} = \frac{1}{a^n}$.
+
+ \item Sea $a\neq 0$, se verifica que \[a^{-mn} = \qty(a^{-m})^n = \qty(a^{-n})^m \qquad \text{(Potencia negativa)}\]
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*)]
+      \item Sin pérdida de generalidad, sea $m=0$. Se tiene que
+      \begin{center}
+      \begin{minipage}[c]{.3\linewidth}
+      \begin{align*}
+        a^{-mn} &= a^0\\
+        &= 1\\
+        &= \qty(a^{-n})^0\\
+        &= \qty(a^{-n})^m 
+      \end{align*}
+      \end{minipage}
+      \begin{minipage}[c]{.3\linewidth}
+      \begin{align*}
+        a^{-mn} &= a^0\\
+        &= 1\\
+        &= 1^n\\
+        &= \qty(a^0)^n\\
+        &= \qty(a^{-m})^n
+      \end{align*}
+      \end{minipage}
+      \end{center}
+      
+      \item Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n|a^{-mn}=(a^{-m})^n=(a^{-n})^m}$.
+      \begin{enumerate}[label=\roman*)]
+        \item Notemos que \[a^{-m\cdot 1} = a^{-m} = \qty(a^{-m})^1\]
+        También,
+        \begin{align*}
+          \qty(a^{-1})^m &= \left(\frac{1}{a^1}\right)^m && \text{Definición}\\
+          &= \frac{1^m}{a^m} && \text{Potencia de un \text{cociente}}\\
+          &= \frac{1}{a^m} && \text{Identidad multiplicativa}\\
+          &= a^{-m} && \text{Definición}\\
+          &= a^{-m\cdot 1}
+        \end{align*}
+        Por lo que $1\in A$.
+        \item Supongamos que \[a^{-mk}=(a^{-m})^k=(a^{-k})^m\]
+        \item Notemos que
+        \begin{align*}
+          \qty(a^{-(k+1)})^m &= \left(\frac{1}{a^{k+1}}\right)^m && \text{Definición}\\
+          &= \frac{1^m}{\qty(a^{k+1})^m} && \text{Potencia de un \textit{cociente}}\\
+          &= \frac{1}{a^{m(k+1)}} && \text{Potencia de una potencia}\\
+          &= a^{-m(k+1)} && \text{Notación}
+        \end{align*}
+        También,
+        \begin{align*}
+          \qty(a^{-m})^{k+1} &= \left(\frac{1}{a^{m}}\right)^{k+1}&& \text{Notación}\\
+          &= \frac{1}{\qty(a^{m})^{k+1}} && \text{Potencia de un \textit{cociente}}\\
+          &= \frac{1}{a^{m(k+1)}} && \text{Potencia de una potencia}\\
+          &= a^{-m(k+1)} && \text{Notación}
+        \end{align*}
+      \end{enumerate}
+    \end{enumerate}
+    
+  \end{proof}
  
- Primero probaremos que $(a^{-1})^n = a^{(-1)\cdot n}$
- \begin{enumerate}[label=\roman*)]
-  \item Es claro que $(a^{-1})^1 = a^{-1} = a^{(-1)\cdot 1}$.
-  \item Supongamos que $(a^{-1})^k = a^{(-1)\cdot k}$.
-  \item Notemos que
-  \begin{align*}
-    (a^{-1})^{k+1} &= \prod_{i=1}^{k+1} a^{-1} && \text{Definición}\\
-    &= a^{-1} \cdot \prod_{i=1}^k a^{-1} && \text{Definición}\\
-    &= a^{-1} \cdot (a^{-1})^k && \text{Definición}\\
-    &= \frac{1}{a} \cdot \left(\frac{1}{a}\right)^k && \text{Notación}\\
-    &= \frac{1}{a} \cdot \left(\frac{1^k}{a^k}\right) && \text{Potencia de un \textit{cociente}}\\
-    &= \frac{1\cdot 1^k}{a\cdot a^k} && \text{Multiplicación de fracciones}\\
-    &= \frac{1^{k+1}}{a^{k+1}} && \text{Mult. Potencias de misma base}\\
-    &= \left(\frac{1}{a}\right)^{k+1} && \text{Potencia de un \textit{cociente}}
-  \end{align*}
- \end{enumerate}
  
- \begin{proof}\leavevmode
-  \begin{align*}
-    \frac{1}{a^n} &= \frac{1^n}{a^n} && \text{Identidad multiplicativa}\\
-    &= \left(\frac{1}{a}\right)^n && \text{Potencia de un \textit{cociente}}\\
-    &= \qty(a^{-1})^n && \text{Notación}\\
-    &= a^{(-1)n} && \text{Potencia de una potencia}\\
-    &= a^{-n}
-  \end{align*}
- \end{proof}
+\end{enumerate}
+
+
+
+\subsection*{Lista de Ejerciios 10}
+
+Sean $a,b\in \R$ y $m,n\in \Z$, demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+  
 
   \item Sea $a,b\neq 0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}$.
   \begin{proof}\leavevmode
@@ -1176,12 +1221,14 @@ Sean $a, b\in \R$ y $m,n\in \N$, demuestre lo siguiente:
     \end{align*}
   \end{proof}
   
+  
+  
   \item Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
   \begin{proof}\leavevmode
     \begin{align*}
       \frac{a^m}{a^n} &= a^m \cdot \frac{1}{a^n}\\
-      &= a^m \cdot a^{-n}\\
-      &= a^m \cdot \qty(a^{-1})^n
+      &= a^m \cdot a^{-n} && \text{Definición}\\
+      &= a^m \cdot a^{(-1)\cdot n} \\
     \end{align*}
   \end{proof}
 

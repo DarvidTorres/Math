@@ -80,7 +80,7 @@ Demuestre lo siguiente:
   Sea $A \coloneqq \set{n\in \N | n>1, n-1\in \N}\union \set{1}$. Sea $m\in A$ con $m>1$, tenemos que $m\in \N$, y como $\N$ es un conjunto inductivo, se verifica que $m+1\in\N$. Luego, $(m+1)-1=m$, por lo que $(m+1)-1\in \N$. Como $m>1$, por transitividad, $m>0$, de donde sigue que $m+1>1$, por lo que $m+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, $A=\N$. Por tanto $\forall n\in \N$ con $n>1$ se verifica que $n-1\in \N$.
  \end{proof}
 
- \item Sean $m$ y $n$ números naturales. Si $n<m$, entonces $m-n\in\N$. 
+ \item Sean $m$ y $n$ números naturales. Si $n<m$, entonces $m-n\in\N$. (\textit{Resta} de naturales)
  \begin{proof} 
   Sea $n\in \N$ arbitrario pero fijo. Definimos $A \coloneqq \set{m\in \N| n<m, \ m-n\in\N}\union \set{1}$. Si $m_0\in A$ con $m_0>1$, tenemos que $n<m_0$ y $m_0-n\in \N$ con $m_0\in \N$. Como $\N$ es un conjunto inductivo, sigue que $m_0+1\in \N$. Además, $m_0<m_0+1$, y por transitividad $n<m_0+1$. Luego, por la cerradura de la suma en $\N$ tenemos que $(m_0-n)+1 =(m_0+1)-n \in \N$, por lo que $m_0+1\in A$. De este modo, $A$ es un conjunto inductivo, con lo que $\N \subseteq A$, y como $A\subseteq \N$, se cumple que $A=\N$.
  \end{proof}
@@ -194,7 +194,7 @@ Demuestre lo siguiente:
 
   \item Sea $S\subseteq \N$ tal que $S$ es un conjunto inductivo, entonces $S=\N$. (Principio de inducción matemática).
   \begin{proof} 
-  Sea $S\neq \N$. El conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$). Pr definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $\N\setminus S\subset \N$, por el principio del buen orden, tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$, como $m\in \N$, sigue que $1 \leq m$. Como $m\in \N\setminus S$ y $1\notin \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, y por este teorema, $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, tenemos que $m-1\notin \N\setminus S$, osea $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, $S=\N$. 
+  Sea $S\neq \N$. El conjunto $\N\setminus S$ es no vacío (ya que de serlo, tendríamos $S=\N$). Por definición, $1\in S$ y por esto, $1\notin \N\setminus S$. Como $\N\setminus S\subset \N$, por el principio del buen orden, tiene elemento minimo. Sea $m$ el elemento mínimo de $\N\setminus S$, como $m\in \N$, sigue que $1 \leq m$. Como $m\in \N\setminus S$ y $1\notin \N\setminus S$ tenemos que $m\neq 1$, por lo que $m>1$, y por este teorema, $m-1\in \N$. Debido a que $m-1<m$ y $m$ es el elemento mínimo de $\N \setminus S$, tenemos que $m-1\notin \N\setminus S$, osea $m-1\in S$. Luego, dado que $S$ es un conjunto inductivo, se verifica que $(m-1)+1=m\in S$ lo que es una contradicción. Por tanto, $S=\N$. 
   \end{proof}
 
   \item Sea $x\in \R^+$. Si $n\in \N$ y $x+n\in \N$, entonces $x\in \N$.
@@ -284,31 +284,31 @@ Sin embargo, el lector debería ser cuidadoso de no considerar el uso de inducci
   
   \textbf{Respuesta:} No, pues el axioma del inverso multiplicativo solo se satisface para $1$ y $-1$.
   
-  \item Demuestre que la suma es cerrada en $\Z$.
+  \item Demuestre la cerradura de la suma en $\Z$.
   \begin{proof}\leavevmode
     Sea $a,b\in \Z$.
     \begin{enumerate}[label=\Roman*)]
       \item Si $a,b\in \N$, se verifica la cerradura de la suma en $\N$.
       \item Si $a=0$ o $b=0$, la suma es cerrada por la identidad aditiva.
-      \item Si $a,b\in \set{-n|n\in \N}$, entonces $(-a)+(-b)=-(a+b)\in \N$, por lo que $-\bigl(-(a+b)\bigr)=a+b\in \set{-n|n\in \N}$ y a su vez, $a+b\in \Z$.
-      \item Sin pérdida de generalidad, sea $a\in \N$ y $b\in \set{-n|n\in \N}$. Por axiomas de orden, $a+b=0$, $a+b<0$ o $a+b>0$, en el primer caso se verifica la cerradura. Luego, 
+      \item Si $a,b\in \Z^-$, entonces $(-a)+(-b)=-(a+b)\in \N$, por lo que $-\bigl(-(a+b)\bigr)=a+b\in \Z^-$ y a su vez, $a+b\in \Z$.
+      \item Sin pérdida de generalidad, sea $a\in \N$ y $b\in \Z^-$. Por axiomas de orden, $a+b=0$, $a+b<0$ o $a+b>0$, en el primer caso se verifica la cerradura. Luego, 
       \begin{enumerate}[label=\roman*)]
         \item Si $a+b>0$, entonces $a>-b$, y como $-b\in \N$, por (c) de LE8, se tiene que $a-(-b)=a+b\in \N$.
-        \item Si $a+b<0$, entonces $a<-b$, como $-b\in \N$, por (c) de LE8, se tiene que $(-b)-a=-(a+b)\in \N$, de donde sigue que $-\bigl(-(a+b)\bigr)=a+b\in \set{-n|n\in \N}$.
+        \item Si $a+b<0$, entonces $a<-b$, como $-b\in \N$, por (c) de LE8, se tiene que $(-b)-a=-(a+b)\in \N$, de donde sigue que $-\bigl(-(a+b)\bigr)=a+b\in \Z^-$.
       \end{enumerate}
     \end{enumerate}
   \end{proof}
   
   \textbf{Observación:} Como $1\in \Z$, y la suma es cerrada en $\Z$, se tiene que $\Z$ es un conjunto inductivo.
   
-  \item Demuestre que la multiplicación es cerrada en $\Z$.
+  \item Demuestre la cerradura de la multiplicación en $\Z$.
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\roman*)]
       \item Si $a,b\in\N$, se verifica la cerradura de la multiplicación en $\N$.
       \item Si $a=0$ o $b=0$, la suma es cerrada por la multiplicación por cero.
-      \item Si $a,b\in \set{-n|n\in \N}$, se tiene que $(-a)\cdot (-b)=ab\in \N$.
+      \item Si $a,b\in \Z^-$, se tiene que $(-a)\cdot (-b)=ab\in \N$.
       \item Sin pérdida de generalidad, sea $a\in \N$ y $b\in \set{-n|n\in
-      \N}$. Notemos que $a\cdot (-b)=-(ab)\in \N$, por lo que $a\cdot b\in \set{-n|n\in \N}$.
+      \N}$. Notemos que $a\cdot (-b)=-(ab)\in \N$, por lo que $a\cdot b\in \Z^-$.
     \end{enumerate}
   \end{proof}
 
@@ -325,5 +325,28 @@ Sin embargo, el lector debería ser cuidadoso de no considerar el uso de inducci
       \item Si $-j\in \N$, sigue que $-j>0$, por lo que $j<0$, y por transitividad, $s<0$, de esto sigue que $s\neq 0$ y $s\notin \N$, por lo que $-s\in \N$. Como $s<j$ y $j<s+1$, sigue que $-j<-s$ y $-(s+1)=-s-1<-j$; de este modo, $-s-1<-j<-s$, con $-s, -j\in \N$, pero se contradice el corolario (ii) de (e) de LE8.
     \end{enumerate}
     En cualquier caso $j\notin \Z$.
+  \end{proof}
+  
+  \item Sean $a$ y $b$ números enteros. Se verifica que $a-b\in \Z$.
+  \begin{proof}\leavevmode
+    Si $a=b$, tenemos que $a-b=0\in \Z$. Luego, si $a\neq b$, tenemos que:
+      \begin{itemize}
+        \item Si $a=0$ o $b=0$, entonces $a-b=a$ o $a-b=-b$. En cualquier caso, $a-b\in \Z$.
+        \item Si $a\neq 0$ y $b\neq 0$, consdieremos los siguientes casos:
+        \begin{enumerate}[label=\Roman*)]
+          \item Si $a>b$, y
+          \begin{enumerate}[label=\roman*)]
+            \item $b\in \N$, se tiene que $a\in \N$, y por la resta de naturales, $a-b\in \N$.
+            \item $b\in \Z^-$ y $a\in \N$, se tiene que $-b\in \N$ en cuyo caso $a-b = a+ (-b) \in \N$ por la cerradura de la suma en $\N$.
+            \item $a, b\in \Z^-$ tenemos que $-a, -b\in \N$, y $-b<-a$. Por la resta de naturales $(-a)-(-b) = (-a)+b \in \N$. De donde sigue que $-\big((-a)+b\big) = a-b\in \Z^-$.
+          \end{enumerate}
+        \item Si $a<b$, y
+        \begin{enumerate}[label=\roman*)]
+          \item $a\in \N$, se tiene que $b\in \N$, por lo que $-a, -b\in \Z^-$, y $-b<-a$. Luego, por la resta de naturales, $(-a)-(-b)=-a+b\in \N$, de donde, $-(-a+b)=a-b\in \Z^-$.
+          \item $a\in \Z^-$ y $b\in \N$, sigue que $-a\in \N$. Por la cerradura de la suma en $\N$, sigue que $-a+b\in \N$, luego $-\big((-a)+b\big)=a-b\in \Z^-$.
+          \item $a, b\in \Z^-$, entonces $-a,-b\in \N$, y como $-b<-a$, se tiene que $(-a)-(-b)=-a+b\in \N$, por la resta de naturales. Así $-\big((-a)+b\big)=a-b\in \Z^-$.
+        \end{enumerate}
+        \end{enumerate}
+      \end{itemize}
   \end{proof}
 \end{enumerate}
