@@ -1038,111 +1038,131 @@ Decimos que $a$ es la base, y que $n$ es el exponente.
 
 \textbf{Notación:} Sea $a\neq 0$ \[a^{-n}\defined \frac{1}{a^n}\]
 
+\textbf{Observación:} \[\frac{1}{a^{-n}} = \frac{1}{\frac{1}{a^n}} = a^n\]
+
 \subsection*{Lista de Ejercicios 9 (LE9)}
 
 Sean $a,b\in \R$ y $m, n\in \N\union\set{0}$, demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
-  \item $a^m \cdot a^n = a^{m+n}$ (Multiplicación de potencias de misma base)
+  \item $a^m \cdot a^n = a^{m+n}$. (Potencias de misma base)
   \begin{proof}\leavevmode
-    \begin{enumerate}[label=\roman*)]
-      \item Sin pérdida de generalidad, supongamos que $m=0$, se tiene que \[a^m\cdot a^n = a^0\cdot a^n = 1\cdot a^n = a^n = a^{n+0} = a^{m+n}\]
-      Luego, sea $m\in\N$ arbitrario pero fijo. Definimos $A=\set{n\in \N|a^m\cdot a^n = a^{m+1}}$.
-    \item Si $m,n\in \N$,
-    \begin{enumerate}[label=\roman*)]
-      \item Notemos que 
+    \begin{enumerate}[label=\Roman*)]
+      \item Sin pérdida de generalidad, sea $m=0$,
       \begin{align*}
-        a^{m+1} &= \prod_{i=1}^{m+1} a\\
-        &= a \cdot \prod_{i=1}^{m} a && \text{Productorio inverso}\\
-        &= a \cdot a^m && \text{Definición}\\
-        &= a^m \cdot a^1
+        a^m \cdot a^n &= a^0 \cdot a^n\\
+        &= 1 \cdot a^n\\
+        &= a^n\\
+        &= a^{n+0}\\
+        &= a^{n+m}
       \end{align*}
-      Por lo que $1\in A$.
-      \item Si $k\in A$, tenemos que $a^{m+k} = a^m\cdot a^k$.
+      \item Si $m,n\in \N$,
+      \begin{enumerate}[label=\roman*)]
+        \item Se verifica para $n=1$, 
+        \begin{align*}
+          a^{m+1} &= \prod_{i=1}^{m+1} a\\
+          &= a \cdot \prod_{i=1}^{m} a && \text{Productorio inverso}\\
+          &= a \cdot a^m && \text{Definición}\\
+          &= a^m \cdot a^1
+        \end{align*}
+        Por lo que $1\in A$.
+        \item Si $k\in A$, tenemos que $a^{m+k} = a^m\cdot a^k$.
+        \item Notemos que
+        \begin{align*}
+          a^{m+(k+1)} &= \prod_{i=1}^{m+(k+1)} a\\
+          &= a \cdot \prod_{i=1}^{m+k} a && \text{Productorio inverso}\\
+          &= a \cdot a^{m+k} && \text{Definición}\\
+          &= a\cdot a^m \cdot a^k && \text{Hip. Ind.}\\
+          &= a^m \cdot a\cdot a^k\\
+          &= a^m \cdot a \cdot \prod_{i=1}^{k} a && \text{Definición}\\
+          &= a^m \cdot \prod_{i=1}^{k+1} a && \text{Productorio inverso}\\
+          &= a^m \cdot a^{k+1} && \text{Definición}
+        \end{align*}
+        Por tanto, $k+1\in A$.
+      \end{enumerate}
+      Por el principio de inducción matemática, $A=\N$.
+      \end{enumerate}
+  \end{proof}
+  
+  \item $1^n = 1$. (Identidad multiplicativa)
+ \begin{proof}\leavevmode
+  \begin{enumerate}[label=\Roman*)]
+    \item $1^0=1$.
+    \item \begin{enumerate}[label=\roman*)]
+      \item Observemos que $1^1=1$.
+      \item Supongamos que $1^k=1$.
       \item Notemos que
       \begin{align*}
-        a^{m+(k+1)} &= \prod_{i=1}^{m+(k+1)} a\\
-        &= a \cdot \prod_{i=1}^{m+k} a && \text{Productorio inverso}\\
-        &= a \cdot a^{m+k} && \text{Definición}\\
-        &= a\cdot a^m \cdot a^k && \text{Hip. Ind.}\\
-        &= a^m \cdot a\cdot a^k\\
-        &= a^m \cdot a \cdot \prod_{i=1}^{k} a && \text{Definición}\\
-        &= a^m \cdot \prod_{i=1}^{k+1} a && \text{Productorio inverso}\\
-        &= a^m \cdot a^{k+1} && \text{Definición}
+        1^{k+1} &= 1^k \cdot 1^1 && \text{Potencias de misma base}\\
+        &= 1^k \cdot 1 && \text{Observación}\\
+        &= 1^k\\
+        &= 1 && \text{Hip. Inducción}
       \end{align*}
-      Por tanto, $k+1\in A$.
     \end{enumerate}
-    Por el principio de inducción matemática, $A=\N$.
-    \end{enumerate}
-  \end{proof}
+  \end{enumerate}
+ \end{proof}
+ 
 
  \item Si $b\neq 0$, entonces $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$. (Potencia de un \textit{cociente})
- \begin{proof}
- Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.
- \begin{enumerate}[label=\roman*)]
- \item Notemos que $\frac{a^1}{b^1}= \frac{a}{b}= \qty(\frac{a}{b})^1$. Por lo que $1\in A$.
- \item Si $n\in A$, tenemos $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
- \item Notemos que
- \begin{align*}
-  \left(\frac{a}{b}\right)^{n+1} &= \left(\frac{a}{b}\right)^n \cdot \left(\frac{a}{b}\right)^1 && \text{Mult. Potencias de misma base}\\
-  &= \left(\frac{a^n}{b^n} \right)\cdot \left(\frac{a}{b}\right) && \text{(i) y (ii)}\\
-  &= \frac{a^n\cdot a}{b^n \cdot b}\\
-  &= \frac{a^{n+1}}{b^{n+1}} && \text{Mult. Potencias de misma base}
- \end{align*}
- \end{enumerate}
+ \begin{proof}\leavevmode
+  \begin{enumerate}[label=\Roman*)]
+    \item Si $n=0$, se tiene que $\frac{a^n}{b^n} = \frac{a^0}{b^0} = \frac{1}{1} = 1 = \left(\frac{a}{b}\right)^0$.
+    \item Sea $A=\set{n|\frac{a^n}{b^n}= \qty(\frac{a}{b})^n}$.
+    \begin{enumerate}[label=\roman*)]
+    \item Notemos que $\frac{a^1}{b^1}= \frac{a}{b}= \qty(\frac{a}{b})^1$. Por lo que $1\in A$.
+    \item Si $n\in A$, tenemos $\frac{a^n}{b^n}= \qty(\frac{a}{b})^n$.
+    \item Notemos que
+    \begin{align*}
+     \left(\frac{a}{b}\right)^{n+1} &= \left(\frac{a}{b}\right)^n \cdot \left(\frac{a}{b}\right)^1 && \text{Potencias de misma base}\\
+     &= \left(\frac{a^n}{b^n} \right)\cdot \left(\frac{a}{b}\right) && \text{(i) y (ii)}\\
+     &= \frac{a^n\cdot a}{b^n \cdot b}\\
+     &= \frac{a^{n+1}}{b^{n+1}} && \text{Potencias de misma base}
+    \end{align*}
+    \end{enumerate}
+  \end{enumerate}
  \end{proof}
-
+ 
  \item $(ab)^n = a^nb^n$. (Potencia de un producto)
  \begin{proof}\leavevmode
-  \begin{enumerate}[label=\roman*)]
-    \item Se verifica para $n=1$, pues $(ab)^1=ab=a^1b^1$.
-    \item Supongamos que la igualdad se verifica para $n=k$, es decir, suponemos que \begin{align*}
-      (ab)^k = a^kb^k
-    \end{align*}
-    \item Si $n=k+1$ sigue que \begin{align*}
-      (ab)^{k+1} &= (ab)^k (ab) && \text{Mult. Potencias de misma base}\\
-      &= a^kb^k (ab) && \text{Hip. Inducción}\\
-      &= \big(a^k \cdot a\big) \big(b^k \cdot b^k\big)\\
-      &= a^{k+1} b^{k+1} && \text{Mult. Potencias de misma base} \qedhere 
-    \end{align*}
+  \begin{enumerate}[label=\Roman*)]
+    \item Si $n=0$, $(ab)^0 = 1 = a^0b^0$.
+    \item \begin{enumerate}[label=\roman*)]
+      \item Se verifica para $n=1$, pues $(ab)^1=ab=a^1b^1$.
+      \item Supongamos que la igualdad se verifica para $n=k$, es decir, suponemos que \begin{align*}
+        (ab)^k = a^kb^k
+      \end{align*}
+      \item Si $n=k+1$ sigue que \begin{align*}
+        (ab)^{k+1} &= (ab)^k (ab) && \text{Potencias de misma base}\\
+        &= a^kb^k (ab) && \text{Hip. Inducción}\\
+        &= \big(a^k \cdot a\big) \big(b^k \cdot b^k\big)\\
+        &= a^{k+1} b^{k+1} && \text{Potencias de misma base} \qedhere 
+      \end{align*}
+    \end{enumerate}
   \end{enumerate}
  \end{proof}
 
  \item $a^{mn} = (a^m)^n$. (Potencia de una potencia)
- \begin{proof}
-  Sea $n\in \N$ arbitrario pero fijo. Definimos $A\defined \set{m|(a^m)^n = a^{mn}}$.
-  \begin{enumerate}[label=\roman*)]
-    \item Es claro que $1\in A$, pues $(a^1)^n = (a)^n = a^n = a^{1\cdot n}$.
-    \item Si $k\in A$ tenemos que $(a^k)^n = a^{kn}$.
-    \item Notemos que
-    \begin{align*}
-      \qty(a^{k+1})^n &= \qty(a^k\cdot a)^n && \text{Mult. Potencias de misma base}\\
-      &= \qty(a^k)^n \cdot a^n && \text{Potencia de un producto}\\
-      &= a^{kn} \cdot a^n && \text{Hip. Inducción}\\
-      &= a^{kn+n} && \text{Mult. Potencias de misma base}\\
-      &= a^{(k+1)n} && \text{Distributividad}
-    \end{align*}
-    Por tanto, $k+1\in A$.
-  \end{enumerate}
-  Por el principio de inducción matemática, $A=\N$.
- \end{proof}
- 
- \item $1^n = 1$. (Identidad multiplicativa)
  \begin{proof}\leavevmode
-  \begin{enumerate}[label=\roman*)]
-    \item Observemos que $1^1=1$.
-    \item Supongamos que $1^k=1$.
-    \item Notemos que
-    \begin{align*}
-      1^{k+1} &= 1^k \cdot 1^1 && \text{Mult. Potencias de misma base}\\
-      &= 1^k \cdot 1 && \text{Observación}\\
-      &= 1^k\\
-      &= 1 && \text{Hip. Inducción}
-    \end{align*}
+  \begin{enumerate}[label=\Roman*)]
+    \item Si $m=0$, $a^{0\cdot n} = 1 = 1^n = (a^0)^n$. Análogamente, si $n=0$, $a^{m\cdot 0} = 1 = (a^m)^0$.
+    \item Sea $n\in \N$ arbitrario pero fijo. Definimos $A\defined \set{m|(a^m)^n = a^{mn}}$.
+    \begin{enumerate}[label=\roman*)]
+      \item Es claro que $1\in A$, pues $(a^1)^n = (a)^n = a^n = a^{1\cdot n}$.
+      \item Si $k\in A$ tenemos que $(a^k)^n = a^{kn}$.
+      \item Notemos que
+      \begin{align*}
+        \qty(a^{k+1})^n &= \qty(a^k\cdot a)^n && \text{Potencias de misma base}\\
+        &= \qty(a^k)^n \cdot a^n && \text{Potencia de un producto}\\
+        &= a^{kn} \cdot a^n && \text{Hip. Inducción}\\
+        &= a^{kn+n} && \text{Potencias de misma base}\\
+        &= a^{(k+1)n} && \text{Distributividad}
+      \end{align*}
+      Por tanto, $k+1\in A$.
+    \end{enumerate}
+    Por el principio de inducción matemática, $A=\N$.
   \end{enumerate}
  \end{proof}
  
-
  \item Sea $a\neq 0$, se verifica que \[a^{-mn} = \qty(a^{-m})^n = \qty(a^{-n})^m \qquad \text{(Potencia negativa)}\]
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\Roman*)]
@@ -1196,21 +1216,81 @@ Sean $a,b\in \R$ y $m, n\in \N\union\set{0}$, demuestre lo siguiente:
         \end{align*}
       \end{enumerate}
     \end{enumerate}
-    
   \end{proof}
- 
- 
-\end{enumerate}
-
-
-
-\subsection*{Lista de Ejerciios 10}
-
-Sean $a,b\in \R$ y $m,n\in \Z$, demuestre lo siguiente:
-
-\begin{enumerate}[label=\alph*)]
   
-
+  \item Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
+  \begin{proof}\leavevmode
+    Sea $m\in \N$ arbitrario pero fijo. Definimos $A=\set{n\in \N|\frac{a^m}{a^n} = a^{m-n}}$.
+    \begin{enumerate}[label=\roman*)]
+      \item Si $m=1$, se tiene que \[a^{m-1} = a^{1-1} = a^0 = 1 = \frac{a}{a} = \frac{a^1}{a^1} = \frac{a^m}{a^1}\]
+      \item Si $m>1$, se tiene que 
+      \begin{align*}
+        \frac{a^m}{a^1} &= \frac{a^m}{a}\\
+        &= \frac{\prod_{i=1}^{m} a}{a} && \text{Definción}\\
+        &= \frac{a \cdot \prod_{i=1}^{m-1} a}{a} && \text{Produdctorio inverso}\\
+        &= \prod_{i=1}^{m-1} a\\
+        &= a^{m-1} && \text{Definición}
+      \end{align*}
+      Por lo que $1\in A$.
+      \item Supongamos que $\frac{a^m}{a^k} = a^{m-k}$.
+      \item Notemos que
+      \begin{align*}
+        a^{m-(k+1)} &= \prod_{i=1}^{m-(k+1)} a && \text{Definición}\\
+        &= \prod_{i=1}^{m-k-1} a\\
+        &= \left(\frac{a}{a}\right) \cdot \left(\prod_{i=1}^{m-k-1}\right) a\\
+        &= \frac{1}{a} \cdot \left(a\cdot \prod_{i=1}^{m-k-1} \right)\\
+        &= \frac{1}{a} \cdot \prod_{i=1}^{m-k} a && \text{Productorio inverso}\\
+        &= \frac{1}{a} \cdot a^{m-k}&& \text{Definición}\\
+        &= \frac{1}{a}\cdot \frac{a^m}{a^k} && \text{Hip. Inducción}\\
+        &= \frac{a^m}{a\cdot a^k}\\
+        &= \frac{a^m}{a^{k+1}} && \text{Potencia de misma base}
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+  
+  \textbf{Nota:} Con esta prueba se generaliza la Potencia de misma base para $\Z$, pues
+  \begin{enumerate}[label=\roman*)]
+    \item Sin pérdida de generalidad, si $m\in \Z^-$ y $n\in \N$, se tiene que $a^m\cdot a^n = \frac{a^n}{a^{-m}}$, por notación, donde $-m\in \N$, y como hemos probado, \[\frac{a^n}{a^{-m}} = a^{n-(-m)} = a^{n+m}\]
+    \item Si $m,n\in \Z^-$, se tiene que $a^m \cdot a^n = \frac{1}{a^{-m}\cdot a^{-n}}$ donde $-m, -n\in \N$, y como hemos probado \[\frac{1}{a^{-m}\cdot a^{-n}} = \frac{1}{a^{(-m)+(-n)}} = \frac{1}{a^{-(m+n)}} = a^{m+n}\]
+  \end{enumerate}
+  
+  \item Generalize la Potencia de un \textit{cociente} para $\Z$.
+  
+  Sea $n\in \Z^-$,
+    \begin{align*}
+      \left(\frac{a}{b}\right)^n &= \frac{1}{\left(\frac{a}{b}\right)^{-n}} && \text{$-n\in \N$}\\
+      &= \frac{1}{\frac{a^{-n}}{b^{-n}}} && \text{Potencia de un \textit{Cociente}}\\
+      &= \frac{b^{-n}}{a^{-n}} && \text{Regla del sandwich}\\
+      &= \frac{a^n}{b^{-(-n)}} && \text{Notación}\\
+      &= \frac{a^n}{b^n}
+    \end{align*}
+    
+  \item Generalize la Potencia de un producto para $\Z$.
+  Sea $n\in \Z^-$,
+  \begin{align*}
+    (ab)^n &= \frac{1}{ab^{-n}} && \text{Notación ($-n\in \N$)}\\
+    &= \frac{1}{a^{-n}b^{-n}} && \text{Potencia de un producto}\\
+    &= a^nb^n && \text{Observación}
+  \end{align*}
+  
+  \item Generalize la Potencia de una potencia para $\Z$.
+  \begin{enumerate}[label=\roman*)]
+    \item Si $m\in \Z^-$ y $n\in \N$,
+    \begin{align*}
+      \qty(a^{m})^n &= \left(\frac{1}{a^{-m}}\right)^n && \text{Notación}\\
+      &= \frac{1^n}{\qty(a^{-m})^n} && \text{Potencia de un cociente}\\
+      &= \frac{1}{a^{-mn}} && \text{Potencia negativa}\\
+      &= a^{mn} && \text{Observación}
+    \end{align*}
+    \item Si $n\in \Z^-$ y $m\in \N$,
+    \begin{align*}
+      \qty(a^m)^n &= \frac{1}{\qty(a^m)^{-n}} && \text{Notación}\\
+      &= \frac{1}{\qty(a^{-mn})} && \text{Potencia negativa}\\
+      &= a^{mn} && \text{Notación}
+    \end{align*}
+    \item Si $n,m\in \Z^-$, se tiene que $mn\in \N$, en cuyo caso $a^{mn}= \qty(a^m)^n$, como hemos probado.
+  \end{enumerate}
+    
   \item Sea $a,b\neq 0$, entonces $\frac{a^n}{b^n} = \left(\frac{b}{a}\right)^{-n}$.
   \begin{proof}\leavevmode
     \begin{align*}
@@ -1221,37 +1301,9 @@ Sean $a,b\in \R$ y $m,n\in \Z$, demuestre lo siguiente:
     \end{align*}
   \end{proof}
   
-  
-  
-  \item Si $a\neq 0$, entonces $\frac{a^m}{a^n} = a^{m-n}$.
-  \begin{proof}\leavevmode
-    \begin{align*}
-      \frac{a^m}{a^n} &= a^m \cdot \frac{1}{a^n}\\
-      &= a^m \cdot a^{-n} && \text{Definición}\\
-      &= a^m \cdot a^{(-1)\cdot n} \\
-    \end{align*}
-  \end{proof}
+\end{enumerate}
 
-  \item Sea $a<b$ y $n\in \Z$, encuentre las condiciones que deben cumplirse para que $a^n< b^n$ o $b^n< a^n$.
-  \begin{enumerate}[label=\roman*)]
-    \item Si $n=0$, no se cumple ninguna condición, pues $a^0=b^0$.
-    \item Sea $n\in \N$,
-    \begin{enumerate}[label=\roman*)]
-      \item Si $n=1$,
-      \begin{align*}
-        a &< b && \text{Hip.}\\
-        a^1 &< b^1
-      \end{align*}
-      \item Supongamos que $a^k<b^k$, con $k\in \N$.
-      \item Notemos que
-      \begin{align*}
-        a^k &< b^k && \text{Hip. Ind.}\\
-        a^k \cdot a &< b^k 
-      \end{align*}
-    \end{enumerate}
-  \end{enumerate}
-  \end{enumerate}
-
+  
 \section*{Teorema binomial}
 
 \textbf{Definición:} Sea $(a_k)_{k\in \N\union\set{0}}$ una familia indexada de números reales; un polinómio es una expresión \textit{formal}: \[\sum_{k=0}^{n} a_k x^k\]
