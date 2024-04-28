@@ -1296,13 +1296,49 @@ Sean $a,b\in \R$ y $m, n\in \N\union\set{0}$, demuestre lo siguiente:
     \begin{align*}
       \frac{a^n}{b^n} &= \left(\frac{a}{b}\right)^n && \text{Potencia de un \textit{cociente}}\\
       &= \left(\left(\frac{b}{a}\right)^{-1}\right)^n && \text{Corolario de regla del sandwich}\\
-      &= \left(\frac{b}{a}\right)^{(-1)n} && \text{Potencia de un producto}\\
+      &= \left(\frac{b}{a}\right)^{-1\cdot n} && \text{Potencia de una potencia}\\
       &= \left(\frac{b}{a}\right)^{-n}
     \end{align*}
   \end{proof}
   
 \end{enumerate}
 
+\subsection*{Una nota sobre la potenciación}
+
+Hemos definidio la potencia a partir de un índice inferior igual a $1$, sin embargo, podemos extender la definición para índices $m, n\in \Z$ tales que $m\leq n$. Dada una función $f(n)=a$ tenemos que
+
+\[\prod_{i=m}^{n} a = a^{n-m+1}\]
+
+\begin{proof}\leavevmode
+  \begin{enumerate}[label=\Roman*)]
+    \item Si $m=n$, 
+    \begin{align*}
+      \prod_{i=m}^{n} a &= a && \text{Índices iguales del productorio}\\
+      &= a^1\\
+      &= a^{0+1}\\
+      &= a^{n-m+1}\\
+    \end{align*}
+    \item Si $m<n$,
+    \begin{enumerate}[label=\roman*)]
+      \item Se verifica para $n=m+1$,
+      \begin{align*}
+        \prod_{i=m}^{m+1} a &= a\cdot \prod_{i=m}^{m} a && \text{Productorio inverso}\\
+        &= a \cdot a^m && \text{Índices iguales del productorio}\\
+        &= a^{m+1} && \text{Potencias de misma base}\\
+        &= a^{(m+1)-m+1}
+      \end{align*}
+      \item Supongamos que se cumple para $n=m+k$, es decir, suponemos que \[\prod_{i=m}^{m+k} a = a^{m-(m+k)+1}\]
+      \item Notemos que
+      \begin{align*}
+        \prod_{i=m}^{m+k+1} a &= a\cdot \prod_{i=m}^{m+k} a && \text{Productorio inverso}\\
+        &= a\cdot a^{m-()+1} && \text{Hip. Ind.}\\
+        &= a^{m-(m+k)-1}\\
+        &= a^{m-(m+k)}\\
+        &= a^{m-(m+k+1)+1}
+      \end{align*}
+    \end{enumerate}
+  \end{enumerate}
+\end{proof}
   
 \section*{Teorema binomial}
 
