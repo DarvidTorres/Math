@@ -1332,13 +1332,15 @@ Hemos definidio la potencia a partir de un índice inferior igual a $1$, sin emb
       \begin{align*}
         \prod_{i=m}^{m+k+1} a &= a\cdot \prod_{i=m}^{m+k} a && \text{Productorio inverso}\\
         &= a\cdot a^{(m+k)-m+1} && \text{Hip. Ind.}\\
-        &= a^{m-(m+k)-1}\\
-        &= a^{m-(m+k)}\\
-        &= a^{m-(m+k+1)+1}
+        &= a^{(m+k+1)-m+1} && \text{Potencias de misma base}
       \end{align*}
     \end{enumerate}
   \end{enumerate}
 \end{proof}
+
+\textbf{Observación:} El lector debería verificar que para todo $m,n\in \Z$ tales que $m\leq n$, siempre se tiene que $n-m+1$ es un número natural.
+
+\textbf{Nota:} El lector notará que $n-m+1$ es el número de \textit{iteraciones}, o \textit{cíclos}, análogo al definido en la sumatoria.
   
 \section*{Teorema binomial}
 
