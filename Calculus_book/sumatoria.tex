@@ -1,4 +1,4 @@
-\part*{Notación sigma}
+\part*{Notación Sigma y Pi mayúsculas}
 
 Denotamos la suma de los elementos del conjunto $A$ como \[\sum_{a\in A} a\]
 
@@ -1338,7 +1338,10 @@ Hemos definidio la potencia a partir de un índice inferior igual a $1$, sin emb
   \end{enumerate}
 \end{proof}
 
-\textbf{Observación:} El lector debería verificar que para todo $m,n\in \Z$ tales que $m\leq n$, siempre se tiene que $n-m+1$ es un número natural.
+\textbf{Observación:} $n-m+1$ es un número natural, por lo que $a^{n-m+1}$ está bien definido.
+\begin{proof}\leavevmode
+  Dado que $m\leq n$, si $m=n$, se tiene que $n-m+1=1$, y si $m<n$ sigue que $n-m\in \R^+$, y por definición (de $\Z$), $n-m\in \N$, y así $n-m+1\in \N$.
+\end{proof}
 
 \textbf{Nota:} El lector notará que $n-m+1$ es el número de \textit{iteraciones}, o \textit{cíclos}, análogo al definido en la sumatoria.
   
@@ -1357,3 +1360,23 @@ del polinomio.
 \textbf{Definición:} Sea $n\in \Z$ y $0\leq n$, denotamos al factorial de $n$ como \[n!\defined \prod_{i=1}^{n}i\]
 
 \textbf{Observación:} $0!=1$.
+
+\textbf{Definición:} Sea $n,k\in \Z$ tales que $0\leq k\leq n$. Definimos al coeficiente binomial como sigue: \[\binom{n}{k}\defined \frac{n!}{k!(n-k)!}\]
+
+Decimos que ``(de) $n$ elije k". Otras notaciones para $\binom{n}{k}$ son $C(n, k), {}_nC_k, {}^nC_k, C_{n,k}$.
+
+\textbf{Observación:}
+
+\begin{itemize}
+  \item \[\binom{n}{0} = \frac{n!}{0!(n-0)!} = \frac{n!}{1(n)!} = 1\]
+  \item \[\binom{0}{k} = 0\]
+\end{itemize}
+
+\subsection*{Lista de ejercicios (LE)}
+
+Demuestre lo siguiente
+
+\begin{enumerate}[label=\alph*)]
+  \item \[\binom{n}{k} = \binom{n-1}{k-1}+\binom{n-1}{k}\]
+  \item \[(x\pm y)^n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
+\end{enumerate}
