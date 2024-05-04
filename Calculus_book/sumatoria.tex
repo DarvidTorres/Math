@@ -996,7 +996,7 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
       \end{enumerate}
     \end{proof}
     
-    \textbf{Nota:} En particular, para una función constante $g(n)=c$, se tiene que \[\prod_{n=a}^{b} \big(f(n) \cdot c\big) = \left(\prod_{n=a}^{b} f(n)\right) \left(\prod_{n=a}^{b} c\right)\]
+    \textbf{Observación:} En particular, para una función constante $g(n)=c$, se tiene que \[\prod_{n=a}^{b} \big(f(n) \cdot c\big) = \left(\prod_{n=a}^{b} f(n)\right) \left(\prod_{n=a}^{b} c\right)\]
     
     \item Si $f(n)\neq 0$ y $a\leq b$, entonces \[\prod_{n=a}^{b} \frac{f(n+1)}{f(n)} = \frac{f(b+1)}{f(a)} \qquad \text{Propiedad telescópica (del productorio)}\]
     \begin{proof}\leavevmode
@@ -1361,22 +1361,79 @@ del polinomio.
 
 \textbf{Observación:} $0!=1$.
 
-\textbf{Definición:} Sea $n,k\in \Z$ tales que $0\leq k\leq n$. Definimos al coeficiente binomial como sigue: \[\binom{n}{k}\defined \frac{n!}{k!(n-k)!}\]
+\textbf{Definición:} Sea $n,k\in \Z$. Definimos al coeficiente binomial, (de) $n$ elije $k$, como sigue:
 
-Decimos que ``(de) $n$ elije k". Otras notaciones para $\binom{n}{k}$ son $C(n, k), {}_nC_k, {}^nC_k, C_{n,k}$.
+\[ \binom{n}{k}\defined
+  \begin{cases}
+  \frac{n!}{k!(n-k)!} &\text{si} \quad 0\leq k\leq n\\
+  0 &\text{si} \quad k>n \ \text{, o} \ k<0
+  \end{cases}
+  \]
 
-\textbf{Observación:}
+Otras notaciones para $\binom{n}{k}$ son $C(n, k), {}_nC_k, {}^nC_k, C_{n,k}$.
 
-\begin{itemize}
-  \item \[\binom{n}{0} = \frac{n!}{0!(n-0)!} = \frac{n!}{1(n)!} = 1\]
-  \item \[\binom{0}{k} = 0\]
-\end{itemize}
+\textbf{Observación:} \[\binom{n}{0} = \frac{n!}{0!(n-0)!} = \frac{n!}{n!} = 1\]
 
 \subsection*{Lista de ejercicios (LE)}
 
 Demuestre lo siguiente
 
 \begin{enumerate}[label=\alph*)]
-  \item \[\binom{n}{k} = \binom{n-1}{k-1}+\binom{n-1}{k}\]
+  \item \[n! = n\cdot (n-1)! \qquad \text{(Recurrencia del factorial)}\]
+  \begin{proof}\leavevmode
+    \begin{align*}
+      n! &= \prod_{i=1}^{n} i && \text{Definición}\\
+      &= n\cdot \prod_{i=1}^{n-1} i && \text{Productorio inverso}\\
+      &= n\cdot (n-1)! && \text{Definición}
+    \end{align*}
+  \end{proof}
+  \textbf{Observación:} En particular $(m+1)! = m!(m+1)$.
+  
+  \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
+  \item $(n-1)! = \frac{n!}{n}$.
+  \begin{proof}\leavevmode
+    $n! = n(n-1)! \Rightarrow (n-1)! = \frac{n!}{n}$.
+  \end{proof}
+  \end{enumerate}
+  
+  \item \[\binom{n}{k} = \binom{n}{n-k} \qquad \text{(Simetría del coeficiente binomial)}\]
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Si $k<0$, sigue que $n-k>n$. Similarmente, si $k>n$, entonces $n-k<0$. En cualquier caso, \[{n \choose k} = 0 = {n \choose {n-k}}\]
+      \item Si $0\leq k \leq n$,
+      \begin{align*}
+        \binom{n}{k} &= \frac{n!}{k!(n-k)!} && \text{Definición}\\
+        &= \frac{n!}{(n-k)!k!}\\
+        &= \frac{n!}{(n-k)!(n-n+k)!}\\
+        &= \frac{n!}{(n-k)!(n-(n-k)!)}\\
+        &= \binom{n}{n-k} && \text{Definición}
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+  
+  \item \[\binom{n}{k} = \binom{n-1}{k-1}+\binom{n-1}{k} \qquad \text{(Formula recursiva del coeficiente binomial)}\]
+  
+  \item \[\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1} \qquad \text{(Teorema de Pascal)}\]
+  \begin{proof}\leavevmode
+    \begin{align*}
+    \binom{n+1}{k} &= \frac{(n+1)!}{k!(n+1-k)!} && \text{Definición}\\
+    &= \frac{(n+1)\cdot \big((n+1)-1\big)!}{k!(n+1-k)\cdot \big((n+1-k)-1\big)!} && \text{Recurrencia del factorial}\\
+    &= \frac{(n+1)\cdot n!}{k!(n+1-k)(n-k)!}\\
+    &= \frac{n!}{k! (n-k)!} \cdot \frac{n+1}{n-k+1} \\
+    &= \frac{n!}{k! (n-k)!} \cdot \frac{n+1+k-k}{n-k+1} \\
+    &= \frac{n!}{k! (n-k)!} \cdot \frac{(n-k+1)+k}{n-k+1} \\
+    &= \frac{n!}{k!(n-k)!}\cdot \left(\frac{n-k+1}{n-k+1}+\frac{k}{n-k+1}\right) \\
+    &= \frac{n!}{k!(n-k)!} \cdot \left(1+\frac{k}{n-k+1}\right) \\
+    &= \frac{n!}{k!(n-k)!} + \frac{n!}{k!(n-k)!}\cdot \frac{k}{n-k+1} && \text{Distributividad}\\
+    &= \frac{n!}{k!(n-k)!} + \frac{n!}{k\cdot (k-1)!(n-k)!}\cdot \frac{k}{n-k+1} && \text{Recurrencia del factorial}\\
+    &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k-1)!(n-k)!(n-k+1)}\\
+    &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k-1)!(n-k+1)(n-k)!}\\
+    &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k-1)!(n-k+1)\big((n-k+1)-1\big)!}\\
+    &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k-1)!(n-k+1)!} && \text{Recurrencia del factorial}\\
+    &= \binom{n}{k} + \binom{n}{k-1} && \text{Definición}
+    \end{align*}
+  \end{proof}
+  
+  \item \[\binom{n}{k} = \prod_{i=1}^{k} \frac{n+1-i}{i} \qquad \text{(Formula multiplicativa del coeficiente binomial)}\]
   \item \[(x\pm y)^n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
 \end{enumerate}
