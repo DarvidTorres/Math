@@ -1366,19 +1366,22 @@ del polinomio.
 \[ \binom{n}{k}\defined
   \begin{cases}
   \frac{n!}{k!(n-k)!} &\text{si} \quad 0\leq k\leq n\\
-  0 &\text{si} \quad k>n \ \text{, o} \ k<0
+  0 &\text{si} \quad n<k \ \text{, o} \ k<0
   \end{cases}
   \]
 
 Otras notaciones para $\binom{n}{k}$ son $C(n, k), {}_nC_k, {}^nC_k, C_{n,k}$.
-
-\textbf{Observación:} \[\binom{n}{0} = \frac{n!}{0!(n-0)!} = \frac{n!}{n!} = 1\]
 
 \subsection*{Lista de ejercicios (LE)}
 
 Demuestre lo siguiente
 
 \begin{enumerate}[label=\alph*)]
+  \item Si $0\leq n$, \[\binom{n}{n} = \binom{n}{0} = 1\]
+  \begin{proof}\leavevmode
+    \[\binom{n}{n} = \frac{n!}{n!(n-n)!} = \frac{n!}{n!(0)!} = \frac{n!}{n!} = 1 = \frac{n!}{n!} =\frac{n!}{0!(n-0)!} = \binom{n}{0}\]
+  \end{proof}
+  
   \item \[n! = n\cdot (n-1)! \qquad \text{(Recurrencia del factorial)}\]
   \begin{proof}\leavevmode
     \begin{align*}
@@ -1406,14 +1409,29 @@ Demuestre lo siguiente
         &= \frac{n!}{(n-k)!k!}\\
         &= \frac{n!}{(n-k)!(n-n+k)!}\\
         &= \frac{n!}{(n-k)!(n-(n-k)!)}\\
-        &= \binom{n}{n-k} && \text{Definición}
+        &= \binom{n}{n-k} && \text{Definición} \qedhere
       \end{align*}
     \end{enumerate}
   \end{proof}
   
-  \item \[\binom{n}{k} = \binom{n-1}{k-1}+\binom{n-1}{k} \qquad \text{(Formula recursiva del coeficiente binomial)}\]
+  \item \[\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}\qquad \text{(Formula recursiva del coeficiente binomial)}\]
+  \begin{proof}\leavevmode
+    \begin{align*}
+      \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!}{k!(n-k-1)!}+ \frac{(n-1)!}{(k-1)!\big((n-1)-(k-1)\big)!} && \text{Definición}\\
+      &= \frac{(n-1)!}{k!(n-k-1)!} + \frac{(n-1)!}{(k-1)!(n-1-k+1)!}\\
+      &= \frac{(n-1)!}{k!(n-k-1)!} + \frac{(n-1)!}{(k-1)!(n-k)!}\\
+      &= \frac{(n-1)!}{k!(n-k-1)!} \cdot \frac{n-k}{n-k} + \frac{(n-1)!}{(k-1)!(n-k)!} \cdot \frac{k}{k}\\
+      &= \frac{(n-k)(n-1)!}{k!(n-k)(n-k-1)!} + \frac{k(n-1)!}{k(k-1)!(n-k)!}\\
+      &= \frac{(n-k)(n-1)!}{k!(n-k)!} + \frac{k(n-1)!}{k!(n-k)!}&& \text{Rec. Factorial}\\
+      &= \frac{(n-k)(n-1)!+k(n-1)!}{k!(n-k)!}\\
+      &= \frac{\big((n-k)+k\big)(n-1)!}{k!(n-k)!} && \text{Distribución}\\
+      &= \frac{n(n-1)!}{k!(n-k)!}\\
+      &= \frac{n!}{k!(n-k)!}&& \text{Rec. Factorial}\\
+      &= \binom{n}{k} && \text{Definición}
+    \end{align*}
+  \end{proof}
   
-  \item \[\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1} \qquad \text{(Teorema de Pascal)}\]
+  \item \[\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1} \qquad \text{(Regla de Pascal)}\]
   \begin{proof}\leavevmode
     \begin{align*}
     \binom{n+1}{k} &= \frac{(n+1)!}{k!(n+1-k)!} && \text{Definición}\\
@@ -1431,6 +1449,25 @@ Demuestre lo siguiente
     &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k-1)!(n-k+1)\big((n-k+1)-1\big)!}\\
     &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k-1)!(n-k+1)!} && \text{Recurrencia del factorial}\\
     &= \binom{n}{k} + \binom{n}{k-1} && \text{Definición}
+    \end{align*}
+  \end{proof}
+  
+  \item \[\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}\]
+  \begin{proof}\leavevmode
+    \begin{align*}
+      \binom{n}{k} + \binom{n}{k+1} &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k+1)!\big(n-(k+1)\big)!} && \text{Definición}\\
+      &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k+1)!(n-k-1)!} \\ 
+      &= \frac{n!}{k!(n-k)(n-k-1)!} + \frac{n!}{(k+1)k!(n-k-1)!}&& \text{Rec. del factorial} \\
+      &= \left(\frac{1}{n-k} + \frac{1}{k+1}\right) \frac{n!}{k!(n-k-1)!}\\
+      &= \left(\frac{k+1}{(n-k)(k+1)} + \frac{n-k}{(n-k)(k+1)}\right) \frac{n!}{k!(n-k-1)!} \\
+      &= \frac{(k+1)+(n-k)}{(n-k)(k+1)} \cdot \frac{n!}{k!(n-k-1)!}\\
+      &= \frac{n+1+k-k}{(n-k)(k+1)} \cdot \frac{n!}{k!(n-k-1)!} \\ 
+      &= \frac{n+1}{(n-k)(k+1)} \cdot \frac{n!}{k!(n-k-1)!} \\ 
+      &= \frac{(n+1)n!}{(k+1)k!(n-k)(n-k-1)!}\\
+      &= \frac{(n+1)!}{(k+1)!(n-k)!} && \text{Rec. del factorial}\\
+      &= \frac{(n+1)!}{(k+1)!(n+1-k-1)!}\\
+      &= \frac{(n+1)!}{(k+1)!\big((n+1)-(k+1)\big)!}\\
+      &= \binom{n+1}{k+1}
     \end{align*}
   \end{proof}
   
