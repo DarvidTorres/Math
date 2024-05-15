@@ -1359,6 +1359,8 @@ del polinomio.
 
 \textbf{Definición:} Sea $n\in \Z$ y $0\leq n$, denotamos al factorial de $n$ como \[n!\defined \prod_{i=1}^{n}i\]
 
+\textbf{Nota:} Hemos definido al factorial para números enteros no negativos para evitar expresiones de la forma $-n!, n\in \Z^+$.
+
 \textbf{Observación:} $0!=1$.
 
 \textbf{Definición:} Sea $n,k\in \Z$. Definimos al coeficiente binomial, (de) $n$ elije $k$, como sigue:
@@ -1374,15 +1376,10 @@ Otras notaciones para $\binom{n}{k}$ son $C(n, k), {}_nC_k, {}^nC_k, C_{n,k}$.
 
 \subsection*{Lista de ejercicios (LE)}
 
-Demuestre lo siguiente
+Sea $n,k\in \Z$. Demuestre lo siguiente
 
 \begin{enumerate}[label=\alph*)]
-  \item Si $0\leq n$, \[\binom{n}{n} = \binom{n}{0} = 1\]
-  \begin{proof}\leavevmode
-    \[\binom{n}{n} = \frac{n!}{n!(n-n)!} = \frac{n!}{n!(0)!} = \frac{n!}{n!} = 1 = \frac{n!}{n!} =\frac{n!}{0!(n-0)!} = \binom{n}{0}\]
-  \end{proof}
-  
-  \item \[n! = n\cdot (n-1)! \qquad \text{(Recurrencia del factorial)}\]
+  \item Sea $n\geq 0$, \[n! = n\cdot (n-1)! \qquad \text{(Recurrencia del factorial)}\]
   \begin{proof}\leavevmode
     \begin{align*}
       n! &= \prod_{i=1}^{n} i && \text{Definición}\\
@@ -1390,19 +1387,28 @@ Demuestre lo siguiente
       &= n\cdot (n-1)! && \text{Definición}
     \end{align*}
   \end{proof}
-  \textbf{Observación:} En particular $(m+1)! = m!(m+1)$.
+  \textbf{Observación:}
+  \begin{itemize}
+    \item $(m+1)! = m!(m+1)$.
+    \item $n! = n(n-1)! \Rightarrow (n-1)! = \frac{n!}{n}$.
+  \end{itemize}
   
-  \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
-  \item $(n-1)! = \frac{n!}{n}$.
-  \begin{proof}\leavevmode
-    $n! = n(n-1)! \Rightarrow (n-1)! = \frac{n!}{n}$.
+  
+  \item \[\binom{n}{n} = \binom{n}{0}\]
+  \begin{proof}\leavevmode Por definición,
+    \begin{enumerate}[label=\roman*)]
+      \item Si $n<0$, $\binom{n}{n} = 0 = \binom{n}{0}$.
+      \item Si $0\leq n$, \[\binom{n}{n} = \frac{n!}{n!(n-n)!} = \frac{n!}{n!(0)!} = \frac{n!}{n!} = 1 = \frac{n!}{n!} =\frac{n!}{0!(n-0)!} = \binom{n}{0}\]
+    \end{enumerate}
   \end{proof}
-  \end{enumerate}
   
   \item \[\binom{n}{k} = \binom{n}{n-k} \qquad \text{(Simetría del coeficiente binomial)}\]
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\roman*)]
-      \item Si $k<0$, sigue que $n-k>n$. Similarmente, si $k>n$, entonces $n-k<0$. En cualquier caso, \[{n \choose k} = 0 = {n \choose {n-k}}\]
+      \item Si $n-k<0$, $\binom{n}{n-k}=0$, y se tiene que, $n<k$, por lo que $\binom{n}{k}=0$.
+      \item Si $n<n-k$, $\binom{n}{n-k}=0$, y se tiene que, $k<0$, por lo que $\binom{n}{k}=0$.
+      \item Si $k<0$, ${n \choose k} = 0$. Además, se tiene que $-k>0$, por lo que $n+(-k)=n-k>n$, es decir, ${n \choose {n-k}} = 0$.
+      \item Si $k>n$, ${n \choose k} = 0$. Además, $n-k<0$, es decir, ${n \choose {n-k}} = 0$.
       \item Si $0\leq k \leq n$,
       \begin{align*}
         \binom{n}{k} &= \frac{n!}{k!(n-k)!} && \text{Definición}\\
@@ -1414,8 +1420,19 @@ Demuestre lo siguiente
     \end{enumerate}
   \end{proof}
   
-  \item \[\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}\qquad \text{(Formula recursiva del coeficiente binomial)}\]
-  \begin{proof}\leavevmode
+  \item Encuentre las condiciones que deben cumplirse para que \[\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}\qquad \text{(Formula recursiva del coeficiente binomial)}\]
+  \begin{enumerate}[label=\Roman*)]
+    \item Si $k-1<0$, $\binom{n-1}{k-1}=0$ y, se tiene que, $k<1$. Luego,
+    \begin{enumerate}[label=\roman*)]
+      \item Si $k<0$, entonces $\binom{n}{k}=0=\binom{n-1}{k}$.
+      \item Si $k=0$, no podemos determinar que se verifique la igualdad.
+    \end{enumerate}
+    \item Si $n-1<k-1$, $\binom{n-1}{k-1}=0$ y, se tiene que, $n<k$, por lo que $\binom{n}{k}=0$. Como $k-1<k$ y $n-1<k-1$, sigue que $n-1<k$, por lo que $\binom{n-1}{k}=0$.
+    \item Si $n-1<k$, no podemos determinar que se verifique la igualdad.
+    \item Si $k<0$, $\binom{n}{k}=0=\binom{n-1}{k}$. También, 
+    $k-1<k$, esto es, $k-1<0$, por lo que $\binom{n-1}{k-1}=0$.
+    \item Si $n<k$, $\binom{n}{k}=0$ y $n-1<k-1$, por lo que $\binom{n-1}{k-1}=0$. Asimismo, $n-1<k-1<k$, osea $n-1<k$, y así $\binom{n-1}{k}=0$.
+    \item Si $0\leq k \leq n$,
     \begin{align*}
       \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!}{k!(n-k-1)!}+ \frac{(n-1)!}{(k-1)!\big((n-1)-(k-1)\big)!} && \text{Definición}\\
       &= \frac{(n-1)!}{k!(n-k-1)!} + \frac{(n-1)!}{(k-1)!(n-1-k+1)!}\\
@@ -1429,9 +1446,9 @@ Demuestre lo siguiente
       &= \frac{n!}{k!(n-k)!}&& \text{Rec. Factorial}\\
       &= \binom{n}{k} && \text{Definición}
     \end{align*}
-  \end{proof}
+  \end{enumerate}
   
-  \item \[\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1} \qquad \text{(Regla de Pascal)}\]
+  \item Si $0\leq k \leq n$, \[\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1} \qquad \text{(Regla de Pascal)}\]
   \begin{proof}\leavevmode
     \begin{align*}
     \binom{n+1}{k} &= \frac{(n+1)!}{k!(n+1-k)!} && \text{Definición}\\
@@ -1452,7 +1469,7 @@ Demuestre lo siguiente
     \end{align*}
   \end{proof}
   
-  \item \[\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}\]
+  \item Si $0\leq k \leq n$, \[\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}\]
   \begin{proof}\leavevmode
     \begin{align*}
       \binom{n}{k} + \binom{n}{k+1} &= \frac{n!}{k!(n-k)!} + \frac{n!}{(k+1)!\big(n-(k+1)\big)!} && \text{Definición}\\
