@@ -379,11 +379,9 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   
   % \item \[\sum_{n=a}^{b} \frac{f(n)}{g(n)} \neq \frac{\sum_{n=a}^{b} f(n)}{\sum_{n=a}^{b}g(n)}\]
   
-  
+  % \item Sea $c,d\in\R$, si $a\leq b$, entonces \[\sum_{n=a}^b (c+nd) = (b-a+1)c + \]
 
-  \item Sea $c\in \R$, si $a\leq b$, entonces \begin{align*}
-    \sum_{n=a}^b c &= (b-a+1)c
-  \end{align*}
+  \item Sea $c\in \R$, si $a\leq b$, entonces \[\sum_{n=a}^b c = (b-a+1)c\]
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\Roman*)]
       \item Se comprueba para $a=b$, \begin{align*}
@@ -1347,7 +1345,13 @@ Hemos definidio la potencia a partir de un índice inferior igual a $1$, sin emb
   
 \section*{Teorema binomial}
 
-\textbf{Definición:} Sea $(a_k)_{k\in \N\union\set{0}}$ una familia indexada de números reales; un polinómio es una expresión \textit{formal}: \[\sum_{k=0}^{n} a_k x^k\]
+\textbf{Definición:} Sea $a$ una función:
+\begin{align*}
+ a: \ \N\union\set{0} &\to \R \\
+ \  k &\mapsto a_k
+\end{align*}
+
+Un polinómio es una expresión \textit{formal}: \[\sum_{k=0}^{n} a_k x^k\]
 Decimos que
 \begin{itemize}
   \item $a_k x^k$ es el k-ésimo término,
@@ -1393,7 +1397,6 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
     \item $n! = n(n-1)! \Rightarrow (n-1)! = \frac{n!}{n}$.
   \end{itemize}
   
-  
   \item \[\binom{n}{n} = \binom{n}{0}\]
   \begin{proof}\leavevmode Por definición,
     \begin{enumerate}[label=\roman*)]
@@ -1425,10 +1428,10 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
     \item Si $k-1<0$, $\binom{n-1}{k-1}=0$ y, se tiene que, $k<1$. Luego,
     \begin{enumerate}[label=\roman*)]
       \item Si $k<0$, entonces $\binom{n}{k}=0=\binom{n-1}{k}$.
-      \item Si $k=0$, no podemos determinar que se verifique la igualdad.
+      \item Si $k=0$, se tiene que $\binom{n}{k}=\binom{n}{0}$, el cual puede ser igual a $0$ o a $1$ dependiendo del valor de $n$, por lo que no podemos determinar que se verifique la igualdad.
     \end{enumerate}
     \item Si $n-1<k-1$, $\binom{n-1}{k-1}=0$ y, se tiene que, $n<k$, por lo que $\binom{n}{k}=0$. Como $k-1<k$ y $n-1<k-1$, sigue que $n-1<k$, por lo que $\binom{n-1}{k}=0$.
-    \item Si $n-1<k$, no podemos determinar que se verifique la igualdad.
+    \item Si $n-1<k$, $\binom{n-1}{k}=0$
     \item Si $k<0$, $\binom{n}{k}=0=\binom{n-1}{k}$. También, 
     $k-1<k$, esto es, $k-1<0$, por lo que $\binom{n-1}{k-1}=0$.
     \item Si $n<k$, $\binom{n}{k}=0$ y $n-1<k-1$, por lo que $\binom{n-1}{k-1}=0$. Asimismo, $n-1<k-1<k$, osea $n-1<k$, y así $\binom{n-1}{k}=0$.

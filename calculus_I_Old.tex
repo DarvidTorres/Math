@@ -1555,17 +1555,35 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  Por definición $b-a\in \R^+$ y $d-c\in \R^+$. Por cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c)\in \R^+$. Luego, $(b-a)+(d-c)=b+d-a-c=b+d-(a+c)$. Por lo que $b+d-(a+c)=\in \R^+$, es decir, $a+c<b+d$.
  \end{proof}
  \textbf{Observación:} La suma \textit{vertical} de desigualdades preserva el orden.
- %\textbf{Nota:} No hay doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de este hecho únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
- %Esta proposición difiere de la ley de la cancelación (de la suma en desigualdades) ya que no se satisface una doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de esta hipótesis únicamente, que $a<b$. Ej. $a=4, c=0, b=3, d=4$, cumplen la hipótesis $a+c=4+0=4<7=3+4=b+d$, pero $a=4<3=b$ es una contradicción.
+ 
+ \textbf{Nota:} No hay doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de este hecho únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
 
- \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
-  \item Si $0<a$ y $0<b$, entonces $0<a+b$.
+ \bfit{Corolario:}\begin{enumerate}[label=\Roman*)]
+  \item Si $a<b$ y $c<d$, entonces $c-b<d-a$.
+  \begin{align*}
+    a + c &< b +d && \text{Suma \textit{vertical} de desigualdades}\\
+    c - b &< d - a
+  \end{align*}
   
-  Por este teorema, $0+0=0<a+b$.
-%
-  \item Si $a<0$ y $b<0$, entonces $a+b<0$.% (Cerradura de la suma en $\R^-$).
+  Nota: La desigualdad puede plantearse de las siguientes maneras (el lector debería verificar este hecho):
+  \begin{enumerate}[label=\roman*)]
+    \item $a<b\leq c < d$.
+    \item $a<c \leq b < d$
+    \item $a\leq c < b \leq d$
+    \item $a\leq c < d \leq b$
+    \item $c\leq a < b \leq d$
+    \item $c\leq a < d \leq b$
+    \item $c<a\leq d < b$
+    \item $c<d\leq a <b$
+  \end{enumerate}
+  En particular, llamaermos a la \textit{forma} $a<b<c<d$, desigualdad \textit{interna}.
+%   \item Si $0<a$ y $0<b$, entonces $0<a+b$.
   
-  Por este teorema, $a+b<0=0+0$.
+%   Por este teorema, $0+0=0<a+b$.
+% %
+%   \item Si $a<0$ y $b<0$, entonces $a+b<0$.% (Cerradura de la suma en $\R^-$).
+  
+%   Por este teorema, $a+b<0=0+0$.
  \end{enumerate}
 
  \item Sea $a<b$. Encuentre las condiciones que deben cumplirse para que $a<b<a+b$, $a<a+b<b$, o $a+b<a<b$.
