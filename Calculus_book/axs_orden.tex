@@ -723,21 +723,32 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     \item Si $-1<a<0$ y $-1<b<0$, entonces $0<ab<1$.
   \end{itemize}
 
- \item Sea $a<b$ y $c<d$, encuentre las condiciones que deben cumplirse para que $ac<bd$ o $bd<ac$.
-  
+ \item Sea $a<b$ y $c<d$, encuentre las condiciones que deben cumplirse para que $ac<bd$ o $bd<ac$. (Multiplicación \textit{vertical} de desigualdades)
+ 
+ Sin pérdida de generalidad,
  \begin{enumerate}[label=\Roman*)]
-   \item Sea $0<a<b$.
+   \item Si $0<a<b$,
    \begin{enumerate}[label=\roman*)]
-    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
-    \item Si $c<0<d$, entonces $c<d \Rightarrow ac < ad$ y $a<b \Rightarrow ad<bd$. Por transitividad, $ac<bd$.
-    \item Si $c<d<0$, entonces $a<b \Rightarrow bc<ac$ y $c<d \Rightarrow ac<ad$. Por transitividad, $bc<ad$.
+    \item y $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
+    \item y $c<0<d$, entonces $c<d \Rightarrow ac < ad$ y $a<b \Rightarrow ad<bd$. Por transitividad, $ac<bd$.
+    \item y $c<d<0$,  es posible tener ambos resultados, por lo que descartamos este caso. (El lector debería verificar este hecho).
    \end{enumerate}
-   \item Sea $a<0<b$.
+   \item Si $a<0<b$,
    \begin{enumerate}[label=\roman*)]
-    \item Si $0<c<d$, entonces $a<b \Rightarrow ac<bc$ y $c<d \Rightarrow bc<bd$. Por transitividad, $ac<bd$.
-    \item Si $c<0<d$, entonces 
+    \item y $c<0<d$, es posible tener ambos resultados, por lo que descartamos este caso. (El lector debería verificar este hecho).
+    \item y $c<d<0$, entonces $a<b \rightarrow bd<ad$ y $c<d \rightarrow ad<ac$. Por transitividad, $bd<ac$.
+   \end{enumerate}
+   \item Si $a<b<0$,
+   \begin{enumerate}[label=\roman*)]
+    \item y $c<d<0$, es posible tener ambos resultados, por lo que descartamos este caso. (El lector debería verificar este hecho).
    \end{enumerate}
  \end{enumerate}
+ 
+ \bfit{Conclusión:} Si son todos positivos, se conserva el orden, es decir, si $a<b$ y $c<d$, entonces $ac<bd$. Luego, sin pérdida de generalidad,
+ \begin{itemize}
+  \item Si $0<a<b$ y $c<0<d$, entonces $ac<bd$.
+  \item Si $a<b<0$ y $c<0<d$, entonces $bd<ac$.
+ \end{itemize}
 
  \item Sea $\frac{a}{b}<\frac{c}{d}$. Encuentre las condiciones que deben cumplirse para que $\frac{a}{b}<\frac{a+c}{b+d}<\frac{c}{d}$. (Mediante).
 
