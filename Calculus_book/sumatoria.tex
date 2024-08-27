@@ -1,6 +1,6 @@
-\part*{Notación Sigma y Pi mayúsculas}
+\part*{Sigma y Pi mayúsculas}
 
-Denotamos la suma de los elementos del conjunto $A$ como \[\sum_{a\in A} a\]
+Denotamos la suma de los elementos del conjunto $A\subseteq \R$ como \[\sum_{a\in A} a\]
 
 \textbf{Ejemplos:}
 
@@ -33,12 +33,12 @@ de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}
 
 \begin{enumerate}
   \item \begin{align*}
-    \sum_{i=2}^{5} i^2 &= (2)^2 + \sum_{i=3}^{5} i^2\\
-    &= 4 + (3)^2 + \sum_{i=4}^{5} i^2\\
-    &= 4 + 9 + (4)^2 + \sum_{i={\color{magenta}5}}^{{\color{magenta}5}} i^2 && (*)\\
-    &= 4 + 9 + 16 + ({\color{magenta}5})^2 + \sum_{i=6}^{5} i^2\\
-    &= 4 + 9 + 16 + 25 + 0\\
-    &= 54
+    \sum_{i=2}^{5} i &= (2) + \sum_{i=3}^{5} i\\
+    &= 2 + (3) + \sum_{i=4}^{5} i\\
+    &= 2 + 3 + (4) + \sum_{i={\color{magenta}5}}^{{\color{magenta}5}} i && (*)\\
+    &= 2 + 3 + 4 + ({\color{magenta}5}) + \sum_{i=6}^{5} i\\
+    &= 2 + 3 + 4 + 5 + 0\\
+    &= 14
   \end{align*}
 
   \item \begin{align*}
@@ -49,14 +49,14 @@ de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}
     &= -12
   \end{align*}
 
-  \item \begin{align*}
-    \sum_{n=0}^{3} 2^n &= 2^0 + \sum_{n=1}^{3} 2^n\\
-    &= 1 + 2^1 + \sum_{n=2}^{3} 2^n\\
-    &= 1 + 2 + \sum_{n={\color{magenta}3}}^{{\color{magenta}3}} 2^n  && (\ddag)\\
-    &= 1 + 2 + 2^{\color{magenta}3} + \sum_{n=4}^{3} 2^n\\
-    &= 1 + 2 + 8 + 0\\
-    &= 11
-  \end{align*}
+  % \item \begin{align*}
+  %   \sum_{n=0}^{3} 2^n &= 2^0 + \sum_{n=1}^{3} 2^n\\
+  %   &= 1 + 2^1 + \sum_{n=2}^{3} 2^n\\
+  %   &= 1 + 2 + \sum_{n={\color{magenta}3}}^{{\color{magenta}3}} 2^n  && (\ddag)\\
+  %   &= 1 + 2 + 2^{\color{magenta}3} + \sum_{n=4}^{3} 2^n\\
+  %   &= 1 + 2 + 8 + 0\\
+  %   &= 11
+  % \end{align*}
 
   \item \begin{align*}
     \sum_{j=0}^{-1} j &= 0
@@ -81,7 +81,7 @@ de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}
 \end{enumerate}
 
 
-  El lector notará que, en el caso en que los límites inferior y superior son iguales ($*, \dag, \ddag$), la imagen de la sumatoria es el elemento típico \textit{evaluado} en el índice, es decir, tenemos la siguiente
+  El lector notará que, en el caso en que los límites inferior y superior son iguales ($*, \dag$), la imagen de la sumatoria es el elemento típico \textit{evaluado} en el índice, es decir, tenemos la siguiente
 
   \textbf{Observación:} Si $a=b$, entonces
   \begin{align*}
@@ -246,7 +246,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
         \begin{align*}
           \sum_{n=a}^{a+1} \Bigl(f(n) + g(n)\Bigr) &= \Bigl(f(a) + g(a)\Bigr) + \sum_{n=a+1}^{a+1} \Bigl(f(n) + g(n)\Bigr)\\
           &= f(a) + g(a) + \Bigl(f(a+1) + g(a+1)\Bigr)\\
-          &= \Bigl(f(a) + f(a+1)\Bigr) + \Bigl(g(a) + g(a+1)\Bigr) && \text{Asociatividad (de la suma)}\\
+          &= \Bigl(f(a) + f(a+1)\Bigr) + \Bigl(g(a) + g(a+1)\Bigr) && \text{Asociatividad}\\
           &= \Biggl(f(a) + \sum_{n=a+1}^{a+1} f(n)\Biggr) + \Biggl(g(a) + \sum_{n=a+1}^{a+1} g(n)\Biggr)\\
           &= \sum_{n=a}^{a+1} f(n) + \sum_{n=a}^{a+1} g(n)
         \end{align*}
@@ -257,7 +257,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
         \item Notemos que
         \begin{align*}
           \sum_{n=a}^{a+k+1} \Bigl(f(n) + g(n)\Bigr) &= \Bigl(f(a+k+1) + g(a+k+1)\Bigr) + \sum_{n=a}^{a+k} \Bigl(f(n) + g(n)\Bigr)\\
-          &= f(a+k+1) + g(a+k+1) + \sum_{n=a}^{a+k} f(n) + \sum_{n=a}^{a+k} g(n) && \text{Hip. Inducción}\\
+          &= f(a+k+1) + g(a+k+1) + \sum_{n=a}^{a+k} f(n) + \sum_{n=a}^{a+k} g(n) && \text{Hip. Ind.}\\
           &= \Biggl(f(a+k+1) + \sum_{n=a}^{a+k} f(n)\Biggr) + \Biggl(g(a+k+1) + \sum_{n=a}^{a+k} g(n)\Biggr)\\
           &= \sum_{n=a}^{a+k+1} f(n) + \sum_{n=a}^{a+k+1} g(n)
         \end{align*}
@@ -305,6 +305,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
           &= \sum_{n=a}^{b} \Bigl(s\cdot f(n) + t\cdot g(n)\Bigr) && \text{Asociatividad} \qedhere
         \end{align*}
       \end{proof}
+    
       \item \[\sum_{n=a}^{b} f(n) - \sum_{n=a}^{b} g(n) = \sum_{n=a}^{b} \Bigl(f(n) - g(n)\Bigr)\]
       \begin{proof}
         \begin{align*}
@@ -437,7 +438,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \end{proof}
   \textbf{Nota:} En esta proposición se restringe que $a\leq b$, pues si $a>b$, se tiene que $\sum_{n=a}^{b} \Bigl(f(n+1)-f(n)\Bigr) = 0 \neq f(b+1) - f(a)$ únicamente el caso en que $f(b+1)=f(a)$, se cumpliría la igualdad con $a>b$.
   
-  \item Si $s\leq j\leq t$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Partir la suma)}\]
+  \item Si $s\leq j\leq t$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Separar la suma)}\]
   
   \textbf{Nota:} Alternativamente podemos escribir esta igualdad como sigue: Si $s\leq j\leq t$, entonces $\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j-1}f(n) + \sum_{n=j}^{t}f(n)$. El lector debería verificar esta equivalencia
 
@@ -502,15 +503,15 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \item $\sum_{n=s}^{j} f(n) + \sum_{n=j+1}^{t} f(n) = f(n) + 0 = f(n)$.
     \item $\sum_{n=s}^{t} f(n) = 0$.
     
-    El lector notará que para partir la suma en este caso, debe cumplirse que $f(n)=0$, pero esto dependerá de cada función y de los íncides, por lo que en general, $f(n)\neq 0$, por ejemplo para cualquier sumatoria $\sum_{n=a}^{b} c$, donde $c\neq 0$.
+    El lector notará que para separar la suma en este caso, debe cumplirse que $f(n)=0$, pero esto dependerá de cada función y de los íncides, por lo que en general, $f(n)\neq 0$, por ejemplo para cualquier sumatoria $\sum_{n=a}^{b} c$, donde $c\neq 0$.
 
   \end{enumerate}
 
   \bfit{Corolario:} \[\sum_{n=a}^{b}f(n) = \sum_{n=0}^{b} f(n) - \sum_{n=0}^{a-1} f(n)\]
   \begin{proof}\leavevmode
     \begin{align*}
-      \sum_{n=0}^{b} f(n) - \sum_{n=0}^{a-1} f(n) &= \sum_{n=0}^{a} f(n) + \sum_{a+1}^{b} f(n) - \sum_{n=0}^{a-1}f(n) && \text{Partir la suma}\\
-      &= \sum_{n=0}^{a-1} f(n) + \sum_{n=a}^{a} f(n) + \sum_{a+1}^{b} f(n) - \sum_{n=0}^{a-1}f(n) && \text{Partir la suma}\\
+      \sum_{n=0}^{b} f(n) - \sum_{n=0}^{a-1} f(n) &= \sum_{n=0}^{a} f(n) + \sum_{a+1}^{b} f(n) - \sum_{n=0}^{a-1}f(n) && \text{Separar la suma}\\
+      &= \sum_{n=0}^{a-1} f(n) + \sum_{n=a}^{a} f(n) + \sum_{a+1}^{b} f(n) - \sum_{n=0}^{a-1}f(n) && \text{Separar la suma}\\
       &= \sum_{n=a}^{a} f(n) + \sum_{a+1}^{b} f(n)\\
       &= \sum_{n=a}^{b}f(n)
     \end{align*}
@@ -631,18 +632,19 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     
   \end{enumerate}
 
-  \item Sea $c\in \Z$, $m\in \R$, \[\sum_{n=a}^b f(m-n) = \sum_{n=a+c}^{b+c} f\bigl(m-(n-c)\bigr) \qquad \text{(Cambio de límites 2)}\]
+  \item Sea $c\in \Z$, $m\in \R$, \[\sum_{n=a}^b f(m-n) = \sum_{n=a+c}^{b+c} f\bigl(m-n+c\bigr) \qquad \text{(Cambio de límites 2)}\]
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\roman*)]
     \item Si $a>b$,
     \begin{align*}
-      \sum_{n=a}^b f(m-n) = 0 = \sum_{n=a+c}^{b+c} f\bigl(m-(n-c)\bigr)
+      \sum_{n=a}^b f(m-n) = 0 = \sum_{n=a+c}^{b+c} f\bigl(m-n+c\bigr)
     \end{align*}
 
     \item Si $a=b$,
     \begin{align*}
-      \sum_{n=a+c}^{b+c} f\bigl(m-(n-c)\bigr) &= \sum_{n=a+c}^{a+c} f\bigl(m-(n-c)\bigr)\\
-      &= f\Bigl(m-\bigl((a+c)-c\bigr)\Bigr)\\
+      \sum_{n=a+c}^{b+c} f\bigl(m-n+c\bigr) &= \sum_{n=a+c}^{a+c} f\bigl(m-n+c\bigr)\\
+      &= f\bigl(m-(a+c)+c\bigr)\\
+      &= f\bigl(m-a-c+c\bigr)\\
       &= f(m-a)\\
       &= \sum_{n=a}^a f(m-n)\\
       &= \sum_{n=a}^b f(m-n)
@@ -652,9 +654,9 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \begin{enumerate}[label=\roman*)]
       \item Se verifica para $b=a+1$,
       \begin{align*}
-        \sum_{n=a+c}^{(a+1)+c} f\bigl(m-(n-c)\bigr) &= f\Bigl(m-\bigl((a+c)-c\bigr)\Bigr) + \sum_{n=a+c+1}^{a+c+1} f\bigl(m-(n-c)\bigr)\\
-        &= f(m-a) + f\Bigl(m-\bigl((a+c+1)-c\bigr)\Bigr)\\
-        &= f(m-a) + f\bigl(m-(a+1)\bigr)\\
+        \sum_{n=a+c}^{(a+1)+c} f\bigl(m-n+c\bigr) &= f\bigl(m-(a+c)+c\bigr) + \sum_{n=a+c+1}^{a+c+1} f\bigl(m-n+c\bigr)\\
+        &= f(m-a) + f\bigl(m-(a+c+1)+c\bigr)\\
+        &= f(m-a) + f\bigl(m-a-c-1+c\bigr)\\
         &= f(m-a) + f(m-a-1)\\
         &= f(m-a) + f\bigl(m-(a+1)\bigr)\\
         &= f(m-a) + \sum_{n=a+1}^{a+1} f(m-n)\\
@@ -663,12 +665,14 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
       \item Supongamos que se verifica para $b=a+k$, con $k\in \N$; es decir, suponemos que
       \begin{align*}
-        \sum_{n=a}^{a+k} f(m-n) = \sum_{n=a+c}^{(a+k)+c} f\bigl(m-(n-c)\bigr)
+        \sum_{n=a}^{a+k} f(m-n) = \sum_{n=a+c}^{(a+k)+c} f\bigl(m-n+c\bigr)
       \end{align*}
 
       \item Notemos que
       \begin{align*}
-        \sum_{n=a+c}^{(a+k+1)+c} f\bigl(m-(n-c)\bigr) &= f\Bigl(m-\bigl((a+k+1+c)-c\bigr)\Bigr) + \sum_{n=a+c}^{a+k+c} f\bigl(m-(n-c)\bigr)\\
+        \sum_{n=a+c}^{(a+k+1)+c} f\bigl(m-n+c\bigr) &= f\bigl(m-(a+k+1+c)+c\bigr) + \sum_{n=a+c}^{a+k+c} f\bigl(m-n+c\bigr)\\
+        &= f\bigl(m-a-k-1-c+c\bigr) + \sum_{n=a+c}^{a+k+c} f\bigl(m-n+c\bigr)\\
+        &= f\bigl(m-(a+k+1)\bigr)+ \sum_{n=a+c}^{a+k+c} f\bigl(m-n+c\bigr)\\
         &= f\bigl(m-(a+k+1)\bigr) + \sum_{n=a}^{a+k} f(m-n) && \text{Hip. Ind.}\\
         &= \sum_{n=a}^{a+k+1} f(m-n)
       \end{align*}
@@ -676,16 +680,16 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \end{enumerate}
   \end{proof}
 
-  \item Sea $m\in \R$ y $c\in \Z$, \[\sum_{n=a}^{b}f\bigl(m\pm n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m\pm (n- c)\bigr) \qquad \text{Cambio de índice (de la sumatoria)}\]
+  \item Sea $m\in \R$ y $c\in \Z$, \[\sum_{n=a}^{b}f\bigl(m\pm n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m\pm n \mp c\bigr) \qquad \text{Cambio de índice (de la sumatoria)}\]
   \begin{proof}\leavevmode
     \begin{enumerate}[label=\roman*)]
       \item Por el cambio de límites 1 se tiene que 
       \begin{align*}
-        \sum_{n=a}^{b}f\bigl(m+ n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m+ (n- c)\bigr)
+        \sum_{n=a}^{b}f\bigl(m+ n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m+n- c\bigr)
       \end{align*}
       \item Por el cambio de límites 2 se tiene que
       \begin{align*}
-        \sum_{n=a}^{b}f\bigl(m-n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m-(n- c)\bigr)
+        \sum_{n=a}^{b}f\bigl(m-n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m-n+c\bigr)
       \end{align*}
     \end{enumerate}
   \end{proof}
@@ -732,7 +736,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
         &= f(a+k+1) + \sum_{n=0}^{k} f(a+k-n) && \text{Hip. Ind.}\\
         &= f\bigl(a+k-(-1)\bigr) + \sum_{n=0}^{k} f(a+k-n)\\
         &= \sum_{n=-1}^k f(a+k-n) && \text{Definición (de sumatoria)}\\
-        &= \sum_{n=-1+(1)}^{k+(1)} f\bigl(a+k-(n-1)\bigr) && \text{Cambio de índice}\\
+        &= \sum_{n=-1+(1)}^{k+(1)} f\bigl(a+k-n+1\bigr) && \text{Cambio de índice}\\
         &= \sum_{n=0}^{k+1} f(a+k+1-n)
       \end{align*}
       
@@ -760,7 +764,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
 
 \textbf{Abuso de la notación en el cambio de índice}
 
-Sea $m\in \R$ y $c\in \Z$, hemos probado que \[\sum_{n=a}^{b}f\bigl(m\pm n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m\pm (n- c)\bigr)\]
+Sea $m\in \R$ y $c\in \Z$, hemos probado que \[\sum_{n=a}^{b}f\bigl(m\pm n\bigr) = \sum_{n=a+c}^{b+c}f\bigl(m\pm n \mp c\bigr)\]
 
 El lector encontrará que, en ocasiones, en lugar de utilizar este teorema simplemente se trabaja con susbsituciones sobre el índice, especialmente para funciones identidad. 
 
@@ -1022,6 +1026,34 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
     
     \textbf{Observación:} En particular, para una función constante $g(n)=c$, se tiene que \[\prod_{n=a}^{b} \big(f(n) \cdot c\big) = \left(\prod_{n=a}^{b} f(n)\right) \left(\prod_{n=a}^{b} c\right)\]
     
+    \item Si $g(n)\neq 0$, \[\prod_{n=a}^{b} \frac{f(n)}{g(n)} = \frac{\prod_{n=a}^{b}f(n)}{\prod_{n=a}^{b}g(n)} \qquad \text{(División de productorios)}\]
+    \begin{proof}\leavevmode
+      \begin{enumerate}[label=\Roman*)]
+        \item Si $b<a$, \[\prod_{n=a}^{b} \frac{f(n)}{g(n)} = 1 = \frac{1}{1} = \frac{\prod_{n=a}^{b}f(n)}{\prod_{n=a}^{b}g(n)}\]
+        \item Si $b=a$, \[\prod_{n=a}^{b} \frac{f(n)}{g(n)} = \frac{f(n)}{g(n)} = \frac{\prod_{n=a}^{b}f(n)}{\prod_{n=a}^{b}g(n)}\]
+        \item Si $a<b$,
+        \begin{enumerate}[label=\roman*)]
+          \item Se verifica para $b=a+1$,
+          \begin{align*}
+            \prod_{n=a}^{b} \frac{f(n)}{g(n)} &= \prod_{n=a}^{a+1} \frac{f(n)}{g(n)}\\
+            &= \frac{f(a+1)}{g(a+1)} \cdot \prod_{a}^{a} \frac{f(n)}{g(n)}&& \text{Productorio inverso}\\
+            &= \frac{f(a+1)}{g(a+1)} \cdot \frac{f(a)}{g(a)}\\
+            &= \frac{f(a+1)}{g(a+1)} \cdot \frac{\prod_{n=a}^{a} f(n)}{\prod_{n=a}^{a} g(n)}\\
+            &= \frac{\prod_{n=a}^{a+1}f(n)}{\prod_{n=a}^{a+1}g(n)}\\
+            &= \frac{\prod_{n=a}^{b}f(n)}{\prod_{n=a}^{b}g(n)}
+          \end{align*}
+          \item Supongamos que si $b-a=k$, entonces
+          \[\prod_{n=a}^{a+k} \frac{f(n)}{g(n)} = \frac{\prod_{n=a}^{a+k}f(n)}{\prod_{n=a}^{b}g(n)}\] 
+          \item Notemos que
+          \begin{align*}
+            \prod_{n=a}^{a+k+1} \frac{f(n)}{g(n)} &= \frac{f(a+k+1)}{g(a+k+1)} \cdot \prod_{n=a}^{a+k} \frac{f(n)}{g(n)} && \text{Productorio inverso}\\
+            &= \frac{f(a+k+1)}{g(a+k+1)} \cdot \frac{\prod_{n=a}^{a+k}f(n)}{\prod_{n=a}^{b}g(n)} && \text{Hip. Ind.}\\
+            &= \frac{\prod_{n=a}^{a+k+1}f(n)}{\prod_{n=a}^{b}g(n)}
+          \end{align*}
+        \end{enumerate}
+      \end{enumerate}
+    \end{proof}
+    
     \item Si $f(n)\neq 0$ y $a\leq b$, entonces \[\prod_{n=a}^{b} \frac{f(n+1)}{f(n)} = \frac{f(b+1)}{f(a)} \qquad \text{Propiedad telescópica (del productorio)}\]
     \begin{proof}\leavevmode
       \begin{enumerate}[label=\Roman*)]
@@ -1046,37 +1078,7 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
       \end{enumerate}
     \end{proof}
     
-    \item Sea $m\in \R$ y $c\in \Z$, \[\prod_{n=a}^{b} f(m\pm n) = \prod_{n=a+c}^{b+c} f\big(m\pm (n-c)\big) \qquad \text{Cambio de índice (del productorio)}\]
-    \begin{proof}\leavevmode
-      \begin{enumerate}[label=\Roman*)]
-        \item Si $a>b$, \[\prod_{n=a}^{b} f(m\pm n) = 1 = \prod_{n=a+c}^{b+c} f\big(m\pm (n-c)\big)\]
-        \item Si $a=b$, 
-        \begin{align*}
-          \prod_{n=a+c}^{b+c} f\big(m\pm (n-c)\big) &= \prod_{n=a+c}^{a+c} f\big(m\pm (n-c)\big)\\
-          &= f\Big(m\pm \big((a+c)-c\big)\Big)\\
-          &= f(m\pm a)\\
-          &= \prod_{n=a}^{a} f(m\pm a)\\
-          &= \prod_{n=a}^{b} f(m\pm n)
-        \end{align*}
-        \item Si $a<b$, se verifica para $b-a=1$, es decir, tomamos el índice superior $b=a+1$,
-        \begin{align*}
-          \prod_{n=a+c}^{(a+1)+c} f\big(m\pm (n-c)\big) &= f\Big(m\pm \big((a+c)-c\big)\Big) \cdot \prod_{n=a+c+1}^{a+c+1} f\big(m\pm (n-c)\big)\\
-          &= f(m\pm a) \cdot f\Big(m\pm \big((a+c+1)-c\big)\Big)\\
-          &= f(m\pm a) \cdot f(m\pm (a+1))\\
-          &= f(m\pm a) \cdot \prod_{n=a+1}^{a+1} f(m \pm n)\\
-          &= \prod_{n=a}^{a+1} f(m\pm n)
-        \end{align*}
-        \item Supongamos que se verifica para $b=a+k$, con $k\in \N$; es decir, suponemos que \[\prod_{n=a}^{a+k} f(m\pm n) = \prod_{n=a+c}^{(a+k)+c} f\big(m\pm (n-c)\big)\]
-        \item Notemos que
-        \begin{align*}
-          \prod_{n=a+c}^{(a+k+1)+c} f\big(m\pm (n-c)\big) &= f\Bigl(m\pm \big((a+k+1+c)-c\big)\Bigr) \cdot \prod_{n=a+c}^{a+k+c} f\Bigl(m\pm(n-c)\Bigr)\\
-          &= f\big(m \pm (a+k+1)\big) \cdot \prod_{n=a}^{a+k} f(m \pm n) & \text{Hip. Ind.}\\
-          &= \prod_{n=a}^{a+k+1} f(m\pm n)
-        \end{align*}
-      \end{enumerate}
-    \end{proof}
-    
-    \item Si $s\leq j \leq t$, \[\prod_{n=s}^{t} f(n) = \prod_{n=s}^{j} f(n) \cdot \prod_{n=j+1}^{t} f(n)\qquad \text{(Partir el producto)}\]
+    \item Si $s\leq j \leq t$, \[\prod_{n=s}^{t} f(n) = \prod_{n=s}^{j} f(n) \cdot \prod_{n=j+1}^{t} f(n)\qquad \text{(Separar el producto)}\]
     
     \textbf{Nota:} Alternativamente podemos escribir esta igualdad como sigue: Si $s\leq j\leq t$, entonces $\prod_{n=s}^{t} f(n) = \prod_{n=s}^{j-1} f(n) \cdot \prod_{n=j}^{t} f(n)$. El lector debería verificar esta equivalencia.
     
@@ -1122,6 +1124,73 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
             &= \prod_{n=s}^{j} f(n) \cdot \prod_{n=j+1}^{j+k} f(n) \cdot f(j+k+1)\\
             &= \prod_{n=s}^{j} f(n) \cdot \prod_{n=j+1}^{j+k+1} f(n)\\
             &= \prod_{n=s}^{j} f(n) \cdot \prod_{n=j+1}^{t} f(n)
+          \end{align*}
+        \end{enumerate}
+      \end{enumerate}
+    \end{proof}
+    
+    \item Sea $m\in \R$ y $c\in \Z$, \[\prod_{n=a}^{b} f(m\pm n) = \prod_{n=a+c}^{b+c} f\big(m\pm n \mp c\big) \qquad \text{Cambio de índice (del productorio)}\]
+    \begin{proof}\leavevmode
+      \begin{enumerate}[label=\Roman*)]
+        \item Si $a>b$, \[\prod_{n=a}^{b} f(m\pm n) = 1 = \prod_{n=a+c}^{b+c} f\big(m\pm n \mp c\big)\]
+        \item Si $a=b$, 
+        \begin{align*}
+          \prod_{n=a+c}^{b+c} f\big(m\pm n \mp c\big) &= \prod_{n=a+c}^{a+c} f\big(m\pm n \mp c\big)\\
+          &= f\Big(m\pm (a+c) \mp c\Big)\\
+          &= f(m\pm a)\\
+          &= \prod_{n=a}^{a} f(m\pm a)\\
+          &= \prod_{n=a}^{b} f(m\pm n)
+        \end{align*}
+        \item Si $a<b$, se verifica para $b-a=1$, es decir, tomamos el índice superior $b=a+1$,
+        \begin{align*}
+          \prod_{n=a+c}^{(a+1)+c} f\big(m\pm n \mp c\big) &= f\Big(m\pm \big((a+c)-c\big)\Big) \cdot \prod_{n=a+c+1}^{a+c+1} f\big(m\pm n \mp c\big)\\
+          &= f(m\pm a) \cdot f\Big(m\pm (a+c) \mp c)\Big)\\
+          &= f(m\pm a) \cdot f(m\pm (a+1))\\
+          &= f(m\pm a) \cdot \prod_{n=a+1}^{a+1} f(m \pm n)\\
+          &= \prod_{n=a}^{a+1} f(m\pm n)
+        \end{align*}
+        \item Supongamos que se verifica para $b=a+k$, con $k\in \N$; es decir, suponemos que \[\prod_{n=a}^{a+k} f(m\pm n) = \prod_{n=a+c}^{(a+k)+c} f\big(m\pm n \mp c\big)\]
+        \item Notemos que
+        \begin{align*}
+          \prod_{n=a+c}^{(a+k+1)+c} f\big(m\pm n \mp c\big) &= f(m\pm (a+k+1+c) \mp c) \cdot \prod_{n=a+c}^{a+k+c} f\big(m\pm n \mp c\big)\\
+          &= f\big(m \pm (a+k+1)\big) \cdot \prod_{n=a}^{a+k} f(m \pm n) & \text{Hip. Ind.}\\
+          &= \prod_{n=a}^{a+k+1} f(m\pm n)
+        \end{align*}
+      \end{enumerate}
+    \end{proof}
+    
+    \item \[\prod_{n=a}^{b} n = \prod_{n=a}^{b} b+a-n \qquad \text{(Índices en el argumento)}\]
+    
+    \begin{proof}\leavevmode
+      \begin{enumerate}[label=\Roman*)]
+        \item Se verifica para $b<a$, \[\prod_{n=a}^{b} n = 1 = \prod_{n=a}^{b} b+a-n\]
+        \item Si $b=a$,
+        \begin{align*}
+          \prod_{n=a}^{b} n &= \prod_{n=a}^{a} n\\
+          &= a && \text{Índices iguales del productorio}\\
+          &= b + a - b\\
+          &= \prod_{n=b}^{b} b+a-n && \text{Índices iguales del productorio}\\
+          &= \prod_{n=a}^{b} b + a -n
+        \end{align*}
+        \item Si $a<b$,
+        \begin{enumerate}[label=\roman*)]
+          \item Se verifica para $b=a+1$,
+          \begin{align*}
+            \prod_{n=a}^{a+1} n &= (a+1) \cdot \prod_{n=a}^{a} n && \text{Productorio inverso}\\
+            &= (a+1) \cdot a && \text{Índices iguales del productorio}\\
+            &= (a+1) \cdot \prod_{n=a+1}^{a+1} (a+1)+a-n && \text{Índices iguales del productorio}\\
+            &= \prod_{n=a}^{a+1} (a+1)+a-n\\
+            &= \prod_{n=a}^{a+1} b+a-n
+          \end{align*}
+          \item Supongamos que se verifica para $b=a+k$, es decir,
+          \[\prod_{n=a}^{a+k} n = \prod_{n=a}^{a+k} (a+k)+a-n\]
+          \item Notemos que
+          \begin{align*}
+            \prod_{n=a}^{a+k+1} n &= (a+k+1) \cdot \prod_{n=a}^{a+k} n && \text{Productorio inverso}\\
+            &= (a+k+1) \cdot \prod_{n=a}^{a+k} (a+k)+a-n && \text{Hip. Ind.}\\
+            &= (a+k+1) \cdot \prod_{n=a+1}^{(a+k)+1} (a+k)+a-n+1 && \text{Cambio de índice}\\
+            &= (a+k+1) \cdot \prod_{n=a+1}^{a+k+1} (a+k+1)+a-n\\
+            &= \prod_{n=a}^{a+k+1} (a+k+1)+a-n && \text{Productorio inverso}
           \end{align*}
         \end{enumerate}
       \end{enumerate}
@@ -1408,6 +1477,10 @@ Sean $a,b\in \R$ y $m, n\in \N\union\set{0}$, demuestre lo siguiente:
   
 \end{enumerate}
 
+\clearpage
+
+\pagebreak
+
 \subsection*{Una nota sobre la potenciación}
 
 Hemos definidio la potencia a partir de un índice inferior igual a $1$, sin embargo, podemos extender la definición para índices $m, n\in \Z$ tales que $m\leq n$. Dada una función $f(n)=a$ tenemos que
@@ -1449,24 +1522,10 @@ Hemos definidio la potencia a partir de un índice inferior igual a $1$, sin emb
 \end{proof}
 
 \textbf{Nota:} El lector notará que $n-m+1$ es el número de \textit{iteraciones}, o \textit{cíclos}, análogo al definido en la sumatoria.
-  
-\section*{Teorema binomial}
 
-\textbf{Definición:} Sea $a$ una función:
-\begin{align*}
- a: \ \N\union\set{0} &\to \R \\
- \  k &\mapsto a_k
-\end{align*}
+\pagebreak
 
-Un polinómio es una expresión \textit{formal}: \[\sum_{k=0}^{n} a_k x^k\]
-Decimos que
-\begin{itemize}
-  \item $a_k x^k$ es el k-ésimo término,
-  \item $a_k$ es el coeficiente del k-ésimo término,
-  \item $x^k$ es la indeterminada del k-ésimo término,
-  \item el \textit{grado} es la mayor $k$ para la cual $a_k\neq 0$,
-\end{itemize}
-del polinomio.
+\section*{Factorial}
 
 \textbf{Definición:} Sea $n\in \Z$ y $0\leq n$, denotamos al factorial de $n$ como \[n!\defined \prod_{i=1}^{n}i\]
 
@@ -1474,21 +1533,9 @@ del polinomio.
 
 \textbf{Observación:} $0!=1$.
 
-\textbf{Definición:} Sea $n,k\in \Z$. Definimos al coeficiente binomial, (de) $n$ elije $k$, como sigue:
-
-\[ \binom{n}{k}\defined
-  \begin{cases}
-  \frac{n!}{k!(n-k)!} &\text{si} \quad 0\leq k\leq n\\
-  0 &\text{si} \quad n<k \ \text{, o} \ k<0
-  \end{cases}
-  \]
-
-Otras notaciones para $\binom{n}{k}$ son $C(n, k), {}_nC_k, {}^nC_k, C_{n,k}$.
-
 \subsection*{Lista de ejercicios (LE)}
 
 Sea $n,k\in \Z$. Demuestre lo siguiente
-
 \begin{enumerate}[label=\alph*)]
   \item Sea $n\geq 0$, \[n! = n\cdot (n-1)! \qquad \text{(Recurrencia del factorial)}\]
   \begin{proof}\leavevmode
@@ -1504,6 +1551,80 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
     \item $n! = n(n-1)! \Rightarrow (n-1)! = \frac{n!}{n}$.
   \end{itemize}
   
+  \item Si $0\leq n$, \[n! = \prod_{i=1}^n (n+1-i) \qquad \text{(Forma multiplicativa del factorial)}\]
+  
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*)]
+      \item Se vericia para $n=0$,
+      \begin{align*}
+        n! &= \prod_{i=1}^n i && \text{Definición (de factorial)}\\
+        &= 1 && \text{Definición (de productorio)}\\
+        &= \prod_{i=1}^n (n+1-i) && \text{Definición (de productorio)}
+      \end{align*}
+      
+      \item Si $0<n$,
+      \begin{enumerate}[label=\roman*)]
+        \item Se verifica para $n=1$,
+        \begin{align*}
+          n! &= \prod_{i=1}^n i && \text{Definición (de factorial)}\\
+          &= 1 \\
+          &= n + 1 - 1 \\
+          &= \prod_{i=1}^n (n+1-i)
+        \end{align*}
+        
+        \item Supongamos que se cumple para $k\in \N$, es decir, suponemos que \[k! = \prod_{i=1}^k k+1-i\]
+        \item Notemos que
+        \begin{align*}
+          (k+1)! &= (k+1) \cdot k! && \text{Recurrencia del factorial}\\
+          &= (k+1) \cdot \prod_{i=1}^k (k+1-i) && \text{Hip. Ind.}\\
+          &= (k+1)\cdot \prod_{i=1+1}^{k+1} \Bigl((k+1)-i+1\Bigr) && \text{Cambio de índice}\\
+          &= \prod_{i=1}^1 \Big((k+1)+1-i\Big) \cdot \prod_{i=1+1}^{k+1} \Big((k+1)+1-i\Big) && \text{Índices iguales del productorio}\\
+          &= \prod_{i=1}^{k+1} \Big((k+1)+1-i\Big) && \text{Separar el producto}\\
+        \end{align*}
+      \end{enumerate}
+    \end{enumerate}
+  \end{proof}
+\end{enumerate}
+
+\section*{Coeficiente Binomial}
+
+\textbf{Definición:} Sea $n,k\in \Z$. Definimos al coeficiente binomial, (de) $n$ elije $k$, como sigue:
+
+\[ \binom{n}{k}\defined
+  \begin{cases}
+  \frac{n!}{k!(n-k)!} &\text{si} \quad 0\leq k\leq n\\
+  0 &\text{si} \quad n<k \ \text{, o} \ k<0
+  \end{cases}
+  \]
+
+Otras notaciones para $\binom{n}{k}$ son $C(n, k), {}_nC_k, {}^nC_k, C_{n,k}$.
+
+\clearpage
+\pagebreak
+
+\subsection*{Lista de ejercicios (LE)}
+
+Sea $n,k\in \Z$. Demuestre lo siguiente
+
+\begin{enumerate}[label=\alph*)]
+  \item Si $0\leq k \leq n$, \[\binom{n}{k} = \prod_{i=1}^{k} \frac{n+1-i}{i} \qquad \text{(Forma multiplicativa del coeficiente binomial)}\]
+  
+  \begin{proof}\leavevmode
+    \begin{align*}
+      \prod_{i=1}^{k} \frac{n+1-i}{i} &= \frac{\prod_{i=1}^{k} (n+1-i)}{\prod_{i=1}^{k} i} && \text{División de productorios}\\
+      &= \frac{\prod_{i=1}^{k} (n+1-i)}{k!} && \text{Definición (de factorial)}\\
+      &= \frac{\prod_{i=1}^{k} (n+1-i)}{k!} \cdot \frac{\prod_{i=k+1}^{n} (n+1-i)}{\prod_{i=k+1}^{n} (n+1-i)}\\
+      &= \frac{\prod_{i=1}^{k} (n+1-i) \cdot \prod_{i=k+1}^{n} (n+1-i)}{k! \cdot \prod_{i=k+1}^{n} (n+1-i)}\\
+      &= \frac{\prod_{i=1}^{n}(n+1-i)}{k! \cdot \prod_{i=k+1}^{n} (n+1-i)} && \text{Separar el producto}\\
+      &= \frac{n!}{k! \cdot \prod_{i=k+1}^{n} (n+1-i)} && \text{Forma multiplicativa del factorial}\\
+      &= \frac{n!}{k! \cdot \prod_{i=(k+1)-k}^{n-k} \Bigl(n+1-i+(-k)\Bigr)} && \text{Cambio de índice}\\
+      &= \frac{n!}{k! \cdot \prod_{i=1}^{n-k} \Big((n-k)+(1)-i\Big)}\\
+      &= \frac{n!}{k!\prod_{i=1}^{n-k} i} && \text{Índices en el argumento}\\
+      &= \frac{n!}{k!(n-k)!} && \text{Definición (de factorial)}\\
+      &= \binom{n}{k} && \text{Definición (de coeficiente binomial)}
+    \end{align*}
+  \end{proof}
+  
   \item \[\binom{n}{n} = \binom{n}{0}\]
   \begin{proof}\leavevmode Por definición,
     \begin{enumerate}[label=\roman*)]
@@ -1511,6 +1632,8 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
       \item Si $0\leq n$, \[\binom{n}{n} = \frac{n!}{n!(n-n)!} = \frac{n!}{n!(0)!} = \frac{n!}{n!} = 1 = \frac{n!}{n!} =\frac{n!}{0!(n-0)!} = \binom{n}{0}\]
     \end{enumerate}
   \end{proof}
+  
+\pagebreak
   
   \item \[\binom{n}{k} = \binom{n}{n-k} \qquad \text{(Simetría del coeficiente binomial)}\]
   \begin{proof}\leavevmode
@@ -1529,8 +1652,8 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
       \end{align*}
     \end{enumerate}
   \end{proof}
-  
-  \item Si $0\leq k \leq n$, \[\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}\qquad \text{(Formula recursiva del coeficiente binomial)}\]
+
+  \item Si $0\leq k \leq n$, \[\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}\qquad \text{(Forma recursiva del coeficiente binomial)}\]
   \begin{proof}\leavevmode
   %   \begin{enumerate}[label=\Roman*)]
   %     \item Si $k-1<0$, $\binom{n-1}{k-1}=0$ y, se tiene que, $k<1$. Luego,
@@ -1587,6 +1710,9 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
     \end{align*}
   \end{proof}
   
+\clearpage
+\pagebreak
+  
   \item Si $0\leq k \leq n$, \[\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}\]
   \begin{proof}\leavevmode
     \begin{align*}
@@ -1605,115 +1731,31 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
       &= \binom{n+1}{k+1}
     \end{align*}
   \end{proof}
-  
-  \item Si $0\leq n$, \[n! = \prod_{i=1}^n (n+1-i)\]
-  
-  \begin{proof}\leavevmode
-    \begin{enumerate}[label=\Roman*)]
-      \item Se vericia para $n=0$,
-      \begin{align*}
-        n! &= \prod_{i=1}^n i && \text{Definición (de factorial)}\\
-        &= 1 && \text{Definición (de productorio)}\\
-        &= \prod_{i=1}^n (n+1-i) && \text{Definición (de productorio)}
-      \end{align*}
-      
-      \item Si $0<n$,
-      \begin{enumerate}[label=\roman*)]
-        \item Se verifica para $n=1$,
-        \begin{align*}
-          n! &= \prod_{i=1}^n i && \text{Definición (de factorial)}\\
-          &= 1 \\
-          &= n + 1 - 1 \\
-          &= \prod_{i=1}^n (n+1-i)
-        \end{align*}
-        
-        \item Supongamos que se cumple para $k\in \N$, es decir, suponemos que \[k! = \prod_{i=1}^k k+1-i\]
-        \item Notemos que
-        \begin{align*}
-          (k+1)! &= (k+1) \cdot k! && \text{Recurrencia del factorial}\\
-          &= (k+1) \cdot \prod_{i=1}^k (k+1-i) && \text{Hip. Ind.}\\
-          &= (k+1)\cdot \prod_{i=1+1}^{k+1} \Bigl((k+1)-(i-1)\Bigr) && \text{Cambio de índice}\\
-          &= (k+1) \cdot \prod_{i=1+1}^{k+1} \Big((k+1)+1-i\Big) \\
-          &= \prod_{i=1}^1 \Big((k+1)+1-i\Big) \cdot \prod_{i=1+1}^{k+1} \Big((k+1)+1-i\Big) && \text{Índices iguales del productorio}\\
-          &= \prod_{i=1}^{k+1} \Big((k+1)+1-i\Big) && \text{Partir el producto}\\
-        \end{align*}
-      \end{enumerate}
-    \end{enumerate}
-  \end{proof}
-  
-  \item Si $0\leq k \leq n$, \[\binom{n}{k} = \prod_{i=1}^{k} \frac{n+1-i}{i} \qquad \text{(Formula multiplicativa del coeficiente binomial)}\]
-  
-  \begin{proof}\leavevmode
-    
-    
-    
-    Si $k=0$,
-        \begin{align*}
-          \binom{n}{k} &= \frac{n!}{k!(n-k)!} && \text{Definición}\\
-          &= \frac{n!}{0!(n-0)!}\\
-          &= \frac{n!}{n!}\\
-          &= 1\\
-          &= \prod_{i=1}^{k} \frac{n+1-i}{i} && \text{Definición}
-        \end{align*}
-        
-    Ahora, sea $0<k$,
-         \begin{enumerate}[label=\Roman*)]
-          \item Si $k=n$,
-          
-          \begin{align*}
-            \binom{n}{k} &= \binom{n}{n}\\
-            &= \frac{n!}{n!(n-n)!}\\
-            &= \frac{n!}{n!0!}\\
-            &= \frac{n!}{n!}\\
-            &= 1\\
-            &= \frac{1!}{1!(1-1)!}\\
-            &= \frac{1}{1}\\
-            &= \frac{1+1-1}{1}\\
-            &= \prod_{i=1}^{k} \frac{n+1-i}{i}
-          \end{align*}
-          
-          \item Si $k=n$,
-          \begin{enumerate}[label=\roman*)]
-            \item Se verifica para $k=1=n$,
-            \begin{align*}
-              \binom{n}{k} &= \frac{n!}{k!(n-k)!}\\
-              &= \frac{1!}{1!(1-1)!}\\
-              &= \frac{1}{1}\\
-              &= \frac{1+1-1}{1}\\
-              &= \prod_{i=1}^{k} \frac{n+1-i}{i}
-            \end{align*}
-            \item Supongamos que se verifica para $k=n\in \N$, es decir, suponemos que \[\binom{n}{k} = \prod_{i=1}^{k} \frac{n+1-i}{i}\]
-            \item Notemos que
-            \begin{align*}
-              \binom{n+1}{k+1}
-              &= \frac{(n+1)!}{(k+1)!\big((n+1)-(k+1)\big)!} && \text{Definición}\\
-              &= \frac{(n+1)!}{(k+1)!\big(n+1-k-1\big)!}\\
-              &= \frac{(n+1)!}{(k+1)!(n-k)!}\\
-              &= \frac{n!(n+1)}{k!(k+1)(n-k)!}\\
-              &= \frac{n!}{k!(n-k)!} \cdot \frac{n+1}{k+1}\\
-              &= \prod_{i=1}^{k} \frac{n+1-i}{i} \cdot \frac{n+1}{k+1}\\
-              &= \frac{n+1}{k+1}\cdot \prod_{i=1}^{k} \frac{n+1-i}{i}\\
-              &= \frac{n+1-k}{k+1} \cdot \prod_{i=1}^{k} \frac{(n+1)+1-i}{i}\\
-              &= \frac{(n+1)+1-(k+1)}{k+1} \cdot \prod_{i=1}^{k} \frac{(n+1)+1-i}{i}&& \text{Productorio inverso}\\
-              &= \prod_{i=1}^{k+1} \frac{(n+1)+1-i}{i}
-            \end{align*}
-          \end{enumerate}
-         \end{enumerate}
-  \end{proof}
-  
-  % \begin{enumerate}
-  %   \item Si $k<0$, $\binom{n}{k} = 0$ y $\prod_{i=1}^{k} \frac{n+1-i}{i}=1$, por lo que descartamos este caso.
-  %   \item Si $n<k$, $\binom{n}{k} = 0$. Luego,
-  %   \begin{enumerate}[label=\roman*)]
-  %     \item Si $k<1$, $\prod_{i=1}^{k} \frac{n+1-i}{i}=1$, por lo que descartamos este caso.
-  %     \item Si $k=1$,
-  %     \begin{align*}
-  %       \prod_{i=1}^{1} \frac{n+1-i}{i} &= \frac{n+1-1}{1} && \text{Definición}\\
-  %       &= n
-  %     \end{align*}
-  %     Por lo que descartamos este caso.
-  %   \end{enumerate}
-  % \end{enumerate}
-  
-  \item \[(x\pm y)^n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
 \end{enumerate}
+
+\clearpage
+\pagebreak
+
+\section*{Teorema binomial}
+
+\textbf{Definición:} Sea $a$ una función:
+\begin{align*}
+ a: \ \N\union\set{0} &\to \R \\
+ \  k &\mapsto a_k
+\end{align*}
+
+Un polinómio es una expresión \textit{formal}: \[\sum_{k=0}^{n} a_k x^k\]
+Decimos que
+\begin{itemize}
+  \item $a_k x^k$ es el k-ésimo término,
+  \item $a_k$ es el coeficiente del k-ésimo término,
+  \item $x^k$ es la indeterminada del k-ésimo término,
+  \item el \textit{grado} es la mayor $k$ para la cual $a_k\neq 0$,
+\end{itemize}
+del polinomio.
+
+\[(x\pm y)^n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
+
+\begin{proof}\leavevmode
+  Pendiente
+\end{proof}
