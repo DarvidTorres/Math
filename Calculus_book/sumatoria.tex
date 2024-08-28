@@ -171,17 +171,17 @@ de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}
 \begin{center}
   \begin{minipage}[c]{.5\linewidth}
     \begin{align*}
-      \sum_{n=-1}^{1} n^3 &= (-1)^3 + \sum_{n=0}^{1} n^3\\
-      &= -1 + 0^3 + \sum_{n=1}^1 n^3\\
-      &= -1 + 0 + 1^3\\
+      \sum_{n=-1}^{1} n &= -1 + \sum_{n=0}^{1} n\\
+      &= -1 + 0 + \sum_{n=1}^1 n\\
+      &= -1 + 0 + 1\\
       &= 0
     \end{align*}
    \end{minipage}%
   \begin{minipage}[c]{.5\linewidth}
     \begin{align*}
-      \sum_{n=-1}^{1} n^3 &= 1^3 + \sum_{n=-1}^{0} n^3\\
-      &= 1 + 0^3 + \sum_{n=-1}^{-1} n^3\\
-      &= 1 + 0 + (-1)^3\\
+      \sum_{n=-1}^{1} n &= 1 + \sum_{n=-1}^{0} n\\
+      &= 1 + 0 + \sum_{n=-1}^{-1} n\\
+      &= 1 + 0 + -1\\
       &= 0
     \end{align*}
   \end{minipage}
@@ -1516,7 +1516,7 @@ Hemos definidio la potencia a partir de un índice inferior igual a $1$, sin emb
   \end{enumerate}
 \end{proof}
 
-\textbf{Observación:} $n-m+1$ es un número natural, por lo que $a^{n-m+1}$ está bien definido.
+\textbf{Observación:} Como $m\leq n$, $n-m+1$ es un número natural, por lo que $a^{n-m+1}$ está bien definido.
 \begin{proof}\leavevmode
   Dado que $m\leq n$, si $m=n$, se tiene que $n-m+1=1$, y si $m<n$ sigue que $n-m\in \R^+$, y por definición (de $\Z$), $n-m\in \N$, y así $n-m+1\in \N$.
 \end{proof}
@@ -1586,7 +1586,7 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
   \end{proof}
 \end{enumerate}
 
-\section*{Coeficiente Binomial}
+\subsection*{Coeficiente binomial}
 
 \textbf{Definición:} Sea $n,k\in \Z$. Definimos al coeficiente binomial, (de) $n$ elije $k$, como sigue:
 
@@ -1598,6 +1598,8 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
   \]
 
 Otras notaciones para $\binom{n}{k}$ son $C(n, k), {}_nC_k, {}^nC_k, C_{n,k}$.
+
+\textbf{Observación:} $\binom{0}{0} = 1$.
 
 \clearpage
 \pagebreak
@@ -1754,8 +1756,48 @@ Decimos que
 \end{itemize}
 del polinomio.
 
-\[(x\pm y)^n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
+\[(x\pm y)^n = \sum_{k=0}^{n} (\pm 1)^k \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
 
 \begin{proof}\leavevmode
-  Pendiente
+  
+  \begin{enumerate}[label=\roman*)]
+    \item Se verifica para $n=0$, \[(x\pm y)^n = (x\pm y)^0= 1= (\pm 1)^0 \binom{0}{0} x^{0-0}y^0= \sum_{k=0}^{0} (\pm 1)^k \binom{n}{k} x^{0-k}y^k= \sum_{k=0}^{n} (\pm 1)^k \binom{n}{k} x^{n-k}y^k\]
+    \item Se verifica para $n=1$,
+    \begin{align*}
+      (x\pm y)^1 &= (x\pm y)\\
+      &= x^1 \pm y^1\\
+      &= x^1 + (\pm 1)^1 \binom{1}{1}x^{1-1}y^1\\
+      &= (\pm 1)^0 \binom{1}{0} x^{1-0}y^0 + \sum_{k=1}^{1} (\pm 1)^k \binom{1}{k} x^{1-k}y^k\\
+      &= \sum_{k=0}^{1} (\pm 1)^k \binom{1}{k} x^{1-k}y^k\\
+      &= \sum_{k=0}^{n} (\pm 1)^k \binom{n}{k} x^{n-k}y^k
+    \end{align*}
+    \item Supongamos que si $n=m\in \N$, entonces \[(x\pm y)^m = \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^k\]
+    \item Notemos que 
+  \end{enumerate}
 \end{proof}
+
+\begin{align*}
+  (x\pm y)^{m+1} &= (x \pm y) \cdot (x \pm y)^m\\
+  &= (x \pm y) \cdot \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k} y^k\\
+  &=  x\sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^k \pm y \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^k\\
+  &= \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k \pm \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^{k+1}\\
+  &= \\
+  &= \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k \pm \sum_{k=0+1}^{m+1} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k+1-1}\\
+  &= \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k \pm \sum_{k=1}^{m+1} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k}\\
+  &= \\
+  &= \\
+  &= \sum_{k=0}^{m+1} (\pm 1)^k \binom{m+1}{k} x^{(m+1)-k} y^k
+  \end{align*}
+  
+  Notemos que
+  \begin{align*}
+    \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k &= (\pm 1)^0 \binom{m}{0}x^{m-0+1}y^0 +\sum_{k=1}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k\\
+    &= x^{m+1} y^0 +\sum_{k=1}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k
+  \end{align*}
+  
+  \begin{align*}
+    \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^{k+1} &= \sum_{k=0+1}^{m+1} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k+1-1}\\
+    &= \sum_{k=1}^{m+1} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k}\\
+    &= (\pm 1)^{(m+1)-1} \binom{m}{m+1-1} x^{m-(m+1)+1}y^{m+1} + \sum_{k=1}^{m} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k}\\
+    &= (\pm 1)^{m} \binom{m}{m} x^{0}y^{m+1}+ \sum_{k=1}^{m} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k}\\
+  \end{align*}
