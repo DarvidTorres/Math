@@ -1756,48 +1756,53 @@ Decimos que
 \end{itemize}
 del polinomio.
 
-\[(x\pm y)^n = \sum_{k=0}^{n} (\pm 1)^k \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
+\[(x+ y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
 
 \begin{proof}\leavevmode
   
   \begin{enumerate}[label=\roman*)]
-    \item Se verifica para $n=0$, \[(x\pm y)^n = (x\pm y)^0= 1= (\pm 1)^0 \binom{0}{0} x^{0-0}y^0= \sum_{k=0}^{0} (\pm 1)^k \binom{n}{k} x^{0-k}y^k= \sum_{k=0}^{n} (\pm 1)^k \binom{n}{k} x^{n-k}y^k\]
+    \item Se verifica para $n=0$, \[(x+ y)^n = (x+ y)^0= 1= \binom{0}{0} x^{0-0}y^0= \sum_{k=0}^{0} \binom{n}{k} x^{0-k}y^k= \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k\]
     \item Se verifica para $n=1$,
     \begin{align*}
-      (x\pm y)^1 &= (x\pm y)\\
-      &= x^1 \pm y^1\\
-      &= x^1 + (\pm 1)^1 \binom{1}{1}x^{1-1}y^1\\
-      &= (\pm 1)^0 \binom{1}{0} x^{1-0}y^0 + \sum_{k=1}^{1} (\pm 1)^k \binom{1}{k} x^{1-k}y^k\\
-      &= \sum_{k=0}^{1} (\pm 1)^k \binom{1}{k} x^{1-k}y^k\\
-      &= \sum_{k=0}^{n} (\pm 1)^k \binom{n}{k} x^{n-k}y^k
+      (x+ y)^1 &= (x+ y)\\
+      &= x^1 + y^1\\
+      &= x^1 + \binom{1}{1}x^{1-1}y^1\\
+      &= \binom{1}{0} x^{1-0}y^0 + \sum_{k=1}^{1} \binom{1}{k} x^{1-k}y^k\\
+      &= \sum_{k=0}^{1} \binom{1}{k} x^{1-k}y^k\\
+      &= \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k
     \end{align*}
-    \item Supongamos que si $n=m\in \N$, entonces \[(x\pm y)^m = \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^k\]
+    \item Supongamos que si $n=m\in \N$, entonces \[(x+ y)^m = \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k\]
     \item Notemos que 
   \end{enumerate}
 \end{proof}
 
 \begin{align*}
-  (x\pm y)^{m+1} &= (x \pm y) \cdot (x \pm y)^m\\
-  &= (x \pm y) \cdot \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k} y^k\\
-  &=  x\sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^k \pm y \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^k\\
-  &= \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k \pm \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^{k+1}\\
+  (x+ y)^{m+1} &= (x + y)^m \cdot (x+ y)\\
+  &= \Bigg(\sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k\Bigg) \cdot (x + y)\\
+  &= x \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k + y \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k \\
+  &= \sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k + \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1}\\
   &= \\
-  &= \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k \pm \sum_{k=0+1}^{m+1} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k+1-1}\\
-  &= \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k \pm \sum_{k=1}^{m+1} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k}\\
-  &= \\
-  &= \\
-  &= \sum_{k=0}^{m+1} (\pm 1)^k \binom{m+1}{k} x^{(m+1)-k} y^k
+  &= \sum_{k=0}^{m+1} \binom{m+1}{k} x^{(m+1)-k} y^k
   \end{align*}
   
   Notemos que
   \begin{align*}
-    \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k &= (\pm 1)^0 \binom{m}{0}x^{m-0+1}y^0 +\sum_{k=1}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k\\
-    &= x^{m+1} y^0 +\sum_{k=1}^{m} (\pm 1)^k \binom{m}{k} x^{m-k+1}y^k
+    \sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k &= \binom{m}{0}x^{m-0+1}y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
+    &= x^{m+1} y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
+    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
   \end{align*}
   
   \begin{align*}
-    \sum_{k=0}^{m} (\pm 1)^k \binom{m}{k} x^{m-k}y^{k+1} &= \sum_{k=0+1}^{m+1} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k+1-1}\\
-    &= \sum_{k=1}^{m+1} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k}\\
-    &= (\pm 1)^{(m+1)-1} \binom{m}{m+1-1} x^{m-(m+1)+1}y^{m+1} + \sum_{k=1}^{m} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k}\\
-    &= (\pm 1)^{m} \binom{m}{m} x^{0}y^{m+1}+ \sum_{k=1}^{m} (\pm 1)^{k-1} \binom{m}{k-1} x^{m-k+1}y^{k}\\
+    \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1} &= \sum_{k=0+1}^{m+1} \binom{m}{k-1} x^{m+1-k}y^{k+1-1}\\
+    &= \sum_{k=1}^{m+1} \binom{m}{k-1} x^{m+1-k}y^{k}\\
+    &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \binom{m}{m+1-1} x^{m-(m+1)+1}y^{m+1}\\
+    &=  \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \binom{m}{m} x^{0}y^{m+1}\\
+    &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} +  x^{0}y^{m+1}\\
+    &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k
+  \end{align*}
+  
+  \begin{align*}
+    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k + \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
+    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \Biggl(\binom{m}{k} + \binom{m}{k-1}\Biggr) x^{m+1-k}y^k\\
+    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k + \sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k
   \end{align*}
