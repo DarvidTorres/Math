@@ -1779,6 +1779,7 @@ Decimos que
 \end{itemize}
 del polinomio.
 
+Sea $x,y\in \R$,
 \[(x+ y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
 
 \begin{proof}\leavevmode
@@ -1803,29 +1804,50 @@ del polinomio.
   (x+ y)^{m+1} &= (x + y)^m \cdot (x+ y)\\
   &= \Bigg(\sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k\Bigg) \cdot (x + y)\\
   &= x \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k + y \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k \\
-  &= \sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k + \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1}\\
-  &= \\
-  &= \sum_{k=0}^{m+1} \binom{m+1}{k} x^{(m+1)-k} y^k
+  &= \sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k + \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1}
   \end{align*}
   
   Notemos que
   \begin{align*}
     \sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k &= \binom{m}{0}x^{m-0+1}y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
-    &= x^{m+1} y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
-    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
+    &= 1\cdot x^{m+1} y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
+    &= \binom{0}{0} x^{m+1} y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
+    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k
   \end{align*}
   
   \begin{align*}
     \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1} &= \sum_{k=0+1}^{m+1} \binom{m}{k-1} x^{m+1-k}y^{k+1-1}\\
     &= \sum_{k=1}^{m+1} \binom{m}{k-1} x^{m+1-k}y^{k}\\
-    &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \binom{m}{m+1-1} x^{m-(m+1)+1}y^{m+1}\\
+    &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \binom{m}{m+1-1} x^{m+1-(m+1)}y^{m+1}\\
     &=  \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \binom{m}{m} x^{0}y^{m+1}\\
-    &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} +  x^{0}y^{m+1}\\
+    &=  \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + 1\cdot x^{0}y^{m+1}\\
+    &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \binom{m+1}{m+1} x^{0}y^{m+1}\\
+    &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \binom{m+1}{m+1} x^{m+1-(m+1)}y^{m+1}\\
     &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k
+  \end{align*}
+  
+  Luego,  
+  \begin{align*}
+    \sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k} &= \sum_{k=1}^{m} \Biggl(\binom{m}{k} + \binom{m}{k-1}\Biggr) x^{m+1-k}y^k\\
+    &= \sum_{k=1}^{m} \Biggl(\binom{m}{k} x^{m+1-k}y^k + \binom{m}{k-1} x^{m+1-k}y^{k}\Biggr)\\
+    &= \sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k + \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k}
   \end{align*}
   
   \begin{align*}
     &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k + \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
-    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \Biggl(\binom{m}{k} + \binom{m}{k-1}\Biggr) x^{m+1-k}y^k\\
-    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k + \sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k
+    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k + \sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
+    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k + \sum_{k=1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
+    &= \sum_{k=0}^{m+1} \binom{m+1}{k} x^{(m+1)-k} y^k
   \end{align*}
+  
+Corolario: \[(x- y)^n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}y^k\]
+
+\begin{proof}\leavevmode
+  \begin{align*}
+    (x- y)^n &= \Big(x+(-y)\Big)^n\\
+    &= \sum_{k=0}^{n} \binom{n}{k} x^{n-k} (-y)^k && \text{Teorema binomial}\\
+    &= \sum_{k=0}^{n} \binom{n}{k} x^{n-k} \big(-1\cdot y\big)^k\\
+    &= \sum_{k=0}^{n} \binom{n}{k} x^{n-k} \Big((-1)^k \cdot y^k\Big)\\
+    &= \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}\cdot y^k
+  \end{align*}
+\end{proof}
