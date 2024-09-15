@@ -413,31 +413,6 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \begin{proof} $\sum_{i=1}^n c = \bigl((n-1)+1\bigr) c = nc$.
   \end{proof}
   
-  \item Si $a\leq b$, entonces \[\sum_{n=a}^{b} \Big(f(n+1)-f(n)\Big) = f(b+1) - f(a) \qquad \text{Propiedad telescópica (de la sumatoria)}\]
-  \begin{proof}\leavevmode
-    \begin{enumerate}[label=\Roman*)]
-      \item Si $a=b$, \[\sum_{n=a}^{b} \Big(f(n+1)-f(n)\Big) = f(n+1) - f(n) = f(b+1) - f(a)\]
-      \item Si $a<b$,
-      \begin{enumerate}[label=\roman*)]
-        \item Se verifica para $b=a+1$,
-        \begin{align*}
-          \sum_{n=a}^{a+1} \Big(f(n+1)-f(n)\Big) &= \Bigl(f\big(a+1\big)-f(a)\Bigr) + \sum_{n=a+1}^{a+1} \Big(f(n+1)-f(n)\Big)\\
-          &= \Bigl(f(a+1)-f(a)\Bigr) + \Bigl(f\big((a+1)+1\big)-f(a+1)\Bigr)\\
-          &= f\bigl((a+1)+1\bigr) - f(a)
-        \end{align*}
-        \item Supongamos que se cumple para $b=a+k$, con $k\in \N$; es decir, suponemos que
-        \[\sum_{n=a}^{a+k} \Big(f(n+1)-f(n)\Big) = f\bigl((a+k)+1\bigr) - f(a)\]
-        \item Notemos que
-        \begin{align*}
-          \sum_{n=a}^{a+k+1} \Big(f(n+1)-f(n)\Big) &= \Big(f(a+k+1+1)-f(a+k+1)\Big) + \sum_{n=a}^{a+k} \Big(f(n+1)-f(n)\Big)\\
-          &= \Big(f(a+k+1+1)-f(a+k+1)\Big) + f(a+k+1) - f(a)\\
-          &= f(a+k+1+1) - f(a)
-        \end{align*}
-      \end{enumerate}
-    \end{enumerate}
-  \end{proof}
-  \textbf{Nota:} En esta proposición se restringe que $a\leq b$, pues si $a>b$, se tiene que $\sum_{n=a}^{b} \Bigl(f(n+1)-f(n)\Bigr) = 0 \neq f(b+1) - f(a)$ únicamente el caso en que $f(b+1)=f(a)$, se cumpliría la igualdad con $a>b$.
-  
   \item Si $s\leq j\leq t$, \[\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j}f(n) + \sum_{n=j+1}^{t}f(n) \qquad \text{(Separar la suma)}\]
   
   \textbf{Nota:} Alternativamente podemos escribir esta igualdad como sigue: Si $s\leq j\leq t$, entonces $\sum_{n=s}^{t}f(n) = \sum_{n=s}^{j-1}f(n) + \sum_{n=j}^{t}f(n)$. El lector debería verificar esta equivalencia
@@ -518,7 +493,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \end{proof}
 
   \end{enumerate}
-
+  
   \item Sea $\ell, m\in \R$ y $c\in \Z$, encuentre las condiciones que deben cumplirse para que
   
   \[\sum_{n=a}^b f(\ell+m\cdot n) = \sum_{n=a+c}^{b+c} f(\ell+m\cdot n-c)\]
@@ -750,6 +725,54 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
   \begin{proof}\leavevmode
     La porposición se verifica por el teorema para $a=0$.
   \end{proof}
+  
+  \item Si $a\leq b$, entonces \[\sum_{n=a}^{b} \Big(f(n+1)-f(n)\Big) = f(b+1) - f(a) \qquad \text{Propiedad telescópica (de la sumatoria)}\]
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\Roman*)]
+      \item Si $a=b$, \[\sum_{n=a}^{b} \Big(f(n+1)-f(n)\Big) = f(n+1) - f(n) = f(b+1) - f(a)\]
+      \item Si $a<b$,
+      \begin{enumerate}[label=\roman*)]
+        \item Se verifica para $b=a+1$,
+        \begin{align*}
+          \sum_{n=a}^{a+1} \Big(f(n+1)-f(n)\Big) &= \Bigl(f\big(a+1\big)-f(a)\Bigr) + \sum_{n=a+1}^{a+1} \Big(f(n+1)-f(n)\Big)\\
+          &= \Bigl(f(a+1)-f(a)\Bigr) + \Bigl(f\big((a+1)+1\big)-f(a+1)\Bigr)\\
+          &= f\bigl((a+1)+1\bigr) - f(a)
+        \end{align*}
+        \item Supongamos que se cumple para $b=a+k$, con $k\in \N$; es decir, suponemos que
+        \[\sum_{n=a}^{a+k} \Big(f(n+1)-f(n)\Big) = f\bigl((a+k)+1\bigr) - f(a)\]
+        \item Notemos que
+        \begin{align*}
+          \sum_{n=a}^{a+k+1} \Big(f(n+1)-f(n)\Big) &= \Big(f(a+k+1+1)-f(a+k+1)\Big) + \sum_{n=a}^{a+k} \Big(f(n+1)-f(n)\Big)\\
+          &= \Big(f(a+k+1+1)-f(a+k+1)\Big) + f(a+k+1) - f(a)\\
+          &= f(a+k+1+1) - f(a)
+        \end{align*}
+      \end{enumerate}
+    \end{enumerate}
+  \end{proof}
+  
+  \textbf{Nota:} En esta proposición se restringe que $a\leq b$, pues si $a>b$, se tiene que $\sum_{n=a}^{b} \Bigl(f(n+1)-f(n)\Bigr) = 0 \neq f(b+1) - f(a)$ únicamente el caso en que $f(b+1)=f(a)$, se cumpliría la igualdad con $a>b$.
+  
+  \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
+  \item Sea $a\leq m -1$, \[\sum_{n=a}^{m-1} \Big(f(n+1) - f(n)\Big) = f(m)-f(a)\]
+  \begin{proof}\leavevmode
+    \begin{align*}
+      \sum_{n=a}^{m-1} \Big(f(n+1) - f(n)\Big) &= f\big((m-1)+1\big) - f(a) && \text{Propiedad telescópica}\\
+      &= f(m)-f(a)
+    \end{align*}
+  \end{proof}
+  
+  \item Sea $1\leq m$, \[\sum_{n=1}^{m} \Big(f(n)-f(n-1)\Big) = f(m)-f(0)\]
+  \begin{proof}\leavevmode
+    \begin{align*}
+      \sum_{n=1}^{m} \Big(f(n)-f(n-1)\Big) &= \sum_{n=1+(-1)}^{m+(-1)} \bigg( f\big(n-(-1)\big)-f\big((n-1)-(-1)\big)\bigg) && \text{Cambio de índice}\\
+      &= \sum_{n=0}^{m-1} \Big(f(n+1)-f(n)\Big)\\
+      &= \sum_{n=0}^{0} \Big(f(n+1)-f(n)\Big) + \sum_{n=1}^{m-1} \Big(f(n+1)-f(n)\Big) && \text{Separar la suma}\\
+      &= f(0+1) - f(0) + \sum_{n=1}^{m-1} \Big(f(n+1)-f(n)\Big)\\
+      &= f(1) - f(0) + f(m) - f(1) && \text{(i) de este corolario}\\
+      &= f(m) - f(0)
+    \end{align*}
+  \end{proof}
+  \end{enumerate}
 
     
   \end{enumerate}
@@ -846,8 +869,8 @@ donde $N\subseteq \N$.
 
 \begin{proof}\leavevmode
   \begin{enumerate}[label=\roman*)]
-    \item Se verifica para $n=2$, por la desigualdad del triángulo,
-    \[\left| \sum_{i=1}^{2} a_i \right| = \left|a_1 + \sum_{i=2}^{2} a_i \right| = |a_1 + a_2| \leq |a_1|+|a_2| = |a_1| + \sum_{i=2}^{2} |a_i| = \sum_{i=1}^{2} |a_i|\]
+    \item Se verifica para $n=1$,
+    \[\left| \sum_{i=1}^{1} a_i \right| = a_1 \leq |a_1| = \sum_{i=1}^{1}|a_1|\]
     \item Supongamos que se cumple para $n=k$, es decir, suponemos que
     \[\left| \sum_{i=1}^{k} a_i \right| \leq \sum_{i=1}^{k} |a_i|\]
     \item Notemos que $|a_{k+1}| \leq |a_{k+1}|$. Luego, 
