@@ -1762,28 +1762,24 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
 \pagebreak
 
 \section*{Teorema binomial}
+% \textbf{Definición:} Sea $a$ una función:
+% \begin{align*}
+%  a: \ \N\union\set{0} &\to \R \\
+%  \  k &\mapsto a_k
+% \end{align*}
 
-\textbf{Definición:} Sea $a$ una función:
-\begin{align*}
- a: \ \N\union\set{0} &\to \R \\
- \  k &\mapsto a_k
-\end{align*}
+% Un polinómio es una expresión \textit{formal}: \[\sum_{k=0}^{n} a_k x^k\]
+% Decimos que
+% \begin{itemize}
+%   \item $a_k x^k$ es el k-ésimo término,
+%   \item $a_k$ es el coeficiente del k-ésimo término,
+%   \item $x^k$ es la indeterminada del k-ésimo término,
+%   \item el \textit{grado} es la mayor $k$ para la cual $a_k\neq 0$,
+% \end{itemize}
+% del polinomio.
 
-Un polinómio es una expresión \textit{formal}: \[\sum_{k=0}^{n} a_k x^k\]
-Decimos que
-\begin{itemize}
-  \item $a_k x^k$ es el k-ésimo término,
-  \item $a_k$ es el coeficiente del k-ésimo término,
-  \item $x^k$ es la indeterminada del k-ésimo término,
-  \item el \textit{grado} es la mayor $k$ para la cual $a_k\neq 0$,
-\end{itemize}
-del polinomio.
-
-Sea $x,y\in \R$,
+Sea $x,y\in \R$ y $n\in \N\union\set{0}$,
 \[(x+ y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
-
-\begin{proof}\leavevmode
-  
   \begin{enumerate}[label=\roman*)]
     \item Se verifica para $n=0$, \[(x+ y)^n = (x+ y)^0= 1= \binom{0}{0} x^{0-0}y^0= \sum_{k=0}^{0} \binom{n}{k} x^{0-k}y^k= \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k\]
     \item Se verifica para $n=1$,
@@ -1797,26 +1793,24 @@ Sea $x,y\in \R$,
     \end{align*}
     \item Supongamos que si $n=m\in \N$, entonces \[(x+ y)^m = \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k\]
     \item Notemos que 
+    \begin{align*}
+      (x+ y)^{m+1} &= (x + y)^m \cdot (x+ y)\\
+      &= \Bigg(\sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k\Bigg) \cdot (x + y)\\
+      &= x \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k + y \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k \\
+      &= \underbrace{\sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k}_{A} + \underbrace{\sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1}}_{B} && \text{(*)}
+      \end{align*}
   \end{enumerate}
-\end{proof}
-
-\begin{align*}
-  (x+ y)^{m+1} &= (x + y)^m \cdot (x+ y)\\
-  &= \Bigg(\sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k\Bigg) \cdot (x + y)\\
-  &= x \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k + y \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k \\
-  &= \sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k + \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1}
-  \end{align*}
-  
-  Notemos que
+Luego,
   \begin{align*}
-    \sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k &= \binom{m}{0}x^{m-0+1}y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
+    \overbrace{\sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k}^{A} &= \binom{m}{0}x^{m-0+1}y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
     &= 1\cdot x^{m+1} y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
     &= \binom{0}{0} x^{m+1} y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
     &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k
   \end{align*}
   
+  Similarmente,  
   \begin{align*}
-    \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1} &= \sum_{k=0+1}^{m+1} \binom{m}{k-1} x^{m+1-k}y^{k+1-1}\\
+    \overbrace{\sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1}}^{B} &= \sum_{k=0+1}^{m+1} \binom{m}{k-1} x^{m+1-k}y^{k+1-1}\\
     &= \sum_{k=1}^{m+1} \binom{m}{k-1} x^{m+1-k}y^{k}\\
     &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \binom{m}{m+1-1} x^{m+1-(m+1)}y^{m+1}\\
     &=  \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \binom{m}{m} x^{0}y^{m+1}\\
@@ -1826,21 +1820,30 @@ Sea $x,y\in \R$,
     &= \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k
   \end{align*}
   
-  Luego,  
+  Por otra parte,
   \begin{align*}
-    \sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k} &= \sum_{k=1}^{m} \Biggl(\binom{m}{k} + \binom{m}{k-1}\Biggr) x^{m+1-k}y^k\\
+    \overbrace{\sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k}}^{C} &= \sum_{k=1}^{m} \Biggl(\binom{m}{k} + \binom{m}{k-1}\Biggr) x^{m+1-k}y^k\\
     &= \sum_{k=1}^{m} \Biggl(\binom{m}{k} x^{m+1-k}y^k + \binom{m}{k-1} x^{m+1-k}y^{k}\Biggr)\\
     &= \sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k + \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k}
   \end{align*}
   
+\pagebreak
+  
+  Finalmente, retomando (*), se tiene que:
+  
   \begin{align*}
-    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k + \sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
-    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k + \sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
+   (x+y)^{m+1} &= \overbrace{\sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k}^{A} + \overbrace{\sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k}^{B}\\
+    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k + \overbrace{\sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k}}^{C} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
     &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k + \sum_{k=1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
     &= \sum_{k=0}^{m+1} \binom{m+1}{k} x^{(m+1)-k} y^k
   \end{align*}
   
-Corolario: \[(x- y)^n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}y^k\]
+\subsection*{Una nota sobre el Teorema Binomial}
+
+El lector se preguntará por el binomio de la \textit{forma} $(x-y)^n$. Notemos que hemos probado el teorema binomial para número reales ---sin importar si los acompaña un signo, por lo que el teorema es valido para $-y\in \R$, pues $(x-y)^n = (x + (-y))^n$. Resulta conveniente, sin embargo, verificar este hecho preservando la forma $(x-y)^n$.
+  
+Sea $x,y\in \R$ y $n\in \N\union\set{0}$,
+\[(x- y)^n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}y^k\]
 
 \begin{proof}\leavevmode
   \begin{align*}
