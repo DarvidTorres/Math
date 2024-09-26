@@ -33,7 +33,7 @@ Existe un subconjunto del conjunto de los números reales llamado conjunto de lo
 
  \item Demuestre que $1\in \R^+$. (Uno es positivo).
  \begin{proof} Consideremos los casos: \begin{enumerate}[label=\roman*)]
- \item $1=0$, pero este caso se descarta por axioma del neutro multiplicativo.
+ \item Si $1=0$, se contradice el axioma del neutro multiplicativo.
  \item Si $-1\in \R^+$, por cerradura de la multiplicación en $\R^+$, $(-1) \cdot (-1)=1\in \R^+$, pero esto contradice la propiedad de tricotomía.
  \end{enumerate} Por tanto, $1\in \R^+$.
  \end{proof}
@@ -784,4 +784,41 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
  Por tanto, debe cumplirse que $b$ y $d$ deben ser ambos mayores a cero o ambos menores a cero.
 
+\end{enumerate}
+
+\clearpage
+\pagebreak
+
+\section*{Una nota sobre un campo finito}
+
+Antes de introducir los axiomas de campo, no era posible demostrar que $1+1\neq 0$. Sin embargo, ahora sabemos que $1\in \R^+$, y por la caracterización de $\R^+$ se tiene que $0<1$. Más aún, se verifica que $1<1+1$ y por transitividad, $0<1+1$, es decir que $1+1\in \R^+$, y por tricotomía, $1+1\neq 0$, o utlizando otra notación, $2\neq 0$. Con este hecho, finalmente podemos concluir las pruebas pendientes para las proposiciones listadas al iniciar la discusión del campo finito, al final del capítulo anterior:
+\begin{enumerate}[label=\roman*)]
+  \item Si $a\in \R$ tal que $a=-a$, entonces $a=0$.
+  \begin{proof}\leavevmode
+    \begin{align*}
+      0 &= a + (-a) && \text{Neutro aditivo}\\
+      &= a + a && \text{Hipótesis}\\
+      &= 2a && \text{Notación}
+    \end{align*}
+    Luego, por la multiplicación igual a cero, se tiene que $2=0$ o $a=0$. Como $2\neq 0$, sigue que $a=0$.
+  \end{proof}
+  \item Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$.
+  \begin{proof}\leavevmode
+    \begin{align*}
+      2a %&= (1+1)a && \text{Notación}\\
+      %&= a(1+1) && \text{Conmutatividad}\\
+      %&= a\cdot 1 + a\cdot 1 && \text{Distribución}\\
+      %&= a + a && \text{Neutro multiplicativo}\\
+      &= a + a && \text{Notación}\\
+      %&= a +a + 0&& \text{Neutro aditivo}\\
+      &= a+a+b-b && \text{Inverso aditivo}\\
+      &= a-b+a+b && \text{Conmutatividad}\\
+      &= b-a +a +b && \text{Hipótesis}\\
+      %&= b+0 + b && \text{Inverso aditivo}\\
+      %&= b+b && \text{Neutro aditivo}\\
+      &= b+b && \text{Inverso aditivo}\\
+      &= 2b && \text{Notación}
+     \end{align*}
+     Finalmente, por la ley de la cancelación, $a=b$.
+  \end{proof}
 \end{enumerate}

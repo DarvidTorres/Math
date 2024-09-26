@@ -76,21 +76,33 @@ Sean $a$, $b$, $c$ números reales, demuestre lo siguiente:
  En cualquier caso, $|ab|=|a||b|$.
 \end{proof}
 
-\item $|a|<b$ si y solo si $-b<a<b$.
+\item $|a|<b$ si y solo si $-b<a<b$. (Teorema para eliminar el valor absoluto en algunas desigualdades).
 
 \begin{proof} \leavevmode
  \begin{itemize}
-  \item[$\Rightarrow)$] Sea $|a|<b$.
-  
-  Sabemos que $\pm a \leq |a|$, y por transitividad $a<b$ y $-a<b$, por lo que $-b<a$. Por tanto, $-b<a<b$.
+  \item[$\Rightarrow)$] Sea $|a|<b$. Sabemos que $\pm a \leq |a|$, y por transitividad $a<b$ y $-a<b$, por lo que $-b<a$. Por tanto, $-b<a<b$.
   \item[$\Leftarrow)$] Sea $-b<a<b$. Tenemos dos casos: \begin{enumerate}[label=\roman*)]
-   \item Si $0\leq |a|$, por definición, $|a|=a$, y por la hipótesis, $|a|<b$.
+   \item Si $0\leq a$, por definición, $|a|=a$, y por la hipótesis, $|a|<b$.
    \item Si $a<0$, por definición, $|a|=-a$, y por la hipótesis, $|a|<b$.
   \end{enumerate} En cualquier caso, $|a|<b$. \qedhere 
  \end{itemize}
 \end{proof}
 
-\textbf{Nota:} Nos referiremos a esta proposición como teorema para eliminar el valor absoluto en algunas desigualdades.
+\bfit{Corolario:} $|a|\leq b$ si y solo si $-b\leq a \leq b$.
+  \begin{proof}\leavevmode
+  \begin{itemize}
+  \item[$\Rightarrow)$] \begin{enumerate}[label=\roman*)]
+    \item Sea $|a|=b$, notemos que $a\leq |a|$, es decir, $a\leq b$. Similarmente, $-a\leq |a|$, es decir, $-a\leq b$, por lo que $-b\leq a$.
+    \item Si $|a|<b$, por el teorema se tiene que $-b<a<b$, y a su vez, $-b\leq a \leq b$.
+  \end{enumerate}
+  \item[$\Leftarrow)$] \begin{enumerate}[label=\roman*)]
+    \item Si $-b = a =b$, entonces $a=0$, por lo que $b=0$, y a su vez, $|a|=0$, lo que implica que $|a|\leq b$.
+    \item Si $-b=a< b$, tenemos dos casos: si $a\geq 0$, entonces $|a|=a$, y así $|a|<b$. Pero si $a<0$, entonces $|a|=-a$, y como $-b=a$ sigue que $-a=b$, por lo que $|a|=b$, es decir, $|a|\leq b$.
+    \item Si $-b<a=b$, tenemos dos casos: si $a\geq 0$, entonces $|a|=a$, y así $|a|\leq b$, pero si $a<0$, entonces $|a|=-a$, y como $-b<a$, sigue que $-a<b$, osea $|a|<b$, y a su vez, $|a|\leq b$.
+    \item Si $-b<a<b$, por el teorema sigue que $|a|<b$ y a su vez, $|a|\leq b$.
+  \end{enumerate}
+  \end{itemize}
+  \end{proof}
 
  \item $|a+b|\leq |a|+|b|$. (Desigualdad del triángulo).
 

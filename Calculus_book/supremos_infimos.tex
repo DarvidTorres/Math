@@ -1,0 +1,76 @@
+\part*{Supremos e Ínfimos}
+
+\section*{Propiedad de completez de \(\mathbb{R}\)}
+
+\bfit{Definición:} Sea $A\subset \R$ con $A\neq \emptyset$, decimos que $A$:
+\begin{itemize}
+ \item Está acotado superiormente, si $\exists K\in \R$ tal que $a \leq K, \forall a\in A$. En este caso decimos que $K$ es cota superior de $A$.
+
+ \item Está acotado inferiormente, si $\exists k\in \R$ tal que $k \leq a, \forall a\in A$. En este caso decimos que $k$ es cota inferior de $A$.
+
+ \item Está acotado, si $\exists M\in \R$ tal que $|a|\leq M,\forall a \in A$. En este caso decimos que $M$ es una cota de $A$.
+\end{itemize}
+
+\bfit{Definición:}  Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado superiormente, decimos que un número real $S$ es supremo de $A$ si:
+\begin{itemize}
+ \item $S$ es cota superior de $A$, y
+ \item Si $K$ es cota superior de $A$, entonces $S\leq K$.% ($S$ es la cota superior más pequeña de $A$).
+\end{itemize}
+
+En este caso escribimos $S=\sup(A)$.
+
+\bfit{Definición:} Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado inferiormente, decimos que un número real $L$ es ínfimo de $A$ si: \begin{itemize}
+ \item $L$ es cota inferior de $A$, y
+ \item Si $K$ es cota inferior de $A$, entonces $K\leq L$.
+\end{itemize}
+
+En este caso escribimos $L=\inf(A)$.
+
+\subsection*{Lista de ejercicios}
+
+Demuestre lo siguiente:
+
+\begin{enumerate}[label=\roman*)]
+ \item Sea $A\subset \R$ tal que $A\neq \emptyset$. $A$ está acotado si y solo si $A$ está acotado superior e inferiormente.
+ 
+ \begin{proof} \leavevmode
+  \begin{itemize}
+   \item[$\Rightarrow)$] Supongamos que $A$ está acotado. Sea $a\in A$, por definición, $\exists M\in \R$ tal que $|a|\leq M$. Por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $-M<a<M$, por lo que $A$ está acotado superior e inferiormente.
+   \item[$\Leftarrow)$] Supongamos que $A$ está acotado superior e inferiormente. Sea $a\in A$, entonces $\exists k, K\in \R$ tales que $k\leq a \leq K$. Notemos que
+   \begin{align*}
+    -k &\leq |k|\\
+    -k &\leq |k| + |K|\\
+    -|K|-|k| &\leq k\\
+    - \big(|K|+|k|\big) &\leq k
+   \end{align*}
+   Como $k\leq a$, por transitividad sigue que, $-\big(|K|+|k|\big) \leq a$. Similarmente,
+   \begin{align*}
+    K &\leq |K|\\
+    K &\leq |K| + |k|
+   \end{align*}
+   Como $a\leq K$, por transitividad sigue que, $a\leq |K|+|k|$. Es decir, se verifica que \[-\big(|K|+|k|\big) \leq a \leq |K|+|k|\]
+   y, por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $|a| \leq |K| + |k|$. Por tanto, $A$ está acotado.
+  \end{itemize}
+ \end{proof}
+
+ \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene supremo, este es único.
+ 
+ \begin{proof} 
+  Supongamos que $s_1$ y $s_2$ son supremos de $A$. Como $s_1$ es una cota superior de $A$ y $s_2$ es elemento supremo, entonces $s_2\leq s_1$. Similarmente, $s_1\leq s_2$. Por tanto, $s_1=s_2$. 
+ \end{proof}
+
+ \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene ínfimo, este es único.
+ 
+ \begin{proof} 
+  Supongamos que $m_1$ y $m_2$ son ínfimos de $A$. Como $m_1$ es una cota superior de $A$ y $m_2$ es elemento ínfimo, entonces $m_1\leq m_2$. Similarmente, $m_2\leq m_1$. Por tanto, $m_1=m_2$. 
+ \end{proof}
+
+ \item Una cota superior $M$ de un conjunto no vacío $S$ de $\R$ es el supremo de $S$ si y solo si para toda $\varepsilon>0$ existe $s_\varepsilon \in S$ tal que $M-\varepsilon<s_\varepsilon$.
+
+ \begin{proof} 
+  \begin{enumerate}[label=\roman*)]
+   \item Sea $M$ una cota superior de $S$ tal que $\forall \epsilon>0, \exists s_{\epsilon}$ tal que $M-\epsilon<s_{\epsilon}$. Si $M$ no es el supremo de $S$, tendríamos que $\exists V$ tal que $s_\epsilon \leq V < M$. Elegimos $\epsilon = M-V$, con lo que $V<s_{\epsilon}$, lo que contradice nuestra hipótesis. Por tanto, $M$ es el supremo de $S$.
+   \item Sea $M$ el supremo de $S$ y $\epsilon>0$. Como $M<M+\epsilon$, entonces $M-\epsilon$ no es una cota superior de $S$, por lo que $\exists s_\epsilon$ tal que $s_\epsilon>M-\epsilon$. \qedhere
+   \end{enumerate} 
+ \end{proof}
+\end{enumerate}

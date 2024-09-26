@@ -373,7 +373,7 @@ Sean $a$ y $b$ números reales, demuestre lo siguiente:
 
  \textbf{Nota:} El axioma del neutro multiplicativo no implica directamente que $0$ no pueda ser inverso multiplicativo de algún número real, únicamente indica que si $x\in \R$ y $x\neq 0$, entonces $\exists x^{-1}$. El axioma tampoco especifica que para $0$ el inverso multiplicativo no existe, sin embargo, si suponemos su existencia, es decir, si $\exists 0^{-1}\in \R$ tal que $0\cdot 0^{-1}=1$, tenemos por la multiplicación por $0$ que $0=1$, lo que es una contradicción.
 
- \item Si $ a \cdot b = 0 $, entonces $a=0$ o $b=0$.
+ \item Si $ a \cdot b = 0 $, entonces $a=0$ o $b=0$. (Multiplicación igual a $0$).
  \begin{proof} Demostraremos primero que si $a\neq 0$ y $b\neq 0$, entonces $a\cdot b\neq 0$.
  
  Sea $a\neq 0$ y $b\neq 0$. Notemos que \begin{align*}
@@ -750,6 +750,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  \textbf{Nota:} En esta prueba está implícito que $\exists (-b)^{-1}\in \R$, lo cual es válido, pues $b\neq 0$, por lo que $-b\neq 0$.
 \end{enumerate}
 
+\clearpage
 \pagebreak
 
 \begin{tcolorbox}
@@ -967,49 +968,33 @@ Podemos usar esta notación sin ambigüedad ya que hemos probado que $-(x^{-1})=
 
 \section*{Un campo finito}
 
-Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$. El siguiente es un esbozo de la prueba:
-\begin{align*}
- 2a %&= (1+1)a && \text{Notación}\\
- %&= a(1+1) && \text{Conmutatividad}\\
- %&= a\cdot 1 + a\cdot 1 && \text{Distribución}\\
- %&= a + a && \text{Neutro multiplicativo}\\
- &= a + a && \text{Notación}\\
- %&= a +a + 0&& \text{Neutro aditivo}\\
- &= a+a+b-b && \text{Inverso aditivo}\\
- &= a-b+a+b && \text{Conmutatividad}\\
- &= b-a +a +b && \text{Hipótesis}\\
- %&= b+0 + b && \text{Inverso aditivo}\\
- %&= b+b && \text{Neutro aditivo}\\
- &= b+b && \text{Inverso aditivo}\\
- &= 2b && \text{Notación}
-\end{align*}
-%\begin{align*}
-%a+(-b)&=b+(-a) && \text{Hipótesis} \\
-%\bigl(a+(-b)\bigr)+b&=\bigl(b+(-a)\bigr)+b&&\text{Ley de cancelación} \\
-%a + \bigl((-b)+b\bigr)&= b+\bigl((-a)+b\bigr)&&\text{Asociatividad} \\
-%a + \bigl(b+(-b)\bigr)&= b+\bigl(b+(-a)\bigr)&&\text{Conmutatividad} \\
-%a + 0&= b+\bigl(b+(-a)\bigr)&&\text{Inverso aditivo} \\
-%a + 0&= (b+b)+(-a)&&\text{Asociatividad} \\
-%(a + 0) + a&= \bigl((b+b)+(-a)\bigr)+a&&\text{Ley de cancelación} \\
-%(a + 0) + a&= (b+b)+\bigl((-a)+a\bigr)&&\text{Asociatividad} \\
-%(a + 0) + a&= (b+b)+\bigl(a+(-a)\bigr)&&\text{Conmutatividad} \\
-%(a + 0) + a&= (b+b)+0&&\text{Inverso aditivo} \\
-%a+ a&= b+b&&\text{Neutro aditivo} \\
-%a\cdot 1+ a\cdot 1&= b\cdot 1+ b\cdot 1&&\text{Neutro multiplicativo} \\
-%a\cdot (1+1)&= b\cdot (1+1)&&\text{Distribución} \\
-%a\cdot (2) &= b\cdot (2) &&\text{Notación} \\
-%a &= b && \text{¿Ley de cancelación?}
-%\end{align*}
-A pesar de que se verifica la igualdad $2a=2b$, aún necesitamos justificar que $a=b$. Podríamos apelar a la ley de cancelación de la multiplicación, pero para su uso requerimos que $2\neq 0$, el cual es un hecho que hasta ahora no ha sido demostrado. No obstante, los axiomas que hemos listado y los resultados que hemos obtenido de ellos no son suficientes para probar este hecho, el lector debería indagar en las implicaciones de definir que $2=0$ y decidir si este hecho es contradictorio. Para clarificar este punto, consideremos el siguiente conjunto: %, pues si suponemos que $2=0$, tendríamos consistencia con todos los axiomas listados hasta ahora, es decir, no habría motivo para suponer que $2\neq 0$.
-%Supongamos que $2=0$.
-%
-%\begin{enumerate}[label=\roman*)]
-% \item Cerradura de la suma: Por axioma de neutro multiplicativo, $1\in \R$, y por la cerradura de la suma, $1+1\in \R$, por notación $2\in \R$. También, por axioma de neutro aditivo $0\in \R$. Vemos que la hipótesis $2=0$ es consistente.
-% \item Conmutatividad de la suma. Sabemos que $a+b=b+a$, en el caso $a=b$ tenemos $a+a=b+b$. Tomando $a=1$ y $b=0$, tenemos $1+1=0+0$, osea $2=0$, lo cual es consistente con la hipótesis.
-% \item Asociatividad de la suma. Sabemos que $(a+b)+c=a+(b+c)$, tomando $a=b=c=1$ tenemos $(1+1)+1=1+(1+1)$ y por notación
-%\end{enumerate}
+Considere las siguientes proposiciones:
 
-%Sea $\Omega\defined \set{0,1}$ un conjunto dotado con las operaciones de suma y multiplicación.
+\begin{enumerate}[label=\roman*)]
+  \item Sea $a\in \R$ tal que $a=-a$, entonces $a=0$. El siguiente es un esbozo de la prueba propuesta por un estudiante:
+  \begin{align*}
+    0 &= a + (-a) && \text{Neutro aditivo}\\
+    &= a + a && \text{Hipótesis}\\
+    &= 2a && \text{Notación}
+  \end{align*}
+  Luego, por la multiplicación igual a cero, se tiene que $2=0$ o $a=0$.
+  
+  \textbf{Nota:} En este punto, habría que verificar que $2\neq 0$ para concluir que $a=0$.
+  
+  \item Si $a,b\in \R$ son tales que $a-b=b-a$, entonces $a=b$. El siguiente es un esbozo de la prueba propuesta por un estudiante:
+  \begin{align*}
+   2a &= a + a && \text{Notación}\\
+   &= a+a+b-b && \text{Inverso aditivo}\\
+   &= a-b+a+b && \text{Conmutatividad}\\
+   &= b-a +a +b && \text{Hipótesis}\\
+   &= b+b && \text{Inverso aditivo}\\
+   &= 2b && \text{Notación}
+  \end{align*}
+  
+  \textbf{Nota:} A pesar de que se verifica la igualdad $2a=2b$, aún necesitamos justificar que $a=b$. Podríamos apelar a la ley de cancelación de la multiplicación, pero para su uso requerimos que $2\neq 0$, el cual es un hecho que hasta ahora no ha sido demostrado. No obstante, los axiomas que hemos listado y los resultados que hemos obtenido de ellos no son suficientes para probar este hecho, el lector debería indagar en las implicaciones de definir que $2=0$ y decidir si este hecho es contradictorio.
+\end{enumerate}
+
+Para clarificar este punto, consideremos el siguiente conjunto: 
 Sea $\Omega$ un conjunto dotado con las operaciones suma $+$ y multipllicación $\cdot$ que satisfacen las siguientes propiedades:
 \begin{enumerate}
 \item Cerradura (de la suma): Si $x,y\in \Omega$, entonces $x+y\in \Omega$.
