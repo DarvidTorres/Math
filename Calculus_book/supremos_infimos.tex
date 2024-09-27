@@ -1,14 +1,19 @@
 \part*{Supremos e Ínfimos}
 
-\section*{Propiedad de completez de \(\mathbb{R}\)}
-
 \bfit{Definición:} Sea $A\subset \R$ con $A\neq \emptyset$, decimos que $A$:
 \begin{itemize}
- \item Está acotado superiormente, si $\exists K\in \R$ tal que $a \leq K, \forall a\in A$. En este caso decimos que $K$ es cota superior de $A$.
+ \item está acotado superiormente, si $\exists K\in \R$ tal que $a \leq K, \forall a\in A$. En este caso decimos que $K$ es cota superior de $A$.
 
- \item Está acotado inferiormente, si $\exists k\in \R$ tal que $k \leq a, \forall a\in A$. En este caso decimos que $k$ es cota inferior de $A$.
+ \item está acotado inferiormente, si $\exists k\in \R$ tal que $k \leq a, \forall a\in A$. En este caso decimos que $k$ es cota inferior de $A$.
 
- \item Está acotado, si $\exists M\in \R$ tal que $|a|\leq M,\forall a \in A$. En este caso decimos que $M$ es una cota de $A$.
+ \item está acotado, si $\exists M\in \R$ tal que $|a|\leq M,\forall a \in A$. En este caso decimos que $M$ es una cota de $A$.
+\end{itemize}
+
+\textbf{Observación:}
+\begin{itemize}
+  \item Si $K$ es una cota superior de $A$, entonces $\forall \epsilon>0$, se tiene que $K+\epsilon$ también es cota superior de $A$, pues $a \leq K<K+\epsilon$, $\forall a\in A$. 
+  \item Si $k$ es una cota inferior de $A$, entonces $\forall \epsilon>0$, se tiene que $k - \epsilon$ también es cota inferior de $A$, pues $k - \epsilon < k \leq a$, $\forall a\in A$.
+  \item Si $M$ es una cota de $A$, entonces $\forall \epsilon>0$, se tiene que $M+\epsilon$ también es cota de $A$, pues $|a|\leq M < M+\epsilon$, $\forall a\in A$.
 \end{itemize}
 
 \bfit{Definición:}  Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado superiormente, decimos que un número real $S$ es supremo de $A$ si:
@@ -19,12 +24,20 @@
 
 En este caso escribimos $S=\sup(A)$.
 
+\textbf{Observación:} Si $A$ tiene supremo, este no necesariamente pertenece a $A$.
+
 \bfit{Definición:} Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado inferiormente, decimos que un número real $L$ es ínfimo de $A$ si: \begin{itemize}
  \item $L$ es cota inferior de $A$, y
  \item Si $K$ es cota inferior de $A$, entonces $K\leq L$.
 \end{itemize}
 
 En este caso escribimos $L=\inf(A)$.
+
+\textbf{Observación:} Si $A$ tiene ínfimo, este no necesariamente pertenece a $A$.
+
+\section*{Propiedad de completez de \(\mathbb{R}\)}
+
+A pesar de que hemos definido al supremo e ínfimo para subconjuntos no vacíos de los números reales, en realidad no es posible ---utilizando únicamente las propiedades demostradas hasta este punto, probar que, en efecto, el supremo e ínfimo existen. En otras palabras, si $A\subset \R$ con $A\neq \emptyset$ no podemos garantizar la existencia de $\sup(A)\in \R$ tal que para toda cota superior $K$ de $A$ se tiene que $\sup(A)\leq S$. Analogamente, no podemos probar que $\inf(A)$ es menor que todas las cotas superiores de $A$. 
 
 \subsection*{Lista de ejercicios}
 
@@ -35,7 +48,7 @@ Demuestre lo siguiente:
  
  \begin{proof} \leavevmode
   \begin{itemize}
-   \item[$\Rightarrow)$] Supongamos que $A$ está acotado. Sea $a\in A$, por definición, $\exists M\in \R$ tal que $|a|\leq M$. Por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $-M<a<M$, por lo que $A$ está acotado superior e inferiormente.
+   \item[$\Rightarrow)$] Supongamos que $A$ está acotado. Sea $a\in A$, por definición, $\exists M\in \R$ tal que $|a|\leq M$. Por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $-M\leq a \leq M$, por lo que $A$ está acotado superior e inferiormente.
    \item[$\Leftarrow)$] Supongamos que $A$ está acotado superior e inferiormente. Sea $a\in A$, entonces $\exists k, K\in \R$ tales que $k\leq a \leq K$. Notemos que
    \begin{align*}
     -k &\leq |k|\\
@@ -49,28 +62,47 @@ Demuestre lo siguiente:
     K &\leq |K| + |k|
    \end{align*}
    Como $a\leq K$, por transitividad sigue que, $a\leq |K|+|k|$. Es decir, se verifica que \[-\big(|K|+|k|\big) \leq a \leq |K|+|k|\]
-   y, por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $|a| \leq |K| + |k|$. Por tanto, $A$ está acotado.
+   y, por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $|a| \leq |K| + |k|$. Por tanto, $A$ está acotado. \qedhere
   \end{itemize}
  \end{proof}
 
  \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene supremo, este es único.
  
  \begin{proof} 
-  Supongamos que $s_1$ y $s_2$ son supremos de $A$. Como $s_1$ es una cota superior de $A$ y $s_2$ es elemento supremo, entonces $s_2\leq s_1$. Similarmente, $s_1\leq s_2$. Por tanto, $s_1=s_2$. 
+  Supongamos que $s_1$ y $s_2$ son supremos de $A$. Por definición, $s_1$ es una cota superior de $A$ y $s_2$ es elemento supremo, entonces $s_2\leq s_1$. Análogamente, $s_1\leq s_2$. Por tanto, $s_1=s_2$.
  \end{proof}
 
  \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene ínfimo, este es único.
  
  \begin{proof} 
-  Supongamos que $m_1$ y $m_2$ son ínfimos de $A$. Como $m_1$ es una cota superior de $A$ y $m_2$ es elemento ínfimo, entonces $m_1\leq m_2$. Similarmente, $m_2\leq m_1$. Por tanto, $m_1=m_2$. 
+  Supongamos que $m_1$ y $m_2$ son ínfimos de $A$. Por definición, $m_1$ es una cota inferior de $A$ y $m_2$ es elemento ínfimo, entonces $m_1\leq m_2$. Análogamente, $m_2\leq m_1$. Por tanto, $m_1=m_2$. 
+ \end{proof}
+ 
+ \item Sea $A\subset \R$ y $A\neq \emptyset$. Una cota superior $M$ de $A$, es el supremo de $A$ si y solo si $\forall b\in \R$ tal que $b<M$, entonces $\exists a\in A$ tal que $b<a$.
+ \begin{proof}\leavevmode
+ \begin{itemize}
+ \item[$\Rightarrow)$] Supongamos que $M$ es el supremo de $A$ y sea $b\in \R$ tal que $b<M$. Se tiene que $b$ no es cota superior de $A$, es decir que $\exists a\in A$ tal que $b<a$.
+ \item[$\Leftarrow)$] Supongamos que $\forall b\in \R$ tal que $b<M$, $\exists a\in A$ tal que $b<a$. Supongamos que $M$ no es el supremo de $A$, es decir, existe una cota superior $c$ de $A$ tal que $c<M$, y por hipótesis, $\exists a_0\in A$ tal que $c<a_0$, pero esto es una contradicción. \qedhere
+ \end{itemize}
  \end{proof}
 
- \item Una cota superior $M$ de un conjunto no vacío $S$ de $\R$ es el supremo de $S$ si y solo si para toda $\varepsilon>0$ existe $s_\varepsilon \in S$ tal que $M-\varepsilon<s_\varepsilon$.
+ \item Sea $A\subset \R$ y $A\neq \emptyset$. Una cota superior $M$ de $A$, es el supremo de $A$ si y solo si para toda $\varepsilon>0$ existe $a_\varepsilon \in A$ tal que $M-\varepsilon<a_\varepsilon$.
 
- \begin{proof} 
+  \begin{proof}\leavevmode
+  \begin{itemize}
+  \item[$\Rightarrow)$] Sea $M$ el supremo de $A$ y $\epsilon>0$. Como $M<M+\epsilon$ implica que $M-\epsilon<M$, entonces $M-\epsilon$ no es una cota superior de $A$, por lo que $\exists a_\epsilon$ tal que $a_\epsilon>M-\epsilon$.
+  \item[$\Leftarrow)$] Sea $M$ una cota superior de $A$ tal que $\forall \epsilon>0, \exists a_{\epsilon}$ tal que $M-\epsilon<a_{\epsilon}$. Supongamos que $M$ no es el supremo de $A$, entonces $b\in \R$, el cual es una cota superior de $A$, tal que $a_\epsilon \leq b < M$. Elegimos $\epsilon = M-b$, con lo que $M-(M-b)<a_\epsilon$, es decir, $b<a_{\epsilon}$, pero esto es una contradicción. Por tanto, $M$ es el supremo de $A$. \qedhere
+  \end{itemize}
+  \end{proof}
+  
+  \item Sea $A\subseteq B\subseteq \R$ no vacíos y $B$ es acotado; se verifica que \[\inf B \leq \inf A \leq \sup A \leq \sup B\]
+
+\begin{proof}\leavevmode
   \begin{enumerate}[label=\roman*)]
-   \item Sea $M$ una cota superior de $S$ tal que $\forall \epsilon>0, \exists s_{\epsilon}$ tal que $M-\epsilon<s_{\epsilon}$. Si $M$ no es el supremo de $S$, tendríamos que $\exists V$ tal que $s_\epsilon \leq V < M$. Elegimos $\epsilon = M-V$, con lo que $V<s_{\epsilon}$, lo que contradice nuestra hipótesis. Por tanto, $M$ es el supremo de $S$.
-   \item Sea $M$ el supremo de $S$ y $\epsilon>0$. Como $M<M+\epsilon$, entonces $M-\epsilon$ no es una cota superior de $S$, por lo que $\exists s_\epsilon$ tal que $s_\epsilon>M-\epsilon$. \qedhere
-   \end{enumerate} 
- \end{proof}
+    \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $\inf B \leq x$, por lo que $\inf B$ es cota inferior de $A$. Luego, $\inf B \leq \inf A$.
+    \item Sea $x\in A$. Por definición, $\inf A \leq x \leq \sup A$, por lo que $\inf A \leq \sup A$.
+    \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $x\leq \sup B$, por lo que $\sup B$ es cota superior de $A$, y por definición, $\sup A \leq \sup B$.
+  \end{enumerate}
+\end{proof}
+  
 \end{enumerate}

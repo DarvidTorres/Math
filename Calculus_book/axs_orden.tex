@@ -126,6 +126,9 @@ De esta definición sigue que dados $x,y\in \R$, por tricotomía se verifica una
  \end{proof}
 \end{enumerate}
 
+\clearpage
+\pagebreak
+
 \subsection*{Lista de Ejercicios 5 (LE5)}
 Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 \begin{enumerate}[label=\alph*)]
@@ -205,10 +208,31 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 % \item Si $a<b$, entonces $\exists! x\in \R^+$ tal que $a+x=b$.
 % \begin{proof}\vspace{-1em} \leavevmode
 % \begin{enumerate}[label=\roman*)]
-% \item Primero probaremos su existencia. Sea $a<b$. Por definición, $b-a\in \R^+$. Tomando $x=b-a$, tenemos que $a+x=a+b-a=b$.
-% \item Ahora probaremos la unicidad. Sean $x,y\in \R^+$ tales que $a+x=b$ y $a+y=b$, notemos que $x=b-a$ y $y=b-a$, es decir, $x=y$. \qedhere
+% 
+% 
 % \end{enumerate}
 % \end{proof}
+
+\item Sea $a<b$, entonces $\exists! x\in \R^+$ tal que $a+x=b$.
+ \begin{proof}\leavevmode
+  \begin{enumerate}[label=\roman*)]
+    \item Primero probaremos su existencia. Sea $a<b$. Por definición, $b-a\in \R^+$. Tomando $x=b-a$, tenemos que $a+x=a+b-a=b$.
+    \item Ahora probaremos la unicidad. Sean $x,y\in \R^+$ tales que $a+x=b$ y $a+y=b$, notemos que $x=b-a$ y $y=b-a$, es decir, $x=y$. \qedhere
+  \end{enumerate}
+ \end{proof}
+ 
+ \textbf{Nota:} Con esta prueba verificamos que todo número $b$, mayor que $a$, puede escribirse como la suma de $a$ y algún número positivo.
+ 
+ \item Si $a\leq b$ y $b\leq a$, entonces $a=b$.
+ \begin{proof}\leavevmode
+  Sin pérdida de generalidad, por definición, si $a\leq b$, entonces $a<b$ o $a=b$.
+  \begin{enumerate}[label=\roman*)]
+    \item Si $a<b$ y $b<a$, se contradice la tricotomía. 
+    \item Si $a<b$ y $b=a$, entonces $a<a$, pero esto es una contradicción.
+  \end{enumerate}
+  Por tanto, $a=b$.
+ \end{proof}
+
  \item Si $a<b$ y $b<c$, entonces $a<c$. (Transitividad).
  \begin{proof} 
   Por definición $(b-a) , (c-b) \in \R^+$. Por cerradura de la suma en $\R^+$, $(b-a) + (c-b) \in \R^+$. De donde sigue que $(b-a)+(c-b)=b-a+c-b=c-a\in \R^+$, es decir, $a<c$.
@@ -275,6 +299,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
    \end{align*}
   \end{minipage}
   \end{center}
+  
   \item $a+b<a$ si y solo si $b<0$.
   \begin{center}\vspace{-1em}
   \begin{minipage}[l]{.5\linewidth}
@@ -292,6 +317,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
    \end{align*}
   \end{minipage}
   \end{center}
+  
   \item $-a<b$ si y solo si $-b<a$.
   \begin{center}\vspace{-1em}
   \begin{minipage}[l]{.5\linewidth}
@@ -315,7 +341,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   \end{center}
   \item $a<-b$ si y solo si $b<-a$.
   \begin{center}\vspace{-1em}
-  \begin{minipage}[l]{.5\linewidth}
+  \begin{minipage}[l]{.3\linewidth}
    \begin{align*}
     \Rightarrow) \qquad \qquad
     a &< -b && \text{Hipótesis}\\
@@ -323,7 +349,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     b &< -a% && \text{Inverso aditivo}
    \end{align*}
   \end{minipage}%
-  \begin{minipage}[r]{.5\linewidth}
+  \begin{minipage}[r]{.3\linewidth}
    \begin{align*}
     \Leftarrow) \qquad \qquad
     b &< -a && \text{Hipótesis}\\
@@ -332,9 +358,9 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
    \end{align*}
   \end{minipage}
   \end{center}
-  \item $a<b$ si y solo si $-b<-a$.
+  \item $a<b$ si y solo si $-b<-a$. (Desigualdad invertida).
   \begin{center}\vspace{-1em}
-  \begin{minipage}[l]{.5\linewidth}
+  \begin{minipage}[l]{.3\linewidth}
    \begin{align*}
     \Rightarrow) \qquad \qquad
     a &< b && \text{Hipótesis}\\
@@ -342,7 +368,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
     -b &< -a% && \text{Inverso aditivo}
    \end{align*}
   \end{minipage}%
-  \begin{minipage}[r]{.5\linewidth}
+  \begin{minipage}[r]{.3\linewidth}
    \begin{align*}
     \Leftarrow) \qquad \qquad
     -b &< -a && \text{Hipótesis}\\
@@ -363,32 +389,30 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  Por definición $b-a\in \R^+$ y $d-c\in \R^+$. Por cerradura de la suma en $\R^+$ se verifica que $(b-a)+(d-c)\in \R^+$. Luego, $(b-a)+(d-c)=b+d-a-c=b+d-(a+c)$. Por lo que $b+d-(a+c)=\in \R^+$, es decir, $a+c<b+d$.
  \end{proof}
  \textbf{Observación:} La suma \textit{vertical} de desigualdades preserva el orden.
- 
- \textbf{Nota:} No hay doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de este hecho únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
+%  \textbf{Nota:} No hay doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de este hecho únicamente, que $a<b$ y $c<d$. Ej. $a=4, c=0, b=3, d=4$, se cumple que $a+c=4+0=4<7=3+4=b+d$, pero $c=0<4=d$ y $a=4<3=b$ implica una contradicción.
  %Esta proposición difiere de la ley de la cancelación (de la suma en desigualdades) ya que no se satisface una doble implicación, es decir, si $a+c<b+d$, no es posible demostrar —a partir de esta hipótesis únicamente, que $a<b$. Ej. $a=4, c=0, b=3, d=4$, cumplen la hipótesis $a+c=4+0=4<7=3+4=b+d$, pero $a=4<3=b$ es una contradicción.
 
- \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
-  % \item Si $a<b$ y $c<d$, entonces $a-d<b-c$.
+%  \bfit{Corolario:} Si $a<b$ y $c<d$, entonces $c-b<d-a$.
+%   % \item Si $a<b$ y $c<d$, entonces $a-d<b-c$.
   
-  % Por este teorema, $a+c < b +d$, por lo que $a-d < b -c $.
-  \item Si $a<b$ y $c<d$, entonces $c-b<d-a$.
-  \begin{align*}
-    a + c &< b +d && \text{Suma \textit{vertical} de desigualdades}\\
-    c - b &< d - a
-  \end{align*}
+%   % Por este teorema, $a+c < b +d$, por lo que $a-d < b -c $.
+%   \begin{align*}
+%     a + c &< b +d && \text{Suma \textit{vertical} de desigualdades}\\
+%     c - b &< d - a
+%   \end{align*}
   
-  Nota: La desigualdad puede plantearse de las siguientes maneras (el lector debería verificar este hecho):
-  \begin{enumerate}[label=\roman*)]
-    \item $a<b\leq c < d$.
-    \item $a<c \leq b < d$
-    \item $a\leq c < b \leq d$
-    \item $a\leq c < d \leq b$
-    \item $c\leq a < b \leq d$
-    \item $c\leq a < d \leq b$
-    \item $c<a\leq d < b$
-    \item $c<d\leq a <b$
-  \end{enumerate}
-  En particular, llamaermos a la \textit{forma} $a<b<c<d$, desigualdad \textit{anidada} y decimos que $b<c$ es la desigualdad \textit{interna} y $a<d$ la desigualdad \textit{externa}.
+%   Nota: Si $a<b$ y $c<d$, podemos plantear una desigualdad de las siguientes maneras (el lector debería verificar este hecho):
+%   \begin{enumerate}[label=\roman*)]
+%     \item $a<b\leq c < d$.
+%     \item $a<c \leq b < d$
+%     \item $a\leq c < b \leq d$
+%     \item $a\leq c < d \leq b$
+%     \item $c\leq a < b \leq d$
+%     \item $c\leq a < d \leq b$
+%     \item $c<a\leq d < b$
+%     \item $c<d\leq a <b$
+%   \end{enumerate}
+%   En particular, llamaermos a la \textit{forma} $a<b<c<d$, desigualdad \textit{anidada} y decimos que $b<c$ es la desigualdad \textit{interna} y $a<d$ la desigualdad \textit{externa}.
   
 %   \item Si $0<a$ y $0<b$, entonces $0<a+b$.
   
@@ -397,7 +421,98 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 %   \item Si $a<0$ y $b<0$, entonces $a+b<0$.% (Cerradura de la suma en $\R^-$).
   
 %   Por este teorema, $a+b<0=0+0$.
- \end{enumerate}
+
+\item Si $a\leq b\leq c\leq d$, entonces $c-b \leq d-a$. (Desigualdades \textit{anidadas}).
+\begin{proof}\leavevmode
+  Consideremos los casos:
+  \begin{enumerate}[label=\roman*)]
+    \item Si $a<b<c<d$, tenemos que $a<b$ y $c<d$. Luego,
+    \begin{align*}
+      a+c &< b+d && \text{Suma vertical de desigualdades}\\
+      a+c + \big((-a)+(-b)\big) &< b+d + \big((-a)+(-b)\big) && \text{Ley de la cancelación}\\
+      c - b &< d - a
+    \end{align*}
+    \item Si $a=b<c<d$, entonces $c<d$ y por la ley de la cancelación, $c-a<d-a$, osea que $c-b<d-a$.
+    \item Si $a<b=c<d$, tenemos que $a<b$, osea que $a<c$. También, $c<d$. Por transitividad, $a<d$, y por definición, $0<d-a$. Notemos que $0=c-c=c-b<d-a$
+    \item Si $a<b<c=d$, tenemos que
+    \begin{align*}
+      a &< b\\
+      -b &< -a && \text{Desigualdad invertida}\\
+      -b + c &< -a + c && \text{Ley de la cancelación}\\
+      -b + c &< -a + d && \text{Hipótesis}\\
+      c - b &< d - a
+    \end{align*}
+    \item Si $a<b=c=d$, entonces $a<b$, y al invertir la desigualdad, $-b<-a$, luego, por la ley de la cancelación, $-b + c < -a +c$, osea que $-b + c < -a +d$, es decir, $c-b<d-a$.
+    \item Si $a=b<c=d$, notemos que
+    \begin{align*}
+      d - b &= d -b\\
+      c - b &= d - b && \text{Hipótesis}\\
+      c - b &= d - a && \text{Hipótesis}
+    \end{align*}
+    \item Si $a=b=c<d$, entonces
+    \begin{align*}
+      c &< d\\
+      c - a &< d - a && \text{Ley de la cancelación}\\
+      c - d &< d- a && \text{Hipótesis}
+    \end{align*}
+  \end{enumerate}
+\end{proof}
+
+  \textbf{Nota:} En la desigualdad $a\leq b\leq c\leq d$, decimos que $b\leq c$ es la desigualdad \textit{interna} y que $a\leq d$ es la desigualdad \textit{externa}.
+  
+  \bfit{Corolario:} Si $a\leq b \leq c$, entonces
+  \begin{enumerate}[label=\roman*)]
+    \item $c-b \leq c - a$, y
+    \item $b - a \leq c - a$.
+  \end{enumerate}
+  Notemos que la desigualdad $a\leq b \leq c$ es cualquier caso de (iv-vi) de las Desigualdades \textit{anidadas} (el lector debería verificar este hecho), pero conviene hacer explícita la prueba:
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item \begin{align*}
+        a &\leq b && \text{Hipótesis}\\
+        -b &\leq -a && \text{Desigualdad invertida}\\
+        -b + c &\leq -a + c && \text{Ley de la cancelación}\\
+        c - b &\leq c- a
+      \end{align*}
+      \item \begin{align*}
+        b &\leq c&& \text{Hipótesis}\\
+        b - a &\leq c - a && \text{Ley de la cancelación}
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+  
+  \textbf{Nota:} En la desigualdad $a\leq b \leq c$, decimos que $a\leq b$ y $b\leq c$ son desigualdades \textit{internas}, y que $a\leq c$ es la desigualdad \textit{externa}.
+  
+  \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$. (Punto medio).
+ \begin{proof} \leavevmode% \vspace{-1em}
+  \begin{center}\vspace{-2em}
+  \begin{minipage}[r]{.4\linewidth}
+  \begin{align*}
+  a &< b \\
+  a + a &< a+b \\
+  2a &< a+b \\
+  %2a \cdot \frac{1}{2} &< (a+b) \cdot \frac{1}{2} \\
+  %\frac{2a}{2} &< \frac{a+b}{2} \\
+  a &< \frac{a+b}{2}
+  \end{align*}
+  \end{minipage}%
+  \begin{minipage}[l]{.4\linewidth}
+  \begin{align*}
+  a &< b \\
+  a + b &< b+b \\
+  a +b &< 2b \\
+  %(a+b) \cdot \frac{1}{2} &< 2b \cdot \frac{1}{2} \\
+  %\frac{a+b}{2} &< \frac{2b}{2} \\
+  \frac{a+b}{2} &< b \qedhere
+  \end{align*}
+  \end{minipage}%
+  \end{center}% Por notación, $a < \frac{a+b}{2} < b$.
+ \end{proof}
+ 
+ \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
+
+ \bfit{Observación:} $b-\frac{a+b}{2} = \frac{a+b}{2}-a$ (la \textit{distancia desde} $a$ y \textit{desde} $b$ al punto medio es la misma).
+ \[b-\frac{a+b}{2} = \frac{2b}{2}-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b-2a}{2}= \frac{a+b}{2}-\frac{2a}{2} = \frac{a+b}{2}-a\]
  
  \item Sea $a<b$. Encuentre las condiciones que deben cumplirse para que $a<b<a+b$, $a<a+b<b$, o $a+b<a<b$.
  \begin{enumerate}[label=\roman*)]
@@ -496,37 +611,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  %  \end{align*}
  % \end{enumerate}
  %\end{itemize} \qed
-
- \item Si $a<b$ demuestre que $a<\frac{a+b}{2}<b$. (Punto medio).
- \begin{proof} \leavevmode% \vspace{-1em}
-  \begin{center}\vspace{-2em}
-  \begin{minipage}[r]{.4\linewidth}
-  \begin{align*}
-  a &< b \\
-  a + a &< a+b \\
-  2a &< a+b \\
-  %2a \cdot \frac{1}{2} &< (a+b) \cdot \frac{1}{2} \\
-  %\frac{2a}{2} &< \frac{a+b}{2} \\
-  a &< \frac{a+b}{2}
-  \end{align*}
-  \end{minipage}%
-  \begin{minipage}[l]{.4\linewidth}
-  \begin{align*}
-  a &< b \\
-  a + b &< b+b \\
-  a +b &< 2b \\
-  %(a+b) \cdot \frac{1}{2} &< 2b \cdot \frac{1}{2} \\
-  %\frac{a+b}{2} &< \frac{2b}{2} \\
-  \frac{a+b}{2} &< b \qedhere
-  \end{align*}
-  \end{minipage}%
-  \end{center}% Por notación, $a < \frac{a+b}{2} < b$.
- \end{proof}
- 
- \bfit{Definición:}  Al número $\frac{a+b}{2}$ lo llamaremos el punto medio entre $a$ y $b$.
-
- \bfit{Observación:} $b-\frac{a+b}{2} = \frac{a+b}{2}-a$ (la \textit{distancia desde} $a$ y \textit{desde} $b$ al punto medio es la misma).
- \[b-\frac{a+b}{2} = \frac{2b}{2}-\frac{a+b}{2} = \frac{2b-a-b}{2}= \frac{b-a}{2}= \frac{b-2a+a}{2}= \frac{a+b-2a}{2}= \frac{a+b}{2}-\frac{2a}{2} = \frac{a+b}{2}-a\]
 
  \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
  
@@ -744,7 +828,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
    \end{enumerate}
  \end{enumerate}
  
- \bfit{Conclusión:} Si son todos positivos, se conserva el orden, es decir, si $a<b$ y $c<d$, entonces $ac<bd$. Luego, sin pérdida de generalidad,
+ \bfit{Conclusión:} Si son todos positivos, se conserva el orden, es decir, si $0<a<b$ y $0<c<d$, entonces $ac<bd$. Luego, sin pérdida de generalidad,
  \begin{itemize}
   \item Si $0<a<b$ y $c<0<d$, entonces $ac<bd$.
   \item Si $a<b<0$ y $c<0<d$, entonces $bd<ac$.
@@ -783,7 +867,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  \end{enumerate}
 
  Por tanto, debe cumplirse que $b$ y $d$ deben ser ambos mayores a cero o ambos menores a cero.
-
+ 
 \end{enumerate}
 
 \clearpage
@@ -791,7 +875,7 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 
 \section*{Una nota sobre un campo finito}
 
-Antes de introducir los axiomas de campo, no era posible demostrar que $1+1\neq 0$. Sin embargo, ahora sabemos que $1\in \R^+$, y por la caracterización de $\R^+$ se tiene que $0<1$. Más aún, se verifica que $1<1+1$ y por transitividad, $0<1+1$, es decir que $1+1\in \R^+$, y por tricotomía, $1+1\neq 0$, o utlizando otra notación, $2\neq 0$. Con este hecho, finalmente podemos concluir las pruebas pendientes para las proposiciones listadas al iniciar la discusión del campo finito, al final del capítulo anterior:
+Antes de introducir los axiomas de orden, no era posible demostrar que $1+1\neq 0$. Sin embargo, ahora sabemos que $1\in \R^+$, y por la caracterización de $\R^+$ se tiene que $0<1$. Más aún, se verifica que $1<1+1$ y por transitividad, $0<1+1$, es decir que $1+1\in \R^+$, y por tricotomía, $1+1\neq 0$, o utlizando otra notación, $2\neq 0$. Con este hecho, finalmente podemos concluir las pruebas pendientes para las proposiciones listadas al iniciar la discusión del campo finito, al final del capítulo anterior:
 \begin{enumerate}[label=\roman*)]
   \item Si $a\in \R$ tal que $a=-a$, entonces $a=0$.
   \begin{proof}\leavevmode
