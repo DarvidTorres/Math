@@ -2,7 +2,7 @@
 
 \section*{Entorno}
 
-\bfit{Definición:}  Sea $a$, $b$ números reales, definimos
+\bfit{Definición:}  Sea $a, b\in \R$, definimos
 \begin{itemize}
  \item $(a,b)\defined \set{x\in \R| a<x<b}$. Decimos que $(a,b)$ es el intervalo abierto (de $a$ a $b$).
  \item $[a,b]\defined \set{x\in \R|a\leq x\leq b}$. Decimos que $[a, b]$ es el intervalo cerrado (de $a$ a $b$).
@@ -13,18 +13,59 @@
 \bfit{Definición.} Sea $a \in \R$ y $\varepsilon>0$. Definimos al entorno de centro $a$ y radio $\varepsilon$, como el conjunto: \[E_\varepsilon(a)\defined \{ x\in \R: |x-a|<\varepsilon\}\]
 \textbf{Notación:} También denotamos al entorno de centro $a$ y radio $\varepsilon$ como $E_{(a, \varepsilon)}$, o si el radio es claro, $E_{(a)}$. También decimos que $E_\varepsilon(a)$ es el entorno-$\varepsilon$ (epsilon) de $a$.
 
-\textbf{Observación:} Por el teorema para eliminar valores absolutos en algunas desigualdades, de $|x-a| < \varepsilon$ sigue que $-\varepsilon < x - a < \varepsilon$, es decir, $a - \varepsilon < x < a + \varepsilon$. Por lo que el entorno de radio $\varepsilon$ con centro en $a$ es equivalente al intervalo abierto $(a-\varepsilon, \ a+\varepsilon)$. Resulta también que el centro del entorno es el punto medio de los extremos del intervalo,
-\begin{align*}
-  a - \varepsilon &< a + \varepsilon\\
-  a- \varepsilon &< \frac{(a - \varepsilon)+(a + \varepsilon)}{2} < a + \varepsilon && \text{Punto medio}\\
-  a- \varepsilon &< a < a + \varepsilon
-\end{align*}
-
 \subsection*{Lista de Ejercicios 5 (LE5)}
 
 Sean $a,b \in \R$. Demuestre lo siguiente:
 
 \begin{enumerate}[label=\alph*)]
+  
+  \item $E_\varepsilon(a) = (a-\varepsilon, \ a+\varepsilon)$.
+  
+  \begin{proof}\leavevmode
+    Por definición, $E_\varepsilon(a) = \set{x\in \R: |x-a|<\varepsilon}$. Notemos que
+    \begin{align*}
+      |x - a | &< \varepsilon\\
+      -\varepsilon &< x-a < \varepsilon && \text{Teorema para eliminar valores absolutos}\\
+      a -\varepsilon &< x < a+ \varepsilon
+    \end{align*}
+    Es decir que $\forall x\in \R$ y $\forall \varepsilon>0$, tales que $|x-a|<\varepsilon$ se tiene que $x\in (a-\varepsilon, a+ \varepsilon)$. Osea que $E_\varepsilon(a) = (a-\varepsilon, a+\varepsilon)$.
+  \end{proof}
+  \textbf{Observación:} El centro del entorno $E_\varepsilon(a)$ es el punto medio de los extremos del intervalo $(a-\varepsilon, a+\varepsilon)$:
+  \begin{align*}
+    a - \varepsilon &< a + \varepsilon\\
+    a- \varepsilon &< \frac{(a - \varepsilon)+(a + \varepsilon)}{2} < a + \varepsilon && \text{Punto medio}\\
+    a- \varepsilon &< a < a + \varepsilon
+  \end{align*}
+  
+  \item Sea $a<b$, entonces $\exists! \varepsilon>0$ tal que $a+\varepsilon=b$.
+ \begin{proof}\leavevmode
+  \begin{enumerate}[label=\roman*)]
+    \item Primero probaremos su existencia. Sea $a<b$. Entonces $b-a>0$. Tomando $\varepsilon=b-a$, tenemos que $a+\varepsilon=a+b-a=b$.
+    \item Ahora probaremos la unicidad. Sean $\varepsilon>0$ y $\delta>0$ tales que $a+\varepsilon=b$ y $a+\delta=b$, se tiene que $\varepsilon=b-a$ y $\delta=b-a$, es decir, $\varepsilon=\delta$. \qedhere
+  \end{enumerate}
+ \end{proof}
+ 
+ \textbf{Nota:} Con esta prueba verificamos que todo número $b$, mayor que $a$, puede escribirse como la suma de $a$ y algún número positivo.
+ 
+\clearpage\pagebreak
+  
+  \item Para toda $a$ y $b$ tales que $a<b$, $\exists x\in \R$ y $\varepsilon>0$ tales que $(a, b)= (x- \varepsilon, x+\varepsilon)$.
+  \begin{proof}\leavevmode
+    Notemos que
+    \begin{align*}
+      a &< b\\
+      a &< \frac{a+b}{2} < b && \text{Punto medio}\\
+    \end{align*}
+    Tomando $x=\frac{a+b}{2}$, se tiene que $x<b$. Sabemos que $\exists \varepsilon>0$ tal que $b=x+\varepsilon$. Luego,
+    \begin{align*}
+      b-\frac{a+b}{2} &= \frac{a+b}{2}-a\\
+      (x+\varepsilon) - x &= x - a\\
+      \varepsilon &= x - a\\
+      a &= x - \varepsilon
+    \end{align*}
+    Es decir, $\exists x\in \R$ y $\varepsilon>0$ tales que $(a, b)= (x- \varepsilon, x+\varepsilon)$.
+  \end{proof}
+    
   \item Si $a \leq b + \varepsilon$ para toda $\varepsilon > 0$, entonces $a \leq b$.
  
   \begin{proof} 
@@ -42,8 +83,6 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
   Si $x\in V_\varepsilon(a)$ tenemos que $|x-a|<\varepsilon$. Además, $0\leq |x-a|$, por definición. Así, $0\leq |x-a|<\varepsilon$. Como esta desigualdad se cumple para toda $\varepsilon>0$, sigue que $|x-a|=0$. De este modo, $|x-a|=x-a=0$. Por tanto, $x=a$. 
  \end{proof}
  
-\clearpage\pagebreak
-
  \item Sea $U:=\{x\in \R: 0<x<1\}$. Si $a\in U$, sea $\varepsilon$ el menor de los números $a$ y $1-a$. Demuestre que $V_\varepsilon(a) \subseteq U$.
  \begin{proof} \leavevmode
   \begin{enumerate}[label=\roman*)]
@@ -58,7 +97,7 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
  \end{proof}
 \end{enumerate}
 
-\section*{Propiedad de completez de \(\mathbb{R}\)}
+\section*{Conjuntos acotados}
 
 \bfit{Definición:} Sea $A\subset \R$ con $A\neq \emptyset$, decimos que $A$:
 \begin{itemize}
@@ -76,26 +115,56 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
   \item Si $M$ es una cota de $A$, entonces $\forall \varepsilon>0$, se tiene que $M+\varepsilon$ también es cota de $A$, pues $|a|\leq M < M+\varepsilon$, $\forall a\in A$.
 \end{itemize}
 
+\bfit{Definición:} Sea $A\subset \R$ con $A\neq \emptyset$, decimos que:
+\begin{itemize}
+  \item Si $M$ es una cota superior de $A$ y $M\in A$, decimos que $M$ es el elemento máximo de $A$, y lo denotamos como $M=\max(A)$.
+  \item Si $m$ es una cota inferior de $A$ y $m\in A$, decimos que $m$ es el elemento mínimo de $A$, y lo denotamos como $m=\min(A)$.
+\end{itemize}
+
+\textbf{Observación:} Por definición, si $A$ tiene elemento máximo, entonces está acotado superiormente, y si $A$ tiene elemento mínimo, entonces está acotado inferiormente.
+
+\subsection*{Lista de ejercicios}
+
+Demuestre lo siguiente:
+
+Sea $A\subset \R$ tal que $A\neq \emptyset$. $A$ está acotado si y solo si $A$ está acotado superior e inferiormente.
+ 
+ \begin{proof} \leavevmode
+  \begin{itemize}
+   \item[$\Rightarrow)$] Supongamos que $A$ está acotado. Sea $a\in A$, por definición, $\exists M\in \R$ tal que $|a|\leq M$. Por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $-M\leq a \leq M$, por lo que $A$ está acotado superior e inferiormente.
+   \item[$\Leftarrow)$] Supongamos que $A$ está acotado superior e inferiormente. Sea $a\in A$, entonces $\exists k, K\in \R$ tales que $k\leq a \leq K$. Notemos que
+   \begin{align*}
+    -k &\leq |k|\\
+    -k &\leq |k| + |K|\\
+    -|K|-|k| &\leq k\\
+    - \big(|K|+|k|\big) &\leq k
+   \end{align*}
+   Como $k\leq a$, por transitividad sigue que, $-\big(|K|+|k|\big) \leq a$. Similarmente,
+   \begin{align*}
+    K &\leq |K|\\
+    K &\leq |K| + |k|
+   \end{align*}
+   Como $a\leq K$, por transitividad sigue que, $a\leq |K|+|k|$. Es decir, se verifica que \[-\big(|K|+|k|\big) \leq a \leq |K|+|k|\]
+   y, por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $|a| \leq |K| + |k|$. Por tanto, $A$ está acotado. \qedhere
+  \end{itemize}
+ \end{proof}
+ 
+ \section*{Propiedad de completez de \(\mathbb{R}\)}
+
 \bfit{Definición:}  Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado superiormente, decimos que un número real $S$ es supremo de $A$ si:
 \begin{itemize}
  \item $S$ es cota superior de $A$, y
- \item Si $K$ es cota superior de $A$, entonces $S\leq K$.% ($S$ es la cota superior más pequeña de $A$).
+ \item Si $K$ es cota superior de $A$, entonces $S\leq K$. ($S$ es la cota superior más pequeña de $A$).
 \end{itemize}
 
-En este caso escribimos $S=\sup(A)$.
-
-\textbf{Observación:} Si $A$ tiene supremo, este no necesariamente pertenece a $A$.
-
-\clearpage\pagebreak
+\textbf{Notación}: Denotamos al supremo de $A$ como $\sup(A)$.
 
 \bfit{Definición:} Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado inferiormente, decimos que un número real $L$ es ínfimo de $A$ si: \begin{itemize}
  \item $L$ es cota inferior de $A$, y
- \item Si $K$ es cota inferior de $A$, entonces $K\leq L$.
+ \item Si $K$ es cota inferior de $A$, entonces $K\leq L$. ($L$ es la cota inferior más grande de $A$).
 \end{itemize}
 
-En este caso escribimos $L=\inf(A)$.
-
-\textbf{Observación:} Si $A$ tiene ínfimo, este no necesariamente pertenece a $A$.
+\textbf{Notación}: Denotamos al ínfimo de $A$ como $\inf(A)$.
 
 \bfit{Definición:} Sea $A\subseteq \R$. Decimos que $A$ es denso (en $\R$), o que cumple la propiedad de densidad, si para cada $x,y \in \R$ con $x<y$, existe $a\in A$ tal que $x<a<y$.
 
@@ -105,15 +174,19 @@ En este caso escribimos $L=\inf(A)$.
 
 A pesar de que hemos definido al supremo e ínfimo para subconjuntos no vacíos de los números reales, en realidad no es posible ---utilizando únicamente las propiedades demostradas hasta este punto, probar que, en efecto, el supremo e ínfimo existen para todo subconjunto no vacío de los reales que esté acotado.
 
-Consideremos el siguiente argumento: Sea $A\subseteq \R$ tal que $A\neq \emptyset$ y $A$ está acotado superiormente por $S$. Sea $a\in A$, por definición, $a\leq S$, y por la densidad de los números reales, $\exists x\in \R$ tal que $a\leq x \leq S$, por lo que $x$ es una cota superior de $A$. Es decir, para cualquier cota superior de un conjunto, es posible encontrar un número real que sea menor o igual que este, y mayor o igual a los elementos del conjunto. Si la relación entre las cotas se cumple con igualdad, es decir que $a\leq x = S$, podríamos conjeturar que $S$ es el supremo de $A$, sin embargo, si se tiene que $a\leq x < S$, sería natural pensar que $x$ es el supremo de $A$, pues es menor que la cota superior $S$. No obstante, $\exists y\in \R$ tal que $a\leq y \leq x<S$, y nos encontramos en la misma situación que antes, si $a\leq y = x$, entonces $x$ es candidato para ser el supremo de $A$, pero si $a\leq y < x$, podríamos inferir que $y$ es el supremo de $A$, recursivamente sin encontrar $\sup(A)$. Análogamente, la existencia del ínfimo no está garantizada ni puede probarse. Por tanto, introducimos la existencia del supremo como un axioma:
+Consideremos el siguiente argumento: Sea $A\subseteq \R$ tal que $A\neq \emptyset$ y $A$ está acotado superiormente por $S$. Sea $a\in A$, por definición, $a\leq S$, y por la densidad de los números reales, $\exists x\in \R$ tal que $a\leq x \leq S$, por lo que $x$ es una cota superior de $A$. Es decir, para cualquier cota superior de un conjunto, es posible encontrar un número real que sea menor o igual que este, y mayor o igual a los elementos del conjunto. Si la relación entre las cotas se cumple con igualdad, es decir que $a\leq x = S$, podríamos conjeturar que $S$ es el supremo de $A$, sin embargo, si se tiene que $a\leq x < S$, sería natural pensar que $x$ es el supremo de $A$, pues es menor que la cota superior $S$. No obstante, $\exists y\in \R$ tal que $a\leq y \leq x<S$, y nos encontramos en la misma situación que antes, si $a\leq y = x$, entonces $x$ es candidato para ser el supremo de $A$, pero si $a\leq y < x$, podríamos inferir que $y$ es el supremo de $A$, recursivamente sin encontrar un número real que satisfaga la propiedad de ser la cota inferior más pequeña de $A$, para cualquier subconjunto no vacío de $\R$. Análogamente, la existencia del ínfimo no está garantizada ni puede probarse. Por tanto, introducimos la existencia del supremo como un axioma:
 
-\textbf{Axioma del supremo:} Todo subconjunto no vacío del conjunto de los números reales que sea acotado superiormente tiene supremo.
+\textbf{Axioma del supremo}
+
+Todo subconjunto no vacío del conjunto de los números reales que sea acotado superiormente tiene supremo.
+
+\clearpage\pagebreak
 
 \subsection*{Lista de ejercicios}
 
 Demuestre lo siguiente:
 
-\begin{enumerate}[label=\roman*)]
+\begin{enumerate}[label=\alph*)]
   \item Si $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente, entonces $A$ tiene ínfimo.
   \begin{proof}\leavevmode
     Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conjunto $-A \coloneqq \set{-a: a\in A}$ está acotado superiormente y, por el axioma del supremo, $-A$ tiene supremo. Sea $M\coloneqq \sup{(A)}$ y $a\in A$, entonces $M\geq -a$, de donde sigue que $-M\leq a$, esto es $-M$ es el ínfimo de $A$.
@@ -138,28 +211,6 @@ Demuestre lo siguiente:
     Sea $L\coloneqq \sup{(\N)}$. Como $L-1$ no es cota superior de $\N$, ya que $L>L-1$ y $L$ es la cota superior más pequeña, existe un núero natural $n_0$ tal que $n_0>L-1$, lo cual implica que $n_0+1<L$, pero esto contradice la hipótesis	de que $L$ es supremo de $\N$. Por tanto, el conjunto de los números naturales no está acotado superiormente.
   \end{proof}
   
- \item Sea $A\subset \R$ tal que $A\neq \emptyset$. $A$ está acotado si y solo si $A$ está acotado superior e inferiormente.
- 
- \begin{proof} \leavevmode
-  \begin{itemize}
-   \item[$\Rightarrow)$] Supongamos que $A$ está acotado. Sea $a\in A$, por definición, $\exists M\in \R$ tal que $|a|\leq M$. Por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $-M\leq a \leq M$, por lo que $A$ está acotado superior e inferiormente.
-   \item[$\Leftarrow)$] Supongamos que $A$ está acotado superior e inferiormente. Sea $a\in A$, entonces $\exists k, K\in \R$ tales que $k\leq a \leq K$. Notemos que
-   \begin{align*}
-    -k &\leq |k|\\
-    -k &\leq |k| + |K|\\
-    -|K|-|k| &\leq k\\
-    - \big(|K|+|k|\big) &\leq k
-   \end{align*}
-   Como $k\leq a$, por transitividad sigue que, $-\big(|K|+|k|\big) \leq a$. Similarmente,
-   \begin{align*}
-    K &\leq |K|\\
-    K &\leq |K| + |k|
-   \end{align*}
-   Como $a\leq K$, por transitividad sigue que, $a\leq |K|+|k|$. Es decir, se verifica que \[-\big(|K|+|k|\big) \leq a \leq |K|+|k|\]
-   y, por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $|a| \leq |K| + |k|$. Por tanto, $A$ está acotado. \qedhere
-  \end{itemize}
- \end{proof}
-
  \item Sea $A\subset \R$ y $A\neq \emptyset$. Una cota superior $M$ de $A$, es el supremo de $A$ si y solo si $\forall b\in \R$ tal que $b<M$, entonces $\exists a\in A$ tal que $b<a$.
  \begin{proof}\leavevmode
  \begin{itemize}
@@ -226,5 +277,75 @@ Demuestre lo siguiente:
       b_\epsilon &< \sup(A) && \contradiction
     \end{align*}
   \end{proof}
+  
+  \item Sea $A+B \defined \set{a+b: a\in A, b\in B}$, entonces:
+  \begin{itemize}
+    \item $\sup(A + B) = \sup(A) + \sup(B)$.
+    \item $\inf(A + B) = \inf(A) + \inf(B)$.
+  \end{itemize}
+  
+  \item Sea $A, B\subseteq \R^+$ no vacíos, $A\cdot B \defined \set{a\cdot b: a\in A, b\in B}$, entonces
+  \begin{itemize}
+    \item $\sup(A\cdot B) = \sup(A) \cdot \sup(B)$.
+    \item $\inf(A\cdot B) = \inf(A) \cdot \inf(B)$.
+  \end{itemize}
+  
+  \begin{proof}\leavevmode
+    Sea $a\in A$ y $b\in B$. Tenemos que $a\leq \alpha$ y $b\leq \beta$, de donde sigue que $ab \leq \alpha\beta$ (*), por lo que $AB$ está acotado superiormente por $\alpha\beta$.
+    
+    Ahora, sea $\epsilon_1>0$ y $\epsilon_2 = \min \left(\frac{\alpha}{2}, \frac{\beta}{2}, \frac{\epsilon_1}{\alpha+\beta+1}\right)$, es claro que $\epsilon_2>0$. Luego, por definición, $\exists a\in A$ tal que $a > \alpha - \epsilon_2 > 0$ y $\exists b\in B$ tal que $b>\beta - \epsilon_2 >0$. Por lo que
+    \begin{align*}
+      ab &> (\alpha - \epsilon_2) (\beta - \epsilon_2) \\
+      &= \alpha\beta - (\alpha + \beta)\epsilon_2 + \epsilon^2_2\\
+      &> \alpha\beta - (\alpha+\beta)\epsilon_2\\
+      &> \alpha\beta - \epsilon_1 && \text{(**)}
+    \end{align*}
+    Como esta desigualdad se verifica para cualquier $\epsilon_1>0$, se tiene que $\alpha\beta = \sup(AB)$.
+  \end{proof}
+  
+  (*) Por Cálculo 1; se tiene que $a \leq \alpha \Rightarrow ab \leq \alpha b$, pues $b>0$ y $b \leq \beta \Rightarrow \alpha b \leq \alpha \beta$, pues $\alpha>0$. Por transitividad, $ab\leq \alpha \beta$.
+  
+  (**) Si $\epsilon_2 = \frac{\epsilon_1}{\alpha+\beta+1}$ se tiene que
+  \begin{align*}
+    (\alpha+\beta)\epsilon_2 = \frac{(\alpha+\beta)\epsilon_1}{\alpha+\beta+1} < \epsilon_1
+  \end{align*}
+  Por lo que $-(\alpha+\beta)\epsilon_2 > - \epsilon_1$.
+  
+  \item Sea $A\subseteq \R^+$ no vacío, $\frac{1}{A} \defined \set{\frac{1}{a}: a\in A}$, entonces
+  \begin{itemize}
+    \item $\frac{1}{\sup(A)} = \inf(\frac{1}{A})$.
+  \end{itemize}
+  
+  \item Sea $\gamma=\text{ínf}(A)$ y suponga que $\gamma>0$. Defínase ahora al siguiente conjunto: \[\frac{B}{A} \defined \set{\frac{b}{a}| a\in A, b\in B}\]
+  
+  Demuestre que $\frac{B}{A}$ está acotado superiormente; más aún, diga quién es el supremo de $\frac{B}{A}$ y justifique su afirmación.
+  
+  \begin{proof}\leavevmode
+    Definimos el conjunto $A^{-1} \defined \set{\frac{1}{a}| a\in A}$. Sea $a\in A$, se tiene que $\gamma \leq a$. Como $\gamma$ es positivo, de esta desigualdad se sigue que $\frac{1}{a} \leq \frac{1}{\gamma}$, por lo que $\frac{1}{\gamma}$ es una cota superior de $A^{-1}$. Ahora, consideremos que $a'$ es una cota superior de $A^{-1}$, entonces $\frac{1}{a} \leq a'$, y se tiene que $0<\frac{1}{a}$, de donde obtenemos que $\frac{1}{a'} \leq a$, por lo que $\frac{1}{a'}$ es cota inferior de $A$. Por definición de ínfimo, $\frac{1}{a'}\leq \gamma$, lo que implica que $\frac{1}{\gamma} \leq a'$, es decir, $\frac{1}{\gamma}$ es la menor de las cotas superiores de $A^{-1}$, osea $\sup(A^{-1})=\frac{1}{\gamma}$.
+    
+    Notemos que $\frac{b}{a} = b\frac{1}{a}$, así que definimos el conjunto $BA^{-1}\defined \set{b\frac{1}{a}|b\in B, \frac{1}{a}\in A^{-1}}$, y por el inciso (ii) de este problema, se tiene que $\sup(BA^{-1})=\beta \frac{1}{\gamma}$, es decir, $\sup(\frac{B}{A})=\frac{\beta}{\gamma}$.
+  \end{proof}
+  
+  \item Sea $A\subseteq \R$ no vacío, $rA \defined \set{r a| a\in A}$,
+  \begin{enumerate}[label=\Roman*)]
+    \item Si $r\geq 0$,
+    \begin{enumerate}[label=\roman*)]
+      \item $\inf(r A) = r\inf(A)$.
+      \item $\sup(r A) = r\sup(A)$
+    \end{enumerate}
+    \item Si $r\leq 0$,
+    \begin{enumerate}[label=\roman*)]
+      \item $\inf(rA)=r\sup(A)$.
+      \item $\sup(rA)=r\sup(A)$.
+    \end{enumerate}
+  \end{enumerate}
+  \bfit{Corolario:} Sea $r=-1$ y la notación $-A\defined (-1)A\set{-a:a\in A}$,
+  \begin{enumerate}[label=\roman*)]
+  \item $\inf(-A) = -\sup(A)$.
+  \item $\sup(-A) = -\inf(A)$.
+  \end{enumerate}
+  
+  \item $\inf(A)=-\sup(-A)$.
+  \item $\sup(A)=-\inf(-A)$.
   
 \end{enumerate}
