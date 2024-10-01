@@ -1,79 +1,8 @@
 \part*{Pendiente}
 
-
-
 \subsection*{Axioma del supremo}
 
-Todo subconjunto no vacío del conjunto de los números reales que sea acotado superiormente tiene supremo.
 
-\textbf{\textit{Teorema.}} El conjunto de los números naturales no está acotado superiormente.
-
-\textbf{Demostración:}
-
-Supongamos que el conjunto de los números naturales está acotado superiormente. Entonces existe un número real $M$ tal que $n\leq M, \forall n\in \N$. Como el conjunto de los números naturales es no vacío, entonces, por el axioma del supremo, $\N$ tiene supremo.
-
-Sea $L\coloneqq \sup{(\N)}$. Como $L-1$ no es cota superior de $\N$, ya que $L>L-1$ y $L$ es la cota superior más pequeña, existe un núero natural $n_0$ tal que $n_0>L-1$, lo cual implica que $n_0+1<L$, pero esto contradice la hipótesis	de que $L$ es supremo de $\N$. Por tanto, el conjunto de los números naturales no está acotado superiormente. \qed
-
-\textbf{\textit{Teorema.}} Si $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente, entonces $A$ tiene ínfimo.
-
-\textbf{Demostración:}
-
-Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conjunto $-A \coloneqq \set{-a: a\in A}$ está acotado superiormente y, por el axioma del supremo, $-A$ tiene supremo. Sea $M\coloneqq \sup{(A)}$, entonces $M\geq -a, \forall -a\in -A$. Notemos que $-M\leq a, \forall a\in A$, esto es $-M$ es el ínfimo de $A$. \qed
-
-\subsection*{Lista de Ejercicios}
-
-\begin{enumerate}[label=\alph*)]
-  \item Sea $A\subseteq B\subseteq \R$ no vacíos y $B$ es acotado; se verifica que \[\inf (B) \leq \inf (A) \leq \sup (A) \leq \sup (B)\]
-
-  \begin{proof}\leavevmode
-    \begin{enumerate}[label=\roman*)]
-      \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $\inf (B) \leq x$, por lo que $\inf (B)$ es cota inferior de $A$. Luego, $\inf (B) \leq \inf (A)$.
-      \item Sea $x\in A$. Por definición, $\inf (A) \leq x \leq \sup (A)$, por lo que $\inf (A) \leq \sup (A)$.
-      \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $x\leq \sup (B)$, por lo que $\sup (B)$ es cota superior de $A$, y por definición, $\sup (A) \leq \sup (B)$.
-    \end{enumerate}
-  \end{proof}
-  
-  \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
-  \item $\inf (B) \leq \sup (A)$.
-  \item $\inf (A) \leq \sup (B)$.
-  \end{enumerate}
-  \item Sea $\emptyset \neq B\subseteq \R$, se verifica que $\forall \epsilon > 0$, $\exists b_\epsilon\in B$ tal que $b_\epsilon < \inf (B) + \epsilon$.
-  
-  \begin{proof}\leavevmode
-    Sea $\epsilon >0$. Notemos que
-    \begin{align*}
-      0 &< \epsilon\\
-      \inf (B) &< \inf (B) + \epsilon
-    \end{align*}
-    Por lo que $\inf (B) +\epsilon$ no es una cota inferior de $B$, entonces $\exists b_\epsilon\in B$ tal que $b_\epsilon < \inf (B) + \epsilon$.
-  \end{proof}
-  
-  \item Sea $\emptyset \neq A\subseteq \R$, se verifica que $\forall \epsilon > 0$, $\exists a_\epsilon\in A$ tal que $\sup (A) - \epsilon < a_\epsilon$.
-  \begin{proof}\leavevmode
-    Sea $\epsilon>0$. Notemos que 
-    \begin{align*}
-      0 &< \epsilon\\
-      \sup (A) &< \epsilon + \sup (A)\\
-      \sup (A) - \epsilon &< \sup (A)
-    \end{align*}
-    Por lo que $\sup (A)-\epsilon$ no es una cota superior de $A$, por lo que $\exists a_\epsilon\in A$ tal que $\sup (A) - \epsilon < a_\epsilon$.
-  \end{proof}
-  
-  \item Sea $A, B\subseteq \R$ no vacíos, tales que $a\leq b$, $\forall a\in A$ y $\forall b\in B$, entonces $\sup(A)\leq \inf(B)$.
-  
-  \begin{proof}\leavevmode
-    
-  Pr definición, $\sup (A) \leq b, \forall b\in B$.
-  
-  Supongamos que $\inf(B) < \sup(A)$, entonces $\sup(A) - \inf(B) > 0$. Sea $\epsilon = \sup(A) - \inf(B)$, entonces $\exists b_\epsilon\in B$ tal que
-    \begin{align*}
-      b_\epsilon &< \inf(B) + \epsilon\\
-      b_\epsilon &< \inf(B) + \sup(A) - \inf(B)\\
-      b_\epsilon &< \sup(A) && \contradiction
-    \end{align*}
-  \end{proof}
-
-\end{enumerate}
 
 \subsection*{Propiedad Arquimediana del conjunto de los números reales}
 
@@ -130,55 +59,7 @@ Al objeto $a$ lo llamaremos primer componente de la pareja ordenada $(a,b)$ y al
 
 
 
-\section*{Entorno}
 
-\bfit{Definición:}  Sea $a$, $b$ números reales, definimos el intervalo \begin{itemize}
- \item abierto, como $(a,b)\defined \set{x\in \R| a<x<b}$
- \item semicerrado-abierto, como $[a,b)\defined \set{x\in \R|a\leq x <b}$
- \item semiabierto-cerrado, como $(a,b]\defined \set{x\in \R|a<x\leq b}$
- \item cerrado, como $[a,b]\defined \set{x\in \R|a\leq x\leq b}$.
-\end{itemize}
-
-\textbf{Definición.} Sea $\ell \in \R$ y $\varepsilon>0$. El vecindario-$\varepsilon$ de $\ell$ es el conjunto $V_\varepsilon(\ell)\defined \{ x\in \R: |x-\ell|<\varepsilon\}$.
-
-Notemos que por el teorema para eliminar valores absolutos en algunas desigualdades, \[|x-\ell| < \epsilon= -\epsilon < x-\ell < \epsilon= \ell-\epsilon < x < \ell+\epsilon\]
-Por lo que el vecindario-$\epsilon$ de $\ell$ es equivalente al intervalo abierto: $(\ell-\epsilon, \ \ell+\epsilon)$.
-
-\subsection*{Lista de Ejercicios 5 (LE5)}
-
-Sean $a,b \in \R$. Demuestre lo siguiente:
-
-\begin{enumerate}[label=\alph*)]
- \item Si $0 \leq a < \varepsilon$ para toda $\varepsilon > 0$, entonces $a=0$.
- 
- \begin{proof} 
-  Supongamos que $0<a$, sigue que $0<\frac{a}{2}<a$. En particular, $\epsilon=\frac{a}{2}$, entonces $\varepsilon<a$, pero esto contradice nuestra hipótesis de que $a< \varepsilon$ para toda $\varepsilon>0$. Por tanto, $a=0$. 
- \end{proof}
-
- \item Si $a \leq b + \varepsilon$ para toda $\varepsilon > 0$, entonces $a \leq b$.
- 
- \begin{proof} 
-  Sean $a$ y $b$ números reales tales que $a \leq b + \varepsilon$, $\forall \varepsilon > 0$. Supongamos que $a > b$. Luego, $a-b>0$. Notemos que $(a-b) \cdot \frac{1}{2} > 0 \cdot \frac{1}{2}$, es decir $\frac{(a-b)}{2} > 0$. Sea $\varepsilon = \frac{(a-b)}{2}$, sigue que $a=2\varepsilon+b$. Además, $2\varepsilon > \varepsilon$, de donde obtenemos $2 \varepsilon + b > \varepsilon + b$. De este modo, $a > b+\varepsilon$, pero esto contradice nuestra hipótesis. Por tanto, $a \leq b$. 
- \end{proof}
-
- \item Si $x\in V_\varepsilon(a)$ para toda $\varepsilon>0$, entonces $x=a$.
- \begin{proof} 
-  Si $x\in V_\varepsilon(a)$ tenemos que $|x-a|<\varepsilon$. Además, $0\leq |x-a|$, por definición. Así, $0\leq |x-a|<\varepsilon$. Como esta desigualdad se cumple para toda $\varepsilon>0$, por (p) de LE3, sigue que $|x-a|=0$. De este modo, $|x-a|=x-a$ con $x-a=0$. Por tanto, $x=a$. 
- \end{proof}
-
- \item Sea $U:=\{x: 0<x<1\}$. Si $a\in U$, sea $\varepsilon$ el menor de los números $a$ y $1-a$. Demuestre que $V_\varepsilon(a) \subseteq U$.
- \begin{proof} \leavevmode
-  \begin{enumerate}[label=\roman*)]
-   \item Si $a>1-a$, tenememos $\varepsilon=1-a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<1-a$. De (f) de LE4 sigue que $a-1<y-a<1-a$ (*). Tomando el lado derecho de (*) obtenemos $y<1$. Luego, de la hipótesis sigue que $2a>1$, osea $2a-1>0$. Del lado izquierdo de la desigualdad (*), tenemos $2a-1<y$, por lo que $0<y$.
-   \item Si $1-a>a$, tenemos $\varepsilon=a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<a$. De (f) de LE4 sigue que $-a<y-a<a$. Sumando $a$ en esta desigualdad obtenemos $0<y<2a$. Luego, de la hipótesis sigue que $1>2a$, entonces $0<y<1$.\end{enumerate}
-   En cualquier caso, $0<y<1$, lo que implica que $V_\varepsilon(a) \subseteq U$. 
- \end{proof}
-
- \item Demuestre que si $a\neq b$, entonces existen $U_\varepsilon(a)$ y $V_\varepsilon(b)$ tales que $U\cap V =\emptyset$.
- \begin{proof} 
-  Supongamos que para toda $U_\varepsilon(a)$ y $V_\varepsilon(b)$ se cumple que $U_\varepsilon(a) \cap V_\varepsilon(b) \neq \emptyset$. Entonces, existe $x$ tal que $x\in U_\varepsilon(a)$ y $x\in V_\varepsilon(b)$. Como en ambas vecindades tenemos $\epsilon>0$ arbitraria, por (a) de LE5, sigue que $x=a$ y $x=b$, pero esto contradice el supuesto de que $a\neq b$. Por tanto, deben existir $U_\varepsilon(a)$ y $V_\varepsilon(b)$ tales que $U\cap V =\emptyset$. 
- \end{proof}
-\end{enumerate}
 
 \section*{Sucesiones}
 

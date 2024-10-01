@@ -612,37 +612,6 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
  % \end{enumerate}
  %\end{itemize} \qed
 
- \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
- 
- Para que $\exists a^{-1}$, requerimos $a\neq 0$. También, sabemos que $a\neq 1$ y $a\neq -1$ pues $1=1^{-1}$ y $-1=(-1)^{-1}$, pero buscamos desigualdad. Entonces, observemos los casos: \begin{enumerate}[label=\roman*)]
-  \item Si $a<-1$, entonces $1<-a$, y por transitividad $0<-a$, por lo que $0<-a^{-1}$, luego, \begin{align*}
-   1 &< -a \\
-   1\cdot \bigl(-a^{-1}\bigr) &< (-a) \cdot \bigl(-a^{-1}\bigr) \\
-   -a^{-1} &< 1\\
-   -1 &< a^{-1}
-  \end{align*} Por transitividad, $a < a^{-1}$.
-  \item Si $-1<a<0$, por notación $-1<a$ y $a<0$, de donde sigue que $-a<1$ y $0<-a$, por lo que $0<-a^{-1}$. \begin{align*}
-   -a &< 1 \\
-   (-a) \cdot (-a^{-1}) &< 1\cdot (-a^{-1})\\
-   1 &< -a^{-1}\\
-   a^{-1} &< -1
-  \end{align*} Por transitividad, $a^{-1}<a$.
-  \item Si $0<a<1$, por notación $0<a$ y $a<1$, de donde sigue que $0<a^{-1}$. Luego \begin{align*}
-   a &< 1 \\
-   a\cdot a^{-1} &< 1 \cdot a^{-1}\\
-   1 &< a^{-1}
-  \end{align*} Por transitividad $a<a^{-1}$.
-  \item Si $1<a$, por transitividad $0<a$, por lo que $0<a^{-1}$. Luego, \begin{align*}
-   1 <& a\\
-   1 \cdot a^{-1} &< a \cdot a^{-1}\\
-   a^{-1} &< 1
-  \end{align*} Por transitividad $a^{-1}<a$.
- \end{enumerate}
- Conclusión: \begin{itemize}
-  \item Por (i) y (iii), $a<a^{-1}$, si $a<-1$ o $0<a<1$.
-  \item Por (ii) y (iv), $a^{-1}<a$, si $-1<a<0$ o $1<a$.
- \end{itemize}
-
  \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $0<a^{-1}$ o $a^{-1}<0$.
  
  \begin{enumerate}[label=\roman*)]
@@ -650,11 +619,12 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
   \item Sea $a<0$. Sigue que $0<-a$, por lo que $-a^{-1}>0$, de donde sigue que $a^{-1}<0$.
  \end{enumerate}
 
- \bfit{Conclusión:}
+%  \bfit{Conclusión:} El inverso multiplicativo preserva el orden.
  \begin{itemize}
-  \item Si $0<a$, entonces $0<a^{-1}$.% (Inverso multiplicativo positivo).
-  \item Si $a<0$, entonces $a^{-1}<0$.
+  \item Si $0<a$, entonces $0<a^{-1}$. (Inverso multiplicativo positivo).
+  \item Si $a<0$, entonces $a^{-1}<0$. (Inverso multiplicativo negativo).
  \end{itemize}
+ 
  %\text{Nota:} Análogamente, Si $a<0$, entonces $a^{-1}<0$. (Inverso multiplicativo negativo).
 
 %  \item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $1<a^{-1}$, $0<a^{-1}<1$, $-1<a^{-1}<0$, o $a^{-1}<1$.
@@ -694,6 +664,38 @@ Sean $a$, $b$, $c$ y $d$ números reales, demuestre lo siguiente:
 %     \item Si $-1<a<0$, entonces $a^{-1}<-1$.
 %     \item Si $a<-1$, entonces $-1<a^{-1}<0$.
 %   \end{itemize}
+
+
+\item Sea $a\in \R$. Encuentre las condiciones que deben cumplirse para que $a^{-1}<a$ o $a<a^{-1}$.
+ 
+Para que $\exists a^{-1}$, requerimos $a\neq 0$. También, sabemos que $a\neq 1$ y $a\neq -1$ pues $1=1^{-1}$ y $-1=(-1)^{-1}$, pero buscamos desigualdad. Entonces, observemos los casos: \begin{enumerate}[label=\roman*)]
+ \item Si $a<-1$, entonces $1<-a$, y por transitividad $0<-a$, por lo que $0<-a^{-1}$, luego, \begin{align*}
+  1 &< -a \\
+  1\cdot \bigl(-a^{-1}\bigr) &< (-a) \cdot \bigl(-a^{-1}\bigr) \\
+  -a^{-1} &< 1\\
+  -1 &< a^{-1}
+ \end{align*} Por transitividad, $a < a^{-1}$.
+ \item Si $-1<a<0$, por notación $-1<a$ y $a<0$, de donde sigue que $-a<1$ y $0<-a$, por lo que $0<-a^{-1}$. \begin{align*}
+  -a &< 1 \\
+  (-a) \cdot (-a^{-1}) &< 1\cdot (-a^{-1})\\
+  1 &< -a^{-1}\\
+  a^{-1} &< -1
+ \end{align*} Por transitividad, $a^{-1}<a$.
+ \item Si $0<a<1$, por notación $0<a$ y $a<1$, de donde sigue que $0<a^{-1}$. Luego \begin{align*}
+  a &< 1 \\
+  a\cdot a^{-1} &< 1 \cdot a^{-1}\\
+  1 &< a^{-1}
+ \end{align*} Por transitividad $a<a^{-1}$.
+ \item Si $1<a$, por transitividad $0<a$, por lo que $0<a^{-1}$. Luego, \begin{align*}
+  1 <& a\\
+  1 \cdot a^{-1} &< a \cdot a^{-1}\\
+  a^{-1} &< 1
+ \end{align*} Por transitividad $a^{-1}<a$.
+\end{enumerate}
+Conclusión: \begin{itemize}
+ \item Por (i) y (iii), $a<a^{-1}$, si $a<-1$ o $0<a<1$.
+ \item Por (ii) y (iv), $a^{-1}<a$, si $-1<a<0$ o $1<a$.
+\end{itemize}
 
   \item Sea $a<b$. Encuentre las condiciones que deben cumplirse para que $\frac{1}{a}<\frac{1}{b}$ o $\frac{1}{b}<\frac{1}{a}$.
  

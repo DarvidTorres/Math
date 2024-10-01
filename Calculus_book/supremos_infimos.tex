@@ -1,5 +1,65 @@
 \part*{Supremos e Ínfimos}
 
+\section*{Entorno}
+
+\bfit{Definición:}  Sea $a$, $b$ números reales, definimos
+\begin{itemize}
+ \item $(a,b)\defined \set{x\in \R| a<x<b}$. Decimos que $(a,b)$ es el intervalo abierto (de $a$ a $b$).
+ \item $[a,b]\defined \set{x\in \R|a\leq x\leq b}$. Decimos que $[a, b]$ es el intervalo cerrado (de $a$ a $b$).
+ \item $[a,b)\defined \set{x\in \R|a\leq x <b}$.
+ \item $(a,b]\defined \set{x\in \R|a<x\leq b}$.
+\end{itemize}
+
+\bfit{Definición.} Sea $a \in \R$ y $\varepsilon>0$. Definimos al entorno de centro $a$ y radio $\varepsilon$, como el conjunto: \[E_\varepsilon(a)\defined \{ x\in \R: |x-a|<\varepsilon\}\]
+\textbf{Notación:} También denotamos al entorno de centro $a$ y radio $\varepsilon$ como $E_{(a, \varepsilon)}$, o si el radio es claro, $E_{(a)}$. También decimos que $E_\varepsilon(a)$ es el entorno-$\varepsilon$ (epsilon) de $a$.
+
+\textbf{Observación:} Por el teorema para eliminar valores absolutos en algunas desigualdades, de $|x-a| < \varepsilon$ sigue que $-\varepsilon < x - a < \varepsilon$, es decir, $a - \varepsilon < x < a + \varepsilon$. Por lo que el entorno de radio $\varepsilon$ con centro en $a$ es equivalente al intervalo abierto $(a-\varepsilon, \ a+\varepsilon)$. Resulta también que el centro del entorno es el punto medio de los extremos del intervalo,
+\begin{align*}
+  a - \varepsilon &< a + \varepsilon\\
+  a- \varepsilon &< \frac{(a - \varepsilon)+(a + \varepsilon)}{2} < a + \varepsilon && \text{Punto medio}\\
+  a- \varepsilon &< a < a + \varepsilon
+\end{align*}
+
+\subsection*{Lista de Ejercicios 5 (LE5)}
+
+Sean $a,b \in \R$. Demuestre lo siguiente:
+
+\begin{enumerate}[label=\alph*)]
+  \item Si $a \leq b + \varepsilon$ para toda $\varepsilon > 0$, entonces $a \leq b$.
+ 
+  \begin{proof} 
+   Sean $a$ y $b$ números reales tales que $a \leq b + \varepsilon$, $\forall \varepsilon > 0$. Supongamos que $a > b$. Luego, $a-b>0$. Notemos que $(a-b) \cdot \frac{1}{2} > 0 \cdot \frac{1}{2}$, es decir $\frac{(a-b)}{2} > 0$. Sea $\varepsilon = \frac{(a-b)}{2}$, sigue que $a=2\varepsilon+b$. Además, $2\varepsilon > \varepsilon$, de donde obtenemos $2 \varepsilon + b > \varepsilon + b$. De este modo, $a > b+\varepsilon$, pero esto contradice nuestra hipótesis. Por tanto, $a \leq b$. 
+  \end{proof}
+  
+ \item Si $0 \leq a < \varepsilon$ para toda $\varepsilon > 0$, entonces $a=0$.
+ 
+ \begin{proof} 
+  Supongamos que $0<a$, sigue que $0<\frac{a}{2}<a$. En particular, $\varepsilon=\frac{a}{2}$, entonces $\varepsilon<a$, pero esto contradice nuestra hipótesis de que $a< \varepsilon$ para toda $\varepsilon>0$. Por tanto, $a=0$. 
+ \end{proof}
+
+ \item Si $x\in V_\varepsilon(a)$ para toda $\varepsilon>0$, entonces $x=a$.
+ \begin{proof} 
+  Si $x\in V_\varepsilon(a)$ tenemos que $|x-a|<\varepsilon$. Además, $0\leq |x-a|$, por definición. Así, $0\leq |x-a|<\varepsilon$. Como esta desigualdad se cumple para toda $\varepsilon>0$, sigue que $|x-a|=0$. De este modo, $|x-a|=x-a=0$. Por tanto, $x=a$. 
+ \end{proof}
+ 
+\clearpage\pagebreak
+
+ \item Sea $U:=\{x\in \R: 0<x<1\}$. Si $a\in U$, sea $\varepsilon$ el menor de los números $a$ y $1-a$. Demuestre que $V_\varepsilon(a) \subseteq U$.
+ \begin{proof} \leavevmode
+  \begin{enumerate}[label=\roman*)]
+   \item Si $a>1-a$, tenememos $\varepsilon=1-a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<1-a$. Por el teorema para eliminar valores absolutos, sigue que $a-1<y-a<1-a$ (*). Tomando el lado derecho de (*) obtenemos $y<1$. Luego, de la hipótesis sigue que $2a>1$, osea $2a-1>0$. Del lado izquierdo de la desigualdad (*), tenemos $2a-1<y$, por lo que $0<y$.
+   \item Si $1-a>a$, tenemos $\varepsilon=a$. Sea $y\in V_\varepsilon(a)$, entonces $|y-a|<a$. Por el teorema para eliminar valores absolutos, sigue que $-a<y-a<a$. Sumando $a$ en esta desigualdad obtenemos $0<y<2a$. Luego, de la hipótesis sigue que $1>2a$, entonces $0<y<1$.\end{enumerate}
+   En cualquier caso, $0<y<1$, lo que implica que $V_\varepsilon(a) \subseteq U$. 
+ \end{proof}
+
+ \item Demuestre que si $a\neq b$, entonces existen $U_\varepsilon(a)$ y $V_\varepsilon(b)$ tales que $U\cap V =\emptyset$.
+ \begin{proof} 
+  Supongamos que para toda $U_\varepsilon(a)$ y $V_\varepsilon(b)$ se cumple que $U_\varepsilon(a) \cap V_\varepsilon(b) \neq \emptyset$. Entonces, existe $x$ tal que $x\in U_\varepsilon(a)$ y $x\in V_\varepsilon(b)$. Como en ambos entornos tenemos $\varepsilon>0$ arbitraria, sigue que $x=a$ y $x=b$, pero esto contradice el supuesto de que $a\neq b$. Por tanto, deben existir $U_\varepsilon(a)$ y $V_\varepsilon(b)$ tales que $U\cap V =\emptyset$. 
+ \end{proof}
+\end{enumerate}
+
+\section*{Propiedad de completez de \(\mathbb{R}\)}
+
 \bfit{Definición:} Sea $A\subset \R$ con $A\neq \emptyset$, decimos que $A$:
 \begin{itemize}
  \item está acotado superiormente, si $\exists K\in \R$ tal que $a \leq K, \forall a\in A$. En este caso decimos que $K$ es cota superior de $A$.
@@ -11,9 +71,9 @@
 
 \textbf{Observación:}
 \begin{itemize}
-  \item Si $K$ es una cota superior de $A$, entonces $\forall \epsilon>0$, se tiene que $K+\epsilon$ también es cota superior de $A$, pues $a \leq K<K+\epsilon$, $\forall a\in A$. 
-  \item Si $k$ es una cota inferior de $A$, entonces $\forall \epsilon>0$, se tiene que $k - \epsilon$ también es cota inferior de $A$, pues $k - \epsilon < k \leq a$, $\forall a\in A$.
-  \item Si $M$ es una cota de $A$, entonces $\forall \epsilon>0$, se tiene que $M+\epsilon$ también es cota de $A$, pues $|a|\leq M < M+\epsilon$, $\forall a\in A$.
+  \item Si $K$ es una cota superior de $A$, entonces $\forall \varepsilon>0$, se tiene que $K+\varepsilon$ también es cota superior de $A$, pues $a \leq K<K+\varepsilon$, $\forall a\in A$. 
+  \item Si $k$ es una cota inferior de $A$, entonces $\forall \varepsilon>0$, se tiene que $k - \varepsilon$ también es cota inferior de $A$, pues $k - \varepsilon < k \leq a$, $\forall a\in A$.
+  \item Si $M$ es una cota de $A$, entonces $\forall \varepsilon>0$, se tiene que $M+\varepsilon$ también es cota de $A$, pues $|a|\leq M < M+\varepsilon$, $\forall a\in A$.
 \end{itemize}
 
 \bfit{Definición:}  Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado superiormente, decimos que un número real $S$ es supremo de $A$ si:
@@ -26,6 +86,8 @@ En este caso escribimos $S=\sup(A)$.
 
 \textbf{Observación:} Si $A$ tiene supremo, este no necesariamente pertenece a $A$.
 
+\clearpage\pagebreak
+
 \bfit{Definición:} Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado inferiormente, decimos que un número real $L$ es ínfimo de $A$ si: \begin{itemize}
  \item $L$ es cota inferior de $A$, y
  \item Si $K$ es cota inferior de $A$, entonces $K\leq L$.
@@ -35,15 +97,47 @@ En este caso escribimos $L=\inf(A)$.
 
 \textbf{Observación:} Si $A$ tiene ínfimo, este no necesariamente pertenece a $A$.
 
-\section*{Propiedad de completez de \(\mathbb{R}\)}
+\bfit{Definición:} Sea $A\subseteq \R$. Decimos que $A$ es denso (en $\R$), o que cumple la propiedad de densidad, si para cada $x,y \in \R$ con $x<y$, existe $a\in A$ tal que $x<a<y$.
 
-A pesar de que hemos definido al supremo e ínfimo para subconjuntos no vacíos de los números reales, en realidad no es posible ---utilizando únicamente las propiedades demostradas hasta este punto, probar que, en efecto, el supremo e ínfimo existen. En otras palabras, si $A\subset \R$ con $A\neq \emptyset$ no podemos garantizar la existencia de $\sup(A)\in \R$ tal que para toda cota superior $K$ de $A$ se tiene que $\sup(A)\leq S$. Analogamente, no podemos probar que $\inf(A)$ es menor que todas las cotas superiores de $A$. 
+\textbf{Observación:} Es claro que $\R$ es denso, pues $\R\subseteq \R$ y para cada $x<y$ se tiene que $x<\frac{x+y}{2}<y$, con $\frac{x+y}{2}\in \R$.
+
+\textbf{Una nota sobre el supremo y el ínfimo}
+
+A pesar de que hemos definido al supremo e ínfimo para subconjuntos no vacíos de los números reales, en realidad no es posible ---utilizando únicamente las propiedades demostradas hasta este punto, probar que, en efecto, el supremo e ínfimo existen para todo subconjunto no vacío de los reales que esté acotado.
+
+Consideremos el siguiente argumento: Sea $A\subseteq \R$ tal que $A\neq \emptyset$ y $A$ está acotado superiormente por $S$. Sea $a\in A$, por definición, $a\leq S$, y por la densidad de los números reales, $\exists x\in \R$ tal que $a\leq x \leq S$, por lo que $x$ es una cota superior de $A$. Es decir, para cualquier cota superior de un conjunto, es posible encontrar un número real que sea menor o igual que este, y mayor o igual a los elementos del conjunto. Si la relación entre las cotas se cumple con igualdad, es decir que $a\leq x = S$, podríamos conjeturar que $S$ es el supremo de $A$, sin embargo, si se tiene que $a\leq x < S$, sería natural pensar que $x$ es el supremo de $A$, pues es menor que la cota superior $S$. No obstante, $\exists y\in \R$ tal que $a\leq y \leq x<S$, y nos encontramos en la misma situación que antes, si $a\leq y = x$, entonces $x$ es candidato para ser el supremo de $A$, pero si $a\leq y < x$, podríamos inferir que $y$ es el supremo de $A$, recursivamente sin encontrar $\sup(A)$. Análogamente, la existencia del ínfimo no está garantizada ni puede probarse. Por tanto, introducimos la existencia del supremo como un axioma:
+
+\textbf{Axioma del supremo:} Todo subconjunto no vacío del conjunto de los números reales que sea acotado superiormente tiene supremo.
 
 \subsection*{Lista de ejercicios}
 
 Demuestre lo siguiente:
 
 \begin{enumerate}[label=\roman*)]
+  \item Si $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente, entonces $A$ tiene ínfimo.
+  \begin{proof}\leavevmode
+    Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conjunto $-A \coloneqq \set{-a: a\in A}$ está acotado superiormente y, por el axioma del supremo, $-A$ tiene supremo. Sea $M\coloneqq \sup{(A)}$ y $a\in A$, entonces $M\geq -a$, de donde sigue que $-M\leq a$, esto es $-M$ es el ínfimo de $A$.
+  \end{proof}
+  
+  \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene supremo, este es único.
+ 
+  \begin{proof} 
+   Supongamos que $s_1$ y $s_2$ son supremos de $A$. Por definición, $s_1$ es una cota superior de $A$ y $s_2$ es elemento supremo, entonces $s_2\leq s_1$. Análogamente, $s_1\leq s_2$. Por tanto, $s_1=s_2$.
+  \end{proof}
+ 
+  \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene ínfimo, este es único.
+  
+  \begin{proof} 
+   Supongamos que $m_1$ y $m_2$ son ínfimos de $A$. Por definición, $m_1$ es una cota inferior de $A$ y $m_2$ es elemento ínfimo, entonces $m_1\leq m_2$. Análogamente, $m_2\leq m_1$. Por tanto, $m_1=m_2$. 
+  \end{proof}
+  
+  \item El conjunto de los números naturales no está acotado superiormente.
+  \begin{proof}\leavevmode
+    Supongamos que el conjunto de los números naturales está acotado superiormente. Entonces existe un número real $M$ tal que $n\leq M, \forall n\in \N$. Como el conjunto de los números naturales es no vacío, entonces, por el axioma del supremo, $\N$ tiene supremo.
+
+    Sea $L\coloneqq \sup{(\N)}$. Como $L-1$ no es cota superior de $\N$, ya que $L>L-1$ y $L$ es la cota superior más pequeña, existe un núero natural $n_0$ tal que $n_0>L-1$, lo cual implica que $n_0+1<L$, pero esto contradice la hipótesis	de que $L$ es supremo de $\N$. Por tanto, el conjunto de los números naturales no está acotado superiormente.
+  \end{proof}
+  
  \item Sea $A\subset \R$ tal que $A\neq \emptyset$. $A$ está acotado si y solo si $A$ está acotado superior e inferiormente.
  
  \begin{proof} \leavevmode
@@ -66,18 +160,6 @@ Demuestre lo siguiente:
   \end{itemize}
  \end{proof}
 
- \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene supremo, este es único.
- 
- \begin{proof} 
-  Supongamos que $s_1$ y $s_2$ son supremos de $A$. Por definición, $s_1$ es una cota superior de $A$ y $s_2$ es elemento supremo, entonces $s_2\leq s_1$. Análogamente, $s_1\leq s_2$. Por tanto, $s_1=s_2$.
- \end{proof}
-
- \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene ínfimo, este es único.
- 
- \begin{proof} 
-  Supongamos que $m_1$ y $m_2$ son ínfimos de $A$. Por definición, $m_1$ es una cota inferior de $A$ y $m_2$ es elemento ínfimo, entonces $m_1\leq m_2$. Análogamente, $m_2\leq m_1$. Por tanto, $m_1=m_2$. 
- \end{proof}
- 
  \item Sea $A\subset \R$ y $A\neq \emptyset$. Una cota superior $M$ de $A$, es el supremo de $A$ si y solo si $\forall b\in \R$ tal que $b<M$, entonces $\exists a\in A$ tal que $b<a$.
  \begin{proof}\leavevmode
  \begin{itemize}
@@ -90,19 +172,59 @@ Demuestre lo siguiente:
 
   \begin{proof}\leavevmode
   \begin{itemize}
-  \item[$\Rightarrow)$] Sea $M$ el supremo de $A$ y $\epsilon>0$. Como $M<M+\epsilon$ implica que $M-\epsilon<M$, entonces $M-\epsilon$ no es una cota superior de $A$, por lo que $\exists a_\epsilon$ tal que $a_\epsilon>M-\epsilon$.
-  \item[$\Leftarrow)$] Sea $M$ una cota superior de $A$ tal que $\forall \epsilon>0, \exists a_{\epsilon}$ tal que $M-\epsilon<a_{\epsilon}$. Supongamos que $M$ no es el supremo de $A$, entonces $b\in \R$, el cual es una cota superior de $A$, tal que $a_\epsilon \leq b < M$. Elegimos $\epsilon = M-b$, con lo que $M-(M-b)<a_\epsilon$, es decir, $b<a_{\epsilon}$, pero esto es una contradicción. Por tanto, $M$ es el supremo de $A$. \qedhere
+  \item[$\Rightarrow)$] Sea $M$ el supremo de $A$ y $\varepsilon>0$. Como $M<M+\varepsilon$ implica que $M-\varepsilon<M$, entonces $M-\varepsilon$ no es una cota superior de $A$, por lo que $\exists a_\varepsilon$ tal que $a_\varepsilon>M-\varepsilon$.
+  \item[$\Leftarrow)$] Sea $M$ una cota superior de $A$ tal que $\forall \varepsilon>0, \exists a_{\varepsilon}$ tal que $M-\varepsilon<a_{\varepsilon}$. Supongamos que $M$ no es el supremo de $A$, entonces $b\in \R$, el cual es una cota superior de $A$, tal que $a_\varepsilon \leq b < M$. Elegimos $\varepsilon = M-b$, con lo que $M-(M-b)<a_\varepsilon$, es decir, $b<a_{\varepsilon}$, pero esto es una contradicción. Por tanto, $M$ es el supremo de $A$. \qedhere
   \end{itemize}
   \end{proof}
   
-  \item Sea $A\subseteq B\subseteq \R$ no vacíos y $B$ es acotado; se verifica que \[\inf B \leq \inf A \leq \sup A \leq \sup B\]
+\item Sea $A\subseteq B\subseteq \R$ no vacíos y $B$ es acotado; se verifica que \[\inf (B) \leq \inf (A) \leq \sup (A) \leq \sup (B)\] (El supremo preserva el orden y el ínfimo lo invierte).
 
-\begin{proof}\leavevmode
-  \begin{enumerate}[label=\roman*)]
-    \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $\inf B \leq x$, por lo que $\inf B$ es cota inferior de $A$. Luego, $\inf B \leq \inf A$.
-    \item Sea $x\in A$. Por definición, $\inf A \leq x \leq \sup A$, por lo que $\inf A \leq \sup A$.
-    \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $x\leq \sup B$, por lo que $\sup B$ es cota superior de $A$, y por definición, $\sup A \leq \sup B$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $\inf (B) \leq x$, por lo que $\inf (B)$ es cota inferior de $A$. Por definición, el ínfimo de $A$ es mayor o igual que todas sus cotas inferiores, es decir, $\inf (B) \leq \inf (A)$.
+      \item Sea $x\in A$. Por definición, $\inf (A) \leq x \leq \sup (A)$, por lo que $\inf (A) \leq \sup (A)$. (El ínfimo es menor o igual que el supremo).
+      \item Sea $x\in A$. Se tiene que $x\in B$, y por definición, $x\leq \sup (B)$, por lo que $\sup (B)$ es cota superior de $A$, y por definición, el supremo de $A$ es menor o igual que todas sus cotas superiores, es decir, $\sup (A) \leq \sup (B)$. \qedhere
+    \end{enumerate}
+  \end{proof}
+  
+  \bfit{Corolario:}\begin{enumerate}[label=\roman*)]
+  \item $\inf (B) \leq \sup (A)$.
+  \item $\inf (A) \leq \sup (B)$.
   \end{enumerate}
-\end{proof}
+  \item Sea $\emptyset \neq B\subseteq \R$, se verifica que $\forall \epsilon > 0$, $\exists b_\epsilon\in B$ tal que $b_\epsilon < \inf (B) + \epsilon$.
+  
+  \begin{proof}\leavevmode
+    Sea $\epsilon >0$. Notemos que
+    \begin{align*}
+      0 &< \epsilon\\
+      \inf (B) &< \inf (B) + \epsilon
+    \end{align*}
+    Por lo que $\inf (B) +\epsilon$ no es una cota inferior de $B$, entonces $\exists b_\epsilon\in B$ tal que $b_\epsilon < \inf (B) + \epsilon$.
+  \end{proof}
+  
+  \item Sea $\emptyset \neq A\subseteq \R$, se verifica que $\forall \epsilon > 0$, $\exists a_\epsilon\in A$ tal que $\sup (A) - \epsilon < a_\epsilon$.
+  \begin{proof}\leavevmode
+    Sea $\epsilon>0$. Notemos que 
+    \begin{align*}
+      0 &< \epsilon\\
+      \sup (A) &< \epsilon + \sup (A)\\
+      \sup (A) - \epsilon &< \sup (A)
+    \end{align*}
+    Por lo que $\sup (A)-\epsilon$ no es una cota superior de $A$, por lo que $\exists a_\epsilon\in A$ tal que $\sup (A) - \epsilon < a_\epsilon$.
+  \end{proof}
+  
+  \item Sea $A, B\subseteq \R$ no vacíos, tales que $a\leq b$, $\forall a\in A$ y $\forall b\in B$, entonces $\sup(A)\leq \inf(B)$.
+  
+  \begin{proof}\leavevmode
+    
+  Pr definición, $\sup (A) \leq b, \forall b\in B$.
+  
+  Supongamos que $\inf(B) < \sup(A)$, entonces $\sup(A) - \inf(B) > 0$. Sea $\epsilon = \sup(A) - \inf(B)$, entonces $\exists b_\epsilon\in B$ tal que
+    \begin{align*}
+      b_\epsilon &< \inf(B) + \epsilon\\
+      b_\epsilon &< \inf(B) + \sup(A) - \inf(B)\\
+      b_\epsilon &< \sup(A) && \contradiction
+    \end{align*}
+  \end{proof}
   
 \end{enumerate}
