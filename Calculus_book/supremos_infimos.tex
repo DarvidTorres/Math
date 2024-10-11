@@ -1,6 +1,6 @@
 \part*{Supremos e Ínfimos}
 
-\section*{Entorno}
+\section*{Entorno e intervalos}
 
 \bfit{Definición:}  Sea $a, b\in \R$, definimos
 \begin{itemize}
@@ -28,9 +28,9 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
       -\varepsilon &< x-a < \varepsilon && \text{Teorema para eliminar valores absolutos}\\
       a -\varepsilon &< x < a+ \varepsilon
     \end{align*}
-    Es decir que $\forall x\in \R$ y $\forall \varepsilon>0$, tales que $|x-a|<\varepsilon$ se tiene que $x\in (a-\varepsilon, a+ \varepsilon)$. Osea que $E_\varepsilon(a) = (a-\varepsilon, a+\varepsilon)$.
+    Es decir que $\forall x\in \R$ y $\forall \varepsilon>0$, tales que $|x-a|<\varepsilon$ se tiene que $x\in (a-\varepsilon, \ a+ \varepsilon)$. Osea que $E_\varepsilon(a) = (a-\varepsilon, \ a+\varepsilon)$.
   \end{proof}
-  \textbf{Observación:} El centro del entorno $E_\varepsilon(a)$ es el punto medio de los extremos del intervalo $(a-\varepsilon, a+\varepsilon)$:
+  \textbf{Observación:} El centro del entorno $E_\varepsilon(a)$ es el punto medio de los extremos del intervalo $(a-\varepsilon, \ a+\varepsilon)$:
   \begin{align*}
     a - \varepsilon &< a + \varepsilon\\
     a- \varepsilon &< \frac{(a - \varepsilon)+(a + \varepsilon)}{2} < a + \varepsilon && \text{Punto medio}\\
@@ -49,7 +49,7 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
  
 \clearpage\pagebreak
   
-  \item Para toda $a$ y $b$ tales que $a<b$, $\exists x\in \R$ y $\varepsilon>0$ tales que $(a, b)= (x- \varepsilon, x+\varepsilon)$.
+  \item Para toda $a$ y $b$ tales que $a<b$, $\exists x\in \R$ y $\varepsilon>0$ tales que $(a, b)= (x- \varepsilon, \ x+\varepsilon)$.
   \begin{proof}\leavevmode
     Notemos que
     \begin{align*}
@@ -127,31 +127,58 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
 
 Demuestre lo siguiente:
 
-Sea $A\subset \R$ tal que $A\neq \emptyset$. $A$ está acotado si y solo si $A$ está acotado superior e inferiormente.
+\begin{enumerate}[label=\alph*)]
+  \item Sea $A\subset \R$ tal que $A\neq \emptyset$. $A$ está acotado si y solo si $A$ está acotado superior e inferiormente.
  
- \begin{proof} \leavevmode
-  \begin{itemize}
-   \item[$\Rightarrow)$] Supongamos que $A$ está acotado. Sea $a\in A$, por definición, $\exists M\in \R$ tal que $|a|\leq M$. Por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $-M\leq a \leq M$, por lo que $A$ está acotado superior e inferiormente.
-   \item[$\Leftarrow)$] Supongamos que $A$ está acotado superior e inferiormente. Sea $a\in A$, entonces $\exists k, K\in \R$ tales que $k\leq a \leq K$. Notemos que
-   \begin{align*}
-    -k &\leq |k|\\
-    -k &\leq |k| + |K|\\
-    -|K|-|k| &\leq k\\
-    - \big(|K|+|k|\big) &\leq k
-   \end{align*}
-   Como $k\leq a$, por transitividad sigue que, $-\big(|K|+|k|\big) \leq a$. Similarmente,
-   \begin{align*}
-    K &\leq |K|\\
-    K &\leq |K| + |k|
-   \end{align*}
-   Como $a\leq K$, por transitividad sigue que, $a\leq |K|+|k|$. Es decir, se verifica que \[-\big(|K|+|k|\big) \leq a \leq |K|+|k|\]
-   y, por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $|a| \leq |K| + |k|$. Por tanto, $A$ está acotado. \qedhere
-  \end{itemize}
- \end{proof}
- 
- \section*{Propiedad de completez de \(\mathbb{R}\)}
+  \begin{proof} \leavevmode
+   \begin{itemize}
+    \item[$\Rightarrow)$] Supongamos que $A$ está acotado. Sea $a\in A$, por definición, $\exists M\in \R$ tal que $|a|\leq M$. Por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $-M\leq a \leq M$, por lo que $A$ está acotado superior e inferiormente.
+    \item[$\Leftarrow)$] Supongamos que $A$ está acotado superior e inferiormente. Sea $a\in A$, entonces $\exists k, K\in \R$ tales que $k\leq a \leq K$. Notemos que
+    \begin{align*}
+     -k &\leq |k|\\
+     -k &\leq |k| + |K|\\
+     -|K|-|k| &\leq k\\
+     - \big(|K|+|k|\big) &\leq k
+    \end{align*}
+    Como $k\leq a$, por transitividad sigue que, $-\big(|K|+|k|\big) \leq a$. Similarmente,
+    \begin{align*}
+     K &\leq |K|\\
+     K &\leq |K| + |k|
+    \end{align*}
+    Como $a\leq K$, por transitividad sigue que, $a\leq |K|+|k|$. Es decir, se verifica que \[-\big(|K|+|k|\big) \leq a \leq |K|+|k|\]
+    y, por el teorema para eliminar el valor absoluto en algunas desigualdades, sigue que $|a| \leq |K| + |k|$. Por tanto, $A$ está acotado. \qedhere
+   \end{itemize}
+  \end{proof}
+  
+  \item Si $A$ tiene elemento máximo, este es único.
+  
+  \begin{proof}\leavevmode
+    Sea $M$ y $M'$ elementos máximos de $A$. Como $M'\in A$, y $M$ es una cota superior de $A$, entonces $M'\leq M$. Análogamente, $M\leq M'$. Por tanto, $M=M'$.
+  \end{proof}
+  
+  \item Si $A$ tiene elemento mínimo, este es único.
+  \begin{proof}\leavevmode
+    Sea $m$ y $m'$ elementos máximos de $A$. Como $m'\in A$, y $m$ es una cota inferior de $A$, entonces $m'\leq m$. Análogamente, $m\leq m'$. Por tanto, $m=m'$.
+  \end{proof}
+  
+  \item Sea $K\in \R$ y $A=\set{x\in \R|x<K}$, entonces $A$ no tiene elemento máximo.
+  \begin{proof}\leavevmode
+    Supongamos que $M=\max(A)$. Por definición, $M\in A$, por lo que $M<K$. Luego, $M<\frac{M+K}{2}<K$, por lo que $\frac{M+K}{2}\in A$, pero esto es una contradicción, pues $M$ es cota superior de $A$. Por tanto, $A$ no tiene elemento máximo.
+  \end{proof}
+  
+  \item Sea $k\in \R$ y $A=\set{x\in \R|k<x}$, entonces $A$ no tiene elemento mínimo.
+  
+  \begin{proof}
+    Supongamos que $m=\min(A)$. Por definición, $m\in A$, por lo que $k<m$. Luego, $k<\frac{k+m}{2}<m$, por lo que $\frac{k+m}{2}\in A$, pero esto es una contradicción, pues $m$ es cota inferior de $A$. Por tanto, $A$ no tiene elemento mínimo.
+  \end{proof}
+  
+\end{enumerate}
 
-\bfit{Definición:}  Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado superiormente, decimos que un número real $S$ es supremo de $A$ si:
+\section*{Propiedad de completez de \(\mathbb{R}\)}
+
+\subsection*{Supremos e ínfimos}
+
+\bfit{Definición:} Sea $A\subset \R$ tal que $A\neq \emptyset$ y $A$ está acotado superiormente, decimos que un número real $S$ es supremo de $A$ si:
 \begin{itemize}
  \item $S$ es cota superior de $A$, y
  \item Si $K$ es cota superior de $A$, entonces $S\leq K$. ($S$ es la cota superior más pequeña de $A$).
@@ -159,14 +186,22 @@ Sea $A\subset \R$ tal que $A\neq \emptyset$. $A$ está acotado si y solo si $A$ 
 
 \textbf{Notación}: Denotamos al supremo de $A$ como $\sup(A)$.
 
-\bfit{Definición:} Sea $A\subset \R$ tal que $A\neq \emptyset$ y está acotado inferiormente, decimos que un número real $L$ es ínfimo de $A$ si: \begin{itemize}
+\textbf{Nota:} La definición de supremo no implica que este pertenezca al conjunto.
+
+\bfit{Definición:} Sea $A\subset \R$ tal que $A\neq \emptyset$ y $A$ está acotado inferiormente, decimos que un número real $L$ es ínfimo de $A$ si: \begin{itemize}
  \item $L$ es cota inferior de $A$, y
  \item Si $K$ es cota inferior de $A$, entonces $K\leq L$. ($L$ es la cota inferior más grande de $A$).
 \end{itemize}
 
 \textbf{Notación}: Denotamos al ínfimo de $A$ como $\inf(A)$.
 
-\bfit{Definición:} Sea $A\subseteq \R$. Decimos que $A$ es denso (en $\R$), o que cumple la propiedad de densidad, si para cada $x,y \in \R$ con $x<y$, existe $a\in A$ tal que $x<a<y$.
+\textbf{Nota:} La definición de ínfimo no implica que este pertenezca al conjunto.
+
+\subsection*{Densidad}
+
+\textbf{Propiedad de densidad}
+
+\bfit{Definición (versión 1):} Sea $A\subseteq \R$. Decimos que $A$ es denso (en $\R$), o que cumple la propiedad de densidad, si para cada $x,y \in \R$ con $x<y$, existe $a\in A$ tal que $x<a<y$.
 
 \textbf{Observación:} Es claro que $\R$ es denso, pues $\R\subseteq \R$ y para cada $x<y$ se tiene que $x<\frac{x+y}{2}<y$, con $\frac{x+y}{2}\in \R$.
 
@@ -176,11 +211,9 @@ A pesar de que hemos definido al supremo e ínfimo para subconjuntos no vacíos 
 
 Consideremos el siguiente argumento: Sea $A\subseteq \R$ tal que $A\neq \emptyset$ y $A$ está acotado superiormente por $S$. Sea $a\in A$, por definición, $a\leq S$, y por la densidad de los números reales, $\exists x\in \R$ tal que $a\leq x \leq S$, por lo que $x$ es una cota superior de $A$. Es decir, para cualquier cota superior de un conjunto, es posible encontrar un número real que sea menor o igual que este, y mayor o igual a los elementos del conjunto. Si la relación entre las cotas se cumple con igualdad, es decir que $a\leq x = S$, podríamos conjeturar que $S$ es el supremo de $A$, sin embargo, si se tiene que $a\leq x < S$, sería natural pensar que $x$ es el supremo de $A$, pues es menor que la cota superior $S$. No obstante, $\exists y\in \R$ tal que $a\leq y \leq x<S$, y nos encontramos en la misma situación que antes, si $a\leq y = x$, entonces $x$ es candidato para ser el supremo de $A$, pero si $a\leq y < x$, podríamos inferir que $y$ es el supremo de $A$, recursivamente sin encontrar un número real que satisfaga la propiedad de ser la cota inferior más pequeña de $A$, para cualquier subconjunto no vacío de $\R$. Análogamente, la existencia del ínfimo no está garantizada ni puede probarse. Por tanto, introducimos la existencia del supremo como un axioma:
 
-\textbf{Axioma del supremo}
 
-Todo subconjunto no vacío del conjunto de los números reales que sea acotado superiormente tiene supremo.
 
-\clearpage\pagebreak
+\textbf{Axioma del supremo:} Todo subconjunto no vacío del conjunto de los números reales que sea acotado superiormente tiene supremo.
 
 \subsection*{Lista de ejercicios}
 
