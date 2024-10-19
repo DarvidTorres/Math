@@ -8,7 +8,17 @@
  \item $[a,b]\defined \set{x\in \R|a\leq x\leq b}$. Decimos que $[a, b]$ es el intervalo cerrado (de $a$ a $b$).
  \item $[a,b)\defined \set{x\in \R|a\leq x <b}$.
  \item $(a,b]\defined \set{x\in \R|a<x\leq b}$.
+ \item $(a, \infty)\defined \set{x\in \R | a<x}$.
+ \item $[a, \infty) \defined \set{x\in \R| a\leq x}$.
+ \item $(-\infty, a) \defined \set{x\in \R|a<x}$.
+ \item $(-\infty, a] \defined \set{x\in \R|a\leq x}$.
 \end{itemize}
+
+\subsection*{Una nota sobre la notación de algunos intervalos}
+
+Introducimos los símbolos $\infty$ y $-\infty$ de manera sintáctica, es decir, únicamente como parte de la notación empleada para algunos intervalos, como descrito arriba. En otras palabas, su uso es \textit{formal}.
+
+\textbf{Observación:} Respectivamente, los conjuntos $\R^+$ y $\R^-$ son intervalos de la forma $(0, \infty)$ y $(-\infty, 0)$.
 
 \bfit{Definición.} Sea $a \in \R$ y $\varepsilon>0$. Definimos al entorno de centro $a$ y radio $\varepsilon$, como el conjunto: \[E_\varepsilon(a)\defined \{ x\in \R: |x-a|<\varepsilon\}\]
 \textbf{Notación:} También denotamos al entorno de centro $a$ y radio $\varepsilon$ como $E_{(a, \varepsilon)}$, o si el radio es claro, $E_{(a)}$. También decimos que $E_\varepsilon(a)$ es el entorno-$\varepsilon$ (epsilon) de $a$.
@@ -117,11 +127,11 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
 
 \bfit{Definición:} Sea $A\subset \R$ con $A\neq \emptyset$, decimos que:
 \begin{itemize}
-  \item Si $M$ es una cota superior de $A$ y $M\in A$, decimos que $M$ es el elemento máximo de $A$, y lo denotamos como $M=\max(A)$.
-  \item Si $m$ es una cota inferior de $A$ y $m\in A$, decimos que $m$ es el elemento mínimo de $A$, y lo denotamos como $m=\min(A)$.
+  \item Si $M$ es una cota superior de $A$ y $M\in A$, decimos que $M$ es el elemento máximo de $A$, y lo denotamos como $\max(A)$.
+  \item Si $m$ es una cota inferior de $A$ y $m\in A$, decimos que $m$ es el elemento mínimo de $A$, y lo denotamos como $\min(A)$.
 \end{itemize}
 
-\textbf{Observación:} Por definición, si $A$ tiene elemento máximo, entonces está acotado superiormente, y si $A$ tiene elemento mínimo, entonces está acotado inferiormente.
+% \textbf{Observación:} Por definición, si $A$ tiene elemento máximo, entonces está acotado superiormente, y si $A$ tiene elemento mínimo, entonces está acotado inferiormente.
 
 \subsection*{Lista de ejercicios}
 
@@ -150,6 +160,15 @@ Demuestre lo siguiente:
    \end{itemize}
   \end{proof}
   
+  \item Sea $A\subseteq\R$, $A\neq \emptyset$. $A$ está acotado superiormente si y solo si $-A\defined \set{-a: a\in A}$ está acotado inferiormente.
+  
+  \begin{proof}\leavevmode
+  \begin{itemize}
+  \item[$\Rightarrow)$] Supongamos que $A$ está acotado superiormente. Entonces, $\exists K\in \R$ tal que $a\leq K, \forall a\in A$, de donde $-K\leq -a, \forall -a\in -A$. Por lo que $-A$ está acotado inferiormente.
+  \item[$\Leftarrow)$] Supongamos que $-A$ está acotado inferiormente. Entonces, $\exists k\in \R$ tal que $k\leq -a, \forall -a\in -A$, de donde $-(-a)=a\leq -k, \forall a\in A$, por lo que $A$ está acotado superiormente. \qedhere
+  \end{itemize}
+  \end{proof}
+  
   \item Si $A$ tiene elemento máximo, este es único.
   
   \begin{proof}\leavevmode
@@ -161,12 +180,30 @@ Demuestre lo siguiente:
     Sea $m$ y $m'$ elementos máximos de $A$. Como $m'\in A$, y $m$ es una cota inferior de $A$, entonces $m'\leq m$. Análogamente, $m\leq m'$. Por tanto, $m=m'$.
   \end{proof}
   
-  \item Sea $K\in \R$ y $A=\set{x\in \R|x<K}$, entonces $A$ no tiene elemento máximo.
+  \item Sea $A\subseteq \R$. Se verifica que $\min(A)\leq \max(A)$.
+  (El elemento mínimo es menor o igual que el elemento máximo).
+  \begin{proof}\leavevmode
+    Sea $a\in A$. Se tiene que $\min(A)\leq a$ y $a\leq \max(A)$. Por lo que $\min(A)\leq \max(A)$.
+  \end{proof}
+  
+  \textbf{Observación:} $\min(A)=\max(A)$ si y solo si $A$ es un conjunto unitario. (El lector debería verificar este hecho).
+  
+  \item Sea $A\subseteq B \subseteq \R$, se verifica que
+  \begin{enumerate}[label=\roman*)]
+    \item $\max(A) \leq \max(B)$, y
+    \item $\min(B)\leq \min(A)$.
+  \end{enumerate}
+  
+  \item Sea $A\subseteq \R$ y $-A\defined \set{-a| a\in A}$. Se verifica que $\max(A)=-\min(-A)$.
+  
+  \item Sean $a,b\in \R$. Se verifica que $\max\set{a, b} = \frac{a+b+|a-b|}{2}$ y $\min\set{a, b} = \frac{a+b-|a-b|}{2}$.
+  
+  \item Sea $K\in \R$ y $A=\set{x\in \R|x<K}$. $A$ no tiene elemento máximo.
   \begin{proof}\leavevmode
     Supongamos que $M=\max(A)$. Por definición, $M\in A$, por lo que $M<K$. Luego, $M<\frac{M+K}{2}<K$, por lo que $\frac{M+K}{2}\in A$, pero esto es una contradicción, pues $M$ es cota superior de $A$. Por tanto, $A$ no tiene elemento máximo.
   \end{proof}
   
-  \item Sea $k\in \R$ y $A=\set{x\in \R|k<x}$, entonces $A$ no tiene elemento mínimo.
+  \item Sea $k\in \R$ y $A=\set{x\in \R|k<x}$. $A$ no tiene elemento mínimo.
   
   \begin{proof}
     Supongamos que $m=\min(A)$. Por definición, $m\in A$, por lo que $k<m$. Luego, $k<\frac{k+m}{2}<m$, por lo que $\frac{k+m}{2}\in A$, pero esto es una contradicción, pues $m$ es cota inferior de $A$. Por tanto, $A$ no tiene elemento mínimo.
@@ -197,14 +234,6 @@ Demuestre lo siguiente:
 
 \textbf{Nota:} La definición de ínfimo no implica que este pertenezca al conjunto.
 
-\subsection*{Densidad}
-
-\textbf{Propiedad de densidad}
-
-\bfit{Definición (versión 1):} Sea $A\subseteq \R$. Decimos que $A$ es denso (en $\R$), o que cumple la propiedad de densidad, si para cada $x,y \in \R$ con $x<y$, existe $a\in A$ tal que $x<a<y$.
-
-\textbf{Observación:} Es claro que $\R$ es denso, pues $\R\subseteq \R$ y para cada $x<y$ se tiene que $x<\frac{x+y}{2}<y$, con $\frac{x+y}{2}\in \R$.
-
 \textbf{Una nota sobre el supremo y el ínfimo}
 
 A pesar de que hemos definido al supremo e ínfimo para subconjuntos no vacíos de los números reales, en realidad no es posible ---utilizando únicamente las propiedades demostradas hasta este punto, probar que, en efecto, el supremo e ínfimo existen para todo subconjunto no vacío de los reales que esté acotado.
@@ -225,13 +254,13 @@ Demuestre lo siguiente:
     Sea $A\subseteq \R, A\neq \emptyset$ y $A$ está acotado inferiormente. El conjunto $-A \coloneqq \set{-a: a\in A}$ está acotado superiormente y, por el axioma del supremo, $-A$ tiene supremo. Sea $M\coloneqq \sup{(A)}$ y $a\in A$, entonces $M\geq -a$, de donde sigue que $-M\leq a$, esto es $-M$ es el ínfimo de $A$.
   \end{proof}
   
-  \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene supremo, este es único.
+  \item Sea $A$ un subconjunto no vacío de $\R$. Si $A$ tiene supremo, este es único.
  
   \begin{proof} 
    Supongamos que $s_1$ y $s_2$ son supremos de $A$. Por definición, $s_1$ es una cota superior de $A$ y $s_2$ es elemento supremo, entonces $s_2\leq s_1$. Análogamente, $s_1\leq s_2$. Por tanto, $s_1=s_2$.
   \end{proof}
  
-  \item Sea $A$ un subconjunto no vacío de $\R$, si $A$ tiene ínfimo, este es único.
+  \item Sea $A$ un subconjunto no vacío de $\R$. Si $A$ tiene ínfimo, este es único.
   
   \begin{proof} 
    Supongamos que $m_1$ y $m_2$ son ínfimos de $A$. Por definición, $m_1$ es una cota inferior de $A$ y $m_2$ es elemento ínfimo, entonces $m_1\leq m_2$. Análogamente, $m_2\leq m_1$. Por tanto, $m_1=m_2$. 
@@ -382,3 +411,9 @@ Demuestre lo siguiente:
   \item $\sup(A)=-\inf(-A)$.
   
 \end{enumerate}
+
+\subsection*{Densidad}
+
+\bfit{Definición:} Sea $A\subseteq \R$. Decimos que $A$ es denso (en $\R$), o que cumple la propiedad de densidad, si $\forall x,y \in \R$ con $x<y$, $\exists a\in A$ tal que $a\in (x, y)$.
+
+\textbf{Observación:} $\R$ es denso, pues $\R\subseteq \R$ y para cada $x<y$ se tiene que $x<\frac{x+y}{2}<y$, es decir, $\frac{x+y}{2}\in (x, y)$, y también $\frac{x+y}{2}\in \R$.
