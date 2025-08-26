@@ -10,15 +10,19 @@
  \item $(a,b]\defined \set{x\in \R|a<x\leq b}$.
  \item $(a, \infty)\defined \set{x\in \R | a<x}$.
  \item $[a, \infty) \defined \set{x\in \R| a\leq x}$.
- \item $(-\infty, a) \defined \set{x\in \R|a<x}$.
- \item $(-\infty, a] \defined \set{x\in \R|a\leq x}$.
+ \item $(-\infty, a) \defined \set{x\in \R|x<a}$.
+ \item $(-\infty, a] \defined \set{x\in \R|x\leq a}$.
 \end{itemize}
 
 \subsection*{Una nota sobre la notación de algunos intervalos}
 
 Introducimos los símbolos $\infty$ y $-\infty$ de manera sintáctica, es decir, únicamente como parte de la notación empleada para algunos intervalos, como descrito arriba. En otras palabas, su uso es \textit{formal}.
 
-\textbf{Observación:} Respectivamente, los conjuntos $\R^+$ y $\R^-$ son intervalos de la forma $(0, \infty)$ y $(-\infty, 0)$.
+\textbf{Observación:}
+\begin{enumerate}[label=\roman*)]
+  \item Los conjuntos $\R^+$ y $\R^-$ son intervalos de la forma $(0, \infty)$ y $(-\infty, 0)$.
+  \item Para cualquier $a\in \R$ se tiene que $(-\infty, a]\union (a, \infty) = \R$. A partir de este hecho introducimos la notación $(-\infty, \infty) \defined \R$.
+\end{enumerate}
 
 \bfit{Definición.} Sea $a \in \R$ y $\varepsilon>0$. Definimos al entorno de centro $a$ y radio $\varepsilon$, como el conjunto: \[E_\varepsilon(a)\defined \{ x\in \R: |x-a|<\varepsilon\}\]
 \textbf{Notación:} También denotamos al entorno de centro $a$ y radio $\varepsilon$ como $E_{(a, \varepsilon)}$, o si el radio es claro, $E_{(a)}$. También decimos que $E_\varepsilon(a)$ es el entorno-$\varepsilon$ (epsilon) de $a$.
@@ -57,8 +61,6 @@ Sean $a,b \in \R$. Demuestre lo siguiente:
  
  \textbf{Nota:} Con esta prueba verificamos que todo número $b$, mayor que $a$, puede escribirse como la suma de $a$ y algún número positivo.
  
-\clearpage\pagebreak
-  
   \item Para toda $a$ y $b$ tales que $a<b$, $\exists x\in \R$ y $\varepsilon>0$ tales que $(a, b)= (x- \varepsilon, \ x+\varepsilon)$.
   \begin{proof}\leavevmode
     Notemos que
@@ -188,15 +190,57 @@ Demuestre lo siguiente:
   
   \textbf{Observación:} $\min(A)=\max(A)$ si y solo si $A$ es un conjunto unitario. (El lector debería verificar este hecho).
   
-  \item Sea $A\subseteq B \subseteq \R$, se verifica que
+  \item Sea $A\subseteq B \subseteq \R$. Se verifica que
   \begin{enumerate}[label=\roman*)]
     \item $\max(A) \leq \max(B)$, y
     \item $\min(B)\leq \min(A)$.
   \end{enumerate}
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Como $\max(A) \in A$, entonces $\max(A)\in B$. Por definición, $\max(B)\geq b, \forall b\in B$. En particular, $\max(A)\leq \max(B)$.
+      \item Como $\min(A)\in A$, entonces $\min(A)\in B$. Por definición, $\max(B)\leq b,\forall b\in B$. En particular, $\min(B)\leq \min(A)$. \qedhere
+    \end{enumerate}
+  \end{proof}
   
   \item Sea $A\subseteq \R$ y $-A\defined \set{-a| a\in A}$. Se verifica que $\max(A)=-\min(-A)$.
+  \begin{proof}\leavevmode
+    Notemos que $\min(-A)\leq -a, \forall -a\in A$. De esta desigualdad sigue que $a\leq -\min(A)$, y como esta desigualdad se verifica para cualquier $a\in A$, entonces $-\min(A)$ es una cota superior de $A$. Finalmente, $\min(-A)\in -A$, y por definición $-\min(-A)\in A$, es decir, $-\min(-A)=\max(A)$.
+  \end{proof}
   
   \item Sean $a,b\in \R$. Se verifica que $\max\set{a, b} = \frac{a+b+|a-b|}{2}$ y $\min\set{a, b} = \frac{a+b-|a-b|}{2}$.
+  \begin{proof}\leavevmode
+    \begin{enumerate}[label=\roman*)]
+      \item Si $b\leq a$, entonces $\max\set{a, b}=a$ y $\min\set{a, b}=b$. También, $a-b\geq 0$, por lo que $|a-b|=a-b$, de donde \begin{align*}
+        \frac{a+b+|a-b|}{2} &= \frac{a+b+a-b}{2}\\
+        &= \frac{2a}{2}\\
+        &= a\\
+        &= \max\set{a, b}
+      \end{align*}
+      Similarmente,
+      \begin{align*}
+        \frac{a+b-|a-b|}{2} &= \frac{a+b-(a-b)}{2}\\
+        &= \frac{a+b-a+b}{2}\\
+        &= \frac{2b}{2}\\
+        &= b\\
+        &= \min\set{a, b}
+      \end{align*}
+      \item Si $a< b$, entonces $\max\set{a, b}=b$ y $\min\set{a, b}=a$. También, $b-a> 0$, por lo que $-(b-a)=a-b< 0$, de donde $|a-b|=-(a-b)=b-a$. Luego,
+      \begin{align*}
+        \frac{a+b+|a-b|}{2} &= \frac{a+b+b-a}{2}\\
+        &= \frac{2b}{2}\\
+        &= b\\
+        &= \max\set{a, b}
+      \end{align*}
+      Similarmente,
+      \begin{align*}
+        \frac{a+b-|a-b|}{2} &= \frac{a+b-(b-a)}{2}\\
+        &= \frac{a+b-b+a}{2}\\
+        &= \frac{2a}{2}\\
+        &= a\\
+        &= \min\set{a, b}
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
   
   \item Sea $K\in \R$ y $A=\set{x\in \R|x<K}$. $A$ no tiene elemento máximo.
   \begin{proof}\leavevmode

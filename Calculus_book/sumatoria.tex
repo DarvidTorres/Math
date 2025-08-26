@@ -9,25 +9,25 @@ Denotamos la suma de los elementos del conjunto $A\subseteq \R$ como \[\sum_{a\i
   \item $B=\set{0}$ \[\sum_{b\in B} b = 0\]
 \end{enumerate}
 
-\textbf{Definición:} Sea $A, B\subseteq \R$ y $f:A \to B$, con $a,b\in A$, y sea $n \in \set{a + m | m\in \Z, 0\leq m \leq (b-a)}$. Definimos a la sumatoria de $a$ hasta $b$ de $f$ como sigue:
+\textbf{Definición:} Sea $a,b\in \R$, $B\subset \R$ y el conjunto $A=\set{a + m| m\in \Z, \ 0\leq m \leq (b-a)}$. Dada una función $f:A \to B$, definimos a la sumatoria de $a$ hasta $b$ de $f$ como sigue:
 
-\[
+\vspace{-1.5em}\[
     \sum_{n=a}^{b} f(n) \defined \left\{
     \begin{array}{@{}l@{\thinspace}l}
     f(a) + \sum_{n=a+1}^{b} f(n) &,  \ \text{si}  \ b\geq a\\
     0 &,  \ \text{si}  \ b<a.
-    \end{array} \right. \]
+    \end{array} \right. \]\vspace{-1.5em}
 
-Decimos que
-\begin{itemize}
+    Llamamos al conjunto $\set{a + m \in A | m\in \Z, \ 0\leq m \leq (b-a)}$, el conjunto iterable de $\sum_{n=a}^{b} f(n)$. Decimos que $n$ itera desde $a$ hasta $b$. También decimos que
+\vspace{-1em}\begin{itemize}
   \item $n$ es el índice, o variable iterable;
   \item $a$ el límite inferior;
-  \item $b$ el límite superior;
-  \item $f(n)$ el elemento típico (o genérico)
-\end{itemize}
-de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, el conjunto iterable de $\sum_{n=a}^{b} f(n)$. Decimos que $n$ itera desde $a$ hasta $b$.
+  \item $b$ el límite superior
+  % \item $f(n)$ el elemento típico (o genérico) || Revomed because f(n) is the image of n under f.
+\end{itemize}\vspace{-1em}
+de la sumatoria $\sum_{n=a}^{b} f(n)$.
 
-\textbf{Observación:} El conjunto iterable es un subconjunto del domino de la función sobre la que opera la sumatoria. El lector debería verificar este hecho.
+\textbf{Nota:} Dada la sumatoria $\sum_{n=a}^{b} f(n)$, $n\in \set{a + m \in A | m\in \Z, \ 0\leq m \leq (b-a)}$.
 
 \textbf{Ejemplos:}
 
@@ -89,14 +89,19 @@ de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}
   \end{align*}
   
   \begin{proof}\leavevmode
-    Notemos que si $a=b$ se tiene que $\sum_{n=a}^{b} f(n) = \sum_{n=a}^{a} f(n)$, por lo que el conjunto iterable al que pertenece $n$ está dado por $\set{a+m|m\in \Z, 0\leq m\leq (a-a)}=\set{a+m|m\in \Z, 0\leq m\leq 0}$, lo que implica que $m=0$, por lo que $n=a$. Luego,
     \begin{align*}
       \sum_{n=a}^{b} f(n) &= \sum_{n=a}^{a} f(n) && \text{Hipótesis}\\
       &= f(a) + \sum_{n=a+1}^{a} f(n) && \text{Definición}\\
       &= f(a) + 0 && \text{Definición}\\
-      &= f(a)\\
-      &= f(n) && \qedhere
+      &= f(a)
     \end{align*}
+    Como
+    \begin{align*}
+      \set{a+m|m\in \Z, \ 0\leq m\leq (a-a)} &\Rightarrow \set{a+m|m\in \Z, \ 0\leq m\leq 0}\\
+      &\Rightarrow \set{a+m|m=0}\\
+      &\Rightarrow \set{a}
+    \end{align*}
+    Por lo que $n=a$, es decir, $\sum_{n=a}^{a} f(n) = f(n)$.
   \end{proof}
 
   A partir de esto tenemos que:
@@ -152,10 +157,10 @@ de la sumatoria. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}
     \end{proof}
 
     \textbf{Observación:} Sea $a,b\in \R$.
-    \begin{itemize}
+    \vspace{-1em}\begin{itemize}
       \item Si $b=a$, entonces $(b-a)=0$, y por índices iguales de la sumatoria se tiene que $\sum_{n=a}^{b} f(n) = f(n)$.
       \item Por definición, si $b<a$ se tiene que $\sum_{n=a}^{b} f(n) =0$, que en particular se verifica si $b-a\in \set{-n:n\in \N}$.
-    \end{itemize}
+    \end{itemize}\vspace{-1em}
     A partir de esta observación y de la Sumatoria Inversa se tiene que
 
     \textbf{Definición:} Si $(b-a)\in \Z$, entonces
@@ -773,8 +778,7 @@ Sea $a,b,p,q,s,t\in \Z$, demuestre lo siguiente:
     \end{align*}
   \end{proof}
   \end{enumerate}
-
-    
+  
   \end{enumerate}
 
 \subsection*{Una nota sobre la notación sigma}
@@ -851,11 +855,11 @@ donde $i\in I$, y la imagen $f(i)$ de $i$ bajo la función $f$ es denotada por $
 % \textbf{Definición:} Sea $A\propersubset \R$ y $M=\set{m\in \N|1\leq m\leq
 % n}$. Decimos que $A$ es un conjunto finito (indexado) si existe una función
 % suryectiva $f: M \to A$, para algún $n \in \N$.
-% \begin{itemize}
-%   \item Llamamos a $M$ el (conjunto) índice de $A$.
-%   \item Llamamos a $n$ la cardinalidad del conjunto A.
-%   \item El conjunto $\emptyset$ es considerado finito, de cardinalidad $0$.
-% \end{itemize}
+% \vspace{-1em}% \begin{itemize}
+% %   \item Llamamos a $M$ el (conjunto) índice de $A$.
+% %   \item Llamamos a $n$ la cardinalidad del conjunto A.
+% %   \item El conjunto $\emptyset$ es considerado finito, de cardinalidad $0$.
+% \vspace{-1em}% \end{itemize}
 
 Usualmente la sumatoria se presenta con la notación índice para conjuntos finitos indexados. Por ejemplo, \[\sum_{i=m}^{n} a_i\]
 en la cual se tiene una función% suprayectiva
@@ -888,9 +892,10 @@ donde $N\subseteq \N$.
 En principio, la sumatoria está bien definida para casos en los que los límites no son enteros, por ejemplo:
 
 \begin{align*}
-  \sum_{i=1/2}^{9/4} i &= 1/2 + \sum_{i=3/2}^{9/4} i \\
-  &= 1/2 + 3/2 + \sum_{i=5/2}^{9/4} i\\
-  &= 1/2 + 3/2 + 0\\
+  \sum_{i=\nicefrac{1}{2}}^{\nicefrac{9}{4}} i &= \nicefrac{1}{2} + \sum_{i=\nicefrac{3}{2}}^{\nicefrac{9}{4}} i \\
+  &= \nicefrac{1}{2} + \big(\nicefrac{1}{2} + 1\big)+ \sum_{i=\nicefrac{5}{2}}^{\nicefrac{9}{4}} i\\
+  &= \nicefrac{1}{2} + \nicefrac{3}{2} + \sum_{i=\nicefrac{5}{2}}^{\nicefrac{9}{4}} i\\
+  &= \nicefrac{1}{2} + \nicefrac{3}{2} + 0\\
   &= 2
 \end{align*}
 
@@ -947,12 +952,12 @@ También podríamos proceder con una definición para la sumatoria A y con otra 
     \end{array} \right. \]
 
 Decimos que
-\begin{itemize}
+\vspace{-1em}\begin{itemize}
   \item $n$ es el índice, o variable iterable;
   \item $a$ el límite inferior;
   \item $b$ el límite superior;
   \item $f(n)$ el elemento típico (o genérico)
-\end{itemize}
+\end{itemize}\vspace{-1em}
 del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, el conjunto iterable de $\prod_{n=a}^{b} f(n)$. Decimos que $n$ itera desde $a$ hasta $b$.
 
 \textbf{Observación:} El conjunto iterable es un subconjunto del domino de la función sobre la que opera el productorio. El lector debería verificar este hecho.
@@ -1223,15 +1228,15 @@ del producto. Llamamos al conjunto $\set{a + m | m\in \Z, 0\leq m \leq (b-a)}$, 
 
 \section*{Potenciación}
 
-\textbf{Definición:} Sea $a$ un número real y $n$ un entero no negativo, y $f$ una función dada por $f(n)=a$. Definimos la enésima potencia de $a$ como sigue:
+\textbf{Definición:} Sea $a$ un número real y $n$ un entero positivo. Definimos la enésima potencia de $a$ como sigue:
 \[a^n \defined \prod_{i=1}^{n} a\]
 Decimos que $a$ es la base, y que $n$ es el exponente.
 
 \textbf{Observación:} Sea $a\in \R$,
-\begin{itemize}
+\vspace{-1em}\begin{itemize}
   \item $a^1= \prod_{i=1}^{1} a = a$.
   \item $a^0 = \prod_{i=1}^{0} a = 1$.%; en particular ---y bajo esta definición, $0^0=1$.
-\end{itemize}
+\end{itemize}\vspace{-1em}
 
 \textbf{Notación:} Sea $a\neq 0$ \[a^{-n}\defined \frac{1}{a^n}\]
 
@@ -1569,10 +1574,10 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
     \end{align*}
   \end{proof}
   \textbf{Observación:}
-  \begin{itemize}
+  \vspace{-1em}\begin{itemize}
     \item $(m+1)! = m!(m+1)$.
     \item $n! = n(n-1)! \Rightarrow (n-1)! = \frac{n!}{n}$.
-  \end{itemize}
+  \end{itemize}\vspace{-1em}
   
   \item Si $0\leq n$, \[n! = \prod_{i=1}^n (n+1-i) \qquad \text{(Forma multiplicativa del factorial)}\]
   
@@ -1646,7 +1651,7 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
       &= \frac{n!}{k! \cdot \prod_{i=1}^{n-k} \Big((n-k)+(1)-i\Big)}\\
       &= \frac{n!}{k!\prod_{i=1}^{n-k} i} && \text{Índices en el argumento}\\
       &= \frac{n!}{k!(n-k)!} && \text{Definición (de factorial)}\\
-      &= \binom{n}{k} && \text{Definición (de coeficiente binomial)}
+      &= \binom{n}{k} && \text{Definición (de coeficiente binomial)} && \qedhere
     \end{align*}
   \end{proof}
   
@@ -1654,11 +1659,19 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
   \begin{proof}\leavevmode Por definición,
     \begin{enumerate}[label=\roman*)]
       \item Si $n<0$, $\binom{n}{n} = 0 = \binom{n}{0}$.
-      \item Si $0\leq n$, \[\binom{n}{n} = \frac{n!}{n!(n-n)!} = \frac{n!}{n!(0)!} = \frac{n!}{n!} = 1 = \frac{n!}{n!} =\frac{n!}{0!(n-0)!} = \binom{n}{0}\]
+      \item Si $0\leq n$, \[\binom{n}{n} = \frac{n!}{n!(n-n)!} = \frac{n!}{n!(0)!} = \frac{n!}{n!} = 1 = \frac{n!}{n!} =\frac{n!}{0!(n-0)!} = \binom{n}{0}\qedhere\]
     \end{enumerate}
   \end{proof}
   
-\pagebreak
+  \item Sea $0\leq n$ y $c\in \N$. \[\binom{n}{0} = \binom{n+c}{0}\]
+  \begin{proof}\leavevmode
+    \[\binom{n}{0} = \frac{n!}{0!(n-0)!} = \frac{n!}{n!} = 1 = \frac{(n+c)!}{(n+c)!} = \frac{(n+c)!}{0!\big((n+c)-0\big)!} \qedhere\]
+  \end{proof}
+  
+  \item Sea $0\leq n$ y $c\in \N$. \[\binom{n}{n} = \binom{n+c}{n+c}\]
+  \begin{proof}\leavevmode
+    \[\binom{n}{n} = \frac{n!}{n!(n-n)!} = \frac{n!}{n!} = 1 = \frac{(n+c)!}{(n+c)!} = \frac{(n+c)!}{(n+c)!\big((n+c)-(n+c)\big)!} \qedhere\]
+  \end{proof}
   
   \item \[\binom{n}{k} = \binom{n}{n-k} \qquad \text{(Simetría del coeficiente binomial)}\]
   \begin{proof}\leavevmode
@@ -1678,6 +1691,8 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
     \end{enumerate}
   \end{proof}
 
+  \clearpage\pagebreak
+  
   \item Si $0\leq k \leq n$, \[\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}\qquad \text{(Forma recursiva del coeficiente binomial)}\]
   \begin{proof}\leavevmode
   %   \begin{enumerate}[label=\Roman*)]
@@ -1708,7 +1723,7 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
         &= \frac{\big((n-k)+k\big)(n-1)!}{k!(n-k)!} && \text{Distribución}\\
         &= \frac{n(n-1)!}{k!(n-k)!}\\
         &= \frac{n!}{k!(n-k)!}&& \text{Rec. Factorial}\\
-        &= \binom{n}{k} && \text{Definición}
+        &= \binom{n}{k} && \text{Definición} && \qedhere
       \end{align*}
   \end{proof}
   
@@ -1734,9 +1749,6 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
     &= \binom{n}{k} + \binom{n}{k-1} && \text{Definición}
     \end{align*}
   \end{proof}
-  
-\clearpage
-\pagebreak
   
   \item Si $0\leq k \leq n$, \[\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}\]
   \begin{proof}\leavevmode
@@ -1770,16 +1782,18 @@ Sea $n,k\in \Z$. Demuestre lo siguiente
 
 % Un polinómio es una expresión \textit{formal}: \[\sum_{k=0}^{n} a_k x^k\]
 % Decimos que
-% \begin{itemize}
-%   \item $a_k x^k$ es el k-ésimo término,
-%   \item $a_k$ es el coeficiente del k-ésimo término,
-%   \item $x^k$ es la indeterminada del k-ésimo término,
-%   \item el \textit{grado} es la mayor $k$ para la cual $a_k\neq 0$,
-% \end{itemize}
+% \vspace{-1em}% \begin{itemize}
+% %   \item $a_k x^k$ es el k-ésimo término,
+% %   \item $a_k$ es el coeficiente del k-ésimo término,
+% %   \item $x^k$ es la indeterminada del k-ésimo término,
+% %   \item el \textit{grado} es la mayor $k$ para la cual $a_k\neq 0$,
+% \vspace{-1em}% \end{itemize}
 % del polinomio.
 
 Sea $x,y\in \R$ y $n\in \N\union\set{0}$,
 \[(x+ y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k \qquad \text{(Teorema binomial)}\]
+
+\bfit{Demostración:}
   \begin{enumerate}[label=\roman*)]
     \item Se verifica para $n=0$, \[(x+ y)^n = (x+ y)^0= 1= \binom{0}{0} x^{0-0}y^0= \sum_{k=0}^{0} \binom{n}{k} x^{0-k}y^k= \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k\]
     \item Se verifica para $n=1$,
@@ -1794,18 +1808,18 @@ Sea $x,y\in \R$ y $n\in \N\union\set{0}$,
     \item Supongamos que si $n=m\in \N$, entonces \[(x+ y)^m = \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k\]
     \item Notemos que 
     \begin{align*}
-      (x+ y)^{m+1} &= (x + y)^m \cdot (x+ y)\\
-      &= \Bigg(\sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k\Bigg) \cdot (x + y)\\
+      (x+ y)^{m+1} &= (x+y)\cdot (x + y)^m\\
+      &= (x+y)\cdot \Bigg(\sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k\Bigg) && \text{Hip. Inducción}\\
       &= x \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k + y \cdot \sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^k \\
       &= \underbrace{\sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k}_{A} + \underbrace{\sum_{k=0}^{m} \binom{m}{k} x^{m-k}y^{k+1}}_{B} && \text{(*)}
       \end{align*}
   \end{enumerate}
 Luego,
   \begin{align*}
-    \overbrace{\sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k}^{A} &= \binom{m}{0}x^{m-0+1}y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
-    &= 1\cdot x^{m+1} y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
-    &= \binom{0}{0} x^{m+1} y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
-    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k
+    \overbrace{\sum_{k=0}^{m} \binom{m}{k} x^{m+1-k}y^k}^{A} &= \sum_{k=0}^{0} \binom{m}{k} x^{m+1-k}y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
+    &= \binom{m}{0} x^{m+1-0}y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
+    &= \binom{m+1}{0} x^{m+1-0}y^0 +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k\\
+    &= \sum_{k=0}^{0} \binom{m+1}{k} x^{m+1-k}y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k
   \end{align*}
   
   Similarmente,  
@@ -1832,15 +1846,16 @@ Luego,
   Finalmente, retomando (*), se tiene que:
   
   \begin{align*}
-   (x+y)^{m+1} &= \overbrace{\sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k}^{A} + \overbrace{\sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k}^{B}\\
-    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k + \overbrace{\sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k}}^{C} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
-    &= \sum_{k=0}^{0} \binom{0}{k} x^{m+1-k} y^k + \sum_{k=1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
+   &(x+y)^{m+1}\\
+   &= \overbrace{\sum_{k=0}^{0} \binom{m+1}{k} x^{m+1-k}y^k +\sum_{k=1}^{m} \binom{m}{k} x^{m+1-k}y^k}^{A} + \overbrace{\sum_{k=1}^{m} \binom{m}{k-1} x^{m+1-k}y^{k} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k}^{B}\\
+    &= \sum_{k=0}^{0} \binom{m+1}{k} x^{m+1-k}y^k + \overbrace{\sum_{k=1}^{m} \binom{m+1}{k} x^{m+1-k}y^{k}}^{C} + \sum_{k=m+1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
+    &= \sum_{k=0}^{0} \binom{m+1}{k} x^{m+1-k}y^k + \sum_{k=1}^{m+1} \binom{m+1}{k} x^{m+1-k} y^k\\
     &= \sum_{k=0}^{m+1} \binom{m+1}{k} x^{(m+1)-k} y^k
   \end{align*}
   
 \subsection*{Una nota sobre el Teorema Binomial}
 
-El lector se preguntará por el binomio de la \textit{forma} $(x-y)^n$. Notemos que hemos probado el teorema binomial para número reales ---sin importar si los acompaña un signo, por lo que el teorema es valido para $-y\in \R$, pues $(x-y)^n = (x + (-y))^n$. Resulta conveniente, sin embargo, verificar este hecho preservando la forma $(x-y)^n$.
+El lector se preguntará por el binomio de la \textit{forma} $(x-y)^n$. Notemos que hemos probado el teorema binomial para número reales ---sin importar si los acompaña el signo negativo, por lo que el teorema es valido para $-y\in \R$, pues $(x-y)^n = (x + (-y))^n$. Resulta conveniente, sin embargo, verificar este hecho preservando la forma $(x-y)^n$.
   
 Sea $x,y\in \R$ y $n\in \N\union\set{0}$,
 \[(x- y)^n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} x^{n-k}y^k\]
